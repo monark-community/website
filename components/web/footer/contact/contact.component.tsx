@@ -17,8 +17,8 @@ function Contact({ locale }: Props) {
     <div className="flex flex-col items-center justify-center gap-16 md:flex-row">
       <Logo formFactor="full" colorScheme="branded" width={350} height={350} />
       <div>
-        <p className="text-tagline">{t.tagline}</p>
-        <p className="text-headline">{t.title}</p>
+        <p className="text-tagline leading-none">{t.tagline}</p>
+        <p className="text-headline leading-none">{t.title}</p>
         <Button size="lg">
           {t.action}&nbsp;
           <SendIcon />

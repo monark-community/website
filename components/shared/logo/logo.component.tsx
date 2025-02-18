@@ -11,15 +11,16 @@ interface Props extends Omit<ImageProps, "src" | "alt"> {
 function Logo(props: Props) {
   const { formFactor = "standalone", colorScheme = "color" } = props;
 
-  const { theme } = useTheme();
+  const theme = useTheme();
+  const { resolvedTheme } = theme;
 
   const getLogoFileName = () => {
-    if (formFactor === "standalone" && colorScheme === "branded") {
+        if (formFactor === "standalone" && colorScheme === "branded") {
       // Special case for standalone branded logo, which doesn't
       // have a theme variant and is always colored.
       return `logo-${colorScheme}-${formFactor}.svg`;
     }
-    return `logo-${colorScheme}-${theme}-${formFactor}.svg`;
+    return `logo-${colorScheme}-${resolvedTheme}-${formFactor}.svg`;
   };
 
   return (
