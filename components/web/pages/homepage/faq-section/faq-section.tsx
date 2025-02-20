@@ -16,6 +16,7 @@ import {
 import "./faq-section.scss";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
   locale: Locale;
@@ -69,7 +70,9 @@ function FAQSection({ locale }: Props) {
                 {t.roadmap_card.content}
               </CardContent>
               <CardFooter>
-                <Button>{t.roadmap_card.action}</Button>
+                <Link href="/planning/roadmap">
+                  <Button>{t.roadmap_card.action}</Button>
+                </Link>
               </CardFooter>
             </div>
           </BrandedCard>

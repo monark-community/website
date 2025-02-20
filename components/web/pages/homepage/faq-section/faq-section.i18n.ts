@@ -38,10 +38,8 @@ export const en: I18n = {
       {
         question: "What does Monark's butterfly symbol represent?",
         answer: `
-          <p>The monarch butterfly represents
-          <strong>transformation, freedom, and interconnected ecosystems</strong>,
-          much like how Monark enables seamless interaction between digital and real-world environments.</p>
-        `,
+          <p>A butterfly <strong>symbolizes freedom</strong>, breaking free from societal constraints to chart its own path. In Jackson Wang's <i>Butterfly</i>, he likens himself to a butterfly, <strong>independent and self-directed</strong>. Similarly, in Denise Williams's <i>Black Butterfly</i>, the butterfly represents <strong>liberation from oppression</strong>.</p>
+          <p>Across cultures, butterflies symbolize <strong>life, the soul, and transformation</strong>. In Christianity, they represent <strong>resurrection, while universally, they embody endurance, change, hope, and renewal</strong>.</p>`,
       },
       {
         question: "How does Monark's open-data system work?",
@@ -62,9 +60,9 @@ export const en: I18n = {
       {
         question: "Who controls Monark?",
         answer: `
-        <p><strong>Monark is a nascent project, the governance structure is still being developed.</strong> We aim for Monark is governed by a
+        <p><strong>Monark is a nascent project, the governance structure is still being developed.</strong> We aim for Monark to be governed by a
         <strong>decentralized community</strong>
-        where decisions are made through transparent voting mechanisms. Our reputation system ensures meaningful participation from trusted contributors.</p>
+        where decisions are made through transparent voting mechanisms. Our reputation system will ensure meaningful participation from trusted contributors.</p>
         `,
       },
       {
@@ -73,7 +71,7 @@ export const en: I18n = {
         <p>There are many ways to contribute to Monark! You can;</p>
         <ul>
           <li>Join our community on <strong>Discord and Twitter</strong></li>
-          <li>Contribute to our open-source repositories on <strong>GitHub</strong></li>
+          <li>Contribute to our open-source repositories on <strong><a href="https://github.com/monark-community" target="_blank">GitHub</a></strong></li>
           <li><strong>Share your ideas and feedback</strong> with the team</li>
           <li>Participate in our <strong>hackathons and bounties</strong></li>
         </ul>
@@ -115,9 +113,8 @@ export const fr: I18n = {
       {
         question: "Que représente le symbole du papillon de Monark?",
         answer: `
-          <p>Le papillon monarque représente
-          <strong>la transformation, la liberté et les écosystèmes interconnectés</strong>,
-          tout comme Monark permet une interaction transparente entre les environnements numériques et réels.</p>
+          <p>Un papillon <strong>symbolise la liberté</strong>, se libérant des contraintes sociétales pour tracer son propre chemin. Dans <i>Butterfly</i> de Jackson Wang, il se compare à un papillon, <strong>indépendant et autonome</strong>. De même, dans <i>Black Butterfly</i> de Denise Williams, le papillon représente <strong>la libération de l'oppression</strong>.</p>
+          <p>À travers les cultures, les papillons symbolisent <strong>la vie, l'âme et la transformation</strong>. Dans le christianisme, ils représentent <strong>la résurrection, tandis qu'universellement, ils incarnent l'endurance, le changement, l'espoir et le renouveau</strong>.</
         `,
       },
       {
@@ -151,7 +148,7 @@ export const fr: I18n = {
         <p>Il existe de nombreuses façons de contribuer à Monark! Vous pouvez;</p>
         <ul>
           <li>Rejoignez notre communauté sur <strong>Discord et Twitter</strong></li>
-          <li>Contribuez à nos dépôts open-source sur <strong>GitHub</strong></li>
+          <li>Contribuez à nos dépôts open-source sur <strong><a href="https://github.com/monark-community" target="_blank">GitHub</a></strong></li>
           <li><strong>Partagez vos idées et vos retours</strong> avec l'équipe</li>
           <li>Participez à nos <strong>hackathons et bounties</strong></li>
         </ul>
