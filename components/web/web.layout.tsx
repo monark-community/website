@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-// import Navbar from "./navbar/navbar.component";
 import Footer from "./footer/footer";
 import { Locale } from "@/i18n.config";
+import Navbar from "./navbar/navbar";
 
 type Props = {
   locale: Locale;
@@ -12,8 +12,7 @@ type Props = {
 function WebLayout({ locale, children }: Props) {
   return (
     <>
-     
-      {/* <Navbar locale={locale} /> */}
+      <Navbar locale={locale} />
       <main>{children}</main>
       <Footer locale={locale} />
     </>
