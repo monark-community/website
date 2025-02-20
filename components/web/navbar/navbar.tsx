@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Locale } from "@/i18n.config";
 import * as i18n from "./navbar.i18n";
 import { Button } from "@/components/ui/button";
-import Logo from "@/components/shared/logo/logo";
+// import Logo from "@/components/shared/logo/logo";
 import { GithubIcon } from "lucide-react";
 import Image from "next/image";
 
