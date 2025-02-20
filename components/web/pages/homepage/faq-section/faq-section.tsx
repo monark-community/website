@@ -26,7 +26,7 @@ function FAQSection({ locale }: Props) {
   const t = i18n[locale].faq;
 
   return (
-    <section className="faq-section mx-auto lg:max-w-[1440px] px-8 py-20 pb-32 text-left">
+    <section className="faq-section mx-auto lg:max-w-[1440px] px-4 py-8 md:px-12 md:py-16 text-left">
       <span className="text-tagline">{t.flavor}</span>
       <h2 className="max-w-[500px]">{t.title}</h2>
       <div className="grid grid-cols-1 gap-16 lg:grid-cols-3 mt-8">
@@ -70,7 +70,7 @@ function FAQSection({ locale }: Props) {
                 {t.roadmap_card.content}
               </CardContent>
               <CardFooter>
-                <Link href="/planning/roadmap">
+                <Link href="/resources/planning/roadmap">
                   <Button>{t.roadmap_card.action}</Button>
                 </Link>
               </CardFooter>
