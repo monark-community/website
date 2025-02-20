@@ -1,5 +1,4 @@
-import LocaleToggle from "@/components/shared/locale-toggle/locale-toggle.component";
-import { ThemeToggle } from "@/components/shared/theme-toggle/theme-toggle.component";
+import FAQSection from "@/components/web/pages/homepage/faq-section/faq-section";
 import { Locale } from "@/i18n.config";
 
 type Props = {
@@ -12,8 +11,7 @@ export default function Home(props: Props) {
   const { locale } = props.params;
   return (
     <div>
-      <ThemeToggle locale={locale} />
-      <LocaleToggle locale={locale} />
+      <FAQSection locale={locale} />
     </div>
   );
 }

@@ -6,22 +6,29 @@
   font-family: "Nunito Sans", "Nunito Sans Fallback";
 }
 
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 @layer base {
   :root {
-    --background: 18 100% 98%;
+    --background: 32 50% 96%;
     --foreground: 0 0% 8%;
-    --card: 0 0% 8% / 0.02;
+    --card: 32 30% 94%;
     --card-foreground: 0 0% 8%;
     --popover: 0 0% 98%;
     --popover-foreground: 0 0% 3.9%;
     --primary: 32 90% 49%;
-    --primary-foreground: 18 100% 98%;
+    --primary-foreground: 32 100% 98%;
     --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 95%;
     --muted-foreground: 0 0% 40%;
     --accent: 6 87% 53%;
-    --accent-foreground: 18 100% 98%;
+    --accent-foreground: 32 100% 98%;
     --destructive: 6 77% 15%;
     --destructive-foreground: 6 87% 47%;
     --radius: 0.8rem;
@@ -36,23 +43,23 @@
   }
   .dark {
     --background: 0 0% 8%;
-    --foreground: 18 100% 98%;
-    --card: 18 100% 98% / 0.02;
-    --card-foreground: 18 100% 98%;
+    --foreground: 32 100% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 32 100% 98%;
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
     --primary: 32 90% 49%;
-    --primary-foreground: 18 100% 98%;
+    --primary-foreground: 32 100% 98%;
     --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 26%;
     --muted-foreground: 0 0% 74%;
     --accent: 6 87% 53%;
-    --accent-foreground: 18 100% 98%;
+    --accent-foreground: 32 100% 98%;
     --destructive: 6 87% 47%;
     --destructive-foreground: 6 77% 15%;
     --border: 0 0% 26%;
-    --input: 0 0% 52%;
+    --input: 0 0% 26%;
     --ring: 0 0% 8%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
@@ -71,13 +78,72 @@
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h1 {
+  @apply text-6xl;
+  @media screen and (max-width: 768px) {
+    @apply text-5xl;
+  }
+}
+
+h2 {
+  @apply text-5xl;
+  @media screen and (max-width: 768px) {
+    @apply text-4xl;
+  }
+}
+
+h3 {
+  @apply text-2xl;
+  @media screen and (max-width: 768px) {
+    @apply text-xl;
+  }
+}
+
+h4 {
+  @apply text-xl;
+  @media screen and (max-width: 768px) {
+    @apply text-lg;
+  }
+}
+
+h5 {
+  @apply text-lg;
+  @media screen and (max-width: 768px) {
+    @apply text-base;
+  }
+}
+
+h6 {
+  @apply text-base;
+  @media screen and (max-width: 768px) {
+    @apply text-sm;
+  }
+}
+
 .text-tagline {
   font-size: 2.25rem;
+  @media screen and (max-width: 768px) {
+    font-size: 1.25rem;
+  }
   color: hsl(var(--primary));
+  font-weight: 200;
 }
 
 .text-headline {
   font-size: 6rem;
+  @media screen and (max-width: 768px) {
+    font-size: 3.5rem;
+  }
   font-weight: bold;
   text-transform: uppercase;
 }
