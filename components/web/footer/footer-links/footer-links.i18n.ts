@@ -31,12 +31,12 @@ export const en: I18n = {
       ],
       right: [
         {
-          label: "Cookie Policy",
+          label: "Cookies",
           href: "/legal/cookie-policy",
           disabled: true,
         },
         {
-          label: "Privacy Policy",
+          label: "Privacy",
           href: "/legal/privacy-policy",
           disabled: true,
         },
@@ -69,12 +69,12 @@ export const fr: I18n = {
       ],
       right: [
         {
-          label: "Politique de cookies",
+          label: "Cookies",
           href: "/legal/cookie-policy",
           disabled: true,
         },
         {
-          label: "Politique de confidentialité",
+          label: "Confidentialité",
           href: "/legal/privacy-policy",
           disabled: true,
         },

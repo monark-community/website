@@ -29,7 +29,7 @@ function Newsletter({ locale }: Props) {
   };
 
   return (
-    <div className="newsletter">
+    <div className="newsletter mt-16">
       <form
         onSubmit={handleSubmit}
         className="relative flex items-center max-w-[350px]"

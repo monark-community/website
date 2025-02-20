@@ -7,8 +7,8 @@ type Props = {
   };
 };
 
-export default function Home(props: Props) {
-  const { locale } = props.params;
+export default async function Home(props: Props) {
+  const { locale } = await props.params;
   return (
     <div>
       <FAQSection locale={locale} />

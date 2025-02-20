@@ -12,8 +12,8 @@ type Props = {
 function FooterLinks({ locale }: Props) {
   const t = i18n[locale].footer_links;
   return (
-    <div className="footer-links my-16">
-      <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-4 lg:gap-8">
+    <div className="footer-links my-8">
+      <div className="flex flex-col-reverse lg:flex-row items-center lg:items-end justify-between gap-4 lg:gap-8">
         <div className="flex flex-row flex-start gap-2">
           {t.primary.map((link, index) => (
             <Link

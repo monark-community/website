@@ -3,9 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import SOCIALS from "./socials";
 
-function SocialLinks() {
+type Props = {
+  className?: string;
+};
+
+function SocialLinks({className}: Props) {
   return (
-    <div className="flex gap-2">
+    <div className={`flex gap-2 ${className}`}>
       {SOCIALS.map((social) => (
         <Link
           key={social.id}
