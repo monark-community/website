@@ -35,7 +35,7 @@ export const en: I18n = {
       {
         title: "Earn Rewards",
         content:
-          "Build, contribute, and earn rewards while shaping the future of Web3.",
+          "Build, contribute, and earn rewards while shaping the future of web3.",
         tile: "tile-2",
         icon: "coin-stack",
       },
@@ -90,7 +90,7 @@ export const fr: I18n = {
       {
         title: "Gagnez des récompenses",
         content:
-          "Construisez, contribuez et gagnez des récompenses tout en façonnant l'avenir du Web3.",
+          "Construisez, contribuez et gagnez des récompenses tout en façonnant l'avenir du web3.",
         tile: "tile-2",
         icon: "coin-stack",
       },
