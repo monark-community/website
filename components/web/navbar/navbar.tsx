@@ -26,7 +26,7 @@ function Navbar({ locale }: Props) {
   }, []);
 
   return (
-    <nav className={`fixed border border-b-primary w-full ${scrolled ? "bg-background" : "bg-background"}`}>
+    <nav className={`z-50 fixed border border-b-primary w-full ${scrolled ? "bg-background" : "bg-background"}`}>
       <div className="max-w-[1440px] mx-auto flex justify-between items-center p-4">
         <Image
           src="/vectors/brand/horizontal/logo-branded-dark-horizontal.svg"
