@@ -8,7 +8,7 @@ import { Locale } from "@/i18n.config";
 
 type Params = Promise<{ locale: Locale }>;
 
-export const generateMetadata = metadata;
+export const generateMetadata = await metadata;
 
 export default async function Home({ params }: { params: Params }) {
   const { locale } = await params;

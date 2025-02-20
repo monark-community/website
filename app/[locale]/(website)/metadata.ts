@@ -2,12 +2,14 @@ import { Locale } from "@/i18n.config";
 import { Metadata } from "next";
 import * as i18n from "./metadata.i18n";
 
-export default function metadata({
+type Params = Promise<{ locale: Locale }>;
+
+export default async function metadata({
   params,
 }: {
-  params: { locale: Locale };
-}): Metadata {
-  const locale = params.locale;
+  params: Params;
+}): Promise<Metadata> {
+  const { locale } = await params;
   const t = i18n[locale].metadata;
   return {
     title: t.title,
