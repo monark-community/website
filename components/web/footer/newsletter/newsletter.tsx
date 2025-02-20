@@ -44,9 +44,9 @@ function Newsletter({ locale }: Props) {
           size="icon"
           type="submit"
           variant="ghost"
-          className="absolute right-0 hover:bg-foreground/20"
+          className="absolute right-0 text-primary"
         >
-          <ChevronRight className="text-foreground" />
+          <ChevronRight />
         </Button>
       </form>
       {error && <small className="ml-4 text-destructive">{error}</small>}

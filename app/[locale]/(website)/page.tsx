@@ -8,10 +8,14 @@ type Params = Promise<{ locale: Locale }>;
 export default async function Home({ params }: { params: Params }) {
   const { locale } = await params;
   return (
-    <div>
-      <AboutSection locale={locale} />
-      <WhySection locale={locale} />
-      <FAQSection locale={locale} />
+    <div className="relative">
+      <div className="fixed top-0 left-1/2 transform -translate-x-[740px] h-screen w-px bg-primary"></div>
+      <div className="fixed top-0 left-1/2 transform translate-x-[740px] h-screen w-px bg-primary"></div>
+      <div>
+        <AboutSection locale={locale} />
+        <WhySection locale={locale} />
+        <FAQSection locale={locale} />
+      </div>
     </div>
   );
 }

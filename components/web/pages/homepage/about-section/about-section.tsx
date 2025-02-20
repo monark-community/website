@@ -59,8 +59,9 @@ function Activity({ activity }: ActivityProps) {
           </CardDescription>
         </CardContent>
         <CardFooter>
-          <Button size="icon" variant="ghost">
-            <ArrowRightIcon className="text-primary" />
+          <Button variant="ghost" className="text-primary">
+            {activity.action}&nbsp;
+            <ArrowRightIcon />
           </Button>
         </CardFooter>
       </div>

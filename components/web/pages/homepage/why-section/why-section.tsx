@@ -64,7 +64,9 @@ function Perk({ perk }: PerkProps) {
         />
       </div>
       <h3 className="mt-8">{perk.title}</h3>
-      <p className="text-lg text-muted-foreground max-w-[400px]">{perk.content}</p>
+      <p className="text-lg text-muted-foreground max-w-[400px]">
+        {perk.content}
+      </p>
     </div>
   );
 }
@@ -80,11 +82,13 @@ function Audience({ audience }: AudienceProps) {
         <CardTitle className="uppercase">{audience.title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <CardDescription className="text-lg">{audience.content}</CardDescription>
+        <CardDescription className="text-lg">
+          {audience.content}
+        </CardDescription>
       </CardContent>
       <CardFooter>
-        <Button size="icon" variant="ghost">
-          <ArrowRightIcon className="text-primary" />
+        <Button size="icon" variant="ghost" className="text-primary">
+          <ArrowRightIcon />
         </Button>
       </CardFooter>
     </BrandedCard>
