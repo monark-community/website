@@ -1,3 +1,4 @@
+import metadata from "./metadata";
 import HeroSection from "@/components/web/pages/homepage/hero-section/hero-section";
 import AboutSection from "@/components/web/pages/homepage/about-section/about-section";
 import WhySection from "@/components/web/pages/homepage/why-section/why-section";
@@ -6,6 +7,8 @@ import HistorySection from "@/components/web/pages/homepage/history-section/hist
 import { Locale } from "@/i18n.config";
 
 type Params = Promise<{ locale: Locale }>;
+
+export const generateMetadata = metadata;
 
 export default async function Home({ params }: { params: Params }) {
   const { locale } = await params;
