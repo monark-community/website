@@ -1,9 +1,7 @@
 import React from "react";
 
-type Props = {};
-
-function ContactPage({}: Props) {
-  return <div>page</div>;
+function ContactPage() {
+  return <div>Contact Page</div>;
 }
 
 export default ContactPage;

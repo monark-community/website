@@ -8,11 +8,10 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import {
-  Card,
+  BrandedCard,
   CardHeader,
   CardContent,
   CardFooter,
-  BrandedCard,
 } from "@/components/ui/card";
 import "./faq-section.scss";
 import { Button } from "@/components/ui/button";
