@@ -13,7 +13,7 @@ function WebLayout({ locale, children }: Props) {
   return (
     <>
       <Navbar locale={locale} />
-      <main>{children}</main>
+      <main className="mt-[94px]">{children}</main>
       <Footer locale={locale} />
     </>
   );
