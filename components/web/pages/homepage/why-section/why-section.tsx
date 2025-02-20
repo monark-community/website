@@ -20,9 +20,9 @@ type Props = {
 function WhySection({ locale }: Props) {
   const t = i18n[locale].why;
   return (
-    <section className="faq-section mx-auto lg:max-w-[1440px] px-4 py-8 md:px-12 md:py-16 text-center">
+    <section className="why-section mx-auto lg:max-w-[1440px] px-4 py-8 md:px-12 md:py-16 text-center">
       <span className="text-tagline">{t.flavor}</span>
-      <h2 className="max-w-[500px] mx-auto">{t.title}</h2>
+      <h2 className="max-w-[680px] mx-auto">{t.title}</h2>
       <div className="flex flex-col items-center justify-center mt-24">
         <div className="grid grid-cols-1 gap-24 lg:grid-cols-3">
           {t.perks.map((perk, index) => (
@@ -80,7 +80,7 @@ function Audience({ audience }: AudienceProps) {
         <CardTitle className="uppercase">{audience.title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <CardDescription>{audience.content}</CardDescription>
+        <CardDescription className="text-lg">{audience.content}</CardDescription>
       </CardContent>
       <CardFooter>
         <Button size="icon" variant="ghost">
