@@ -52,7 +52,7 @@ function FAQSection({ locale }: Props) {
             alt=""
             width={256}
             height={256}
-            className="absolute -top-56 right-64 z-[-1] hidden lg:block -scale-x-100 rotate-12"
+            className="absolute -top-56 right-48 z-[-1] hidden lg:block -scale-x-100 rotate-12"
           />
           <BrandedCard className="relative overflow-hidden lg:col-span-1 h-fit">
             <div className="absolute transition-all opacity-40 sm:opacity-100 z-0 right-0 sm:right-16 top-1/2 -translate-y-1/2 lg:top-0 lg:right-0 lg:-translate-y-14 lg:translate-x-4 rounded-full bg-primary/10 h-[256px] w-[256px] flex items-center justify-center">
