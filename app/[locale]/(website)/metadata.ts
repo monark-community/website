@@ -11,6 +11,7 @@ export default async function metadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = i18n[locale].metadata;
+
   return {
     title: t.title,
     description: t.description,
@@ -24,11 +25,11 @@ export default async function metadata({
       images: [
         {
           // Facebook/LinkedIn OG
-          url: `/${locale}/images/og/og-homepage-monark-decentralization.webp`,
+          url: `/${locale}/images/og/og-homepage-monark-decentralization.jpg`,
           width: 1200,
           height: 630,
           alt: t.title,
-          type: "image/webp",
+          type: "image/jpg",
         },
       ],
     },
