@@ -19,13 +19,14 @@ export default async function metadata({
     openGraph: {
       siteName: "Monark",
       type: "website",
-      locale,
       title: t.title,
       description: t.description,
+      url: `https://monark.dominicfournier.com/${locale}/`,
+      locale,
       images: [
         {
           // Facebook/LinkedIn OG
-          url: `/${locale}/images/og/og-homepage-monark-decentralization.jpg`,
+          url: `/en/images/og/og-homepage-monark-decentralization.jpg`,
           width: 1200,
           height: 630,
           alt: t.title,
@@ -36,7 +37,7 @@ export default async function metadata({
     metadataBase: new URL(
       process.env.NODE_ENV === "development"
         ? "http://localhost:3000"
-        : "https://monark.io"
+        : "https://monark.dominicfournier.com"
     ),
   };
 }
