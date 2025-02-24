@@ -82,7 +82,7 @@ type NavbarLink = {
 const LinkIcon = ({ icon }: { icon: string; className?: string }) => {
   const Icon = iconMap[icon];
   return (
-    <div className="bg-card h-12 w-12 flex justify-center items-center rounded-md mr-4">
+    <div className="bg-card min-h-12 min-w-12 max-h-12 max-w-12 flex justify-center items-center rounded-md mr-4">
       <Icon height={24} width={24} />
     </div>
   );

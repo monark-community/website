@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
 import { WebClientProviders } from "@/components/web/web.client.providers";
+import '@xyflow/react/dist/style.css';
 import "./globals.scss";
 
 const nunitoSans = Nunito_Sans({
