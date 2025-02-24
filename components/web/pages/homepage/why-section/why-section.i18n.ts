@@ -9,6 +9,7 @@ export type WhyAudience = {
   id: string;
   title: string;
   content: string;
+  href: string;
 };
 
 export interface I18n {
@@ -52,24 +53,28 @@ export const en: I18n = {
         id: "developer",
         title: "Developer",
         content: "Create or leverage modules to expedite your web3 journey.",
+        href: "/participate/developer",
       },
       {
         id: "entrepreneur",
         title: "Entrepreneur",
         content:
           "Submit your ideas, get visibility, support and funding to launch them.",
+        href: "/participate/entrepreneur",
       },
       {
         id: "university",
         title: "University",
         content:
           "Let's address the core web3 limitations and expand what is possible.",
+        href: "/participate/university",
       },
       {
         id: "student",
         title: "Student",
         content:
           "Contribute to real-world projects, enhance your skills, and build your network.",
+        href: "/participate/student",
       },
     ],
   },
@@ -108,24 +113,28 @@ export const fr: I18n = {
         title: "Développeur",
         content:
           "Créez ou utilisez des modules pour accélérer votre parcours web3.",
+        href: "/participate/developer",
       },
       {
         id: "entrepreneur",
         title: "Entrepreneur",
         content:
           "Soumettez vos idées, obtenez de la visibilité, du soutien et du financement pour les lancer.",
+        href: "/participate/entrepreneur",
       },
       {
         id: "university",
         title: "Université",
         content:
           "Abordons les limitations fondamentales du web3 et élargissons les possibilités.",
+        href: "/participate/university",
       },
       {
         id: "student",
         title: "Étudiant",
         content:
           "Contribuez à des projets du monde réel, améliorez vos compétences et développez votre réseau.",
+        href: "/participate/student",
       },
     ],
   },

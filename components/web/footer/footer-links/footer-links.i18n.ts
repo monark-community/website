@@ -25,9 +25,9 @@ export const en: I18n = {
     ],
     secondary: {
       left: [
-        { label: "About", href: "/about", disabled: true },
+        { label: "About", href: "/about/monark" },
         { label: "Brand Assets", href: "/brand-assets", disabled: true },
-        { label: "Contact", href: "/contact", disabled: true },
+        { label: "Contact", href: "/forms/contact" },
       ],
       right: [
         {
@@ -59,13 +59,13 @@ export const fr: I18n = {
     ],
     secondary: {
       left: [
-        { label: "À propos", href: "/about", disabled: true },
+        { label: "À propos", href: "/about/monark" },
         {
           label: "Ressources de marque",
           href: "/brand-assets",
           disabled: true,
         },
-        { label: "Contact", href: "/contact", disabled: true },
+        { label: "Contact", href: "/forms/contact" },
       ],
       right: [
         {

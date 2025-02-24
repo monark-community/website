@@ -4,7 +4,7 @@ import { SendIcon } from "lucide-react";
 import { Locale } from "@/i18n.config";
 import * as i18n from "./contact.i18n";
 import Logo from "@/components/shared/logo/logo";
-import Link from "next/link";
+import { NavLink } from "@/components/shared/navlink/navlink";
 
 type Props = {
   locale: Locale;
@@ -20,12 +20,12 @@ function Contact({ locale }: Props) {
         <p className="text-tagline leading-none">{t.tagline}</p>
         <p className="text-headline leading-none">{t.title}</p>
         <div className="mt-8">
-          <Link href="/contact">
+          <NavLink href="/forms/contact">
             <Button size="lg">
               {t.action}&nbsp;
               <SendIcon />
             </Button>
-          </Link>
+          </NavLink>
         </div>
       </div>
     </div>

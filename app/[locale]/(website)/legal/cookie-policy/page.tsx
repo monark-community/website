@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { NavLink } from "@/components/shared/navlink/navlink";
 import React from "react";
 
 function CookiePolicyPage() {
@@ -8,9 +8,9 @@ function CookiePolicyPage() {
       <h1>Cookie Policy Page</h1>
       <p>Work in progress...</p>
       <div className="mt-8">
-        <Link href="/">
+        <NavLink href="/">
           <Button>Back Home</Button>
-        </Link>
+        </NavLink>
       </div>
     </div>
   );

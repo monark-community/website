@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { NavLink } from "@/components/shared/navlink/navlink";
 import SOCIALS from "./socials";
 
 type Props = {
@@ -11,7 +11,7 @@ function SocialLinks({className}: Props) {
   return (
     <div className={`flex gap-2 ${className}`}>
       {SOCIALS.map((social) => (
-        <Link
+        <NavLink
           key={social.id}
           href={social.url}
           target="_blank"
@@ -23,7 +23,7 @@ function SocialLinks({className}: Props) {
             width={48}
             height={48}
           />
-        </Link>
+        </NavLink>
       ))}
     </div>
   );

@@ -20,11 +20,11 @@ const SOCIALS: Array<Social> = [
         name: "LinkedIn",
         url: "https://www.linkedin.com/company/monark-io/about/",
     },
-    // {
-    //     id: "twitter",
-    //     name: "Twitter",
-    //     url: "",
-    // },
+    {
+        id: "twitter",
+        name: "Twitter",
+        url: "https://x.com/monark_io",
+    },
     // {
     //     id: "youtube",
     //     name: "YouTube",

@@ -24,7 +24,7 @@ function HistorySection({ locale }: Props) {
         circlePosition="before"
         width="200px"
       />
-      <Card className="min-w-[500px] border border-dashed border-muted max-w-2xl text-center !ml-0">
+      <Card className="min-w-[500px] border border-dashed max-w-2xl text-center !ml-0">
         <CardContent className="p-8 px-16">
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </CardContent>

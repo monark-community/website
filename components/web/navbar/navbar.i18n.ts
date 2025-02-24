@@ -1,6 +1,9 @@
 type NavbarLink = {
+  icon?: string;
   label: string;
   href: string;
+  // If true, the link is a folder route and has no associated page.
+  isFolderRoute?: boolean;
   items?: NavbarLink[];
 };
 
@@ -17,42 +20,94 @@ export const en: I18n = {
       {
         label: "Participate",
         href: "/participate",
+        isFolderRoute: true,
         items: [
-          { label: "Developer", href: "/participate/developer" },
-          { label: "Enthusiast", href: "/participate/enthusiast" },
-          { label: "Entrepreneur", href: "/participate/entrepreneur" },
-          { label: "University", href: "/participate/university" },
-          { label: "Student", href: "/participate/student" },
+          { label: "Developer", icon: "code", href: "/developer" },
+          { label: "Entrepreneur", icon: "lightbulb", href: "/entrepreneur" },
+          { label: "University", icon: "university", href: "/university" },
+          { label: "Student", icon: "graduation-cap", href: "/student" },
         ],
       },
       {
-        label: "Build",
-        href: "/build",
+        label: "Initiatives",
+        href: "/initiative",
+        isFolderRoute: true,
         items: [
-          { label: "Events", href: "/build/events" },
-          { label: "Modules", href: "/build/modules" },
-          { label: "Products", href: "/build/products" },
+          {
+            label: "Web3 Projects",
+            icon: "blocks",
+            href: "/project",
+            // items: [
+            //   { label: "Supply Chain Management", href: "/supply-chain" },
+            //   { label: "Ticketing", href: "/ticketing" },
+            //   { label: "Timesheet", href: "/timesheet" },
+            //   { label: "Vault", href: "/vault" },
+            // ],
+          },
+          { label: "Internships", icon: "book-marked", href: "/internship" },
+          {
+            label: "Student Blockchain Association",
+            icon: "users",
+            href: "/student-blockchain-association",
+          },
+          {
+            label: "Blockchain R&D",
+            icon: "test-tube-diagonal",
+            href: "/research",
+          },
+          {
+            label: "University Student Competitions",
+            icon: "medal",
+            href: "/university-competition",
+          },
+          { label: "Hackathons", icon: "binary", href: "/hackathon" },
+          {
+            label: "Meetups & Events",
+            icon: "calendar-plus",
+            href: "/meetup-and-event",
+          },
+        ],
+      },
+      {
+        label: "About",
+        href: "/about",
+        isFolderRoute: true,
+        items: [
+          { label: "What is Monark", icon: "info", href: "/monark" },
+          {
+            label: "Governance",
+            icon: "vote",
+            href: "/governance",
+            items: [
+              { label: "Governance Proposals", href: "/proposal" },
+              { label: "Governance Forum", href: "/forum" },
+            ],
+          },
+          {
+            label: "DAOs",
+            icon: "coins",
+            href: "/dao",
+            items: [
+              { label: "Monark DAOs", href: "/monark" },
+              { label: "Module DAOs", href: "/module" },
+            ],
+          },
         ],
       },
       {
         label: "Learn",
         href: "/learn",
+        isFolderRoute: true,
         items: [
-          { label: "Onboarding", href: "/learn/onboarding" },
-          { label: "Documentation", href: "/learn/docs" },
-          { label: "Guides", href: "/learn/guides" },
-          { label: "Roadmap", href: "/participate/roadmap" },
+          { label: "Docs", icon: "book-open", href: "/docs" },
+          { label: "News", icon: "newspaper", href: "/news" },
+          { label: "Video Series", icon: "square-play", href: "/video-series" },
+          { label: "Podcasts", icon: "podcast", href: "/podcasts" },
         ],
       },
       {
-        label: "Resources",
-        href: "/resources",
-        items: [
-          { label: "Administrative Documents", href: "/resources/admin-docs" },
-          { label: "Blog", href: "/resources/blog" },
-          { label: "Brand Assets", href: "/resources/brand-assets" },
-          { label: "FAQ", href: "/resources/faq" },
-        ],
+        label: "Roadmap",
+        href: "/roadmap",
       },
     ],
     sign_in: "Sign in with GitHub",
@@ -64,43 +119,98 @@ export const fr: I18n = {
     links: [
       {
         label: "Participer",
-        href: "/participer",
+        href: "/participate",
+        isFolderRoute: true,
         items: [
-          { label: "Développeur", href: "/participer/developpeur" },
-          { label: "Enthousiaste", href: "/participer/enthousiaste" },
-          { label: "Entrepreneur", href: "/participer/entrepreneur" },
-          { label: "Université", href: "/participer/universite" },
-          { label: "Étudiant", href: "/participer/etudiant" },
+          { label: "Développeur", icon: "code", href: "/developer" },
+          { label: "Entrepreneur", icon: "lightbulb", href: "/entrepreneur" },
+          { label: "Université", icon: "university", href: "/university" },
+          { label: "Étudiant", icon: "graduation-cap", href: "/student" },
         ],
       },
       {
-        label: "Construire",
-        href: "/construire",
+        label: "Initiatives",
+        href: "/initiative",
+        isFolderRoute: true,
         items: [
-          { label: "Événements", href: "/construire/evenements" },
-          { label: "Modules", href: "/construire/modules" },
-          { label: "Produits", href: "/construire/produits" },
+          {
+            label: "Projets Web3",
+            icon: "blocks",
+            href: "/project",
+            // items: [
+            //   { label: "Gestion de la chaîne d'approvisionnement", href: "/supply-chain" },
+            //   { label: "Billetterie", href: "/ticketing" },
+            //   { label: "Feuille de temps", href: "/timesheet" },
+            //   { label: "Coffre-fort", href: "/vault" },
+            // ],
+          },
+          { label: "Stages", icon: "book-marked", href: "/internship" },
+          {
+            label: "Association étudiante en blockchain",
+            icon: "users",
+            href: "/student-blockchain-association",
+          },
+          {
+            label: "R&D Blockchain",
+            icon: "test-tube-diagonal",
+            href: "/research",
+          },
+          {
+            label: "Compétitions universitaires étudiantes",
+            icon: "medal",
+            href: "/university-competition",
+          },
+          { label: "Hackathons", icon: "binary", href: "/hackathon" },
+          {
+            label: "Rencontres et événements",
+            icon: "calendar-plus",
+            href: "/meetup-and-event",
+          },
+        ],
+      },
+      {
+        label: "À propos",
+        href: "/about",
+        isFolderRoute: true,
+        items: [
+          { label: "Qu'est-ce que Monark", icon: "info", href: "/monark" },
+          {
+            label: "Gouvernance",
+            icon: "vote",
+            href: "/governance",
+            items: [
+              {
+                label: "Propositions de gouvernance",
+                href: "/proposal",
+              },
+              { label: "Forum de gouvernance", href: "/forum" },
+            ],
+          },
+          {
+            label: "DAOs",
+            icon: "coins",
+            href: "/dao",
+            items: [
+              { label: "Monark DAOs", href: "/monark" },
+              { label: "Module DAOs", href: "/module" },
+            ],
+          },
         ],
       },
       {
         label: "Apprendre",
-        href: "/apprendre",
+        href: "/learn",
+        isFolderRoute: true,
         items: [
-          { label: "Onboarding", href: "/apprendre/onboarding" },
-          { label: "Documentation", href: "/apprendre/docs" },
-          { label: "Guides", href: "/apprendre/guides" },
-          { label: "Feuille de route", href: "/participer/feuille-de-route" },
+          { label: "Docs", icon: "book-open", href: "/docs" },
+          { label: "Nouvelles", icon: "newspaper", href: "/news" },
+          { label: "Série vidéo", icon: "square-play", href: "/video-series" },
+          { label: "Podcasts", icon: "podcast", href: "/podcasts" },
         ],
       },
       {
-        label: "Ressources",
-        href: "/ressources",
-        items: [
-          { label: "Documents administratifs", href: "/ressources/docs-admin" },
-          { label: "Blog", href: "/ressources/blog" },
-          { label: "Actifs de marque", href: "/ressources/actifs-de-marque" },
-          { label: "FAQ", href: "/ressources/faq" },
-        ],
+        label: "Feuille de route",
+        href: "/roadmap",
       },
     ],
     sign_in: "Se connecter avec GitHub",

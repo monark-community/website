@@ -3,6 +3,7 @@ import { Locale } from "@/i18n.config";
 import * as i18n from "./hero-section.i18n";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { NavLink } from "@/components/shared/navlink/navlink";
 
 type Props = {
   locale: Locale;
@@ -28,7 +29,9 @@ function HeroSection({ locale }: Props) {
       </p>
       <div className="flex flex-col md:flex-row gap-4 mt-8 max-w-[350px]">
         <Button>{t.primary_action}</Button>
+        <NavLink href="/about/monark">
         <Button variant="outline">{t.secondary_action}</Button>
+        </NavLink>
       </div>
     </section>
   );

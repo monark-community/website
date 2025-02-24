@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
+import { NavLink } from "@/components/shared/navlink/navlink";
 
 type Props = {
   locale: Locale;
@@ -87,9 +88,11 @@ function Audience({ audience }: AudienceProps) {
         </CardDescription>
       </CardContent>
       <CardFooter>
-        <Button size="icon" variant="ghost" className="text-primary">
-          <ArrowRightIcon />
-        </Button>
+        <NavLink href={audience.href}>
+          <Button size="icon" variant="ghost" className="text-primary">
+            <ArrowRightIcon />
+          </Button>
+        </NavLink>
       </CardFooter>
     </BrandedCard>
   );
