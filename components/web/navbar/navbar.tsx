@@ -40,7 +40,6 @@ import {
 } from "lucide-react";
 import Logo from "@/components/shared/logo/logo";
 import { Button } from "@/components/ui/button";
-import { on } from "events";
 
 type Props = {
   locale: Locale;
