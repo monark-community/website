@@ -18,7 +18,7 @@ const NotFoundClientWrapper = () => {
 
   return (
     <StandardLayout locale={locale}>
-      <div className="flex flex-col md:flex-row gap-16 items-center max-w-[1440px] mx-auto my-12">
+      <div className="flex flex-col md:flex-row gap-16 items-center max-w-[144 0px] mx-auto my-12">
         <div>
           <h1 className="text-headline text-primary">404</h1>
           <h2 className="mt-4 max-w-[700px]">{t.title}</h2>
