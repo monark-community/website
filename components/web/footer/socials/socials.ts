@@ -12,7 +12,7 @@ const SOCIALS: Array<Social> = [
     // },
     {
         id: "github",
-        name: "Github",
+        name: "GitHub",
         url: "https://github.com/monark-community",
     },
     {
