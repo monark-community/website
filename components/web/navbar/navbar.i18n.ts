@@ -53,7 +53,7 @@ export const en: I18n = {
           {
             label: "Blockchain R&D",
             icon: "test-tube-diagonal",
-            href: "/research",
+            href: "/blockchain-research",
           },
           {
             label: "University Student Competitions",
@@ -157,7 +157,7 @@ export const fr: I18n = {
           {
             label: "R&D Blockchain",
             icon: "test-tube-diagonal",
-            href: "/research",
+            href: "/blockchain-research",
           },
           {
             label: "Compétitions universitaires étudiantes",
