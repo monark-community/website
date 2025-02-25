@@ -39,9 +39,9 @@ export const fr: I18n = {
     },
   },
   fun_facts: [
-    "✨ Fait intéressant sur le monarque: ils peuvent parcourir plus de 100 miles en un seul jour, avec les bonnes conditions !",
-    "🦋 Fait intéressant sur le monarque: ils volent souvent à des altitudes où nous ne pouvons même pas les voir du sol, à 800 à 1 200 pieds de hauteur !",
-    "🌍 Fait intéressant sur le monarque: ils ne migrent qu'une seule fois. Leur courte durée de vie signifie qu'ils ne peuvent migrer qu'une seule fois (vers le nord ou le sud) dans leur vie.",
-    "🫂 Fait intéressant sur le monarque: La plupart de ce que nous savons sur les monarques provient de la science communautaire !",
+    "✨ Fait intéressant sur les monarques: ils peuvent parcourir plus de 100 miles en un seul jour, avec les bonnes conditions !",
+    "🦋 Fait intéressant sur les monarques: ils volent souvent à des altitudes où nous ne pouvons même pas les voir du sol, à 800 à 1 200 pieds de hauteur !",
+    "🌍 Fait intéressant sur les monarques: ils ne migrent qu'une seule fois. Leur courte durée de vie signifie qu'ils ne peuvent migrer qu'une seule fois (vers le nord ou le sud) dans leur vie.",
+    "🫂 Fait intéressant sur les monarques: La plupart de ce que nous savons sur les monarques provient de la science communautaire !",
   ],
 };
