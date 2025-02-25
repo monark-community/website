@@ -19,6 +19,11 @@ import { ChevronRight, LogInIcon } from "lucide-react";
 import Logo from "@/components/shared/logo/logo";
 import { Button } from "@/components/ui/button";
 import NavbarIcon from "./navbar-icon";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 type Props = {
   locale: Locale;
@@ -133,12 +138,17 @@ const NavbarDesktop = ({ locale }: Props) => {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <NavLink href="/error/501">
-          <Button>
-            <LogInIcon />
-            &nbsp;{t.sign_in}
-          </Button>
-        </NavLink>
+        {/* <NavLink href="/error/501"> */}
+        <Tooltip>
+          <TooltipContent>{t.soon}</TooltipContent>
+          <TooltipTrigger>
+            <Button disabled>
+              <LogInIcon />
+              &nbsp;{t.sign_in}
+            </Button>
+          </TooltipTrigger>
+        </Tooltip>
+        {/* </NavLink> */}
       </div>
     </nav>
   );

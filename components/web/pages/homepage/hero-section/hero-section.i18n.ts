@@ -3,6 +3,7 @@ export interface I18n {
     flavor: string;
     headline: string;
     context: string;
+    soon?: string;
     primary_action: string;
     secondary_action: string;
   };
@@ -14,6 +15,7 @@ export const en: I18n = {
     headline: "Bridging Digital & Physical Worlds with Open Data",
     context:
       "We connect communities, developers, and local entities, by creating an accessible, efficient ecosystem where innovation thrives.",
+    soon: "Coming Soon",
     primary_action: "Join the Movement",
     secondary_action: "What is Monark?",
   },
@@ -26,6 +28,7 @@ export const fr: I18n = {
       "Relier les mondes numérique et physique avec des données ouvertes",
     context:
       "Nous connectons les communautés, les développeurs et les entités locales, en créant un écosystème accessible et efficace où l'innovation prospère.",
+    soon: "Bientôt disponible",
     primary_action: "Rejoignez le mouvement",
     secondary_action: "Qu'est-ce que Monark?",
   },

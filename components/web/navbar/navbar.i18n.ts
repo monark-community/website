@@ -9,6 +9,7 @@ export type NavbarLink = {
 
 export interface I18n {
   navbar: {
+    soon: string;
     links: NavbarLink[];
     sign_in: string;
   };
@@ -16,6 +17,7 @@ export interface I18n {
 
 export const en: I18n = {
   navbar: {
+    soon: "Coming soon",
     links: [
       {
         label: "Participate",
@@ -120,6 +122,7 @@ export const en: I18n = {
 
 export const fr: I18n = {
   navbar: {
+    soon: "Bientôt disponible",
     links: [
       {
         label: "Participer",

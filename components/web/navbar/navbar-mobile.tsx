@@ -17,6 +17,11 @@ import NavbarIcon from "./navbar-icon";
 import LocaleToggle from "@/components/shared/locale-toggle/locale-toggle";
 import { ThemeToggle } from "@/components/shared/theme-toggle/theme-toggle.component";
 import SocialLinks from "../footer/socials/social-links";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 type Props = {
   locale: Locale;
@@ -75,16 +80,22 @@ const NavbarMobile = ({ locale }: Props) => {
       >
         <div className="p-4 flex flex-col justify-between h-full pb-12">
           <div>
-            <NavLink
+            {/* <NavLink
               href="/error/501"
               className="mb-4 block"
               onClick={handleLinkClick}
-            >
-              <Button className="w-full">
-                <LogInIcon />
-                &nbsp;{t.sign_in}
-              </Button>
-            </NavLink>
+            > */}
+            <Tooltip>
+              <TooltipContent>{t.soon}</TooltipContent>
+              <TooltipTrigger className="w-full">
+                <Button className="w-full" disabled>
+                  <LogInIcon />
+                  &nbsp;{t.sign_in}
+                </Button>
+              </TooltipTrigger>
+            </Tooltip>
+
+            {/* </NavLink> */}
             <Accordion type="single" collapsible>
               {t.links.map((link) => {
                 const nestedLink = appendParentRoutes(link);
