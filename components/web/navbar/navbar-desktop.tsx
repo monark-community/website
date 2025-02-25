@@ -133,7 +133,7 @@ const NavbarDesktop = ({ locale }: Props) => {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <NavLink href="/login">
+        <NavLink href="/error/501">
           <Button>
             <GithubIcon />
             &nbsp;{t.sign_in}

@@ -76,7 +76,7 @@ const NavbarMobile = ({ locale }: Props) => {
         <div className="p-4 flex flex-col justify-between h-full pb-12">
           <div>
             <NavLink
-              href="/login"
+              href="/error/501"
               className="mb-4 block"
               onClick={handleLinkClick}
             >

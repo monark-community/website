@@ -1,15 +1,8 @@
-import NotFoundClientWrapper from "@/components/shared/error/not-found/not-found-client-wrapper";
-import { NextPage, Viewport } from "next";
+import { redirect } from "next/navigation";
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: true,
-};
-
-const NotFound: NextPage = () => {
-  return <NotFoundClientWrapper />;
+const NotFound = () => {
+  redirect("/error/404");
+  return null;
 };
 
 export default NotFound;

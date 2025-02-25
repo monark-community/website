@@ -28,7 +28,7 @@ function HeroSection({ locale }: Props) {
         {t.context}
       </p>
       <div className="flex flex-col md:flex-row gap-4 mt-8 max-w-[350px]">
-        <NavLink href="/login">
+        <NavLink href="/error/501">
           <Button>{t.primary_action}</Button>
         </NavLink>
         <NavLink href="/about/monark">
