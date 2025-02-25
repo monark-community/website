@@ -17,7 +17,7 @@ export const en: I18n = {
   content_1: {
     description: "Get back on track",
     actions: {
-      home: "🏠 Return to the homepage",
+      home: "Return to the homepage",
     },
   },
   fun_facts: [
@@ -35,7 +35,7 @@ export const fr: I18n = {
   content_1: {
     description: "Remettez-vous sur la bonne voie",
     actions: {
-      home: "🏠 Retourner à la page d'accueil",
+      home: "Retourner à la page d'accueil",
     },
   },
   fun_facts: [

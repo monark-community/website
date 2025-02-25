@@ -6,6 +6,7 @@ import * as i18n from "./not-found.i18n";
 import { NavLink } from "../../navlink/navlink";
 import StandardLayout from "@/components/web/web.layout";
 import { useMemo } from "react";
+import { HomeIcon } from "lucide-react";
 
 const NotFoundClientWrapper = () => {
   const locale = usePathname().split("/")[1] as Locale;
@@ -29,7 +30,10 @@ const NotFoundClientWrapper = () => {
             <div className="my-8">
               <h3>{t.content_1.description}</h3>
               <Button asChild className="mt-4 w-fit">
-                <NavLink href="/">{t.content_1.actions.home}</NavLink>
+                <NavLink href="/">
+                  <HomeIcon />
+                  &nbsp;{t.content_1.actions.home}
+                </NavLink>
               </Button>
             </div>
             <p className="mt-8 text-sm text-muted-foreground">{randomFact}</p>
