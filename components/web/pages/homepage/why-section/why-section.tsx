@@ -80,7 +80,7 @@ function Audience({ audience }: AudienceProps) {
   return (
     <BrandedCard className="relative text-left">
       <CardHeader className="pt-16">
-        <CardTitle className="uppercase">{audience.title}</CardTitle>
+        <CardTitle>{audience.title}</CardTitle>
       </CardHeader>
       <CardContent>
         <CardDescription className="text-lg">

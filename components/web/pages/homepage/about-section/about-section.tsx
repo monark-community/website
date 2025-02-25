@@ -51,7 +51,7 @@ function Activity({ activity }: ActivityProps) {
       </div>
       <div className="relative z-1">
         <CardHeader className="lg:pt-36">
-          <CardTitle className="text-4xl uppercase">{activity.title}</CardTitle>
+          <CardTitle className="text-4xl">{activity.title}</CardTitle>
         </CardHeader>
         <CardContent>
           <CardDescription className="max-w-[300px] text-lg">
