@@ -13,7 +13,7 @@ export interface I18n {
 export const en: I18n = {
   title: "Lost in the Decentralized Wilderness?",
   subtitle:
-    "This page has fluttered away 🦋 — just like a monarch on its migration journey. But don't worry, in a strong community, no one gets lost for long!",
+    "This page has fluttered away 🦋 — But don't worry, in a strong community, no one gets lost for long!",
   content_1: {
     description: "Get back on track",
     actions: {
@@ -31,7 +31,7 @@ export const en: I18n = {
 export const fr: I18n = {
   title: "Perdu dans la nature décentralisée ?",
   subtitle:
-    "Cette page s'est envolée 🦋 — tout comme un monarque lors de sa migration. Mais ne vous inquiétez pas, dans une communauté forte, personne ne se perd longtemps !",
+    "Cette page s'est envolée 🦋 — Mais ne vous inquiétez pas, dans une communauté forte, personne ne se perd longtemps !",
   content_1: {
     description: "Remettez-vous sur la bonne voie",
     actions: {
