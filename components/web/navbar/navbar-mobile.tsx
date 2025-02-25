@@ -73,7 +73,7 @@ const NavbarMobile = ({ locale }: Props) => {
           isOpen ? "translate-x-0" : "translate-x-full"
         } w-full h-[calc(100%-72px)] z-40 lg:hidden`}
       >
-        <div className="p-4 flex flex-col justify-between h-full">
+        <div className="p-4 flex flex-col justify-between h-full pb-12">
           <div>
             <NavLink
               href="/login"
