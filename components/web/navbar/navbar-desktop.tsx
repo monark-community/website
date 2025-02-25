@@ -15,83 +15,19 @@ import {
 import * as i18n from "./navbar.i18n";
 import { NavLink } from "@/components/shared/navlink/navlink";
 import { Locale } from "@/i18n.config";
-import {
-  BinaryIcon,
-  BlocksIcon,
-  BookMarkedIcon,
-  BookOpenIcon,
-  CalendarPlus,
-  CodeIcon,
-  CoinsIcon,
-  GithubIcon,
-  GraduationCapIcon,
-  InfoIcon,
-  LightbulbIcon,
-  LucideProps,
-  MedalIcon,
-  NewspaperIcon,
-  PlaySquareIcon,
-  PodcastIcon,
-  TestTubeDiagonalIcon,
-  UniversityIcon,
-  UsersIcon,
-  VoteIcon,
-  ChevronRight,
-} from "lucide-react";
+import { GithubIcon, ChevronRight } from "lucide-react";
 import Logo from "@/components/shared/logo/logo";
 import { Button } from "@/components/ui/button";
+import NavbarIcon from "./navbar-icon";
 
 type Props = {
   locale: Locale;
 };
 
-const iconMap: Record<
-  string,
-  React.ForwardRefExoticComponent<
-    Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
-  >
-> = {
-  code: CodeIcon,
-  lightbulb: LightbulbIcon,
-  university: UniversityIcon,
-  "graduation-cap": GraduationCapIcon,
-  blocks: BlocksIcon,
-  "book-marked": BookMarkedIcon,
-  users: UsersIcon,
-  "test-tube-diagonal": TestTubeDiagonalIcon,
-  medal: MedalIcon,
-  binary: BinaryIcon,
-  "calendar-plus": CalendarPlus,
-  info: InfoIcon,
-  vote: VoteIcon,
-  coins: CoinsIcon,
-  "book-open": BookOpenIcon,
-  newspaper: NewspaperIcon,
-  "square-play": PlaySquareIcon,
-  podcast: PodcastIcon,
-};
-
-type NavbarLink = {
-  icon?: string;
-  label: string;
-  href: string;
-  isFolderRoute?: boolean;
-  items?: NavbarLink[];
-};
-
-const LinkIcon = ({ icon }: { icon: string; className?: string }) => {
-  const Icon = iconMap[icon];
-  return (
-    <div className="bg-card min-h-12 min-w-12 max-h-12 max-w-12 flex justify-center items-center rounded-md mr-4">
-      <Icon height={24} width={24} />
-    </div>
-  );
-};
-
 const appendParentRoutes = (
-  link: NavbarLink,
+  link: i18n.NavbarLink,
   parentHref: string = ""
-): NavbarLink => {
+): i18n.NavbarLink => {
   const newHref = `${parentHref}${link.href}`;
   return {
     ...link,
@@ -100,14 +36,14 @@ const appendParentRoutes = (
   };
 };
 
-const Navbar = ({ locale }: Props) => {
+const NavbarDesktop = ({ locale }: Props) => {
   const t = i18n[locale].navbar;
   const [hoveredSubItem, setHoveredSubItem] = React.useState<string | null>(
     null
   );
   return (
     <nav
-      className={`z-50 fixed bg-background border border-t-0 border-l-0 border-r-0 border-b-primary w-full`}
+      className={`hidden lg:block z-50 fixed bg-background border border-t-0 border-l-0 border-r-0 border-b-primary w-full`}
     >
       <div className="max-w-[1440px] mx-auto flex justify-between items-center p-4">
         <div className="flex items-center space-x-6">
@@ -142,6 +78,7 @@ const Navbar = ({ locale }: Props) => {
                                   title={item.label}
                                   icon={item.icon}
                                   items={item.items}
+                                  isFolderRoute={item.isFolderRoute}
                                   hovered={hoveredSubItem === item.label}
                                   onHoverChange={(hovered) => {
                                     setHoveredSubItem(
@@ -212,7 +149,8 @@ const ListItem = React.forwardRef<
   React.ComponentPropsWithoutRef<"a"> & {
     title: string;
     icon?: string;
-    items?: NavbarLink[];
+    items?: i18n.NavbarLink[];
+    isFolderRoute?: boolean;
     hovered?: boolean;
     onHoverChange: (hovered: boolean) => void;
   }
@@ -223,6 +161,7 @@ const ListItem = React.forwardRef<
       title,
       icon,
       items,
+      isFolderRoute,
       children,
       hovered,
       onHoverChange,
@@ -232,21 +171,38 @@ const ListItem = React.forwardRef<
   ) => {
     return (
       <li onMouseEnter={() => onHoverChange(true)}>
-        <NavLink
-          href={props.href as string}
-          ref={ref}
-          className={cn(
-            "flex items-center select-none space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-primary/5 hover:text-primary focus:bg-primary focus:text-primary-foreground",
-            className
-          )}
-        >
-          {icon && <LinkIcon icon={icon} />}
-          <div className="text-sm font-medium">{title}</div>
-          {items && <ChevronRight className="ml-auto" />}
-          <p className="line-clamp-2 text-sm text-muted-foreground">
-            {children}
-          </p>
-        </NavLink>
+        {isFolderRoute ? (
+          <div
+            ref={ref}
+            className={cn(
+              "flex items-center select-none space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-primary/5 hover:text-primary focus:bg-primary focus:text-primary-foreground",
+              className
+            )}
+          >
+            {icon && <NavbarIcon icon={icon} />}
+            <div className="text-sm font-medium">{title}</div>
+            {items && <ChevronRight className="ml-auto" />}
+            <p className="line-clamp-2 text-sm text-muted-foreground">
+              {children}
+            </p>
+          </div>
+        ) : (
+          <NavLink
+            href={props.href as string}
+            ref={ref}
+            className={cn(
+              "flex items-center select-none space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-primary/5 hover:text-primary focus:bg-primary focus:text-primary-foreground",
+              className
+            )}
+          >
+            {icon && <NavbarIcon icon={icon} />}
+            <div className="text-sm font-medium">{title}</div>
+            {items && <ChevronRight className="ml-auto" />}
+            <p className="line-clamp-2 text-sm text-muted-foreground">
+              {children}
+            </p>
+          </NavLink>
+        )}
         {hovered && items && (
           <ul className="absolute left-full top-0 mt-2 ml-2 w-[200px] bg-white shadow-lg rounded-md">
             {items.map((item) => (
@@ -267,4 +223,4 @@ const ListItem = React.forwardRef<
 );
 ListItem.displayName = "ListItem";
 
-export default Navbar;
+export default NavbarDesktop;

@@ -1,4 +1,4 @@
-type NavbarLink = {
+export type NavbarLink = {
   icon?: string;
   label: string;
   href: string;
@@ -76,18 +76,20 @@ export const en: I18n = {
           { label: "What is Monark", icon: "info", href: "/monark" },
           {
             label: "Governance",
-            icon: "vote",
             href: "/governance",
+            isFolderRoute: true,
             items: [
+              { label: "About Governance", icon: "vote", href: "/" },
               { label: "Governance Proposals", href: "/proposal" },
               { label: "Governance Forum", href: "/forum" },
             ],
           },
           {
             label: "DAOs",
-            icon: "coins",
             href: "/dao",
+            isFolderRoute: true,
             items: [
+              { label: "About DAOs", icon: "coins", href: "/" },
               { label: "Monark DAOs", href: "/monark" },
               { label: "Module DAOs", href: "/module" },
             ],
@@ -176,9 +178,11 @@ export const fr: I18n = {
           { label: "Qu'est-ce que Monark", icon: "info", href: "/monark" },
           {
             label: "Gouvernance",
-            icon: "vote",
             href: "/governance",
+            icon: "vote",
+            isFolderRoute: true,
             items: [
+              { label: "À propos de la gouvernance", href: "/" },
               {
                 label: "Propositions de gouvernance",
                 href: "/proposal",
@@ -188,9 +192,11 @@ export const fr: I18n = {
           },
           {
             label: "DAOs",
-            icon: "coins",
             href: "/dao",
+            icon: "coins",
+            isFolderRoute: true,
             items: [
+              { label: "À propos des DAOs", href: "/" },
               { label: "Monark DAOs", href: "/monark" },
               { label: "Module DAOs", href: "/module" },
             ],
