@@ -77,9 +77,10 @@ export const en: I18n = {
           {
             label: "Governance",
             href: "/governance",
+            icon: "vote",
             isFolderRoute: true,
             items: [
-              { label: "About Governance", icon: "vote", href: "/" },
+              { label: "About Governance", href: "/" },
               { label: "Governance Proposals", href: "/proposal" },
               { label: "Governance Forum", href: "/forum" },
             ],
@@ -87,9 +88,10 @@ export const en: I18n = {
           {
             label: "DAOs",
             href: "/dao",
+            icon: "coins",
             isFolderRoute: true,
             items: [
-              { label: "About DAOs", icon: "coins", href: "/" },
+              { label: "About DAOs", href: "/" },
               { label: "Monark DAOs", href: "/monark" },
               { label: "Module DAOs", href: "/module" },
             ],

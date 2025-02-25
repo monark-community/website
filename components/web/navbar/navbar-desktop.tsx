@@ -173,7 +173,6 @@ const ListItem = React.forwardRef<
       <li onMouseEnter={() => onHoverChange(true)}>
         {isFolderRoute ? (
           <div
-            ref={ref}
             className={cn(
               "flex items-center select-none space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-primary/5 hover:text-primary focus:bg-primary focus:text-primary-foreground",
               className
