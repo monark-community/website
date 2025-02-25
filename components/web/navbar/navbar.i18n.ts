@@ -114,7 +114,7 @@ export const en: I18n = {
         href: "/roadmap",
       },
     ],
-    sign_in: "Sign in with GitHub",
+    sign_in: "Sign in",
   },
 };
 
@@ -221,6 +221,6 @@ export const fr: I18n = {
         href: "/roadmap",
       },
     ],
-    sign_in: "Se connecter avec GitHub",
+    sign_in: "Connexion",
   },
 };

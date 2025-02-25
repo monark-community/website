@@ -15,7 +15,7 @@ import {
 import * as i18n from "./navbar.i18n";
 import { NavLink } from "@/components/shared/navlink/navlink";
 import { Locale } from "@/i18n.config";
-import { GithubIcon, ChevronRight } from "lucide-react";
+import { ChevronRight, LogInIcon } from "lucide-react";
 import Logo from "@/components/shared/logo/logo";
 import { Button } from "@/components/ui/button";
 import NavbarIcon from "./navbar-icon";
@@ -135,7 +135,7 @@ const NavbarDesktop = ({ locale }: Props) => {
         </div>
         <NavLink href="/error/501">
           <Button>
-            <GithubIcon />
+            <LogInIcon />
             &nbsp;{t.sign_in}
           </Button>
         </NavLink>

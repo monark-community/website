@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/shared/navlink/navlink";
 import { Locale } from "@/i18n.config";
 import * as i18n from "./navbar.i18n";
-import { Menu, X } from "lucide-react";
+import { LogInIcon, Menu, X } from "lucide-react";
 import Logo from "@/components/shared/logo/logo";
 import NavbarIcon from "./navbar-icon";
 import LocaleToggle from "@/components/shared/locale-toggle/locale-toggle";
@@ -80,7 +80,10 @@ const NavbarMobile = ({ locale }: Props) => {
               className="mb-4 block"
               onClick={handleLinkClick}
             >
-              <Button className="w-full">{t.sign_in}</Button>
+              <Button className="w-full">
+                <LogInIcon />
+                &nbsp;{t.sign_in}
+              </Button>
             </NavLink>
             <Accordion type="single" collapsible>
               {t.links.map((link) => {
