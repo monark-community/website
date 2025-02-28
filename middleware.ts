@@ -7,6 +7,7 @@ acceptLanguage.languages(Array.from(locales));
 
 export default function middleware(req: NextRequest) {
   const pathname = req.nextUrl.pathname;
+  const searchParams = req.nextUrl.search; // Get search parameters
 
   // Check if there is any supported locale in the pathname
   const locale = getLocale(req);
@@ -19,7 +20,9 @@ export default function middleware(req: NextRequest) {
     const newPathname = pathnameLocale
       ? pathname.replace(`/${pathnameLocale}`, `/${newLocale}`)
       : `/${newLocale}${pathname}`;
-    const response = NextResponse.redirect(new URL(newPathname, req.url));
+    const response = NextResponse.redirect(
+      new URL(newPathname + searchParams, req.url)
+    ); // Append search parameters
     response.cookies.set("NEXT_LOCALE", newLocale);
     return response;
   } else {

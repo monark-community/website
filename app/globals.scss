@@ -162,15 +162,36 @@ hr {
   margin: 3rem 0;
 }
 
-p {
-  @apply text-base;
-  margin: 1rem 0;
-  color: hsl(var(--muted-foreground));
-}
-
 article {
-  h1,h2,h3,h4,h5,h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin: 1.5rem 0 0.5rem 0;
+  }
+  p {
+    @apply text-base;
+    margin: 1rem 0;
+    color: hsl(var(--muted-foreground));
+  }
+  ul {
+    @apply text-base;
+    list-style-type: disc;
+    color: hsl(var(--muted-foreground));
+    margin: 1rem;
+    padding-left: 1.5rem;
+    li {
+      margin: 0.5rem 0;
+    }
+  }
+  a {
+    color: hsl(var(--primary));
+    text-decoration: underline;
+    &:hover {
+      color: hsl(var(--primary-foreground));
+    }
   }
 }
 

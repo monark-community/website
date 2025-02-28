@@ -37,8 +37,7 @@ export const en: I18n = {
     intro:
       "Monark, recently founded by visionary entrepreneur Vincent Grenier, establishes itself as the new leader in developing and supporting university projects in decentralized technologies. Building on experience gained through successful collaborations with higher education institutions, Monark now positions itself as a privileged partner for students and researchers working on blockchain innovations.",
     expertiseTitle: "Proven Expertise",
-    expertiseContent:
-      "Monark's expertise has been forged through the resounding success of a collaborative project between the University of Sherbrooke, EOS Nation, and Vincent Grenier himself. This project, which resulted in the design of a revolutionary decentralized accounting system, perfectly illustrates Monark's ability to bridge the gap between academia and industry.",
+    expertiseContent: `Monark's expertise has been forged through the resounding success of a collaborative project between the University of Sherbrooke, EOS Nation, and Vincent Grenier himself. This project, which resulted in the design of a revolutionary decentralized accounting system, <a href="https://www.usherbrooke.ca/actualites/nouvelles/sciences-innovations-technologiques/details/42749" target="_blank">CryptoSys</a>, perfectly illustrates Monark's ability to bridge the gap between academia and industry.`,
     expertiseQuote:
       '"Our collaboration with the University of Sherbrooke demonstrated the immense potential that lies in university-business partnerships," explains Vincent Grenier, founder and CEO of Monark. "We observed how students, when guided by industry professionals, can develop innovative solutions that address real market needs."',
     methodologyTitle: "A Unique Support Methodology",
@@ -68,7 +67,7 @@ export const en: I18n = {
       "With its solid background and clear vision, Monark is undeniably in an excellent position to lead the next wave of innovation in decentralized accounting. By capitalizing on the success of past collaborations, such as the one with the University of Sherbrooke, Vincent Grenier's company is ready to redefine the standards for supporting university projects in the field of decentralized technologies.",
     contactInfo:
       "For more information about Monark's university partnership programs, contact our team at contact@monark.io.",
-    shareTitle: "Share this article:",
+    shareTitle: "Share this article",
   },
 };
 
@@ -82,8 +81,7 @@ export const fr: I18n = {
     intro:
       "La société Monark, récemment fondée par l'entrepreneur visionnaire Vincent Grenier, s'affirme comme le nouveau chef de file dans le développement et l'accompagnement de projets universitaires en technologies décentralisées. Tirant parti de l'expérience acquise lors de collaborations fructueuses avec des établissements d'enseignement supérieur, Monark se positionne aujourd'hui comme un partenaire privilégié pour les étudiants et chercheurs travaillant sur des innovations blockchain.",
     expertiseTitle: "Une expertise éprouvée",
-    expertiseContent:
-      "L'expertise de Monark s'est forgée notamment à travers le succès retentissant d'un projet collaboratif entre l'Université de Sherbrooke, EOS Nation et Vincent Grenier lui-même. Ce projet, qui a permis de concevoir un système de comptabilité décentralisé révolutionnaire, illustre parfaitement la capacité de Monark à créer des ponts entre le monde académique et l'industrie.",
+    expertiseContent: `L'expertise de Monark s'est forgée notamment à travers le succès retentissant d'un projet collaboratif entre l'Université de Sherbrooke, EOS Nation et Vincent Grenier lui-même. Ce projet, qui a permis de concevoir un système de comptabilité décentralisé révolutionnaire, <a href="https://www.usherbrooke.ca/actualites/nouvelles/sciences-innovations-technologiques/details/42749" target="_blank">CryptoSys</a>, illustre parfaitement la capacité de Monark à créer des ponts entre le monde académique et l'industrie.`,
     expertiseQuote:
       '"Notre collaboration avec l\'Université de Sherbrooke a démontré l\'immense potentiel qui réside dans les partenariats université-entreprise," explique Vincent Grenier, fondateur et PDG de Monark. "Nous avons pu observer comment les étudiants, lorsqu\'ils sont guidés par des professionnels du secteur, peuvent développer des solutions innovantes qui répondent à de véritables besoins du marché."',
     methodologyTitle: "Une méthodologie d'accompagnement unique",
@@ -112,7 +110,7 @@ export const fr: I18n = {
     conclusion:
       "Avec ses antécédents solides et sa vision claire, Monark est indéniablement en excellente position pour mener la prochaine vague d'innovation en matière de comptabilité décentralisée. En capitalisant sur le succès des collaborations passées, comme celle avec l'Université de Sherbrooke, l'entreprise de Vincent Grenier est prête à redéfinir les standards de l'accompagnement de projets universitaires dans le domaine des technologies décentralisées.",
     contactInfo:
-      "Pour plus d'informations sur les programmes de partenariat universitaire de Monark, contactez notre équipe à contact@monark.io.",
-    shareTitle: "Partagez cet article :",
+      `Pour plus d'informations sur les programmes de partenariat universitaire de Monark, contactez notre équipe à <a href="mailto:contact@monark.io">contact@monark.io</a>.`,
+    shareTitle: "Partagez cet article",
   },
 };

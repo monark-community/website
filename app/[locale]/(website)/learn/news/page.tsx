@@ -19,26 +19,29 @@ export default async function NewsPage({ params }: { params: Params }) {
   const t = i18n[locale].news_page;
   return (
     <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-3xl font-bold mb-6">{t.title}</h1>
-      <p className="text-lg mb-8">{t.description}</p>
+      <h1 className="mb-6">{t.title}</h1>
+      <p className="text-lg mb-8 max-w-[450px]">{t.description}</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {t.news.map((article) => (
-          <div key={article.id}>
-            <Card>
+          <div key={article.id} className="flex flex-col">
+            <Card className="flex flex-col flex-grow">
               <CardHeader>
                 <Image
                   src={`/${locale}/images/news/${article.image}`}
                   alt={article.title}
-                  className="w-full h-48 object-cover rounded-t-xl"
+                  className="w-full h-48 object-cover rounded-t-xl mb-4"
                   width={64}
                   height={64}
                 />
-                <CardTitle className="text-xl mt-4">{article.title}</CardTitle>
+                <CardTitle className="text-xl">{article.title}</CardTitle>
+                <CardDescription>
+                  {article.date.toLocaleDateString()}
+                </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex flex-col flex-grow">
                 <CardDescription>{article.summary}</CardDescription>
-                <Link href={`/learn/news/${article.id}`}>
-                  <Button>{t.read_more}</Button>
+                <Link href={`/learn/news/${article.id}`} className="mt-auto">
+                  <Button className="mt-4">{t.read_more}</Button>
                 </Link>
               </CardContent>
             </Card>

@@ -33,7 +33,9 @@ export default async function Article({ params }: { params: Params }) {
           <p>{t.intro}</p>
 
           <h3>{t.expertiseTitle}</h3>
-          <p>{t.expertiseContent}</p>
+          <p>
+            <div dangerouslySetInnerHTML={{ __html: t.expertiseContent }}></div>
+          </p>
           <blockquote>{t.expertiseQuote}</blockquote>
 
           <h3>{t.methodologyTitle}</h3>
@@ -59,11 +61,14 @@ export default async function Article({ params }: { params: Params }) {
           <hr />
 
           <p>{t.conclusion}</p>
-          <p>{t.contactInfo}</p>
+
+          <p>
+            <div dangerouslySetInnerHTML={{ __html: t.contactInfo }}></div>
+          </p>
           <div className="mt-8">
             <h3>{t.shareTitle}</h3>
             <div className="flex gap-2">
-              {SOCIALS.filter(social => social.shareUrl).map((social) => (
+              {SOCIALS.filter((social) => social.shareUrl).map((social) => (
                 <a
                   key={social.id}
                   href={`${social.shareUrl}${encodeURIComponent(articleUrl)}`}

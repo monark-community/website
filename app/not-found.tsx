@@ -1,7 +1,11 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { redirect } from "next/navigation";
 
 const NotFound = () => {
-  redirect("/error/404");
+  const pathname = usePathname();
+  redirect(`/error/404?route=${encodeURIComponent(pathname)}`);
   return null;
 };
 
