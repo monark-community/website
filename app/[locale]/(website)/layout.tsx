@@ -1,6 +1,6 @@
 import React from "react";
 import { defaultLocale, Locale } from "@/i18n.config";
-import { RoadmapLayout } from "@/components/web/web.layout";
+import WebLayout from "@/components/web/web.layout";
 import { cookies } from "next/headers";
 
 type Props = {
@@ -12,9 +12,9 @@ async function Layout({ children }: Props) {
   const locale = (cookieStore.get("NEXT_LOCALE")?.value ||
     defaultLocale) as Locale;
   return (
-    <RoadmapLayout locale={locale}>
+    <WebLayout locale={locale}>
       {children}
-    </RoadmapLayout>
+    </WebLayout>
   );
 }
 

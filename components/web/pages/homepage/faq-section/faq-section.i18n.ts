@@ -45,7 +45,7 @@ export const en: I18n = {
       {
         question: "Is Monark an open-source platform?",
         answer: `
-        <p>Yes! Monark is an open-source platform. We believe in transparency, collaboration, and accessibility. Our code is available on <strong><a href="https://github.com/monark-community" target="_blank">Github></a></strong> for everyone to contribute and use.</p>
+        <p>Yes! Monark is an open-source platform. We believe in transparency, collaboration, and accessibility. Our code is available on <strong><a href="https://github.com/monark-community" target="_blank">Github</a></strong> for everyone to contribute and use.</p>
         `,
       },
       {
@@ -76,7 +76,7 @@ export const en: I18n = {
         <li><strong>Module Token Holders:</strong> Developers and contributors creating and maintaining modules on the platform receive a share of fees, encouraging ongoing innovation.</li>
         <li><strong>Local DAOs:</strong> A percentage is distributed to local Decentralized Autonomous Organizations, enabling cities to manage and allocate resources according to their specific needs.</li>
         <li><strong>Referral System:</strong> Users contributing to growth through referrals receive a share of fees, incentivizing community expansion.</li>
-        <li><strong>Yield Rewards:</strong> A small portion is directed towards yield-generating activities, such as staking rewards or liquidity incentives within the Monark ecosystem.</li>
+        <li><strong>Yield Rewards:</strong> 5% is directed towards yield-generating activities, such as staking rewards or liquidity incentives within the Monark ecosystem.</li>
         <li><strong>Token Burn:</strong> 5% of collected fees are permanently destroyed (burned), reducing the overall supply and potentially increasing token value over time.</li>
       </ul>
       <p>This structure aims to ensure a fair and sustainable ecosystem, rewarding contributors while maintaining the platform's economic integrity.</p>
@@ -230,7 +230,7 @@ export const fr: I18n = {
         <li><strong>Détenteurs de tokens Module</strong> : Les développeurs et contributeurs qui créent et maintiennent des modules sur la plateforme reçoivent une part des frais, encourageant ainsi l'innovation continue.</li>
         <li><strong>DAOs des villes locales</strong> : Un pourcentage est distribué aux Organisations Autonomes Décentralisées locales, permettant aux villes de gérer et d'allouer des ressources selon leurs besoins spécifiques.</li>
         <li><strong>Système de parrainage</strong> : Les utilisateurs qui contribuent à la croissance via des parrainages reçoivent une part des frais, ce qui incite à l'expansion communautaire.</li>
-        <li><strong>Récompenses de rendement</strong> : Une petite portion est dirigée vers des activités génératrices de rendement, comme les récompenses de staking ou les incitations de liquidité dans l'écosystème Monark.</li>
+        <li><strong>Récompenses de rendement</strong> : 5% est dirigée vers des activités génératrices de rendement, comme les récompenses de staking ou les incitations de liquidité dans l'écosystème Monark.</li>
         <li><strong>Destruction de tokens</strong> : 5% des frais collectés sont définitivement détruits (burn), réduisant l'offre globale et augmentant potentiellement la valeur des tokens au fil du temps.</li>
       </ul>
       <p>Cette structure vise à assurer un écosystème équitable et durable, récompensant les contributeurs tout en maintenant l'intégrité économique de la plateforme.</p>

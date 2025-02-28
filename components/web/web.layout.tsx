@@ -13,6 +13,8 @@ type Props = {
 function WebLayout({ locale, children }: Props) {
   return (
     <>
+      <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-[720px] border-r border-primary z-50"></div>
+      <div className="absolute top-0 bottom-0 left-1/2 transform translate-x-[720px] border-r border-primary z-50"></div>
       <ProgressBar />
       <NavbarWrapper locale={locale} />
       <main className="pt-[94px]">{children}</main>
