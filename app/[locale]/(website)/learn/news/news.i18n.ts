@@ -19,14 +19,14 @@ export const en: I18n = {
     description:
       "Stay up to date with the latest news from the Monark project. Learn about our progress, partnerships, and upcoming events.",
     news: [
-      {
-        id: "new-website-2025",
-        image: "new-website-2025.jpg",
-        title: "Monark Launches New Website",
-        summary:
-          "We are excited to announce the launch of our new website. The site features a fresh design, improved navigation, and updated content.",
-        date: new Date(2025, 1, 27),
-      },
+    //   {
+    //     id: "new-website-2025",
+    //     image: "new-website-2025.jpg",
+    //     title: "Monark Launches New Website",
+    //     summary:
+    //       "We are excited to announce the launch of our new website. The site features a fresh design, improved navigation, and updated content.",
+    //     date: new Date(2025, 1, 27),
+    //   },
       {
         id: "pioneer-in-university-projects-mentorship",
         image: "pioneer-in-university-projects-mentorship.jpg",
@@ -47,14 +47,14 @@ export const fr: I18n = {
     description:
       "Restez informé des dernières nouvelles du projet Monark. Découvrez nos progrès, nos partenariats et nos événements à venir.",
     news: [
-      {
-        id: "new-website-2025",
-        image: "new-website-2025.jpg",
-        title: "Monark lance un nouveau site web",
-        summary:
-          "Nous sommes heureux d'annoncer le lancement de notre nouveau site web. Le site présente un design rafraîchi, une navigation améliorée et un contenu mis à jour.",
-        date: new Date(2025, 1, 27),
-      },
+    //   {
+    //     id: "new-website-2025",
+    //     image: "new-website-2025.jpg",
+    //     title: "Monark lance un nouveau site web",
+    //     summary:
+    //       "Nous sommes heureux d'annoncer le lancement de notre nouveau site web. Le site présente un design rafraîchi, une navigation améliorée et un contenu mis à jour.",
+    //     date: new Date(2025, 1, 27),
+    //   },
       {
         id: "pioneer-in-university-projects-mentorship",
         image: "pioneer-in-university-projects-mentorship.jpg",
