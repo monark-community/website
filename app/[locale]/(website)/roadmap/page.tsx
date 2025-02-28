@@ -449,13 +449,11 @@ function RoadmapPage() {
 
   return (
     <ReactFlowProvider>
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-3xl font-bold mb-2">DEMO: Project Roadmap</h1>
-        <p className="text-muted-foreground mb-6">
-          Interactive visualization of our project milestones and timeline
-        </p>
-
-        <div className="h-[600px] border rounded-md bg-background">
+      <div className="px-4 sm:px-6 lg:px-8 py-8">
+        <div className="h-[1000px] border rounded-md bg-background">
+          <h2 className="absolute p-4 z-10 bg-background/80 rounded-md rounded-t-none">
+            Roadmap
+          </h2>
           <ReactFlow
             nodes={nodes}
             edges={edges}
@@ -480,12 +478,6 @@ function RoadmapPage() {
             <div className="w-3 h-3 rounded-full bg-zinc-300 mr-2"></div>
             <span className="text-sm">Planned</span>
           </div>
-        </div>
-
-        <div className="mt-8">
-          <NavLink href="/">
-            <Button>Back Home</Button>
-          </NavLink>
         </div>
       </div>
     </ReactFlowProvider>
