@@ -12,7 +12,7 @@ import * as i18n from "./news.i18n";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-type Params = { locale: Locale };
+type Params = Promise<{ locale: Locale }>;
 
 export default async function NewsPage({ params }: { params: Params }) {
   const { locale } = await params;

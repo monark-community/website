@@ -3,7 +3,7 @@ import * as i18n from "./page.i18n";
 import Image from "next/image";
 import SOCIALS from "@/components/web/footer/socials/socials";
 
-type Params = { locale: Locale };
+type Params = Promise<{ locale: Locale }>;
 
 export default async function Article({ params }: { params: Params }) {
   const { locale } = await params;
