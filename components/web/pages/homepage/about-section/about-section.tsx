@@ -49,21 +49,23 @@ function Activity({ activity }: ActivityProps) {
           height={196}
         />
       </div>
-      <div className="relative z-1">
+      <div className="relative z-1 h-full flex flex-col justify-between">
         <CardHeader className="lg:pt-36">
           <CardTitle className="text-4xl">{activity.title}</CardTitle>
         </CardHeader>
-        <CardContent>
-          <CardDescription className="max-w-[300px] text-lg">
-            {activity.content}
-          </CardDescription>
-        </CardContent>
-        <CardFooter>
-          <Button variant="ghost" className="text-primary">
-            {activity.action}&nbsp;
-            <ArrowRightIcon />
-          </Button>
-        </CardFooter>
+        <div className="flex flex-col justify-between flex-1 h-full">
+          <CardContent>
+            <CardDescription className="max-w-[300px] text-lg">
+              {activity.content}
+            </CardDescription>
+          </CardContent>
+          <CardFooter>
+            <Button variant="ghost" className="text-primary">
+              {activity.action}&nbsp;
+              <ArrowRightIcon />
+            </Button>
+          </CardFooter>
+        </div>
       </div>
     </BrandedCard>
   );

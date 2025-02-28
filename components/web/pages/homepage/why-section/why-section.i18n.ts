@@ -29,21 +29,21 @@ export const en: I18n = {
       {
         title: "Build Faster, Smarter",
         content:
-          "Leverage powerful core modules to fast-track your web3 journey.",
+          "Web3 suffers from a lack of structure, high costs, and centralized governance that hinders its adoption.",
         tile: "tile-1",
         icon: "lightning",
       },
       {
         title: "Earn Rewards",
         content:
-          "Build, contribute, and earn rewards while shaping the future of web3.",
+          "Monark addresses these challenges with a collaborative and educational platform, simplifying access to decentralized technologies.",
         tile: "tile-2",
         icon: "coin-stack",
       },
       {
         title: "Stronger Communities",
         content:
-          "Monark empowers communities—decentralized, transparent, unstoppable.",
+          "Unlike traditional models, Monark fosters community governance and profit redistribution to users.",
         tile: "tile-3",
         icon: "rocket",
       },
@@ -86,25 +86,25 @@ export const fr: I18n = {
     title: "Rejoignez le mouvement, libérez-vous",
     perks: [
       {
-        title: "Construisez plus vite, plus intelligemment",
+        title: "Résoudre les défis du web3",
         content:
-          "Tirez parti de puissants modules de base pour accélérer votre parcours web3.",
+          "Le Web3 souffre d'un manque de structure, de coûts élevés et d'une gouvernance centralisée qui freine son adoption.",
         tile: "tile-1",
         icon: "lightning",
       },
       {
-        title: "Gagnez des récompenses",
+        title: "Solutions accessibles et collaboratives",
         content:
-          "Construisez, contribuez et gagnez des récompenses tout en façonnant l'avenir du web3.",
-        tile: "tile-2",
-        icon: "coin-stack",
-      },
-      {
-        title: "Communautés plus fortes",
-        content:
-          "Monark donne du pouvoir aux communautés—décentralisées, transparentes, inarrêtables.",
+          "Monark résout ces défis avec une plateforme collaborative et éducative, simplifiant l'accès aux technologies décentralisées.",
         tile: "tile-3",
         icon: "rocket",
+      },
+      {
+        title: "Gouvernance communautaire",
+        content:
+          "Contrairement aux modèles traditionnels, Monark favorise la gouvernance communautaire et la redistribution des bénéfices aux utilisateurs.",
+        tile: "tile-2",
+        icon: "handshake",
       },
     ],
     audiences: [

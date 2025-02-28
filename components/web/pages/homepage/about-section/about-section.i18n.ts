@@ -1,9 +1,9 @@
 export type AboutActivity = {
-    icon: string;
-    title: string;
-    content: string;
-    action: string;
-}
+  icon: string;
+  title: string;
+  content: string;
+  action: string;
+};
 
 export interface I18n {
   about: {
@@ -21,19 +21,22 @@ export const en: I18n = {
       {
         icon: "network",
         title: "Connect",
-        content: "Join your community, share ideas, contribute to projects and expand your local resilience.",
+        content:
+          "Monark is a collaborative Web3 ecosystem for students, developers, and entrepreneurs. It facilitates idea sharing, open-source collaboration, and access to technical resources.",
         action: "Learn about the ecosystem",
       },
       {
         icon: "modular",
         title: "Build",
-        content: "Expand your community's capabilities by working on requested products and modules.",
+        content:
+          "The initiative also develops Web3 modules and partners with universities to provide educational resources.",
         action: "Start building",
       },
       {
         icon: "governance",
         title: "Lead",
-        content: "Decide on the highest impact projects and where funds of the community should be allocated.",
+        content:
+          "Open and democratic, Monark puts innovation in the hands of users and communities.",
         action: "Learn about governance",
       },
     ],
@@ -48,19 +51,22 @@ export const fr: I18n = {
       {
         icon: "network",
         title: "Connecter",
-        content: "Rejoignez votre communauté, partagez des idées, contribuez à des projets et développez votre résilience locale.",
+        content:
+          "Monark est un écosystème Web3 collaboratif pour les étudiants, développeurs et entrepreneurs. Il facilite le partage d'idées, la collaboration open-source et l'accès à des ressources techniques.",
         action: "Découvrir l'écosystème",
       },
       {
         icon: "modular",
         title: "Construire",
-        content: "Élargissez les capacités de votre communauté en travaillant sur des produits et modules demandés.",
+        content:
+          "L'initiative développe aussi des modules Web3 et s'associe aux universités pour proposer des ressources éducatives.",
         action: "Commencer à construire",
       },
       {
         icon: "governance",
         title: "Diriger",
-        content: "Décidez des projets les plus impactants et de l'allocation des fonds de la communauté.",
+        content:
+          "Ouvert et démocratique, Monark met l'innovation entre les mains des utilisateurs et des communautés.",
         action: "En savoir plus sur la gouvernance",
       },
     ],

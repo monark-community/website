@@ -64,8 +64,8 @@ function Perk({ perk }: PerkProps) {
           height={128}
         />
       </div>
-      <h3 className="mt-8">{perk.title}</h3>
-      <p className="text-lg text-muted-foreground max-w-[400px]">
+      <h3 className="mt-8 min-h-[64px] flex justify-center items-center">{perk.title}</h3>
+      <p className="text-lg mt-4 text-muted-foreground max-w-[400px]">
         {perk.content}
       </p>
     </div>
@@ -79,21 +79,25 @@ type AudienceProps = {
 function Audience({ audience }: AudienceProps) {
   return (
     <BrandedCard className="relative text-left">
-      <CardHeader className="pt-16">
-        <CardTitle>{audience.title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <CardDescription className="text-lg">
-          {audience.content}
-        </CardDescription>
-      </CardContent>
-      <CardFooter>
-        <NavLink href={audience.href}>
-          <Button size="icon" variant="ghost" className="text-primary">
-            <ArrowRightIcon />
-          </Button>
-        </NavLink>
-      </CardFooter>
+      <div className="relative z-1 h-full flex flex-col justify-between">
+        <CardHeader className="pt-16">
+          <CardTitle>{audience.title}</CardTitle>
+        </CardHeader>
+        <div className="flex-1 flex flex-col justify-between">
+          <CardContent>
+            <CardDescription className="text-lg">
+              {audience.content}
+            </CardDescription>
+          </CardContent>
+          <CardFooter>
+            <NavLink href={audience.href}>
+              <Button size="icon" variant="ghost" className="text-primary">
+                <ArrowRightIcon />
+              </Button>
+            </NavLink>
+          </CardFooter>
+        </div>
+      </div>
     </BrandedCard>
   );
 }

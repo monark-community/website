@@ -7,7 +7,7 @@ export interface I18n {
 export const en: I18n = {
   history: {
     content: `
-      <p>Monark was born from a simple yet powerful idea—<strong>to bridge the digital and physical worlds through open data and decentralized governance</strong>. Inspired by the resilience and transformation of the monarch butterfly, we set out to create an <strong>accessible, efficient ecosystem where innovation thrives</strong>.</p>
+      <p>The Monark Project reveals web3 technology's power to empower people. We envisioned a decentralized platform that democratizes access to software, lowers costs over time, and ensures governance and profits remain within local communities.</p>
     `,
   },
 };
@@ -15,7 +15,7 @@ export const en: I18n = {
 export const fr: I18n = {
   history: {
     content: `
-      <p>Monark est né d'une idée simple mais puissante : <strong>relier les mondes numérique et physique grâce à des données ouvertes et à une gouvernance décentralisée</strong>. Inspirés par la résilience et la transformation du papillon monarque, nous avons entrepris de créer un <strong>écosystème accessible et efficace où l'innovation prospère</strong
+      <p>Le projet Monark révèle le pouvoir de la technologie web3 à autonomiser les gens. Nous avons imaginé une plateforme décentralisée qui démocratise l'accès aux logiciels, réduit les coûts avec le temps, et garantit que la gouvernance et les profits restent au sein des communautés locales.</p>
     `,
   },
 };
