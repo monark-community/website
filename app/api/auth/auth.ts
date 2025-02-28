@@ -16,7 +16,7 @@ interface User {
   name: string; // "Dominic",
   picture: string; // "https://avatars.githubusercontent.com/u/36671850?v=4",
   updated_at: string; // "2025-01-03T04:12:41.827Z",
-  email: string; // "dominic@scintillar.com",
+  email: string; // "dominic@monark.io",
   email_verified: boolean; // true,
   sub: string; // "github|012345",
   sid: string; // "SID"

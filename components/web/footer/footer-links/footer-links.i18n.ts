@@ -20,7 +20,7 @@ export const en: I18n = {
   footer_links: {
     primary: [
       { label: "Home", href: "/" },
-      { label: "News", href: "/learn/news", disabled: true },
+      { label: "News", href: "/learn/news" },
     ],
     secondary: {
       left: [
@@ -53,7 +53,7 @@ export const fr: I18n = {
   footer_links: {
     primary: [
       { label: "Accueil", href: "/" },
-      { label: "News", href: "/learn/news", disabled: true },
+      { label: "News", href: "/learn/news" },
     ],
     secondary: {
       left: [
