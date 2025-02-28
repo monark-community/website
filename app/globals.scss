@@ -149,7 +149,30 @@ h6 {
   // text-transform: uppercase;
 }
 
+blockquote {
+  @apply text-lg;
+  font-style: italic;
+  border-left: 0.25rem solid hsl(var(--primary));
+  padding-left: 1.5rem;
+  margin: 1.5rem 0 1.5rem 1.5rem;
+}
 
+hr {
+  border-color: hsl(var(--border));
+  margin: 3rem 0;
+}
+
+p {
+  @apply text-base;
+  margin: 1rem 0;
+  color: hsl(var(--muted-foreground));
+}
+
+article {
+  h1,h2,h3,h4,h5,h6 {
+    margin: 1.5rem 0 0.5rem 0;
+  }
+}
 
 @layer base {
   * {

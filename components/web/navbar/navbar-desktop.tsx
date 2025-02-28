@@ -62,10 +62,10 @@ const NavbarDesktop = ({ locale }: Props) => {
           </NavLink>
           <NavigationMenu>
             <NavigationMenuList>
-              {t.links.map((link) => {
+              {t.links.map((link, tllIndex) => {
                 const nestedLink = appendParentRoutes(link);
                 return (
-                  <NavigationMenuItem key={nestedLink.label}>
+                  <NavigationMenuItem key={`tll-${tllIndex}`}>
                     {nestedLink.items ? (
                       <>
                         <NavigationMenuTrigger>
@@ -73,9 +73,9 @@ const NavbarDesktop = ({ locale }: Props) => {
                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="flex">
                           <ul className="grid p-4 md:w-[250px] lg:w-[300px] grid-cols-1">
-                            {nestedLink.items.map((item) => (
+                            {nestedLink.items.map((item, fllIndex) => (
                               <NavigationMenuLink
-                                key={item.label}
+                                key={`fll-${tllIndex}-${fllIndex}`}
                                 className={`${item.items ? "col-span-2" : ""}`}
                               >
                                 <ListItem
@@ -94,19 +94,20 @@ const NavbarDesktop = ({ locale }: Props) => {
                               </NavigationMenuLink>
                             ))}
                           </ul>
-                          {nestedLink.items.map((item) => (
+                          {nestedLink.items.map((item, sllIndex) => (
                             <>
                               {item.items ? (
                                 <ul
+                                  key={`sll-${tllIndex}-${sllIndex}`}
                                   className={`${
                                     hoveredSubItem === item.label
                                       ? "block"
                                       : "hidden"
                                   } bg-card p-4 md:w-[250px] lg:w-[300px]`}
                                 >
-                                  {item.items.map((item) => (
+                                  {item.items.map((item, lllIndex) => (
                                     <li
-                                      key={`sub-item-${item.label}`}
+                                      key={`lll-${tllIndex}-${sllIndex}-${lllIndex}`}
                                       className="h-14"
                                     >
                                       <NavLink
@@ -214,8 +215,8 @@ const ListItem = React.forwardRef<
         )}
         {hovered && items && (
           <ul className="absolute left-full top-0 mt-2 ml-2 w-[200px] bg-white shadow-lg rounded-md">
-            {items.map((item) => (
-              <li key={item.label}>
+            {items.map((item, index) => (
+              <li key={`item-${index}-${item.label}`}>
                 <NavLink
                   href={item.href}
                   className="block p-2 text-sm text-gray-700 hover:bg-gray-100"
