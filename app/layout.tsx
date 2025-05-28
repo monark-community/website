@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
 import { WebClientProviders } from "@/components/web/web.client.providers";
-import '@xyflow/react/dist/style.css';
+import { ViewTransitions } from "next-view-transitions";
+import "@xyflow/react/dist/style.css";
 import "./globals.scss";
 
 const nunitoSans = Nunito_Sans({
@@ -21,10 +22,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${nunitoSans.variable} antialiased`}>
-        <WebClientProviders>{children}</WebClientProviders>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="en">
+        <body className={`${nunitoSans.variable} antialiased`}>
+          <WebClientProviders>{children}</WebClientProviders>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }

@@ -1,0 +1,69 @@
+import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
+import WrappedImage from "@/components/shared/wrapped-image.component";
+
+export const metadata = {
+    
+    id: "digital-will",
+    title: "Digital Will",
+    description: "Create a secure blockchain-based inheritance system. Users set up a digital will where funds are released to beneficiaries based on an on-chain permission system consisting of various user keys or conditions like time delays, inactivity, or third-party validation. Include wallet-based identity, account creation tool, optional social recovery, and contract customization. This ensures irreversible execution and removes the need for centralized estate services.",
+    status: "idea",
+    accronym: "WillChain",
+    industry_tags: ["Finance and Insurance", "Services"],
+    keyword_tags: ["Inheritance", "Smart Contracts", "Time Lock", "Escrow", "Compliance"],
+    complexity_score: 7,
+    effort_score: -1,
+    adoption_score: 5,
+    blockchain_score: 8,
+    revenue_score: -1,
+};
+
+<div className="flex">
+    <div className="hidden sticky top-0">
+        <ProjectMetadata metadata={metadata} />
+    </div>
+    <div className="w-full">
+
+        # {metadata.title}
+
+        Create a secure blockchain-based inheritance system. Users set up a digital will where funds are released to beneficiaries based on an on-chain permission system consisting of various user keys or conditions like time delays, inactivity, or third-party validation. Include wallet-based identity, account creation tool, optional social recovery, and contract customization. This ensures irreversible execution and removes the need for centralized estate services.
+
+        <WrappedImage
+            src={`/images/project/${metadata.id}.jpg`}
+            alt={`${metadata.title} mockup`}
+            width={800}
+            height={400}
+            className="w-full h-auto rounded-lg shadow-lg"
+            caption={`${metadata.title} Early Mockup`}
+        />
+
+        ## General Description
+
+        WillChain provides a blockchain-based solution to securely manage digital inheritance. Traditional legal systems lack modern infrastructure to handle crypto assets, often resulting in lost funds. This project allows users to create a digital will in which tokens or digital assets are programmed to be transferred upon specific conditions—such as wallet inactivity, time delay, or third-party validation.
+        
+        Smart contracts define beneficiaries and asset allocations. In the prototype, users configure a wallet-linked interface to create inheritance rules. The system can include inactivity monitoring, multi-sig authorization (e.g., two executors must approve transfer), and optional document storage via IPFS.
+
+        WillChain has real-world implications: millions of dollars in crypto are lost each year due to lack of estate planning. By simplifying legacy transfer processes, this platform not only secures asset ownership but democratizes estate planning for Web3 users.
+
+        ## Deliverables & Desired Functionalities
+
+        - Web interface using Next.js, Typescript, shadcn-ui, tailwindcss, showing the product journey
+        - User authentication & roles management for producers, transporters, and retailers
+        - Smart contracts defining will execution conditions
+        - Inactivity simulation or time-based triggers
+        - Web UI for adding beneficiaries and asset allocation
+        - (Optional) encrypted backup or recovery mechanism
+
+
+        ## Required Resources
+
+        - Web hosting platform (Vercel)
+        - Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+        - Smart contract library (Solidity + OpenZeppelin)
+        - Blockchain testnet
+        - IPFS/Arweave for document hash storage
+
+        ## Support Provided by Monark or Partner
+
+        Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.
+    </div>
+</div>

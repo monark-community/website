@@ -1,0 +1,79 @@
+import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
+import WrappedImage from "@/components/shared/wrapped-image.component";
+
+export const metadata = {
+    
+    id: "time-locked-contracts",
+    title: "Time Locked Contracts",
+    description: "Implement smart contracts that release funds or privileges only after a set time. Use cases include vesting periods, delayed payments, subscriptions, or digital wills. Include a dashboard where users define recipients, amounts, and time delays. This teaches foundational concepts like block time, escrow, and release conditions.",
+    status: "idea",
+    accronym: "TimeVault",
+    industry_tags: ["Finance and Insurance", "Services"],
+    keyword_tags: ["Time Lock", "Smart Contracts", "Escrow", "Automation", "Vesting"],
+    complexity_score: 4,
+    effort_score: -1,
+    adoption_score: 5,
+    blockchain_score: 5,
+    revenue_score: -1,
+};
+
+<div className="flex">
+    <div className="hidden sticky top-0">
+        <ProjectMetadata metadata={metadata} />
+    </div>
+    <div className="w-full">
+
+        # {metadata.title}
+
+        Implement smart contracts that release funds or privileges only after a set time. Use cases include vesting periods, delayed payments, subscriptions, or digital wills. Include a dashboard where users define recipients, amounts, and time delays. This teaches foundational concepts like block time, escrow, and release conditions.
+        
+        <WrappedImage
+            src={`/images/project/${metadata.id}.jpg`}
+            alt={`${metadata.title} mockup`}
+            width={800}
+            height={400}
+            className="w-full h-auto rounded-lg shadow-lg"
+            caption={`${metadata.title} mockup`}
+        />
+
+        ## General Description
+
+        TimeVault introduces a practical smart contract pattern used across decentralized finance and DAO operations: conditional, time-based fund or privilege release. The core of this system is a secure smart contract that holds a digital asset—typically a token—and releases it only after a specified delay or at a pre-defined block timestamp.
+        
+        Common use cases include token vesting for contributors, subscription payments, delayed rewards for bounties, or crypto wills and inheritances. For example, a contributor to a DAO may be issued a three-month vesting schedule, after which tokens gradually unlock. Similarly, a donor might send tokens to a contract that holds them until a charitable milestone or a future date is reached.
+        
+        TimeVault can be expanded to include features such as recurring unlocks (e.g., monthly payroll), multi-approval unlocks (e.g., escrow systems), or integration with off-chain triggers like oracles for real-world conditions (e.g., project completion).
+        
+        Students building this project will work with core smart contract concepts such as time tracking, state management, condition checking, and value transfer. On the frontend, they'll build user interfaces for scheduling, monitoring, and unlocking. TimeVault teaches how to program rules into contracts, enforce fairness over time, and structure trustless commitments—skills crucial to many real-world blockchain applications.
+
+        ## Deliverables & Desired Functionalities
+
+        - Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+            - Create a clean UI for setting up and tracking locked fund schedules. 
+        - User authentication 
+            - Allow users to define time locks using wallet-based access.
+        - Smart contracts to lock funds for a specified time
+            - Lock tokens until a certain date or block number before allowing access.
+        - Web UI for defining recipient, amount, and unlock date
+            - Users can define recipients, token amounts, and unlock conditions.
+        - Countdown timer and unlock status display
+            - Show countdown to release and track status of each contract.
+        - Audit logs of scheduled and completed releases
+            - Keep transparent history of all locked and completed transfers.
+        - (Optional) Recurring release or multi-phase vesting logic
+            - Support phased release for payroll or bounty schedules.
+
+
+        ## Required Resources
+
+        - Web hosting platform (Vercel)
+        - Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+        - Smart contract library (Solidity + OpenZeppelin)
+        - Blockchain testnet
+        - Wallet and token support for testing
+
+        ## Support Provided by Monark or Partner
+
+        Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.
+    </div>
+</div>

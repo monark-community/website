@@ -13,11 +13,24 @@ type Props = {
 function WebLayout({ locale, children }: Props) {
   return (
     <>
-      <div className="absolute top-0 bottom-0 left-1/2 transform -translate-x-[720px] border-r border-primary z-50"></div>
-      <div className="absolute top-0 bottom-0 left-1/2 transform translate-x-[720px] border-r border-primary z-50"></div>
+      <div className="fixed top-0 bottom-0 left-1/2 transform -translate-x-[632px] border-r border-primary z-50"></div>
+      <div className="fixed top-0 bottom-0 left-1/2 transform translate-x-[632px] border-r border-primary z-50"></div>
       <ProgressBar />
       <NavbarWrapper locale={locale} />
       <main className="pt-[94px]">{children}</main>
+      <Footer locale={locale} />
+    </>
+  );
+}
+
+export function WebLayoutCentered({ locale, children }: Props) {
+  return (
+    <>
+      <div className="fixed top-0 bottom-0 left-1/2 transform -translate-x-[632px] border-r border-primary z-50"></div>
+      <div className="fixed top-0 bottom-0 left-1/2 transform translate-x-[632px] border-r border-primary z-50"></div>
+      <ProgressBar />
+      <NavbarWrapper locale={locale} />
+      <main className="pt-[94px] max-w-[1200px] mx-auto">{children}</main>
       <Footer locale={locale} />
     </>
   );

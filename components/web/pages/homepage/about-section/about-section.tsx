@@ -7,10 +7,10 @@ import {
   CardHeader,
   CardTitle,
   CardDescription,
-  CardFooter,
+  // CardFooter,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ArrowRightIcon } from "lucide-react";
+// import { Button } from "@/components/ui/button";
+// import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 
 type Props = {
@@ -20,10 +20,10 @@ type Props = {
 function AboutSection({ locale }: Props) {
   const t = i18n[locale].about;
   return (
-    <section className="about-section mx-auto lg:max-w-[1440px] px-4 py-8 md:px-12 md:py-16">
+    <section className="about-section mx-auto lg:max-w-[1200px] px-4 py-8 md:px-12 md:py-16">
       <span className="text-tagline">{t.flavor}</span>
       <h2 className="max-w-[750px]">{t.title}</h2>
-      <div className="flex flex-col items-start lg:items-center justify-center mt-24">
+      <div className="flex flex-col items-start lg:items-center justify-center mt-12">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 w-full">
           {t.activities.map((activity, index) => (
             <Activity key={index} activity={activity} />
@@ -59,12 +59,12 @@ function Activity({ activity }: ActivityProps) {
               {activity.content}
             </CardDescription>
           </CardContent>
-          <CardFooter>
+          {/* <CardFooter>
             <Button variant="ghost" className="text-primary">
               {activity.action}&nbsp;
               <ArrowRightIcon />
             </Button>
-          </CardFooter>
+          </CardFooter> */}
         </div>
       </div>
     </BrandedCard>

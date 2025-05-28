@@ -1,5 +1,6 @@
 export interface I18n {
   faq: {
+    soon: string;
     flavor: string;
     title: string;
     items: {
@@ -16,6 +17,7 @@ export interface I18n {
 
 export const en: I18n = {
   faq: {
+    soon: "Coming Soon",
     flavor: "FAQ",
     title: "Nectar for the Curious Mind",
     items: [
@@ -67,21 +69,21 @@ export const en: I18n = {
         </ul>
         `,
       },
-      {
-        question: "How are platform revenues redistributed?",
-        answer: `
-       <p>From the image you shared, Monark platform revenues are redistributed as follows:</p>
-      <ul>
-        <li><strong>Monark Token Holders:</strong> A portion of fees is allocated to individuals investing in and supporting the platform ecosystem.</li>
-        <li><strong>Module Token Holders:</strong> Developers and contributors creating and maintaining modules on the platform receive a share of fees, encouraging ongoing innovation.</li>
-        <li><strong>Local DAOs:</strong> A percentage is distributed to local Decentralized Autonomous Organizations, enabling cities to manage and allocate resources according to their specific needs.</li>
-        <li><strong>Referral System:</strong> Users contributing to growth through referrals receive a share of fees, incentivizing community expansion.</li>
-        <li><strong>Yield Rewards:</strong> 5% is directed towards yield-generating activities, such as staking rewards or liquidity incentives within the Monark ecosystem.</li>
-        <li><strong>Token Burn:</strong> 5% of collected fees are permanently destroyed (burned), reducing the overall supply and potentially increasing token value over time.</li>
-      </ul>
-      <p>This structure aims to ensure a fair and sustainable ecosystem, rewarding contributors while maintaining the platform's economic integrity.</p>
-        `,
-      },
+      // {
+      //   question: "How are platform revenues redistributed?",
+      //   answer: `
+      //  <p>From the image you shared, Monark platform revenues are redistributed as follows:</p>
+      // <ul>
+      //   <li><strong>Monark Token Holders:</strong> A portion of fees is allocated to individuals investing in and supporting the platform ecosystem.</li>
+      //   <li><strong>Module Token Holders:</strong> Developers and contributors creating and maintaining modules on the platform receive a share of fees, encouraging ongoing innovation.</li>
+      //   <li><strong>Local DAOs:</strong> A percentage is distributed to local Decentralized Autonomous Organizations, enabling cities to manage and allocate resources according to their specific needs.</li>
+      //   <li><strong>Referral System:</strong> Users contributing to growth through referrals receive a share of fees, incentivizing community expansion.</li>
+      //   <li><strong>Yield Rewards:</strong> 5% is directed towards yield-generating activities, such as staking rewards or liquidity incentives within the Monark ecosystem.</li>
+      //   <li><strong>Token Burn:</strong> 5% of collected fees are permanently destroyed (burned), reducing the overall supply and potentially increasing token value over time.</li>
+      // </ul>
+      // <p>This structure aims to ensure a fair and sustainable ecosystem, rewarding contributors while maintaining the platform's economic integrity.</p>
+      //   `,
+      // },
       {
         question: "How does Monark work with universities?",
         answer: `
@@ -159,7 +161,7 @@ export const en: I18n = {
       },
     ],
     roadmap_card: {
-      title: "ROADMAP",
+      title: "Roadmap",
       content:
         "Take a look at our roadmap to get a clearer picture of our current progress and future direction.",
       action: "Access Roadmap",
@@ -169,6 +171,7 @@ export const en: I18n = {
 
 export const fr: I18n = {
   faq: {
+    soon: "Bientôt disponible",
     flavor: "Questions fréquentes",
     title: "Nectar pour l'esprit curieux",
     items: [
@@ -221,21 +224,21 @@ export const fr: I18n = {
         </ul>
         `,
       },
-      {
-        question: "Comment les revenus de la plateforme sont-ils redistribués?",
-        answer: `
-       <p>D'après l'image que vous avez partagée, les revenus de la plateforme Monark sont redistribués comme suit :</p>
-      <ul>
-        <li><strong>Détenteurs de tokens Monark</strong> : Une partie des frais est allouée aux personnes qui investissent et soutiennent l'écosystème de la plateforme.</li>
-        <li><strong>Détenteurs de tokens Module</strong> : Les développeurs et contributeurs qui créent et maintiennent des modules sur la plateforme reçoivent une part des frais, encourageant ainsi l'innovation continue.</li>
-        <li><strong>DAOs des villes locales</strong> : Un pourcentage est distribué aux Organisations Autonomes Décentralisées locales, permettant aux villes de gérer et d'allouer des ressources selon leurs besoins spécifiques.</li>
-        <li><strong>Système de parrainage</strong> : Les utilisateurs qui contribuent à la croissance via des parrainages reçoivent une part des frais, ce qui incite à l'expansion communautaire.</li>
-        <li><strong>Récompenses de rendement</strong> : 5% est dirigée vers des activités génératrices de rendement, comme les récompenses de staking ou les incitations de liquidité dans l'écosystème Monark.</li>
-        <li><strong>Destruction de tokens</strong> : 5% des frais collectés sont définitivement détruits (burn), réduisant l'offre globale et augmentant potentiellement la valeur des tokens au fil du temps.</li>
-      </ul>
-      <p>Cette structure vise à assurer un écosystème équitable et durable, récompensant les contributeurs tout en maintenant l'intégrité économique de la plateforme.</p>
-        `,
-      },
+      // {
+      //   question: "Comment les revenus de la plateforme sont-ils redistribués?",
+      //   answer: `
+      //  <p>D'après l'image que vous avez partagée, les revenus de la plateforme Monark sont redistribués comme suit :</p>
+      // <ul>
+      //   <li><strong>Détenteurs de tokens Monark</strong> : Une partie des frais est allouée aux personnes qui investissent et soutiennent l'écosystème de la plateforme.</li>
+      //   <li><strong>Détenteurs de tokens Module</strong> : Les développeurs et contributeurs qui créent et maintiennent des modules sur la plateforme reçoivent une part des frais, encourageant ainsi l'innovation continue.</li>
+      //   <li><strong>DAOs des villes locales</strong> : Un pourcentage est distribué aux Organisations Autonomes Décentralisées locales, permettant aux villes de gérer et d'allouer des ressources selon leurs besoins spécifiques.</li>
+      //   <li><strong>Système de parrainage</strong> : Les utilisateurs qui contribuent à la croissance via des parrainages reçoivent une part des frais, ce qui incite à l'expansion communautaire.</li>
+      //   <li><strong>Récompenses de rendement</strong> : 5% est dirigée vers des activités génératrices de rendement, comme les récompenses de staking ou les incitations de liquidité dans l'écosystème Monark.</li>
+      //   <li><strong>Destruction de tokens</strong> : 5% des frais collectés sont définitivement détruits (burn), réduisant l'offre globale et augmentant potentiellement la valeur des tokens au fil du temps.</li>
+      // </ul>
+      // <p>Cette structure vise à assurer un écosystème équitable et durable, récompensant les contributeurs tout en maintenant l'intégrité économique de la plateforme.</p>
+      //   `,
+      // },
       {
         question: "Comment Monark travaille-t-il avec les universités?",
         answer: `
@@ -281,23 +284,23 @@ export const fr: I18n = {
         que les développeurs peuvent brancher dans leurs applications pour gagner du temps et garantir la sécurité. Les modules couvrent la gouvernance, l'identité, la réputation et l'accès aux données.</p>
         `,
       },
-      {
-        question: "Quels sont les modules principaux développés par Monark?",
-        answer: `
-        <p>Monark propose des modules pour la gouvernance, la distribution des bénéfices et l'accès aux données. Ces modules sont conçus pour être réutilisables, open-source et sécurisés. Ces modules incluent;</p>
-        <ul>
-          <li><strong>Module de contacts de confiance</strong> - pour des interactions sécurisées;</li>
-          <li><strong>Module de paiements</strong> - pour simplifier les transactions;</li>
-          <li><strong>Module de coffre-fort</strong> - pour la sécurité des fonds;</li>
-          <li><strong>Module de feuilles de temps</strong> - pour l'évaluation des contributions;</li>
-          <li><strong>Module de gouvernance</strong> - pour la prise de décision collective;</li>
-          <li><strong>Module de primes</strong> - pour diriger la participation.</li>
-          <li><strong>Module de géolocalisation</strong> - pour l'identification communautaire.</li>
-          <li><strong>Et bien d'autres modules suggérés par la communauté!</strong></li>
-        </ul>
-        <p>Les développeurs peuvent utiliser ces modules pour accélérer le développement de leurs applications et garantir la sécurité de leurs utilisateurs.</p>
-          `,
-      },
+      // {
+      //   question: "Quels sont les modules principaux développés par Monark?",
+      //   answer: `
+      //   <p>Monark propose des modules pour la gouvernance, la distribution des bénéfices et l'accès aux données. Ces modules sont conçus pour être réutilisables, open-source et sécurisés. Ces modules incluent;</p>
+      //   <ul>
+      //     <li><strong>Module de contacts de confiance</strong> - pour des interactions sécurisées;</li>
+      //     <li><strong>Module de paiements</strong> - pour simplifier les transactions;</li>
+      //     <li><strong>Module de coffre-fort</strong> - pour la sécurité des fonds;</li>
+      //     <li><strong>Module de feuilles de temps</strong> - pour l'évaluation des contributions;</li>
+      //     <li><strong>Module de gouvernance</strong> - pour la prise de décision collective;</li>
+      //     <li><strong>Module de primes</strong> - pour diriger la participation.</li>
+      //     <li><strong>Module de géolocalisation</strong> - pour l'identification communautaire.</li>
+      //     <li><strong>Et bien d'autres modules suggérés par la communauté!</strong></li>
+      //   </ul>
+      //   <p>Les développeurs peuvent utiliser ces modules pour accélérer le développement de leurs applications et garantir la sécurité de leurs utilisateurs.</p>
+      //     `,
+      // },
       {
         question: "Comment puis-je m'impliquer?",
         answer: `
@@ -313,7 +316,7 @@ export const fr: I18n = {
       },
     ],
     roadmap_card: {
-      title: "FEUILLE DE ROUTE",
+      title: "Feuille de route",
       content:
         "Consultez notre feuille de route pour avoir une idée plus claire de notre progression actuelle et de notre direction future.",
       action: "Accéder à la feuille de route",

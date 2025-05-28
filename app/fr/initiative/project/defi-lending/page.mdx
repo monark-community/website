@@ -1,0 +1,73 @@
+import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
+import WrappedImage from "@/components/shared/wrapped-image.component";
+
+export const metadata = {
+    
+    id: "defi-lending",
+    title: "Prêt DeFi",
+    description: "Créez un protocole où les utilisateurs fournissent des jetons à des pools de liquidités en échange d'intérêts. Gérez la taille du pool, le taux d'utilisation, et la logique de récompense. Visualisez les rendements dans le temps et intégrez avec des contrats de prêt si vous le souhaitez. Un excellent moyen d'enseigner les mécanismes de prêt, la mutualisation des risques, et les incitations token.",
+    status: "idée",
+    accronym: "YieldMine",
+    industry_tags: ["Finance et Assurance", "Investissement"],
+    keyword_tags: ["Prêt", "DeFi", "Rendement", "Trésorerie", "Liquidité"],
+    complexity_score: 8,
+    effort_score: -1,
+    adoption_score: -1,
+    blockchain_score: -1,
+    revenue_score: -1,
+};
+
+<div className="flex">
+    <div className="hidden sticky top-0">
+        <ProjectMetadata metadata={metadata} />
+    </div>
+    <div className="w-full">
+
+        # {metadata.title}
+
+        Créez un protocole où les utilisateurs fournissent des jetons à des pools de liquidités en échange d'intérêts. Gérez la taille du pool, le taux d'utilisation, et la logique de récompense. Visualisez les rendements dans le temps et intégrez avec des contrats de prêt si vous le souhaitez. Un excellent moyen d'enseigner les mécanismes de prêt, la mutualisation des risques, et les incitations token.
+
+        <WrappedImage
+            src={`/images/project/${metadata.id}.jpg`}
+            alt={`maquette ${metadata.title}`}
+            width={800}
+            height={400}
+            className="w-full h-auto rounded-lg shadow-lg"
+            caption={`Première maquette de ${metadata.title}`}
+        />
+
+        ## Description Générale
+
+        YieldMine est un système de prêt décentralisé où les utilisateurs apportent des jetons à un coffre mutualisé et gagnent un rendement au fil du temps. Le système imite des protocoles comme Compound et Yearn Finance en distribuant les rendements aux prêteurs en fonction des intérêts perçus des emprunteurs.
+        
+        Les étudiants mettront en œuvre des contrats intelligents pour gérer les dépôts de prêts, les modèles de taux d'intérêt (par exemple, basés sur l'utilisation), et les droits de retrait. Les contrats doivent suivre les parts des prêteurs, assurer un calcul précis des intérêts, et soutenir la rééquilibration de la liquidité. Le projet enseigne les mécanismes de risques/récompenses, les changements d'état basés sur le temps et le suivi des fonds.
+        
+        L'interface utilisateur inclut des interfaces de dépôt, des affichages APY, des calculateurs d'intérêts en temps réel, et des files d'attente de retrait. Les utilisateurs peuvent consulter leur historique de gains et leurs positions actives dans un format clair et visuel. Optionnellement, les étudiants peuvent simuler des mécanismes de gouvernance pour les paramètres de protocole comme les taux de réserve ou le LTV maximum.
+        
+        YieldMine offre une forte exposition aux outils de revenu passif, au design de liquidité, à l'économie des tokens et à la modélisation financière durable dans les environnements décentralisés.
+
+        ## Livrables et Fonctionnalités Désirées
+
+        - Interface web utilisant Next.js, Typescript, shadcn-ui, tailwindcss
+        - Authentification utilisateur 
+        - Contrat intelligent pour le pool de prêt avec suivi des parts
+        - Logique de taux d'intérêt basée sur l'utilisation du pool
+        - Interface utilisateur pour le dépôt/retrait et le suivi de l'APY
+        - Affichage en temps réel des bénéfices et gestion des positions
+        - (En option) Panneau d'administration pour la configuration des réserves
+
+        ## Ressources Nécessaires
+
+        - Plateforme d'hébergement web (Vercel)
+        - Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement Backend (Typescript, Express)
+        - Bibliothèque de contrats intelligents (Solidité + OpenZeppelin)
+        - Testnet de blockchain
+        - Framework frontend avec support de graphiques
+        - Tokens de testnet connectés à un portefeuille
+        - Flux de prix ou oracle fictif
+
+        ## Support Fourni par Monark ou Partenaire
+
+        Monark soutiendra le projet avec une expertise en développement de blockchain et de contrats intelligents. L'équipe actuelle aidera à l'intégration et au transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication, et des réunions de type Sprint bimensuelles avec le CTO et/ou le COO coordonneront l'avancement du projet. Le CTO fournira également des conseils en matière d'UI/UX. Une documentation extensive sera disponible pour aider les étudiants à apprendre la technologie blockchain et à livrer un projet fonctionnel.
+    </div>
+</div>

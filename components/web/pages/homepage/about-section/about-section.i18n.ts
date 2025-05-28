@@ -16,27 +16,27 @@ export interface I18n {
 export const en: I18n = {
   about: {
     flavor: "What is Monark",
-    title: "Empowering Communities Through Decentralization",
+    title: "Empowering Communities Through Collaboration",
     activities: [
-      {
-        icon: "network",
-        title: "Connect",
-        content:
-          "Monark is a collaborative Web3 ecosystem for students, developers, and entrepreneurs. It facilitates idea sharing, open-source collaboration, and access to technical resources.",
-        action: "Learn about the ecosystem",
-      },
       {
         icon: "modular",
         title: "Build",
         content:
-          "The initiative also develops Web3 modules and partners with universities to provide educational resources.",
+          "We support the creation of useful Web3 solutions by providing access to modular infrastructure, mentorship, and collaboration opportunities with universities, cities and industry leaders.",
         action: "Start building",
+      },
+      {
+        icon: "network",
+        title: "Incubate",
+        content:
+          "Monark is a Web3 incubator that connects students, developers, and entrepreneurs with tools and mentors to turn ideas into viable startups.",
+        action: "Learn about the ecosystem",
       },
       {
         icon: "governance",
         title: "Lead",
         content:
-          "Open and democratic, Monark puts innovation in the hands of users and communities.",
+          "Monark fosters open governance where every member can participate in the evolution of projects, placing power in the hands of the innovators.",
         action: "Learn about governance",
       },
     ],
@@ -46,27 +46,27 @@ export const en: I18n = {
 export const fr: I18n = {
   about: {
     flavor: "Qu'est-ce que Monark",
-    title: "Autonomiser les communautés grâce à la décentralisation",
+    title: "Autonomiser les communautés par la collaboration",
     activities: [
-      {
-        icon: "network",
-        title: "Connecter",
-        content:
-          "Monark est un écosystème Web3 collaboratif pour les étudiants, développeurs et entrepreneurs. Il facilite le partage d'idées, la collaboration open-source et l'accès à des ressources techniques.",
-        action: "Découvrir l'écosystème",
-      },
       {
         icon: "modular",
         title: "Construire",
         content:
-          "L'initiative développe aussi des modules Web3 et s'associe aux universités pour proposer des ressources éducatives.",
+          "Nous soutenons la création de solutions Web3 utiles en fournissant un accès à une infrastructure modulaire, à du mentorat et à des opportunités de collaboration avec des universités, des villes et des leaders de l'industrie.",
         action: "Commencer à construire",
       },
       {
-        icon: "governance",
-        title: "Diriger",
+        icon: "network",
+        title: "Incuber",
         content:
-          "Ouvert et démocratique, Monark met l'innovation entre les mains des utilisateurs et des communautés.",
+          "Monark est un incubateur Web3 qui connecte étudiants, développeurs et entrepreneurs avec des outils et des mentors pour transformer des idées en startups viables.",
+        action: "Découvrir l'écosystème",
+      },
+      {
+        icon: "governance",
+        title: "Gouvernance Collaborative",
+        content:
+          "Monark favorise une gouvernance ouverte où chaque membre peut participer à l'évolution des projets, plaçant le pouvoir entre les mains des innovateurs.",
         action: "En savoir plus sur la gouvernance",
       },
     ],

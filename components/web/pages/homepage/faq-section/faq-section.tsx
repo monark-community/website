@@ -7,17 +7,18 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import {
-  BrandedCard,
-  CardHeader,
-  CardContent,
-  CardFooter,
-  CardTitle,
-} from "@/components/ui/card";
+// import {
+//   BrandedCard,
+//   CardHeader,
+//   CardContent,
+//   CardFooter,
+//   CardTitle,
+// } from "@/components/ui/card";
 import "./faq-section.scss";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { NavLink } from "@/components/shared/navlink/navlink";
+// import { Button } from "@/components/ui/button";
+// import Image from "next/image";
+// import { NavLink } from "@/components/shared/navlink/navlink";
+// import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 type Props = {
   locale: Locale;
@@ -27,14 +28,14 @@ function FAQSection({ locale }: Props) {
   const t = i18n[locale].faq;
 
   return (
-    <section className="faq-section mx-auto lg:max-w-[1440px] px-4 py-8 md:px-12 md:py-16 text-left">
+    <section className="faq-section mx-auto lg:max-w-[1200px] px-4 py-8 md:px-12 md:py-16 text-left">
       <span className="text-tagline">{t.flavor}</span>
       <h2 className="max-w-[500px]">{t.title}</h2>
       <div className="grid grid-cols-1 gap-16 lg:grid-cols-3 mt-8">
         <Accordion
           type="single"
           collapsible
-          className="rounded-md rounded-b-none overflow-hidden lg:col-span-2"
+          className="rounded-md rounded-b-none overflow-hidden lg:col-span-3"
         >
           {t.items.map((item, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
@@ -46,7 +47,7 @@ function FAQSection({ locale }: Props) {
           ))}
         </Accordion>
 
-        <div className="relative">
+        {/* <div className="relative">
           <Image
             src="/vectors/decorative/flower.svg"
             alt=""
@@ -71,13 +72,16 @@ function FAQSection({ locale }: Props) {
                 {t.roadmap_card.content}
               </CardContent>
               <CardFooter>
-                <NavLink href="/roadmap">
-                  <Button>{t.roadmap_card.action}</Button>
-                </NavLink>
+                <Tooltip>
+                  <TooltipContent>{t.soon}</TooltipContent>
+                  <TooltipTrigger>
+                    <Button disabled>{t.roadmap_card.action}</Button>
+                  </TooltipTrigger>
+                </Tooltip>
               </CardFooter>
             </div>
           </BrandedCard>
-        </div>
+        </div> */}
       </div>
     </section>
   );

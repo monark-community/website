@@ -17,7 +17,7 @@ function Footer({ locale }: Props) {
         src="/vectors/decorative/butterfly-tileable-pattern.svg"
         className="absolute left-0 top-0 h-[610px] md:h-[500px] w-[100vw] z-[-1] opacity-10"
       />
-      <footer className="max-w-[1440px] mx-auto px-4 py-8 md:px-12 md:py-16">
+      <footer className="max-w-[1200px] mx-auto px-4 py-8 md:px-12 md:py-16">
         <Contact locale={locale} />
         <Newsletter locale={locale} />
         <FooterLinks locale={locale} />

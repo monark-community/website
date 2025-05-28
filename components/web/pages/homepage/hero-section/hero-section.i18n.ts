@@ -12,11 +12,11 @@ export interface I18n {
 export const en: I18n = {
   hero_section: {
     flavor: "Where ideas metamorphose into reality",
-    headline: "Bridging Digital & Physical Worlds with Open Data",
+    headline: "Fostering Collaboration within the Web3 Community",
     context:
-      "We connect communities, developers, and local entities, by creating an accessible, efficient ecosystem where innovation thrives.",
+      "We incubate the next generation of Web3 innovators, launching startups by students, recent graduates, and independent developers, aligned from day one with the ecosystems of our funding partners.",
     soon: "Coming Soon",
-    primary_action: "Join the Movement",
+    primary_action: "Our Web3 projects",
     secondary_action: "What is Monark?",
   },
 };
@@ -25,11 +25,11 @@ export const fr: I18n = {
   hero_section: {
     flavor: "Où les idées se métamorphosent en réalité",
     headline:
-      "Relier les mondes numérique et physique avec des données ouvertes",
+      "Favoriser la collaboration au sein de la communauté Web3",
     context:
-      "Nous connectons les communautés, les développeurs et les entités locales, en créant un écosystème accessible et efficace où l'innovation prospère.",
+      "Nous incubons la prochaine génération d'innovateurs Web3, lançant des startups par des étudiants, de jeunes diplômés et des développeurs indépendants, alignés dès le premier jour avec les écosystèmes de nos partenaires financiers.",
     soon: "Bientôt disponible",
-    primary_action: "Rejoignez le mouvement",
+    primary_action: "Nos projets Web3",
     secondary_action: "Qu'est-ce que Monark?",
   },
 };

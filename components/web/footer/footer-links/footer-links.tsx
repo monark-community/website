@@ -1,9 +1,10 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Locale } from "@/i18n.config";
-import * as i18n from "./footer-links.i18n";
 import { NavLink } from "@/components/shared/navlink/navlink";
 import Image from "next/image";
+
+import { Locale } from "@/i18n.config";
+import * as i18n from "./footer-links.i18n";
 
 type Props = {
   locale: Locale;
@@ -32,6 +33,7 @@ function FooterLinks({ locale }: Props) {
           <Image
             src="/vectors/partners/building-on-the-graph.svg"
             alt="Building on The Graph"
+            className="invert dark:invert-0"
             width={198}
             height={78}
           />

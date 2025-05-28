@@ -1,6 +1,7 @@
 "use client";
 
-import Link, { LinkProps } from "next/link";
+import { LinkProps } from "next/link";
+import { Link } from "next-view-transitions";
 import { ComponentProps } from "react";
 import NProgress from "nprogress";
 

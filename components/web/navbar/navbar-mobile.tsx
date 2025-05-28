@@ -11,17 +11,17 @@ import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/shared/navlink/navlink";
 import { Locale } from "@/i18n.config";
 import * as i18n from "./navbar.i18n";
-import { LogInIcon, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Logo from "@/components/shared/logo/logo";
 import NavbarIcon from "./navbar-icon";
 import LocaleToggle from "@/components/shared/locale-toggle/locale-toggle";
 import { ThemeToggle } from "@/components/shared/theme-toggle/theme-toggle.component";
 import SocialLinks from "../footer/socials/social-links";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+// import {
+//   Tooltip,
+//   TooltipContent,
+//   TooltipTrigger,
+// } from "@/components/ui/tooltip";
 
 type Props = {
   locale: Locale;
@@ -55,13 +55,13 @@ const NavbarMobile = ({ locale }: Props) => {
     <nav
       className={`block lg:hidden z-50 fixed bg-background border border-t-0 border-l-0 border-r-0 border-b-primary w-full`}
     >
-      <div className="max-w-[1440px] mx-auto flex justify-between items-center p-4">
+      <div className="max-w-[1200px] mx-auto flex justify-between items-center p-4 py-2">
         <NavLink href="/">
           <Logo
             formFactor="horizontal"
             colorScheme="branded"
-            width={194}
-            height={64}
+            width={163}
+            height={54}
           />
         </NavLink>
         <Button
@@ -85,7 +85,7 @@ const NavbarMobile = ({ locale }: Props) => {
               className="mb-4 block"
               onClick={handleLinkClick}
             > */}
-            <Tooltip>
+            {/* <Tooltip>
               <TooltipContent>{t.soon}</TooltipContent>
               <TooltipTrigger className="w-full">
                 <Button className="w-full" disabled>
@@ -93,7 +93,7 @@ const NavbarMobile = ({ locale }: Props) => {
                   &nbsp;{t.sign_in}
                 </Button>
               </TooltipTrigger>
-            </Tooltip>
+            </Tooltip> */}
 
             {/* </NavLink> */}
             <Accordion type="single" collapsible>

@@ -1,0 +1,73 @@
+import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
+import WrappedImage from "@/components/shared/wrapped-image.component";
+
+export const metadata = {
+    
+    id: "defi-borrow",
+    title: "DeFi Emprunt",
+    description: "Concentrez-vous sur l'expérience d'emprunt dans un protocole DeFi. Les utilisateurs demandent des prêts, soumettent des garanties et surveillent l'état du remboursement. Les garanties sont verrouillées dans des contrats intelligents, et les conditions de prêt (APR, expiration) sont appliquées automatiquement. Associez-vous à des pools de prêts testnet existants ou simulez localement.",
+    status: "idée",
+    accronym: "EmpruntX",
+    industry_tags: ["Finance et Assurances", "Banques et Marchés des Capitaux"],
+    keyword_tags: ["Emprunt", "DeFi", "Garantie", "Protocole", "Liquidité"],
+    complexity_score: 7,
+    effort_score: -1,
+    adoption_score: -1,
+    blockchain_score: -1,
+    revenue_score: -1,
+};
+
+<div className="flex">
+    <div className="hidden sticky top-0">
+        <ProjectMetadata metadata={metadata} />
+    </div>
+    <div className="w-full">
+
+        # {metadata.title}
+
+        Concentrez-vous sur l'expérience d'emprunt dans un protocole DeFi. Les utilisateurs demandent des prêts, soumettent des garanties et surveillent l'état du remboursement. Les garanties sont verrouillées dans des contrats intelligents, et les conditions de prêt (APR, expiration) sont appliquées automatiquement. Associez-vous à des pools de prêts testnet existants ou simulez localement.
+
+        <WrappedImage
+            src={`/images/project/${metadata.id}.jpg`}
+            alt={`maquette de ${metadata.title}`}
+            width={800}
+            height={400}
+            className="w-full h-auto rounded-lg shadow-lg"
+            caption={`Maquette préliminaire de ${metadata.title}`}
+        />
+
+        ## Description Générale
+
+        EmpruntX se concentre spécifiquement sur l'expérience d'emprunt au sein d'un protocole de prêt décentralisé. Les utilisateurs peuvent voir les actifs disponibles, déposer des garanties, sélectionner les conditions d'emprunt et initier des prêts. Le système suit le ratio de garantie de l'utilisateur, le calendrier de remboursement, et l'intérêt de l'emprunt.
+
+        Le contrat intelligent assure la sécurité en verrouillant la garantie, en mettant à jour les métriques de santé, et en déclenchant la liquidation si la valeur de la garantie chute trop. EmpruntX peut soit fonctionner en autonome soit se connecter à un pool de liquidités comme VaultLend. Cette focalisation modulaire permet aux étudiants de se spécialiser dans les mécanismes de prêt orientés utilisateur sans avoir à construire une plateforme de prêt complète.
+
+        L'interface utilisateur comprend des curseurs de prêt, des tableaux de bord de garantie visuels, le suivi du remboursement et des alertes de liquidation. Les fonctionnalités bonus incluent des modèles de taux d'intérêt flexibles (fixe/variable), des remboursements partiels, ou des simulations de score de crédit.
+        
+        Les étudiants acquièrent de l'expérience avec la modélisation financière, les mathématiques de précision, les changements d'état basés sur le temps, et la gestion des prêts basée sur le portefeuille. EmpruntX offre une plongée en profondeur dans une pièce clé du puzzle financier Web3, offrant de solides compétences en ingénierie et en UX.
+
+        ## Livrables & Fonctionnalités Souhaitées
+
+        - Interface web utilisant Next.js, Typescript, shadcn-ui, tailwindcss
+        - Authentification de l'utilisateur 
+        - Contrat de dépôt de garantie et de prêt
+        - Logique de remboursement et suivi de la dette
+        - Calcul du facteur de santé et alertes
+        - Interface utilisateur pour gérer les positions d'emprunt ouvertes
+        - (Optionnel) Simulation de score de crédit ou de niveau d'emprunt
+
+        ## Ressources Requises
+
+        - Plateforme d'hébergement web (Vercel)
+        - Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement du Backend (Typescript, Express)
+        - Bibliothèque de contrats intelligents (Solidité + OpenZeppelin)
+        - Testnet blockchain
+        - Frontend React avec intégration de portefeuille
+        - Test de jetons et script de simulation de prix
+        - Module de journalisation ou d'analyse des données
+
+        ## Support Fourni par Monark ou Partenaire
+
+        Monark soutiendra le projet avec son expertise en blockchain et développement de contrats intelligents. L'équipe actuelle aidera à l'intégration et au transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication, et des réunions bimensuelles de style Sprint avec le CTO et/ou le COO coordonneront les progrès du projet. Le CTO fournira également des conseils en matière d'UI/UX. Une documentation extensive sera disponible pour aider les étudiants à apprendre la technologie blockchain et à livrer un projet fonctionnel.
+    </div>
+</div>

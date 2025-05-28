@@ -26,7 +26,7 @@ export const en: I18n = {
       left: [
         { label: "About", href: "/about/monark" },
         { label: "Brand Assets", href: "/brand-assets", disabled: true },
-        { label: "Contact", href: "/forms/contact" },
+        { label: "Contact", href: "mailto:contact@monark.io" },
       ],
       right: [
         {
@@ -53,7 +53,7 @@ export const fr: I18n = {
   footer_links: {
     primary: [
       { label: "Accueil", href: "/" },
-      { label: "News", href: "/learn/news" },
+      { label: "Nouvelles", href: "/learn/news" },
     ],
     secondary: {
       left: [
@@ -63,7 +63,7 @@ export const fr: I18n = {
           href: "/brand-assets",
           disabled: true,
         },
-        { label: "Contact", href: "/forms/contact" },
+        { label: "Contact", href: "mailto:contact@monark.io" },
       ],
       right: [
         {

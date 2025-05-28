@@ -1,5 +1,4 @@
 import { Locale } from "@/i18n.config";
-import StandardLayout from "@/components/web/web.layout";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/shared/navlink/navlink";
 import { HomeIcon } from "lucide-react";
@@ -25,35 +24,29 @@ export default async function ErrorPage({ params }: { params: Params }) {
   const randomFact = t.fun_facts[randomIndex];
 
   return (
-    <StandardLayout locale={locale}>
-      <div className="fixed top-0 left-1/2 transform -translate-x-[740px] h-screen w-px bg-primary"></div>
-      <div className="fixed top-0 left-1/2 transform translate-x-[740px] h-screen w-px bg-primary"></div>
-      <div className="flex flex-col md:flex-row gap-16 items-center max-w-[1440px] mx-auto my-12 px-4 py-8 md:px-12 md:py-16">
-        <div>
-          <h1 className="text-headline text-primary">{sanitizedCode}</h1>
-          <h2 className="mt-4 max-w-[700px]">
-            {t.error_definitions[sanitizedCode].title}
-          </h2>
-          <div className="max-w-[500px]">
-            <div className="text-lg text-muted-foreground normal-case mt-4">
-              {t.error_definitions[sanitizedCode].subtitle}
-            </div>
-            <div className="my-8">
-              <h3>
-                {t.error_definitions[sanitizedCode].content_1.description}
-              </h3>
-              <Button asChild className="mt-4 w-fit">
-                <NavLink href="/">
-                  <HomeIcon />
-                  &nbsp;
-                  {t.error_definitions[sanitizedCode].content_1.actions.home}
-                </NavLink>
-              </Button>
-            </div>
-            <p className="mt-8 text-sm text-muted-foreground">{randomFact}</p>
+    <div className="flex flex-col md:flex-row gap-16 items-center max-w-[1200px] mx-auto my-12 px-4 py-8 md:px-12 md:py-16">
+      <div>
+        <h1 className="text-headline text-primary">{sanitizedCode}</h1>
+        <h2 className="mt-4 max-w-[700px]">
+          {t.error_definitions[sanitizedCode].title}
+        </h2>
+        <div className="max-w-[500px]">
+          <div className="text-lg text-muted-foreground normal-case mt-4">
+            {t.error_definitions[sanitizedCode].subtitle}
           </div>
+          <div className="my-8">
+            <h3>{t.error_definitions[sanitizedCode].content_1.description}</h3>
+            <Button asChild className="mt-4 w-fit">
+              <NavLink href="/">
+                <HomeIcon />
+                &nbsp;
+                {t.error_definitions[sanitizedCode].content_1.actions.home}
+              </NavLink>
+            </Button>
+          </div>
+          <p className="mt-8 text-sm text-muted-foreground">{randomFact}</p>
         </div>
       </div>
-    </StandardLayout>
+    </div>
   );
 }

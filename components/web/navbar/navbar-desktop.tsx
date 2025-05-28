@@ -15,15 +15,15 @@ import {
 import * as i18n from "./navbar.i18n";
 import { NavLink } from "@/components/shared/navlink/navlink";
 import { Locale } from "@/i18n.config";
-import { ChevronRight, LogInIcon } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import Logo from "@/components/shared/logo/logo";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import NavbarIcon from "./navbar-icon";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+// import {
+//   Tooltip,
+//   TooltipContent,
+//   TooltipTrigger,
+// } from "@/components/ui/tooltip";
 
 type Props = {
   locale: Locale;
@@ -50,7 +50,7 @@ const NavbarDesktop = ({ locale }: Props) => {
     <nav
       className={`hidden lg:block z-50 fixed bg-background border border-t-0 border-l-0 border-r-0 border-b-primary w-full`}
     >
-      <div className="max-w-[1440px] mx-auto flex justify-between items-center p-4">
+      <div className="max-w-[1200px] mx-auto flex justify-between items-center p-4">
         <div className="flex items-center space-x-6">
           <NavLink href="/">
             <Logo
@@ -140,7 +140,7 @@ const NavbarDesktop = ({ locale }: Props) => {
           </NavigationMenu>
         </div>
         {/* <NavLink href="/error/501"> */}
-        <Tooltip>
+        {/* <Tooltip>
           <TooltipContent>{t.soon}</TooltipContent>
           <TooltipTrigger>
             <Button disabled>
@@ -148,7 +148,7 @@ const NavbarDesktop = ({ locale }: Props) => {
               &nbsp;{t.sign_in}
             </Button>
           </TooltipTrigger>
-        </Tooltip>
+        </Tooltip> */}
         {/* </NavLink> */}
       </div>
     </nav>

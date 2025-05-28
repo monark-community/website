@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "generate:project-index": "bun scripts/project-index.script.ts",
+    "generate:project-translations": "bun scripts/project-translate.script.ts",
+    "build": "npm run generate:project-index && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -12,25 +14,34 @@
     "@auth0/nextjs-auth0": "^3.5.0",
     "@formatjs/intl-localematcher": "^0.6.0",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@next/mdx": "^15.3.2",
     "@next/third-parties": "^15.1.7",
     "@radix-ui/react-accordion": "^1.2.3",
     "@radix-ui/react-avatar": "^1.1.3",
     "@radix-ui/react-dropdown-menu": "^2.1.6",
     "@radix-ui/react-navigation-menu": "^1.2.5",
+    "@radix-ui/react-select": "^2.2.4",
     "@radix-ui/react-slot": "^1.1.2",
     "@radix-ui/react-tooltip": "^1.1.8",
+    "@types/dotenv": "^6.1.1",
     "@xyflow/react": "^12.4.3",
     "accept-language": "^3.0.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.475.0",
     "md5": "^2.3.0",
-    "next": "15.1.7",
+    "next": "^15.3.2",
     "next-themes": "^0.4.4",
+    "next-view-transitions": "^0.3.4",
     "nprogress": "^0.2.0",
+    "openai": "^4.98.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sugar-high": "^0.9.3",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.24.2"
@@ -40,6 +51,7 @@
     "@types/js-cookie": "^3.0.6",
     "@types/mailchimp__mailchimp_marketing": "^3.0.21",
     "@types/md5": "^2.3.5",
+    "@types/mdx": "^2.0.13",
     "@types/node": "^20",
     "@types/nprogress": "^0.2.3",
     "@types/react": "^19",
@@ -54,5 +66,6 @@
   "overrides": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
-  }
+  },
+  "packageManager": "pnpm@8.15.6+sha512.77b89e9be77a2b06ad8f403a19cae5e22976f61023f98ad323d5c30194958ebc02ee0a6ae5d13ee454f6134e4e8caf29a05f0b1a0e1d2b17bca6b6a1f1159f86"
 }
