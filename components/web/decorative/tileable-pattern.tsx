@@ -8,7 +8,7 @@ type Props = {
 function TileablePattern({ src, className }: Props) {
   return (
     <div
-      style={{ background: `url(${src})` }}
+      style={{ backgroundImage: `url(${src})`, backgroundSize: "200%" }}
       className={`bg-repeat ${className}`}
     ></div>
   );
