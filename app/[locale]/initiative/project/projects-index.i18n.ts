@@ -933,8 +933,8 @@ export const fr: DatedProjectMetadata[] = [
   },
   {
     "id": "guardian",
-    "title": "Gardien",
-    "description": "Gardien est une application d'alerte Web3 mobile qui notifie les utilisateurs à proximité en cas d'urgence. Les alertes sont liées aux ID de portefeuille, et les intervenants reçoivent des fonds d'une pool de contrats intelligents préfinancée. Ceci incite à une véritable aide tout en décourageant l'abus grâce à la responsabilité intégrée et aux récompenses.",
+    "title": "Guardian",
+    "description": "Guardian est une application d'alerte Web3 mobile qui notifie les utilisateurs à proximité en cas d'urgence. Les alertes sont liées aux ID de portefeuille, et les intervenants reçoivent des fonds d'une pool de contrats intelligents préfinancée. Ceci incite à une véritable aide tout en décourageant l'abus grâce à la responsabilité intégrée et aux récompenses.",
     "status": "idée",
     "complexity_score": 7,
     "effort_score": -1,

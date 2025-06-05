@@ -10,7 +10,7 @@ export default function ProjectLayout({
     <article className="px-4 py-8">
       {children}
       <Link href="mailto:intership@monark.io">
-        <Button>Postuler pour un stage</Button>
+        <Button>Postuler pour le projet</Button>
       </Link>
     </article>
   );
