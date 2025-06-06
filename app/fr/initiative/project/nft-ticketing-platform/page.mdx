@@ -1,15 +1,11 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "nft-ticketing-platform",
     title: "Plateforme de billetterie NFT",
-    description: "Construisez une plateforme de billetterie NFT complète où les organisateurs émettent des billets d'événements uniques sous forme de NFT. Les billets comprennent des métadonnées (siège, heure, règles d'accès, récompenses spéciales, etc.), et peuvent être scannés pour l'entrée via la signature de portefeuille blockchain ou le code QR. Les restrictions de revente et les redevances secondaires sont imposées par des contrats intelligents. Vous pouvez ajouter des fonctionnalités bonus comme des collectibles POAP, des badges de présence ou des avantages de réduction.",
+    description: "Développez une plateforme de billetterie NFT complète où les organisateurs créent des billets d'événement uniques sous forme de NFT. Les billets incluent des métadonnées (siège, heure, règles d'accès, récompenses spéciales, etc.) et peuvent être scannés pour l'entrée via une signature de portefeuille blockchain ou un code QR. Les restrictions de revente et les redevances secondaires sont appliquées via des contrats intelligents. Vous pouvez ajouter des fonctionnalités bonus comme des POAP à collectionner, des badges de présence ou des avantages de réduction.",
     status: "prototype",
     accronym: "NFTokenPass",
-    industry_tags: ["Médias", "Divertissement et Sport", "Services"],
-    keyword_tags: ["NFT", "Billetterie", "Tokenisation", "Intégration de portefeuille", "Contrôle d'accès"],
+    industry_tags: ["Médias", "Divertissement et sport", "Services"],
+    keyword_tags: ["NFT", "Billetterie", "Tokenisation", "Portefeuille", "Contrôle d'accès"],
     complexity_score: 7,
     effort_score: -1,
     adoption_score: 5,
@@ -17,53 +13,38 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# Plateforme de billetterie NFT
 
-        # {metadata.title}
+Développez une plateforme de billetterie NFT complète où les organisateurs créent des billets d'événement uniques sous forme de NFT. Les billets incluent des métadonnées (siège, heure, règles d'accès, récompenses spéciales, etc.) et peuvent être scannés pour l'entrée via une signature de portefeuille blockchain ou un code QR. Les restrictions de revente et les redevances secondaires sont appliquées via des contrats intelligents. Vous pouvez ajouter des fonctionnalités bonus comme des POAP à collectionner, des badges de présence ou des avantages de réduction.
 
-        Construisez une plateforme de billetterie NFT complète où les organisateurs émettent des billets d'événements uniques sous forme de NFTs. Les billets comprennent des métadonnées (siège, heure, règles d'accès, récompenses spéciales, etc.), et peuvent être scannés pour l'entrée via la signature du portefeuille blockchain ou le code QR. Les restrictions de revente et les redevances secondaires sont imposées par des contrats intelligents. Vous pouvez ajouter des fonctionnalités bonus comme des collectibles POAP, des badges de présence ou des avantages de réduction.
+![Maquette de la Plateforme de billetterie NFT](/images/project/nft-ticketing-platform.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`maquette ${metadata.title}`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`maquette ${metadata.title}`}
-        />
+## Description Générale
 
-        ## Description Générale
+[NFTokenPass](https://nftokenpass.monark.io) transforme la billetterie d'événements en créant des NFT basés sur la blockchain qui servent de justificatifs d'accès uniques et vérifiables. Les organisateurs d'événements utilisent une interface frontend pour créer des billets NFT avec des métadonnées comme l'heure de l'événement, l'emplacement du siège et le prix. Une fois acheté, le NFT est stocké dans le portefeuille de l'acheteur et scanné à l'entrée via un code QR ou une vérification de signature.
 
-        [NFTokenPass](https://nftokenpass.monark.io) transforme la billetterie d'événements en émettant des NFT basés sur la blockchain qui agissent comme des justificatifs d'accès uniques et vérifiables. Les organisateurs d'événements utilisent une interface pour créer des billets NFT avec des métadonnées comme l'heure de l'événement, l'emplacement des sièges et le prix. Une fois acheté, le NFT est stocké dans le portefeuille de l'acheteur et scanné à l'entrée via un code QR ou une vérification de signature.
+Les contrats intelligents appliquent les règles de revente (par exemple, redevances, limites de prix), réduisant la fraude et le scalping. Cette solution permet aux artistes et aux lieux de conserver le contrôle des ventes secondaires tout en récompensant les fans. Les fonctionnalités bonus incluent du contenu dynamique (visuels changeants selon les étapes de l'événement) et des NFT souvenirs pour les participants.
 
-        Les contrats intelligents imposent des règles de revente (par exemple, des redevances, des limites de prix), réduisant la fraude et la revente illégale de billets. Cette solution permet aux artistes et aux lieux de garder le contrôle sur les ventes secondaires tout en récompensant également les fans. Les fonctionnalités bonus comprennent un contenu dynamique (changements visuels en fonction des étapes de l'événement) et des NFTs souvenir pour les participants.
+Elle offre également une utilité à long terme : la billetterie NFT peut être étendue aux abonnements, conférences, festivals ou accès au métavers Web3. Les étudiants travaillant sur ce projet auront une exposition approfondie aux NFT, aux marchés décentralisés et aux flux de validation des billets.
 
-        Elle offre également une utilité à long terme : la billetterie NFT peut être étendue à des abonnements, des conférences, des festivals ou l'accès au métavers Web3. Les étudiants travaillant sur ce projet auront une exposition approfondie aux NFT, aux marchés décentralisés et aux flux de validation de billets.
+## Livrables & Fonctionnalités Souhaitées
 
-        ## Livrables & Fonctionnalités Souhaitées
+- Interface web utilisant Next.js, Typescript, shadcn-ui, tailwindcss
+- Authentification utilisateur
+- Tableau de bord de création de NFT pour les organisateurs d'événements
+- Système de vérification des billets via QR/signature de portefeuille
+- Restrictions de revente, redevances et logique de liste blanche
+- (Optionnel) NFT commémoratifs style POAP
 
-        - Interface web utilisant Next.js, Typescript, shadcn-ui, tailwindcss
-        - Authentification de l'utilisateur 
-        - Tableau de bord de minting NFT pour les organisateurs d'événements
-        - Système de vérification des billets via QR/signature de portefeuille
-        - Restrictions de revente, redevances, et logique de liste blanche
-        - (Optionnel) NFTs commémoratifs de style POAP
+## Ressources Requises
 
-        ## Ressources Requises
+- Plateforme d'hébergement web (Vercel)
+- Hébergement de base de données (Clickhouse, PostgreSQL ou GraphQL) et de backend (Typescript, Express)
+- Bibliothèque de contrats intelligents (Solidity + OpenZeppelin)
+- Testnet blockchain
+- Bibliothèques de contrats NFT
+- Module de scanner de code QR
 
-        - Plateforme d'hébergement web (Vercel)
-        - Base de données (Clickhouse, PostgreSQL or GraphQL) et hébergement backend (Typescript, Express)
-        - Bibliothèque de contrats intelligents (Solidité + OpenZeppelin)
-        - Testnet de blockchain
-        - Bibliothèques de contrats NFT
-        - Module de scanner de code QR
+## Support Fourni par Monark ou Partenaire
 
-        ## Support Fourni par Monark ou Partenaire
-
-        Monark soutiendra le projet avec une expertise en développement de blockchain et de contrats intelligents. L'équipe actuelle aidera à la prise en main et au transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication, et des réunions de type Sprint bi-mensuelles avec le CTO et/ou COO coordonneront l'avancement du projet. Le CTO fournira également des conseils en UI/UX. Une documentation extensive sera disponible pour aider les étudiants à apprendre la technologie de la blockchain et à livrer un projet fonctionnel.
-    </div>
-</div>
+Monark soutiendra le projet avec son expertise en développement blockchain et contrats intelligents. L'équipe actuelle aidera à l'intégration et au transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication, et des réunions bi-mensuelles de type Sprint avec le CTO et/ou le COO coordonneront l'avancement du projet. Le CTO fournira également des conseils en UI/UX. Une documentation extensive sera disponible pour aider les étudiants à apprendre la technologie blockchain et à livrer un projet fonctionnel.

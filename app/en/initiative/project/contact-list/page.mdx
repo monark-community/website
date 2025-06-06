@@ -1,8 +1,4 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "contact-list",
     title: "Contact List",
     description: "Build a decentralized contact manager that allows users to save and tag wallet addresses with notes, reputation scores, and categories. Contacts are stored locally or on-chain/IPFS, and could include verification status. Useful for DAOs, communities, or marketplaces where trusted contributor tracking is essential. This tool should be easily integratable into other apps so that many apps can share the same contact list. We should be able to have a contact log of all our own addresses and purposes and all of our friends, and businesses contacts addresses.",
@@ -17,58 +13,42 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# Contact List
 
-        # {metadata.title}
+Build a decentralized contact manager that allows users to save and tag wallet addresses with notes, reputation scores, and categories. Contacts are stored locally or on-chain/IPFS, and could include verification status. Useful for DAOs, communities, or marketplaces where trusted contributor tracking is essential. This tool should be easily integratable into other apps so that many apps can share the same contact list. We should be able to have a contact log of all our own addresses and purposes and all of our friends, and businesses contacts addresses.
 
-        Build a decentralized contact manager that allows users to save and tag wallet addresses with notes, reputation scores, and categories. Contacts are stored locally or on-chain/IPFS, and could include verification status. Useful for DAOs, communities, or marketplaces where trusted contributor tracking is essential. This tool should be easily integratable into other apps so that many apps can share the same contact list. We should be able to have a contact log of all our own addresses and purposes and all of our friends, and businesses contacts addresses.
+![Contact List mockup](/images/project/contact-list.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`${metadata.title} mockup`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`${metadata.title} Early Mockup`}
-        />
+## General Description
 
-        ## General Description
+[TrustList](https://trustlist.monark.io) is a decentralized contact system for Web3 users, allowing wallets to organize and annotate their interactions with other users on the blockchain. In traditional applications, contact lists are centralized, opaque, and often context-specific (e.g., friends on social media, teammates in Slack). TrustList brings this functionality into the decentralized space, enabling individuals and DAOs to create wallet-linked directories enhanced with user-defined metadata.
 
-        [TrustList](https://trustlist.monark.io) is a decentralized contact system for Web3 users, allowing wallets to organize and annotate their interactions with other users on the blockchain. In traditional applications, contact lists are centralized, opaque, and often context-specific (e.g., friends on social media, teammates in Slack). TrustList brings this functionality into the decentralized space, enabling individuals and DAOs to create wallet-linked directories enhanced with user-defined metadata.
+Each user can create and store contact labels such as "developer," "trusted partner," "frequent collaborator," or "flagged for spam." These tags can be stored off-chain in encrypted form or published publicly via decentralized storage. Optional features include contact scoring, endorsement systems, or timestamped interaction logs.
 
-        Each user can create and store contact labels such as “developer,” “trusted partner,” “frequent collaborator,” or “flagged for spam.” These tags can be stored off-chain in encrypted form or published publicly via decentralized storage. Optional features include contact scoring, endorsement systems, or timestamped interaction logs.
+This system is highly relevant in DAOs, bounty platforms, and decentralized marketplaces where recurring interactions and trust relationships develop over time but aren't formally recorded. It bridges the gap between the anonymity of blockchain and the reputational needs of professional coordination. Students working on this project will explore Web3 UX, encrypted metadata storage, decentralized identity standards, and human-friendly interfaces for wallet-based interactions. While simple at its core, TrustList teaches foundational skills around identity layering, privacy models, and interoperability across dApps.
 
-        This system is highly relevant in DAOs, bounty platforms, and decentralized marketplaces where recurring interactions and trust relationships develop over time but aren't formally recorded. It bridges the gap between the anonymity of blockchain and the reputational needs of professional coordination. Students working on this project will explore Web3 UX, encrypted metadata storage, decentralized identity standards, and human-friendly interfaces for wallet-based interactions. While simple at its core, TrustList teaches foundational skills around identity layering, privacy models, and interoperability across dApps.
+## Deliverables & Desired Functionalities
 
-        ## Deliverables & Desired Functionalities
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+- Build a searchable interface to browse, tag, and manage contacts and enable users to filter contacts by category, role, or trust level.
+- User authentication 
+- Users log in with wallets to manage private or public contact data.
+- Tagging system for wallet addresses
+- Tag addresses with labels like "partner," "client," "scam." or even full names
+- Editable metadata fields for notes, roles, and history
+- Add notes, contact history, or interaction logs per wallet.
+- Encrypted off-chain or public on-chain contact storage
+- Store contact lists locally, encrypted, or via on-chain/IPFS.
+- (Optional) Reputation scoring or endorsement feature, could be manually set by the user at first
 
-        - Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
-        - Build a searchable interface to browse, tag, and manage contacts and enable users to filter contacts by category, role, or trust level.
-        - User authentication 
-        - Users log in with wallets to manage private or public contact data.
-        - Tagging system for wallet addresses
-        - Tag addresses with labels like “partner,” “client,”, “scam.” or even full names
-        - Editable metadata fields for notes, roles, and history
-        - Add notes, contact history, or interaction logs per wallet.
-        - Encrypted off-chain or public on-chain contact storage
-        - Store contact lists locally, encrypted, or via on-chain/IPFS.
-        - (Optional) Reputation scoring or endorsement feature, could be manually set by the user at first
+## Required Resources
 
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Blockchain wallet integration tools
 
-        ## Required Resources
+## Support Provided by Monark or Partner
 
-        - Web hosting platform (Vercel)
-        - Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
-        - Smart contract library (Solidity + OpenZeppelin)
-        - Blockchain testnet
-        - Blockchain wallet integration tools
-
-        ## Support Provided by Monark or Partner
-
-        Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.
-    </div>
-</div>
+Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.

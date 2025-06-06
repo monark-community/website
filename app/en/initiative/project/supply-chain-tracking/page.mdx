@@ -1,11 +1,7 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "supply-chain-tracking",
     title: "Supply Chain Tracking",
-    description: "Develop a blockchain based application that records each step of a product’s journey on-chain. Every iot sensor and actor (producer, shipper, vendor) logs actions on-chain to create a tamper-proof, traceable history. Smart contracts verify transactions and time-stamp checkpoints. This system ensures authenticity, combats fraud, and enhances transparency in many industries such as food, construction, pharma, etc.",
+    description: "Develop a blockchain based application that records each step of a product's journey on-chain. Every iot sensor and actor (producer, shipper, vendor) logs actions on-chain to create a tamper-proof, traceable history. Smart contracts verify transactions and time-stamp checkpoints. This system ensures authenticity, combats fraud, and enhances transparency in many industries such as food, construction, pharma, etc.",
     status: "idea",
     accronym: "ChainProof",
     industry_tags: ["Agriculture", "Food and Beverage", "Cities", "Retail"],
@@ -17,53 +13,38 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# Supply Chain Tracking
 
-        # {metadata.title}
+Develop a blockchain based application that records each step of a product's journey on-chain. Every iot sensor and actor (producer, shipper, vendor) logs actions on-chain to create a tamper-proof, traceable history. Smart contracts verify transactions and time-stamp checkpoints. This system ensures authenticity, combats fraud, and enhances transparency in many industries such as food, construction, pharma, etc.
 
-        Develop a blockchain based application that records each step of a product’s journey on-chain. Every iot sensor and actor (producer, shipper, vendor) logs actions on-chain to create a tamper-proof, traceable history. Smart contracts verify transactions and time-stamp checkpoints. This system ensures authenticity, combats fraud, and enhances transparency in many industries such as food, construction, pharma, etc.
+![Supply Chain Tracking mockup](/images/project/supply-chain-tracking.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`${metadata.title} mockup`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`${metadata.title} mockup`}
-        />
+## General Description
 
-        ## General Description
+[ChainProof](https://chainproof.monark.io) enables decentralized traceability of goods throughout the supply chain. The goal is to create an immutable, transparent ledger where each stakeholder (producer, transporter, distributor, retailer) logs their interactions with the product. Every action—production, transfer, verification—is recorded using smart contracts, ensuring that no data can be altered or removed.
 
-        [ChainProof](https://chainproof.monark.io) enables decentralized traceability of goods throughout the supply chain. The goal is to create an immutable, transparent ledger where each stakeholder (producer, transporter, distributor, retailer) logs their interactions with the product. Every action—production, transfer, verification—is recorded using smart contracts, ensuring that no data can be altered or removed.
+This project is particularly impactful in industries such as agriculture, food, luxury goods, and pharmaceuticals, where authenticity, compliance, and safety are essential. By leveraging blockchain, companies and consumers can trace products back to their origin, verify quality standards, and mitigate counterfeiting or safety risks.
 
-        This project is particularly impactful in industries such as agriculture, food, luxury goods, and pharmaceuticals, where authenticity, compliance, and safety are essential. By leveraging blockchain, companies and consumers can trace products back to their origin, verify quality standards, and mitigate counterfeiting or safety risks.
+The system also supports QR-code integration, enabling customers to scan and view a product's journey on the front end. Smart contracts validate the flow of goods in real time, and optional integrations with sensors (e.g., GPS or temperature) could simulate IoT functionality.
 
-        The system also supports QR-code integration, enabling customers to scan and view a product’s journey on the front end. Smart contracts validate the flow of goods in real time, and optional integrations with sensors (e.g., GPS or temperature) could simulate IoT functionality.
+Beyond its technical scope, this project educates students on digital trust, transparency, and decentralized recordkeeping, aligning perfectly with supply chain innovation trends.
 
-        Beyond its technical scope, this project educates students on digital trust, transparency, and decentralized recordkeeping, aligning perfectly with supply chain innovation trends.
+## Deliverables & Desired Functionalities
 
-        ## Deliverables & Desired Functionalities
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss, showing the product journey
+- User authentication & roles management for producers, transporters, and retailers
+- Smart contracts for supply chain checkpoint verification
+- End-user QR-code scanning system
+- Tamper-proof audit trail and time-stamped transactions
 
-        - Web interface using Next.js, Typescript, shadcn-ui, tailwindcss, showing the product journey
-        - User authentication & roles management for producers, transporters, and retailers
-        - Smart contracts for supply chain checkpoint verification
-        - End-user QR-code scanning system
-        - Tamper-proof audit trail and time-stamped transactions
+## Required Resources
 
-        ## Required Resources
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Mock supply chain data
 
-        - Web hosting platform (Vercel)
-        - Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
-        - Smart contract library (Solidity + OpenZeppelin)
-        - Blockchain testnet
-        - Mock supply chain data
+## Support Provided by Monark or Partner
 
-        ## Support Provided by Monark or Partner
-
-        Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.
-    </div>
-</div>
+Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.

@@ -24,7 +24,7 @@ export const en: DatedProjectMetadata[] = [
       "Smart Contracts"
     ],
     "hash": "fbd0c4c142a0c6d8ac0d5eb99a8d6c3d482669e064c884504b7eb5fe88869ae8",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "accounting-blockchain-data-extraction",
@@ -48,7 +48,7 @@ export const en: DatedProjectMetadata[] = [
       "Compliance"
     ],
     "hash": "8a4018452bda7173696ad05d6583a6597fc63167769b58b3bf30905a75eeb3de",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "address-review-system",
@@ -72,7 +72,7 @@ export const en: DatedProjectMetadata[] = [
       "DAO"
     ],
     "hash": "cfce6203e3723350a3039c721795648e93e0165b40c85c552cf88754d45f853e",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "bounty-system",
@@ -96,7 +96,7 @@ export const en: DatedProjectMetadata[] = [
       "DAO"
     ],
     "hash": "136227327cb3d51c3eb7e4fb4a0e84411efd16f90b25c8c6feb8b9aef7e24e3e",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "cadastrum",
@@ -122,7 +122,7 @@ export const en: DatedProjectMetadata[] = [
       "Buildings"
     ],
     "hash": "1c637bba29c902b6563d61431955b4b6edaf1831d973dfcf05b08ba2eea29236",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "contact-list",
@@ -146,7 +146,7 @@ export const en: DatedProjectMetadata[] = [
       "Contacts"
     ],
     "hash": "d2bfa9e3c1447a18fad111577f0f7a07c4ead1076f50ce9e061dbc797f51e073",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "dao-voting-platform",
@@ -170,12 +170,12 @@ export const en: DatedProjectMetadata[] = [
       "Transparency"
     ],
     "hash": "326953f2622f5ac6a2b1efeb16ca8d614f307a039c00eb1338d648f5aa6ebb64",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "defi-borrow",
     "title": "DeFi Borrow",
-    "description": "Focus on the borrowing experience in a DeFi protocol. Users request loans, submit collateral, and monitor repayment status. Collateral is locked in smart contracts, and loan conditions (APR, expiry) are enforced automatically. Tie in with existing testnet lending pools or simulate locally.",
+    "description": "Focus on the borrowing experience in a DeFi protocol. Users request loans, submit collateral, and monitor repayment status. Collateral is locked in smart contracts, and loan terms (APR, expiration) are automatically enforced. Partner with existing testnet lending pools or simulate locally.",
     "status": "idea",
     "complexity_score": 7,
     "effort_score": -1,
@@ -193,8 +193,8 @@ export const en: DatedProjectMetadata[] = [
       "Protocol",
       "Liquidity"
     ],
-    "hash": "c52a78bebd70b518c6f5d3f2b9acc924571402b9e20420f56c1f6b5f3e636ca4",
-    "last_updated": "2025-05-15"
+    "hash": "092b02d9f94515d1cd35d79bd1c4821e1462baa23996127152d770b805315df3",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "defi-lending",
@@ -218,7 +218,7 @@ export const en: DatedProjectMetadata[] = [
       "Liquidity"
     ],
     "hash": "83fa6f9dd127d99ece516e7e9e47f0ca3a50dfcdb319b1b789a958d6b078c8f2",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "defi-loans",
@@ -242,7 +242,7 @@ export const en: DatedProjectMetadata[] = [
       "Automation"
     ],
     "hash": "1a6b687b781780bade78fa7f4e281892777f83b74f4ef52675e2e5b87cbc916c",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "defi-swaps",
@@ -266,7 +266,7 @@ export const en: DatedProjectMetadata[] = [
       "Liquidity"
     ],
     "hash": "93eaf672eba1077c14005e743ab6934a1b0636bcd5cff0f86fc0951ee87f4da1",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "digital-will",
@@ -290,7 +290,7 @@ export const en: DatedProjectMetadata[] = [
       "Compliance"
     ],
     "hash": "8b7f3e4d83293ba36c70cffde6b2ecba17519bc98800b078fd212fd59de2fa77",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "fee-distribution-system",
@@ -314,7 +314,7 @@ export const en: DatedProjectMetadata[] = [
       "Automation"
     ],
     "hash": "959253c4a144e087bcfad06f4ca8ecf941d315ae147d63aa499fab5e518cdbd5",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "guardian",
@@ -339,7 +339,7 @@ export const en: DatedProjectMetadata[] = [
       "Reputation"
     ],
     "hash": "9c35ce9490b54d5d1eb071ca5c4110f1fcc89e94d13e4f5edff2a6618cb20fda",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "inventory-and-sales-for-farm-goods",
@@ -364,7 +364,7 @@ export const en: DatedProjectMetadata[] = [
       "Access"
     ],
     "hash": "8a733816f7c3ed2ff9391ee8559292fba8e7843848b75a769dc0815863e74b0c",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "land-registry-voting",
@@ -389,7 +389,7 @@ export const en: DatedProjectMetadata[] = [
       "Mapping"
     ],
     "hash": "e41bbd753fa2b1b9efc3e1e52eef6616f9d637f9d8524eca23dac6796e523299",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "milestone-based-smart-contracts-and-escrow",
@@ -413,7 +413,7 @@ export const en: DatedProjectMetadata[] = [
       "Automation"
     ],
     "hash": "d20a8cbfa974f7e16e375d26210f4cc499a7671a51871788436e4dc26b5e9571",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "multichain-portfolio-tracker",
@@ -437,7 +437,7 @@ export const en: DatedProjectMetadata[] = [
       "Dashboard"
     ],
     "hash": "b71e4df98f6d0e98a7096e4dabbc11e09aeb418a438d2a0d1b73d62be185d111",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "nft-ticketing-platform",
@@ -462,7 +462,7 @@ export const en: DatedProjectMetadata[] = [
       "Access Control"
     ],
     "hash": "308b7934e37f885539b920eca22b45e9007b32ff0b6964fe4773a122746bc68e",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "real-time-royalty-distribution",
@@ -487,7 +487,7 @@ export const en: DatedProjectMetadata[] = [
       "Content"
     ],
     "hash": "81278d93994e2f52f1ac85685bf3299fcb5626368e0042e8544a70dd930d539e",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "referral-system",
@@ -512,12 +512,12 @@ export const en: DatedProjectMetadata[] = [
       "Engagement"
     ],
     "hash": "8cc7adbe80b05b4ff6d61a3331c83356672b680ee9828281c1a578145eaa952e",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "supply-chain-tracking",
     "title": "Supply Chain Tracking",
-    "description": "Develop a blockchain based application that records each step of a product’s journey on-chain. Every iot sensor and actor (producer, shipper, vendor) logs actions on-chain to create a tamper-proof, traceable history. Smart contracts verify transactions and time-stamp checkpoints. This system ensures authenticity, combats fraud, and enhances transparency in many industries such as food, construction, pharma, etc.",
+    "description": "Develop a blockchain based application that records each step of a product's journey on-chain. Every iot sensor and actor (producer, shipper, vendor) logs actions on-chain to create a tamper-proof, traceable history. Smart contracts verify transactions and time-stamp checkpoints. This system ensures authenticity, combats fraud, and enhances transparency in many industries such as food, construction, pharma, etc.",
     "status": "idea",
     "complexity_score": 5,
     "effort_score": -1,
@@ -537,8 +537,8 @@ export const en: DatedProjectMetadata[] = [
       "Automation",
       "Mapping"
     ],
-    "hash": "98953785b3d301c98f205330e5207d03cfc827f291a3e28604af487f8cbd399f",
-    "last_updated": "2025-05-15"
+    "hash": "19d97c898f1090f6ad3990a5933618f4ce85cebfb094633d8f4907db157ece28",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "systems-for-co-ops",
@@ -562,7 +562,7 @@ export const en: DatedProjectMetadata[] = [
       "Governance"
     ],
     "hash": "6ca2a1893b03032ea147b9024be81562c942f941eee075ffcbf6d926cfd562c7",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "time-locked-contracts",
@@ -586,7 +586,7 @@ export const en: DatedProjectMetadata[] = [
       "Vesting"
     ],
     "hash": "83dee9cbd3b182f5ec2e610ca4a0f82ebe5a3b51aa4858aa8da82b863745d920",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "web3-signatures",
@@ -610,7 +610,7 @@ export const en: DatedProjectMetadata[] = [
       "Documents"
     ],
     "hash": "eda671dd7ce50abd38087b0455175bd7528bf0f3cc05daa1b18c57d4fd7cee36",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   }
 ];
 
@@ -629,17 +629,17 @@ export const fr: DatedProjectMetadata[] = [
     "industry_tags": [
       "Services",
       "Média",
-      "Divertissement et Sport"
+      "Divertissement et sport"
     ],
     "keyword_tags": [
-      "Contrôle d'Accès",
-      "Tokenization",
-      "Intégration de Portefeuille",
+      "Contrôle d'accès",
+      "Tokenisation",
+      "Portefeuille",
       "Pay-Per-Access",
-      "Contrats Intelligents"
+      "Contrats intelligents"
     ],
-    "hash": "25a58a7e8919aaab4c768e44429eb233be556fd8719139282385dfe2b4ad22d6",
-    "last_updated": "2025-05-15"
+    "hash": "3c0d7536c946fae4e665802e4ae9df8443e750e6b6f6b5b18774de782d6630ac",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "accounting-blockchain-data-extraction",
@@ -652,7 +652,7 @@ export const fr: DatedProjectMetadata[] = [
     "blockchain_score": 8,
     "revenue_score": -1,
     "industry_tags": [
-      "Finance et Assurance",
+      "Finance et assurance",
       "Services"
     ],
     "keyword_tags": [
@@ -662,14 +662,14 @@ export const fr: DatedProjectMetadata[] = [
       "Extraction de données",
       "Conformité"
     ],
-    "hash": "6926efc972fb6a8329aaa1559df6e45bbb607a65422a7ccfcba76fa3052273ec",
-    "last_updated": "2025-05-15"
+    "hash": "563c80f3a05495776235444898b1c158f061342ed4be1184b4cde7387ef62218",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "address-review-system",
-    "title": "Système de Revue d'Adresse",
-    "description": "Construisez un système de revue décentralisé où les utilisateurs peuvent soumettre des avis liés à leurs adresses de portefeuille. Chaque revue (notation, commentaire, horodatage) est stockée de manière immuable sur la chaîne, garantissant la transparence et empêchant la suppression ou la manipulation. Utile pour évaluer les vendeurs, les contributeurs ou les prestataires de services dans les écosystèmes Web3. Ajoutez des fonctionnalités tels que le filtrage par adresse, l'analyse de sentiment, ou l'intégration avec les plates-formes NFT et les DAO.",
-    "status": "idée",
+    "title": "Address Review System",
+    "description": "Build a decentralized review system where users can submit reviews tied to their wallet addresses. Each review (rating, comment, timestamp) is stored immutably on-chain, ensuring transparency and preventing deletion or manipulation. Useful for evaluating sellers, contributors, or service providers in Web3 ecosystems. Add features like filtering by address, sentiment analysis, or integration with NFT platforms and DAOs.",
+    "status": "idea",
     "complexity_score": 5,
     "effort_score": -1,
     "adoption_score": 3,
@@ -680,14 +680,14 @@ export const fr: DatedProjectMetadata[] = [
       "Communications numériques"
     ],
     "keyword_tags": [
-      "Avis",
+      "Reviews",
       "Transparence",
       "Portefeuille",
       "Réputation",
       "DAO"
     ],
-    "hash": "09e67ebb14e28915fdbd378025caa29ce33857007c0e78f01d33eff5a60409da",
-    "last_updated": "2025-05-15"
+    "hash": "8b92ac08bec0b5fa805b285b53680a679c6e0c0426e3aa722c51e1f8d5668b34",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "bounty-system",
@@ -711,7 +711,7 @@ export const fr: DatedProjectMetadata[] = [
       "DAO"
     ],
     "hash": "36c2e40abda3c09f0a03c2a5e258b30270de4f0a52c358455400a121625ce54b",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "cadastrum",
@@ -737,7 +737,7 @@ export const fr: DatedProjectMetadata[] = [
       "Bâtiments"
     ],
     "hash": "17d0ea96937d2536654985df7dd772a5cc0eb0db6f18f05455230aba8f03e20b",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "contact-list",
@@ -761,7 +761,7 @@ export const fr: DatedProjectMetadata[] = [
       "Contacts"
     ],
     "hash": "752b4d393d7c7404ea33a42a6ce40dd586ed9b6def747f56b59d1f599aba7cc2",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "dao-voting-platform",
@@ -785,7 +785,7 @@ export const fr: DatedProjectMetadata[] = [
       "Transparence"
     ],
     "hash": "f14d0aa628c9b1328241b24a853c36521ea5ba48b7d30fe8d5fc9b2413430f3f",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "defi-borrow",
@@ -798,8 +798,8 @@ export const fr: DatedProjectMetadata[] = [
     "blockchain_score": -1,
     "revenue_score": -1,
     "industry_tags": [
-      "Finance et Assurances",
-      "Banques et Marchés des Capitaux"
+      "Finance et assurances",
+      "Banques et marchés de capitaux"
     ],
     "keyword_tags": [
       "Emprunt",
@@ -808,8 +808,8 @@ export const fr: DatedProjectMetadata[] = [
       "Protocole",
       "Liquidité"
     ],
-    "hash": "94266d8da0763a86a783c9b6c59e38f9f838b166ce9c94cd4e631d7bc3a16da1",
-    "last_updated": "2025-05-15"
+    "hash": "8402e11cb49bc6bd9d5595af4459f4db36d0037189151958700b0ebcb41a0b4c",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "defi-lending",
@@ -822,18 +822,18 @@ export const fr: DatedProjectMetadata[] = [
     "blockchain_score": -1,
     "revenue_score": -1,
     "industry_tags": [
-      "Finance et Assurance",
+      "Finance et assurance",
       "Investissement"
     ],
     "keyword_tags": [
-      "Prêt",
+      "Prêts",
       "DeFi",
       "Rendement",
       "Trésorerie",
       "Liquidité"
     ],
-    "hash": "e9c6ef1427162284688116830387309971e5e0e285ff82339aaa8c8d4f16003b",
-    "last_updated": "2025-05-15"
+    "hash": "e29a67a8fa8cb0cce261ba497a2d75cb3218177851f605ed1ab729f31d857ebd",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "defi-loans",
@@ -846,18 +846,18 @@ export const fr: DatedProjectMetadata[] = [
     "blockchain_score": -1,
     "revenue_score": -1,
     "industry_tags": [
-      "Finance et Assurance",
-      "Banques et Marchés de Capitaux"
+      "Finance et assurance",
+      "Banques et marchés de capitaux"
     ],
     "keyword_tags": [
-      "Prêt",
+      "Prêts",
       "Prêts",
       "Garantie",
       "DeFi",
-      "Automation"
+      "Automatisation"
     ],
-    "hash": "ad7bfb0d2953ed616e20c936e90b4f2e5a9dfbfc5705f7e6bf71fcf9bac78145",
-    "last_updated": "2025-05-15"
+    "hash": "c63bf1c7029324aced55c3ce7e10b74a382cb6e7d5d088d94314bc480eaaf8af",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "defi-swaps",
@@ -870,8 +870,8 @@ export const fr: DatedProjectMetadata[] = [
     "blockchain_score": -1,
     "revenue_score": -1,
     "industry_tags": [
-      "Finance et Assurance",
-      "Banque et Marchés de Capitaux"
+      "Finance et assurance",
+      "Banques et marchés de capitaux"
     ],
     "keyword_tags": [
       "DeFi",
@@ -880,8 +880,8 @@ export const fr: DatedProjectMetadata[] = [
       "Trading",
       "Liquidité"
     ],
-    "hash": "9feea5ac0949f64e239d0634296241cf7dc29d12409331ba702d5c7b6a437ee7",
-    "last_updated": "2025-05-15"
+    "hash": "a9acb7a69ebf23b063e735ae33a1c6d91ae953c163b05f454b5a03d80c6d14d6",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "digital-will",
@@ -894,18 +894,18 @@ export const fr: DatedProjectMetadata[] = [
     "blockchain_score": 8,
     "revenue_score": -1,
     "industry_tags": [
-      "Finance et Assurance",
+      "Finance et assurance",
       "Services"
     ],
     "keyword_tags": [
       "Héritage",
       "Contrats intelligents",
-      "Verrou temporelle",
+      "Verrouillage temporel",
       "Escrow",
       "Conformité"
     ],
-    "hash": "d8c586add1602c28a583d3fc876c42bf2e12e24d2317c6945455b670ec7d8dc2",
-    "last_updated": "2025-05-15"
+    "hash": "063d846dbebc80982f9be559ba062b0735956cdbb72544a1525b6e04906cf752",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "fee-distribution-system",
@@ -918,18 +918,18 @@ export const fr: DatedProjectMetadata[] = [
     "blockchain_score": 5,
     "revenue_score": -1,
     "industry_tags": [
-      "Finance et Assurance",
-      "Banque et Marchés Capitaux"
+      "Finance et assurance",
+      "Banques et marchés de capitaux"
     ],
     "keyword_tags": [
-      "Contrats Intelligents",
-      "Partage de Revenus",
+      "Contrats intelligents",
+      "Partage de revenus",
       "Paiements",
       "Trésorerie",
-      "Automation"
+      "Automatisation"
     ],
-    "hash": "30683e53c6127977cde8d553d491acceee8f9b2c7b2fce7a6c21b31941a1aade",
-    "last_updated": "2025-05-15"
+    "hash": "37eadfbe4be96e4b05d0ca10bc5f6e06cd3119ae122e86b313c3e52b723c49c0",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "guardian",
@@ -944,17 +944,17 @@ export const fr: DatedProjectMetadata[] = [
     "industry_tags": [
       "Villes",
       "Services",
-      "Communications Numériques"
+      "Communications numériques"
     ],
     "keyword_tags": [
       "Contrôle d'accès",
-      "Intégration de portefeuille",
+      "Portefeuille",
       "Récompenses",
       "Contrats intelligents",
       "Réputation"
     ],
-    "hash": "24016efbbdf7d4502c53553199eba9ea01f6e3c020c47043ab98b0f52eb18ba1",
-    "last_updated": "2025-05-15"
+    "hash": "587076c5cd4fd93cf71b35a92dc36a3f0963d7139f729e3f42010f44136df98b",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "inventory-and-sales-for-farm-goods",
@@ -968,7 +968,7 @@ export const fr: DatedProjectMetadata[] = [
     "revenue_score": -1,
     "industry_tags": [
       "Agriculture",
-      "Alimentation et Boissons",
+      "Alimentation et boissons",
       "Vente au détail"
     ],
     "keyword_tags": [
@@ -978,12 +978,12 @@ export const fr: DatedProjectMetadata[] = [
       "Code QR",
       "Accès"
     ],
-    "hash": "e2bde53c4a07ae2b0eee36b56e6f7e7a0bb37357e20fa76117ea00be8a136965",
-    "last_updated": "2025-05-15"
+    "hash": "f4bc6bc5589ae1ab4bd54fcd6c902022ac59ac21d0aa655ee6a25c0d3841999f",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "land-registry-voting",
-    "title": "Vote du Registre Foncier",
+    "title": "Vote du Registre foncier",
     "description": "Construisez un système de vote où les propriétaires fonciers et/ou les locataires de biens immobiliers peuvent voter sur des propositions relatives à leur région. Liez les droits de vote à la propriété foncière (réelle ou simulée), vérifiez les votes par les signatures de portefeuille, et affichez les résultats sur une carte ou un tableau de bord. Explorez les moyens de synchroniser les votes en chaîne avec les registres hors chaîne pour une intégration civique potentielle.",
     "status": "idée",
     "complexity_score": 7,
@@ -992,19 +992,19 @@ export const fr: DatedProjectMetadata[] = [
     "blockchain_score": 8,
     "revenue_score": -1,
     "industry_tags": [
-      "Immobilier et Location",
+      "Immobilier et location",
       "Location",
       "Villes"
     ],
     "keyword_tags": [
-      "Registre Foncier",
+      "Registre foncier",
       "Vote",
       "Gouvernance",
       "Transparence",
       "Cartographie"
     ],
-    "hash": "16a79f564c78f9efa6223d01cdde5e6d607dcef363d6de15b67c63a232540057",
-    "last_updated": "2025-05-15"
+    "hash": "a880414fe751769faa54248c37b80a1d6e760f2429580bec750f18224f8fb571",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "milestone-based-smart-contracts-and-escrow",
@@ -1028,7 +1028,7 @@ export const fr: DatedProjectMetadata[] = [
       "Automatisation"
     ],
     "hash": "912ba5cb6744e76fed73ad8a0ac8e40cc1c3556b613b056a7ad0586344115872",
-    "last_updated": "2025-05-15"
+    "last_updated": "2025-06-06"
   },
   {
     "id": "multichain-portfolio-tracker",
@@ -1042,22 +1042,22 @@ export const fr: DatedProjectMetadata[] = [
     "revenue_score": -1,
     "industry_tags": [
       "Investissement",
-      "Finance et Assurance"
+      "Finance et assurance"
     ],
     "keyword_tags": [
       "Portefeuille",
       "Analytique",
       "Suivi",
-      "Porte-monnaie",
+      "Portefeuille",
       "Tableau de bord"
     ],
-    "hash": "8bc47d3defa9ef2ca618f9426b7ecf9105cf4c0850cdc75ffd5fc2520c714af1",
-    "last_updated": "2025-05-15"
+    "hash": "d3234b3e40ed14c54a024c4f3556e134bcd0ca8d31734256ad3ea37b469191c9",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "nft-ticketing-platform",
     "title": "Plateforme de billetterie NFT",
-    "description": "Construisez une plateforme de billetterie NFT complète où les organisateurs émettent des billets d'événements uniques sous forme de NFT. Les billets comprennent des métadonnées (siège, heure, règles d'accès, récompenses spéciales, etc.), et peuvent être scannés pour l'entrée via la signature de portefeuille blockchain ou le code QR. Les restrictions de revente et les redevances secondaires sont imposées par des contrats intelligents. Vous pouvez ajouter des fonctionnalités bonus comme des collectibles POAP, des badges de présence ou des avantages de réduction.",
+    "description": "Développez une plateforme de billetterie NFT complète où les organisateurs créent des billets d'événement uniques sous forme de NFT. Les billets incluent des métadonnées (siège, heure, règles d'accès, récompenses spéciales, etc.) et peuvent être scannés pour l'entrée via une signature de portefeuille blockchain ou un code QR. Les restrictions de revente et les redevances secondaires sont appliquées via des contrats intelligents. Vous pouvez ajouter des fonctionnalités bonus comme des POAP à collectionner, des badges de présence ou des avantages de réduction.",
     "status": "prototype",
     "complexity_score": 7,
     "effort_score": -1,
@@ -1066,18 +1066,18 @@ export const fr: DatedProjectMetadata[] = [
     "revenue_score": -1,
     "industry_tags": [
       "Médias",
-      "Divertissement et Sport",
+      "Divertissement et sport",
       "Services"
     ],
     "keyword_tags": [
       "NFT",
       "Billetterie",
       "Tokenisation",
-      "Intégration de portefeuille",
+      "Portefeuille",
       "Contrôle d'accès"
     ],
-    "hash": "bbbdb26ea0b7a5789b891a73a96fe2ea55629b18de275f3b93bdff3c5dd37368",
-    "last_updated": "2025-05-15"
+    "hash": "a6ef59358308b35e2ec87ba8a619c91c50cca14c1313fe5e6f4f4edbcb53ed3f",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "real-time-royalty-distribution",
@@ -1091,18 +1091,18 @@ export const fr: DatedProjectMetadata[] = [
     "revenue_score": -1,
     "industry_tags": [
       "Médias",
-      "Divertissement et Sport",
-      "Finance et Assurance"
+      "Divertissement et sport",
+      "Finance et assurance"
     ],
     "keyword_tags": [
       "Royautés",
-      "Automation",
+      "Automatisation",
       "Contrats intelligents",
       "Revenus",
       "Contenu"
     ],
-    "hash": "945ad414a5f7027fc5fd5abeef67b8b8c86d2a06ec545e617c8a64e1abc5d420",
-    "last_updated": "2025-05-15"
+    "hash": "408713d0e8e9f1692c5c44113ab6375dd4ca20a73360de0f3154e0ac5962da4e",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "referral-system",
@@ -1117,17 +1117,17 @@ export const fr: DatedProjectMetadata[] = [
     "industry_tags": [
       "Services",
       "Médias",
-      "Divertissement et Sport"
+      "Divertissement et sport"
     ],
     "keyword_tags": [
       "Parrainage",
-      "Incentives",
+      "Incitations",
       "Portefeuille",
       "Suivi",
       "Engagement"
     ],
-    "hash": "9647abaa5d18336c12ac6b5dfb1415bc90f26a972e70a28f2f8d98be692a6a1f",
-    "last_updated": "2025-05-15"
+    "hash": "4b9cdefb749721e564a274d5a5e649c6214c4c2ba08c9f5258d59958d6812653",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "supply-chain-tracking",
@@ -1141,19 +1141,19 @@ export const fr: DatedProjectMetadata[] = [
     "revenue_score": -1,
     "industry_tags": [
       "Agriculture",
-      "Alimentation et Boissons",
+      "Alimentation et boissons",
       "Villes",
       "Retail"
     ],
     "keyword_tags": [
       "Traçabilité",
       "Transparence",
-      "Contrats Intelligents",
+      "Contrats intelligents",
       "Automatisation",
       "Cartographie"
     ],
-    "hash": "2e4cc4d7a9066cc895587451dac399a9bee1620b002ff1cb1c91f63b63520c6a",
-    "last_updated": "2025-05-15"
+    "hash": "b22e93ae91529b6af9cdfe25e09dd0521f71fbb3eca37bd9fe3ec4e5b0f81e6b",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "systems-for-co-ops",
@@ -1173,11 +1173,11 @@ export const fr: DatedProjectMetadata[] = [
       "Coopérative",
       "DAO",
       "Incitations",
-      "Trésor",
+      "Trésorerie",
       "Gouvernance"
     ],
-    "hash": "df8c3aa81eabd222841f3bfec41a38f0e468676c26f45dc5ea1743244f137010",
-    "last_updated": "2025-05-15"
+    "hash": "22f98ed18c034c6cc0076d34e4e75c9b5a77d581ce39eefccc18c24401dd89fa",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "time-locked-contracts",
@@ -1197,11 +1197,11 @@ export const fr: DatedProjectMetadata[] = [
       "Verrouillage temporel",
       "Contrats intelligents",
       "Escrow",
-      "Automation",
+      "Automatisation",
       "Vesting"
     ],
-    "hash": "b73b1dee251b880c3de5f22898fa80b2b7a5c2951aa3461035d268cf60c0b97a",
-    "last_updated": "2025-05-15"
+    "hash": "512c258c474997a51a8c15493f3d0373038a9535a7c29929fa4c0f2d3d26f65a",
+    "last_updated": "2025-06-06"
   },
   {
     "id": "web3-signatures",
@@ -1215,7 +1215,7 @@ export const fr: DatedProjectMetadata[] = [
     "revenue_score": -1,
     "industry_tags": [
       "Services",
-      "Marchés bancaires et financiers"
+      "Banques et marchés de capitaux"
     ],
     "keyword_tags": [
       "Signature",
@@ -1224,8 +1224,8 @@ export const fr: DatedProjectMetadata[] = [
       "Conformité",
       "Documents"
     ],
-    "hash": "b8f841dce9b6658d0da2abf7e777cab6ad50c2f8b569046a54d41b35054bed82",
-    "last_updated": "2025-05-15"
+    "hash": "765ba8aa306dedb7a04a57f84756bb60a87dfd60ebf161767d31c07b71537e39",
+    "last_updated": "2025-06-06"
   }
 ];
 

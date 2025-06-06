@@ -1,8 +1,4 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "cadastrum",
     title: "Cadastrum",
     description: "Un registre décentralisé des terrains et des bâtiments où les utilisateurs peuvent soumettre et mettre à jour l'emplacement physique, l'année de construction et les modifications des bâtiments sur des parcelles de terrain. Cela permet un suivi transparent et horodaté des structures et aide à identifier la conformité réglementaire ou les violations au fil du temps.",
@@ -17,61 +13,45 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# Cadastrum
 
-        # {metadata.title}
+Un registre décentralisé des terrains et des bâtiments où les utilisateurs peuvent soumettre et mettre à jour l'emplacement physique, l'année de construction et les modifications des bâtiments sur des parcelles de terrain. Cela permet un suivi transparent et horodaté des structures et aide à identifier la conformité réglementaire ou les violations au fil du temps.
 
-        Un registre décentralisé des terrains et des bâtiments où les utilisateurs peuvent soumettre et mettre à jour l'emplacement physique, l'année de construction et les modifications des bâtiments sur des parcelles de terrain. Cela permet un suivi transparent et horodaté des structures et aide à identifier la conformité réglementaire ou les violations au fil du temps.
+![Maquette de Cadastrum](/images/project/cadastrum.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`${metadata.title} mockup`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`${metadata.title} Première maquette`}
-        />
+## Description Générale
 
-        ## Description Générale
-
-        [Cadastrum](https://cadastrum.monark.io) est un projet d'infrastructure civique qui utilise la blockchain pour stocker et maintenir un registre public des données foncières et immobilières. Les utilisateurs peuvent soumettre des mises à jour des informations au niveau des parcelles, telles que l'année de construction, les modifications structurelles, les détails de zonage et autres attributs pertinents pour la conformité. Chaque mise à jour est liée à une adresse de portefeuille, horodatée et stockée de manière immuable sur la chaîne, créant un audit clair pour les inspecteurs, les municipalités et les propriétaires fonciers.
+[Cadastrum](https://cadastrum.monark.io) est un projet d'infrastructure civique qui utilise la blockchain pour stocker et maintenir un registre public des données foncières et immobilières. Les utilisateurs peuvent soumettre des mises à jour des informations au niveau des parcelles, telles que l'année de construction, les modifications structurelles, les détails de zonage et autres attributs pertinents pour la conformité. Chaque mise à jour est liée à une adresse de portefeuille, horodatée et stockée de manière immuable sur la chaîne, créant un audit clair pour les inspecteurs, les municipalités et les propriétaires fonciers.
         
-        Ce registre répond aux défis actuels liés aux registres fonciers obsolètes, inaccessibles ou fragmentés. Il permet aux communautés de suivre en collaboration l'activité de développement, de vérifier les changements structurels et de signaler les irrégularités. Grâce à une interface basée sur des cartes, les utilisateurs peuvent voir l'historique et l'état actuel de n'importe quel terrain, soumettre de nouvelles mises à jour et (en option) joindre des documents ou des fichiers multimédia via IPFS.
+Ce registre répond aux défis actuels liés aux registres fonciers obsolètes, inaccessibles ou fragmentés. Il permet aux communautés de suivre en collaboration l'activité de développement, de vérifier les changements structurels et de signaler les irrégularités. Grâce à une interface basée sur des cartes, les utilisateurs peuvent voir l'historique et l'état actuel de n'importe quel terrain, soumettre de nouvelles mises à jour et (en option) joindre des documents ou des fichiers multimédia via IPFS.
         
-        Les fonctionnalités avancées peuvent inclure des soumissions basées sur les rôles (par exemple, propriétaire par rapport à l'officiel de la ville), des votes ou des validations de changements, et une intégration croisée avec des propositions de zonage ou d'utilisation des terres. Les étudiants construiront des systèmes de stockage sur la chaîne, des superpositions de carte et des outils d'interface utilisateur pour contribuer et parcourir les données immobilières. Ce projet est idéal pour ceux qui s'intéressent aux technologies civiques, aux villes intelligentes et aux services publics décentralisés.
+Les fonctionnalités avancées peuvent inclure des soumissions basées sur les rôles (par exemple, propriétaire par rapport à l'officiel de la ville), des votes ou des validations de changements, et une intégration croisée avec des propositions de zonage ou d'utilisation des terres. Les étudiants construiront des systèmes de stockage sur la chaîne, des superpositions de carte et des outils d'interface utilisateur pour contribuer et parcourir les données immobilières. Ce projet est idéal pour ceux qui s'intéressent aux technologies civiques, aux villes intelligentes et aux services publics décentralisés.
 
-        ## Livrables & Fonctionnalités Souhaitées
+## Livrables & Fonctionnalités Souhaitées
 
-        - Interface web utilisant Next.js, Typescript, shadcn-ui, tailwindcss
-            - Affichage des registres de propriétés sur une carte publique interactive.
-        - Authentification de l'utilisateur 
-            - Se connecter avec un portefeuille pour soumettre, réviser ou modifier les données du terrain.
-        - Contrats intelligents pour stocker et mettre à jour les registres de terrains/bâtiments
-            - Ajouter des mises à jour horodatées pour la construction, le zonage, etc.
-        - Interface utilisateur basée sur la carte pour interagir avec les données de la propriété
-            - Parcourir et contribuer les données sur les parcelles via OpenStreetMap.
-        - Historique des changements et des soumissions par terrain
-            - Voir le journal complet des changements pour n'importe quelle parcelle.
-        - Système de rôles pour catégoriser les contributeurs
-        - (Optionnel) intégration avec les systèmes de vote sur l'utilisation des terres
-            - Séparer les soumissions de données par rôle (citoyen, officiel).
+- Interface web utilisant Next.js, Typescript, shadcn-ui, tailwindcss
+    - Affichage des registres de propriétés sur une carte publique interactive.
+- Authentification de l'utilisateur 
+    - Se connecter avec un portefeuille pour soumettre, réviser ou modifier les données du terrain.
+- Contrats intelligents pour stocker et mettre à jour les registres de terrains/bâtiments
+    - Ajouter des mises à jour horodatées pour la construction, le zonage, etc.
+- Interface utilisateur basée sur la carte pour interagir avec les données de la propriété
+    - Parcourir et contribuer les données sur les parcelles via OpenStreetMap.
+- Historique des changements et des soumissions par terrain
+    - Voir le journal complet des changements pour n'importe quelle parcelle.
+- Système de rôles pour catégoriser les contributeurs
+- (Optionnel) intégration avec les systèmes de vote sur l'utilisation des terres
+    - Séparer les soumissions de données par rôle (citoyen, officiel).
 
+## Ressources requises
 
-        ## Ressources requises
+- Plateforme d'hébergement web (Vercel)
+- Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement Backend (Typescript, Express)
+- Bibliothèque de contrats intelligents (Solidité + OpenZeppelin)
+- Testnet blockchain
+- Interface utilisateur avec interactivité de la carte et entrées de formulaire
+- Passerelle IPFS pour les pièces jointes optionnelles
 
-        - Plateforme d'hébergement web (Vercel)
-        - Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement Backend (Typescript, Express)
-        - Bibliothèque de contrats intelligents (Solidité + OpenZeppelin)
-        - Testnet blockchain
-        - Interface utilisateur avec interactivité de la carte et entrées de formulaire
-        - Passerelle IPFS pour les pièces jointes optionnelles
+## Support Fourni par Monark ou Partenaire
 
-        ## Support Fourni par Monark ou Partenaire
-
-        Monark soutiendra le projet avec une expertise en développement de blockchain et de contrats intelligents. L'équipe actuelle aidera à l'intégration et au transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication, et des réunions bimensuelles de style Sprint avec le CTO et/ou le COO coordonneront les progrès du projet. Le CTO fournira également des conseils sur l'interface utilisateur/UX. Une documentation étendue sera disponible pour aider les étudiants à apprendre la technologie blockchain et à remettre un projet fonctionnel.
-    </div>
-</div>
+Monark soutiendra le projet avec une expertise en développement de blockchain et de contrats intelligents. L'équipe actuelle aidera à l'intégration et au transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication, et des réunions bimensuelles de style Sprint avec le CTO et/ou le COO coordonneront les progrès du projet. Le CTO fournira également des conseils sur l'interface utilisateur/UX. Une documentation étendue sera disponible pour aider les étudiants à apprendre la technologie blockchain et à remettre un projet fonctionnel.

@@ -1,8 +1,4 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "contact-list",
     title: "Liste de Contacts",
     description: "Construisez un gestionnaire de contacts décentralisé qui permet aux utilisateurs de sauvegarder et de taguer les adresses de portefeuilles avec des notes, des scores de réputation et des catégories. Les contacts sont stockés localement ou sur la chaîne/IPFS, et pourraient inclure le statut de vérification. Utile pour les DAO, les communautés ou les marchés où le suivi des contributeurs de confiance est essentiel. Cet outil doit être facilement intégrable dans d'autres applications afin que de nombreuses applications puissent partager la même liste de contacts. Nous devrions être en mesure d'avoir un registre de contact de toutes nos propres adresses et objectifs et de tous nos amis, et des adresses de contacts d'entreprises.",
@@ -17,58 +13,42 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# Liste de Contacts
 
-        # {metadata.title}
+Construisez un gestionnaire de contacts décentralisé qui permet aux utilisateurs de sauvegarder et de taguer les adresses de portefeuilles avec des notes, des scores de réputation et des catégories. Les contacts sont stockés localement ou sur la chaîne/IPFS, et pourraient inclure le statut de vérification. Utile pour les DAO, les communautés ou les marchés où le suivi des contributeurs de confiance est essentiel. Cet outil doit être facilement intégrable dans d'autres applications afin que de nombreuses applications puissent partager la même liste de contacts. Nous devrions être en mesure d'avoir un registre de contact de toutes nos propres adresses et objectifs et de tous nos amis, et des adresses de contacts d'entreprises.
 
-        Construisez un gestionnaire de contacts décentralisé qui permet aux utilisateurs de sauvegarder et de taguer les adresses de portefeuilles avec des notes, des scores de réputation et des catégories. Les contacts sont stockés localement ou sur la chaîne/IPFS, et pourraient inclure le statut de vérification. Utile pour les DAO, les communautés ou les marchés où le suivi des contributeurs de confiance est essentiel. Cet outil doit être facilement intégrable dans d'autres applications afin que de nombreuses applications puissent partager la même liste de contacts. Nous devrions être en mesure d'avoir un registre de contact de toutes nos propres adresses et objectifs et de tous nos amis, et des adresses de contacts d'entreprises.
+![Maquette de la Liste de Contacts](/images/project/contact-list.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`${metadata.title} maquette`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`${metadata.title} Première maquette`}
-        />
+## Description Générale
 
-        ## Description Générale
+[TrustList](https://trustlist.monark.io) est un système de contacts décentralisé pour les utilisateurs de Web3, permettant aux portefeuilles d'organiser et d'annoter leurs interactions avec d'autres utilisateurs sur la blockchain. Dans les applications traditionnelles, les listes de contacts sont centralisées, opaques et souvent spécifiques à un contexte (par exemple, amis sur les médias sociaux, coéquipiers sur Slack). TrustList apporte cette fonctionnalité dans l'espace décentralisé, permettant aux individus et aux DAO de créer des répertoires liés au portefeuille et enrichis avec des métadonnées définies par l'utilisateur.
 
-        [TrustList](https://trustlist.monark.io) est un système de contacts décentralisé pour les utilisateurs de Web3, permettant aux portefeuilles d'organiser et d'annoter leurs interactions avec d'autres utilisateurs sur la blockchain. Dans les applications traditionnelles, les listes de contacts sont centralisées, opaques et souvent spécifiques à un contexte (par exemple, amis sur les médias sociaux, coéquipiers sur Slack). TrustList apporte cette fonctionnalité dans l'espace décentralisé, permettant aux individus et aux DAO de créer des répertoires liés au portefeuille et enrichis avec des métadonnées définies par l'utilisateur.
+Chaque utilisateur peut créer et stocker des étiquettes de contact telles que "développeur", "partenaire de confiance", "collaborateur fréquent" ou "signalé pour spam". Ces étiquettes peuvent être stockées hors chaîne sous forme cryptée ou publiées publiquement via un stockage décentralisé. Les fonctionnalités optionnelles incluent un système de notation des contacts, des systèmes d'approbation ou des journaux d'interaction horodatés.
 
-        Chaque utilisateur peut créer et stocker des étiquettes de contact telles que "développeur", "partenaire de confiance", "collaborateur fréquent" ou "signalé pour spam". Ces étiquettes peuvent être stockées hors chaîne sous forme cryptée ou publiées publiquement via un stockage décentralisé. Les fonctionnalités optionnelles incluent un système de notation des contacts, des systèmes d'approbation ou des journaux d'interaction horodatés.
+Ce système est très pertinent dans les DAO, les plateformes de primes et les marchés décentralisés où des interactions récurrentes et des relations de confiance se développent avec le temps mais ne sont pas officiellement enregistrées. Il comble le fossé entre l'anonymat de la blockchain et les besoins de réputation de la coordination professionnelle. Les étudiants travaillant sur ce projet exploreront l'UX Web3, le stockage des métadonnées cryptées, les normes d'identité décentralisée et les interfaces conviviales pour les interactions basées sur le portefeuille. Bien que simple à son noyau, TrustList enseigne les compétences fondamentales autour de la superposition d'identité, des modèles de confidentialité et de l'interopérabilité à travers les dApps.
 
-        Ce système est très pertinent dans les DAO, les plateformes de primes et les marchés décentralisés où des interactions récurrentes et des relations de confiance se développent avec le temps mais ne sont pas officiellement enregistrées. Il comble le fossé entre l'anonymat de la blockchain et les besoins de réputation de la coordination professionnelle. Les étudiants travaillant sur ce projet exploreront l'UX Web3, le stockage des métadonnées cryptées, les normes d'identité décentralisée et les interfaces conviviales pour les interactions basées sur le portefeuille. Bien que simple à son noyau, TrustList enseigne les compétences fondamentales autour de la superposition d'identité, des modèles de confidentialité et de l'interopérabilité à travers les dApps.
+## Livrables & Fonctionnalités Souhaitées
 
-        ## Livrables & Fonctionnalités Souhaitées
+- Interface Web utilisant Next.js, Typescript, shadcn-ui, tailwindcss
+- Construisez une interface consultable pour parcourir, taguer et gérer des contacts et permettre aux utilisateurs de filtrer les contacts par catégorie, rôle ou niveau de confiance.
+- Authentification de l'utilisateur
+- Les utilisateurs se connectent avec des portefeuilles pour gérer des données de contact privées ou publiques.
+- Système de balisage pour les adresses de portefeuille
+- Marquez les adresses avec des étiquettes comme "partenaire", "client", "arnaque". ou même des noms complets.
+- Champs de métadonnées modifiables pour les notes, les rôles et l'historique
+- Ajoutez des notes, l'historique des contacts ou des journaux d'interaction par portefeuille.
+- Stockage de contacts chiffré hors chaîne ou public sur chaîne
+- Stocker des listes de contacts localement, cryptées, ou via on-chain/IPFS.
+- (Facultatif) La fonction de notation de réputation ou d'approbation pourrait être définie manuellement par l'utilisateur au début
 
-        - Interface Web utilisant Next.js, Typescript, shadcn-ui, tailwindcss
-        - Construisez une interface consultable pour parcourir, taguer et gérer des contacts et permettre aux utilisateurs de filtrer les contacts par catégorie, rôle ou niveau de confiance.
-        - Authentification de l'utilisateur
-        - Les utilisateurs se connectent avec des portefeuilles pour gérer des données de contact privées ou publiques.
-        - Système de balisage pour les adresses de portefeuille
-        - Marquez les adresses avec des étiquettes comme "partenaire", "client", "arnaque". ou même des noms complets.
-        - Champs de métadonnées modifiables pour les notes, les rôles et l'historique
-        - Ajoutez des notes, l'historique des contacts ou des journaux d'interaction par portefeuille.
-        - Stockage de contacts chiffré hors chaîne ou public sur chaîne
-        - Stocker des listes de contacts localement, cryptées, ou via on-chain/IPFS.
-        - (Facultatif) La fonction de notation de réputation ou d'approbation pourrait être définie manuellement par l'utilisateur au début
+## Ressources Requises
 
+- Plateforme d'hébergement Web (Vercel)
+- Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement Backend (Typescript, Express)
+- Bibliothèque de contrats intelligents (Solidité + OpenZeppelin)
+- Testnet de la blockchain
+- Outils d'intégration de portefeuille de blockchain
 
-        ## Ressources Requises
+## Support Fourni par Monark ou Partenaire
 
-        - Plateforme d'hébergement Web (Vercel)
-        - Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement Backend (Typescript, Express)
-        - Bibliothèque de contrats intelligents (Solidité + OpenZeppelin)
-        - Testnet de la blockchain
-        - Outils d'intégration de portefeuille de blockchain
-
-        ## Support Fourni par Monark ou Partenaire
-
-        Monark soutiendra le projet avec une expertise en développement de blockchain et de contrats intelligents. L'équipe actuelle aidera à l'intégration et au transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication et des réunions bimensuelles de type Sprint avec le CTO et/ou le COO coordonneront la progression du projet. Le CTO fournira également des conseils en matière d'UI/UX. Une documentation exhaustive sera disponible pour aider les étudiants à comprendre la technologie de la blockchain et à livrer un projet fonctionnel.
-    </div>
-</div>
+Monark soutiendra le projet avec une expertise en développement de blockchain et de contrats intelligents. L'équipe actuelle aidera à l'intégration et au transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication et des réunions bimensuelles de type Sprint avec le CTO et/ou le COO coordonneront la progression du projet. Le CTO fournira également des conseils en matière d'UI/UX. Une documentation exhaustive sera disponible pour aider les étudiants à comprendre la technologie de la blockchain et à livrer un projet fonctionnel.

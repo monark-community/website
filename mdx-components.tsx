@@ -1,6 +1,7 @@
 import React, { ComponentPropsWithoutRef } from "react";
 import Link from "next/link";
 import { highlight } from "sugar-high";
+import WrappedImage from "./components/shared/wrapped-image.component";
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 type ParagraphProps = ComponentPropsWithoutRef<"p">;
@@ -101,6 +102,19 @@ const components = {
       {...props}
     />
   ),
+  img: ({ src, alt, width, height, ...props }: ComponentPropsWithoutRef<"img">) => {
+    if (!src || typeof src !== "string") return null;
+    return (
+      <WrappedImage
+        src={src}
+        alt={alt || ""}
+        width={Number(width) || 1200}
+        height={Number(height) || 600}
+        caption={alt}
+        {...props}
+      />
+    );
+  },
 };
 
 declare global {

@@ -1,8 +1,4 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "defi-loans",
     title: "DeFi Loans",
     description: "Develop a lending platform where users deposit collateral and borrow tokens. Smart contracts manage interest, health ratios, and liquidations. Useful to simulate MakerDAO-style loans on testnet. Can include dashboards, alerts, and repayment logic. Emphasizes DeFi risk management and user experience.",
@@ -17,57 +13,42 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# DeFi Loans
 
-        # {metadata.title}
+Develop a lending platform where users deposit collateral and borrow tokens. Smart contracts manage interest, health ratios, and liquidations. Useful to simulate MakerDAO-style loans on testnet. Can include dashboards, alerts, and repayment logic. Emphasizes DeFi risk management and user experience
 
-        Develop a lending platform where users deposit collateral and borrow tokens. Smart contracts manage interest, health ratios, and liquidations. Useful to simulate MakerDAO-style loans on testnet. Can include dashboards, alerts, and repayment logic. Emphasizes DeFi risk management and user experience
+![DeFi Loans Early Mockup](/images/project/defi-loans.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`${metadata.title} mockup`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`${metadata.title} Early Mockup`}
-        />
+## General Description
 
-        ## General Description
+[VaultLend](https://vaultlend.monark.io) simulates a decentralized lending protocol in which users can lock collateral and borrow assets in return. The platform mimics systems like Aave or MakerDAO, but simplified for educational use. Students will implement smart contracts that define collateral types, borrowing limits (loan-to-value ratios), interest accrual, and liquidation thresholds.
 
-        [VaultLend](https://vaultlend.monark.io) simulates a decentralized lending protocol in which users can lock collateral and borrow assets in return. The platform mimics systems like Aave or MakerDAO, but simplified for educational use. Students will implement smart contracts that define collateral types, borrowing limits (loan-to-value ratios), interest accrual, and liquidation thresholds.
-        
-        Users connect their wallet, lock a test token as collateral, and borrow another token. As market conditions change (or simulated price inputs shift), their “health factor” determines whether their position is safe or at risk of liquidation. Liquidators can repay the debt in exchange for a discounted claim on the collateral.
-        
-        This system introduces core DeFi concepts: overcollateralization, risk management, stable borrowing, and liquidation incentives. Students also explore compound interest, vault accounting, and multi-token contract design.
-        
-        VaultLend demonstrates how blockchain replaces traditional intermediaries in lending and helps users learn the foundations of on-chain finance in a secure sandbox.
+Users connect their wallet, lock a test token as collateral, and borrow another token. As market conditions change (or simulated price inputs shift), their "health factor" determines whether their position is safe or at risk of liquidation. Liquidators can repay the debt in exchange for a discounted claim on the collateral.
 
-        ## Deliverables & Desired Functionalities
+This system introduces core DeFi concepts: overcollateralization, risk management, stable borrowing, and liquidation incentives. Students also explore compound interest, vault accounting, and multi-token contract design.
 
-        - Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
-        - User authentication 
-        - Lending contract with collateral locking logic
-        - Borrowing interface with loan-to-value calculator
-        - Interest accrual and repayment flow
-        - Liquidation trigger and health factor dashboard
-        - Transaction history and user loan profiles
+VaultLend demonstrates how blockchain replaces traditional intermediaries in lending and helps users learn the foundations of on-chain finance in a secure sandbox.
 
-        ## Required Resources
+## Deliverables & Desired Functionalities
 
-        - Web hosting platform (Vercel)
-        - Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
-        - Smart contract library (Solidity + OpenZeppelin)
-        - Blockchain testnet
-        - Test tokens with price feed simulation
-        - Frontend with lending/borrowing dashboard
-        - Wallet and token interaction tools
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+- User authentication 
+- Lending contract with collateral locking logic
+- Borrowing interface with loan-to-value calculator
+- Interest accrual and repayment flow
+- Liquidation trigger and health factor dashboard
+- Transaction history and user loan profiles
 
-        ## Support Provided by Monark or Partner
+## Required Resources
 
-        Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.
-    </div>
-</div>
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Test tokens with price feed simulation
+- Frontend with lending/borrowing dashboard
+- Wallet and token interaction tools
+
+## Support Provided by Monark or Partner
+
+Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.

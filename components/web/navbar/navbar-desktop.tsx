@@ -125,13 +125,13 @@ const NavbarDesktop = ({ locale }: Props) => {
                         </NavigationMenuContent>
                       </>
                     ) : (
-                      <NavLink href={nestedLink.href}>
-                        <NavigationMenuLink
-                          className={navigationMenuTriggerStyle()}
-                        >
+                      <div
+                        className={navigationMenuTriggerStyle()}
+                      >
+                        <NavLink href={nestedLink.href}>
                           {nestedLink.label}
-                        </NavigationMenuLink>
-                      </NavLink>
+                        </NavLink>
+                      </div>
                     )}
                   </NavigationMenuItem>
                 );

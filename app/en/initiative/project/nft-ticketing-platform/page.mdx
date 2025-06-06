@@ -1,8 +1,4 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "nft-ticketing-platform",
     title: "NFT Ticketing Platform",
     description: "Build a full-stack NFT ticketing platform where organizers mint unique event tickets as NFTs. Tickets include metadata (seat, time, access rules, special rewards, etc.), and can be scanned for entry via blockchain wallet signature or QR code. Resale restrictions and secondary royalties are enforced via smart contracts. You can add bonus features like POAP collectibles, attendance badges, or discount perks.",
@@ -17,54 +13,38 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# NFT Ticketing Platform
 
-        # {metadata.title}
+Build a full-stack NFT ticketing platform where organizers mint unique event tickets as NFTs. Tickets include metadata (seat, time, access rules, special rewards, etc.), and can be scanned for entry via blockchain wallet signature or QR code. Resale restrictions and secondary royalties are enforced via smart contracts. You can add bonus features like POAP collectibles, attendance badges, or discount perks.
 
-        Build a full-stack NFT ticketing platform where organizers mint unique event tickets as NFTs. Tickets include metadata (seat, time, access rules, special rewards, etc.), and can be scanned for entry via blockchain wallet signature or QR code. Resale restrictions and secondary royalties are enforced via smart contracts. You can add bonus features like POAP collectibles, attendance badges, or discount perks.
+![NFT Ticketing Platform mockup](/images/project/nft-ticketing-platform.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`${metadata.title} mockup`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`${metadata.title} mockup`}
-        />
+## General Description
 
-        ## General Description
+[NFTokenPass](https://nftokenpass.monark.io) transforms event ticketing by minting blockchain-based NFTs that act as unique, verifiable access credentials. Event organizers use a frontend to create NFT tickets with metadata like event time, seat location, and price. Once purchased, the NFT is stored in the buyer's wallet and scanned at entry via QR code or signature verification.
 
-        [NFTokenPass](https://nftokenpass.monark.io) transforms event ticketing by minting blockchain-based NFTs that act as unique, verifiable access credentials. Event organizers use a frontend to create NFT tickets with metadata like event time, seat location, and price. Once purchased, the NFT is stored in the buyer’s wallet and scanned at entry via QR code or signature verification.
+Smart contracts enforce resale rules (e.g., royalties, price limits), reducing fraud and scalping. This solution empowers artists and venues to retain control over secondary sales while also rewarding fans. Bonus features include dynamic content (changing visuals based on event stages) and souvenir NFTs for attendees.
 
-        Smart contracts enforce resale rules (e.g., royalties, price limits), reducing fraud and scalping. This solution empowers artists and venues to retain control over secondary sales while also rewarding fans. Bonus features include dynamic content (changing visuals based on event stages) and souvenir NFTs for attendees.
+It also offers long-term utility: NFT ticketing can be extended to subscriptions, conferences, festivals, or Web3 metaverse access. Students working on this project will get deep exposure to NFTs, decentralized marketplaces, and ticket validation flows.
 
-        It also offers long-term utility: NFT ticketing can be extended to subscriptions, conferences, festivals, or Web3 metaverse access. Students working on this project will get deep exposure to NFTs, decentralized marketplaces, and ticket validation flows.
+## Deliverables & Desired Functionalities
 
-        ## Deliverables & Desired Functionalities
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+- User authentication 
+- NFT minting dashboard for event organizers
+- Ticket verification system via QR/wallet signature
+- Resale restrictions, royalties, and whitelist logic
+- (Optional) POAP-style commemorative NFTs
 
-        - Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
-        - User authentication 
-        - NFT minting dashboard for event organizers
-        - Ticket verification system via QR/wallet signature
-        - Resale restrictions, royalties, and whitelist logic
-        - (Optional) POAP-style commemorative NFTs
+## Required Resources
 
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- NFT contract libraries
+- QR code scanner module
 
-        ## Required Resources
+## Support Provided by Monark or Partner
 
-        - Web hosting platform (Vercel)
-        - Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
-        - Smart contract library (Solidity + OpenZeppelin)
-        - Blockchain testnet
-        - NFT contract libraries
-        - QR code scanner module
-
-        ## Support Provided by Monark or Partner
-
-        Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.
-    </div>
-</div>
+Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.

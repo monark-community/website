@@ -1,15 +1,11 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "real-time-royalty-distribution",
     title: "Distribution de Royautés en Temps Réel",
     description: "Développez un système qui distribue automatiquement les revenus (par exemple, de flux musicaux, ventes de NFT ou services) en temps réel parmi plusieurs destinataires. Utilisez des contrats intelligents pour définir les divisions (%), suivre les flux et libérer régulièrement ou continuellement des fonds. Combinez avec des protocoles de streaming (comme Superfluid) ou construisez votre propre mécanisme de flux.",
     status: "idée",
     accronym: "StreamRoyalties",
-    industry_tags: ["Médias", "Divertissement et Sport", "Finance et Assurance"],
-    keyword_tags: ["Royautés", "Automation", "Contrats intelligents", "Revenus", "Contenu"],
+    industry_tags: ["Médias", "Divertissement et sport", "Finance et assurance"],
+    keyword_tags: ["Royautés", "Automatisation", "Contrats intelligents", "Revenus", "Contenu"],
     complexity_score: 6,
     effort_score: -1,
     adoption_score: 3,
@@ -17,61 +13,46 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# Distribution de Royautés en Temps Réel
 
-        # {metadata.title}
+Développez un système qui distribue automatiquement les revenus (par exemple, de flux musicaux, ventes de NFT ou services) en temps réel parmi plusieurs destinataires. Utilisez des contrats intelligents pour définir les divisions (%), suivre les flux et libérer régulièrement ou continuellement des fonds. Combinez avec des protocoles de streaming (comme Superfluid) ou construisez votre propre mécanisme de flux.
 
-        Développez un système qui distribue automatiquement les revenus (par exemple, de flux musicaux, ventes de NFT ou services) en temps réel parmi plusieurs destinataires. Utilisez des contrats intelligents pour définir les divisions (%), suivre les flux et libérer régulièrement ou continuellement des fonds. Combinez avec des protocoles de streaming (comme Superfluid) ou construisez votre propre mécanisme de flux.
+![Maquette de la Distribution de Royautés en Temps Réel](/images/project/real-time-royalty-distribution.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`maquette de ${metadata.title}`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`maquette de ${metadata.title}`}
-        />
+## Description Générale
 
-        ## Description Générale
+[StreamRoyalties](https://streamroyalties.monark.io) est une plateforme de contrats intelligents pour la distribution automatique et en temps réel de royautés ou de revenus provenant d'actifs numériques comme la musique, les eBooks, les vidéos ou les licences de propriété intellectuelle. L'objectif est de supprimer les intermédiaires du processus d'allocation des revenus et de garantir que les créateurs, collaborateurs et détenteurs de droits reçoivent leur part instantanément et en toute transparence.
 
-        [StreamRoyalties](https://streamroyalties.monark.io) est une plateforme de contrats intelligents pour la distribution automatique et en temps réel de royautés ou de revenus provenant d'actifs numériques comme la musique, les eBooks, les vidéos ou les licences de propriété intellectuelle. L'objectif est de supprimer les intermédiaires du processus d'allocation des revenus et de garantir que les créateurs, collaborateurs et détenteurs de droits reçoivent leur part instantanément et en toute transparence.
-        
-        Lorsqu'un revenu est généré - que ce soit par la vente de NFT, les vues en streaming, le déverrouillage de contenu, ou les frais de licence de logiciel - il va directement dans un contrat de royauté. Ce contrat est pré-configuré avec des règles définissant comment diviser les fonds entre les participants, à quelle fréquence libérer les paiements (par exemple, en temps réel vs hebdomadaire), et les conditions de bonus éventuelles.
-        
-        Le prototype peut simuler les flux de revenus à l'aide de jetons de test et visualiser la distribution en temps réel. Les fonctionnalités bonus incluent des tableaux de bord de paiement liés à l'identité, l'historique des gains par utilisateur, et la logique de division dynamique (par exemple, proportionnelle aux contributions).
-        
-        Ce projet est hautement pertinent dans les économies de créateurs Web3 et les DAOs lançant des collaborations média. Les étudiants apprendront sur les mathématiques de précision en Solidity, les modèles d'équité, la logique de paiement en streaming, et la tokenisation des droits numériques. StreamRoyalties démontre comment la blockchain résout les problèmes persistants de monétisation du contenu, de confiance et de vitesse.
+Lorsqu'un revenu est généré - que ce soit par la vente de NFT, les vues en streaming, le déverrouillage de contenu, ou les frais de licence de logiciel - il va directement dans un contrat de royauté. Ce contrat est pré-configuré avec des règles définissant comment diviser les fonds entre les participants, à quelle fréquence libérer les paiements (par exemple, en temps réel vs hebdomadaire), et les conditions de bonus éventuelles.
 
-        ## Livrables & Fonctionnalités Souhaitées
+Le prototype peut simuler les flux de revenus à l'aide de jetons de test et visualiser la distribution en temps réel. Les fonctionnalités bonus incluent des tableaux de bord de paiement liés à l'identité, l'historique des gains par utilisateur, et la logique de division dynamique (par exemple, proportionnelle aux contributions).
 
-        - Interface web en utilisant Next.js, Typescript, shadcn-ui, tailwindcss
-            - Construisez un tableau de bord des royalties montrant les gains en direct et les règles de division.
-        - Authentification des utilisateurs 
-            - Connexion via un portefeuille pour voir et gérer les parts de royalties et l'historique.
-        - Contrat intelligent de partage de revenus avec logique de paiement en temps réel
-            - Distribuez instantanément les revenus entrants aux destinataires en fonction des divisions.
-        - Tableau de bord UI montrant les revenus par utilisateur en temps réel
-            - Visualisez les royalties par portefeuille avec des graphiques de performance.
-        - Interface pour définir les divisions et les conditions de paiement
-            - Configurez des règles telles que les seuils, les intervalles ou les déclencheurs de bonus.
-        - Historique des paiements et des royautés
-            - Montrez qui a gagné combien de chaque flux ou transaction.
+Ce projet est hautement pertinent dans les économies de créateurs Web3 et les DAOs lançant des collaborations média. Les étudiants apprendront sur les mathématiques de précision en Solidity, les modèles d'équité, la logique de paiement en streaming, et la tokenisation des droits numériques. StreamRoyalties démontre comment la blockchain résout les problèmes persistants de monétisation du contenu, de confiance et de vitesse.
 
-        ## Ressources Nécessaires
-    
-        - Plateforme d'hébergement web (Vercel)
-        - Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement Backend (Typescript, Express)
-        - Bibliothèque de contrat intelligent (Solidity + OpenZeppelin)
-        - Réseau test de la blockchain
-        - Installation de jeton de test sur la Blockchain
-        - Intégration du portefeuille pour la simulation
+## Livrables & Fonctionnalités Souhaitées
 
-        ## Support Fourni par Monark ou Partenaire
+- Interface web en utilisant Next.js, Typescript, shadcn-ui, tailwindcss
+    - Construisez un tableau de bord des royalties montrant les gains en direct et les règles de division.
+- Authentification des utilisateurs 
+    - Connexion via un portefeuille pour voir et gérer les parts de royalties et l'historique.
+- Contrat intelligent de partage de revenus avec logique de paiement en temps réel
+    - Distribuez instantanément les revenus entrants aux destinataires en fonction des divisions.
+- Tableau de bord UI montrant les revenus par utilisateur en temps réel
+    - Visualisez les royalties par portefeuille avec des graphiques de performance.
+- Interface pour définir les divisions et les conditions de paiement
+    - Configurez des règles telles que les seuils, les intervalles ou les déclencheurs de bonus.
+- Historique des paiements et des royautés
+    - Montrez qui a gagné combien de chaque flux ou transaction.
 
-        Monark soutiendra le projet avec son expertise en développement de blockchain et de contrats intelligents. L'équipe actuelle aidera à l'intégration et au transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication, et des réunions bimensuelles de type Sprint avec le CTO et/ou le COO coordonneront l'avancement du projet. Le CTO fournira également des conseils en matière d'UI/UX. Une documentation complète sera disponible pour aider les étudiants à apprendre la technologie de la blockchain et à réaliser un projet fonctionnel.
-    </div>
-</div>
+## Ressources Nécessaires
+
+- Plateforme d'hébergement web (Vercel)
+- Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement Backend (Typescript, Express)
+- Bibliothèque de contrat intelligent (Solidity + OpenZeppelin)
+- Réseau test de la blockchain
+- Installation de jeton de test sur la Blockchain
+- Intégration du portefeuille pour la simulation
+
+## Support Fourni par Monark ou Partenaire
+
+Monark soutiendra le projet avec son expertise en développement de blockchain et de contrats intelligents. L'équipe actuelle aidera à l'intégration et au transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication, et des réunions bimensuelles de type Sprint avec le CTO et/ou le COO coordonneront l'avancement du projet. Le CTO fournira également des conseils en matière d'UI/UX. Une documentation complète sera disponible pour aider les étudiants à apprendre la technologie de la blockchain et à réaliser un projet fonctionnel.

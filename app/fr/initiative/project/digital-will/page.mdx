@@ -1,15 +1,11 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "digital-will",
     title: "Testament Numérique",
     description: "Créez un système d'héritage basé sur la blockchain sécurisé. Les utilisateurs établissent un testament numérique où les fonds sont libérés aux bénéficiaires en fonction d'un système d'autorisation en chaîne qui consiste en diverses clés d'utilisateur ou conditions telles que des délais, l'inactivité ou la validation de tiers. Inclut l'identité basée sur le portefeuille, l'outil de création de compte, la récupération sociale optionnelle et la personnalisation du contrat. Cela garantit l'exécution irréversible et élimine le besoin de services successorales centralisés.",
     status: "idée",
     accronym: "WillChain",
-    industry_tags: ["Finance et Assurance", "Services"],
-    keyword_tags: ["Héritage", "Contrats intelligents", "Verrou temporelle", "Escrow", "Conformité"],
+    industry_tags: ["Finance et assurance", "Services"],
+    keyword_tags: ["Héritage", "Contrats intelligents", "Verrouillage temporel", "Escrow", "Conformité"],
     complexity_score: 7,
     effort_score: -1,
     adoption_score: 5,
@@ -17,53 +13,37 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# Testament Numérique
 
-        # {metadata.title}
+Créez un système d'héritage basé sur la blockchain sécurisé. Les utilisateurs établissent un testament numérique où les fonds sont libérés aux bénéficiaires en fonction d'un système d'autorisation en chaîne qui consiste en diverses clés d'utilisateur ou conditions telles que des délais, l'inactivité ou la validation de tiers. Inclut l'identité basée sur le portefeuille, l'outil de création de compte, la récupération sociale optionnelle et la personnalisation du contrat. Cela garantit l'exécution irréversible et élimine le besoin de services successorales centralisés.
 
-        Créez un système d'héritage basé sur la blockchain sécurisé. Les utilisateurs établissent un testament numérique où les fonds sont libérés aux bénéficiaires en fonction d'un système d'autorisation en chaîne qui consiste en diverses clés d'utilisateur ou conditions telles que des délais, l'inactivité ou la validation de tiers. Inclut l'identité basée sur le portefeuille, l'outil de création de compte, la récupération sociale optionnelle et la personnalisation du contrat. Cela garantit l'exécution irréversible et élimine le besoin de services successorales centralisés.
+![Maquette préliminaire du Testament Numérique](/images/project/digital-will.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`maquette de ${metadata.title}`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`Maquette préliminaire de ${metadata.title}`}
-        />
+## Description Générale
 
-        ## Description Générale
+[WillChain](https://willchain.monark.io) fournit une solution basée sur la blockchain pour gérer de manière sécurisée l'héritage numérique. Les systèmes juridiques traditionnels manquent d'infrastructure moderne pour gérer les actifs crypto, ce qui entraîne souvent la perte de fonds. Ce projet permet aux utilisateurs de créer un testament numérique dans lequel les tokens ou actifs numériques sont programmés pour être transférés selon des conditions spécifiques - telles que l'inactivité du portefeuille, le délai ou la validation d'un tiers.
 
-        [WillChain](https://willchain.monark.io) fournit une solution basée sur la blockchain pour gérer de manière sécurisée l'héritage numérique. Les systèmes juridiques traditionnels manquent d'infrastructure moderne pour gérer les actifs crypto, ce qui entraîne souvent la perte de fonds. Ce projet permet aux utilisateurs de créer un testament numérique dans lequel les tokens ou actifs numériques sont programmés pour être transférés selon des conditions spécifiques - telles que l'inactivité du portefeuille, le délai ou la validation d'un tiers.
+Les contrats intelligents définissent les bénéficiaires et les allocations d'actifs. Dans le prototype, les utilisateurs configurent une interface liée au portefeuille pour créer des règles d'héritage. Le système peut inclure une surveillance de l'inactivité, une autorisation multi-sig (par exemple, deux exécuteurs doivent approuver le transfert) et un stockage de documents optionnel via IPFS.
 
-        Les contrats intelligents définissent les bénéficiaires et les allocations d'actifs. Dans le prototype, les utilisateurs configurent une interface liée au portefeuille pour créer des règles d'héritage. Le système peut inclure une surveillance de l'inactivité, une autorisation multi-sig (par exemple, deux exécuteurs doivent approuver le transfert) et un stockage de documents optionnel via IPFS.
+WillChain a des implications dans le monde réel: des millions de dollars en crypto sont perdus chaque année par manque de planification successorale. En simplifiant les processus de transfert de patrimoine, cette plateforme non seulement sécurise la propriété des actifs, mais démocratise également la planification successorale pour les utilisateurs Web3.
 
-        WillChain a des implications dans le monde réel: des millions de dollars en crypto sont perdus chaque année par manque de planification successorale. En simplifiant les processus de transfert de patrimoine, cette plateforme non seulement sécurise la propriété des actifs, mais démocratise également la planification successorale pour les utilisateurs Web3.
+## Livrables & Fonctionnalités Souhaitées
 
-        ## Livrables & Fonctionnalités Souhaitées
+- Interface Web utilisant Next.js, Typescript, shadcn-ui, tailwindcss, montrant le parcours du produit
+- Authentification utilisateur et gestion des rôles pour les producteurs, les transporteurs et les détaillants
+- Contrats intelligents définissant les conditions d'exécution du testament
+- Simulation d'inactivité ou déclencheurs basés sur le temps
+- Interface Web pour ajouter des bénéficiaires et une allocation d'actifs
+- (Facultatif) mécanisme de sauvegarde ou de récupération crypté
 
-        - Interface Web utilisant Next.js, Typescript, shadcn-ui, tailwindcss, montrant le parcours du produit
-        - Authentification utilisateur et gestion des rôles pour les producteurs, les transporteurs et les détaillants
-        - Contrats intelligents définissant les conditions d'exécution du testament
-        - Simulation d'inactivité ou déclencheurs basés sur le temps
-        - Interface Web pour ajouter des bénéficiaires et une allocation d'actifs
-        - (Facultatif) mécanisme de sauvegarde ou de récupération crypté
+## Ressources Requises
 
+- Plateforme d'hébergement web (Vercel)
+- Hébergement de base de données (Clickhouse, PostgreSQL ou GraphQL) et de Backend (Typescript, Express)
+- Bibliothèque de contrats intelligents (Solidité + OpenZeppelin)
+- Testnet de la blockchain
+- IPFS/Arweave pour le stockage de hash de document
 
-        ## Ressources Requises
+## Support Fourni par Monark ou Partenaire
 
-        - Plateforme d'hébergement web (Vercel)
-        - Hébergement de base de données (Clickhouse, PostgreSQL ou GraphQL) et de Backend (Typescript, Express)
-        - Bibliothèque de contrats intelligents (Solidité + OpenZeppelin)
-        - Testnet de la blockchain
-        - IPFS/Arweave pour le stockage de hash de document
-
-        ## Support Fourni par Monark ou Partenaire
-
-        Monark soutiendra le projet avec une expertise en développement de blockchain et de contrats intelligents. L'équipe actuelle aidera à l'intégration et au transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication, et des réunions bimensuelles de type Sprint avec le CTO et/ou le COO coordonneront la progression du projet. Le CTO fournira également des conseils UI/UX. Une documentation exhaustive sera disponible pour aider les étudiants à apprendre la technologie blockchain et à livrer un projet fonctionnel.
-    </div>
-</div>
+Monark soutiendra le projet avec une expertise en développement de blockchain et de contrats intelligents. L'équipe actuelle aidera à l'intégration et au transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication, et des réunions bimensuelles de type Sprint avec le CTO et/ou le COO coordonneront la progression du projet. Le CTO fournira également des conseils UI/UX. Une documentation exhaustive sera disponible pour aider les étudiants à apprendre la technologie blockchain et à livrer un projet fonctionnel.

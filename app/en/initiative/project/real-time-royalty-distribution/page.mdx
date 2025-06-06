@@ -1,8 +1,4 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "real-time-royalty-distribution",
     title: "Real-Time Royalty Distribution",
     description: "Develop a system that automatically distributes revenue (e.g., from music streams, NFT sales, or services) in real time among multiple recipients. Use smart contracts to define splits (%), track flows, and release funds regularly or continuously. Combine with streaming protocols (like Superfluid) or build your own flow mechanism.",
@@ -17,61 +13,46 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# Real-Time Royalty Distribution
 
-        # {metadata.title}
+Develop a system that automatically distributes revenue (e.g., from music streams, NFT sales, or services) in real time among multiple recipients. Use smart contracts to define splits (%), track flows, and release funds regularly or continuously. Combine with streaming protocols (like Superfluid) or build your own flow mechanism.
 
-        Develop a system that automatically distributes revenue (e.g., from music streams, NFT sales, or services) in real time among multiple recipients. Use smart contracts to define splits (%), track flows, and release funds regularly or continuously. Combine with streaming protocols (like Superfluid) or build your own flow mechanism.
+![Real-Time Royalty Distribution mockup](/images/project/real-time-royalty-distribution.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`${metadata.title} mockup`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`${metadata.title} mockup`}
-        />
+## General Description
 
-        ## General Description
+[StreamRoyalties](https://streamroyalties.monark.io) is a smart contract platform for automatic, real-time distribution of royalties or revenues from digital assets like music, eBooks, videos, or intellectual property licenses. The goal is to remove middlemen from the process of revenue allocation and to ensure that creators, collaborators, and rights-holders receive their share instantly and transparently.
 
-        [StreamRoyalties](https://streamroyalties.monark.io) is a smart contract platform for automatic, real-time distribution of royalties or revenues from digital assets like music, eBooks, videos, or intellectual property licenses. The goal is to remove middlemen from the process of revenue allocation and to ensure that creators, collaborators, and rights-holders receive their share instantly and transparently.
-        
-        When income is generated—whether from NFT sales, streaming views, content unlocks, or software licensing fees—it flows into a royalty contract. That contract is pre-configured with rules defining how to split the funds across participants, how often to release payments (e.g., real-time vs. weekly), and any bonus conditions.
-        
-        The prototype can simulate revenue streams using test tokens and visualize distribution in real time. Bonus features include identity-linked payout dashboards, history of earnings per user, and dynamic split logic (e.g., proportional to contributions).
-        
-        This project is highly relevant in Web3 creator economies and DAOs launching media collaborations. Students will learn about precision math in Solidity, fairness models, streaming payment logic, and the tokenization of digital rights. StreamRoyalties showcases how blockchain solves persistent problems in content monetization, trust, and speed.
+When income is generated—whether from NFT sales, streaming views, content unlocks, or software licensing fees—it flows into a royalty contract. That contract is pre-configured with rules defining how to split the funds across participants, how often to release payments (e.g., real-time vs. weekly), and any bonus conditions.
 
-        ## Deliverables & Desired Functionalities
+The prototype can simulate revenue streams using test tokens and visualize distribution in real time. Bonus features include identity-linked payout dashboards, history of earnings per user, and dynamic split logic (e.g., proportional to contributions).
 
-        - Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
-            - Build a royalty dashboard showing live earnings and split rules.
-        - User authentication 
-            - Login via wallet to view and manage royalty share and history.
-        - Revenue-splitting smart contract with real-time payout logic
-            - Distribute incoming revenue instantly to recipients based on splits.
-        - Web UI dashboard showing earnings per user in real-time
-            - Visualize royalties per wallet with performance charts.
-        - Interface to set splits and payout conditions
-            - Configure rules like thresholds, intervals, or bonus triggers.
-        - History of payments and royalty logs
-            - Show who earned how much from each stream or transaction.
+This project is highly relevant in Web3 creator economies and DAOs launching media collaborations. Students will learn about precision math in Solidity, fairness models, streaming payment logic, and the tokenization of digital rights. StreamRoyalties showcases how blockchain solves persistent problems in content monetization, trust, and speed.
 
-        ## Required Resources
-    
-        - Web hosting platform (Vercel)
-        - Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
-        - Smart contract library (Solidity + OpenZeppelin)
-        - Blockchain testnet
-        - Test token setup on blockchain
-        - Wallet integration for simulation
+## Deliverables & Desired Functionalities
 
-        ## Support Provided by Monark or Partner
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+    - Build a royalty dashboard showing live earnings and split rules.
+- User authentication 
+    - Login via wallet to view and manage royalty share and history.
+- Revenue-splitting smart contract with real-time payout logic
+    - Distribute incoming revenue instantly to recipients based on splits.
+- Web UI dashboard showing earnings per user in real-time
+    - Visualize royalties per wallet with performance charts.
+- Interface to set splits and payout conditions
+    - Configure rules like thresholds, intervals, or bonus triggers.
+- History of payments and royalty logs
+    - Show who earned how much from each stream or transaction.
 
-        Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.
-    </div>
-</div>
+## Required Resources
+
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Test token setup on blockchain
+- Wallet integration for simulation
+
+## Support Provided by Monark or Partner
+
+Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.

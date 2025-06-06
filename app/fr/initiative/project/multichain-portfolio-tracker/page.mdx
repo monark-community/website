@@ -1,15 +1,11 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "multichain-portfolio-tracker",
     title: "Suivi de Portfolio Multichain",
     description: "Créez un tableau de bord qui agrège les avoirs d'un utilisateur sur plusieurs blockchains. Affichez les soldes de jetons, NFTs, et l'activité historique en utilisant les API ou RPC des blockchains supportées. Ajoutez des filtres, un étiquetage de portefeuille, l'évaluation des actifs et des graphiques. Cela aide les utilisateurs à visualiser leur empreinte Web3 en un seul endroit.",
     status: "idée",
     acronym: "MultiTrack",
-    industry_tags: ["Investissement","Finance et Assurance"], 
-    keyword_tags: ["Portefeuille","Analytique", "Suivi", "Porte-monnaie", "Tableau de bord"],
+    industry_tags: ["Investissement","Finance et assurance"], 
+    keyword_tags: ["Portefeuille","Analytique", "Suivi", "Portefeuille", "Tableau de bord"],
     complexity_score: 7,
     effort_score: 9,
     adoption_score: 3,
@@ -17,63 +13,47 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# Suivi de Portfolio Multichain
 
-        # {metadata.title}
+Créez un tableau de bord qui agrège les avoirs d'un utilisateur sur plusieurs blockchains. Affichez les soldes de jetons, NFTs, et l'activité historique en utilisant les API ou RPC des blockchains supportées. Ajoutez des filtres, un étiquetage de portefeuille, l'évaluation des actifs et des graphiques. Cela aide les utilisateurs à visualiser leur empreinte Web3 en un seul endroit.
 
-        Créez un tableau de bord qui agrège les avoirs d'un utilisateur sur plusieurs blockchains. Affichez les soldes de jetons, NFTs, et l'activité historique en utilisant les API ou RPC des blockchains supportées. Ajoutez des filtres, un étiquetage de portefeuille, l'évaluation des actifs et des graphiques. Cela aide les utilisateurs à visualiser leur empreinte Web3 en un seul endroit.
+![Maquette du Suivi de Portfolio Multichain](/images/project/multichain-portfolio-tracker.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`maquette de ${metadata.title}`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`maquette de ${metadata.title}`}
-        />
+## Description générale
 
-        ## Description générale
+[MultiTrack](https://multitrack.monark.io) est un outil d'analyse de blockchain conçu pour simplifier le suivi des actifs sur plusieurs chaînes dans une seule interface. Avec l'adoption croissante des crypto-monnaies, les utilisateurs gèrent de plus en plus de jetons, NFTs et positions DeFi sur plusieurs blockchains. Ce projet construit une vue unifiée du portefeuille pour ces utilisateurs en se connectant aux API publiques ou aux points de terminaison de nœuds à travers les réseaux de test pour récupérer des données telles que les soldes de portefeuille, les types d'actifs, les historiques de transactions et les valeurs de jetons.
 
-        [MultiTrack](https://multitrack.monark.io) est un outil d'analyse de blockchain conçu pour simplifier le suivi des actifs sur plusieurs chaînes dans une seule interface. Avec l'adoption croissante des crypto-monnaies, les utilisateurs gèrent de plus en plus de jetons, NFTs et positions DeFi sur plusieurs blockchains. Ce projet construit une vue unifiée du portefeuille pour ces utilisateurs en se connectant aux API publiques ou aux points de terminaison de nœuds à travers les réseaux de test pour récupérer des données telles que les soldes de portefeuille, les types d'actifs, les historiques de transactions et les valeurs de jetons.
+MultiTrack agrège et normalise ces données, les présentant dans un tableau de bord interactif et propre. Il peut inclure des résumés visuels (graphiques à secteurs, graphiques de performance), des répartitions d'actifs par chaîne, et des balises optionnelles (par exemple, des avoirs à long terme vs à court terme). Les étudiants peuvent implémenter le cache ou la pagination pour la scalabilité, ainsi que des mécanismes de filtrage et de tri pour une grande convivialité.
 
-        MultiTrack agrège et normalise ces données, les présentant dans un tableau de bord interactif et propre. Il peut inclure des résumés visuels (graphiques à secteurs, graphiques de performance), des répartitions d'actifs par chaîne, et des balises optionnelles (par exemple, des avoirs à long terme vs à court terme). Les étudiants peuvent implémenter le cache ou la pagination pour la scalabilité, ainsi que des mécanismes de filtrage et de tri pour une grande convivialité.
+Les fonctionnalités avancées pourraient inclure le suivi de la performance quotidienne, l'exportation de données pour les impôts, ou même une gestion légère du portefeuille comme la simulation de transaction ou l'estimation du gaz. Bien que des versions commerciales existent, ce projet étudiant met l'accent sur la conception ouverte, la transparence et l'extensibilité. Il permet aux équipes d'apprendre comment interagir avec les données de la blockchain en temps réel, de transformer les résultats basés sur JSON en formats conviviaux pour l'utilisateur, et de concevoir une infrastructure d'analytique modulaire. Il est idéal pour les étudiants intéressés par le UX et l'ingénierie back-end en crypto.
 
-        Les fonctionnalités avancées pourraient inclure le suivi de la performance quotidienne, l'exportation de données pour les impôts, ou même une gestion légère du portefeuille comme la simulation de transaction ou l'estimation du gaz. Bien que des versions commerciales existent, ce projet étudiant met l'accent sur la conception ouverte, la transparence et l'extensibilité. Il permet aux équipes d'apprendre comment interagir avec les données de la blockchain en temps réel, de transformer les résultats basés sur JSON en formats conviviaux pour l'utilisateur, et de concevoir une infrastructure d'analytique modulaire. Il est idéal pour les étudiants intéressés par le UX et l'ingénierie back-end en crypto.
+## Livrables et Fonctionnalités souhaitées
 
-        ## Livrables et Fonctionnalités souhaitées
+- Interface Web utilisant Next.js, Typescript, shadcn-ui, tailwindcss
+    - Un tableau de bord qui résume les actifs et l'historique crypto à travers les chaînes.
+- Authentification de l'utilisateur 
+    - Se connecter pour visualiser et gérer les données du portefeuille du portefeuille.
+- Connexion multi-portefeuille à travers les réseaux de test
+    - Permettre aux utilisateurs de connecter plusieurs portefeuilles à travers les testnets et protocols.
+- Agrégation de données par actif, réseau et période de temps
+    - Normaliser et afficher les actifs par chaîne, jeton et catégorie.
+- Affichage de l'historique des transactions et du solde des jetons
+    - Liste des transferts de jetons, swaps, coûts de gaz, et activité NFT.
+- Graphiques et vues résumées de la performance du portefeuille
+    - Visualiser la performance, les avoirs et les changements dans le temps.
+- Export vers CSV ou Excel
+    - Ajouter une fonction d'export pour la conformité ou les rapports fiscaux.
 
-        - Interface Web utilisant Next.js, Typescript, shadcn-ui, tailwindcss
-            - Un tableau de bord qui résume les actifs et l'historique crypto à travers les chaînes.
-        - Authentification de l'utilisateur 
-            - Se connecter pour visualiser et gérer les données du portefeuille du portefeuille.
-        - Connexion multi-portefeuille à travers les réseaux de test
-            - Permettre aux utilisateurs de connecter plusieurs portefeuilles à travers les testnets et protocols.
-        - Agrégation de données par actif, réseau et période de temps
-            - Normaliser et afficher les actifs par chaîne, jeton et catégorie.
-        - Affichage de l'historique des transactions et du solde des jetons
-            - Liste des transferts de jetons, swaps, coûts de gaz, et activité NFT.
-        - Graphiques et vues résumées de la performance du portefeuille
-            - Visualiser la performance, les avoirs et les changements dans le temps.
-        - Export vers CSV ou Excel
-            - Ajouter une fonction d'export pour la conformité ou les rapports fiscaux.
+## Ressources requises
 
+- Plateforme d'hébergement Web (Vercel)
+- Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement Backend (Typescript, Express)
+- Bibliothèque de contrats intelligents (Solidity + OpenZeppelin)
+- Réseau de test blockchain
+- API blockchain publiques ou indexers
+- Accès Node (via Pinax)
+- Bibliothèque de graphiques (Chart.js, D3.js, etc.)
 
-        ## Ressources requises
+## Support Fourni par Monark ou Partenaire
 
-        - Plateforme d'hébergement Web (Vercel)
-        - Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement Backend (Typescript, Express)
-        - Bibliothèque de contrats intelligents (Solidity + OpenZeppelin)
-        - Réseau de test blockchain
-        - API blockchain publiques ou indexers
-        - Accès Node (via Pinax)
-        - Bibliothèque de graphiques (Chart.js, D3.js, etc.)
-
-        ## Support Fourni par Monark ou Partenaire
-
-        Monark apportera sa expertise dans le développement de la blockchain et des contrats intelligents au projet. L'équipe actuelle aidera à l'intégration et au transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication, et des réunions bis-mensuelles de style Sprint avec le CTO et/ou le COO coordonneront les progrès du projet. Le CTO fournira également des conseils en matière d'UI/UX. Une documentation complète sera disponible pour aider les étudiants à comprendre la technologie de la blockchain et à livrer un projet fonctionnel.
-    </div>
-</div>
+Monark apportera sa expertise dans le développement de la blockchain et des contrats intelligents au projet. L'équipe actuelle aidera à l'intégration et au transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication, et des réunions bis-mensuelles de style Sprint avec le CTO et/ou le COO coordonneront les progrès du projet. Le CTO fournira également des conseils en matière d'UI/UX. Une documentation complète sera disponible pour aider les étudiants à comprendre la technologie de la blockchain et à livrer un projet fonctionnel.

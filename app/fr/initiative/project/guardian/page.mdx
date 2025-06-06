@@ -1,15 +1,11 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "guardian",
     title: "Guardian",
     description: "Guardian est une application d'alerte Web3 mobile qui notifie les utilisateurs à proximité en cas d'urgence. Les alertes sont liées aux ID de portefeuille, et les intervenants reçoivent des fonds d'une pool de contrats intelligents préfinancée. Ceci incite à une véritable aide tout en décourageant l'abus grâce à la responsabilité intégrée et aux récompenses.",
     status: "idée",
     accronym: "Guardian",
-    industry_tags: ["Villes", "Services", "Communications Numériques"],
-    keyword_tags: ["Contrôle d'accès", "Intégration de portefeuille", "Récompenses", "Contrats intelligents", "Réputation"],
+    industry_tags: ["Villes", "Services", "Communications numériques"],
+    keyword_tags: ["Contrôle d'accès", "Portefeuille", "Récompenses", "Contrats intelligents", "Réputation"],
     complexity_score: 7,
     effort_score: -1,
     adoption_score: 2,
@@ -17,64 +13,49 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# Guardian
 
-        # {metadata.title}
+Guardian est une application d'alerte Web3 mobile qui notifie les utilisateurs à proximité en cas d'urgence. Les alertes sont liées aux ID de portefeuille, et les intervenants reçoivent des fonds d'une pool de contrats intelligents préfinancée. Ceci incite à une véritable aide tout en décourageant l'abus grâce à la responsabilité intégrée et aux récompenses.
 
-        Guardian est une application d'alerte Web3 mobile qui notifie les utilisateurs à proximité en cas d'urgence. Les alertes sont liées aux ID de portefeuille, et les intervenants reçoivent des fonds d'une pool de contrats intelligents préfinancée. Ceci incite à une véritable aide tout en décourageant l'abus grâce à la responsabilité intégrée et aux récompenses.
+![Maquette de Guardian](/images/project/guardian.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`${metadata.title} maquette`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`${metadata.title} maquette`}
-        />
-        
-        ## Description Générale
+## Description Générale
 
-        [Guardian](https://guardian.monark.io) est une application décentralisée mobile qui vise à responsabiliser les citoyens en cas d'urgence en utilisant des alertes basées sur la proximité et des incitations financières. Les utilisateurs qui se sentent en danger ou sont confrontés à une situation urgente peuvent déclencher une alerte sur la chaîne qui est diffusée à d'autres utilisateurs dans un rayon géographique prédéfini. Ceux qui répondent à l'alerte - idéalement en personne ou via une assistance vérifiée - peuvent recevoir une compensation d'une pool de contrats intelligents préfinancée par l'utilisateur d'origine.
+[Guardian](https://guardian.monark.io) est une application décentralisée mobile qui vise à responsabiliser les citoyens en cas d'urgence en utilisant des alertes basées sur la proximité et des incitations financières. Les utilisateurs qui se sentent en danger ou sont confrontés à une situation urgente peuvent déclencher une alerte sur la chaîne qui est diffusée à d'autres utilisateurs dans un rayon géographique prédéfini. Ceux qui répondent à l'alerte - idéalement en personne ou via une assistance vérifiée - peuvent recevoir une compensation d'une pool de contrats intelligents préfinancée par l'utilisateur d'origine.
 
-        Ce système d'incitation est crucial : il décourage l'abus en veillant à ce que les alertes coûtent à l'expéditeur une petite somme pré-approuvée, tout en récompensant l'intervention utile et en encourageant la croissance d'un réseau de répondants basé sur la confiance. Chaque réponse est enregistrée sur la chaîne, liée au portefeuille du répondant, avec des données de réputation accumulées au fil du temps. Les répondants répétés peuvent obtenir des scores de réputation plus élevés et accéder à des tâches ou des niveaux d'urgence supplémentaires.
+Ce système d'incitation est crucial : il décourage l'abus en veillant à ce que les alertes coûtent à l'expéditeur une petite somme pré-approuvée, tout en récompensant l'intervention utile et en encourageant la croissance d'un réseau de répondants basé sur la confiance. Chaque réponse est enregistrée sur la chaîne, liée au portefeuille du répondant, avec des données de réputation accumulées au fil du temps. Les répondants répétés peuvent obtenir des scores de réputation plus élevés et accéder à des tâches ou des niveaux d'urgence supplémentaires.
 
-        Le système comprend l'intégration du GPS, un flux de vérification (par exemple, confirmer la légitimité d'une alerte ou l'assistance fournie), et une interface utilisateur simple pour déclencher, gérer et répondre aux alertes. Cette solution fusionne la technologie civique, les micro transactions et les systèmes de réputation décentralisés pour créer un outil de sécurité dans le monde réel - particulièrement utile dans des zones à forte fréquentation piétonnière, sur les campus universitaires ou dans des communautés locales.
+Le système comprend l'intégration du GPS, un flux de vérification (par exemple, confirmer la légitimité d'une alerte ou l'assistance fournie), et une interface utilisateur simple pour déclencher, gérer et répondre aux alertes. Cette solution fusionne la technologie civique, les micro transactions et les systèmes de réputation décentralisés pour créer un outil de sécurité dans le monde réel - particulièrement utile dans des zones à forte fréquentation piétonnière, sur les campus universitaires ou dans des communautés locales.
 
-        Les étudiants travaillant sur Guardian exploreront l'identité décentralisée, les services de localisation, le suivi de la réputation, et la logique de paiement sensible au temps, tout en construisant des interfaces mobiles intuitives.
+Les étudiants travaillant sur Guardian exploreront l'identité décentralisée, les services de localisation, le suivi de la réputation, et la logique de paiement sensible au temps, tout en construisant des interfaces mobiles intuitives.
 
-        ## Livrables & Fonctionnalités Souhaitées
+## Livrables & Fonctionnalités Souhaitées
 
-        - Interface Web utilisant Next.js, Typescript, shadcn-ui, tailwindcss
-            - Lancer un système d'alerte intégré au GPS pour une utilisation communautaire.
-        - Authentification de l'utilisateur 
-            - Connectez le portefeuille pour envoyer ou répondre à des alertes d'urgence.
-        - Interface frontend optimisée pour les mobiles avec bouton déclencheur d'urgence et carte des intervenants
-            - Envoyez une alerte aux utilisateurs à proximité en un seul clic. 
-        - Des contrats intelligents pour gérer le rayon d'alerte, les paiements des intervenants, et la vérification
-            - Stockez les fonds et distribuez les récompenses aux intervenants vérifiés.
-        - Un enregistrement des événements sur la chaîne et un suivi de la réputation
-            - Suivez les intervenants utiles et construisez des scores de confiance.
-        - Interface d'administration pour ajuster les pools de paiement et les seuils de rayon
-            - Ajustez le rayon ou les paramètres de paiement pour des groupes spécifiques.
-        - (Facultatif) intégration avec une liste de contacts de confiance ou des groupes d'intervenants basés sur des DAO 
-        
-        ## Ressources Requises
+- Interface Web utilisant Next.js, Typescript, shadcn-ui, tailwindcss
+    - Lancer un système d'alerte intégré au GPS pour une utilisation communautaire.
+- Authentification de l'utilisateur 
+    - Connectez le portefeuille pour envoyer ou répondre à des alertes d'urgence.
+- Interface frontend optimisée pour les mobiles avec bouton déclencheur d'urgence et carte des intervenants
+    - Envoyez une alerte aux utilisateurs à proximité en un seul clic. 
+- Des contrats intelligents pour gérer le rayon d'alerte, les paiements des intervenants, et la vérification
+    - Stockez les fonds et distribuez les récompenses aux intervenants vérifiés.
+- Un enregistrement des événements sur la chaîne et un suivi de la réputation
+    - Suivez les intervenants utiles et construisez des scores de confiance.
+- Interface d'administration pour ajuster les pools de paiement et les seuils de rayon
+    - Ajustez le rayon ou les paramètres de paiement pour des groupes spécifiques.
+- (Facultatif) intégration avec une liste de contacts de confiance ou des groupes d'intervenants basés sur des DAO 
 
-        - Plateforme d'hébergement Web (Vercel)
-        - Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement backend (Typescript, Express)
-        - Bibliothèque de contrats intelligents (Solidité + OpenZeppelin)
-        - Testnet Blockchain
-        - Bibliothèques d'intégration de localisation/GPS
-        - Logique de contrat intelligent pour le filtrage par proximité et les récompenses
-        - Interface de l'application web progressive ou du frontend React Native
-        - IPFS ou journal de messages chiffrés pour le stockage optionnel du contexte
+## Ressources Requises
 
-        ## Support Fourni par Monark ou Partenaire
+- Plateforme d'hébergement Web (Vercel)
+- Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement backend (Typescript, Express)
+- Bibliothèque de contrats intelligents (Solidité + OpenZeppelin)
+- Testnet Blockchain
+- Bibliothèques d'intégration de localisation/GPS
+- Logique de contrat intelligent pour le filtrage par proximité et les récompenses
+- Interface de l'application web progressive ou du frontend React Native
+- IPFS ou journal de messages chiffrés pour le stockage optionnel du contexte
 
-        Monark soutiendra le projet avec une expertise en développement blockchain et contrats intelligents. L'équipe actuelle assistera lors de l'accueil et du transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication, et des réunions bimensuelles de style Sprint avec le CTO et/ou le COO coordonneront les progrès du projet. Le CTO fournira également des conseils sur l'UI/UX. Une documentation extensive sera disponible pour aider les étudiants à apprendre la technologie de la blockchain et à livrer un projet fonctionnel.
-    </div>
-</div>
+## Support Fourni par Monark ou Partenaire
+
+Monark soutiendra le projet avec une expertise en développement blockchain et contrats intelligents. L'équipe actuelle assistera lors de l'accueil et du transfert de connaissances. Un serveur Discord dédié sera utilisé pour la communication, et des réunions bimensuelles de style Sprint avec le CTO et/ou le COO coordonneront les progrès du projet. Le CTO fournira également des conseils sur l'UI/UX. Une documentation extensive sera disponible pour aider les étudiants à apprendre la technologie de la blockchain et à livrer un projet fonctionnel.

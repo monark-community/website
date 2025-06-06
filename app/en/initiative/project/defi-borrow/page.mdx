@@ -1,11 +1,7 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "defi-borrow",
     title: "DeFi Borrow",
-    description: "Focus on the borrowing experience in a DeFi protocol. Users request loans, submit collateral, and monitor repayment status. Collateral is locked in smart contracts, and loan conditions (APR, expiry) are enforced automatically. Tie in with existing testnet lending pools or simulate locally.",
+    description: "Focus on the borrowing experience in a DeFi protocol. Users request loans, submit collateral, and monitor repayment status. Collateral is locked in smart contracts, and loan terms (APR, expiration) are automatically enforced. Partner with existing testnet lending pools or simulate locally.",
     status: "idea",
     accronym: "BorrowX",
     industry_tags: ["Finance and Insurance", "Banking and Capital Markets"],
@@ -17,57 +13,42 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# DeFi Borrow
 
-        # {metadata.title}
+Focus on the borrowing experience in a DeFi protocol. Users request loans, submit collateral, and monitor repayment status. Collateral is locked in smart contracts, and loan terms (APR, expiration) are automatically enforced. Partner with existing testnet lending pools or simulate locally.
 
-        Focus on the borrowing experience in a DeFi protocol. Users request loans, submit collateral, and monitor repayment status. Collateral is locked in smart contracts, and loan conditions (APR, expiry) are enforced automatically. Tie in with existing testnet lending pools or simulate locally.
+![DeFi Borrow mockup](/images/project/defi-borrow.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`${metadata.title} mockup`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`${metadata.title} Early Mockup`}
-        />
+## General Description
 
-        ## General Description
+[BorrowX](https://borrowx.monark.io) focuses specifically on the borrowing experience within a decentralized lending protocol. Users can view available assets, deposit collateral, select borrowing terms, and initiate loans. The system tracks the user's collateral ratio, repayment schedule, and loan interest.
 
-        [Borrowx](https://borrowx.monark.io) focuses specifically on the borrowing experience within a decentralized lending protocol. Users can view available assets, deposit collateral, select borrowing terms, and initiate loans. The system tracks the user's collateral ratio, repayment schedule, and borrowing interest.
-        
-        The smart contract ensures safety by locking collateral, updating health metrics, and triggering liquidation if the value of collateral drops too far. BorrowX can either operate standalone or connect to a liquidity pool like VaultLend. This modular focus allows students to specialize in user-facing lending mechanics without building a full lending platform.
-        
-        The frontend includes loan sliders, visual collateral dashboards, repayment tracking, and liquidation alerts. Bonus features include flexible interest rate models (fixed/variable), partial repayments, or credit score simulations.
-        
-        Students gain experience with financial modeling, precision math, time-based state changes, and wallet-based loan management. BorrowX provides a deep dive into a key piece of the Web3 financial puzzle, delivering strong engineering and UX skills.
+The smart contract ensures security by locking collateral, updating health metrics, and triggering liquidation if collateral value drops too low. BorrowX can either operate standalone or connect to a liquidity pool like VaultLend. This modular focus allows students to specialize in user-oriented lending mechanisms without building a complete lending platform.
 
-        ## Deliverables & Desired Functionalities
+The user interface includes loan sliders, visual collateral dashboards, repayment tracking, and liquidation alerts. Bonus features include flexible interest rate models (fixed/variable), partial repayments, or credit score simulations.
 
-        - Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
-        - User authentication 
-        - Collateral deposit and borrow contract
-        - Repayment logic and debt tracking
-        - Health factor calculation and alerts
-        - UI for managing open borrow positions
-        - (Optional) Credit score or borrowing tier simulation
+Students gain experience with financial modeling, precision mathematics, time-based state changes, and portfolio-based loan management. BorrowX offers an in-depth dive into a key piece of the Web3 financial puzzle, providing solid engineering and UX skills.
 
-        ## Required Resources
+## Deliverables & Desired Functionalities
 
-        - Web hosting platform (Vercel)
-        - Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
-        - Smart contract library (Solidity + OpenZeppelin)
-        - Blockchain testnet
-        - React frontend with wallet integration
-        - Test tokens and price simulation script
-        - Analytics or data logging module
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+- User authentication 
+- Collateral deposit and loan contract
+- Repayment logic and debt tracking
+- Health factor calculation and alerts
+- User interface for managing open borrowing positions
+- (Optional) Credit score or borrowing tier simulation
 
-        ## Support Provided by Monark or Partner
+## Required Resources
 
-        Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.
-    </div>
-</div>
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Frontend React with wallet integration
+- Test tokens and price simulation script
+- Logging or data analytics module
+
+## Support Provided by Monark or Partner
+
+Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.

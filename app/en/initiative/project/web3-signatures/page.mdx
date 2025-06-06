@@ -1,8 +1,4 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "web3-signatures",
     title: "Web3 Signatures",
     description: "Create a system where users sign documents or transactions using their wallet signature. Store document hashes on-chain, and optionally save files on IPFS. Others can verify the timestamp, signer identity, and content integrity. Mimics tools like DocuSign but using blockchain authentication that are decentralized and censorship-resistant.",
@@ -17,56 +13,41 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# Web3 Signatures
 
-        # {metadata.title}
+Create a system where users sign documents or transactions using their wallet signature. Store document hashes on-chain, and optionally save files on IPFS. Others can verify the timestamp, signer identity, and content integrity. Mimics tools like DocuSign but using blockchain authentication that are decentralized and censorship-resistant.
 
-        Create a system where users sign documents or transactions using their wallet signature. Store document hashes on-chain, and optionally save files on IPFS. Others can verify the timestamp, signer identity, and content integrity. Mimics tools like DocuSign but using blockchain authentication that are decentralized and censorship-resistant.
-        
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`${metadata.title} mockup`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`${metadata.title} mockup`}
-        />
+![Web3 Signatures mockup](/images/project/web3-signatures.jpg)
 
-        ## General Description
+## General Description
 
-        [SignChain](https://signchain.monark.io) is a secure, decentralized system for digitally signing documents, agreements, or messages using blockchain wallets. The project allows users to upload a file, generate a content hash, sign it using their private key via wallet integration, and optionally store the signed document hash on-chain or the document itself on IPFS.
-        
-        Verification is simple: anyone with the document can re-hash it and check against the on-chain or public record to confirm who signed it and when. The system supports multiple signers, time-stamping, and metadata such as document title and category.
-        
-        This project teaches critical blockchain primitives such as message signing, hash functions, and immutability guarantees. It can be used for grant agreements, employment offers, content licenses, or even internal DAO approvals. Students will gain experience in cryptographic operations, content-based addressing, and dApp frontend flows for non-financial interactions.
-        
-        The system emphasizes privacy and auditability without centralized document custody, offering a Web3-native alternative to platforms like DocuSign.
+[SignChain](https://signchain.monark.io) is a secure, decentralized system for digitally signing documents, agreements, or messages using blockchain wallets. The project allows users to upload a file, generate a content hash, sign it using their private key via wallet integration, and optionally store the signed document hash on-chain or the document itself on IPFS.
 
-        ## Deliverables & Desired Functionalities
+Verification is simple: anyone with the document can re-hash it and check against the on-chain or public record to confirm who signed it and when. The system supports multiple signers, time-stamping, and metadata such as document title and category.
 
-        - Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
-        - User authentication 
-        - Document upload and content hash generation tool
-        - Wallet signature flow with on-chain hash commitment
-        - IPFS integration for optional decentralized storage
-        - Web UI for signature validation and document history
-        - Multi-signer support with timestamps
+This project teaches critical blockchain primitives such as message signing, hash functions, and immutability guarantees. It can be used for grant agreements, employment offers, content licenses, or even internal DAO approvals. Students will gain experience in cryptographic operations, content-based addressing, and dApp frontend flows for non-financial interactions.
 
-        ## Required Resources
+The system emphasizes privacy and auditability without centralized document custody, offering a Web3-native alternative to platforms like DocuSign.
 
-        - Web hosting platform (Vercel)
-        - Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
-        - Smart contract library (Solidity + OpenZeppelin)
-        - Blockchain testnet
-        - Web3 signing library (ethers.js, wagmi)
-        - Frontend UI with file input and verification logic
+## Deliverables & Desired Functionalities
 
-        ## Support Provided by Monark or Partner
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+- User authentication 
+- Document upload and content hash generation tool
+- Wallet signature flow with on-chain hash commitment
+- IPFS integration for optional decentralized storage
+- Web UI for signature validation and document history
+- Multi-signer support with timestamps
 
-        Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.
-    </div>
-</div>
+## Required Resources
+
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Web3 signing library (ethers.js, wagmi)
+- Frontend UI with file input and verification logic
+
+## Support Provided by Monark or Partner
+
+Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.

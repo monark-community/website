@@ -1,8 +1,4 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "land-registry-voting",
     title: "Land Registry Voting",
     description: "Build a voting system where landowners and/or property tenants can vote on proposals related to their region. Tie voting rights to land ownership (real or simulated), verify votes via wallet signatures, and display results on a map or dashboard. Explore ways to sync on-chain votes with off-chain registries for potential civic integration.",
@@ -17,56 +13,41 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# Land Registry Voting
 
-        # {metadata.title}
+Build a voting system where landowners and/or property tenants can vote on proposals related to their region. Tie voting rights to land ownership (real or simulated), verify votes via wallet signatures, and display results on a map or dashboard. Explore ways to sync on-chain votes with off-chain registries for potential civic integration.
 
-        Build a voting system where landowners and/or property tenants can vote on proposals related to their region. Tie voting rights to land ownership (real or simulated), verify votes via wallet signatures, and display results on a map or dashboard. Explore ways to sync on-chain votes with off-chain registries for potential civic integration.
+![Land Registry Voting mockup](/images/project/land-registry-voting.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`${metadata.title} mockup`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`${metadata.title} mockup`}
-        />
+## General Description
 
-        ## General Description
-        
-        [LandVote](https://landvote.monark.io) is a civic-focused blockchain solution that allows landowners to participate in community governance tied to their physical plots. By linking wallet identities to verified property holdings (simulated for this project), the platform grants voting rights on land-use-related proposals such as zoning changes, infrastructure planning, or public resource allocation.
-        
-        Each vote is immutably recorded on the blockchain and proposals are publicly visible for transparency. The system simulates real-world city decision-making processes, enabling landowners to engage in issues that directly affect their neighborhoods or assets. Roles include proposer, validator (e.g., municipal representative), and eligible land-based voter.
-        
-        The project also introduces mapping features. Land parcels are represented on a visual map interface (e.g., via OpenStreetMap), allowing users to see proposals relevant to their region. Over time, this project can evolve into a full digital public hearing and participatory budgeting system.
-        
-        Students working on LandVote will combine on-chain governance models with mapping tools, real estate registry simulations, and public-good UX design. They’ll explore identity-attestation systems, weighted voting, and civic trust-building—skills aligned with next-generation civic infrastructure.
+[LandVote](https://landvote.monark.io) is a civic-focused blockchain solution that allows landowners to participate in community governance tied to their physical plots. By linking wallet identities to verified property holdings (simulated for this project), the platform grants voting rights on land-use-related proposals such as zoning changes, infrastructure planning, or public resource allocation.
 
-        ## Deliverables & Desired Functionalities
+Each vote is immutably recorded on the blockchain and proposals are publicly visible for transparency. The system simulates real-world city decision-making processes, enabling landowners to engage in issues that directly affect their neighborhoods or assets. Roles include proposer, validator (e.g., municipal representative), and eligible land-based voter.
 
-        - Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
-        - User authentication 
-        - Smart contracts for proposal creation and regional voting
-        - Wallet-to-land association simulation
-        - Interactive map UI for regional voting overlays
-        - Role-based validation and voting logic
-        - History of votes per parcel
+The project also introduces mapping features. Land parcels are represented on a visual map interface (e.g., via OpenStreetMap), allowing users to see proposals relevant to their region. Over time, this project can evolve into a full digital public hearing and participatory budgeting system.
 
-        ## Required Resources
+Students working on LandVote will combine on-chain governance models with mapping tools, real estate registry simulations, and public-good UX design. They'll explore identity-attestation systems, weighted voting, and civic trust-building—skills aligned with next-generation civic infrastructure.
 
-        - Web hosting platform (Vercel)
-        - Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
-        - Smart contract library (Solidity + OpenZeppelin)
-        - Blockchain testnet
-        - Mapping APIs (OpenStreetMap or Leaflet.js)
-        - Mock registry dataset for land-parcel simulation
+## Deliverables & Desired Functionalities
 
-        ## Support Provided by Monark or Partner
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+- User authentication 
+- Smart contracts for proposal creation and regional voting
+- Wallet-to-land association simulation
+- Interactive map UI for regional voting overlays
+- Role-based validation and voting logic
+- History of votes per parcel
 
-        Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.
-    </div>
-</div>
+## Required Resources
+
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Mapping APIs (OpenStreetMap or Leaflet.js)
+- Mock registry dataset for land-parcel simulation
+
+## Support Provided by Monark or Partner
+
+Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.

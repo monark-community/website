@@ -1,8 +1,4 @@
-import ProjectMetadata from "@/components/web/pages/project/ProjectMetadata";
-import WrappedImage from "@/components/shared/wrapped-image.component";
-
 export const metadata = {
-    
     id: "fee-distribution-system",
     title: "Fee Distribution System",
     description: "Design a smart contract system that splits incoming payments automatically among stakeholders. Users can define fixed percentages or dynamic formulas. The platform handles income like DAO revenue, royalties, or affiliate payouts and distributes it to multiple wallets upon receipt. Add a UI for configuring, simulating, and tracking earnings transparently.",
@@ -17,55 +13,40 @@ export const metadata = {
     revenue_score: -1,
 };
 
-<div className="flex">
-    <div className="hidden sticky top-0">
-        <ProjectMetadata metadata={metadata} />
-    </div>
-    <div className="w-full">
+# Fee Distribution System
 
-        # {metadata.title}
+Design a smart contract system that splits incoming payments automatically among stakeholders. Users can define fixed percentages or dynamic formulas. The platform handles income like DAO revenue, royalties, or affiliate payouts and distributes it to multiple wallets upon receipt. Add a UI for configuring, simulating, and tracking earnings transparently.
 
-        Design a smart contract system that splits incoming payments automatically among stakeholders. Users can define fixed percentages or dynamic formulas. The platform handles income like DAO revenue, royalties, or affiliate payouts and distributes it to multiple wallets upon receipt. Add a UI for configuring, simulating, and tracking earnings transparently.
+![Fee Distribution System mockup](/images/project/fee-distribution-system.jpg)
 
-        <WrappedImage
-            src={`/images/project/${metadata.id}.jpg`}
-            alt={`${metadata.title} mockup`}
-            width={800}
-            height={400}
-            className="w-full h-auto rounded-lg shadow-lg"
-            caption={`${metadata.title} mockup`}
-        />
+## General Description
 
-        ## General Description
+[Splitflow](https://splitflow.monark.io) is a smart contract-based system that automates revenue sharing between multiple stakeholders in a transparent and verifiable manner. Whether it's a DAO distributing treasury income, a group of developers sharing protocol fees, or a content creator splitting royalties with collaborators, SplitFlow enables precise, rule-based distribution of funds without the need for intermediaries or trust.
 
-        [Splitflow](https://splitflow.monark.io) is a smart contract-based system that automates revenue sharing between multiple stakeholders in a transparent and verifiable manner. Whether it’s a DAO distributing treasury income, a group of developers sharing protocol fees, or a content creator splitting royalties with collaborators, SplitFlow enables precise, rule-based distribution of funds without the need for intermediaries or trust.
-        
-        The system empowers users to configure payout percentages, add or remove recipients, and monitor distributions through an intuitive dashboard. Once income flows into the smart contract (e.g., a payment from a dApp or sale), the funds are instantly split and transferred to predefined wallets according to the specified rules. This removes administrative burden, prevents disputes, and ensures real-time, tamper-proof allocation of earnings.
-        
-        In creative industries, SplitFlow can replace third-party services that manage royalties or commissions, drastically reducing overhead and improving payout speed. For DAOs, it can serve as a module to compensate contributors, allocate budget to working groups, or distribute community rewards.
-        
-        Students working on SplitFlow will gain practical experience in developing Solidity smart contracts with precise mathematical logic, handling edge cases (e.g., rounding errors, partial payments), and designing secure, upgradeable contract systems. They’ll also explore frontend design for visualizing transactions and payout logic in real-time. This project not only deepens blockchain engineering skills but demonstrates real-world relevance across sectors like finance, media, and open-source development.
+The system empowers users to configure payout percentages, add or remove recipients, and monitor distributions through an intuitive dashboard. Once income flows into the smart contract (e.g., a payment from a dApp or sale), the funds are instantly split and transferred to predefined wallets according to the specified rules. This removes administrative burden, prevents disputes, and ensures real-time, tamper-proof allocation of earnings.
 
-        ## Deliverables & Desired Functionalities
+In creative industries, SplitFlow can replace third-party services that manage royalties or commissions, drastically reducing overhead and improving payout speed. For DAOs, it can serve as a module to compensate contributors, allocate budget to working groups, or distribute community rewards.
 
-        - Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
-        - User authentication 
-        - Smart contracts to manage revenue splitting based on set percentages
-        - Web UI to input recipients, percentages, and view split simulation
-        - Real-time distribution dashboard with transaction history
-        - Support for both single and recurring payments
-        - (Optional) multi-party approval or freezing of funds
+Students working on SplitFlow will gain practical experience in developing Solidity smart contracts with precise mathematical logic, handling edge cases (e.g., rounding errors, partial payments), and designing secure, upgradeable contract systems. They'll also explore frontend design for visualizing transactions and payout logic in real-time. This project not only deepens blockchain engineering skills but demonstrates real-world relevance across sectors like finance, media, and open-source development.
 
-        ## Required Resources
+## Deliverables & Desired Functionalities
 
-        - Web hosting platform (Vercel)
-        - Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
-        - Smart contract library (Solidity + OpenZeppelin)
-        - Blockchain testnet
-        - Access to testnet tokens for payment simulation
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+- User authentication 
+- Smart contracts to manage revenue splitting based on set percentages
+- Web UI to input recipients, percentages, and view split simulation
+- Real-time distribution dashboard with transaction history
+- Support for both single and recurring payments
+- (Optional) multi-party approval or freezing of funds
 
-        ## Support Provided by Monark or Partner
+## Required Resources
 
-        Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.
-    </div>
-</div>
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Access to testnet tokens for payment simulation
+
+## Support Provided by Monark or Partner
+
+Monark will support the project with expertise in blockchain and smart contract development. The current team will assist with onboarding and knowledge transfer. A dedicated Discord server will be used for communication, and bi-monthly Sprint-style meetings with the CTO and/or COO will coordinate project progress. The CTO will also provide UI/UX guidance. Extensive documentation will be available to help students learn the blockchain technology and deliver a functional project.
