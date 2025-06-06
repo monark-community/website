@@ -126,14 +126,14 @@ export default function ProjectPage({ params }: { params: Params }) {
           ))}
         </div>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
         {filteredProjects.length > 0 ? (
           filteredProjects.map((project) => (
             <div key={project.id} className="h-full">
               <Card className="overflow-hidden h-full flex flex-col hover:border-primary transition-colors">
                 <NavLink
                   href={`/${locale}/initiative/project/${project.id}`}
-                  className="block h-full"
+                  className="block h-full flex flex-col"
                 >
                   <Image
                     src={`/images/project/${project.id}.jpg`}
@@ -143,14 +143,12 @@ export default function ProjectPage({ params }: { params: Params }) {
                     className="w-full h-64 object-cover mb-4"
                   />
                   <CardHeader>
-                    <CardTitle>{project.title}</CardTitle>
+                    <CardTitle className="text-lg font-bold">{project.title}</CardTitle>
                     <ProjectStatusBadge status={project.status} />
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col justify-between">
-                    <div>
-                      <p>{project.description}</p>
-                    </div>
-                    <div className="flex flex-wrap gap-2 mt-4">
+                    <p className="mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
                       {project.keyword_tags.map((tag) => (
                         <Badge key={tag} variant="secondary">
                           {tag}
