@@ -22,7 +22,6 @@ function generateNewsIndex(locale: string): DatedNewsMetadata[] {
       console.log(`Processing news page: ${pagePath}`);
       if (fs.existsSync(pagePath)) {
         const metadata = getMetadataFromFile(pagePath);
-        console.log("Metadata found:", metadata);
         if (metadata) {
           // DatedNewsMetadata expects date as Date, but we store as string (ISO) in JSON
           return {
