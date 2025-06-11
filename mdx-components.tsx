@@ -1,7 +1,7 @@
 import React, { ComponentPropsWithoutRef } from "react";
 import Link from "next/link";
 import { highlight } from "sugar-high";
-import WrappedImage from "./components/shared/wrapped-image.component";
+import WrappedImage from "./components/common/wrapped-image.component";
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 type ParagraphProps = ComponentPropsWithoutRef<"p">;
@@ -10,7 +10,7 @@ type ListItemProps = ComponentPropsWithoutRef<"li">;
 type AnchorProps = ComponentPropsWithoutRef<"a">;
 type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
 
-const components = {
+export const components = {
   h1: (props: HeadingProps) => (
     <h1 className="text-3xl md:text-4xl font-bold mb-2" {...props} />
   ),

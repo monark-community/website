@@ -1,9 +1,9 @@
 import metadata from "./metadata";
-import HeroSection from "@/components/web/pages/homepage/hero-section/hero-section";
-import AboutSection from "@/components/web/pages/homepage/about-section/about-section";
-import WhySection from "@/components/web/pages/homepage/why-section/why-section";
-import FAQSection from "@/components/web/pages/homepage/faq-section/faq-section";
-import HistorySection from "@/components/web/pages/homepage/history-section/history-section";
+import HeroSection from "@/components/common/pages/homepage/hero-section/hero-section";
+import AboutSection from "@/components/common/pages/homepage/about-section/about-section";
+import WhySection from "@/components/common/pages/homepage/why-section/why-section";
+import FAQSection from "@/components/common/pages/homepage/faq-section/faq-section";
+import HistorySection from "@/components/common/pages/homepage/history-section/history-section";
 import { Locale } from "@/i18n.config";
 
 type Params = Promise<{ locale: Locale }>;

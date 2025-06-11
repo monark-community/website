@@ -1,7 +1,7 @@
 import { Locale } from "@/i18n.config";
 import * as i18n from "./page.i18n";
 import Image from "next/image";
-import SOCIALS from "@/components/web/footer/socials/socials";
+import SOCIALS from "@/components/common/footer/socials/socials";
 
 type Params = Promise<{ locale: Locale }>;
 

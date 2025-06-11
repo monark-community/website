@@ -1,0 +1,52 @@
+export const metadata = {
+    id: "address-review-system",
+    title: "Address Review System",
+    description: "Build a decentralized review system where users can submit reviews tied to their wallet addresses. Each review (rating, comment, timestamp) is stored immutably on-chain, ensuring transparency and preventing deletion or manipulation. Useful for evaluating sellers, contributors, or service providers in Web3 ecosystems. Add features like filtering by address, sentiment analysis, or integration with NFT platforms and DAOs.",
+    status: "idea",
+    accronym: "TrustRate",
+    industry_tags: ["Services", "Digital Communications"],
+    keyword_tags: ["Reviews", "Transparency", "Wallet", "Reputation", "DAO"],
+    complexity_score: 5,
+    effort_score: -1,
+    adoption_score: 3,
+    blockchain_score: 4,
+    revenue_score: -1,
+};
+
+# Address Review System
+
+Build a decentralized review system where users can submit reviews tied to their wallet addresses. Each review (rating, comment, timestamp) is stored immutably on-chain, ensuring transparency and preventing deletion or manipulation. Useful for evaluating sellers, contributors, or service providers in Web3 ecosystems. Add features like filtering by address, sentiment analysis, or integration with NFT platforms and DAOs.
+
+![Address Review System mockup](/images/project/address-review-system.jpg)
+
+## General Description
+
+[TrustRate](https://trustrate.monark.io) is a decentralized reputation and review platform designed to bring transparency and accountability to user feedback within Web3 ecosystems. In a world where traditional reviews are often manipulable or tied to centralized platforms, TrustRate allows any user to post reviews—consisting of ratings, comments, and timestamps—directly to the blockchain using their wallet address. This ensures that all reviews are immutable, publicly verifiable, and permanently associated with a specific on-chain identity.
+
+The system is particularly useful in environments where pseudonymous interaction is the norm, such as DAO contributor networks, freelance marketplaces, NFT platforms, and protocol governance spaces. Users can leave reviews for services, product creators, partners, or collaborators. Optional features include upvote/downvote mechanics, review tagging, user reputation scores, and review aggregation by address or project.
+
+TrustRate also supports sentiment analysis tools to classify reviews and offers an optional moderation layer governed by community rules or DAO processes. Students working on this project will gain practical experience building secure and efficient smart contracts for public data submission, frontend systems for filtering and browsing content, and wallet-linked user interfaces. This project provides essential learning around decentralized trust systems, UX for accountability tools, and Web3-native transparency.
+
+## Deliverables & Desired Functionalities
+
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+    - Display reviews and reputation info tied to wallet addresses and for reading, writing, and filtering reviews by address.
+- User authentication
+    - Let users review others using their wallet-linked identity.
+- Smart contracts for submitting, timestamping, and retrieving reviews
+    - Publish immutable reviews with rating, comment, and timestamp.
+- Address-based profile view with cumulative feedback
+    - Aggregate review scores per wallet or DAO contributor.
+- DAO compatibility for review aggregation and moderation
+- (Optional) sentiment scoring, flagging, or user reputation layer
+    - Add flagging, upvotes, or DAO-powered review governance.
+
+## Required Resources
+
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Frontend framework with wallet login (React preferred)
+- Basic data filtering and analytics tools
+- Mock profiles and projects to simulate reviews

@@ -1,0 +1,56 @@
+export const metadata = {
+    id: "access-tokens-pay-per-access-contracts",
+    title: "Access Tokens (Pay-Per-Access Contracts)",
+    description: "Create smart contracts that grant time-based or one-time access to digital or physical content. Users can pay in tokens to unlock a livestream, document, video, or even a smart lock for a room or vault. The contract tracks duration, access rights, and expiration. You can expand this to marketing tools like paid alerts for communities or digital ad banners.",
+    status: "idea",
+    accronym: "GatePay",
+    industry_tags: ["Services", "Media", "Entertainment and Sport"],
+    keyword_tags: ["Access Control", "Tokenization", "Wallet Integration", "Pay-Per-Access", "Smart Contracts"],
+    complexity_score: 6,
+    effort_score: -1,
+    adoption_score: 3,
+    blockchain_score: 4,
+    revenue_score: -1,
+};
+
+# Access Tokens (Pay-Per-Access Contracts)
+
+Create smart contracts that grant time-based or one-time access to digital or physical content. Users can pay in tokens to unlock a livestream, document, video, or even a smart lock for a room or vault. The contract tracks duration, access rights, and expiration. You can expand this to marketing tools like paid alerts for communities or digital ad banners.
+
+![Access Tokens (Pay-Per-Access Contracts) mockup](/images/project/access-tokens-pay-per-access-contracts.jpg)
+
+## General Description
+
+[GatePay](https://GatePay.monark.io) is a decentralized access control solution that lets users unlock digital or physical assets through token-based payments. From gated livestreams and exclusive video content to smart locks for rooms or storage, GatePay empowers content creators and asset owners to monetize access using smart contracts. Access is granted after payment and can be limited by time, frequency, or usage volume.
+
+The platform allows publishers to define asset types, set access rules, pricing, duration, and token type. Buyers interact via a simple wallet-based interface, sending a transaction that records the payment and triggers access rights, which are verified on-chain. Access may expire automatically after a time window, requiring renewal or repurchase.
+
+Students will build both the smart contract logic and the access gateway, which could range from a button that reveals content to a webhook that triggers a smart device (e.g., door unlock, alert broadcast, stream playback). Additional layers may include tiered access, per-minute pricing, or alert dispatch systems (e.g., post a message to a public board upon payment).
+
+This project is highly adaptable and useful in many industries, from education and entertainment to security and community communications. It teaches contract permissions, event-driven programming, and monetization design in Web3.
+
+## Deliverables & Desired Functionalities
+
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+    - Create a storefront or portal for unlocking gated content.
+- User authentication 
+    - Connect wallet to purchase and verify access rights.
+- Smart contract to define and verify access tokens
+    - Grant access to files, content, or devices after payment.
+- Admin dashboard for setting price, time limits, and access type
+    - Let creators set pricing, duration, and asset types.
+- User interface for wallet payment and access confirmation
+    - Confirm wallet ownership and display access link or message.
+- Access log and expiration logic
+- (Optional) broadcast or smart-lock integration
+    - Extend contract to interact with devices or alerts.
+
+## Required Resources
+
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Frontend with wallet connection (React/wagmi)
+- Test tokens and payment simulation flow
+- (Optional) backend or IFTTT-style webhook triggers

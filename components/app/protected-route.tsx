@@ -2,7 +2,7 @@
 import React from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/navigation";
-import Loader from "@/components/shared/loader/loader";
+import Loader from "@/components/common/loader/loader";
 
 type Props = {
   children: React.ReactNode;

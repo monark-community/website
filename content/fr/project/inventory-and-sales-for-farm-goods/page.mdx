@@ -1,0 +1,54 @@
+export const metadata = {
+    id: "inventory-and-sales-for-farm-goods",
+    title: "Inventaire et ventes pour les produits agricoles",
+    description: "Concevez un système décentralisé qui permet aux agriculteurs de gérer leur inventaire et de vendre des fruits et légumes sans être physiquement présents. Les acheteurs scannent un code sur le stand en libre-service, interagissent avec un contrat intelligent pour acheter des produits, et le système met à jour le stock disponible. Cela pourrait inclure une interface mobile, un prix local, le suivi de la disponibilité et des jetons de récompense optionnels pour les acheteurs. Parfait pour les zones rurales et les microtransactions sans confiance.",
+    status: "idea",
+    accronym: "Bazarius",
+    industry_tags: ["Agriculture", "Alimentation et boissons", "Vente au détail"],
+    keyword_tags: ["Inventaire", "Microtransactions", "Contrats intelligents", "Code QR", "Accès"],
+    complexity_score: 6,
+    effort_score: -1,
+    adoption_score: 1,
+    blockchain_score: 3,
+    revenue_score: -1,
+};
+
+# Inventaire et ventes pour les produits agricoles
+
+Concevez un système décentralisé qui permet aux agriculteurs de gérer leur inventaire et de vendre des fruits et légumes sans être physiquement présents. Les acheteurs scannent un code sur le stand en libre-service, interagissent avec un contrat intelligent pour acheter des produits, et le système met à jour le stock disponible. Cela pourrait inclure une interface mobile, un prix local, le suivi de la disponibilité et des jetons de récompense optionnels pour les acheteurs. Parfait pour les zones rurales et les microtransactions sans confiance.
+
+![Maquette de l'Inventaire et ventes pour les produits agricoles](/images/project/inventory-and-sales-for-farm-goods.jpg)
+
+## Description Générale
+
+[Bazarius](https://bazarius.monark.io) est une plateforme décentralisée d'inventaire et de paiement adaptée pour les agriculteurs locaux et les petits producteurs pour gérer les ventes sans être physiquement présents. L'idée principale est de permettre un système de kiosque en libre-service sans confiance où les acheteurs scannent un code QR, connectent leur portefeuille et achètent des produits - comme des fruits ou des légumes - directement via un contrat intelligent. La transaction met à jour l'inventaire en temps réel, et l'acheteur reçoit une confirmation numérique ou une récompense.
+
+Ce système est particulièrement bien adapté pour les zones rurales où les producteurs peuvent ne pas être disponibles pour tenir un point de vente mais veulent toujours offrir des produits frais et locaux. La solution réduit les coûts de main-d'œuvre, augmente la commodité des consommateurs et garantit que chaque transaction est transparente et traçable en chaîne. Les étudiants créeront des tableaux de bord des fournisseurs pour saisir l'inventaire, les prix et la disponibilité ainsi qu'une interface côté acheteur pour naviguer, sélectionner et acheter des articles.
+
+Fonctionnalités supplémentaires peuvent inclure une tarification dynamique basée sur l'inventaire, des récompenses de fidélité en utilisant des incitations de jetons, et des alertes de réapprovisionnement automatique. D'un point de vue technique, ce projet enseigne l'intégration de contrats intelligents avec des interfaces basées sur le QR, la gestion de l'état de l'inventaire et les flux de travail de transactions sécurisées. Il introduit également des considérations de conception pour les applications mobiles en premier, cruciales dans les environnements de kiosque et de libre-service.
+
+## Livrables & Fonctionnalités Souhaitées
+
+- Interface Web en utilisant Next.js, Typescript, shadcn-ui, tailwindcss
+    - Livrer un magasin mobile-friendly pour les produits agricoles locaux.
+- Authentification utilisateur 
+    - Accès basé sur le portefeuille pour les agriculteurs (vendeurs) et les acheteurs.
+- Contrats intelligents pour gérer les annonces de produits, les achats et les mises à jour de l'inventaire
+    - Mise à jour automatique de l'inventaire et transfert de fonds à l'achat.
+- Tableau de bord du vendeur pour l'entrée et le suivi de l'inventaire
+    - Liste des produits, suivi des ventes et établissement des prix en temps réel.
+- Interface acheteur avec support de code QR et flux de paiement
+    - Les acheteurs scannent un code pour acheter sur le stand physique.
+- Historique des transactions et génération de reçus
+- (Optionnel) système de récompense en points ou jetons
+    - Récompenser les acheteurs fréquents avec des points numériques ou des NFTs.
+
+## Ressources Nécessaires
+
+- Plateforme d'hébergement web (Vercel)
+- Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement du back-end (Typescript, Express)
+- Bibliothèque de contrats intelligents (Solidité + OpenZeppelin)
+- Testnet Blockchain
+- Frontend intégré au portefeuille (React/Next.js)
+- Génération de codes QR et intégration de scanners
+- Jeu de données d'exemple d'articles à vendre et de tarifs

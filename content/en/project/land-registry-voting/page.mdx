@@ -1,0 +1,49 @@
+export const metadata = {
+    id: "land-registry-voting",
+    title: "Land Registry Voting",
+    description: "Build a voting system where landowners and/or property tenants can vote on proposals related to their region. Tie voting rights to land ownership (real or simulated), verify votes via wallet signatures, and display results on a map or dashboard. Explore ways to sync on-chain votes with off-chain registries for potential civic integration.",
+    status: "idea",
+    accronym: "LandVote",
+    industry_tags: ["Real Estate and Rental", "Leasing", "Cities"],
+    keyword_tags: ["Land Registry", "Voting", "Governance", "Transparency", "Mapping"],
+    complexity_score: 7,
+    effort_score: -1,
+    adoption_score: 2,
+    blockchain_score: 8,
+    revenue_score: -1,
+};
+
+# Land Registry Voting
+
+Build a voting system where landowners and/or property tenants can vote on proposals related to their region. Tie voting rights to land ownership (real or simulated), verify votes via wallet signatures, and display results on a map or dashboard. Explore ways to sync on-chain votes with off-chain registries for potential civic integration.
+
+![Land Registry Voting mockup](/images/project/land-registry-voting.jpg)
+
+## General Description
+
+[LandVote](https://landvote.monark.io) is a civic-focused blockchain solution that allows landowners to participate in community governance tied to their physical plots. By linking wallet identities to verified property holdings (simulated for this project), the platform grants voting rights on land-use-related proposals such as zoning changes, infrastructure planning, or public resource allocation.
+
+Each vote is immutably recorded on the blockchain and proposals are publicly visible for transparency. The system simulates real-world city decision-making processes, enabling landowners to engage in issues that directly affect their neighborhoods or assets. Roles include proposer, validator (e.g., municipal representative), and eligible land-based voter.
+
+The project also introduces mapping features. Land parcels are represented on a visual map interface (e.g., via OpenStreetMap), allowing users to see proposals relevant to their region. Over time, this project can evolve into a full digital public hearing and participatory budgeting system.
+
+Students working on LandVote will combine on-chain governance models with mapping tools, real estate registry simulations, and public-good UX design. They'll explore identity-attestation systems, weighted voting, and civic trust-building—skills aligned with next-generation civic infrastructure.
+
+## Deliverables & Desired Functionalities
+
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+- User authentication 
+- Smart contracts for proposal creation and regional voting
+- Wallet-to-land association simulation
+- Interactive map UI for regional voting overlays
+- Role-based validation and voting logic
+- History of votes per parcel
+
+## Required Resources
+
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Mapping APIs (OpenStreetMap or Leaflet.js)
+- Mock registry dataset for land-parcel simulation

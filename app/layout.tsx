@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
-import { WebClientProviders } from "@/components/web/web.client.providers";
+import { WebClientProviders } from "@/components/common/layout/web.client.providers";
 import { ViewTransitions } from "next-view-transitions";
 import "@xyflow/react/dist/style.css";
 import "./globals.scss";

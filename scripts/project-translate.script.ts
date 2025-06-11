@@ -10,7 +10,7 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-const baseDir = path.join(__dirname, "../app/en/initiative/project");
+const baseDir = path.join(__dirname, "../content/en/project");
 
 // Updated translateText to handle asynchronous translation
 export const translateText = async (
@@ -79,7 +79,7 @@ const processDirectory = async (
     console.log(`Starting translation for locale: ${locale}`);
     const targetDir = path.join(
       __dirname,
-      `../app/${locale}/initiative/project`
+      `../content/${locale}/project`
     );
     fs.mkdirSync(targetDir, { recursive: true });
 

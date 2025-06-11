@@ -1,0 +1,57 @@
+export const metadata = {
+    id: "emergency-alerts-network",
+    title: "Emergency Alerts Network",
+    description: "Guardian is a mobile Web3 alert app that notifies nearby users in emergencies. Alerts are tied to wallet IDs, and responders receive funds from a pre-funded smart contract pool. This incentivizes real help while discouraging misuse through built-in accountability and rewards.",
+    status: "idea",
+    accronym: "Guardian",
+    industry_tags: ["Cities", "Services", "Digital Communications"],
+    keyword_tags: ["Access Control", "Wallet Integration", "Rewards", "Smart Contracts", "Reputation"],
+    complexity_score: 7,
+    effort_score: -1,
+    adoption_score: 2,
+    blockchain_score: 2,
+    revenue_score: -1,
+};
+
+# Emergency Alerts Network
+
+Guardian is a mobile Web3 alert app that notifies nearby users in emergencies. Alerts are tied to wallet IDs, and responders receive funds from a pre-funded smart contract pool. This incentivizes real help while discouraging misuse through built-in accountability and rewards.
+
+![Guardian mockup](/images/project/emergency-alerts-network.jpg)
+
+## General Description
+
+[Guardian](https://guardian.monark.io) is a mobile-first decentralized application designed to empower citizens during emergencies by leveraging proximity-based alerts and financial incentives. Users who feel unsafe or face an urgent situation can trigger an on-chain alert that is broadcast to other users within a predefined geographic radius. Those who respond to the alert—ideally in-person or via verified assistance—can receive compensation from a smart contract pool pre-funded by the original user.
+
+This incentive system is critical: it discourages misuse by ensuring that alerts cost the sender a small, pre-approved amount, while rewarding helpful intervention and encouraging the growth of a trust-based responder network. Each response is logged on-chain, tied to the responder's wallet, with reputation data accumulated over time. Repeat responders may earn higher reputation scores and access to additional tasks or emergency tiers.
+
+The system includes GPS integration, a verification flow (e.g., confirm alert legitimacy or assistance rendered), and a simple UI for triggering, managing, and responding to alerts. This solution merges civic tech, microtransactions, and decentralized reputation systems to create a real-world safety tool—especially useful in areas with high foot traffic, university campuses, or local communities.
+
+Students working on Guardian will explore decentralized identity, location-aware services, reputation tracking, and time-sensitive payment logic, while also building intuitive mobile interfaces.
+
+## Deliverables & Desired Functionalities
+
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+    - Launch a GPS-integrated alert system for community use.
+- User authentication 
+    - Connect wallet to send or respond to emergency alerts.
+- Mobile-optimized frontend with emergency trigger button and responder map
+    - Send an alert to nearby users in one click.
+- Smart contracts for managing alert radius, responder payments, and verification
+    - Store funds and distribute rewards to verified responders.
+- On-chain record of events and reputation tracking
+    - Track helpful responders and build trust scores.
+- Admin interface to adjust payment pools and radius thresholds
+    - Adjust radius or payment settings for specific groups.
+- (Optional) integration with trusted contact list or DAO-based responder groups
+
+## Required Resources
+
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Location/GPS integration libraries
+- Smart contract logic for proximity filtering and rewards
+- React Native frontend or progressive web app interface
+- IPFS or encrypted message log for optional context storage

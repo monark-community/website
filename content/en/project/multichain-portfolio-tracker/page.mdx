@@ -1,0 +1,55 @@
+export const metadata = {
+    id: "multichain-portfolio-tracker",
+    title: "Multichain Portfolio Tracker",
+    description: "Build a dashboard that aggregates a user's holdings across multiple blockchains. Show token balances, NFTs, and historical activity using APIs or RPCs the supported blockchains. Add filtering, wallet tagging, asset valuation, and graphs. This helps users view their Web3 footprint in one place.",
+    status: "idea",
+    accronym: "MultiTrack",
+    industry_tags: ["Investing", "Finance and Insurance"],
+    keyword_tags: ["Portfolio", "Analytics", "Tracking", "Wallet", "Dashboard"],
+    complexity_score: 7,
+    effort_score: 9,
+    adoption_score: 3,
+    blockchain_score: 5,
+    revenue_score: -1,
+};
+
+# Multichain Portfolio Tracker
+
+Build a dashboard that aggregates a user's holdings across multiple blockchains. Show token balances, NFTs, and historical activity using APIs or RPCs the supported blockchains. Add filtering, wallet tagging, asset valuation, and graphs. This helps users view their Web3 footprint in one place.
+
+![Multichain Portfolio Tracker mockup](/images/project/multichain-portfolio-tracker.jpg)
+
+## General Description
+
+[MultiTrack](https://multitrack.monark.io) is a blockchain analytics tool designed to simplify asset tracking across multiple chains in a single interface. As crypto adoption grows, users increasingly manage tokens, NFTs, and DeFi positions on multiple blockchains. This project builds a unified portfolio view for these users by connecting to public APIs or node endpoints across test networks to retrieve data such as wallet balances, asset types, transaction histories, and token values.
+
+MultiTrack aggregates and normalizes this data, presenting it in a clean, interactive dashboard. It may include visual summaries (pie charts, performance graphs), per-chain asset breakdowns, and optional tagging (e.g., long-term vs. short-term holdings). Students may implement caching or pagination for scalability, as well as filtering and sorting mechanisms for high usability.
+
+Advanced features could include daily performance tracking, exporting data for taxes, or even light wallet management like transaction simulation or gas estimation. Although commercial versions exist, this student project emphasizes open design, transparency, and extensibility. It allows teams to learn how to interface with real-time blockchain data, transform JSON-based results into user-friendly formats, and design modular analytics infrastructure. It is ideal for students interested in both UX and back-end engineering in crypto.
+
+## Deliverables & Desired Functionalities
+
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+    - A dashboard summarizing crypto assets and history across chains.
+- User authentication 
+    - Login to view and manage wallet portfolio data.
+- Multi-wallet connection across test networks
+    - Let users connect multiple wallets across testnets and protocols.
+- Data aggregation by asset, network, and time period
+    - Normalize and display assets by chain, token, and category.
+- Transaction history and token balance display
+    - List token transfers, swaps, gas costs, and NFT activity.
+- Charts and summary views of portfolio performance
+    - Visualize performance, holdings, and changes over time.
+- Export to CSV or Excel
+    - Add export function for compliance or tax reporting.
+
+## Required Resources
+
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Public blockchain APIs or indexers
+- Node access (via Pinax)
+- Charting library (Chart.js, D3.js, etc.)

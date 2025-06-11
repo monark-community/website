@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { NavLink } from "@/components/shared/navlink/navlink";
+import { NavLink } from "@/components/common/navlink/navlink";
 import React from "react";
 
 function DeveloperPage() {

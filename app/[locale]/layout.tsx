@@ -1,6 +1,6 @@
 import React from "react";
 import { defaultLocale, Locale } from "@/i18n.config";
-import WebLayout from "@/components/web/web.layout";
+import WebLayout from "@/components/common/layout/web.layout";
 import { cookies } from "next/headers";
 
 type Props = {

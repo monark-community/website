@@ -1,0 +1,49 @@
+export const metadata = {
+    id: "web3-signatures",
+    title: "Web3 Signatures",
+    description: "Create a system where users sign documents or transactions using their wallet signature. Store document hashes on-chain, and optionally save files on IPFS. Others can verify the timestamp, signer identity, and content integrity. Mimics tools like DocuSign but using blockchain authentication that are decentralized and censorship-resistant.",
+    status: "idea",
+    accronym: "SignChain",
+    industry_tags: ["Services", "Banking and Capital Markets"],
+    keyword_tags: ["Signature", "Authentication", "IPFS", "Compliance", "Documents"],
+    complexity_score: 4,
+    effort_score: -1,
+    adoption_score: 3,
+    blockchain_score: 7,
+    revenue_score: -1,
+};
+
+# Web3 Signatures
+
+Create a system where users sign documents or transactions using their wallet signature. Store document hashes on-chain, and optionally save files on IPFS. Others can verify the timestamp, signer identity, and content integrity. Mimics tools like DocuSign but using blockchain authentication that are decentralized and censorship-resistant.
+
+![Web3 Signatures mockup](/images/project/web3-signatures.jpg)
+
+## General Description
+
+[SignChain](https://signchain.monark.io) is a secure, decentralized system for digitally signing documents, agreements, or messages using blockchain wallets. The project allows users to upload a file, generate a content hash, sign it using their private key via wallet integration, and optionally store the signed document hash on-chain or the document itself on IPFS.
+
+Verification is simple: anyone with the document can re-hash it and check against the on-chain or public record to confirm who signed it and when. The system supports multiple signers, time-stamping, and metadata such as document title and category.
+
+This project teaches critical blockchain primitives such as message signing, hash functions, and immutability guarantees. It can be used for grant agreements, employment offers, content licenses, or even internal DAO approvals. Students will gain experience in cryptographic operations, content-based addressing, and dApp frontend flows for non-financial interactions.
+
+The system emphasizes privacy and auditability without centralized document custody, offering a Web3-native alternative to platforms like DocuSign.
+
+## Deliverables & Desired Functionalities
+
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
+- User authentication 
+- Document upload and content hash generation tool
+- Wallet signature flow with on-chain hash commitment
+- IPFS integration for optional decentralized storage
+- Web UI for signature validation and document history
+- Multi-signer support with timestamps
+
+## Required Resources
+
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Web3 signing library (ethers.js, wagmi)
+- Frontend UI with file input and verification logic

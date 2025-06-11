@@ -1,0 +1,46 @@
+export const metadata = {
+    id: "nft-ticketing-platform",
+    title: "Plateforme de billetterie NFT",
+    description: "Développez une plateforme de billetterie NFT complète où les organisateurs créent des billets d'événement uniques sous forme de NFT. Les billets incluent des métadonnées (siège, heure, règles d'accès, récompenses spéciales, etc.) et peuvent être scannés pour l'entrée via une signature de portefeuille blockchain ou un code QR. Les restrictions de revente et les redevances secondaires sont appliquées via des contrats intelligents. Vous pouvez ajouter des fonctionnalités bonus comme des POAP à collectionner, des badges de présence ou des avantages de réduction.",
+    status: "prototype_available",
+    accronym: "NFTokenPass",
+    industry_tags: ["Médias", "Divertissement et sport", "Services"],
+    keyword_tags: ["NFT", "Billetterie", "Tokenisation", "Portefeuille", "Contrôle d'accès"],
+    complexity_score: 7,
+    effort_score: -1,
+    adoption_score: 5,
+    blockchain_score: 8,
+    revenue_score: -1,
+};
+
+# Plateforme de billetterie NFT
+
+Développez une plateforme de billetterie NFT complète où les organisateurs créent des billets d'événement uniques sous forme de NFT. Les billets incluent des métadonnées (siège, heure, règles d'accès, récompenses spéciales, etc.) et peuvent être scannés pour l'entrée via une signature de portefeuille blockchain ou un code QR. Les restrictions de revente et les redevances secondaires sont appliquées via des contrats intelligents. Vous pouvez ajouter des fonctionnalités bonus comme des POAP à collectionner, des badges de présence ou des avantages de réduction.
+
+![Maquette de la Plateforme de billetterie NFT](/images/project/nft-ticketing-platform.jpg)
+
+## Description Générale
+
+[NFTokenPass](https://nftokenpass.monark.io) transforme la billetterie d'événements en créant des NFT basés sur la blockchain qui servent de justificatifs d'accès uniques et vérifiables. Les organisateurs d'événements utilisent une interface frontend pour créer des billets NFT avec des métadonnées comme l'heure de l'événement, l'emplacement du siège et le prix. Une fois acheté, le NFT est stocké dans le portefeuille de l'acheteur et scanné à l'entrée via un code QR ou une vérification de signature.
+
+Les contrats intelligents appliquent les règles de revente (par exemple, redevances, limites de prix), réduisant la fraude et le scalping. Cette solution permet aux artistes et aux lieux de conserver le contrôle des ventes secondaires tout en récompensant les fans. Les fonctionnalités bonus incluent du contenu dynamique (visuels changeants selon les étapes de l'événement) et des NFT souvenirs pour les participants.
+
+Elle offre également une utilité à long terme : la billetterie NFT peut être étendue aux abonnements, conférences, festivals ou accès au métavers Web3. Les étudiants travaillant sur ce projet auront une exposition approfondie aux NFT, aux marchés décentralisés et aux flux de validation des billets.
+
+## Livrables & Fonctionnalités Souhaitées
+
+- Interface web utilisant Next.js, Typescript, shadcn-ui, tailwindcss
+- Authentification utilisateur
+- Tableau de bord de création de NFT pour les organisateurs d'événements
+- Système de vérification des billets via QR/signature de portefeuille
+- Restrictions de revente, redevances et logique de liste blanche
+- (Optionnel) NFT commémoratifs style POAP
+
+## Ressources Requises
+
+- Plateforme d'hébergement web (Vercel)
+- Hébergement de base de données (Clickhouse, PostgreSQL ou GraphQL) et de backend (Typescript, Express)
+- Bibliothèque de contrats intelligents (Solidity + OpenZeppelin)
+- Testnet blockchain
+- Bibliothèques de contrats NFT
+- Module de scanner de code QR

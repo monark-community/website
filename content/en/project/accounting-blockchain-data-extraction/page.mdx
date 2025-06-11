@@ -1,0 +1,45 @@
+export const metadata = {
+    id: "accounting-blockchain-data-extraction",
+    title: "Accounting blockchain data extraction",
+    description: "Create a tool that extracts, cleans, and formats blockchain transaction data into accounting-ready formats. Users can input a wallet address and receive categorized income/expenses, gas fees, and timestamps. Useful for DAOs, freelancers, and businesses needing audit trails or tax reports. You can use The Graph, APIs, or indexers to feed the data.",
+    status: "idea",
+    accronym: "LedgerLift",
+    industry_tags: ["Finance and Insurance", "Services"],
+    keyword_tags: ["Accounting", "Audit", "Reporting", "Data Extraction", "Compliance"],
+    complexity_score: 7,
+    effort_score: -1,
+    adoption_score: 8,
+    blockchain_score: 8,
+    revenue_score: -1,
+};
+
+# Accounting blockchain data extraction
+
+Create a tool that extracts, cleans, and formats blockchain transaction data into accounting-ready formats. Users can input a wallet address and receive categorized income/expenses, gas fees, and timestamps. Useful for DAOs, freelancers, and businesses needing audit trails or tax reports. You can use The Graph, APIs, or indexers to feed the data.
+
+![Accounting blockchain data extraction mockup](/images/project/accounting-blockchain-data-extraction.jpg)
+
+## General Description
+
+[LedgerLift](https://ledgerlift.monark.io) is a back-end focused blockchain analytics project aimed at financial reporting and audit-readiness for individuals, DAOs, and crypto businesses. The goal is to extract transaction history, gas fees, token swaps, income streams, and wallet activity, then convert that data into human-readable formats for accounting, compliance, or treasury reporting.
+
+The platform connects to user-provided wallets, fetches transaction data using public APIs or subgraph queries, and classifies the entries (e.g., expense, income, transfer). Students may add features like automatic tagging, wallet labeling, or multi-wallet aggregation. Output formats include CSV files, financial summaries, or integration-ready data for accounting tools like QuickBooks or Excel.
+
+This project provides strong exposure to data normalization, metadata parsing, and classification heuristics. Bonus features can include token price fetching at transaction time, gas cost aggregation, or tax-lot estimation. By working on LedgerLift, students learn to bridge the technical gap between blockchain data and off-chain financial processes.
+
+The system helps solve one of the most urgent needs for Web3 teams and freelancers: making blockchain-native finance legible and legally usable in a world of traditional regulation.
+
+## Deliverables & Desired Functionalities
+
+- Transaction fetcher for standard wallet activity
+- Normalization logic to classify transfers, swaps, and gas usage
+- Data export system (CSV, JSON) with labeled fields
+- Summary stats: total income, spend, fees, PnL
+- (Optional) Token price lookup and tax report generator
+
+## Required Resources
+
+- Public blockchain indexer or explorer API
+- Backend logic in Python, JS, or TypeScript
+- Frontend dashboard (optional)
+- Wallet address samples for simulation

@@ -1,0 +1,56 @@
+export const metadata = {
+    id: "access-tokens-pay-per-access-contracts",
+    title: "Jetons d'Accès (Contrats Pay-Per-Access)",
+    description: "Créez des contrats intelligents qui accordent un accès basé sur le temps ou à usage unique à du contenu numérique ou physique. Les utilisateurs peuvent payer en jetons pour déverrouiller une diffusion en direct, un document, une vidéo, ou même une serrure intelligente pour une salle ou un coffre-fort. Le contrat suit la durée, les droits d'accès, et l'expiration. Vous pouvez étendre ceci à des outils de marketing comme des alertes payantes pour les communautés ou des bannières publicitaires numériques.",
+    status: "idea",
+    accronym: "GatePay",
+    industry_tags: ["Services", "Média", "Divertissement et sport"],
+    keyword_tags: ["Contrôle d'accès", "Tokenisation", "Portefeuille", "Pay-Per-Access", "Contrats intelligents"],
+    complexity_score: 6,
+    effort_score: -1,
+    adoption_score: 3,
+    blockchain_score: 4,
+    revenue_score: -1,
+};
+
+# Jetons d'Accès (Contrats Pay-Per-Access)
+
+Créez des contrats intelligents qui accordent un accès basé sur le temps ou à usage unique à du contenu numérique ou physique. Les utilisateurs peuvent payer en jetons pour déverrouiller une diffusion en direct, un document, une vidéo, ou même une serrure intelligente pour une salle ou un coffre-fort. Le contrat suit la durée, les droits d'accès, et l'expiration. Vous pouvez étendre ceci à des outils de marketing comme des alertes payantes pour les communautés ou des bannières publicitaires numériques.
+
+![Maquette de Jetons d'Accès (Contrats Pay-Per-Access)](/images/project/access-tokens-pay-per-access-contracts.jpg)
+
+## Description Générale
+
+[GatePay](https://gatepay.monark.io) est une solution de contrôle d'accès décentralisée qui permet aux utilisateurs de déverrouiller des actifs numériques ou physiques grâce à des paiements basés sur des jetons. Des diffusions en direct et du contenu vidéo exclusif aux serrures intelligentes pour les salles ou les espaces de stockage, GatePay donne aux créateurs de contenu et aux propriétaires d'actifs la possibilité de monétiser l'accès en utilisant des contrats intelligents. L'accès est accordé après le paiement et peut être limité par le temps, la fréquence, ou le volume d'utilisation.
+
+La plateforme permet aux éditeurs de définir des types d'actifs, d'établir des règles d'accès, des prix, une durée, et un type de jeton. Les acheteurs interagissent via une interface simple basée sur un portefeuille, en envoyant une transaction qui enregistre le paiement et déclenche les droits d'accès, lesquels sont vérifiés sur la chaîne. L'accès peut expirer automatiquement après une fenêtre de temps, nécessitant un renouvellement ou un rachat.
+
+Les étudiants construiront à la fois la logique du contrat intelligent et la passerelle d'accès, qui pourrait aller d'un bouton qui révèle du contenu à un webhook qui déclenche un appareil intelligent (par exemple, le déverrouillage d'une porte, la diffusion d'une alerte, la lecture d'un flux). Des couches supplémentaires peuvent inclure un accès par niveaux, une tarification à la minute, ou des systèmes de dispatch d'alertes (par exemple, poster un message sur un panneau public après le paiement).
+
+Ce projet est très adaptable et utile dans de nombreuses industries, de l'éducation et du divertissement à la sécurité et aux communications communautaires. Il enseigne les permissions de contrat, la programmation orientée événements, et la conception de la monétisation dans Web3.
+
+## Livrables & Fonctionnalités Souhaitées
+
+- Interface Web en utilisant Next.js, Typescript, shadcn-ui, tailwindcss
+    - Créer une vitrine ou un portail pour déverrouiller du contenu protégé.
+- Authentification de l'utilisateur 
+    - Connecter le portefeuille pour acheter et vérifier les droits d'accès.
+- Contrat intelligent pour définir et vérifier les jetons d'accès
+    - Accorder l'accès aux fichiers, au contenu, ou aux appareils après paiement.
+- Tableau de bord administrateur pour fixer le prix, les limites de temps, et le type d'accès
+    - Permettre aux créateurs de fixer les prix, la durée, et les types d'actifs.
+- Interface utilisateur pour le paiement de portefeuille et la confirmation d'accès
+    - Confirmer la propriété du portefeuille et afficher le lien ou le message d'accès.
+- Journal d'accès et logique d'expiration
+- (Optionnel) intégration de diffusion ou de serrure intelligente
+    - Étendre le contrat pour interagir avec des appareils ou des alertes.
+
+## Ressources nécessaires
+
+- Plateforme d'hébergement Web (Vercel)
+- Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement Backend (Typescript, Express)
+- Bibliothèque de contrats intelligents (Solidité + OpenZeppelin)
+- Réseau de test de blockchain
+- Frontend avec connexion de portefeuille (React/wagmi)
+- Tokens de test et flux de simulation de paiement
+- (Optionnel) déclencheurs de webhooks backend ou de type IFTTT

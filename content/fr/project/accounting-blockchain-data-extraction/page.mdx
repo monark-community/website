@@ -1,0 +1,45 @@
+export const metadata = {
+    id: "accounting-blockchain-data-extraction",
+    title: "Extraction de données comptables de blockchain",
+    description: "Créez un outil qui extrait, nettoie et formate les données de transaction blockchain en formats prêts pour la comptabilité. Les utilisateurs peuvent entrer une adresse de portefeuille et recevoir des revenus/dépenses catégorisés, des frais de gaz et des horodatages. Utile pour les DAO, les indépendants et les entreprises nécessitant des audits ou des rapports fiscaux. Vous pouvez utiliser The Graph, APIs, ou des indexeurs pour nourrir les données.",
+    status: "idea",
+    accronym: "LedgerLift",
+    industry_tags: ["Finance et assurance", "Services"],
+    keyword_tags: ["Comptabilité", "Audit", "Reporting", "Extraction de données", "Conformité"],
+    complexity_score: 7,
+    effort_score: -1,
+    adoption_score: 8,
+    blockchain_score: 8,
+    revenue_score: -1,
+};
+
+# Extraction de données comptables de blockchain
+
+Créez un outil qui extrait, nettoie et formate les données de transaction blockchain en formats prêts pour la comptabilité. Les utilisateurs peuvent entrer une adresse de portefeuille et recevoir des revenus/dépenses catégorisés, des frais de gaz et des horodatages. Utile pour les DAO, les indépendants et les entreprises nécessitant des audits ou des rapports fiscaux. Vous pouvez utiliser The Graph, APIs, ou des indexeurs pour nourrir les données.
+
+![Maquette de Extraction de données comptables de blockchain](/images/project/accounting-blockchain-data-extraction.jpg)
+
+## Description Générale
+
+[LedgerLift](https://ledgerlift.monark.io) est un projet d'analyse de blockchain centré sur le back-end destiné à la création de rapports financiers et à la préparation d'audits pour les individus, les DAO et les entreprises de crypto-monnaies. L'objectif est d'extraire l'historique des transactions, les frais de gaz, les échanges de tokens, les flux de revenus, et l'activité du portefeuille, puis de convertir ces données en formats lisibles par l'homme pour la comptabilité, la conformité, ou les rapports de trésorerie.
+
+La plateforme se connecte aux portefeuilles fournis par les utilisateurs, récupère les données de transaction à l'aide d'API publiques ou de requêtes de sous-graphe, et classe les entrées (par exemple, dépense, revenu, transfert). Les étudiants peuvent ajouter des fonctionnalités comme l'étiquetage automatique, l'étiquetage des portefeuilles, ou l'agrégation de plusieurs portefeuilles. Les formats de sortie incluent des fichiers CSV, des résumés financiers, ou des données prêtes à être intégrées dans des outils de comptabilité comme QuickBooks ou Excel.
+
+Ce projet offre une forte exposition à la normalisation des données, à l'analyse des métadonnées et aux heuristiques de classification. Des fonctionnalités supplémentaires peuvent inclure la récupération du prix des tokens au moment de la transaction, l'agrégation des coûts en gaz ou l'estimation du lot fiscal. En travaillant sur LedgerLift, les étudiants apprennent à combler le fossé technique entre les données de blockchain et les processus financiers hors chaîne.
+
+Le système aide à résoudre l'un des besoins les plus urgents des équipes Web3 et des indépendants : rendre la finance native de la blockchain lisible et légalement utilisable dans un monde de réglementation traditionnelle.
+
+## Livrables & Fonctionnalités Souhaitées
+
+- Récupérateur de transactions pour l'activité standard du portefeuille
+- Logique de normalisation pour classer les transferts, les échanges et l'utilisation du gaz
+- Système d'exportation de données (CSV, JSON) avec des champs étiquetés
+- Statistiques sommaires : revenu total, dépenses, frais, PnL
+- (Optionnel) Recherche de prix de token et générateur de rapports fiscaux
+
+## Ressources Requises
+
+- Indexeur de blockchain public ou API d'explorateur
+- Logique back-end en Python, JS ou TypeScript
+- Tableau de bord frontal (optionnel)
+- Échantillons d'adresses de portefeuilles pour simulation

@@ -1,0 +1,46 @@
+export const metadata = {
+    id: "supply-chain-tracking",
+    title: "Supply Chain Tracking",
+    description: "Develop a blockchain based application that records each step of a product's journey on-chain. Every iot sensor and actor (producer, shipper, vendor) logs actions on-chain to create a tamper-proof, traceable history. Smart contracts verify transactions and time-stamp checkpoints. This system ensures authenticity, combats fraud, and enhances transparency in many industries such as food, construction, pharma, etc.",
+    status: "idea",
+    accronym: "ChainProof",
+    industry_tags: ["Agriculture", "Food and Beverage", "Cities", "Retail"],
+    keyword_tags: ["Traceability", "Transparency", "Smart Contracts", "Automation", "Mapping"],
+    complexity_score: 5,
+    effort_score: -1,
+    adoption_score: 8,
+    blockchain_score: 8,
+    revenue_score: -1,
+};
+
+# Supply Chain Tracking
+
+Develop a blockchain based application that records each step of a product's journey on-chain. Every iot sensor and actor (producer, shipper, vendor) logs actions on-chain to create a tamper-proof, traceable history. Smart contracts verify transactions and time-stamp checkpoints. This system ensures authenticity, combats fraud, and enhances transparency in many industries such as food, construction, pharma, etc.
+
+![Supply Chain Tracking mockup](/images/project/supply-chain-tracking.jpg)
+
+## General Description
+
+[ChainProof](https://chainproof.monark.io) enables decentralized traceability of goods throughout the supply chain. The goal is to create an immutable, transparent ledger where each stakeholder (producer, transporter, distributor, retailer) logs their interactions with the product. Every action—production, transfer, verification—is recorded using smart contracts, ensuring that no data can be altered or removed.
+
+This project is particularly impactful in industries such as agriculture, food, luxury goods, and pharmaceuticals, where authenticity, compliance, and safety are essential. By leveraging blockchain, companies and consumers can trace products back to their origin, verify quality standards, and mitigate counterfeiting or safety risks.
+
+The system also supports QR-code integration, enabling customers to scan and view a product's journey on the front end. Smart contracts validate the flow of goods in real time, and optional integrations with sensors (e.g., GPS or temperature) could simulate IoT functionality.
+
+Beyond its technical scope, this project educates students on digital trust, transparency, and decentralized recordkeeping, aligning perfectly with supply chain innovation trends.
+
+## Deliverables & Desired Functionalities
+
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss, showing the product journey
+- User authentication & roles management for producers, transporters, and retailers
+- Smart contracts for supply chain checkpoint verification
+- End-user QR-code scanning system
+- Tamper-proof audit trail and time-stamped transactions
+
+## Required Resources
+
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- Mock supply chain data

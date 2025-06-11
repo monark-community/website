@@ -10,6 +10,7 @@ export interface ProjectMetadata {
   id: string;
   title: string;
   status: string;
+  accronym: string;
   description: string;
   industry_tags: string[];
   keyword_tags: string[];

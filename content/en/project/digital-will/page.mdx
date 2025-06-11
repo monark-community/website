@@ -1,0 +1,45 @@
+export const metadata = {
+    id: "digital-will",
+    title: "Digital Will",
+    description: "Create a secure blockchain-based inheritance system. Users set up a digital will where funds are released to beneficiaries based on an on-chain permission system consisting of various user keys or conditions like time delays, inactivity, or third-party validation. Include wallet-based identity, account creation tool, optional social recovery, and contract customization. This ensures irreversible execution and removes the need for centralized estate services.",
+    status: "idea",
+    accronym: "WillChain",
+    industry_tags: ["Finance and Insurance", "Services"],
+    keyword_tags: ["Inheritance", "Smart Contracts", "Time Lock", "Escrow", "Compliance"],
+    complexity_score: 7,
+    effort_score: -1,
+    adoption_score: 5,
+    blockchain_score: 8,
+    revenue_score: -1,
+};
+
+# Digital Will
+
+Create a secure blockchain-based inheritance system. Users set up a digital will where funds are released to beneficiaries based on an on-chain permission system consisting of various user keys or conditions like time delays, inactivity, or third-party validation. Include wallet-based identity, account creation tool, optional social recovery, and contract customization. This ensures irreversible execution and removes the need for centralized estate services.
+
+![Digital Will Early Mockup](/images/project/digital-will.jpg)
+
+## General Description
+
+[Willchain](https://willchain.monark.io) provides a blockchain-based solution to securely manage digital inheritance. Traditional legal systems lack modern infrastructure to handle crypto assets, often resulting in lost funds. This project allows users to create a digital will in which tokens or digital assets are programmed to be transferred upon specific conditions—such as wallet inactivity, time delay, or third-party validation.
+
+Smart contracts define beneficiaries and asset allocations. In the prototype, users configure a wallet-linked interface to create inheritance rules. The system can include inactivity monitoring, multi-sig authorization (e.g., two executors must approve transfer), and optional document storage via IPFS.
+
+WillChain has real-world implications: millions of dollars in crypto are lost each year due to lack of estate planning. By simplifying legacy transfer processes, this platform not only secures asset ownership but democratizes estate planning for Web3 users.
+
+## Deliverables & Desired Functionalities
+
+- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss, showing the product journey
+- User authentication & roles management for producers, transporters, and retailers
+- Smart contracts defining will execution conditions
+- Inactivity simulation or time-based triggers
+- Web UI for adding beneficiaries and asset allocation
+- (Optional) encrypted backup or recovery mechanism
+
+## Required Resources
+
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + OpenZeppelin)
+- Blockchain testnet
+- IPFS/Arweave for document hash storage
