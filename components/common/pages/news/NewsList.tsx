@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import enNews from "@/content/en/news/index";
 import frNews from "@/content/fr/news/index";
 import { DatedNewsMetadata } from "@/types/news.types";
@@ -38,11 +37,7 @@ const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
 
   const filteredNews = news.filter((item) => {
     const searchLower = search.toLowerCase();
-    return (
-      item.title.toLowerCase().includes(searchLower) ||
-      (item.tags &&
-        item.tags.some((tag: string) => tag.toLowerCase() === searchLower))
-    );
+    return item.title.toLowerCase().includes(searchLower);
   });
 
   return (
@@ -72,14 +67,6 @@ const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
                 <CardContent className="flex-grow flex flex-col justify-between">
                   <div className="h-4 w-full bg-muted rounded mb-2" />
                   <div className="h-4 w-3/4 bg-muted rounded mb-4" />
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {[...Array(3)].map((_, j) => (
-                      <span
-                        key={j}
-                        className="inline-block h-6 w-16 bg-muted rounded-full"
-                      />
-                    ))}
-                  </div>
                   <div className="mt-auto pt-2">
                     <div className="h-4 w-24 bg-muted rounded" />
                   </div>
@@ -123,14 +110,6 @@ const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col justify-between">
                     <p className="mb-4">{item.summary}</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {item.tags &&
-                        item.tags.map((tag: string) => (
-                          <Badge key={tag} variant="secondary">
-                            {tag}
-                          </Badge>
-                        ))}
-                    </div>
                     <div className="mt-auto pt-2"></div>
                   </CardContent>
                 </Card>

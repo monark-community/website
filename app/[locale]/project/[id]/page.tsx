@@ -9,14 +9,14 @@ import { ArrowLeft } from "lucide-react";
 import { components } from "@/mdx-components";
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     locale: string;
     id: string;
-  };
+  }>;
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { locale, id } = params;
+  const { locale, id } = await params;
 
   const contentPath = path.join(
     process.cwd(),
@@ -42,7 +42,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   // Read the MDX content
   const content = fs.readFileSync(contentPath, "utf-8");
-  const monarkSupportContent = fs.readFileSync(monarkSupportContentPath, "utf-8");
+  const monarkSupportContent = fs.readFileSync(
+    monarkSupportContentPath,
+    "utf-8"
+  );
   const i18nStrings: PageI18n =
     (i18n as Record<string, PageI18n>)[locale] || i18n.en;
 

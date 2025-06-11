@@ -9,14 +9,14 @@ import { ArrowLeft } from "lucide-react";
 import { components } from "@/mdx-components";
 
 interface NewsPageProps {
-  params: {
+  params: Promise<{
     locale: string;
     id: string;
-  };
+  }>;
 }
 
 export default async function NewsPage({ params }: NewsPageProps) {
-  const { locale, id } = params;
+  const { locale, id } = await params;
 
   const contentPath = path.join(
     process.cwd(),

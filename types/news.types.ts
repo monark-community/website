@@ -1,9 +1,9 @@
 export interface DatedNewsMetadata {
   id: string;
-  image: string;
   title: string;
-  summary?: string;
   date: string;
-  tags?: string[];
+  image: string;
+  summary: string;
   author?: string;
+  source?: string;
 }

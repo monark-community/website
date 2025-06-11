@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { Locale } from "@/i18n.config";
-import NavbarWrapper from "../web/navbar/navbar-wrapper";
-import Footer from "../web/footer/footer"; // Wrong. Footer isn't shared.
+import NavbarWrapper from "@/components/common/layout/navbar/navbar-wrapper";
+import Footer from "@/components/common/layout/footer/footer"; // Wrong. Footer isn't shared.
 
 type Props = {
   locale: Locale;

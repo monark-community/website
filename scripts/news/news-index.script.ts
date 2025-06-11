@@ -27,12 +27,11 @@ function generateNewsIndex(locale: string): DatedNewsMetadata[] {
           return {
             id: metadata.id,
             title: metadata.title,
-            author: metadata.author,
             date: metadata.date,
-            city: metadata.city,
-            source: metadata.source,
             image: metadata.image,
             summary: metadata.summary,
+            author: metadata.author,
+            source: metadata.source,
           };
         }
       }

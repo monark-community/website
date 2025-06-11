@@ -6,15 +6,14 @@ import { components } from "@/mdx-components";
 import MembersSection from "@/components/common/pages/about/members-section/members-section.component";
 import { Locale } from "@/i18n.config";
 
-interface AboutPageProps {
-  params: {
+type AboutPageProps = {
+  params: Promise<{
     locale: string;
-    id: string;
-  };
-}
+  }>;
+};
 
 export default async function AboutPage({ params }: AboutPageProps) {
-  const { locale } = params;
+  const { locale } = await params;
 
   const contentPath = path.join(
     process.cwd(),
