@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectList from "../../../components/common/pages/project/ProjectList";
+import ProjectList from "@/components/common/pages/project/ProjectList";
 import { Locale } from "@/i18n.config";
 
 type Params = Promise<{ locale: Locale }>;

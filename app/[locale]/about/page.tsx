@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { components } from "@/mdx-components";
-import MembersSection from "@/components/common/members-section/members-section.component";
+import MembersSection from "@/components/common/pages/about/members-section/members-section.component";
 import { Locale } from "@/i18n.config";
 
 interface AboutPageProps {

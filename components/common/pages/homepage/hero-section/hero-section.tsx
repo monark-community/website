@@ -12,14 +12,14 @@ type Props = {
 function HeroSection({ locale }: Props) {
   const t = i18n[locale].hero_section;
   return (
-    <section className="hero-section relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 sm:py-40">
-      <div className="transition-all opacity-40 sm:opacity-100 absolute lg:top-8 lg:right-8 z-[-1] rounded-full bg-primary/10 h-[600px] w-[600px] max-w-[100vw] aspect-square flex items-center justify-center">
+    <section className="hero-section relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-4 lg:pt-40 pb-40">
+      <div className="transition-all opacity-40 sm:opacity-100 absolute md:top-8 md:right-8 z-[-1] rounded-full bg-primary/10 h-[600px] w-[600px] max-w-[100vw] aspect-square flex items-center justify-center overflow-hidden">
         <Image
           alt="Stylized line art of a Monarch butterfly"
           src="/vectors/decorative/monark-mesh.svg"
           width={550}
           height={550}
-          className="mt-32 ml-24 opacity-50 lg:opacity-100 lg:mt-0 lg:ml-0 lg:top-0"
+          className="md:mt-32 md:ml-24 opacity-50 lg:opacity-100 lg:mt-0 lg:ml-0 lg:top-0"
         />
       </div>
       <p className="text-tagline">{t.flavor}</p>

@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "generate:project-index": "bun scripts/project-index.script.ts",
-    "generate:project-translations": "bun scripts/project-translate.script.ts",
-    "build": "npm run generate:project-index && next build",
+    "generate:project-index": "bun scripts/project/project-index.script.ts",
+    "generate:project-translations": "bun scripts/project/project-translate.script.ts",
+    "generate:news-index": "bun scripts/news/news-index.script.ts",
+    "generate:news-translations": "bun scripts/news/news-translate.script.ts",
+    "build": "npm run generate:project-index && npm run generate:news-index && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -30,6 +32,7 @@
     "accept-language": "^3.0.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
     "dotenv": "^16.5.0",
     "js-cookie": "^3.0.5",
     "lucide-react": "^0.475.0",

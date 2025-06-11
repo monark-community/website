@@ -1,7 +1,7 @@
 "use client";
-import Image, { ImageProps as NextImageProps } from 'next/image';
-import React, { useState } from 'react';
-import { XIcon } from 'lucide-react';
+import Image, { ImageProps as NextImageProps } from "next/image";
+import React, { useState } from "react";
+import { XIcon } from "lucide-react";
 
 type WrappedImageProps = NextImageProps & {
   src: string;
@@ -26,16 +26,16 @@ export default function WrappedImage({
   React.useEffect(() => {
     if (!zoomed) return;
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setZoomed(false);
+      if (e.key === "Escape") setZoomed(false);
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [zoomed]);
 
   return (
     <>
       <figure
-        className="flex flex-col items-center rounded-lg overflow-hidden cursor-zoom-in"
+        className="flex flex-col items-center cursor-zoom-in"
         onClick={() => setZoomed(true)}
       >
         <Image
@@ -43,7 +43,7 @@ export default function WrappedImage({
           alt={alt}
           width={width}
           height={height}
-          className={className}
+          className={`rounded-lg overflow-hidden ${className}`}
         />
         {caption && (
           <figcaption className="mt-2 text-sm text-muted-foreground">
@@ -64,7 +64,7 @@ export default function WrappedImage({
             }}
             aria-label="Close image"
           >
-            <XIcon size={24} className="text-primary"/>
+            <XIcon size={24} className="text-primary" />
           </button>
           <div className="flex flex-col items-center">
             <Image
@@ -73,20 +73,15 @@ export default function WrappedImage({
               width={width}
               height={height}
               style={{
-                maxWidth: '90vw',
-                maxHeight: '90vh',
-                width:
-                  width > height
-                    ? 'min(100%, ' + width + 'px)'
-                    : 'auto',
+                maxWidth: "90vw",
+                maxHeight: "90vh",
+                width: width > height ? "min(100%, " + width + "px)" : "auto",
                 height:
-                  height >= width
-                    ? 'min(100%, ' + height + 'px)'
-                    : 'auto',
-                objectFit: 'contain',
-                borderRadius: '0.5rem',
-                boxShadow: '0 4px 32px rgba(0,0,0,0.5)',
-                cursor: 'default', // Remove zoom-out cursor on image
+                  height >= width ? "min(100%, " + height + "px)" : "auto",
+                objectFit: "contain",
+                borderRadius: "0.5rem",
+                boxShadow: "0 4px 32px rgba(0,0,0,0.5)",
+                cursor: "default", // Remove zoom-out cursor on image
               }}
               className="bg-white"
               onClick={(e) => e.stopPropagation()}

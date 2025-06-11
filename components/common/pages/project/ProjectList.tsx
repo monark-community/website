@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import enProjects from "@/content/en/project/index";
 import frProjects from "@/content/fr/project/index";
-import { en, fr } from "./projects.i18n";
+import { en, fr } from "./projects-list.i18n";
 import Image from "next/image";
 import ProjectStatusBadge from "@/components/common/pages/project/ProjectStatusBadge";
 import { DatedProjectMetadata } from "@/types/project.types";
@@ -96,23 +96,23 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="mb-6">{i18nStrings.pageTitle}</h1>
+      <h1 className="mb-6">{i18nStrings.page_title}</h1>
       <p className="text-muted-foreground mb-8 max-w-[460px]">
         {i18nStrings.description}
       </p>
       <div className="flex flex-col sm:flex-row gap-4 mb-2">
         <Input
-          placeholder={i18nStrings.searchPlaceholder}
+          placeholder={i18nStrings.search_placeholder}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="flex-1"
         />
         <Select value={selectedIndustry} onValueChange={setSelectedIndustry}>
           <SelectTrigger className="w-[200px]">
-            <SelectValue placeholder={i18nStrings.filterByIndustry} />
+            <SelectValue placeholder={i18nStrings.filter_by_industry} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">{i18nStrings.allIndustries}</SelectItem>
+            <SelectItem value="all">{i18nStrings.all_industries}</SelectItem>
             {sortedIndustryTags.map((tag) => (
               <SelectItem key={tag} value={tag}>
                 {tag}
@@ -122,10 +122,10 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
         </Select>
         <Select value={selectedKeyword} onValueChange={setSelectedKeyword}>
           <SelectTrigger className="w-[200px]">
-            <SelectValue placeholder={i18nStrings.filterByKeyword} />
+            <SelectValue placeholder={i18nStrings.filter_by_keyword} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">{i18nStrings.allKeywords}</SelectItem>
+            <SelectItem value="all">{i18nStrings.all_keywords}</SelectItem>
             {sortedKeywordTags.map((tag) => (
               <SelectItem key={tag} value={tag}>
                 {tag}
@@ -233,7 +233,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
             ))
           ) : (
             <p className="text-muted-foreground text-lg">
-              {i18nStrings.noProjectsFound}
+              {i18nStrings.not_found}
             </p>
           )}
         </div>

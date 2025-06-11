@@ -3,9 +3,9 @@ export interface I18n {
 }
 
 export const en: I18n = {
-  back_to_list: "Back to Projects",
+  back_to_list: "Back to News",
 };
 
 export const fr: I18n = {
-  back_to_list: "Retour aux projets",
+  back_to_list: "Retour aux nouvelles",
 };

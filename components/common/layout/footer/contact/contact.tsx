@@ -20,7 +20,7 @@ function Contact({ locale }: Props) {
         <p className="text-tagline leading-none">{t.tagline}</p>
         <p className="text-headline leading-none">{t.title}</p>
         <div className="mt-8">
-          <NavLink href="/forms/contact">
+          <NavLink href="mailto:contact@monark.io">
             <Button size="lg">
               {t.action}&nbsp;
               <SendIcon />

@@ -8,31 +8,23 @@ import type { I18n as PageI18n } from "./page.i18n";
 import { ArrowLeft } from "lucide-react";
 import { components } from "@/mdx-components";
 
-interface ProjectPageProps {
+interface NewsPageProps {
   params: {
     locale: string;
     id: string;
   };
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+export default async function NewsPage({ params }: NewsPageProps) {
   const { locale, id } = params;
 
   const contentPath = path.join(
     process.cwd(),
     "content",
     locale,
-    "project",
+    "news",
     id,
     "page.mdx"
-  );
-
-  const monarkSupportContentPath = path.join(
-    process.cwd(),
-    "content",
-    locale,
-    "project",
-    "monark-support.mdx"
   );
 
   // Check if the file exists
@@ -42,7 +34,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
   // Read the MDX content
   const content = fs.readFileSync(contentPath, "utf-8");
-  const monarkSupportContent = fs.readFileSync(monarkSupportContentPath, "utf-8");
   const i18nStrings: PageI18n =
     (i18n as Record<string, PageI18n>)[locale] || i18n.en;
 
@@ -50,7 +41,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <div className="container mx-auto">
       <div className="mt-8">
         <NavLink
-          href={`/${locale}/project`}
+          href={`/${locale}/learn/news`}
           className="inline-flex items-center text-primary font-medium group no-underline"
         >
           <ArrowLeft className="mr-1 w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -59,7 +50,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </div>
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <MDXRemote source={content} components={components} />
-        <MDXRemote source={monarkSupportContent} components={components} />
       </div>
     </div>
   );

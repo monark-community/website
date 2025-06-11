@@ -1,28 +1,14 @@
 import { locales } from "@/i18n.config";
 import fs from "fs";
 import path from "path";
-import crypto from "crypto";
 import { DatedProjectMetadata } from "@/types/project.types";
+import {
+  getMetadataFromFile,
+  generateHash,
+  getContentSubdirectories,
+} from "../utils/index.utils";
 
 type PreviousIndex = Record<string, Partial<DatedProjectMetadata>>;
-
-function getMetadataFromFile(filePath: string) {
-  const fileContent = fs.readFileSync(filePath, "utf-8");
-  const metadataMatch = fileContent.match(
-    /export const metadata = ({[\s\S]*?});/
-  );
-  if (metadataMatch) {
-    return eval(`(${metadataMatch[1]})`); // Parse the metadata object
-  }
-  return null;
-}
-
-function generateHash(metadata: object): string {
-  return crypto
-    .createHash("sha256")
-    .update(JSON.stringify(metadata))
-    .digest("hex");
-}
 
 function generateProjectIndex(
   locale: string,
@@ -37,10 +23,7 @@ function generateProjectIndex(
     return [];
   }
 
-  const subdirectories = fs
-    .readdirSync(projectDir, { withFileTypes: true })
-    .filter((dirent) => dirent.isDirectory())
-    .map((dirent) => dirent.name);
+  const subdirectories = getContentSubdirectories(projectDir);
 
   return subdirectories
     .map((subdir) => {
