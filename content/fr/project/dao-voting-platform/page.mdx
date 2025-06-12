@@ -13,13 +13,13 @@ export const metadata = {
     revenue_score: -1,
 };
 
-# Plateforme de Vote DAO
+# Plateforme de vote DAO
 
 Développez une plateforme de gouvernance décentralisée qui permet le vote basé sur les jetons ou les portefeuilles pour des propositions. Les utilisateurs peuvent soumettre des idées, voter, et suivre les résultats. Les fonctionnalités comprennent la logique du quorum, la délégation, les résultats en direct, et des crochets d'exécution optionnels. Idéal pour les DAOs, les organisations étudiantes, ou les coopératives. Il s'agit d'un bloc d'élément fondamental pour la prise de décision on-chain.
 
 ![Maquette préliminaire de la Plateforme de Vote DAO](/images/project/dao-voting-platform.jpg)
 
-## Description Générale
+## Description générale
 
 [GovChain](https://govchain.monark.io) est un système de gouvernance entièrement décentralisé qui permet aux communautés, aux DAOs et aux organisations de créer des propositions, de tenir des votes et de mettre en œuvre des décisions, le tout sans dépendre d'une autorité centrale. Le système permet aux utilisateurs de soumettre des propositions directement à partir de leurs portefeuilles, de définir des périodes de vote et des seuils de quorum, et de suivre les résultats grâce à une interface transparente et à l'épreuve des falsifications.
 
@@ -27,9 +27,9 @@ Que ce soit appliqué à un conseil étudiant décentralisé, à un protocole co
 
 L'un des aspects les plus puissants de GovChain est sa capacité à servir de banc d'essai pour de nouveaux modèles de gouvernance. Les participants peuvent simuler les cycles de vie des propositions, mesurer les taux de participation, et adapter leurs règles au fil du temps. Les étudiants apprendront à propos de la conception de la gouvernance et de l'enregistrement des votes on-chain vs off-chain. Ils exploreront également le développement frontend pour rendre les outils de gouvernance conviviaux et transparents. Ce projet offre une expérience pratique en matière de sécurité des contrats intelligents, d'alignement des incitations, et de théorie de la gouvernance.
 
-## Livrables & Fonctionnalités Souhaitées
+## Livrables & fonctionnalités souhaitées
 
-- Interface web utilisant Next.js, Typescript, shadcn-ui, tailwindcss  
+- Interface web utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)  
    - Construire un hub de gouvernance où les membres peuvent proposer, voter et consulter les résultats.
 - Authentification des utilisateurs  
    - Permettre la connexion via portefeuille pour suivre les rôles des votants et les interactions avec les propositions.
@@ -44,10 +44,10 @@ L'un des aspects les plus puissants de GovChain est sa capacité à servir de ba
 - Règles de quorum et seuils de vote définissables par proposition  
    - Permettre aux proposeurs de définir les conditions de vote, comme un nombre minimum de votants ou un taux d'acceptation requis.
 
-## Ressources Nécessaires
+## Ressources requises
 
-- Plateforme d'hébergement Web (Vercel)
-- Hébergement des bases de données (Clickhouse, PostgreSQL ou GraphQL) et du backend (Typescript, Express)
+- Plateforme d'hébergement Web ([Vercel](https://www.vercel.com/))
+- Hébergement des bases de données([ClickHouse](https://clickhouse.com/),[PostgreSQL](https://www.postgresql.org/) ou [GraphQL](https://graphql.org/)) et du backend (Typescript, [Express](https://expressjs.com/))
 - Bibliothèque de contrats intelligents (Solidity + OpenZeppelin)
 - Testnet de blockchain
 - Bibliothèques d'intégration Web3 (par exemple, wagmi, ethers.js)

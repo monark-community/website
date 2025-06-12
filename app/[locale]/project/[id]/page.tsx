@@ -18,21 +18,22 @@ interface ProjectPageProps {
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { locale, id } = await params;
 
+  const basePath = path.join(process.cwd(), "content", locale, "project");
+
   const contentPath = path.join(
-    process.cwd(),
-    "content",
-    locale,
-    "project",
+    basePath,
     id,
     "page.mdx"
   );
-
+  
   const monarkSupportContentPath = path.join(
-    process.cwd(),
-    "content",
-    locale,
-    "project",
+    basePath,
     "monark-support.mdx"
+  );
+
+  const devEnvContentPath = path.join(
+    basePath,
+    "dev-env.mdx"
   );
 
   // Check if the file exists
@@ -44,6 +45,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   const content = fs.readFileSync(contentPath, "utf-8");
   const monarkSupportContent = fs.readFileSync(
     monarkSupportContentPath,
+    "utf-8"
+  );
+  const devEnvContent = fs.readFileSync(
+    devEnvContentPath,
     "utf-8"
   );
   const i18nStrings: PageI18n =
@@ -62,6 +67,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       </div>
       <div className="prose prose-lg dark:prose-invert max-w-none">
         <MDXRemote source={content} components={components} />
+        <MDXRemote source={devEnvContent} components={components} />
         <MDXRemote source={monarkSupportContent} components={components} />
       </div>
     </div>

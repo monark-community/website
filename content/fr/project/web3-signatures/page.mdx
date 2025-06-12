@@ -19,7 +19,7 @@ Créez un système où les utilisateurs signent des documents ou des transaction
 
 ![Signatures Web3 maquette](/images/project/web3-signatures.jpg)
 
-## Description Générale
+## Description générale
 
 [SignChain](https://signchain.monark.io) est un système sécurisé et décentralisé pour la signature numérique de documents, accords ou messages à l'aide de portefeuilles de blockchain. Le projet permet aux utilisateurs de télécharger un fichier, de générer un hachage de contenu, de le signer avec leur clé privée via l'intégration de portefeuille, et éventuellement de stocker le hachage de document signé sur la chaîne ou le document lui-même sur IPFS.
 
@@ -31,24 +31,24 @@ Le système met l'accent sur la confidentialité et l'auditabilité sans garde d
 
 ## Livrables et fonctionnalités souhaitées
 
-- Interface web utilisant Next.js, Typescript, shadcn-ui, tailwindcss  
+- Interface web utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)  
    - Créer une plateforme où les utilisateurs peuvent signer et vérifier des documents sur la blockchain.
 - Authentification des utilisateurs  
-   - Se connecter via portefeuille pour accéder aux outils de signature et à l’historique.
+   - Se connecter via portefeuille pour accéder aux outils de signature et à l'historique.
 - Outil de téléversement de documents et de génération de hachage  
    - Convertir les fichiers en empreintes numériques (hash) pour vérification et signature.
 - Processus de signature via portefeuille avec engagement on-chain du hachage  
    - Signer les hachages de fichiers et enregistrer la preuve sur la blockchain pour auditabilité.
 - Intégration IPFS pour un stockage décentralisé optionnel  
    - Optionnellement téléverser les fichiers complets vers un stockage décentralisé.
-- Interface web pour la validation de signatures et l’historique des documents  
+- Interface web pour la validation de signatures et l'historique des documents  
 - Prise en charge de plusieurs signataires avec horodatage  
    - Ajouter plusieurs signataires (portefeuilles) avec des horodatages précis et un journal des signatures.
 
 ## Ressources requises
 
-- Plateforme d'hébergement Web (Vercel)
-- Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement de Backend (Typescript, Express)
+- Plateforme d'hébergement Web ([Vercel](https://www.vercel.com/))
+- Base de données([ClickHouse](https://clickhouse.com/),[PostgreSQL](https://www.postgresql.org/) ou [GraphQL](https://graphql.org/)) et hébergement de Backend (Typescript, [Express](https://expressjs.com/))
 - Bibliothèque de contrat intelligent (Solidity + OpenZeppelin)
 - Testnet de blockchain
 - Bibliothèque de signature Web3 (ethers.js, wagmi)

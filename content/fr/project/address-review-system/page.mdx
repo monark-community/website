@@ -1,11 +1,11 @@
 export const metadata = {
     id: "address-review-system",
-    title: "Address Review System",
-    description: "Build a decentralized review system where users can submit reviews tied to their wallet addresses. Each review (rating, comment, timestamp) is stored immutably on-chain, ensuring transparency and preventing deletion or manipulation. Useful for evaluating sellers, contributors, or service providers in Web3 ecosystems. Add features like filtering by address, sentiment analysis, or integration with NFT platforms and DAOs.",
+    title: "Système d'avis Décentralisé",
+    description: "Construisez un système d'avis décentralisé où les utilisateurs peuvent soumettre des avis liés à leur adresse de portefeuille. Chaque avis (note, commentaire, horodatage) est stocké de manière immuable sur la blockchain, assurant la transparence et empêchant toute suppression ou manipulation. Utile pour évaluer les vendeurs, contributeurs ou prestataires de services dans les écosystèmes Web3. Ajoutez des fonctionnalités comme le filtrage par adresse, l'analyse de sentiment ou l'intégration avec les plateformes NFT et les DAO.",
     status: "idea",
     accronym: "TrustRate",
     industry_tags: ["Services", "Communications numériques"],
-    keyword_tags: ["Reviews", "Transparence", "Portefeuille", "Réputation", "DAO"],
+    keyword_tags: ["Avis", "Transparence", "Portefeuille", "Réputation", "DAO"],
     complexity_score: 5,
     effort_score: -1,
     adoption_score: 3,
@@ -13,40 +13,40 @@ export const metadata = {
     revenue_score: -1,
 };
 
-# Address Review System
+# Système d'avis Décentralisé
 
-Build a decentralized review system where users can submit reviews tied to their wallet addresses. Each review (rating, comment, timestamp) is stored immutably on-chain, ensuring transparency and preventing deletion or manipulation. Useful for evaluating sellers, contributors, or service providers in Web3 ecosystems. Add features like filtering by address, sentiment analysis, or integration with NFT platforms and DAOs.
+Construisez un système d'avis décentralisé où les utilisateurs peuvent soumettre des avis liés à leur adresse de portefeuille. Chaque avis (note, commentaire, horodatage) est stocké de manière immuable sur la blockchain, garantissant la transparence et empêchant toute suppression ou manipulation. Utile pour évaluer les vendeurs, contributeurs ou prestataires de services dans les écosystèmes Web3. Ajoutez des fonctionnalités comme le filtrage par adresse, l'analyse de sentiment ou l'intégration avec des plateformes NFT et des DAO.
 
-![Address Review System mockup](/images/project/address-review-system.jpg)
+![Maquette du Système d'avis Décentralisé](/images/project/address-review-system.jpg)
 
-## General Description
+## Description Générale
 
-[TrustRate](https://trustrate.monark.io) is a decentralized reputation and review platform designed to bring transparency and accountability to user feedback within Web3 ecosystems. In a world where traditional reviews are often manipulable or tied to centralized platforms, TrustRate allows any user to post reviews—consisting of ratings, comments, and timestamps—directly to the blockchain using their wallet address. This ensures that all reviews are immutable, publicly verifiable, and permanently associated with a specific on-chain identity.
+[TrustRate](https://trustrate.monark.io) est une plateforme décentralisée de réputation et d'avis conçue pour apporter transparence et responsabilité aux retours utilisateurs dans les écosystèmes Web3. Dans un monde où les avis traditionnels peuvent être manipulés ou liés à des plateformes centralisées, TrustRate permet à tout utilisateur de publier des avis — comprenant notes, commentaires et horodatages — directement sur la blockchain via leur adresse de portefeuille. Cela garantit que tous les avis sont immuables, publiquement vérifiables et définitivement associés à une identité on-chain spécifique.
 
-The system is particularly useful in environments where pseudonymous interaction is the norm, such as DAO contributor networks, freelance marketplaces, NFT platforms, and protocol governance spaces. Users can leave reviews for services, product creators, partners, or collaborators. Optional features include upvote/downvote mechanics, review tagging, user reputation scores, and review aggregation by address or project.
+Le système est particulièrement utile dans les environnements où l'interaction pseudonyme est la norme, comme les réseaux de contributeurs DAO, les places de marché freelance, les plateformes NFT ou les espaces de gouvernance de protocole. Les utilisateurs peuvent laisser des avis sur des services, des créateurs de produits, des partenaires ou des collaborateurs. Les fonctionnalités optionnelles incluent les systèmes de vote positif/négatif, l'étiquetage des avis, des scores de réputation utilisateur, et l'agrégation d'avis par adresse ou projet.
 
-TrustRate also supports sentiment analysis tools to classify reviews and offers an optional moderation layer governed by community rules or DAO processes. Students working on this project will gain practical experience building secure and efficient smart contracts for public data submission, frontend systems for filtering and browsing content, and wallet-linked user interfaces. This project provides essential learning around decentralized trust systems, UX for accountability tools, and Web3-native transparency.
+TrustRate prend également en charge des outils d'analyse de sentiment pour classifier les avis, et propose une couche de modération optionnelle, gouvernée par des règles communautaires ou des processus DAO. Les étudiants travaillant sur ce projet acquerront une expérience concrète dans la création de contrats intelligents sécurisés pour la soumission publique de données, des systèmes frontend pour filtrer et parcourir le contenu, ainsi que des interfaces utilisateurs liées aux portefeuilles. Ce projet offre un apprentissage essentiel sur les systèmes de confiance décentralisés, l'expérience utilisateur pour les outils de redevabilité, et la transparence native Web3.
 
-## Deliverables & Desired Functionalities
+## Livrables & Fonctionnalités Souhaitées
 
-- Web interface using Next.js, Typescript, shadcn-ui, tailwindcss
-    - Display reviews and reputation info tied to wallet addresses and for reading, writing, and filtering reviews by address.
-- User authentication
-    - Let users review others using their wallet-linked identity.
-- Smart contracts for submitting, timestamping, and retrieving reviews
-    - Publish immutable reviews with rating, comment, and timestamp.
-- Address-based profile view with cumulative feedback
-    - Aggregate review scores per wallet or DAO contributor.
-- DAO compatibility for review aggregation and moderation
-- (Optional) sentiment scoring, flagging, or user reputation layer
-    - Add flagging, upvotes, or DAO-powered review governance.
+- Interface web utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)
+   - Afficher les avis et informations de réputation liées aux adresses de portefeuilles, et permettre de lire, écrire et filtrer les avis par adresse.
+- Authentification utilisateur
+   - Permettre aux utilisateurs de laisser des avis en utilisant leur identité liée au portefeuille.
+- Contrats intelligents pour soumettre, horodater et récupérer les avis
+   - Publier des avis immuables contenant note, commentaire et horodatage.
+- Vue de profil basée sur l'adresse avec feedback cumulé
+   - Agréger les scores d'avis par portefeuille ou contributeur DAO.
+- Compatibilité DAO pour l'agrégation et la modération des avis
+- (Optionnel) scoring de sentiment, signalement ou couche de réputation utilisateur
+   - Ajouter des signalements, votes positifs/négatifs ou une gouvernance DAO des avis.
 
-## Required Resources
+## Ressources Nécessaires
 
-- Web hosting platform (Vercel)
-- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
-- Smart contract library (Solidity + OpenZeppelin)
-- Blockchain testnet
-- Frontend framework with wallet login (React preferred)
-- Basic data filtering and analytics tools
-- Mock profiles and projects to simulate reviews
+- Plateforme d'hébergement web ([Vercel](https://www.vercel.com/))
+- Base de données ([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) ou [GraphQL](https://graphql.org/)) et hébergement backend (Typescript, [Express](https://expressjs.com/))
+- Bibliothèque de contrats intelligents (Solidity + OpenZeppelin)
+- Testnet blockchain
+- Framework frontend avec connexion via portefeuille (React recommandé)
+- Outils de filtrage de données et d'analyse de base
+- Profils et projets fictifs pour simuler les avis

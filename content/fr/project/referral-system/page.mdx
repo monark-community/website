@@ -13,13 +13,13 @@ export const metadata = {
     revenue_score: -1,
 };
 
-# Système de Parrainage
+# Système de parrainage
 
 Construisez un moteur de parrainage qui suit les invitations de portefeuille à portefeuille et récompense les résultats basés sur l'activité (par exemple, les inscriptions à l'application, les réalisations de tâches). Les contrats intelligents stockent qui a parrainé qui, déclenchent des récompenses lorsque des étapes sont atteintes et préviennent les abus. Parfait pour les programmes d'ambassadeurs ou les réseaux d'affiliés. Comprend des tableaux de bord pour suivre les performances.
 
 ![Maquette du Système de Parrainage](/images/project/referral-system.jpg)
 
-## Description Générale
+## Description générale
 
 [Reffinity](https://reffinity.monark.io) est un système de parrainage alimenté par des contrats intelligents conçu pour apporter transparence et automatisation à l'intégration des utilisateurs et aux incitations à la croissance. Le système permet aux utilisateurs (par exemple, ambassadeurs, promoteurs ou premiers adoptants) d'inviter d'autres personnes sur une plateforme ou une dApp. Lorsque les utilisateurs parrainés prennent des actions prédéfinies - comme rejoindre, acheter ou atteindre un jalon - le portefeuille de parrainage reçoit une récompense.
 
@@ -31,23 +31,23 @@ Reffinity ajoute une valeur durable à l'infrastructure de croissance Web3, en r
 
 ## Livrables et Fonctionnalités Souhaitées
 
-- Interface web utilisant Next.js, Typescript, shadcn-ui, tailwindcss  
+- Interface web utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)  
    - Construire un portail où les utilisateurs peuvent générer et suivre des liens de parrainage.
 - Authentification des utilisateurs  
    - Connecter un portefeuille pour accéder au générateur de lien de parrainage et au tableau de bord.
 - Contrat intelligent pour stocker les relations de parrainage et les règles de récompense  
-   - Suivre les relations parrain–filleul et les actions complétées, directement sur la blockchain.
+   - Suivre les relations parrain-filleul et les actions complétées, directement sur la blockchain.
 - Système de génération de lien de parrainage ou de QR code  
 - Interface web pour suivre les performances personnelles de parrainage  
-   - Voir qui a parrainé qui, combien d’actions ont été complétées et le total des récompenses gagnées.
+   - Voir qui a parrainé qui, combien d'actions ont été complétées et le total des récompenses gagnées.
 - Logique de distribution des récompenses et vérifications de sécurité  
    - Déclencher des récompenses en tokens ou en NFT lorsque les filleuls complètent les actions définies.
 
 
-## Ressources Nécessaires
+## Ressources requises
 
-- Plateforme d'hébergement Web (Vercel)
-- Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement Backend (Typescript, Express)
+- Plateforme d'hébergement Web ([Vercel](https://www.vercel.com/))
+- Base de données([ClickHouse](https://clickhouse.com/),[PostgreSQL](https://www.postgresql.org/) ou [GraphQL](https://graphql.org/)) et hébergement Backend (Typescript, [Express](https://expressjs.com/))
 - Bibliothèque de contrats intelligents (Solidity + OpenZeppelin)
 - Testnet blockchain
 - Portefeuille de testnet et tokens

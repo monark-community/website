@@ -13,7 +13,7 @@
 # testing
 /coverage
 
-# next.js
+# [Next.js](https://nextjs.org/)
 /.next/
 /out/
 
@@ -34,9 +34,9 @@ yarn-error.log*
 .env*
 !.env.example
 
-# vercel
+# [Vercel](https://vercel.com/)
 .vercel
 
-# typescript
+# [Typescript](https://www.typescriptlang.org/)
 *.tsbuildinfo
 next-env.d.ts

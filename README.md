@@ -24,9 +24,9 @@ Edit `app/page.tsx` to start building.
 
 ## 🛠 Stack
 
-- **Framework**: Next.js (App Router)
+- **Framework**: [Next.js](https://nextjs.org/) (App Router)
 - **Styling**: Tailwind CSS
-- **Hosting**: Vercel
+- **Hosting**: [Vercel](https://vercel.com/)
 
 Built to be clean, fast, and scalable.
 

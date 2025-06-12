@@ -1,7 +1,7 @@
 export const metadata = {
     id: "accounting-blockchain-data-extraction",
     title: "Extraction de données comptables de blockchain",
-    description: "Créez un outil qui extrait, nettoie et formate les données de transaction blockchain en formats prêts pour la comptabilité. Les utilisateurs peuvent entrer une adresse de portefeuille et recevoir des revenus/dépenses catégorisés, des frais de gaz et des horodatages. Utile pour les DAO, les indépendants et les entreprises nécessitant des audits ou des rapports fiscaux. Vous pouvez utiliser The Graph, APIs, ou des indexeurs pour nourrir les données.",
+    description: "Créez un outil qui extrait, nettoie et formate les données de transaction blockchain en formats prêts pour la comptabilité. Les utilisateurs peuvent entrer une adresse de portefeuille et recevoir des revenus/dépenses catégorisés, des frais de gaz et des horodatages. Utile pour les DAO, les indépendants et les entreprises nécessitant des audits ou des rapports fiscaux. Vous pouvez utiliser [The Graph](https://thegraph.com/), APIs, ou des indexeurs pour nourrir les données.",
     status: "idea",
     accronym: "LedgerLift",
     industry_tags: ["Finance et assurance", "Services"],
@@ -15,11 +15,11 @@ export const metadata = {
 
 # Extraction de données comptables de blockchain
 
-Créez un outil qui extrait, nettoie et formate les données de transaction blockchain en formats prêts pour la comptabilité. Les utilisateurs peuvent entrer une adresse de portefeuille et recevoir des revenus/dépenses catégorisés, des frais de gaz et des horodatages. Utile pour les DAO, les indépendants et les entreprises nécessitant des audits ou des rapports fiscaux. Vous pouvez utiliser The Graph, APIs, ou des indexeurs pour nourrir les données.
+Créez un outil qui extrait, nettoie et formate les données de transaction blockchain en formats prêts pour la comptabilité. Les utilisateurs peuvent entrer une adresse de portefeuille et recevoir des revenus/dépenses catégorisés, des frais de gaz et des horodatages. Utile pour les DAO, les indépendants et les entreprises nécessitant des audits ou des rapports fiscaux. Vous pouvez utiliser [The Graph](https://thegraph.com/), APIs, ou des indexeurs pour nourrir les données.
 
 ![Maquette de Extraction de données comptables de blockchain](/images/project/accounting-blockchain-data-extraction.jpg)
 
-## Description Générale
+## Description générale
 
 [LedgerLift](https://ledgerlift.monark.io) est un projet d'analyse de blockchain centré sur le back-end destiné à la création de rapports financiers et à la préparation d'audits pour les individus, les DAO et les entreprises de crypto-monnaies. L'objectif est d'extraire l'historique des transactions, les frais de gaz, les échanges de tokens, les flux de revenus, et l'activité du portefeuille, puis de convertir ces données en formats lisibles par l'homme pour la comptabilité, la conformité, ou les rapports de trésorerie.
 
@@ -29,26 +29,26 @@ Ce projet offre une forte exposition à la normalisation des données, à l'anal
 
 Le système aide à résoudre l'un des besoins les plus urgents des équipes Web3 et des indépendants : rendre la finance native de la blockchain lisible et légalement utilisable dans un monde de réglementation traditionnelle.
 
-## Livrables & Fonctionnalités Souhaitées
+## Livrables & fonctionnalités souhaitées
 
-- Interface web utilisant Next.js, Typescript, shadcn-ui, tailwindcss  
+- Interface web utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)  
    - Construire un outil de rapport financier pour les transactions crypto.
 - Authentification des utilisateurs  
-   - Les utilisateurs connectent leur portefeuille pour consulter et extraire l’historique de leurs transactions.
-- Récupérateur de transactions pour l’activité standard d’un portefeuille  
+   - Les utilisateurs connectent leur portefeuille pour consulter et extraire l'historique de leurs transactions.
+- Récupérateur de transactions pour l'activité standard d'un portefeuille  
 - Logique de normalisation pour classifier les transferts, échanges et frais de gas  
    - Classer chaque transaction comme revenu, dépense, échange ou frais.
-- Système d’exportation des données (CSV, JSON) avec champs étiquetés  
-   - Permettre l’exportation facile des données annotées pour les comptables ou outils d’analyse.
+- Système d'exportation des données (CSV, JSON) avec champs étiquetés  
+   - Permettre l'exportation facile des données annotées pour les comptables ou outils d'analyse.
 - Statistiques résumées : revenus totaux, dépenses, frais, gains/pertes  
    - Afficher les revenus totaux, les frais, les dépenses et les gains/pertes dans le temps.
 - (Optionnel) Recherche de prix des tokens et générateur de rapport fiscal  
    - Ajouter une fonction de conversion des prix de jetons et génération de rapports pour la fiscalité.
 
 
-## Ressources Requises
+## Ressources requises
 
 - Indexeur de blockchain public ou API d'explorateur
-- Logique back-end en Python, JS ou TypeScript
+- Logique back-end en Python, JS ou [Typescript](https://www.typescriptlang.org/)
 - Tableau de bord frontal (optionnel)
 - Échantillons d'adresses de portefeuilles pour simulation
