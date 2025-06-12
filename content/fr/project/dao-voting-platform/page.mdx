@@ -29,13 +29,20 @@ L'un des aspects les plus puissants de GovChain est sa capacité à servir de ba
 
 ## Livrables & Fonctionnalités Souhaitées
 
-- Interface Web utilisant Next.js, Typescript, shadcn-ui, tailwindcss
-- Authentification de l'utilisateur
-- Interface Web pour la soumission et le suivi des propositions
-- Logique de vote basée sur les jetons ou les portefeuilles avec comptage en temps réel
-- Permissions basées sur les rôles (par exemple, créateur de proposition, admin, électeur)
-- Statut de vote (En attente, Actif, Exécuté) avec historique des résultats
-- Règles de quorum et de seuil de vote pouvant être définies par proposition
+- Interface web utilisant Next.js, Typescript, shadcn-ui, tailwindcss  
+   - Construire un hub de gouvernance où les membres peuvent proposer, voter et consulter les résultats.
+- Authentification des utilisateurs  
+   - Permettre la connexion via portefeuille pour suivre les rôles des votants et les interactions avec les propositions.
+- Interface web pour la soumission et le suivi des propositions  
+   - Permettre de soumettre, modifier et suivre l'avancement des propositions avec des indicateurs de statut.
+- Logique de vote basée sur le portefeuille ou les jetons avec décompte en temps réel  
+   - Autoriser le vote via l'identité du portefeuille ou selon la puissance de vote basée sur des jetons.
+- Permissions basées sur les rôles (ex. : créateur de proposition, admin, votant)  
+   - Assigner les rôles d'administrateur, votant ou proposeur avec une gestion des droits appliquée on-chain.
+- Statut de vote (En attente, Actif, Exécuté) avec historique des résultats  
+   - Suivre le cycle de vie de chaque proposition : En attente, Active, Exécutée ou Rejetée.
+- Règles de quorum et seuils de vote définissables par proposition  
+   - Permettre aux proposeurs de définir les conditions de vote, comme un nombre minimum de votants ou un taux d'acceptation requis.
 
 ## Ressources Nécessaires
 

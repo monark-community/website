@@ -2,6 +2,7 @@ import React, { ComponentPropsWithoutRef } from "react";
 import Link from "next/link";
 import { highlight } from "sugar-high";
 import WrappedImage from "./components/common/wrapped-image.component";
+import { Button, ButtonProps } from "./components/ui/button";
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 type ParagraphProps = ComponentPropsWithoutRef<"p">;
@@ -102,7 +103,13 @@ export const components = {
       {...props}
     />
   ),
-  img: ({ src, alt, width, height, ...props }: ComponentPropsWithoutRef<"img">) => {
+  img: ({
+    src,
+    alt,
+    width,
+    height,
+    ...props
+  }: ComponentPropsWithoutRef<"img">) => {
     if (!src || typeof src !== "string") return null;
     return (
       <WrappedImage
@@ -114,6 +121,9 @@ export const components = {
         {...props}
       />
     );
+  },
+  button: (props: ButtonProps) => {
+    return <Button {...props} />;
   },
 };
 

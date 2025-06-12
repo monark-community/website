@@ -31,13 +31,19 @@ Le système met l'accent sur la confidentialité et l'auditabilité sans garde d
 
 ## Livrables et fonctionnalités souhaitées
 
-- Interface Web à l'aide de Next.js, Typescript, shadcn-ui, tailwindcss
-- Authentification utilisateur 
-- Outil de génération de hachage et de téléchargement de documents
-- Flux de signature de portefeuille avec engagement de hachage en chaîne
-- Intégration IPFS pour le stockage décentralisé en option
-- Interface utilisateur Web pour la validation de signature et l'historique des documents
-- Support multi-signataires avec horodatages
+- Interface web utilisant Next.js, Typescript, shadcn-ui, tailwindcss  
+   - Créer une plateforme où les utilisateurs peuvent signer et vérifier des documents sur la blockchain.
+- Authentification des utilisateurs  
+   - Se connecter via portefeuille pour accéder aux outils de signature et à l’historique.
+- Outil de téléversement de documents et de génération de hachage  
+   - Convertir les fichiers en empreintes numériques (hash) pour vérification et signature.
+- Processus de signature via portefeuille avec engagement on-chain du hachage  
+   - Signer les hachages de fichiers et enregistrer la preuve sur la blockchain pour auditabilité.
+- Intégration IPFS pour un stockage décentralisé optionnel  
+   - Optionnellement téléverser les fichiers complets vers un stockage décentralisé.
+- Interface web pour la validation de signatures et l’historique des documents  
+- Prise en charge de plusieurs signataires avec horodatage  
+   - Ajouter plusieurs signataires (portefeuilles) avec des horodatages précis et un journal des signatures.
 
 ## Ressources requises
 
