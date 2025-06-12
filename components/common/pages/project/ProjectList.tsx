@@ -76,7 +76,8 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     const searchLower = search.toLowerCase();
     const matchesSearch =
       project.title.toLowerCase().includes(searchLower) ||
-      project.keyword_tags.some((tag) => tag.toLowerCase() === searchLower);
+      project.accronym.toLowerCase().includes(searchLower) ||
+      project.keyword_tags.some((tag) => tag.toLowerCase().includes(searchLower));
     const matchesIndustry =
       selectedIndustry === "all" ||
       project.industry_tags.includes(selectedIndustry);
@@ -84,7 +85,9 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
       selectedKeyword === "all" ||
       project.keyword_tags.includes(selectedKeyword);
     return matchesSearch && matchesIndustry && matchesKeyword;
-  });
+  })
+  // Sort filtered projects alphabetically by acronym
+  .sort((a, b) => a.accronym.localeCompare(b.accronym));
 
   // Sort tags alphabetically
   const sortedIndustryTags = Array.from(industryTags).sort((a, b) =>
@@ -108,7 +111,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
           className="flex-1"
         />
         <Select value={selectedIndustry} onValueChange={setSelectedIndustry}>
-          <SelectTrigger className="w-[200px]">
+          <SelectTrigger className="w-full sm:w-[200px]">
             <SelectValue placeholder={i18nStrings.filter_by_industry} />
           </SelectTrigger>
           <SelectContent>
@@ -121,7 +124,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
           </SelectContent>
         </Select>
         <Select value={selectedKeyword} onValueChange={setSelectedKeyword}>
-          <SelectTrigger className="w-[200px]">
+          <SelectTrigger className="w-full sm:w-[200px]">
             <SelectValue placeholder={i18nStrings.filter_by_keyword} />
           </SelectTrigger>
           <SelectContent>
@@ -134,7 +137,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
           </SelectContent>
         </Select>
       </div>
-      <div className="flex items-center gap-2 mb-8">
+      <div className="hidden sm:flex items-center gap-2 mb-8">
         <div className="flex flex-wrap gap-2">
           {topKeywordSuggestions.map((suggestion) => (
             <Badge

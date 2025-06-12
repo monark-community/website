@@ -35,10 +35,13 @@ const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
     setInitialized(true);
   }, [locale]);
 
-  const filteredNews = news.filter((item) => {
-    const searchLower = search.toLowerCase();
-    return item.title.toLowerCase().includes(searchLower);
-  });
+  const filteredNews = news
+    .filter((item) => {
+      const searchLower = search.toLowerCase();
+      return item.title.toLowerCase().includes(searchLower);
+    })
+    // Sort filtered news alphabetically by title
+    .sort((a, b) => a.title.localeCompare(b.title));
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
