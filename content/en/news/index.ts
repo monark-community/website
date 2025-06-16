@@ -4,7 +4,7 @@ import { DatedNewsMetadata } from "@/types/news.types";
 const data: DatedNewsMetadata[] = [
   {
     "id": "pioneer-in-university-projects-mentorship",
-    "title": "Monark - Pioneer in Supporting University Projects in Decentralized Accounting",
+    "title": "Pioneer in Supporting University Projects in Decentralized Accounting",
     "date": "2020-04-24T00:00:00.000Z",
     "description": "Monark, founded by Vincent Grenier, positions itself as the leader in supporting university projects in decentralized technologies, building on successful collaborations like CryptoSys with the University of Sherbrooke. The company offers tailored mentorship to transform academic knowledge into market-ready solutions, fostering innovation and professional skills among students.",
     "author": "Marty-Kanatakhatsus Meunier",

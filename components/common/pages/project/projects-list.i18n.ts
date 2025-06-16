@@ -15,7 +15,7 @@ export interface I18n {
 
 export const en: I18n = {
     example: "Example",
-    page_title: "Projects",
+    page_title: "🚀 Projects",
     search_placeholder: "Search projects...",
     not_found: "No projects found.",
     back_home: "Back Home",
@@ -30,7 +30,7 @@ export const en: I18n = {
 
 export const fr: I18n = {
     example: "Exemple",
-    page_title: "Projets",
+    page_title: "🚀 Projets",
     search_placeholder: "Rechercher des projets...",
     not_found: "Aucun projet trouvé.",
     back_home: "Retour à l'accueil",

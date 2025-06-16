@@ -4,7 +4,7 @@ import { DatedNewsMetadata } from "@/types/news.types";
 const data: DatedNewsMetadata[] = [
   {
     "id": "pioneer-in-university-projects-mentorship",
-    "title": "Monark - Pionnier dans l'accompagnement des projets universitaires de comptabilité décentralisée",
+    "title": "Pionnier dans l'accompagnement des projets universitaires de comptabilité décentralisée",
     "date": "2020-04-24T00:00:00.000Z",
     "description": "Monark, fondée par Vincent Grenier, se positionne comme le leader dans l'accompagnement des projets universitaires en technologies décentralisées, s'appuyant sur des collaborations réussies comme CryptoSys avec l'Université de Sherbrooke. L'entreprise offre un mentorat sur mesure pour transformer les connaissances académiques en solutions prêtes pour le marché, favorisant l'innovation et les compétences professionnelles chez les étudiants.",
     "author": "Marty-Kanatakhatsus Meunier",
