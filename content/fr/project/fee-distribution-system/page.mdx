@@ -1,0 +1,54 @@
+export const metadata = {
+    id: "fee-distribution-system",
+    title: "Système de Distribution des Frais",
+    description: "Concevez un système de contrat intelligent qui divise automatiquement les paiements entrants entre les parties prenantes. Les utilisateurs peuvent définir des pourcentages fixes ou des formules dynamiques. La plateforme gère des revenus tels que les revenus de DAO, les royalties ou les paiements d'affiliation et les distribue à plusieurs portefeuilles à réception. Ajoutez une interface utilisateur pour configurer, simuler et suivre les revenus de manière transparente.",
+    status: "idea",
+    accronym: "SplitFlow",
+    industry_tags: ["Finance et assurance", "Banques et marchés de capitaux"],
+    keyword_tags: ["Contrats intelligents", "Partage de revenus", "Paiements", "Trésorerie", "Automatisation"],
+    complexity_score: 5,
+    effort_score: -1,
+    adoption_score: 8,
+    blockchain_score: 5,
+    revenue_score: -1,
+};
+
+# Système de distribution des frais
+
+Concevez un système de contrat intelligent qui divise automatiquement les paiements entrants entre les parties prenantes. Les utilisateurs peuvent définir des pourcentages fixes ou des formules dynamiques. La plateforme gère des revenus tels que les revenus de DAO, les royalties ou les paiements d'affiliation et les distribue à plusieurs portefeuilles à réception. Ajoutez une interface utilisateur pour configurer, simuler et suivre les revenus de manière transparente.
+
+![Mockup du Système de Distribution des Frais](/images/project/fee-distribution-system.jpg)
+
+## Description générale
+
+[SplitFlow](https://splitflow.monark.io) est un système basé sur des contrats intelligents qui automatise le partage des revenus entre plusieurs parties prenantes de manière transparente et vérifiable. Que ce soit une DAO distribuant les revenus de la trésorerie, un groupe de développeurs partageant les frais de protocole, ou un créateur de contenu divisant les royalties avec les collaborateurs, SplitFlow permet une distribution précise et basée sur des règles de fonds sans besoin d'intermédiaires ou de confiance.
+
+Le système permet aux utilisateurs de configurer les pourcentages de paiement, d'ajouter ou de supprimer des bénéficiaires, et de surveiller les distributions via un tableau de bord intuitif. Dès que les revenus entrent dans le contrat intelligent (par exemple, un paiement d'une dApp ou une vente), les fonds sont instantanément divisés et transférés à des portefeuilles prédéfinis selon les règles spécifiées. Cela élimine la charge administrative, prévient les litiges et garantit une allocation en temps réel et inviolable des revenus.
+
+Dans les industries créatives, SplitFlow peut remplacer les services tiers qui gèrent les royalties ou les commissions, réduisant considérablement les frais généraux et améliorant la vitesse de paiement. Pour les DAO, il peut servir de module pour compenser les contributeurs, allouer le budget aux groupes de travail ou distribuer des récompenses à la communauté.
+
+Les étudiants travaillant sur SplitFlow acquerront une expérience pratique dans le développement de contrats intelligents Solidity avec une logique mathématique précise, la gestion des cas limites (par exemple, les erreurs d'arrondi, les paiements partiels) et la conception de systèmes de contrats sécurisés et évolutifs. Ils exploreront également la conception de l'interface utilisateur pour visualiser les transactions et la logique de paiement en temps réel. Ce projet approfondit non seulement les compétences en ingénierie de la blockchain, mais démontre également une pertinence réelle dans des secteurs tels que la finance, les médias et le développement open source.
+
+## Livrables & fonctionnalités souhaitées
+
+- Interface web utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)  
+   - Créer un tableau de bord responsive pour la visualisation du partage des revenus et des paiements, avec une interface claire et épurée.
+- Authentification des utilisateurs  
+   - Permettre aux utilisateurs de connecter leur portefeuille afin de créer, simuler et gérer des règles de répartition des revenus de manière sécurisée.
+- Contrats intelligents pour la gestion de la répartition des revenus selon des pourcentages définis  
+   - Automatiser les paiements vers plusieurs portefeuilles selon des règles de pourcentage fixes ou dynamiques.
+- Tableau de bord en temps réel avec historique des transactions  
+   - Afficher les paiements en direct et passés, avec montants, horodatages et historique d'audit.
+- Prise en charge des paiements uniques et récurrents  
+   - Permettre la distribution de paiements uniques ou continus (streamés).
+- (Optionnel) approbation multi-parties ou gel des fonds  
+   - Ajouter une logique pour retarder ou approuver les transferts importants via signatures multiples.
+
+
+## Ressources requises
+
+- Plateforme d'hébergement Web ([Vercel](https://www.vercel.com/))
+- Base de données([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) ou [GraphQL](https://graphql.org/)) et hébergement du Backend ([Typescript](https://www.typescriptlang.org/), [Express](https://expressjs.com/))
+- Bibliothèque de contrats intelligents ([Solidity](https://soliditylang.org/) + [OpenZeppelin](https://www.openzeppelin.com/))
+- Testnet Blockchain
+- Accès aux tokens testnet pour la simulation des paiements

@@ -1,0 +1,52 @@
+export const metadata = {
+    id: "supply-chain-tracking",
+    title: "Suivi de la chaîne d'approvisionnement",
+    description: "Développez une application basée sur la blockchain qui enregistre chaque étape du voyage d'un produit sur la chaîne. Chaque capteur et acteur IoT (producteur, expéditeur, vendeur) enregistre des actions sur la chaîne pour créer un historique inviolable et traçable. Les smart contracts vérifient les transactions et tamponnent les points de contrôle. Ce système assure l'authenticité, combat la fraude et améliore la transparence dans de nombreuses industries telles que l'alimentation, la construction, la pharma, etc.",
+    status: "idea",
+    accronym: "ChainProof",
+    industry_tags: ["Agriculture", "Alimentation et boissons", "Villes", "Retail"],
+    keyword_tags: ["Traçabilité", "Transparence", "Contrats intelligents", "Automatisation", "Cartographie"],
+    complexity_score: 5,
+    effort_score: -1,
+    adoption_score: 8,
+    blockchain_score: 8,
+    revenue_score: -1,
+};
+
+# Suivi de la chaîne d'approvisionnement
+
+Développez une application basée sur la blockchain qui enregistre chaque étape du voyage d'un produit sur la chaîne. Chaque capteur et acteur IoT (producteur, expéditeur, vendeur) enregistre des actions sur la chaîne pour créer un historique inviolable et traçable. Les smart contracts vérifient les transactions et tamponnent les points de contrôle. Ce système assure l'authenticité, combat la fraude et améliore la transparence dans de nombreuses industries telles que l'alimentation, la construction, la pharma, etc.
+
+![maquette de Suivi de la chaîne d'approvisionnement](/images/project/supply-chain-tracking.jpg)
+
+## Description générale
+
+[ChainProof](https://chainproof.monark.io) permet une traçabilité décentralisée des produits tout au long de la chaîne d'approvisionnement. Le but est de créer un registre immuable et transparent où chaque acteur (producteur, transporteur, distributeur, détaillant) enregistre ses interactions avec le produit. Chaque action - production, transfert, vérification - est enregistrée à l'aide de contrats intelligents, garantissant qu'aucune donnée ne peut être modifiée ou supprimée.
+
+Ce projet est particulièrement impactant dans des industries telles que l'agriculture, l'alimentation, les produits de luxe et les pharmaceutiques, où l'authenticité, la conformité et la sécurité sont essentielles. En exploitant la blockchain, les entreprises et les consommateurs peuvent retracer les produits jusqu'à leur origine, vérifier les normes de qualité et atténuer les risques de contrefaçon ou de sécurité.
+
+Le système prend également en charge l'intégration de codes QR, permettant aux clients de scanner et de visualiser le voyage d'un produit sur l'interface utilisateur. Les contrats intelligents valident le flux de marchandises en temps réel, et des intégrations optionnelles avec des capteurs (par exemple, GPS ou température) pourraient simuler une fonctionnalité IoT.
+
+Au-delà de sa portée technique, ce projet forme les étudiants à la confiance numérique, à la transparence et à la tenue de registres décentralisée, s'alignant parfaitement sur les tendances d'innovation de la chaîne d'approvisionnement.
+
+## Livrables & fonctionnalités souhaitées
+
+- Interface web utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/), affichant le parcours du produit  
+   - Permettre la connexion via portefeuille et l'attribution de rôles comme producteur, transporteur ou détaillant, chacun avec des permissions spécifiques.
+- Authentification des utilisateurs et gestion des rôles pour les producteurs, transporteurs et détaillants  
+   - Permettre la connexion via portefeuille et l'attribution de rôles comme producteur, transporteur ou détaillant, chacun avec des permissions spécifiques.
+- Contrats intelligents pour la vérification des points de contrôle dans la chaîne d'approvisionnement  
+   - Enregistrer chaque transfert, scan ou action dans la chaîne avec une validation on-chain et des horodatages.
+- Système de scan de code QR pour les utilisateurs finaux  
+   - Permettre aux consommateurs de scanner un code QR et de consulter l'historique complet de l'origine, du transport et de la manipulation du produit.
+- Traçabilité infalsifiable et transactions horodatées  
+   - Maintenir un journal transparent et immuable des actions liées au produit, visible et vérifiable par tous les acteurs.
+
+
+## Ressources requises
+
+- Plateforme d'hébergement Web ([Vercel](https://www.vercel.com/))
+- Base de données([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) ou [GraphQL](https://graphql.org/)) et hébergement Backend ([Typescript](https://www.typescriptlang.org/), [Express](https://expressjs.com/))
+- Bibliothèque de contrats intelligents ([Solidity](https://soliditylang.org/) + [OpenZeppelin](https://www.openzeppelin.com/))
+- Testnet de blockchain
+- Données simulées de la chaîne d'approvisionnement

@@ -1,0 +1,50 @@
+export const metadata = {
+    id: "defi-borrow",
+    title: "DeFi Borrow",
+    description: "Focus on the borrowing experience in a DeFi protocol. Users request loans, submit collateral, and monitor repayment status. Collateral is locked in smart contracts, and loan terms (APR, expiration) are automatically enforced. Partner with existing testnet lending pools or simulate locally.",
+    status: "idea",
+    accronym: "BorrowX",
+    industry_tags: ["Finance and Insurance", "Banking and Capital Markets"],
+    keyword_tags: ["Borrowing", "DeFi", "Collateral", "Protocol", "Liquidity"],
+    complexity_score: 7,
+    effort_score: -1,
+    adoption_score: -1,
+    blockchain_score: -1,
+    revenue_score: -1,
+};
+
+# DeFi Borrow
+
+Focus on the borrowing experience in a DeFi protocol. Users request loans, submit collateral, and monitor repayment status. Collateral is locked in smart contracts, and loan terms (APR, expiration) are automatically enforced. Partner with existing testnet lending pools or simulate locally.
+
+![DeFi Borrow mockup](/images/project/defi-borrow.jpg)
+
+## General Description
+
+[BorrowX](https://borrowx.monark.io) focuses specifically on the borrowing experience within a decentralized lending protocol. Users can view available assets, deposit collateral, select borrowing terms, and initiate loans. The system tracks the user's collateral ratio, repayment schedule, and loan interest.
+
+The smart contract ensures security by locking collateral, updating health metrics, and triggering liquidation if collateral value drops too low. BorrowX can either operate standalone or connect to a liquidity pool like VaultLend. This modular focus allows students to specialize in user-oriented lending mechanisms without building a complete lending platform.
+
+The user interface includes loan sliders, visual collateral dashboards, repayment tracking, and liquidation alerts. Bonus features include flexible interest rate models (fixed/variable), partial repayments, or credit score simulations.
+
+Students gain experience with financial modeling, precision mathematics, time-based state changes, and portfolio-based loan management. BorrowX offers an in-depth dive into a key piece of the Web3 financial puzzle, providing solid engineering and UX skills.
+
+## Deliverables & Desired Functionalities
+
+- Web interface using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)
+- User authentication 
+- Collateral deposit and loan contract
+- Repayment logic and debt tracking
+- Health factor calculation and alerts
+- User interface for managing open borrowing positions
+- (Optional) Credit score or borrowing tier simulation
+
+## Required Resources
+
+- Web hosting platform ([Vercel](https://www.vercel.com/))
+- Database ([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) or [GraphQL](https://graphql.org/)) and Backend ([Typescript](https://www.typescriptlang.org/), [Express](https://expressjs.com/)) hosting
+- Smart contract library ([Solidity](https://soliditylang.org/) + [OpenZeppelin](https://www.openzeppelin.com/))
+- Blockchain testnet
+- Frontend [React](https://react.dev/) with wallet integration
+- Test tokens and price simulation script
+- Logging or data analytics module

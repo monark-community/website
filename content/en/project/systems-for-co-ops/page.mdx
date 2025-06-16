@@ -1,0 +1,58 @@
+export const metadata = {
+    id: "systems-for-co-ops",
+    title: "Systems for Co-ops",
+    description: "Create a modular system for digital cooperatives with a big focus on accessibility and ease of use. Members join via wallet, vote on proposals, and manage shared resources and finances. Include a treasury dashboard, proposal history, and access roles. Designed for groups that want to operate transparently and democratically without centralized software. Could simulate DAO-like operations with real-world use cases.",
+    status: "idea",
+    accronym: "CoopDAO",
+    industry_tags: ["Cities", "Services"],
+    keyword_tags: ["Co-op", "DAO", "Incentives", "Treasury", "Governance"],
+    complexity_score: 8,
+    effort_score: -1,
+    adoption_score: 1,
+    blockchain_score: 8,
+    revenue_score: -1,
+};
+
+# Systems for Co-ops
+
+Create a modular system for digital cooperatives with a big focus on accessibility and ease of use. Members join via wallet, vote on proposals, and manage shared resources and finances. Include a treasury dashboard, proposal history, and access roles. Designed for groups that want to operate transparently and democratically without centralized software. Could simulate DAO-like operations with real-world use cases.
+
+![Systems for Co-ops mockup](/images/project/systems-for-co-ops.jpg)
+
+## General Description
+
+[CoopDAO](https://coopdao.monark.io) is a decentralized operating system for cooperatives, designed to help small groups, associations, or communities organize transparently without traditional bureaucratic overhead. In its core implementation, the project will enable wallet-based membership registration, proposal submission, voting, and shared treasury management. These features allow cooperatives to operate like digital DAOs while still serving real-world users—whether farmers, local collectives, mutual aid networks, or student-led initiatives.
+
+The platform allows members to submit proposals (e.g., budget allocation, new hires, project launches), vote based on agreed-upon rules, and execute treasury transactions in a secure and auditable way. Smart contracts manage roles, permissions, and proposal logic, while the frontend UI ensures accessibility and inclusivity across digital literacy levels.
+
+An important component of CoopDAO is the integration of reputation or trust metrics to reward consistent, meaningful participation. Students may explore tokenized membership, role-based voting weights, and rotating committee roles. On the treasury side, expenses can be proposed, peer-reviewed, and approved through a multi-signature system to prevent abuse.
+
+By simulating and testing the inner workings of digital co-ops, this project will give students firsthand experience in DAO tooling, group psychology, and financial coordination. In the long term, CoopDAO could serve as the backend for real-world cooperative platforms seeking modernization through decentralized infrastructure.
+
+## Deliverables & Desired Functionalities
+
+- Web interface using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)
+   - Design a platform for managing digital co-op activity and membership
+- User authentication 
+   - Enable wallet-based registration and login to access cooperative tools.
+- Smart contracts for wallet-based member registration and proposal voting
+   - Implement contracts to track members, votes, and decision outcomes.
+- Multi-signature treasury spending system
+   - Let members propose and collectively approve spending via smart contracts.
+- Admin role assignment and access control
+   - Set roles like treasurer, board, or committee with defined permissions.
+- Interface for proposing and reviewing expenses
+   - Submit and vote on funding requests with justification and cost.
+- On-chain member lists and participation tracking
+   - Track engagement, vote frequency, and proposal involvement.
+- (Optional) IPFS document storage
+   - Allow co-ops to link relevant docs or receipts via decentralized storage.
+
+## Required Resources
+
+- Web hosting platform ([Vercel](https://www.vercel.com/))
+- Database ([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) or [GraphQL](https://graphql.org/)) and Backend ([Typescript](https://www.typescriptlang.org/), [Express](https://expressjs.com/)) hosting
+- Smart contract library ([Solidity](https://soliditylang.org/) + [OpenZeppelin](https://www.openzeppelin.com/))
+- Blockchain testnet
+- Sample cooperative structures for simulation
+

@@ -1,0 +1,50 @@
+export const metadata = {
+    id: "defi-swaps",
+    title: "DeFi Swaps",
+    description: "Create a decentralized token swap platform using Automated Market Maker (AMM) principles. Users can swap testnet tokens via liquidity pools and view simulated price impact and slippage. Includes swap UI, liquidity pool logic, and optional fee mechanics. Inspired by platforms like Uniswap.",
+    status: "idea",
+    accronym: "FluidSwap",
+    industry_tags: ["Finance and Insurance", "Banking and Capital Markets"],
+    keyword_tags: ["DeFi", "Swap", "AMM", "Trading", "Liquidity"],
+    complexity_score: 8,
+    effort_score: -1,
+    adoption_score: -1,
+    blockchain_score: -1,
+    revenue_score: -1,
+};
+
+# DeFi Swaps
+
+Create a decentralized token swap platform using Automated Market Maker (AMM) principles. Users can swap testnet tokens via liquidity pools and view simulated price impact and slippage. Includes swap UI, liquidity pool logic, and optional fee mechanics. Inspired by platforms like Uniswap.
+
+![DeFi Swaps Early Mockup](/images/project/defi-swaps.jpg)
+
+## General Description
+
+[Fluidswap](https://fluidswap.monark.io) is a decentralized exchange (DEX) prototype that simulates the user experience of swapping tokens through an automated market maker (AMM) mechanism. The system lets users connect a wallet, select token pairs, view price impact, and execute swaps based on liquidity pool dynamics.
+
+This project reproduces the foundational logic behind platforms like Uniswap and PancakeSwap. The AMM contracts use mathematical formulas (e.g., x*y=k) to determine prices based on token pool balances. As swaps occur, these balances shift, influencing prices dynamically.
+
+The frontend displays estimated output, slippage, gas usage, and liquidity levels. Students can simulate pool creation, adding/removing liquidity, and swapping. They will learn how market mechanics work in a decentralized setting, how smart contracts enable trustless financial services, and how frontend logic interfaces with contract states.
+
+Bonus features may include user history, visual pool status, and tutorials for DeFi newcomers. This project provides both educational value and insight into real-world DeFi primitives, liquidity dynamics, and Web3 UX.
+
+## Deliverables & Desired Functionalities
+
+- Web interface using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)
+- User authentication 
+- AMM smart contract for token pair liquidity pools
+- Swap interface with wallet interaction
+- Dynamic price impact and slippage calculation
+- Pool creation and liquidity contribution UI
+- Transaction history log and basic analytics
+
+## Required Resources
+
+- Web hosting platform ([Vercel](https://www.vercel.com/))
+- Database ([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) or [GraphQL](https://graphql.org/)) and Backend ([Typescript](https://www.typescriptlang.org/), [Express](https://expressjs.com/)) hosting
+- Smart contract library ([Solidity](https://soliditylang.org/) + [OpenZeppelin](https://www.openzeppelin.com/))
+- Blockchain testnet
+- Solidity AMM logic (x*y=k model)
+- Frontend wallet interface ([React](https://react.dev/) + ethers.js)
+- Mock assets or test token minting tool

@@ -1,0 +1,55 @@
+export const metadata = {
+    id: "dao-voting-platform",
+    title: "Plateforme de Vote DAO",
+    description: "Développez une plateforme de gouvernance décentralisée qui permet le vote basé sur les jetons ou les portefeuilles pour des propositions. Les utilisateurs peuvent soumettre des idées, voter, et suivre les résultats. Les fonctionnalités comprennent la logique du quorum, la délégation, les résultats en direct, et des crochets d'exécution optionnels. Idéal pour les DAOs, les organisations étudiantes, ou les coopératives. Il s'agit d'un bloc d'élément fondamental pour la prise de décision on-chain.",
+    status: "idea",
+    accronym: "GovChain",
+    industry_tags: ["Villes", "Services"],
+    keyword_tags: ["DAO", "Gouvernance", "Vote", "Propositions", "Transparence"],
+    complexity_score: 5,
+    effort_score: -1,
+    adoption_score: 5,
+    blockchain_score: 8,
+    revenue_score: -1,
+};
+
+# Plateforme de vote DAO
+
+Développez une plateforme de gouvernance décentralisée qui permet le vote basé sur les jetons ou les portefeuilles pour des propositions. Les utilisateurs peuvent soumettre des idées, voter, et suivre les résultats. Les fonctionnalités comprennent la logique du quorum, la délégation, les résultats en direct, et des crochets d'exécution optionnels. Idéal pour les DAOs, les organisations étudiantes, ou les coopératives. Il s'agit d'un bloc d'élément fondamental pour la prise de décision on-chain.
+
+![Maquette préliminaire de la Plateforme de Vote DAO](/images/project/dao-voting-platform.jpg)
+
+## Description générale
+
+[GovChain](https://govchain.monark.io) est un système de gouvernance entièrement décentralisé qui permet aux communautés, aux DAOs et aux organisations de créer des propositions, de tenir des votes et de mettre en œuvre des décisions, le tout sans dépendre d'une autorité centrale. Le système permet aux utilisateurs de soumettre des propositions directement à partir de leurs portefeuilles, de définir des périodes de vote et des seuils de quorum, et de suivre les résultats grâce à une interface transparente et à l'épreuve des falsifications.
+
+Que ce soit appliqué à un conseil étudiant décentralisé, à un protocole communautaire, ou à un groupe d'art collectif, GovChain garantit que chaque membre a une voix et que l'ensemble du processus de prise de décision est auditable et équitable. Le pouvoir de vote peut être distribué de manière égale (un portefeuille = un vote), pondéré par les avoirs en jetons, ou délégué à des représentants de confiance. Le système est suffisamment flexible pour simuler des structures réelles comme les conseils, les comités, ou le vote des actionnaires.
+
+L'un des aspects les plus puissants de GovChain est sa capacité à servir de banc d'essai pour de nouveaux modèles de gouvernance. Les participants peuvent simuler les cycles de vie des propositions, mesurer les taux de participation, et adapter leurs règles au fil du temps. Les étudiants apprendront à propos de la conception de la gouvernance et de l'enregistrement des votes on-chain vs off-chain. Ils exploreront également le développement frontend pour rendre les outils de gouvernance conviviaux et transparents. Ce projet offre une expérience pratique en matière de sécurité des contrats intelligents, d'alignement des incitations, et de théorie de la gouvernance.
+
+## Livrables & fonctionnalités souhaitées
+
+- Interface web utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)  
+   - Construire un hub de gouvernance où les membres peuvent proposer, voter et consulter les résultats.
+- Authentification des utilisateurs  
+   - Permettre la connexion via portefeuille pour suivre les rôles des votants et les interactions avec les propositions.
+- Interface web pour la soumission et le suivi des propositions  
+   - Permettre de soumettre, modifier et suivre l'avancement des propositions avec des indicateurs de statut.
+- Logique de vote basée sur le portefeuille ou les jetons avec décompte en temps réel  
+   - Autoriser le vote via l'identité du portefeuille ou selon la puissance de vote basée sur des jetons.
+- Permissions basées sur les rôles (ex. : créateur de proposition, admin, votant)  
+   - Assigner les rôles d'administrateur, votant ou proposeur avec une gestion des droits appliquée on-chain.
+- Statut de vote (En attente, Actif, Exécuté) avec historique des résultats  
+   - Suivre le cycle de vie de chaque proposition : En attente, Active, Exécutée ou Rejetée.
+- Règles de quorum et seuils de vote définissables par proposition  
+   - Permettre aux proposeurs de définir les conditions de vote, comme un nombre minimum de votants ou un taux d'acceptation requis.
+
+## Ressources requises
+
+- Plateforme d'hébergement Web ([Vercel](https://www.vercel.com/))
+- Hébergement des bases de données([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) ou [GraphQL](https://graphql.org/)) et du backend ([Typescript](https://www.typescriptlang.org/), [Express](https://expressjs.com/))
+- Bibliothèque de contrats intelligents ([Solidity](https://soliditylang.org/) + [OpenZeppelin](https://www.openzeppelin.com/))
+- Testnet de blockchain
+- Bibliothèques d'intégration Web3 (par exemple, wagmi, ethers.js)
+- Outils de création de jetons ou accès à un robinet pour des jetons de gouvernance fictifs
+- GitHub pour le contrôle des versions et les propositions publiques

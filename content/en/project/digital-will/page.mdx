@@ -1,0 +1,51 @@
+export const metadata = {
+    id: "digital-will",
+    title: "Digital Will",
+    description: "Create a secure blockchain-based inheritance system. Users set up a digital will where funds are released to beneficiaries based on an on-chain permission system consisting of various user keys or conditions like time delays, inactivity, or third-party validation. Include wallet-based identity, account creation tool, optional social recovery, and contract customization. This ensures irreversible execution and removes the need for centralized estate services.",
+    status: "idea",
+    accronym: "WillChain",
+    industry_tags: ["Finance and Insurance", "Services"],
+    keyword_tags: ["Inheritance", "Smart Contracts", "Time Lock", "Escrow", "Compliance"],
+    complexity_score: 7,
+    effort_score: -1,
+    adoption_score: 5,
+    blockchain_score: 8,
+    revenue_score: -1,
+};
+
+# Digital Will
+
+Create a secure blockchain-based inheritance system. Users set up a digital will where funds are released to beneficiaries based on an on-chain permission system consisting of various user keys or conditions like time delays, inactivity, or third-party validation. Include wallet-based identity, account creation tool, optional social recovery, and contract customization. This ensures irreversible execution and removes the need for centralized estate services.
+
+![Digital Will Early Mockup](/images/project/digital-will.jpg)
+
+## General Description
+
+[Willchain](https://willchain.monark.io) provides a blockchain-based solution to securely manage digital inheritance. Traditional legal systems lack modern infrastructure to handle crypto assets, often resulting in lost funds. This project allows users to create a digital will in which tokens or digital assets are programmed to be transferred upon specific conditions—such as wallet inactivity, time delay, or third-party validation.
+
+Smart contracts define beneficiaries and asset allocations. In the prototype, users configure a wallet-linked interface to create inheritance rules. The system can include inactivity monitoring, multi-sig authorization (e.g., two executors must approve transfer), and optional document storage via IPFS.
+
+WillChain has real-world implications: millions of dollars in crypto are lost each year due to lack of estate planning. By simplifying legacy transfer processes, this platform not only secures asset ownership but democratizes estate planning for Web3 users.
+
+## Deliverables & Desired Functionalities
+
+- Web interface using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)
+   - Develop a user-friendly web application where users can create and manage their digital wills, built using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/) and modern UI libraries.
+- User authentication 
+   - Enable secure login through wallet-based identity (e.g., MetaMask or similar), ensuring only authorized users can access and modify their digital will.
+- Smart contracts defining will execution conditions
+   - Create smart contracts that transfer crypto assets to selected beneficiaries based on specific conditions like time delay or account inactivity and that 
+- Inactivity simulation or time-based triggers
+   - Develop blockchain logic that detects wallet inactivity or passes a set time period to automatically execute the digital will.
+- Web UI for adding beneficiaries and asset allocation
+   - Build a visual interface where users can assign assets to beneficiaries, edit distributions, and preview how their will would be executed.
+- (Optional) encrypted backup or recovery mechanism
+   - Design an optional backup system (e.g., social recovery or encrypted cloud/IPFS backup) to restore access if users lose their wallet or keys.
+
+## Required Resources
+
+- Web hosting platform ([Vercel](https://www.vercel.com/))
+- Database ([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) or [GraphQL](https://graphql.org/)) and Backend ([Typescript](https://www.typescriptlang.org/), [Express](https://expressjs.com/)) hosting
+- Smart contract library ([Solidity](https://soliditylang.org/) + [OpenZeppelin](https://www.openzeppelin.com/))
+- Blockchain testnet
+- IPFS/Arweave for document hash storage

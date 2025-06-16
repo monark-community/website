@@ -1,0 +1,54 @@
+export const metadata = {
+    id: "referral-system",
+    title: "Referral System",
+    description: "Build a referral engine that tracks wallet-to-wallet invitations and rewards activity-based outcomes (e.g., app sign-ups, task completions). Smart contracts store who referred whom, trigger rewards when milestones are hit, and prevent abuse. Perfect for ambassador programs or affiliate networks. Includes dashboards for tracking performance.",
+    status: "idea",
+    accronym: "Reffinity",
+    industry_tags: ["Services", "Media", "Entertainment and Sport"],
+    keyword_tags: ["Referral", "Incentives", "Wallet", "Tracking", "Engagement"],
+    complexity_score: 5,
+    effort_score: -1,
+    adoption_score: 8,
+    blockchain_score: 5,
+    revenue_score: -1,
+};
+
+# Referral System
+
+Build a referral engine that tracks wallet-to-wallet invitations and rewards activity-based outcomes (e.g., app sign-ups, task completions). Smart contracts store who referred whom, trigger rewards when milestones are hit, and prevent abuse. Perfect for ambassador programs or affiliate networks. Includes dashboards for tracking performance.
+
+![Referral System mockup](/images/project/referral-system.jpg)
+
+## General Description
+
+[Reffinity](https://reffinity.monark.io) is a smart contract-powered referral system designed to bring transparency and automation to user onboarding and growth incentives. The system enables users (e.g., ambassadors, promoters, or early adopters) to invite others to a platform or dApp. When referred users take predefined actions—such as joining, purchasing, or completing a milestone—the referring wallet receives a reward.
+
+Each referral relationship is recorded immutably via smart contracts, making it tamper-proof and publicly auditable. Students will implement wallet tracking logic, handle loops or abuse cases (e.g., self-referral prevention), and build a simple frontend to allow users to generate and share referral links.
+
+Use cases include token airdrops, community campaigns, protocol usage incentives, and ambassador programs. Students will also gain experience in incentive design, gamification, and basic analytics (e.g., top referrers, click-through rates).
+
+Reffinity adds lasting value in Web3 growth infrastructure, replacing opaque affiliate systems with decentralized mechanics.
+
+## Deliverables & Desired Functionalities
+
+- Web interface using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)
+   - Build a portal where users generate and track referral links.
+- User authentication 
+   - Connect wallet to access referral link generator and dashboard.
+- Smart contract storing referral relationships and reward rules
+   - Track inviter-invitee relationships and event completions on-chain.
+- Referral link or QR code generation system
+- Web UI for tracking personal referral performance
+   - See who referred who, how many completions and total rewards.
+- Reward payout logic and security checks
+   - Trigger token or NFT rewards when invites complete defined actions.
+
+## Required Resources
+
+- Web hosting platform ([Vercel](https://www.vercel.com/))
+- Database ([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) or [GraphQL](https://graphql.org/)) and Backend ([Typescript](https://www.typescriptlang.org/), [Express](https://expressjs.com/)) hosting
+- Smart contract library ([Solidity](https://soliditylang.org/) + [OpenZeppelin](https://www.openzeppelin.com/))
+- Blockchain testnet
+- Testnet wallet and tokens
+- Smart contract suite with referral mapping
+- Mock data or staging user activity
