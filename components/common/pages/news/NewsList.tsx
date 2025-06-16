@@ -112,7 +112,7 @@ const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
                     </div>
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col justify-between">
-                    <p className="mb-4">{item.summary}</p>
+                    <p className="mb-4">{item.description}</p>
                     <div className="mt-auto pt-2"></div>
                   </CardContent>
                 </Card>

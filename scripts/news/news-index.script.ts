@@ -29,7 +29,7 @@ function generateNewsIndex(locale: string): DatedNewsMetadata[] {
             title: metadata.title,
             date: metadata.date,
             image: metadata.image,
-            summary: metadata.summary,
+            description: metadata.description,
             author: metadata.author,
             source: metadata.source,
           };

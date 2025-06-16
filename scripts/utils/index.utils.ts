@@ -1,14 +1,12 @@
 import fs from "fs";
 import crypto from "crypto";
+import matter from "gray-matter";
 
 export function getMetadataFromFile(filePath: string) {
   const fileContent = fs.readFileSync(filePath, "utf-8");
-  // Updated regex to match export const metadata = { ... };
-  const metadataMatch = fileContent.match(/export const metadata\s*=\s*{([\s\S]*?)};/);
-  if (metadataMatch) {
-    return eval('({' + metadataMatch[1] + '})'); // Parse the metadata object
-  }
-  return null;
+  // Use gray-matter to parse frontmatter
+  const { data } = matter(fileContent);
+  return data || null;
 }
 
 export function generateHash(metadata: object): string {

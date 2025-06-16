@@ -3,12 +3,34 @@ import fs from "fs";
 import path from "path";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { components } from "@/mdx-components";
+import matter from "gray-matter";
+import { Metadata } from "next";
+import { generateMdxMetadata } from "@/lib/generate-mdx-metadata";
 
 type StudentPageProps = {
   params: Promise<{
     locale: string;
   }>;
 };
+
+export async function generateMetadata({
+  params,
+}: StudentPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const contentPath = path.join(
+    process.cwd(),
+    "content",
+    locale,
+    "participate",
+    "student",
+    "page.mdx"
+  );
+  return generateMdxMetadata({
+    contentPath,
+    id: "student",
+    ogImagePrefix: "/images/",
+  });
+}
 
 export default async function StudentPage({ params }: StudentPageProps) {
   const { locale } = await params;
@@ -28,7 +50,8 @@ export default async function StudentPage({ params }: StudentPageProps) {
   }
 
   // Read the MDX content
-  const content = fs.readFileSync(contentPath, "utf-8");
+  const contentRaw = fs.readFileSync(contentPath, "utf-8");
+  const { content } = matter(contentRaw);
 
   return (
     <div className="container mx-auto">

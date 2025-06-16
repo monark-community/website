@@ -11,9 +11,9 @@ const nunitoSans = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Monark | Empowering Communities Through Decentralization",
+  title: "Fostering Collaboration within the Web3 Community • Monark",
   description:
-    "We connect communities, developers, and local entities, by creating an accessible, efficient ecosystem where innovation thrives.",
+    "We incubate the next generation of Web3 innovators, launching startups by students, recent graduates, and independent developers, aligned from day one with the ecosystems of our funding partners.",
 };
 
 export default function RootLayout({

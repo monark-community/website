@@ -1,75 +1,73 @@
-import { NavLink } from "@/components/common/navlink/navlink";
-import { notFound } from "next/navigation";
-import fs from "fs";
 import path from "path";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import * as i18n from "./page.i18n";
 import type { I18n as PageI18n } from "./page.i18n";
-import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
+import MdxContentPage from "@/components/common/mdx-content-page";
+import { generateMdxMetadata } from "@/lib/generate-mdx-metadata";
+import matter from "gray-matter";
+import fs from "fs";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { components } from "@/mdx-components";
 
-interface ProjectPageProps {
+interface ProjectsPageProps {
   params: Promise<{
     locale: string;
     id: string;
   }>;
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
+export async function generateMetadata({
+  params,
+}: ProjectsPageProps): Promise<Metadata> {
   const { locale, id } = await params;
-
-  const basePath = path.join(process.cwd(), "content", locale, "project");
-
   const contentPath = path.join(
-    basePath,
+    process.cwd(),
+    "content",
+    locale,
+    "project",
     id,
     "page.mdx"
   );
-  
-  const monarkSupportContentPath = path.join(
-    basePath,
-    "monark-support.mdx"
+  const meta = generateMdxMetadata({
+    contentPath,
+    id,
+    ogImagePrefix: "/images/project/",
+  });
+  return meta;
+}
+
+export default async function ProjectsPage({ params }: ProjectsPageProps) {
+  const { locale, id } = await params;
+  const contentPath = path.join(
+    process.cwd(),
+    "content",
+    locale,
+    "project",
+    id,
+    "page.mdx"
   );
-
-  const devEnvContentPath = path.join(
-    basePath,
-    "dev-env.mdx"
-  );
-
-  // Check if the file exists
-  if (!fs.existsSync(contentPath)) {
-    notFound();
-  }
-
-  // Read the MDX content
-  const content = fs.readFileSync(contentPath, "utf-8");
-  const monarkSupportContent = fs.readFileSync(
+  const basePath = path.join(process.cwd(), "content", locale, "project");
+  const monarkSupportContentPath = path.join(basePath, "monark-support.mdx");
+  const devEnvContentPath = path.join(basePath, "dev-env.mdx");
+  const monarkSupportContentRaw = fs.readFileSync(
     monarkSupportContentPath,
     "utf-8"
   );
-  const devEnvContent = fs.readFileSync(
-    devEnvContentPath,
-    "utf-8"
-  );
+  const devEnvContentRaw = fs.readFileSync(devEnvContentPath, "utf-8");
+  const { content: monarkSupportContent } = matter(monarkSupportContentRaw);
+  const { content: devEnvContent } = matter(devEnvContentRaw);
   const i18nStrings: PageI18n =
     (i18n as Record<string, PageI18n>)[locale] || i18n.en;
 
   return (
-    <div className="container mx-auto">
-      <div className="mt-8">
-        <NavLink
-          href={`/${locale}/project`}
-          className="inline-flex items-center text-primary font-medium group no-underline"
-        >
-          <ArrowLeft className="mr-1 w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          {i18nStrings.back_to_list}
-        </NavLink>
-      </div>
-      <div className="prose prose-lg dark:prose-invert max-w-none">
-        <MDXRemote source={content} components={components} />
-        <MDXRemote source={devEnvContent} components={components} />
-        <MDXRemote source={monarkSupportContent} components={components} />
-      </div>
-    </div>
+    <>
+      <MdxContentPage
+        contentPath={contentPath}
+        backHref={`/${locale}/project`}
+        backLabel={i18nStrings.back_to_list}
+      />
+      <MDXRemote source={devEnvContent} components={components} />
+      <MDXRemote source={monarkSupportContent} components={components} />
+    </>
   );
 }

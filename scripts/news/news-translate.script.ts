@@ -7,7 +7,7 @@ const openai = createOpenAIClient();
 
 const systemPrompt = (locale: string) => `You are a translator. Translate the following MDX content from English to ${locale}.
 Do not translate code blocks, JSX elements, or Markdown syntax like #, **, \` \`, etc.
-Only translate human-readable text, preserving all formatting. Do not translate the metadata except for the title and summary.
+Only translate human-readable text, preserving all formatting. Do not translate the metadata except for the title and description.
 Return only the translated MDX content.\n`;
 
 const translateText = async (text: string, locale: string) =>
