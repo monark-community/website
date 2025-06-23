@@ -1,0 +1,85 @@
+---
+id: zk-medical-data-exchange
+title: Échange de Données Médicales à Preuve Zéro-Connaissance
+description: Un protocole décentralisé permettant le partage sécurisé et basé sur le consentement de données médicales anonymisées à l'aide de preuves à divulgation nulle de connaissance.
+status: idea
+accronym: Cura
+industry_tags:
+  - Santé
+  - Bioinformatique
+  - IA
+keyword_tags:
+  - Contrôle d'accès
+  - Intégration de portefeuille
+  - Récompenses
+  - Contrats intelligents
+  - ZK
+complexity_score: 7
+effort_score: 8
+adoption_score: 3
+blockchain_score: 8
+revenue_score: 7
+---
+
+# Échange de Données Médicales à Preuve Zéro-Connaissance
+
+Un protocole décentralisé permettant aux patients de partager des données médicales anonymisées avec des chercheurs à l'aide de preuves à divulgation nulle de connaissance, préservant la vie privée tout en soutenant le progrès scientifique.
+
+![Échange de Données Médicales à Preuve Zéro-Connaissance](/images/project/zk-medical-data-exchange.jpg)
+
+## Description Générale
+
+[Cura](https://cura.monark.io) répond à un défi central de la santé numérique : comment accéder à des données de santé sensibles sans compromettre la vie privée. Actuellement, des données médicales précieuses sont cloisonnées en raison de contraintes éthiques, juridiques et de confiance — alors que ces mêmes données sont essentielles à la recherche clinique et au développement de l'IA.
+
+Cura propose un échange décentralisé et axé sur la confidentialité où les utilisateurs :
+- Prouvent la propriété et le consentement via des preuves cryptographiques.
+- Sont récompensés ou reconnus pour leurs contributions de données.
+- Permettent aux chercheurs d'accéder à des ensembles de données anonymisées, correspondant à des critères, sans exposer les données brutes.
+
+En combinant les preuves à divulgation nulle de connaissance avec une infrastructure blockchain ouverte, Cura construit un marché éthique et sans confiance des données médicales, gouverné par les utilisateurs. Cela favorise la souveraineté des données, décourage les monopoles et soutient la conformité réglementaire.
+
+Le système est modulaire et interopérable, permettant l'intégration par les hôpitaux et les instituts de recherche sans dépendance à un fournisseur. Les contrats intelligents gèrent le consentement dynamique, tandis que des mécanismes de révocation et de mise à jour des permissions assurent la confiance et la conformité à long terme (ex : HIPAA, RGPD).
+
+## Livrables & Fonctionnalités Souhaitées
+
+- **Moteur ZK-Proof pour la Propriété & l'Éligibilité des Données**
+   - Les utilisateurs soumettent des preuves cryptographiques montrant qu'ils répondent aux critères de recherche (ex : tranche d'âge, condition, localisation) sans révéler les données brutes.
+   - Prend en charge des types de données comme les DSE, objets connectés, génomique.
+- **Portail Chercheur & Moteur de Correspondance**
+   - Les chercheurs créent des demandes de données chiffrées avec des filtres d'éligibilité.
+   - La plateforme effectue la correspondance basée sur ZK et agrège des statistiques anonymisées.
+- **Système de Consentement & de Récompense**
+   - Système DAO permettant aux utilisateurs d'accorder/révoquer le consentement pour des cas d'usage.
+   - Les contrats intelligents gèrent automatiquement les micro-paiements ou dons.
+- **Indexation des Métadonnées**
+   - Index publics et interrogeables pour :
+      - Données de santé agrégées par catégorie
+      - Projets de recherche actifs
+      - Décisions DAO et flux de financement
+- **Coffre-fort de Données + Stockage Chiffré Hors-chaine**
+   - Coffres-forts contrôlés par l'utilisateur stockant les données médicales chiffrées (ex : via IPFS).
+   - Seuls les engagements ZK sont sur la blockchain, préservant la vie privée.
+- **Couche de Gouvernance & d'Audit**
+   - DAO transparent pour les mises à jour du protocole, les revues éthiques et la résolution des litiges.
+   - Journaux indexés pour la gouvernance, la participation des utilisateurs et la transparence d'utilisation.
+
+## Ressources Nécessaires
+
+- **Plateforme d'Hébergement Web**
+   - ex : Vercel ou Netlify pour déployer le frontend (React/Next.js).
+- **Environnement Blockchain Testnet**
+   - Pour déployer et tester les contrats intelligents (ex : Ethereum Sepolia).
+- **Framework de Contrats Intelligents**
+   - Solidity avec les bibliothèques OpenZeppelin pour un développement sécurisé.
+- **Réseau ZK**
+   - Pour les contrats intelligents confidentiels, l'exécution privée de logique et les preuves d'identité ZK.
+- **Serveurs d'Hébergement Backend**
+   - Pour gérer les APIs, l'authentification utilisateur et les interactions avec les circuits ZK (ex : backend Node.js ou Rust).
+- **Système de Preuve à Divulgation Nulle de Connaissance**
+   - SNARKs, STARKs, Semaphore ou autres primitives ZK pour gérer les preuves préservant la vie privée.
+- **Couche de Stockage Chiffré Hors-chaine**
+   - ex : IPFS avec Lit Protocol ou Filecoin pour le stockage chiffré des données et l'accès contrôlé.
+- **Optionnel (Recommandé pour les Tests / Simulations)**
+   - Jeux de données médicales réalistes (synthétiques ou désidentifiés).
+      - Utilisateurs de test pour les parcours UI/UX et la génération de preuves.
+      - Consultants éthiques/IRB si simulation de déploiements réels ou conception pour des contextes cliniques.
