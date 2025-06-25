@@ -30,10 +30,10 @@ export function WebClientProviders({ children }: Props) {
       enableSystem
       disableTransitionOnChange
     >
-      <TooltipProvider delayDuration={300}>
-        <GoogleAnalytics />
-        <LoadingProvider>{children}</LoadingProvider>
-      </TooltipProvider>
+        <TooltipProvider delayDuration={300}>
+          <GoogleAnalytics />
+          <LoadingProvider>{children}</LoadingProvider>
+        </TooltipProvider>
     </ThemeProvider>
   );
 }

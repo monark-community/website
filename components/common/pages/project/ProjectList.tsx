@@ -19,6 +19,7 @@ import {
 import { Globe } from "lucide-react";
 import { NavLink } from "@/components/common/navlink/navlink";
 import { Locale } from "@/i18n.config";
+import { calculateProjectScore } from "@/lib/utils";
 
 interface ProjectListProps {
   locale: Locale;
@@ -41,6 +42,8 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     []
   );
   const [initialized, setInitialized] = useState(false);
+  const [adminMode, setAdminMode] = useState(false);
+  const [sortMode, setSortMode] = useState<'acronym' | 'score'>("acronym");
 
   useEffect(() => {
     const projectData = projectDataMap[locale];
@@ -72,6 +75,17 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     setInitialized(true);
   }, [locale]);
 
+  // Hidden shortcut: press Ctrl+Shift+A to toggle admin mode
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.altKey && e.key.toLowerCase() === "a") {
+        setAdminMode((v) => !v);
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
+
   const filteredProjects = projects.filter((project) => {
     const searchLower = search.toLowerCase();
     const matchesSearch =
@@ -86,8 +100,13 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
       project.keyword_tags.includes(selectedKeyword);
     return matchesSearch && matchesIndustry && matchesKeyword;
   })
-  // Sort filtered projects alphabetically by acronym
-  .sort((a, b) => a.accronym.localeCompare(b.accronym));
+  .sort((a, b) => {
+    if (sortMode === "score") {
+      const scoreDiff = calculateProjectScore(b) - calculateProjectScore(a);
+      if (scoreDiff !== 0) return scoreDiff;
+    }
+    return a.accronym.localeCompare(b.accronym);
+  });
 
   // Sort tags alphabetically
   const sortedIndustryTags = Array.from(industryTags).sort((a, b) =>
@@ -98,7 +117,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
   );
 
   return (
-    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
       <h1 className="mb-6">{i18nStrings.page_title}</h1>
       <p className="text-muted-foreground mb-8 max-w-[460px]">
         {i18nStrings.description}
@@ -151,6 +170,19 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
           ))}
         </div>
       </div>
+      {adminMode && (
+        <div className="absolute top-4 right-4 z-50">
+          <Select value={sortMode} onValueChange={v => setSortMode(v as 'acronym' | 'score')}>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue>{sortMode === 'acronym' ? 'Sort: Acronym (A-Z)' : 'Sort: Project Score'}</SelectValue>
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="acronym">Sort: Acronym (A-Z)</SelectItem>
+              <SelectItem value="score">Sort: Project Score</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+      )}
       {!initialized ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
           {[...Array(6)].map((_, i) => (
@@ -196,13 +228,18 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
                     />
                   </NavLink>
                   <CardHeader>
-                    <CardTitle className="text-lg font-bold">
+                    <CardTitle className="text-lg font-bold flex items-center justify-between">
                       <NavLink
                         href={`/project/${project.id}`}
                         className="hover:underline"
                       >
                         {project.accronym}&nbsp;|&nbsp;{project.title}
                       </NavLink>
+                      {adminMode && (
+                        <Badge variant="outline" className="ml-2 text-xs bg-primary/10 border-primary/30 text-primary">
+                          Score: {calculateProjectScore(project)}
+                        </Badge>
+                      )}
                     </CardTitle>
                     <div className="flex items-center gap-2 mt-2">
                       <a
