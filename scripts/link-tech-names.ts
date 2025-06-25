@@ -46,12 +46,27 @@ function linkTechNames(content: string, techMap: Record<string, string>): string
   return content;
 }
 
+function splitFrontmatter(content: string): { frontmatter: string; body: string } {
+  if (content.startsWith('---')) {
+    const end = content.indexOf('---', 3);
+    if (end !== -1) {
+      return {
+        frontmatter: content.slice(0, end + 3),
+        body: content.slice(end + 3)
+      };
+    }
+  }
+  return { frontmatter: '', body: content };
+}
+
 function main() {
   const contentDir = path.resolve(__dirname, '../content');
   const files = getAllProjectMdxFiles(contentDir);
   for (const file of files) {
     const original = fs.readFileSync(file, 'utf8');
-    const updated = linkTechNames(original, techLinks);
+    const { frontmatter, body } = splitFrontmatter(original);
+    const updatedBody = linkTechNames(body, techLinks);
+    const updated = frontmatter + updatedBody;
     if (original !== updated) {
       fs.writeFileSync(file, updated, 'utf8');
       console.log(`Updated: ${file}`);
