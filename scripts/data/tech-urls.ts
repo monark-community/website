@@ -5,7 +5,7 @@ const techLinks: Record<string, string> = {
   'Typescript': 'https://www.typescriptlang.org/',
   'shadcn-ui': 'https://ui.shadcn.com/',
   'tailwindcss': 'https://tailwindcss.com/',
-  'Vercel': 'https://www.vercel.com/',
+  'Netlify': 'https://www.netlify.com/',
   'ClickHouse': 'https://clickhouse.com/',
   'PostgreSQL': 'https://www.postgresql.org/',
   'GraphQL': 'https://graphql.org/',
@@ -17,6 +17,14 @@ const techLinks: Record<string, string> = {
   'Superfluid': 'https://www.superfluid.finance/',
   'OpenStreetMap': 'https://www.openstreetmap.org/',
   'MetaMask': 'https://metamask.io/',
+  'IFTTT': 'https://ifttt.com/',
+  'Vercel': 'https://vercel.com/',
+  'Leaflet.js': 'https://leafletjs.com/',
+  'Node.js': 'https://nodejs.org/',
+  'Rust': 'https://www.rust-lang.org/',
+  'Docker': 'https://www.docker.com/',
+  'ethers.js': 'https://docs.ethers.org/',
+  'Arweave': 'https://www.arweave.org/',
 };
 
 export default techLinks;

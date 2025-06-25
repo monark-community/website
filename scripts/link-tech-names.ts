@@ -20,25 +20,16 @@ function getAllProjectMdxFiles(contentDir: string): string[] {
 
 // Replace tech names with Markdown links
 function linkTechNames(content: string, techMap: Record<string, string>): string {
-  // Sort keys by length descending to avoid partial matches
-  const techNames = Object.keys(techMap).sort((a, b) => b.length - a.length);
-  for (const name of techNames) {
-    // Regex to match tech name not already inside a Markdown link
-    // Negative lookbehind for [ and ( to avoid [Name](...) and [Name]: ...
-    // Negative lookahead for ]( to avoid [Name](...)
-    // Also avoid autolinks <Name>
-    const regex = new RegExp(
-      `(?<!\\[|\\(|\\<)\\b${name.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')}\\b(?!\\]|\\(|\\>)`,
-      'g'
-    );
-    // Replace only if not already linked
+  // Normalize Unicode/invisible spaces to regular space
+  content = content.replace(/[\u00A0\u2000-\u200B\u202F\u205F\u3000]/g, ' ');
+  for (const name of Object.keys(techMap).sort((a, b) => b.length - a.length)) {
+    const regex = new RegExp(name.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g');
     content = content.replace(regex, (match, offset) => {
-      // Check if inside a Markdown link: [text](url)
-      // Find the nearest [ before and ]( after
+      // Only replace if not already inside a Markdown link
       const before = content.lastIndexOf('[', offset);
       const after = content.indexOf('](', offset);
       if (before !== -1 && after !== -1 && before < offset && offset < after) {
-        return match; // Already linked
+        return match;
       }
       return `[${match}](${techMap[name]})`;
     });
@@ -62,7 +53,10 @@ function splitFrontmatter(content: string): { frontmatter: string; body: string 
 function main() {
   const contentDir = path.resolve(__dirname, '../content');
   const files = getAllProjectMdxFiles(contentDir);
+  const techNames = Object.keys(techLinks).sort((a, b) => b.length - a.length);
+  console.log('Tech names to match:', techNames);
   for (const file of files) {
+    console.log('Scanning file:', file);
     const original = fs.readFileSync(file, 'utf8');
     const { frontmatter, body } = splitFrontmatter(original);
     const updatedBody = linkTechNames(body, techLinks);
