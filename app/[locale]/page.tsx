@@ -1,5 +1,6 @@
 import metadata from "./metadata";
 import HeroSection from "@/components/common/pages/homepage/hero-section/hero-section";
+import PartnersSection from "@/components/common/pages/homepage/partners-section/partners-section";
 import AboutSection from "@/components/common/pages/homepage/about-section/about-section";
 import WhySection from "@/components/common/pages/homepage/why-section/why-section";
 import FAQSection from "@/components/common/pages/homepage/faq-section/faq-section";
@@ -18,6 +19,7 @@ export default async function Home({ params }: { params: Params }) {
     <div className="relative">
       <div>
         <HeroSection locale={locale} />
+        <PartnersSection locale={locale} />
         <AboutSection locale={locale} />
         <WhySection locale={locale} />
         <HistorySection locale={locale} />

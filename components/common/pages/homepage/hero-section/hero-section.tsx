@@ -12,7 +12,7 @@ type Props = {
 function HeroSection({ locale }: Props) {
   const t = i18n[locale].hero_section;
   return (
-    <section className="hero-section relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-4 lg:pt-40 pb-40">
+    <section className="hero-section relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 pt-4 lg:pt-40 pb-20">
       <div className="transition-all opacity-40 sm:opacity-100 absolute md:top-8 md:right-8 z-[-1] rounded-full bg-primary/10 h-[600px] w-[600px] max-w-[100vw] aspect-square flex items-center justify-center overflow-hidden">
         <Image
           alt="Stylized line art of a Monarch butterfly"
