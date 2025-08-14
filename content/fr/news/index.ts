@@ -9,6 +9,34 @@ const data: DatedNewsMetadata[] = [
     "description": "Monark, fondée par Vincent Grenier, se positionne comme le leader dans l'accompagnement des projets universitaires en technologies décentralisées, s'appuyant sur des collaborations réussies comme CryptoSys avec l'Université de Sherbrooke. L'entreprise offre un mentorat sur mesure pour transformer les connaissances académiques en solutions prêtes pour le marché, favorisant l'innovation et les compétences professionnelles chez les étudiants.",
     "author": "Marty-Kanatakhatsus Meunier",
     "source": "https://www.usherbrooke.ca/actualites/nouvelles/sciences-innovations-technologiques/details/42749"
+  },
+  {
+    "id": "web3-revolution-reality",
+    "title": "La Révolution et la Réalité du Web3 - Une Évaluation Honnête",
+    "date": "2025-08-13T00:00:00.000Z",
+    "description": "Chez Monark, nous analysons le Web3 avec honnêteté, en reconnaissant à la fois son potentiel transformateur et ses défis réels. Cet article examine l'idéalisme et les réalités du Web3, et propose une approche pragmatique pour son adoption durable.",
+    "author": "Équipe Monark"
+  },
+  {
+    "id": "what-is-web3-really",
+    "title": "Qu'est-ce que le Web3, réellement ?",
+    "date": "2025-07-25T00:00:00.000Z",
+    "description": "Un examen critique du Web3, explorant ses promesses, ses défis et la réalité des technologies décentralisées. Cet article vise à clarifier les idées reçues et à offrir une vision équilibrée de ce que le Web3 peut réellement apporter.",
+    "author": "Équipe Monark"
+  },
+  {
+    "id": "where-blockchain-shines",
+    "title": "Où la Blockchain Brille… et Où Elle Ne Brille Pas",
+    "date": "2025-08-09T00:00:00.000Z",
+    "description": "La technologie blockchain a été à la fois surestimée et sous-estimée. Chez Monark, nous croyons qu'il est essentiel de couper à travers le bruit pour identifier la véritable valeur. Cet article examine où la blockchain excelle réellement et où les solutions traditionnelles restent supérieures.",
+    "author": "Équipe Monark"
+  },
+  {
+    "id": "why-decentralization-matters",
+    "title": "Pourquoi la Décentralisation Compte - Après le FOMO",
+    "date": "2025-08-02T00:00:00.000Z",
+    "description": "Dans un monde dominé par les géants de la technologie et les gardiens institutionnels, la décentralisation n'est pas simplement un mot à la mode de la Silicon Valley — elle représente un changement fondamental dans la manière dont nous concevons et gouvernons les systèmes numériques. Chez Monark, nous explorons activement comment cette transition peut débloquer une nouvelle vague d'applications concrètes, grâce à une collaboration étroite entre les institutions académiques et les écosystèmes décentralisés les plus avancés.",
+    "author": "Équipe Monark"
   }
 ];
 

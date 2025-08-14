@@ -40,8 +40,8 @@ const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
       const searchLower = search.toLowerCase();
       return item.title.toLowerCase().includes(searchLower);
     })
-    // Sort filtered news alphabetically by title
-    .sort((a, b) => a.title.localeCompare(b.title));
+    // Sort by date, most recent first
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -86,7 +86,7 @@ const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
                 <Card className="overflow-hidden h-full flex flex-col transition-colors">
                   <NavLink href={`/learn/news/${item.id}`} className="block">
                     <Image
-                      src={`/images/news/${item.id}.jpg`}
+                      src={`/images/news/${item.id}.webp`}
                       alt={item.title}
                       width={500}
                       height={200}

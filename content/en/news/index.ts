@@ -9,6 +9,34 @@ const data: DatedNewsMetadata[] = [
     "description": "Monark, founded by Vincent Grenier, positions itself as the leader in supporting university projects in decentralized technologies, building on successful collaborations like CryptoSys with the University of Sherbrooke. The company offers tailored mentorship to transform academic knowledge into market-ready solutions, fostering innovation and professional skills among students.",
     "author": "Marty-Kanatakhatsus Meunier",
     "source": "https://www.usherbrooke.ca/actualites/nouvelles/sciences-innovations-technologiques/details/42749"
+  },
+  {
+    "id": "web3-revolution-reality",
+    "title": "The Revolution and Reality of Web3 - An Honest Assessment",
+    "date": "2025-08-14T00:00:00.000Z",
+    "description": "At Monark, we analyze Web3 with honesty, recognizing both its transformative potential and real-world challenges. This article examines the idealism and realities of Web3, offering a pragmatic approach for sustainable adoption.",
+    "author": "Monark Team"
+  },
+  {
+    "id": "what-is-web3-really",
+    "title": "What is Web3, Really?",
+    "date": "2025-07-25T00:00:00.000Z",
+    "description": "A critical examination of Web3, exploring its promises, challenges, and the reality of decentralized technologies. This article aims to clarify misconceptions and provide a balanced view of what Web3 can truly offer.",
+    "author": "Monark Team"
+  },
+  {
+    "id": "where-blockchain-shines",
+    "title": "Where Blockchain Shines, and Where It Doesn't",
+    "date": "2025-08-09T00:00:00.000Z",
+    "description": "Blockchain technology has been both overhyped and underappreciated. At Monark, we believe in cutting through the noise to identify genuine value. This article examines where blockchain truly excels and where traditional solutions remain superior.",
+    "author": "Monark Team"
+  },
+  {
+    "id": "why-decentralization-matters",
+    "title": "Why Decentralization Matters - Beyond the Hype",
+    "date": "2025-08-02T00:00:00.000Z",
+    "description": "In a world dominated by tech giants and institutional gatekeepers, decentralization isn't just another Silicon Valley buzzword—it represents a fundamental shift in how we design and govern digital systems. At Monark, we're actively exploring how this transition can unlock a new wave of real-world applications, driven by close collaboration between academic institutions and the most advanced decentralized ecosystems.",
+    "author": "Monark Team"
   }
 ];
 
