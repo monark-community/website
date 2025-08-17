@@ -58,21 +58,6 @@ export const en: I18n = {
           // },
         ],
       },
-      {
-        id: "projects",
-        label: "Projects",
-        href: "/project",
-      },
-      {
-        id: "about",
-        label: "About",
-        href: "/about",
-      },
-      {
-        id: "docs",
-        label: "Docs",
-        href: "/learn/doc",
-      },
       // {
       //   id: "initiatives",
       //   label: "Initiatives",
@@ -145,18 +130,28 @@ export const en: I18n = {
       //     ],
       //   },
       // ],
-      // { // TODO: Uncomment when we have more content for the learn section.
-      //   id: "learn",
-      //   label: "Learn",
-      //   href: "/learn",
-      //   isFolderRoute: true,
-      //   items: [
-      //     { id: "docs", label: "Docs", icon: "book-open", href: "/doc" },
-      //     { id: "news", label: "News", icon: "newspaper", href: "/news" },
-      //     { id: "video-series", label: "Video Series", icon: "square-play", href: "/video-series" },
-      //     { id: "podcasts", label: "Podcasts", icon: "podcast", href: "/podcasts" },
-      //   ],
-      // },
+      {
+        id: "learn",
+        label: "Learn",
+        href: "/learn",
+        isFolderRoute: true,
+        items: [
+          { id: "docs", label: "Docs", icon: "book-open", href: "/doc" },
+          { id: "news", label: "News", icon: "newspaper", href: "/news" },
+          //     { id: "video-series", label: "Video Series", icon: "square-play", href: "/video-series" },
+          //     { id: "podcasts", label: "Podcasts", icon: "podcast", href: "/podcasts" },
+        ],
+      },
+      {
+        id: "projects",
+        label: "Projects",
+        href: "/project",
+      },
+      {
+        id: "about",
+        label: "About",
+        href: "/about",
+      },
       // {
       //   id: "roadmap",
       //   label: "Roadmap",
@@ -208,21 +203,6 @@ export const fr: I18n = {
           // href: "/entrepreneur"
           // },
         ],
-      },
-      {
-        id: "projets",
-        label: "Projets",
-        href: "/project",
-      },
-      {
-        id: "a-propos",
-        label: "À propos",
-        href: "/about",
-      },
-      {
-        id: "docs",
-        label: "Docs",
-        href: "/learn/doc",
       },
       // {
       //   id: "initiatives",
@@ -324,33 +304,43 @@ export const fr: I18n = {
       //     },
       //   ],
       // },
-      // {
-      //   id: "apprendre",
-      //   label: "Apprendre",
-      //   href: "/learn",
-      //   isFolderRoute: true,
-      //   items: [
-      //     { id: "docs", label: "Docs", icon: "book-open", href: "/doc" },
-      //     {
-      //       id: "nouvelles",
-      //       label: "Nouvelles",
-      //       icon: "newspaper",
-      //       href: "/news",
-      //     },
-      //     {
-      //       id: "serie-video",
-      //       label: "Série vidéo",
-      //       icon: "square-play",
-      //       href: "/video-series",
-      //     },
-      //     {
-      //       id: "podcasts",
-      //       label: "Podcasts",
-      //       icon: "podcast",
-      //       href: "/podcasts",
-      //     },
-      //   ],
-      // },
+      {
+        id: "apprendre",
+        label: "Apprendre",
+        href: "/learn",
+        isFolderRoute: true,
+        items: [
+          { id: "docs", label: "Docs", icon: "book-open", href: "/doc" },
+          {
+            id: "nouvelles",
+            label: "Nouvelles",
+            icon: "newspaper",
+            href: "/news",
+          },
+          //     {
+          //       id: "serie-video",
+          //       label: "Série vidéo",
+          //       icon: "square-play",
+          //       href: "/video-series",
+          //     },
+          //     {
+          //       id: "podcasts",
+          //       label: "Podcasts",
+          //       icon: "podcast",
+          //       href: "/podcasts",
+          //     },
+        ],
+      },
+      {
+        id: "projets",
+        label: "Projets",
+        href: "/project",
+      },
+      {
+        id: "a-propos",
+        label: "À propos",
+        href: "/about",
+      },
       // {
       //   id: "feuille-de-route",
       //   label: "Feuille de route",

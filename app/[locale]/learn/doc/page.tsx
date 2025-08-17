@@ -6,6 +6,8 @@ import { components } from "@/mdx-components";
 import matter from "gray-matter";
 import { Metadata } from "next";
 import { generateMdxMetadata } from "@/lib/generate-mdx-metadata";
+import { Button } from "@/components/ui/button";
+import { BookOpenIcon } from "lucide-react";
 
 type DocPageProps = {
   params: Promise<{
@@ -54,6 +56,11 @@ export default async function DocPage({ params }: DocPageProps) {
   return (
     <div className="container mx-auto">
       <MDXRemote source={content} components={components} />
+      <Button className="mt-8" size="lg" asChild>
+        <a href="https://www.notion.so/Welcome-to-Monark-2222a891d75180fb8111c92d0b579775" target="_blank" rel="noreferrer" className="no-underline mb-12">
+        <BookOpenIcon/>Explore Documentation  
+        </a>
+      </Button>
     </div>
   );
 }
