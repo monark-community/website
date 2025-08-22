@@ -118,7 +118,7 @@ function DonationForm({ locale, donations }: Props) {
               </div>
             </div>
 
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
               <div className="text-sm text-muted-foreground flex items-center gap-2">
                 <span>{t.view_on_explorer}</span>
                 <div
