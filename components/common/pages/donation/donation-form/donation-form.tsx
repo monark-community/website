@@ -13,6 +13,7 @@ import {
   generateCryptoCurrencies 
 } from "@/components/ui/amount-currency-input";
 import { toast } from "sonner";
+import { WalletAddress } from "@/components/common/wallet-address/wallet-address";
 
 export interface DonationNetwork {
   network: string;
@@ -23,18 +24,17 @@ export interface DonationNetwork {
 type Props = {
   locale: Locale;
   donations: DonationNetwork[];
-  prices: { [key: string]: number };
 };
 
-function DonationForm({ locale, donations, prices }: Props) {
+function DonationForm({ locale, donations }: Props) {
   const t = i18n[locale].donation_form;
-  const [selectedNetwork, setSelectedNetwork] = useState<string>("ETH");
+  const [selectedNetwork, setSelectedNetwork] = useState<string>("");
   const [donationAmount, setDonationAmount] = useState<string>("");
-  const [selectedCurrency, setSelectedCurrency] = useState<string>("USD");
+  const [selectedCurrency, setSelectedCurrency] = useState<string>("");
 
   // Convert donations to Network format for NetworkSelect with full names
-  const networks: Network[] = useMemo(() => 
-    donations.map(donation => {
+  const networks: Network[] = useMemo(() => {
+    const networkList = donations.map(donation => {
       const getNetworkInfo = (network: string) => {
         switch (network) {
           case "ETH": return { name: "Ethereum", symbol: "ETH" };
@@ -42,9 +42,10 @@ function DonationForm({ locale, donations, prices }: Props) {
           case "Solana": return { name: "Solana", symbol: "SOL" };
           case "AVAX": return { name: "Avalanche", symbol: "AVAX" };
           case "SUI": return { name: "Sui", symbol: "SUI" };
-          case "TON": return { name: "TON", symbol: "TON" };
+          case "TON": return { name: "The Open Network", symbol: "TON" };
           case "TRON": return { name: "Tron", symbol: "TRX" };
           case "HBAR": return { name: "Hedera Hashgraph", symbol: "HBAR" };
+          case "VAULTA": return { name: "Vaulta", symbol: "A" };
           default: return { name: network, symbol: network };
         }
       };
@@ -55,12 +56,14 @@ function DonationForm({ locale, donations, prices }: Props) {
         name: info.name,
         symbol: info.symbol,
       };
-    }), [donations]
-  );
+    });
+    
+    // Sort alphabetically by network name
+    return networkList.sort((a, b) => a.name.localeCompare(b.name));
+  }, [donations]);
 
-  // Generate all available currencies (FIAT + Crypto)
+  // Generate all available currencies (Crypto only)
   const allCurrencies: Currency[] = useMemo(() => [
-    ...defaultFiatCurrencies,
     ...generateCryptoCurrencies(networks),
   ], [networks]);
 
@@ -70,14 +73,20 @@ function DonationForm({ locale, donations, prices }: Props) {
     return network?.symbol || networkId;
   };
 
-  // Auto-switch currency to network token when network changes (if current currency is crypto)
+  // Set default network to first available option when networks are loaded
   React.useEffect(() => {
-    const selectedCurrencyObj = allCurrencies.find(c => c.id === selectedCurrency);
-    if (selectedCurrencyObj?.type === 'CRYPTO') {
+    if (networks.length > 0 && !selectedNetwork) {
+      setSelectedNetwork(networks[0].id);
+    }
+  }, [networks, selectedNetwork]);
+
+  // Auto-switch currency to network token when network changes
+  React.useEffect(() => {
+    if (selectedNetwork) {
       const networkSymbol = getNetworkSymbol(selectedNetwork);
       setSelectedCurrency(networkSymbol);
     }
-  }, [selectedNetwork, allCurrencies, selectedCurrency, getNetworkSymbol]);
+  }, [selectedNetwork, getNetworkSymbol]);
 
   const handleCopyAddress = (address: string, network?: string) => {
     navigator.clipboard.writeText(address);
@@ -97,23 +106,8 @@ function DonationForm({ locale, donations, prices }: Props) {
   };
 
   const convertAmount = () => {
-    if (!donationAmount) return "";
-    const amount = parseFloat(donationAmount);
-    if (isNaN(amount)) return "";
-    
-    const selectedCurrencyObj = allCurrencies.find(c => c.id === selectedCurrency);
-    if (!selectedCurrencyObj) return "";
-
-    if (selectedCurrencyObj.type === 'FIAT') {
-      // Convert from FIAT to selected network token
-      const tokenPrice = prices[selectedNetwork] || 1;
-      const tokenSymbol = networks.find(n => n.id === selectedNetwork)?.symbol || selectedNetwork;
-      return `≈ ${(amount / tokenPrice).toFixed(6)} ${tokenSymbol}`;
-    } else {
-      // Convert from crypto to USD
-      const networkPrice = prices[selectedNetwork] || 0;
-      return `≈ $${(amount * networkPrice).toFixed(2)} USD`;
-    }
+    // No conversion needed since we're only using crypto
+    return "";
   };
 
   return (
@@ -141,15 +135,10 @@ function DonationForm({ locale, donations, prices }: Props) {
                 selectedCurrency={selectedCurrency}
                 onCurrencyChange={setSelectedCurrency}
                 currencies={allCurrencies}
-                placeholder={selectedCurrency === "USD" ? t.amount_placeholder_usd : t.amount_placeholder_crypto}
-                showConversion={true}
-                conversionText={convertAmount()}
-                // Filter crypto to only show selected network's token + all FIAT currencies
+                placeholder={t.amount_placeholder_crypto}
+                showConversion={false}
+                // Filter to only show selected network's token
                 customFilter={(currency) => {
-                  if (currency.type === 'FIAT') {
-                    return true; // Always show FIAT currencies
-                  }
-                  // For crypto, only show the selected network's token
                   const networkSymbol = getNetworkSymbol(selectedNetwork);
                   return currency.id === networkSymbol;
                 }}
@@ -159,7 +148,7 @@ function DonationForm({ locale, donations, prices }: Props) {
 
           <div className="flex items-center justify-between">
             <div className="text-sm text-muted-foreground">
-              {t.wallet_label}: {donations.find(d => d.network === selectedNetwork)?.address.slice(0, 10)}...
+              {t.wallet_label}: <WalletAddress address={donations.find(d => d.network === selectedNetwork)?.address || ''} />
             </div>
             <Button onClick={handleDonate} disabled={!donationAmount}>
               {t.donate_button}

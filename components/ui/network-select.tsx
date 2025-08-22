@@ -16,6 +16,7 @@ import {
   NetworkEthereum,
   NetworkBitcoin,
   NetworkHederaHashgraph,
+  NetworkVaulta,
 } from "@web3icons/react";
 
 export interface Network {
@@ -26,30 +27,34 @@ export interface Network {
 }
 
 // Map network names to their corresponding icons
-const getNetworkIcon = (network: string, className: string = "w-5 h-5") => {
+const getNetworkIcon = (network: string, className: string = "w-5 h-5 rounded-full") => {
   switch (network.toLowerCase()) {
     case "solana":
     case "sol":
-      return <NetworkSolana className={className} />;
+      return <NetworkSolana className={className} variant="background" />;
     case "sui":
-      return <NetworkSui className={className} />;
+      return <NetworkSui className={className} variant="background" />;
     case "ton":
-      return <TokenTON className={className} />;
+      return <TokenTON className={className} variant="background" />;
     case "tron":
     case "trx":
-      return <NetworkTron className={className} />;
+      return <NetworkTron className={className} variant="background" />;
     case "avalanche":
     case "avax":
-      return <NetworkAvalanche className={className} />;
+      return <NetworkAvalanche className={className} variant="background" />;
     case "ethereum":
     case "eth":
-      return <NetworkEthereum className={className} />;
+      return <NetworkEthereum className={className} variant="background" />;
     case "bitcoin":
     case "btc":
-      return <NetworkBitcoin className={className} />;
+      return <NetworkBitcoin className={className} variant="background" />;
     case "hedera":
     case "hbar":
-      return <NetworkHederaHashgraph className={className} />;
+      return (
+        <NetworkHederaHashgraph className={className} variant="background" />
+      );
+    case "vaulta":
+      return <NetworkVaulta className={className} variant="background" />;
     default:
       return null;
   }
@@ -64,6 +69,7 @@ export const defaultNetworks: Network[] = [
   { id: "TON", name: "TON", symbol: "TON" },
   { id: "TRON", name: "Tron", symbol: "TRX" },
   { id: "HBAR", name: "Hedera Hashgraph", symbol: "HBAR" },
+  { id: "VAULTA", name: "Vaulta", symbol: "A" },
 ];
 
 interface NetworkSelectProps {
@@ -83,12 +89,12 @@ export function NetworkSelect({
   className,
   disabled = false,
 }: NetworkSelectProps) {
-  const networksWithIcons = networks.map(network => ({
+  const networksWithIcons = networks.map((network) => ({
     ...network,
     icon: network.icon || getNetworkIcon(network.id),
   }));
 
-  const selectedNetwork = networksWithIcons.find(n => n.id === value);
+  const selectedNetwork = networksWithIcons.find((n) => n.id === value);
 
   return (
     <Select value={value} onValueChange={onValueChange} disabled={disabled}>

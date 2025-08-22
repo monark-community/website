@@ -10,7 +10,6 @@ interface Donation {
   network: string;
   address: string;
   balance?: number;
-  usdValue?: number;
   explorerUrl?: string;
 }
 
@@ -21,8 +20,9 @@ const blockExplorers: { [key: string]: string } = {
   TRON: "https://tronscan.org/#/address/",
   AVAX: "https://snowtrace.io/address/",
   ETH: "https://etherscan.io/address/",
-  BTC: "https://blockchair.com/bitcoin/address/",
+  BTC: "https://btcscan.org/address/",
   HBAR: "https://hashscan.io/mainnet/account/",
+  VAULTA: "https://eosflare.io/account/",
 };
 
 const initialDonations: Donation[] = [
@@ -64,119 +64,20 @@ const initialDonations: Donation[] = [
   },
   {
     network: "HBAR",
-    address: "0.0.1234567", // Replace with your actual Hedera account ID
-    explorerUrl: `${blockExplorers["HBAR"]}0.0.1234567`,
+    address: "0x000000000000000000000000000000000092fcc7",
+    explorerUrl: `${blockExplorers["HBAR"]}0x000000000000000000000000000000000092fcc7`,
+  },
+  {
+    network: "VAULTA",
+    address: "monark",
+    explorerUrl: `${blockExplorers["VAULTA"]}monark`,
   },
 ];
 
 // Helper function to fetch balances using Pinax Network Token API
 const fetchBalance = async (donation: Donation): Promise<Donation> => {
-  try {
-    let balance = 0;
-    let usdValue = 0;
-
-    // Map network names to chain types for Pinax API
-    const networkMapping: {
-      [key: string]: { type: string; chainId?: string };
-    } = {
-      ETH: { type: "evm", chainId: "eth" },
-      AVAX: { type: "evm", chainId: "avax" },
-      Solana: { type: "svn" },
-      SUI: { type: "move" },
-      TON: { type: "ton" },
-      TRON: { type: "tron" },
-      BTC: { type: "btc" },
-      HBAR: { type: "hedera" },
-    };
-
-    const networkConfig = networkMapping[donation.network];
-
-    if (
-      networkConfig &&
-      (networkConfig.type === "evm" || networkConfig.type === "svn")
-    ) {
-      try {
-        // Use Pinax Token API for EVM and Solana chains
-        const apiEndpoint =
-          networkConfig.type === "evm"
-            ? `https://token-api.thegraph.com/balances/evm/${donation.address}`
-            : `https://token-api.thegraph.com/balances/svn/${donation.address}`;
-
-        const response = await fetch(apiEndpoint, {
-          method: "GET",
-          headers: {
-            Accept: "application/json",
-            // Note: In production, you would need to add your JWT token here
-            Authorization: "Bearer YOUR_JWT_TOKEN",
-          },
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-
-          // Parse the balance from the response
-          if (data && data.balances) {
-            const nativeToken = data.balances.find(
-              (b: any) => b.symbol === donation.network || b.isNative === true
-            );
-            if (nativeToken) {
-              balance = parseFloat(nativeToken.balance) || 0;
-            }
-          }
-        }
-      } catch (apiError) {
-        console.error(`Pinax API error for ${donation.network}:`, apiError);
-      }
-    }
-
-    // Fallback to direct blockchain APIs for networks not supported by Pinax
-    if (balance === 0) {
-      switch (donation.network.toLowerCase()) {
-        case "btc":
-          try {
-            const btcResponse = await fetch(
-              `https://blockchain.info/q/addressbalance/${donation.address}`
-            );
-            const btcSatoshis = await btcResponse.text();
-            balance = parseFloat(btcSatoshis || "0") / 1e8;
-          } catch (e) {
-            console.error("BTC fetch error:", e);
-          }
-          break;
-
-        case "tron":
-          try {
-            const tronResponse = await fetch(
-              `https://api.trongrid.io/v1/accounts/${donation.address}`
-            );
-            const tronData = await tronResponse.json();
-            balance = (tronData.data?.[0]?.balance || 0) / 1e6;
-          } catch (e) {
-            console.error("TRON fetch error:", e);
-          }
-          break;
-      }
-    }
-
-    // Fetch current prices
-    const prices: { [key: string]: number } = {
-      BTC: 45000,
-      ETH: 2500,
-      AVAX: 35,
-      Solana: 100,
-      SUI: 1.5,
-      TON: 2.5,
-      TRON: 0.1,
-      HBAR: 0.05,
-    };
-
-    usdValue = balance * (prices[donation.network] || 0);
-
-    return { ...donation, balance, usdValue };
-  } catch (error) {
-    console.error(`Error fetching balance for ${donation.network}:`, error);
-    return { ...donation, balance: 0, usdValue: 0 };
-  }
+  const balance = 0;
+  return { ...donation, balance };
 };
 
 const DonationPage = () => {
@@ -187,17 +88,6 @@ const DonationPage = () => {
   const [donations, setDonations] = useState<Donation[]>(initialDonations);
   const [loading, setLoading] = useState(true);
 
-  const prices: { [key: string]: number } = {
-    BTC: 45000,
-    ETH: 2500,
-    AVAX: 35,
-    Solana: 100,
-    SUI: 1.5,
-    TON: 2.5,
-    TRON: 0.1,
-    HBAR: 0.05,
-  };
-
   useEffect(() => {
     const loadBalances = async () => {
       setLoading(true);
@@ -206,9 +96,9 @@ const DonationPage = () => {
           initialDonations.map(fetchBalance)
         );
 
-        // Sort by USD value (highest first)
+        // Sort alphabetically by network name
         const sortedDonations = donationsWithBalances.sort(
-          (a, b) => (b.usdValue || 0) - (a.usdValue || 0)
+          (a, b) => a.network.localeCompare(b.network)
         );
 
         setDonations(sortedDonations);
@@ -225,9 +115,10 @@ const DonationPage = () => {
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
       <h1 className="text-3xl font-bold mb-4">{t.title}</h1>
-      <p className="mb-8 text-muted-foreground">{t.description}</p>
-      WORK IN PROGRESS
-      <DonationForm locale={locale} donations={donations} prices={prices} />
+      <p className="mb-8 text-muted-foreground max-w-[475px]">
+        {t.description}
+      </p>
+      <DonationForm locale={locale} donations={donations} />
       <DonationLeaderboard
         locale={locale}
         donations={donations}

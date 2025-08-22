@@ -30,7 +30,7 @@
     "@radix-ui/react-slot": "^1.1.2",
     "@radix-ui/react-tooltip": "^1.1.8",
     "@types/dotenv": "^6.1.1",
-    "@web3icons/react": "^4.0.20",
+    "@web3icons/react": "^4.0.21",
     "@xyflow/react": "^12.4.3",
     "accept-language": "^3.0.20",
     "class-variance-authority": "^0.7.1",

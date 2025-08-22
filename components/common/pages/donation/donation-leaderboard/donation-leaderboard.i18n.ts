@@ -18,7 +18,7 @@ export interface I18n {
 
 export const en: I18n = {
   donation_leaderboard: {
-    title: "Donation Leaderboard",
+    title: "Available Donation Networks",
     rank_header: "#",
     network_header: "Network",
     address_header: "Address",
@@ -36,7 +36,7 @@ export const en: I18n = {
 
 export const fr: I18n = {
   donation_leaderboard: {
-    title: "Classement des dons",
+    title: "Réseaux disponibles pour les dons",
     rank_header: "#",
     network_header: "Réseau",
     address_header: "Adresse",
