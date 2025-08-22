@@ -7,6 +7,7 @@ import LoadingProvider from "./loading.provider";
 import { ThemeProvider } from "./theme.provider";
 import { Toaster } from "@/components/ui/sonner"
 import Loader from "../loader/loader";
+import { WalletProvider } from "@/providers/wallet.provider";
 
 type Props = {
   children: React.ReactNode;
@@ -31,11 +32,13 @@ export function WebClientProviders({ children }: Props) {
       enableSystem
       disableTransitionOnChange
     >
+      <WalletProvider>
         <TooltipProvider delayDuration={300}>
           <GoogleAnalytics />
           <LoadingProvider>{children}</LoadingProvider>
           <Toaster />
         </TooltipProvider>
+      </WalletProvider>
     </ThemeProvider>
   );
 }

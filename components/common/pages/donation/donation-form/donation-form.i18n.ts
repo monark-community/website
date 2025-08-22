@@ -4,7 +4,7 @@ export interface I18n {
     select_network: string;
     amount_label: string;
     currency_label: string;
-    wallet_label: string;
+    view_on_explorer: string;
     donate_button: string;
     copy_success: string;
     donation_instruction: string;
@@ -19,7 +19,7 @@ export const en: I18n = {
     select_network: "Select Network",
     amount_label: "Amount",
     currency_label: "Currency",
-    wallet_label: "Wallet",
+    view_on_explorer: "View on Explorer",
     donate_button: "Donate Now",
     copy_success: "address copied to clipboard!",
     donation_instruction: "Please send {amount} {currency} to the copied address",
@@ -34,7 +34,7 @@ export const fr: I18n = {
     select_network: "Sélectionner le réseau",
     amount_label: "Montant",
     currency_label: "Devise",
-    wallet_label: "Portefeuille",
+    view_on_explorer: "Voir sur l'explorateur",
     donate_button: "Faire un don",
     copy_success: "adresse copiée dans le presse-papiers!",
     donation_instruction: "Veuillez envoyer {amount} {currency} à l'adresse copiée",

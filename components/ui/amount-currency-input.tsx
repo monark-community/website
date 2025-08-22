@@ -116,7 +116,7 @@ export function AmountCurrencyInput({
   return (
     <div className={cn("space-y-2", className)}>
       {/* Combined Input and Select */}
-      <div className="flex relative border border-input bg-background rounded-md focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
+      <div className="flex relative border border-input rounded-md focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
         {/* Amount Input */}
         <Input
           type="number"

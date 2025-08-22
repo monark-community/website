@@ -5,74 +5,19 @@ import { Locale } from "@/i18n.config";
 import * as i18n from "./page.i18n";
 import DonationForm from "@/components/common/pages/donation/donation-form/donation-form";
 import DonationLeaderboard from "@/components/common/pages/donation/donation-leaderboard/donation-leaderboard";
+import { MONARK_WALLET_ADDRESSES } from "@/lib/donation-constants";
 
 interface Donation {
   network: string;
   address: string;
   balance?: number;
-  explorerUrl?: string;
 }
 
-const blockExplorers: { [key: string]: string } = {
-  Solana: "https://solscan.io/account/",
-  SUI: "https://suiscan.xyz/mainnet/account/",
-  TON: "https://tonviewer.com/",
-  TRON: "https://tronscan.org/#/address/",
-  AVAX: "https://snowtrace.io/address/",
-  ETH: "https://etherscan.io/address/",
-  BTC: "https://btcscan.org/address/",
-  HBAR: "https://hashscan.io/mainnet/account/",
-  VAULTA: "https://eosflare.io/account/",
-};
-
-const initialDonations: Donation[] = [
-  {
-    network: "Solana",
-    address: "4enXL4gz4ytFtCkL5V2YzU5VfFtFnUkHdWYv8jX28LyW",
-    explorerUrl: `${blockExplorers["Solana"]}4enXL4gz4ytFtCkL5V2YzU5VfFtFnUkHdWYv8jX28LyW`,
-  },
-  {
-    network: "SUI",
-    address:
-      "0x90ea46396a8c22be6d800142972061bbe84399a6205b1a4bf4c963c971d5795f",
-    explorerUrl: `${blockExplorers["SUI"]}0x90ea46396a8c22be6d800142972061bbe84399a6205b1a4bf4c963c971d5795f`,
-  },
-  {
-    network: "TON",
-    address: "UQDuqiVlh40OOpeufMZzesOC7WrsC98m1Gah2T7-kJ7-Y8zw",
-    explorerUrl: `${blockExplorers["TON"]}UQDuqiVlh40OOpeufMZzesOC7WrsC98m1Gah2T7-kJ7-Y8zw`,
-  },
-  {
-    network: "TRON",
-    address: "TJD4KYYewNwNe5YBurZPRKr16h87iQnHCh",
-    explorerUrl: `${blockExplorers["TRON"]}TJD4KYYewNwNe5YBurZPRKr16h87iQnHCh`,
-  },
-  {
-    network: "AVAX",
-    address: "0x9771876B04E0f3008cc7733C5f23E1C76650E139",
-    explorerUrl: `${blockExplorers["AVAX"]}0x9771876B04E0f3008cc7733C5f23E1C76650E139`,
-  },
-  {
-    network: "ETH",
-    address: "0x9771876B04E0f3008cc7733C5f23E1C76650E139",
-    explorerUrl: `${blockExplorers["ETH"]}0x9771876B04E0f3008cc7733C5f23E1C76650E139`,
-  },
-  {
-    network: "BTC",
-    address: "bc1pxpg6xr0mj8w0qdym9tfg4suqcz5av0nnyr7xckcnssd5hxxk6weqa3n87y",
-    explorerUrl: `${blockExplorers["BTC"]}bc1pxpg6xr0mj8w0qdym9tfg4suqcz5av0nnyr7xckcnssd5hxxk6weqa3n87y`,
-  },
-  {
-    network: "HBAR",
-    address: "0x000000000000000000000000000000000092fcc7",
-    explorerUrl: `${blockExplorers["HBAR"]}0x000000000000000000000000000000000092fcc7`,
-  },
-  {
-    network: "VAULTA",
-    address: "monark",
-    explorerUrl: `${blockExplorers["VAULTA"]}monark`,
-  },
-];
+// Use the wallet addresses from constants
+const initialDonations: Donation[] = MONARK_WALLET_ADDRESSES.map(wallet => ({
+  network: wallet.network,
+  address: wallet.address,
+}));
 
 // Helper function to fetch balances using Pinax Network Token API
 const fetchBalance = async (donation: Donation): Promise<Donation> => {

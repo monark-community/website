@@ -38,7 +38,7 @@ const networkConfig: Record<
     symbol: "BTC",
     Icon: NetworkBitcoin,
   },
-  Solana: {
+  SOL: {
     name: "Solana",
     symbol: "SOL",
     Icon: NetworkSolana,

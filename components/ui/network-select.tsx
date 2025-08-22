@@ -29,7 +29,6 @@ export interface Network {
 // Map network names to their corresponding icons
 const getNetworkIcon = (network: string, className: string = "w-5 h-5 rounded-full") => {
   switch (network.toLowerCase()) {
-    case "solana":
     case "sol":
       return <NetworkSolana className={className} variant="background" />;
     case "sui":
@@ -61,14 +60,14 @@ const getNetworkIcon = (network: string, className: string = "w-5 h-5 rounded-fu
 };
 
 export const defaultNetworks: Network[] = [
-  { id: "ETH", name: "Ethereum", symbol: "ETH" },
-  { id: "BTC", name: "Bitcoin", symbol: "BTC" },
-  { id: "Solana", name: "Solana", symbol: "SOL" },
   { id: "AVAX", name: "Avalanche", symbol: "AVAX" },
-  { id: "SUI", name: "Sui", symbol: "SUI" },
-  { id: "TON", name: "TON", symbol: "TON" },
-  { id: "TRON", name: "Tron", symbol: "TRX" },
+  { id: "BTC", name: "Bitcoin", symbol: "BTC" },
+  { id: "ETH", name: "Ethereum", symbol: "ETH" },
   { id: "HBAR", name: "Hedera Hashgraph", symbol: "HBAR" },
+  { id: "SOL", name: "Solana", symbol: "SOL" },
+  { id: "SUI", name: "Sui", symbol: "SUI" },
+  { id: "TON", name: "The Open Network", symbol: "TON" },
+  { id: "TRON", name: "Tron", symbol: "TRX" },
   { id: "VAULTA", name: "Vaulta", symbol: "A" },
 ];
 

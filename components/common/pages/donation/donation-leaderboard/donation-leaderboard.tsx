@@ -2,7 +2,6 @@
 import React from "react";
 import { Locale } from "@/i18n.config";
 import * as i18n from "./donation-leaderboard.i18n";
-import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -12,8 +11,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
-import { ExternalLink, Copy } from "lucide-react";
-import { toast } from "sonner";
 import { WalletAddress } from "@/components/common/wallet-address/wallet-address";
 import { NetworkDisplay } from "@/components/common/network-display/network-display";
 
@@ -21,7 +18,6 @@ export interface DonationData {
   network: string;
   address: string;
   balance?: number;
-  explorerUrl?: string;
 }
 
 type Props = {
@@ -34,10 +30,6 @@ type Props = {
 function DonationLeaderboard({ locale, donations }: Props) {
   const t = i18n[locale].donation_leaderboard;
 
-  const handleCopyAddress = (address: string, network?: string) => {
-    navigator.clipboard.writeText(address);
-    toast.success(`${network ? network + ' ' : ''}${t.copy_success}`);
-  };
 
   // const totalBalances = donations.reduce((sum, d) => sum + (d.balance || 0), 0);
 
@@ -97,27 +89,14 @@ function DonationLeaderboard({ locale, donations }: Props) {
                     <NetworkDisplay networkId={donation.network} />
                   </TableCell>
                   <TableCell>
-                    <div className="flex items-center gap-2">
-                      <Button
-                        size="sm"
-                        variant="ghost"
-                        onClick={() => handleCopyAddress(donation.address, donation.network)}
-                        className="p-1 h-auto"
-                      >
-                        <Copy className="w-3 h-3" />
-                      </Button>
-                      <a
-                        href={donation.explorerUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1 hover:underline"
-                      >
-                        <code className="text-xs">
-                          <WalletAddress address={donation.address} />
-                        </code>
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                    </div>
+                    <WalletAddress 
+                      address={donation.address}
+                      network={donation.network}
+                      showCopyButton
+                      showExplorerLink
+                      className="text-xs"
+                      copyButtonTitle={t.copy_success}
+                    />
                   </TableCell>
                   {/* <TableCell>
                     {loading ? (
