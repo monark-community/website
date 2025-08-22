@@ -31,7 +31,7 @@ type Props = {
 };
 
 
-function DonationLeaderboard({ locale, donations, loading }: Props) {
+function DonationLeaderboard({ locale, donations }: Props) {
   const t = i18n[locale].donation_leaderboard;
 
   const handleCopyAddress = (address: string, network?: string) => {
@@ -85,7 +85,7 @@ function DonationLeaderboard({ locale, donations, loading }: Props) {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {donations.map((donation, index) => (
+              {donations.map((donation) => (
                 <TableRow key={donation.network}>
                   {/* <TableCell className="font-medium">
                     {index === 0 && "🥇"}

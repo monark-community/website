@@ -9,7 +9,7 @@ import { NetworkSelect, Network } from "@/components/ui/network-select";
 import { 
   AmountCurrencyInput, 
   Currency, 
-  defaultFiatCurrencies, 
+  // defaultFiatCurrencies, 
   generateCryptoCurrencies 
 } from "@/components/ui/amount-currency-input";
 import { toast } from "sonner";
@@ -105,10 +105,10 @@ function DonationForm({ locale, donations }: Props) {
     toast.info(instruction);
   };
 
-  const convertAmount = () => {
-    // No conversion needed since we're only using crypto
-    return "";
-  };
+  // const convertAmount = () => {
+  //   // No conversion needed since we're only using crypto
+  //   return "";
+  // };
 
   return (
     <Card className="mb-8">
