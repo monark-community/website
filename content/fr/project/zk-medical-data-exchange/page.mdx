@@ -42,44 +42,49 @@ Le système est modulaire et interopérable, permettant l'intégration par les h
 
 ## Livrables & Fonctionnalités Souhaitées
 
-- **Moteur ZK-Proof pour la Propriété & l'Éligibilité des Données**
-   - Les utilisateurs soumettent des preuves cryptographiques montrant qu'ils répondent aux critères de recherche (ex : tranche d'âge, condition, localisation) sans révéler les données brutes.
-   - Prend en charge des types de données comme les DSE, objets connectés, génomique.
-- **Portail Chercheur & Moteur de Correspondance**
-   - Les chercheurs créent des demandes de données chiffrées avec des filtres d'éligibilité.
-   - La plateforme effectue la correspondance basée sur ZK et agrège des statistiques anonymisées.
-- **Système de Consentement & de Récompense**
-   - Système DAO permettant aux utilisateurs d'accorder/révoquer le consentement pour des cas d'usage.
-   - Les contrats intelligents gèrent automatiquement les micro-paiements ou dons.
-- **Indexation des Métadonnées**
-   - Index publics et interrogeables pour :
-      - Données de santé agrégées par catégorie
-      - Projets de recherche actifs
-      - Décisions DAO et flux de financement
-- **Coffre-fort de Données + Stockage Chiffré Hors-chaine**
-   - Coffres-forts contrôlés par l'utilisateur stockant les données médicales chiffrées (ex : via IPFS).
-   - Seuls les engagements ZK sont sur la blockchain, préservant la vie privée.
-- **Couche de Gouvernance & d'Audit**
-   - DAO transparent pour les mises à jour du protocole, les revues éthiques et la résolution des litiges.
-   - Journaux indexés pour la gouvernance, la participation des utilisateurs et la transparence d'utilisation.
+- Interface web utilisant [Next.js](http://next.js/), Typescript, shadcn-ui, tailwindcss
+- Authentification des utilisateurs
+    - Inscription et connexion via portefeuille en utilisant Web3Auth par MetaMask
+- **Indexation des métadonnées**
+    - Identifier les standards de santé les plus utiles comme EMR, EHR, FHIR, HL7, GDC
+    - Créer et héberger divers ensembles de données représentant les standards actuels de l'industrie et leurs limites
+    - Index publics et interrogeables pour :
+        - Données de santé agrégées par catégorie
+        - Projets de recherche en cours
+        - Décisions de DAO et flux de financement
+- **Implémentation de preuves ZK pour la propriété & l'éligibilité des données**
+    - Utilise des solutions ZK existantes telles que (Midnight Network)
+    - Les utilisateurs soumettent des preuves cryptographiques démontrant qu'ils répondent aux critères de recherche (ex. tranche d'âge, condition médicale, localisation) sans révéler leurs données brutes
+- **Coffre-fort de données + stockage chiffré hors-chaîne**
+    - Coffres contrôlés par l'utilisateur pour stocker des données médicales chiffrées (ex. via IPFS)
+    - Seuls les engagements ZK sont enregistrés on-chain, préservant la confidentialité
+- **Portail chercheurs & moteur de mise en relation**
+    - Les chercheurs créent des requêtes chiffrées avec filtres d'éligibilité
+    - La plateforme effectue un appariement basé sur ZK et agrège des statistiques anonymisées
+- **Couche de gouvernance & d'audit**
+    - DAO transparente pour les mises à jour du protocole, les revues éthiques et la résolution de litiges
+    - Journaux indexés pour la gouvernance, la participation des utilisateurs et la transparence d'utilisation
+- **Système de consentement & de récompense**
+    - Système basé sur DAO permettant aux utilisateurs d'accorder/révoquer leur consentement selon les cas d'usage
+    - Les smart contracts gèrent automatiquement les micropaiements ou dons
 
 ## Ressources Nécessaires
 
-- **Plateforme d'Hébergement Web**
-   - ex : Vercel ou Netlify pour déployer le frontend (React/Next.js).
-- **Environnement Blockchain Testnet**
-   - Pour déployer et tester les contrats intelligents (ex : Ethereum Sepolia).
-- **Framework de Contrats Intelligents**
-   - Solidity avec les bibliothèques [OpenZeppelin](https://www.openzeppelin.com/) pour un développement sécurisé.
+- **Plateforme d'hébergement web**
+    - ex. Vercel pour déployer le frontend (Next.js)
+- **Environnement blockchain de test**
+    - Pour déployer et tester des smart contracts (ex. Ethereum Sepolia)
+- **Framework de smart contracts**
+    - **Solidity** avec les bibliothèques **OpenZeppelin** pour un développement sécurisé
 - **Réseau ZK**
-   - Pour les contrats intelligents confidentiels, l'exécution privée de logique et les preuves d'identité ZK.
-- **Serveurs d'Hébergement Backend**
-   - Pour gérer les APIs, l'authentification utilisateur et les interactions avec les circuits ZK (ex : backend Node.js ou Rust).
-- **Système de Preuve à Divulgation Nulle de Connaissance**
-   - SNARKs, STARKs, Semaphore ou autres primitives ZK pour gérer les preuves préservant la vie privée.
-- **Couche de Stockage Chiffré Hors-chaine**
-   - ex : [IPFS](https://ipfs.tech/) avec Lit Protocol ou Filecoin pour le stockage chiffré des données et l'accès contrôlé.
-- **Optionnel (Recommandé pour les Tests / Simulations)**
-   - Jeux de données médicales réalistes (synthétiques ou désidentifiés).
-      - Utilisateurs de test pour les parcours UI/UX et la génération de preuves.
-      - Consultants éthiques/IRB si simulation de déploiements réels ou conception pour des contextes cliniques.
+    - Pour les smart contracts confidentiels, l'exécution privée de logique et les preuves d'identité ZK
+- **Serveurs d'hébergement backend**
+    - Supabase pour la gestion des API, l'authentification des utilisateurs et les interactions avec les circuits ZK (ex. backend Express/Rust)
+- **Système de preuve Zero-Knowledge**
+    - SNARKs, STARKs, Semaphore ou autres primitives ZK pour gérer les preuves préservant la confidentialité
+- **Couche de stockage chiffré hors-chaîne**
+    - ex. **IPFS** avec **Filecoin** pour le stockage chiffré et l'accès contrôlé aux données
+- **Optionnel (recommandé pour tests/simulations)**
+    - Jeux de données médicales **réalistes** (synthétiques ou dés-identifiés)
+        - **Utilisateurs tests** pour les parcours UI/UX et la génération de preuves
+        - **Consultants IRB / éthiques** en cas de simulations de déploiements réels ou de conception pour des environnements cliniques

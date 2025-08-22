@@ -42,44 +42,49 @@ The system is modular and interoperable, allowing integration by hospitals and r
 
 ## Deliverables & Desired Functionnalities
 
-- **ZK-Proof Engine for Data Ownership & Eligibility**
-   - Users submit cryptographic proofs showing they meet research criteria (e.g. age group, condition, location) without revealing raw data.
-   - Supports data types like EHRs, wearables, genomics.
-- **Researcher Portal & Matching Engine**
-   - Researchers create encrypted data requests with eligibility filters.
-   - Platform performs ZK-based matching and aggregates anonymized stats.
-- **Consent & Reward System**
-   - DAO-based system for users to grant/revoke consent for use cases.
-   - Smart contracts automatically handle micro-payments or donations.
+- Web interface using [Next.js](http://next.js/), Typescript, shadcn-ui, tailwindcss
+- User authentication
+    - Enable wallet-based registration and login using Web3Auth by MetaMask
 - **Metadata Indexing**
-   - Public, queryable indexes for:
-      - Aggregated health data by category
-      - Active research projects
-      - DAO decisions and funding flows
+    - Identify the most useful healthcare standards like EMR, EHR, FIRH, HL7, GDC
+    - Create and host various datasets representing the current industry standards and limitations
+    - Public, queryable indexes for:
+        - Aggregated health data by category
+        - Active research projects
+        - DAO decisions and funding flows
+- **ZK-Proof Implementation for Data Ownership & Eligibility**
+    - Leverages existing ZK solutions such as (Midnight Network)
+    - Users submit cryptographic proofs showing they meet research criteria (e.g. age group, condition, location) without revealing raw data.
 - **Data Vault + Encrypted Off-Chain Storage**
-   - User-controlled vaults store encrypted medical data (e.g., via IPFS).
-   - Only ZK commitments live on-chain, preserving privacy.
+    - User-controlled vaults store encrypted medical data (e.g., via IPFS).
+    - Only ZK commitments live on-chain, preserving privacy.
+- **Researcher Portal & Matching Engine**
+    - Researchers create encrypted data requests with eligibility filters.
+    - Platform performs ZK-based matching and aggregates anonymized stats.
 - **Governance & Audit Layer**
-   - Transparent DAO for protocol updates, ethics reviews and dispute resolution.
-   - Indexed logs for governance, user participation and usage transparency.
+    - Transparent DAO for protocol updates, ethics reviews and dispute resolution.
+    - Indexed logs for governance, user participation and usage transparency.
+- **Consent & Reward System**
+    - DAO-based system for users to grant/revoke consent for use cases.
+    - Smart contracts automatically handle micro-payments or donations.
 
 ## Required Ressources
 
 - **Web Hosting Platform**
-   - e.g., Vercel or Netlify for deploying the frontend (React/Next.js).
+    - e.g., Vercel for deploying the frontend (Next.js).
 - **Blockchain Testnet Environment**
-   - To deploy and test smart contracts (e.g., Ethereum Sepolia).
+    - To deploy and test smart contracts (e.g., Ethereum Sepolia).
 - **Smart Contract Framework**
-   - Solidity with [OpenZeppelin](https://www.openzeppelin.com/) libraries for secure contract development.
+    - **Solidity** with **OpenZeppelin** libraries for secure contract development.
 - **ZK Network**
-   - For confidential smart contracts, private logic execution and ZK identity proofs.
+    - For confidential smart contracts, private logic execution and ZK identity proofs.
 - **Backend Hosting Servers**
-   - For managing APIs, user authentication and ZK circuit interactions (e.g., Node.js or Rust-based backend).
+    - Supabase For managing APIs, user authentication and ZK circuit interactions (e.g., Express/Rust backend).
 - **Zero-Knowledge Proof System**
-   - SNARKs, STARKs, Semaphore, or other ZK primitives to handle privacy-preserving proofs.
+    - SNARKs, STARKs, Semaphore, or other ZK primitives to handle privacy-preserving proofs.
 - **Encrypted Off-Chain Storage Layer**
-   - e.g., [IPFS](https://ipfs.tech/) with Lit Protocol or Filecoin for encrypted data storage and controlled access.
+    - e.g., **IPFS** with **Filecoin** for encrypted data storage and controlled access.
 - **Optional (Recommended for Testing / Simulation)**
-   - Realistic sample medical datasets (synthetic or de-identified).
-      - Test users for UI/UX flows and proof generation.
-      - IRB / Ethics consultants if simulating real-world deployments or designing for clinical settings.
+    - Realistic sample **medical datasets** (synthetic or de-identified).
+        - **Test users** for UI/UX flows and proof generation.
+        - **IRB / Ethics consultants** if simulating real-world deployments or designing for clinical settings.
