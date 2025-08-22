@@ -1,15 +1,15 @@
+interface EthereumProvider {
+  isMetaMask?: boolean;
+  isRainbow?: boolean;
+  isTrustWallet?: boolean;
+  isTrust?: boolean;
+  isCoinbaseWallet?: boolean;
+  isOkxWallet?: boolean;
+  request: (args: { method: string; params?: unknown[] }) => Promise<unknown>;
+}
+
 interface Window {
-  ethereum?: {
-    isMetaMask?: boolean;
-    isRainbow?: boolean;
-    isTrustWallet?: boolean;
-    isTrust?: boolean;
-    providers?: Array<{
-      isMetaMask?: boolean;
-      isRainbow?: boolean;
-      isTrust?: boolean;
-      request: (args: { method: string; params?: any[] }) => Promise<any>;
-    }>;
-    request: (args: { method: string; params?: any[] }) => Promise<any>;
+  ethereum?: EthereumProvider & {
+    providers?: EthereumProvider[];
   };
 }
