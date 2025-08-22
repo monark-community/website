@@ -9,6 +9,7 @@ import {
   NetworkBitcoin,
   NetworkHederaHashgraph,
   NetworkVaulta,
+  NetworkIconProps,
 } from "@web3icons/react";
 
 interface NetworkDisplayProps {
@@ -19,51 +20,58 @@ interface NetworkDisplayProps {
 }
 
 // Network configuration with full names and symbols
-const networkConfig: Record<string, { name: string; symbol: string; Icon: React.FC<any> }> = {
-  ETH: { 
-    name: "Ethereum", 
+const networkConfig: Record<
+  string,
+  {
+    name: string;
+    symbol: string;
+    Icon: React.FC<Omit<NetworkIconProps, "ref">>;
+  }
+> = {
+  ETH: {
+    name: "Ethereum",
     symbol: "ETH",
-    Icon: NetworkEthereum
+    Icon: NetworkEthereum,
   },
-  BTC: { 
-    name: "Bitcoin", 
+  BTC: {
+    name: "Bitcoin",
     symbol: "BTC",
-    Icon: NetworkBitcoin
+    Icon: NetworkBitcoin,
   },
-  Solana: { 
-    name: "Solana", 
+  Solana: {
+    name: "Solana",
     symbol: "SOL",
-    Icon: NetworkSolana
+    Icon: NetworkSolana,
   },
-  AVAX: { 
-    name: "Avalanche", 
+  AVAX: {
+    name: "Avalanche",
     symbol: "AVAX",
-    Icon: NetworkAvalanche
+    Icon: NetworkAvalanche,
   },
-  SUI: { 
-    name: "Sui", 
+  SUI: {
+    name: "Sui",
     symbol: "SUI",
-    Icon: NetworkSui
+    Icon: NetworkSui,
   },
-  TON: { 
-    name: "The Open Network", 
+  TON: {
+    name: "The Open Network",
     symbol: "TON",
-    Icon: TokenTON
+    Icon: TokenTON,
   },
-  TRON: { 
-    name: "Tron", 
+  TRON: {
+    name: "Tron",
     symbol: "TRX",
-    Icon: NetworkTron
+    Icon: NetworkTron,
   },
-  HBAR: { 
-    name: "Hedera", 
+  HBAR: {
+    name: "Hedera",
     symbol: "HBAR",
-    Icon: NetworkHederaHashgraph
+    Icon: NetworkHederaHashgraph,
   },
-  VAULTA: { 
-    name: "Vaulta", 
+  VAULTA: {
+    name: "Vaulta",
     symbol: "A",
-    Icon: NetworkVaulta
+    Icon: NetworkVaulta,
   },
 };
 
@@ -71,32 +79,32 @@ const networkConfig: Record<string, { name: string; symbol: string; Icon: React.
  * Component for displaying network information consistently
  * Shows: Icon (rounded, background variant) + Network Name + (Symbol in muted)
  */
-export const NetworkDisplay: React.FC<NetworkDisplayProps> = ({ 
-  networkId, 
+export const NetworkDisplay: React.FC<NetworkDisplayProps> = ({
+  networkId,
   className = "",
   iconSize = "md",
-  showSymbol = true
+  showSymbol = true,
 }) => {
   const network = networkConfig[networkId];
-  
+
   if (!network) {
     // Fallback for unknown networks
     return <span className={className}>{networkId}</span>;
   }
 
   const { name, symbol, Icon } = network;
-  
+
   // Icon size classes
   const iconSizes = {
     sm: "w-6 h-6",
     md: "w-8 h-8",
-    lg: "w-10 h-10"
+    lg: "w-10 h-10",
   };
 
   return (
     <div className={`flex items-center gap-2 ${className}`}>
-      <Icon 
-        className={`${iconSizes[iconSize]} rounded-full`} 
+      <Icon
+        className={`${iconSizes[iconSize]} rounded-full`}
         variant="background"
       />
       <span className="font-medium">{name}</span>
