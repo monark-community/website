@@ -64,8 +64,12 @@ export const WalletButton: React.FC<WalletButtonProps> = ({
         if (txHash) {
           toast.success(`Transaction sent: ${txHash.slice(0, 10)}...`);
         }
-      } catch (error: any) {
-        toast.error(`Error: ${error.message}`);
+      } catch (error: unknown) {
+        if (error instanceof Error) {
+          toast.error(`Error: ${error.message}`);
+        } else {
+          console.error("Unknown error:", error);
+        }
       }
     } else if (option.supportsMobile) {
       toast.info(`${option.name} mobile app required`);
