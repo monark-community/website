@@ -33,6 +33,12 @@ const appendParentRoutes = (
   link: i18n.NavbarLink,
   parentHref: string = ""
 ): i18n.NavbarLink => {
+
+  if (link.href.startsWith("http")) {
+    // External link, do not append parent routes
+    return link;
+  }
+
   const newHref = `${parentHref}${link.href}`;
   return {
     ...link,
