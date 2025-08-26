@@ -136,7 +136,12 @@ export const en: I18n = {
         href: "/learn",
         isFolderRoute: true,
         items: [
-          { id: "docs", label: "Docs", icon: "book-open", href: "https://cliff-eustoma-c04.notion.site/Welcome-to-Monark-2222a891d75180fb8111c92d0b579775" },
+          {
+            id: "docs",
+            label: "Docs",
+            icon: "book-open",
+            href: "https://cliff-eustoma-c04.notion.site/Welcome-to-Monark-2222a891d75180fb8111c92d0b579775",
+          },
           { id: "news", label: "News", icon: "newspaper", href: "/news" },
           //     { id: "video-series", label: "Video Series", icon: "square-play", href: "/video-series" },
           //     { id: "podcasts", label: "Podcasts", icon: "podcast", href: "/podcasts" },
@@ -152,11 +157,11 @@ export const en: I18n = {
         label: "About",
         href: "/about",
       },
-      // {
-      //   id: "roadmap",
-      //   label: "Roadmap",
-      //   href: "/roadmap",
-      // },
+      {
+        id: "donation",
+        label: "Donation",
+        href: "/donation",
+      },
     ],
     sign_in: "Sign in",
   },
@@ -310,7 +315,12 @@ export const fr: I18n = {
         href: "/learn",
         isFolderRoute: true,
         items: [
-          { id: "docs", label: "Docs", icon: "book-open", href: "https://cliff-eustoma-c04.notion.site/Welcome-to-Monark-2222a891d75180fb8111c92d0b579775" },
+          {
+            id: "docs",
+            label: "Docs",
+            icon: "book-open",
+            href: "https://cliff-eustoma-c04.notion.site/Welcome-to-Monark-2222a891d75180fb8111c92d0b579775",
+          },
           {
             id: "nouvelles",
             label: "Nouvelles",
@@ -341,11 +351,11 @@ export const fr: I18n = {
         label: "À propos",
         href: "/about",
       },
-      // {
-      //   id: "feuille-de-route",
-      //   label: "Feuille de route",
-      //   href: "/roadmap",
-      // },
+      {
+        id: "donation",
+        label: "Dons",
+        href: "/donation",
+      },
     ],
     sign_in: "Connexion",
   },

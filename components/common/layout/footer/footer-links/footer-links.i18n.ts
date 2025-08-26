@@ -21,6 +21,7 @@ export const en: I18n = {
     primary: [
       { label: "Home", href: "/" },
       { label: "News", href: "/learn/news" },
+      { label: "Donation", href: "/donation" },
     ],
     secondary: {
       left: [
@@ -54,6 +55,7 @@ export const fr: I18n = {
     primary: [
       { label: "Accueil", href: "/" },
       { label: "Nouvelles", href: "/learn/news" },
+      { label: "Dons", href: "/donation" },
     ],
     secondary: {
       left: [
