@@ -136,7 +136,7 @@ export const en: I18n = {
         href: "/learn",
         isFolderRoute: true,
         items: [
-          { id: "docs", label: "Docs", icon: "book-open", href: "/doc" },
+          { id: "docs", label: "Docs", icon: "book-open", href: "https://cliff-eustoma-c04.notion.site/Welcome-to-Monark-2222a891d75180fb8111c92d0b579775" },
           { id: "news", label: "News", icon: "newspaper", href: "/news" },
           //     { id: "video-series", label: "Video Series", icon: "square-play", href: "/video-series" },
           //     { id: "podcasts", label: "Podcasts", icon: "podcast", href: "/podcasts" },
@@ -310,7 +310,7 @@ export const fr: I18n = {
         href: "/learn",
         isFolderRoute: true,
         items: [
-          { id: "docs", label: "Docs", icon: "book-open", href: "/doc" },
+          { id: "docs", label: "Docs", icon: "book-open", href: "https://cliff-eustoma-c04.notion.site/Welcome-to-Monark-2222a891d75180fb8111c92d0b579775" },
           {
             id: "nouvelles",
             label: "Nouvelles",
