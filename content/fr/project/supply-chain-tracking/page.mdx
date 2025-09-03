@@ -41,30 +41,39 @@ Au-delà de sa portée technique, ce projet forme les étudiants à la confiance
 
 ## Livrables & fonctionnalités souhaitées
 
-- Interface web utilisant [Next.js](http://next.js/), Typescript, shadcn-ui, [tailwindcss](https://tailwindcss.com/)
-   - Connexion via portefeuille (wallet)
-   - Gestion des produits, des fournisseurs et de la chaîne d'approvisionnement
-      - **Description du produit**: ID, Nom, Description
-         - **Produit**: ID produit, Quantité, Historique de traçabilité
-      - **Traçabilité (Trace)** :ID, Localisation, Date, Poids, Détection d'événements critiques, Température (optionnelle)
-      - **Description de l'acteur**: ID, Nom, Description
-         - **Producteurs**: Certifications, Attributs personnalisés
-         - **Transporteurs**: Flotte / Type de carburant
-         - **Transformateurs**: Conversion de produit
-         - **Détaillants**: Inventaire
-   - Scan via QR code / RFID
-   - Affichage du parcours du produit
-- Authentification des utilisateurs et gestion des rôles (producteurs, transporteurs, détaillants, etc.)
-   - Connexion via portefeuille et attribution de rôles (manager, producteur, transporteur, transformateur ou détaillant), chacun avec des permissions spécifiques.
-   - (Prévu) Permettre aux organisations de s'auto-identifier selon leur rôle (ex. producteur, transporteur, détaillant, etc.), créer un annuaire d'organisations consultable et mettre en place un système relationnel bidirectionnel.
-      - Inclure les certifications (durabilité, etc.) et autres caractéristiques pertinentes.
-- Smart contracts pour la vérification des points de contrôle de la chaîne d'approvisionnement
-   - Enregistrer chaque transfert, scan ou action dans la chaîne d'approvisionnement avec validation on-chain et horodatage.
-- Traçabilité infalsifiable et transactions horodatées
-   - Maintenir un registre transparent et immuable des actions liées aux produits, visible et vérifiable par toutes les parties prenantes.
-   - Tirer parti des recherches et algorithmes issus de mémoires et projets étudiants antérieurs.
-- (Prévu) Système de scan QR-code pour l'utilisateur final
-   - Permettre aux consommateurs de scanner un QR code et de consulter l'historique complet de l'origine, du transport et de la manipulation du produit.
+- Interface web utilisant [Next.js](http://next.js/), [TypeScript](https://www.typescriptlang.org), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com)
+    - Activer la connexion via portefeuille  
+    - Gérer les produits, les fournisseurs et la chaîne d'approvisionnement  
+        - **Description du produit** : ID, Nom, Description  
+            - **Produit** : ID produit, Quantité, Historique de traçabilité  
+        - **Traçabilité** : ID, Localisation, Date, Poids, Détection d'événements critiques, Température (optionnelle)  
+        - **Description des acteurs** : ID, Nom, Description  
+            - **Producteurs** : Certifications, Attributs personnalisés  
+            - **Transporteurs** : Flotte / Type de carburant  
+            - **Transformateurs** : Conversion de produit  
+            - **Détaillants** : Inventaire  
+    - Scan par **QR code / RFID**  
+    - Affichage du **parcours produit**
+- Authentification des utilisateurs & gestion des rôles
+    - Activer l'inscription et la connexion via portefeuille en utilisant **Web3Auth** par **MetaMask**  
+    - Activer la connexion via portefeuille et attribuer des rôles tels que :  
+        - Gestionnaire  
+        - Producteur  
+        - Transporteur  
+        - Transformateur  
+        - Détaillant  
+      → chacun avec des permissions spécifiques  
+    - *(Prévu)* Permettre aux organisations de s'auto-identifier par rôle (ex. : producteur, transporteur, détaillant, etc.)  
+        - Construire un **annuaire d'organisations consultable**  
+        - Mettre en place un **système relationnel bilatéral**  
+        - Inclure les **certifications** (durabilité, etc.) et autres caractéristiques pertinentes  
+- Piste d'audit inviolable et transactions horodatées
+    - Maintenir un **journal transparent et immuable** des transactions liées aux produits  
+    - Journal **visible et vérifiable par toutes les parties prenantes**  
+    - Tirer parti des **recherches et algorithmes** issus de mémoires et projets étudiants précédents  
+- *(Prévu)* Système de scan par QR code pour l'utilisateur final 
+    - Permettre aux **consommateurs** de scanner un QR code  
+    - Afficher l'**historique complet** de l'origine, du transport et de la manutention d'un produit  
 
 
 ## Ressources requises

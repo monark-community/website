@@ -42,13 +42,13 @@ Beyond its technical scope, this project educates students on digital trust, tra
 
 ## Deliverables & Desired Functionalities
 
-- Web interface using [Next.js](http://next.js/), Typescript, shadcn-ui, [tailwindcss](https://tailwindcss.com/)
+- Web interface using [Next.js](http://next.js/), [TypeScript](https://www.typescriptlang.org), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com)
     - Enable login via wallet
     - Manage products, suppliers and supply chain
         - **Product Description**: ID, Name, Description
             - **Product**: Product ID, Quantity, Trace History
         - **Trace**: ID, Location, Date, Weight, Detection of critical events, Temperature (optional)
-        - **Actor Description**: ID, Name, Description
+        - **Actor Description:** ID, Name, Description
             - **Producers**: Certifications, Custom attributes
             - **Transporters**: Fleet / Fuel type
             - **Processors**: Product conversion
@@ -56,11 +56,10 @@ Beyond its technical scope, this project educates students on digital trust, tra
     - QR code / RFID scanning
     - Display product journey
 - User authentication & roles management for producers, transporters, and retailers
+    - Enable wallet-based registration and login using Web3Auth by MetaMask
     - Enable login via wallet and assign roles like manager, producer, transporter, processor or retailer, each with specific permissions.
     - (Planned) Allow organizations to self-identify their role (e.g., producer, transporter, retailer, etc.), build a searchable organization directory, and implement a two-way, relationship-based system.
         - Include certifications (sustainable, etc.) and other relevant characteristics.
-- Smart contracts for supply chain checkpoint verification
-    - Log every transfer, scan, or action in the supply chain with on-chain validation and time stamps.
 - Tamper-proof audit trail and time-stamped transactions
     - Maintain a transparent, immutable transaction log for product actions, visible and verifiable by all stakeholders.
     - Leverage existing research and algorithms from previous student thesis and project
