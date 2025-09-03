@@ -38,20 +38,33 @@ Le système aide à résoudre l'un des besoins les plus urgents des équipes Web
 
 ## Livrables & fonctionnalités souhaitées
 
-- Interface web utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)  
-   - Construire un outil de rapport financier pour les transactions crypto.
-- Authentification des utilisateurs  
-   - Les utilisateurs connectent leur portefeuille pour consulter et extraire l'historique de leurs transactions.
-- Récupérateur de transactions pour l'activité standard d'un portefeuille  
-- Logique de normalisation pour classifier les transferts, échanges et frais de gas  
-   - Classer chaque transaction comme revenu, dépense, échange ou frais.
-- Système d'exportation des données (CSV, JSON) avec champs étiquetés  
-   - Permettre l'exportation facile des données annotées pour les comptables ou outils d'analyse.
-- Statistiques résumées : revenus totaux, dépenses, frais, gains/pertes  
-   - Afficher les revenus totaux, les frais, les dépenses et les gains/pertes dans le temps.
-- (Optionnel) Recherche de prix des tokens et générateur de rapport fiscal  
-   - Ajouter une fonction de conversion des prix de jetons et génération de rapports pour la fiscalité.
-
+- Interface web utilisant [Next.js](https://nextjs.org), [TypeScript](https://www.typescriptlang.org), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com)
+   - Développer un outil de reporting financier pour les transactions crypto.
+- Authentification des utilisateurs
+   - Les utilisateurs connectent leurs portefeuilles pour consulter et extraire l'historique des transactions.
+- Service de récupération des transactions standards via l'API Pinax Token
+- Consultation des prix des tokens pour:
+   - (MVP) Chaînes basées sur EVM
+   - (MVP) Chaîne Solana
+   - Chaînes Polkadot
+   - Chaînes Cosmos
+   - Chaînes Avalanche
+   - Chaînes Near
+   - Chaînes Antelope
+- Classification manuelle des transactions:
+   - Types de transactions:
+      - Revenus, Dépenses, Transferts, Swaps, Utilisation de gas, Frais, Spam, Récompenses
+   - Identifier et classer les transactions similaires
+   - Transactions internes (comptes de l'entreprise) vs externes
+   - (Plus tard) Moteur basé sur l'IA pour automatiser
+- Statistiques de synthèse:
+   - Revenus totaux
+   - Dépenses
+   - Frais
+   - Plus-values ou pertes en capital
+- Système d'exportation des données (CSV, JSON) avec champs étiquetés
+   - Permettre un export simple des données annotées pour les comptables et les outils.
+- (Optionnel) Générateur de rapports fiscaux
 
 ## Ressources requises
 
