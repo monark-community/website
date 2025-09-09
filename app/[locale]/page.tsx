@@ -5,6 +5,7 @@ import AboutSection from "@/components/common/pages/homepage/about-section/about
 import WhySection from "@/components/common/pages/homepage/why-section/why-section";
 import FAQSection from "@/components/common/pages/homepage/faq-section/faq-section";
 import HistorySection from "@/components/common/pages/homepage/history-section/history-section";
+import NewsletterPopup from "@/components/common/layout/footer/newsletter/newsletter-popup";
 import { Locale } from "@/i18n.config";
 
 type Params = Promise<{ locale: Locale }>;
@@ -25,6 +26,10 @@ export default async function Home({ params }: { params: Params }) {
         <HistorySection locale={locale} />
         <FAQSection locale={locale} />
       </div>
+       <NewsletterPopup
+          locale={locale}
+          delay={8000}
+        />
     </div>
   );
 }

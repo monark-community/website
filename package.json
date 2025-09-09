@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^3.5.0",
+    "@beehiiv/sdk": "^0.1.7",
     "@formatjs/intl-localematcher": "^0.6.0",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@mdx-js/loader": "^3.1.0",
@@ -37,6 +38,7 @@
     "accept-language": "^3.0.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cookies-next": "^6.1.0",
     "date-fns": "^4.1.0",
     "dotenv": "^16.5.0",
     "gray-matter": "^4.0.3",

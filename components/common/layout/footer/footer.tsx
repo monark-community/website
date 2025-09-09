@@ -1,7 +1,6 @@
 import React from "react";
 import { Locale } from "@/i18n.config";
 import Contact from "./contact/contact";
-import Newsletter from "./newsletter/newsletter";
 import FooterLinks from "./footer-links/footer-links";
 import FooterEnd from "./footer-end/footer-end";
 import TileablePattern from "./tileable-pattern";
@@ -19,7 +18,6 @@ function Footer({ locale }: Props) {
       />
       <footer className="max-w-[1200px] mx-auto px-4 py-8 md:px-12 md:py-16">
         <Contact locale={locale} />
-        <Newsletter locale={locale} />
         <FooterLinks locale={locale} />
         <FooterEnd locale={locale} />
       </footer>

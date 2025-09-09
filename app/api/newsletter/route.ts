@@ -1,61 +1,63 @@
+import { BeehiivClient, BeehiivError } from "@beehiiv/sdk";
 import { NextResponse } from "next/server";
-import * as mailchimp from "@mailchimp/mailchimp_marketing";
-import md5 from "md5";
 
-const MAILCHIMP_SERVER = process.env.MAILCHIMP_SERVER || "";
-const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY;
-const MAILCHIMP_AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
+const BEEHIIV_API_KEY = process.env.BEEHIIV_API_KEY || "";
 
-if (!MAILCHIMP_API_KEY) throw new Error("[MAILCHIMP_API_KEY] is required");
-if (!MAILCHIMP_SERVER) throw new Error("[MAILCHIMP_SERVER] is required");
-if (!MAILCHIMP_AUDIENCE_ID)
-  throw new Error("[MAILCHIMP_MARKETING_AUDIENCE_ID] is required");
+if (!BEEHIIV_API_KEY) throw new Error("[BEEHIIV_API_KEY] environment variable is required.");
 
-mailchimp.setConfig({
-  apiKey: MAILCHIMP_API_KEY,
-  server: MAILCHIMP_SERVER,
-});
+type NewsletterContact = {
+    email: string;
+    first_name: string;
+    last_name: string;
+    tags: string[];
+};
+
+type NewsletterUTM = {
+    source: string;
+    medium: string;
+    campaign: string;
+}
 
 export async function POST(req: Request) {
-  const { email, firstName, lastName, tags = [], note } = await req.json();
-  if (!email) {
-    return NextResponse.json({ error: "invalid email" }, { status: 400 });
-  }
 
-  const subscriberHash = md5(email.toLowerCase());
+    const json = await req.json();
 
-  const contact = {
-    email_address: email,
-    tags: ["org:monark", ...tags],
-    merge_fields: {
-      FNAME: firstName || "",
-      LNAME: lastName || "",
-    },
-    status_if_new: "subscribed" as mailchimp.Status,
-  };
+    const contact: NewsletterContact = json.contact;
+    const utm: NewsletterUTM = json.utm;
 
-  try {
-    await mailchimp.lists.setListMember(
-      MAILCHIMP_AUDIENCE_ID!,
-      subscriberHash,
-      contact
-    );
-    await fetch(
-      `https://api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members/${subscriberHash}/notes`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${MAILCHIMP_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ note }),
-      }
-    );
-    return NextResponse.json(
-      { status: "ok", message: "Subscribed", email },
-      { status: 200 }
-    );
-  } catch (e: unknown) {
-    return NextResponse.json({ error: (e as Error).message }, { status: 400 });
-  }
+    if (!contact.email) {
+        return NextResponse.json({ error: "invalid email" }, { status: 400 });
+    }
+
+    const client = new BeehiivClient({ token: BEEHIIV_API_KEY });
+    try {
+        await client.subscriptions.create("pub_f761160d-d22f-4532-9e0c-6f58a06724b7", {
+            email: contact.email,
+            reactivate_existing: true,
+            send_welcome_email: false,
+            utm_source: utm.source, // 'google', 'facebook', 'website', 'partner-website' etc.
+            utm_medium: utm.medium, // 'cpc (cost-per-click)', 'email', 'social', 'banner', 'qr_code', etc.
+            utm_campaign: utm.campaign, // 'solana_summer_2025_promo', 'autumn_semester_promo', etc.
+            referring_site: "www.monark.io",
+            custom_fields: [{
+                name: "First Name",
+                value: contact.first_name
+            }, {
+                name: "Last Name",
+                value: contact.last_name
+            }],
+        });
+        return NextResponse.json(
+            { status: "ok", message: "Subscribed", email: contact.email },
+            { status: 200 });
+    } catch (err) {
+        if (err instanceof BeehiivError) {
+            console.log(err.statusCode);
+            console.log(err.message);
+            console.log(err.body);
+            console.log(err.rawResponse);
+            return NextResponse.json({ error: err.message }, { status: err.statusCode });
+        }
+        return NextResponse.json({ error: (err as Error).message }, { status: 500 });
+    }
 }
