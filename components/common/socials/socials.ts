@@ -28,11 +28,11 @@ const SOCIALS: Array<Social> = [
     url: "https://x.com/monark_io",
     shareUrl: "https://twitter.com/intent/tweet?url=",
   },
-  // {
-  //     id: "youtube",
-  //     name: "YouTube",
-  //     url: "",
-  // },
+  {
+      id: "youtube",
+      name: "YouTube",
+      url: "https://www.youtube.com/@monark_io",
+  },
 ];
 
 export default SOCIALS;

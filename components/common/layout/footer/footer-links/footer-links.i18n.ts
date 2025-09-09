@@ -21,12 +21,11 @@ export const en: I18n = {
     primary: [
       { label: "Home", href: "/" },
       { label: "News", href: "/learn/news" },
-      { label: "Donation", href: "/donation" },
     ],
     secondary: {
       left: [
-        { label: "About", href: "/about" },
-        { label: "Brand Assets", href: "/brand-assets", disabled: true },
+        { label: "About", href: "/about/monark" },
+        { label: "Brand Assets", href: "https://www.notion.so/Branding-Templates-24f2a891d7518067b4aaf464f9897b1c" },
         { label: "Contact", href: "mailto:contact@monark.io" },
       ],
       right: [
@@ -55,15 +54,13 @@ export const fr: I18n = {
     primary: [
       { label: "Accueil", href: "/" },
       { label: "Nouvelles", href: "/learn/news" },
-      { label: "Dons", href: "/donation" },
     ],
     secondary: {
       left: [
-        { label: "À propos", href: "/about" },
+        { label: "À propos", href: "/about/monark" },
         {
           label: "Ressources de marque",
-          href: "/brand-assets",
-          disabled: true,
+          href: "https://www.notion.so/Branding-Templates-24f2a891d7518067b4aaf464f9897b1c",
         },
         { label: "Contact", href: "mailto:contact@monark.io" },
       ],

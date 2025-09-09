@@ -26,12 +26,12 @@ export const en: I18n = {
         href: "/participate",
         isFolderRoute: true,
         items: [
-          {
-            id: "student",
-            label: "Student",
-            icon: "graduation-cap",
-            href: "/student",
-          },
+          // {
+          //   id: "student",
+          //   label: "Student",
+          //   icon: "graduation-cap",
+          //   href: "/student",
+          // },
           {
             id: "university",
             label: "University",
@@ -177,12 +177,12 @@ export const fr: I18n = {
         href: "/participate",
         isFolderRoute: true,
         items: [
-          {
-            id: "etudiant",
-            label: "Étudiant",
-            icon: "graduation-cap",
-            href: "/student",
-          },
+          // {
+          //   id: "etudiant",
+          //   label: "Étudiant",
+          //   icon: "graduation-cap",
+          //   href: "/student",
+          // },
           {
             id: "universite",
             label: "Université",
