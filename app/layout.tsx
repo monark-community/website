@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
 import { WebClientProviders } from "@/components/common/layout/web.client.providers";
 import { ViewTransitions } from "next-view-transitions";
+import { Analytics } from "@vercel/analytics/next"
 import "@xyflow/react/dist/style.css";
 import "./globals.scss";
 
@@ -25,6 +26,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en">
         <body className={`${nunitoSans.variable} antialiased`}>
+          <Analytics />
           <WebClientProviders>{children}</WebClientProviders>
         </body>
       </html>
