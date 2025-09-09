@@ -55,12 +55,23 @@ WillChain has real-world implications: millions of dollars in crypto are lost ea
 
 Tools/softwares that are not in the possession of the students will be provided by our team.
 
-- GIT
-- Node.js version 22+
-- Visual Studio Code IDE and Remix if needed
-- Web hosting platform (Vercel)
-- Access to RPC provider
-- Tenderly access to create virtual blockchain testnet
-- Database ([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) or [GraphQL](https://graphql.org/)) and Backend ([Express](https://expressjs.com/)) hosting
-- Sample cooperative data for simulation
+Tools/softwares that are not in the possession of the students will be provided by our team.
 
+- **Web Hosting Platform**
+    - e.g., Vercel for deploying the frontend (Next.js).
+- **Blockchain Testnet Environment**
+    - To deploy and test smart contracts (e.g., Ethereum Sepolia).
+- **Smart Contract Framework**
+    - **Solidity** with **[OpenZeppelin](https://www.openzeppelin.com/)** libraries for secure contract development.
+- **ZK Network**
+    - For confidential smart contracts, private logic execution and ZK identity proofs.
+- **Backend Hosting Servers**
+    - Supabase For managing APIs, user authentication and ZK circuit interactions (e.g., [Express](https://expressjs.com/)/Rust backend).
+- **Zero-Knowledge Proof System**
+    - SNARKs, STARKs, Semaphore, or other ZK primitives to handle privacy-preserving proofs.
+- **Encrypted Off-Chain Storage Layer**
+    - e.g., **[IPFS](https://ipfs.tech/)** with **Filecoin** for encrypted data storage and controlled access.
+- **Optional (Recommended for Testing / Simulation)**
+    - Realistic sample **medical datasets** (synthetic or de-identified).
+        - **Test users** for UI/UX flows and proof generation.
+        - **IRB / Ethics consultants** if simulating real-world deployments or designing for clinical settings.

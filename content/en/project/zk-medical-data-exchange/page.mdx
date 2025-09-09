@@ -70,21 +70,19 @@ The system is modular and interoperable, allowing integration by hospitals and r
 
 ## Required Ressources
 
-- **Web Hosting Platform**
-    - e.g., Vercel for deploying the frontend (Next.js).
-- **Blockchain Testnet Environment**
-    - To deploy and test smart contracts (e.g., Ethereum Sepolia).
-- **Smart Contract Framework**
-    - **Solidity** with **[OpenZeppelin](https://www.openzeppelin.com/)** libraries for secure contract development.
-- **ZK Network**
-    - For confidential smart contracts, private logic execution and ZK identity proofs.
-- **Backend Hosting Servers**
-    - Supabase For managing APIs, user authentication and ZK circuit interactions (e.g., [Express](https://expressjs.com/)/Rust backend).
-- **Zero-Knowledge Proof System**
-    - SNARKs, STARKs, Semaphore, or other ZK primitives to handle privacy-preserving proofs.
-- **Encrypted Off-Chain Storage Layer**
-    - e.g., **[IPFS](https://ipfs.tech/)** with **Filecoin** for encrypted data storage and controlled access.
-- **Optional (Recommended for Testing / Simulation)**
-    - Realistic sample **medical datasets** (synthetic or de-identified).
-        - **Test users** for UI/UX flows and proof generation.
-        - **IRB / Ethics consultants** if simulating real-world deployments or designing for clinical settings.
+Tools/softwares that are not in the possession of the students will be provided by our team.
+
+- [GIT](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) version 22+
+- [Visual Studio Code IDE](https://code.visualstudio.com/) and [Remix](https://remix-project.org/) if needed
+- Web hosting platform ([Vercel](https://vercel.com/) or [Render](https://render.com/))
+- Access to RPC provider
+- [Tenderly](https://tenderly.co/) access to create virtual blockchain testnet
+- Database ([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) or [GraphQL](https://graphql.org/)) and Backend ([Express](https://expressjs.com/)) hosting ([Render](https://render.com/))
+- Smart Contract Framework (Solidity) and libraries for secure contract development ([OpenZeppelin](https://www.openzeppelin.com/))
+- ZK Network for confidential smart contracts, private logic execution and ZK identity proofs
+    - SNARKs, STARKs, Semaphore, or other ZK primitives to handle privacy-preserving proofs
+- Encrypted Off-Chain Storage Layer ([IPFS](https://ipfs.tech/) with [Filecoin](https://filecoin.io/)) for encrypted data storage and controlled access
+- Realistic sample medical datasets (synthetic or de-identified).
+    - Test users for UI/UX flows and proof generation.
+    - IRB / Ethics consultants if simulating real-world deployments or designing for clinical settings.

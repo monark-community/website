@@ -68,23 +68,21 @@ Le système est modulaire et interopérable, permettant l'intégration par les h
     - Système basé sur DAO permettant aux utilisateurs d'accorder/révoquer leur consentement selon les cas d'usage
     - Les smart contracts gèrent automatiquement les micropaiements ou dons
 
-## Ressources Nécessaires
+## Ressources requises
 
-- **Plateforme d'hébergement web**
-    - ex. Vercel pour déployer le frontend (Next.js)
-- **Environnement blockchain de test**
-    - Pour déployer et tester des smart contracts (ex. Ethereum Sepolia)
-- **Framework de smart contracts**
-    - **Solidity** avec les bibliothèques **[OpenZeppelin](https://www.openzeppelin.com/)** pour un développement sécurisé
-- **Réseau ZK**
-    - Pour les smart contracts confidentiels, l'exécution privée de logique et les preuves d'identité ZK
-- **Serveurs d'hébergement backend**
-    - Supabase pour la gestion des API, l'authentification des utilisateurs et les interactions avec les circuits ZK (ex. backend [Express](https://expressjs.com/)/Rust)
-- **Système de preuve Zero-Knowledge**
-    - SNARKs, STARKs, Semaphore ou autres primitives ZK pour gérer les preuves préservant la confidentialité
-- **Couche de stockage chiffré hors-chaîne**
-    - ex. **[IPFS](https://ipfs.tech/)** avec **Filecoin** pour le stockage chiffré et l'accès contrôlé aux données
-- **Optionnel (recommandé pour tests/simulations)**
-    - Jeux de données médicales **réalistes** (synthétiques ou dés-identifiés)
-        - **Utilisateurs tests** pour les parcours UI/UX et la génération de preuves
-        - **Consultants IRB / éthiques** en cas de simulations de déploiements réels ou de conception pour des environnements cliniques
+Les outils/logiciels qui ne sont pas en possession des étudiants seront fournis par notre équipe.
+
+- [GIT](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) version 22+
+- [IDE Visual Studio Code](https://code.visualstudio.com/) et [Remix](https://remix-project.org/) si nécessaire
+- Plateforme d'hébergement web ([Vercel](https://vercel.com/) ou [Render](https://render.com/))
+- Accès à un fournisseur RPC
+- Accès [Tenderly](https://tenderly.co/) pour créer un testnet blockchain virtuel
+- Base de données ([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) ou [GraphQL](https://graphql.org/)) et hébergement Backend ([Express](https://expressjs.com/)) ([Render](https://render.com/))
+- Framework de Contrats Intelligents (Solidity) et bibliothèques pour le développement sécurisé de contrats ([OpenZeppelin](https://www.openzeppelin.com/))
+- Réseau ZK pour les contrats intelligents confidentiels, l'exécution de logique privée et les preuves d'identité ZK
+   - SNARKs, STARKs, Semaphore, ou autres primitives ZK pour gérer les preuves préservant la confidentialité
+- Couche de Stockage Hors-Chaîne Chiffrée ([IPFS](https://ipfs.tech/) avec [Filecoin](https://filecoin.io/)) pour le stockage de données chiffrées et l'accès contrôlé
+- Jeux de données médicales d'exemple réalistes (synthétiques ou dé-identifiées).
+   - Utilisateurs de test pour les flux UI/UX et la génération de preuves.
+   - Consultants IRB / Éthique si simulation de déploiements réels ou conception pour des environnements cliniques.
