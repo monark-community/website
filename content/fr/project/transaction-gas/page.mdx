@@ -1,0 +1,66 @@
+---
+id: transaction-gas
+title: Gas de Transaction
+description: Module Web3 sans gas qui permet les transactions sans jetons natifs en parrainant les frais ou en acceptant les stablecoins, avec conversion automatique, garde-fous, support multi-chaînes, et repli sur le gas pour une UX fluide dans les portefeuilles, dApps et marques.
+status: idea
+accronym: FlexGas
+industry_tags:
+ - Communications Numériques
+ - Services
+keyword_tags:
+  - Gas
+  - Portefeuilles
+  - UX
+  - Automatisation
+complexity_score: 5
+effort_score: 4
+adoption_score: 9
+blockchain_score: 8
+revenue_score: 3
+---
+
+
+# Gas de Transaction
+
+Module Web3 qui permet aux utilisateurs d'effectuer des transactions même sans le jeton gas natif. Lorsqu'un portefeuille manque d'ETH, le système offre un parrainage des frais ou accepte les frais dans les jetons détenus comme l'USDC, convertissant automatiquement une partie pour couvrir le gas et réglant le reste. Inclut des invites de portefeuille transparentes, un service de relais ou paymaster, des cotations de taux, des limites et garde-fous, et un audit clair pour les frais parrainés ou payés en jetons. Pourrait ajouter le parrainage de frais au niveau de l'application, des crédits de fidélité, le support multi-chaînes, et un repli sur le gas natif lorsqu'il est disponible. Parfait pour les portefeuilles, dApps et marques visant un onboarding fluide et une UX prête pour le grand public.
+
+![Maquette Gas de Transaction](/images/project/transaction-gas.jpg)
+
+## Description Générale
+
+[FlexGas](https://flexgas.monark.io) résout l'un des plus grands obstacles dans le Web3 aujourd'hui : la dépendance aux jetons natifs pour les frais de transaction. Imaginez recevoir de l'USDC dans votre portefeuille Ethereum mais être incapable de le déplacer ou de l'utiliser parce que vous n'avez pas d'ETH pour couvrir les frais de gas. Jusqu'à ce que quelqu'un vous envoie de l'ETH, vos fonds sont effectivement bloqués. Cette friction crée une mauvaise expérience utilisateur, ralentit l'adoption et empêche la blockchain de fonctionner aussi facilement que les outils numériques quotidiens.
+
+Ce projet résout ce problème en introduisant des moyens flexibles de payer les frais de transaction. La première solution est un **compte payeur de frais de gas**, un contrat intelligent qui permet à un compte de couvrir les frais d'un autre. Par exemple, un ami, un fournisseur de services, ou même une application décentralisée pourrait parrainer les frais pour que les utilisateurs ne restent jamais bloqués. La deuxième solution consiste à permettre les **paiements de frais multi-jetons**, permettant aux utilisateurs de payer les frais de gas avec les jetons qu'ils détiennent déjà, comme l'USDC. Le système convertit automatiquement une partie de ce jeton vers l'actif natif requis pour le règlement, tout en gardant le reste comme revenus de service.
+
+Dans le contexte Web3, cela importe car l'utilisabilité est la clé de l'adoption de masse. Les complexités comme "vous avez besoin d'ETH pour déplacer votre USDC" découragent les nouveaux utilisateurs, créent des frictions pour les entreprises, et limitent la croissance des applications décentralisées. En supprimant cette barrière, le projet rend les interactions blockchain aussi fluides que les paiements mobiles, créant un écosystème plus inclusif et accessible.
+
+Les applications potentielles sont étendues : les portefeuilles pourraient l'intégrer pour offrir une expérience d'onboarding transparente, les dApps pourraient parrainer les frais de leurs utilisateurs pour stimuler l'engagement, et les entreprises pourraient s'assurer que les clients interagissent avec leurs plateformes sans jamais se soucier de détenir le bon jeton. En fin de compte, ce projet rend le Web3 plus intuitif, convivial, et prêt pour l'adoption grand public.
+
+## Livrables et Fonctionnalités Désirées
+
+- **Interface web utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)**
+   - Construire une interface dApp simple qui démontre les transactions parrainées et les paiements de gas multi-jetons.
+- Authentification utilisateur
+   - Activer l'inscription et la connexion basées sur le portefeuille en utilisant Web3Auth par MetaMask
+- **Contrat intelligent pour les paiements de gas parrainés**
+   - Un contrat qui permet à un compte (ami, app, ou service) de couvrir les frais de gas au nom d'un autre portefeuille.
+- **Système de paiement de frais multi-jetons**
+   - Un mécanisme qui permet aux utilisateurs de payer les frais de gas avec les jetons qu'ils détiennent déjà (ex: USDC), convertissant automatiquement une partie dans le jeton natif requis pour le règlement.
+- **Simulation de flux de transaction**
+   - Construire un flux de test où un utilisateur essaie d'envoyer un jeton sans gas natif, déclenchant soit le parrainage soit le paiement de gas basé sur les jetons.
+- **Logique de conversion et règlement**
+   - Implémenter ou simuler un échange de jetons (via Uniswap SDK, 1inch API, ou un placeholder) pour montrer comment les jetons non-natifs peuvent être utilisés pour couvrir le gas.
+- **Vérifications de sécurité de base**
+   - Ajouter des garde-fous tels que des limites de frais maximum, des parrains en liste blanche, et des plafonds sur les montants de jetons pour prévenir les abus.
+- **Déploiement testnet et démo**
+   - Déployer les contrats sur un testnet public (ex: Ethereum Sepolia, Polygon Mumbai) et fournir une démo où les transactions réussissent sans gas natif.
+
+## Ressources Requises
+
+- Plateforme d'hébergement web (Vercel)
+- Base de données (Clickhouse, PostgreSQL ou GraphQL) et hébergement Backend (Typescript, Express)
+- Bibliothèque de contrats intelligents (Solidity + [OpenZeppelin](https://www.openzeppelin.com/))
+- Testnet blockchain
+- Frontend intégré au portefeuille (React/[Next.js](https://nextjs.org/))
+- Génération de codes QR et intégration de scanner
+- Jeu de données d'exemple d'articles à vendre et de prix

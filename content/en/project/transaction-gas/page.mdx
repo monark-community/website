@@ -1,0 +1,66 @@
+---
+id: transaction-gas
+title: Transaction Gas
+description: Gasless Web3 module that enables transactions without native tokens by sponsoring fees or accepting stablecoins, with auto conversion, safeguards, multi chain support, and fallback to gas for a frictionless UX in wallets, dApps, and brands.
+status: idea
+accronym: FlexGas
+industry_tags:
+  - Digital Communications
+  - Services
+keyword_tags:
+   - Gas
+   - Wallets
+   - UX
+   - Automation
+complexity_score: 5
+effort_score: 4
+adoption_score: 9
+blockchain_score: 8
+revenue_score: 3
+---
+
+
+# Transaction Gas
+
+Web3 module that lets users transact even without the native gas token. When a wallet lacks ETH, the system offers fee sponsorship or accepts fees in held tokens like USDC, auto-converting a portion to cover gas and settling the rest. Include seamless wallet prompts, a relayer or paymaster service, rate quoting, limits and safeguards, and clear auditing for sponsored or token-paid fees. Could add app-level fee sponsorship, loyalty credits, multi-chain support, and fallback to native gas when available. Perfect for wallets, dApps, and brands aiming for frictionless onboarding and mainstream-ready UX.
+
+![Transaction Gas mockup](/images/project/transaction-gas.jpg)
+
+## General Description
+
+[FlexGas](https://flexgas.monark.io) solves one of the biggest barriers in Web3 today is the reliance on native tokens for transaction fees. Imagine receiving USDC in your Ethereum wallet but being unable to move or use it because you don't have ETH to cover the gas fees. Until someone sends you ETH, your funds are effectively locked. This friction creates a poor user experience, slows adoption, and prevents blockchain from working as seamlessly as everyday digital tools.
+
+This project solves that problem by introducing flexible ways to pay transaction fees. The first solution is a **gas fee paying account**, a smart contract that allows one account to cover another's fees. For example, a friend, service provider, or even a decentralized app could sponsor the fees so users never get stuck. The second solution is enabling **multi-token fee payments**, letting users pay gas fees in tokens they already hold, such as USDC. The system automatically converts a portion of that token to the required native asset for settlement, while keeping the rest as service revenue.
+
+In the Web3 context, this matters because usability is key to mass adoption. Complexities like “you need ETH to move your USDC” discourage new users, create friction for businesses, and limit the growth of decentralized applications. By removing this barrier, the project makes blockchain interactions as smooth as mobile payments, creating a more inclusive and accessible ecosystem.
+
+The potential applications are wide-ranging: wallets could integrate it to provide a seamless onboarding experience, dApps could sponsor their users' fees to drive engagement, and enterprises could ensure customers interact with their platforms without ever worrying about holding the right token. Ultimately, this project makes Web3 more intuitive, user-friendly, and ready for mainstream adoption.
+
+## Deliverables & Desired Functionalities
+
+- **Web interface using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)**
+    - Build a simple dApp interface that demonstrates sponsored transactions and multi-token gas payments.
+- User authentication
+    - Enable wallet-based registration and login using Web3Auth by MetaMask
+- **Smart contract for sponsored gas payments**
+    - A contract that allows one account (friend, app, or service) to cover gas fees on behalf of another wallet.
+- **Multi-token fee payment system**
+    - A mechanism that lets users pay gas fees with tokens they already hold (e.g., USDC), automatically converting a portion into the native token required for settlement.
+- **Transaction flow simulation**
+    - Build a test flow where a user tries to send a token without native gas, triggering either sponsorship or token-based gas payment.
+- **Conversion & settlement logic**
+    - Implement or mock a token swap (via Uniswap SDK, 1inch API, or a placeholder) to show how non-native tokens can be used to cover gas.
+- **Basic security checks**
+    - Add safeguards such as max fee limits, whitelisted sponsors, and caps on token amounts to prevent abuse.
+- **Testnet deployment & demo**
+    - Deploy the contracts on a public testnet (e.g., Ethereum Sepolia, Polygon Mumbai) and provide a demo where transactions succeed without native gas.
+
+## Required Resources
+
+- Web hosting platform (Vercel)
+- Database (Clickhouse, PostgreSQL or GraphQL) and Backend (Typescript, Express) hosting
+- Smart contract library (Solidity + [OpenZeppelin](https://www.openzeppelin.com/))
+- Blockchain testnet
+- Wallet-integrated frontend (React/[Next.js](https://nextjs.org/))
+- QR code generation and scanner integration
+- Sample data set of items for sale and pricing
