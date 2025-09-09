@@ -24,7 +24,7 @@ export const en: I18n = {
     ],
     secondary: {
       left: [
-        { label: "About", href: "/about/monark" },
+        { label: "About", href: "/about" },
         { label: "Brand Assets", href: "https://www.notion.so/Branding-Templates-24f2a891d7518067b4aaf464f9897b1c" },
         { label: "Contact", href: "mailto:contact@monark.io" },
       ],
@@ -57,7 +57,7 @@ export const fr: I18n = {
     ],
     secondary: {
       left: [
-        { label: "À propos", href: "/about/monark" },
+        { label: "À propos", href: "/about" },
         {
           label: "Ressources de marque",
           href: "https://www.notion.so/Branding-Templates-24f2a891d7518067b4aaf464f9897b1c",
