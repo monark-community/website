@@ -153,8 +153,7 @@ export const en: I18n = {
         <ul>
           <li>Join our community on <strong><a href="https://discord.gg/TvhrbFCp8T" target="_blank">Discord</a></strong> and <strong><a href="https://x.com/monark_io" target="_blank">Twitter</a></strong></li>
           <li>Contribute to our open-source repositories on <strong><a href="https://github.com/monark-community" target="_blank">GitHub</a></strong></li>
-          <li><strong><a href="mailto:contact@monark.io">Share your ideas and feedback</a></strong> with the team</li>
-          <li>Participate in our <strong><a href="/initiative/hackathon">hackathons</a> and <a href="/initiative/meetup-and-event">events</a></strong></li>
+          <li><strong><a href="https://forms.gle/vXfkpPhCfYXWQum48">Share your ideas and feedback</a></strong> with the team</li>
         </ul>
         <p>We warmly welcome students, universities, developers, entrepreneurs, designers, writers, and anyone passionate about blockchain and decentralization!</p>
         `,
@@ -308,8 +307,7 @@ export const fr: I18n = {
         <ul>
           <li>Rejoindre notre communauté sur <strong><a href="https://discord.gg/TvhrbFCp8T" target="_blank">Discord</a></strong> et <strong><a href="https://x.com/monark_io" target="_blank">Twitter</a></strong></li>
           <li>Contribuer à nos dépôts open-source sur <strong><a href="https://github.com/monark-community" target="_blank">GitHub</a></strong></li>
-          <li><strong><a href="mailto:contact@monark.io">Partager vos idées et vos retours</a></strong> avec l'équipe</li>
-          <li>Participer à nos <strong><a href="/initiative/hackathon">hackathons</a> et <a href="/initiative/meetup-and-event">events</a></strong></li>
+          <li><strong><a href="https://forms.gle/vXfkpPhCfYXWQum48">Partager vos idées et vos retours</a></strong> avec l'équipe</li>
         </ul>
         <p>Nous accueillons chaleureusement les étudiants, universités, développeurs, entrepreneurs, designers, rédacteurs et toute personne passionnée par la blockchain et la décentralisation!</p>
         `,
