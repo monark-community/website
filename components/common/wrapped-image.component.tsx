@@ -10,6 +10,8 @@ type WrappedImageProps = NextImageProps & {
   height: number;
   className?: string;
   caption?: string;
+  author?: string;
+  authorSrc?: string;
 };
 
 export default function WrappedImage({
@@ -19,6 +21,8 @@ export default function WrappedImage({
   height,
   className,
   caption,
+  author,
+  authorSrc
 }: WrappedImageProps) {
   const [zoomed, setZoomed] = useState(false);
 
@@ -46,8 +50,8 @@ export default function WrappedImage({
           className={`rounded-lg overflow-hidden ${className}`}
         />
         {caption && (
-          <figcaption className="mt-2 text-sm text-muted-foreground">
-            {caption}
+          <figcaption className="mt-2 w-full flex flex-col md:flex-row md:justify-between text-sm text-muted-foreground">
+            <span>{caption}</span><span>{authorSrc ? <a href={authorSrc} target="_blank" rel="noopener noreferrer">{author}</a> : author}</span>
           </figcaption>
         )}
       </figure>
@@ -88,8 +92,8 @@ export default function WrappedImage({
               priority
             />
             {caption && (
-              <figcaption className="mt-4 text-base text-muted-foreground text-center max-w-2xl">
-                {caption}
+              <figcaption className="mt-2 px-6 w-full flex flex-col lg:flex-row lg:justify-between text-sm text-muted-foreground">
+                <span>{caption}</span><span>{authorSrc ? <a href={authorSrc} target="_blank" rel="noopener noreferrer">{author}</a> : author}</span>
               </figcaption>
             )}
           </div>

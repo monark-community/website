@@ -5,87 +5,211 @@ const data: DatedNewsMetadata[] = [
   {
     "id": "pioneer-in-university-projects-mentorship",
     "title": "Pionnier dans l'accompagnement des projets universitaires de comptabilité décentralisée",
-    "date": "2020-04-24T00:00:00.000Z",
-    "description": "Monark, fondée par Vincent Grenier, se positionne comme le leader dans l'accompagnement des projets universitaires en technologies décentralisées, s'appuyant sur des collaborations réussies comme CryptoSys avec l'Université de Sherbrooke. L'entreprise offre un mentorat sur mesure pour transformer les connaissances académiques en solutions prêtes pour le marché, favorisant l'innovation et les compétences professionnelles chez les étudiants.",
     "author": "Marty-Kanatakhatsus Meunier",
-    "source": "https://www.usherbrooke.ca/actualites/nouvelles/sciences-innovations-technologiques/details/42749"
+    "date": "2020-04-24T00:00:00.000Z",
+    "city": "Sherbrooke, QC, Canada",
+    "description": "Monark, fondée par Vincent Grenier, se positionne comme le leader dans l'accompagnement des projets universitaires en technologies décentralisées, s'appuyant sur des collaborations réussies comme CryptoSys avec l'Université de Sherbrooke. L'entreprise offre un mentorat sur mesure pour transformer les connaissances académiques en solutions prêtes pour le marché, favorisant l'innovation et les compétences professionnelles chez les étudiants.",
+    "img": "pioneer-in-university-projects-mentorship.webp",
+    "img_alt": "Université de Sherbrooke x Monark",
+    "img_author": "Université de Sherbrooke",
+    "img_author_src": "https://maps.app.goo.gl/NcxRguhaq35a5vXM9",
+    "read_time_seconds": 180,
+    "tags": [
+      "Article",
+      "Projet",
+      "Impact"
+    ]
   },
   {
     "id": "real-world-web3-use-cases-that-aren-t-just-nfts",
     "title": "Web3 en usage réel; des cas d'utilisation au-delà des NFT",
+    "author": "Équipe Monark",
     "date": "2025-09-11T00:00:00.000Z",
+    "city": "Sherbrooke, QC, Canada",
     "description": "Le potentiel de Web3 s'étend au-delà des NFTs et du battage médiatique, en se concentrant sur des problèmes concrets. Les exemples incluent les monnaies communautaires, les chaînes d'approvisionnement transparentes, les documents notariés et le partage sécurisé des données médicales, démontrant comment la technologie décentralisée peut créer de la confiance et de la responsabilité.",
-    "author": "Équipe Monark"
+    "img": "real-world-web3-use-cases-that-aren-t-just-nfts.webp",
+    "img_alt": "Les chaînes d'apprévisionnement sont un des cas d'utilisation important de la Blockchain",
+    "img_author": "Bernd Dittrich",
+    "img_author_src": "https://unsplash.com/photos/a-large-container-ship-in-a-body-of-water-r1AIp7Vj3Mg",
+    "read_time_seconds": 200,
+    "tags": [
+      "Article",
+      "Projet",
+      "Impact"
+    ]
   },
   {
     "id": "smart-contracts-explained-like-you-re-5",
     "title": "Les contrats intelligents expliqués comme si vous aviez 5 ans",
+    "author": "Équipe Monark",
     "date": "2025-08-21T00:00:00.000Z",
+    "city": "Sherbrooke, QC, Canada",
     "description": "Les contrats intelligents sont des accords blockchain auto-exécutants. Ils automatisent les interactions sans confiance, mais font face à des limites comme des coûts élevés, une inflexibilité et des vulnérabilités. Leur avenir réside dans la complémentarité, pas le remplacement, des systèmes traditionnels.",
-    "author": "Équipe Monark"
+    "img": "smart-contracts-explained-like-you-re-5.webp",
+    "img_alt": "Représentation de la Blockchain",
+    "img_author": "Shubham Dhage",
+    "img_author_src": "https://unsplash.com/photos/a-group-of-cubes-hanging-from-a-ceiling-MBfYGVsDEp8",
+    "read_time_seconds": 320,
+    "tags": [
+      "Article",
+      "Technologie"
+    ]
   },
   {
     "id": "trust-from-open-data-to-mathematical-proof",
     "title": "Confiance; De la Donnée Ouverte à la Preuve Mathématique",
+    "author": "Équipe Monark",
     "date": "2025-08-28T00:00:00.000Z",
+    "city": "Sherbrooke, QC, Canada",
     "description": "La transparence de la blockchain a instauré la confiance mais a sacrifié la confidentialité. Les preuves à connaissance zéro permettent désormais un nouveau modèle Web3 qui équilibre les deux - permettant la vérification sans révéler d'informations sensibles.",
-    "author": "Équipe Monark"
+    "img": "trust-from-open-data-to-mathematical-proof.webp",
+    "img_alt": "Les mathématiques ont résolues l'enjeux de la confiance",
+    "img_author": "Brett Jordan",
+    "img_author_src": "https://unsplash.com/photos/brown-wooden-blocks-on-white-surface-wW-lhteuK0o",
+    "read_time_seconds": 190,
+    "tags": [
+      "Article",
+      "Technologie"
+    ]
   },
   {
     "id": "web3-developer-roadmap-and-resources",
     "title": "Plan de Développement et Ressources Web3 pour les Développeurs",
+    "author": "Équipe Monark",
     "date": "2025-09-04T00:00:00.000Z",
+    "city": "Sherbrooke, QC, Canada",
     "description": "Le développement Web3 nécessite de comprendre les concepts clés tels que la blockchain et la cryptographie. Les outils clés pour la construction incluent des langages tels que Solidity, des frameworks tels que Hardhat, et des partenaires d'infrastructure comme The Graph pour les données, Pinax pour l'hébergement, et Midnight Network pour la confidentialité.",
-    "author": "Équipe Monark"
+    "img": "web3-developer-roadmap-and-resources.webp",
+    "img_alt": "Une feuille de route n'est pas toujours une ligne droite",
+    "img_author": "Mark König",
+    "img_author_src": "https://unsplash.com/photos/yellow-and-black-arrow-sign-ECGv8s2IPG0",
+    "read_time_seconds": 180,
+    "tags": [
+      "Article",
+      "Technologie"
+    ]
   },
   {
     "id": "web3-revolution-reality",
     "title": "La Révolution et la Réalité de Web3; Une Évaluation Honnête",
+    "author": "Équipe Monark",
     "date": "2025-08-14T00:00:00.000Z",
+    "city": "Sherbrooke, QC, Canada",
     "description": "Chez Monark, nous analysons Web3 avec honnêteté, en reconnaissant à la fois son potentiel transformateur et ses défis réels. Cet article examine l'idéalisme et les réalités de Web3, offrant une approche pragmatique pour une adoption durable.",
-    "author": "Équipe Monark"
+    "img": "web3-revolution-reality.webp",
+    "img_alt": "Révolution Web3",
+    "img_author": "Générée par Gemini AI",
+    "read_time_seconds": 160,
+    "tags": [
+      "Article",
+      "Orientation",
+      "État d'esprit"
+    ]
   },
   {
     "id": "what-is-web3-really",
     "title": "Qu'est-ce que le Web3, réellement ?",
+    "author": "Équipe Monark",
     "date": "2025-07-25T00:00:00.000Z",
+    "city": "Sherbrooke, QC, Canada",
     "description": "Un examen critique du Web3, explorant ses promesses, ses défis et la réalité des technologies décentralisées. Cet article vise à clarifier les idées reçues et à offrir une vision équilibrée de ce que le Web3 peut réellement apporter.",
-    "author": "Équipe Monark"
+    "img": "what-is-web3-really.webp",
+    "img_alt": "Qu'est-ce que le Web3",
+    "img_author": "Générée par Gemini AI",
+    "read_time_seconds": 240,
+    "tags": [
+      "Article",
+      "Orientation",
+      "État d'esprit"
+    ]
   },
   {
     "id": "what-monark-is-building-and-why",
     "title": "Ce que Monark construit et pourquoi",
+    "author": "Monark Team",
     "date": "2025-09-25T00:00:00.000Z",
+    "city": "Sherbrooke, QC, Canada",
     "description": "Monark fait le pont entre le monde académique et l'industrie Web3 en transformant la recherche étudiante en projets viables. Elle incube des initiatives en phase initiale et a conçu des solutions concrètes pour la transparence des chaînes d'approvisionnement et le partage sécurisé des données médicales.",
-    "author": "Monark Team"
+    "img": "what-monark-is-building-and-why.webp",
+    "img_alt": "Monarque posé sur la main",
+    "img_author": "Matthias Leistikow",
+    "img_author_src": "https://unsplash.com/photos/black-and-yellow-butterfly-on-persons-hand-VmwH8vCgUkY",
+    "read_time_seconds": 170,
+    "tags": [
+      "Article",
+      "Orientation",
+      "Impact"
+    ]
   },
   {
     "id": "what-needs-to-happen-before-web3-becomes-everyday-tech",
     "title": "Ce qui doit arriver avant que Web3 devienne une technologie du quotidien",
+    "author": "Équipe Monark",
     "date": "2025-09-18T00:00:00.000Z",
+    "city": "Sherbrooke, QC, Canada",
     "description": "Web3 fait face à des obstacles significatifs pour une adoption massive, notamment des expériences utilisateur complexes, un manque de réglementations claires et la nécessité de meilleures ressources éducatives. Comme l'internet des débuts, il nécessite des améliorations dans son infrastructure—en particulier les portefeuilles et les systèmes d'identité—pour devenir plus convivial.",
-    "author": "Équipe Monark"
+    "img": "what-needs-to-happen-before-web3-becomes-everyday-tech.webp",
+    "img_alt": "Une ville active, qui bénéficierait grandement de la Blockchain",
+    "img_author": "Jorge Zhagui",
+    "img_author_src": "https://unsplash.com/photos/cars-on-road-between-high-rise-buildings-during-daytime-VYLwdMhhKS0",
+    "read_time_seconds": 120,
+    "tags": [
+      "Article",
+      "État d'esprit",
+      "Impact"
+    ]
   },
   {
     "id": "where-blockchain-shines",
     "title": "Où la Blockchain Brille… et Où Elle Ne Brille Pas",
+    "author": "Équipe Monark",
     "date": "2025-08-09T00:00:00.000Z",
+    "city": "Sherbrooke, QC, Canada",
     "description": "La technologie blockchain a été à la fois surestimée et sous-estimée. Chez Monark, nous croyons qu'il est essentiel de couper à travers le bruit pour identifier la véritable valeur. Cet article examine où la blockchain excelle réellement et où les solutions traditionnelles restent supérieures.",
-    "author": "Équipe Monark"
+    "img": "where-blockchain-shines.webp",
+    "img_alt": "Où la blockchain brille",
+    "img_author": "Générée par Gemini AI",
+    "read_time_seconds": 200,
+    "tags": [
+      "Article",
+      "Orientation",
+      "État d'esprit"
+    ]
   },
   {
     "id": "who-is-web3-actually-for",
     "title": "Pour qui le Web3 est-il réellement destiné ?",
+    "author": "Équipe Monark",
     "date": "2025-09-30T00:00:00.000Z",
+    "city": "Sherbrooke, QC, Canada",
     "description": "La promesse du Web3 d'un internet appartenant aux utilisateurs est limitée aux passionnés de crypto. Pour une adoption plus large, il doit répondre aux besoins réels d'une population diversifiée, en offrant des solutions telles que des chaînes d'approvisionnement transparentes et des diplômes éducatifs vérifiables aux groupes tels que les agriculteurs et les étudiants.",
-    "author": "Équipe Monark"
+    "img": "who-is-web3-actually-for.webp",
+    "img_alt": "Personnes dans une oeuvre d'art interactive",
+    "img_author": "Note Thanun",
+    "img_author_src": "https://unsplash.com/photos/a-group-of-people-standing-in-a-blue-room-zNzzulArQdc",
+    "read_time_seconds": 150,
+    "tags": [
+      "Article",
+      "Orientation",
+      "État d'esprit"
+    ]
   },
   {
     "id": "why-decentralization-matters",
-    "title": "Pourquoi la Décentralisation Compte - Après le FOMO",
+    "title": "Pourquoi la décentralisation compte; après le FOMO",
+    "author": "Équipe Monark",
     "date": "2025-08-02T00:00:00.000Z",
+    "city": "Sherbrooke, QC, Canada",
     "description": "Dans un monde dominé par les géants de la technologie et les gardiens institutionnels, la décentralisation n'est pas simplement un mot à la mode de la Silicon Valley — elle représente un changement fondamental dans la manière dont nous concevons et gouvernons les systèmes numériques. Chez Monark, nous explorons activement comment cette transition peut débloquer une nouvelle vague d'applications concrètes, grâce à une collaboration étroite entre les institutions académiques et les écosystèmes décentralisés les plus avancés.",
-    "author": "Équipe Monark"
+    "img": "why-decentralization-matters.webp",
+    "img_alt": "Pourquoi la Décentralisation Compte",
+    "img_author": "Générée par Gemini AI",
+    "read_time_seconds": 220,
+    "tags": [
+      "Article",
+      "Orientation",
+      "État d'esprit"
+    ]
   }
 ];
 

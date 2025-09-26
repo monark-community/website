@@ -5,12 +5,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import enNews from "@/content/en/news/index";
 import frNews from "@/content/fr/news/index";
 import { DatedNewsMetadata } from "@/types/news.types";
-import { en, fr } from "./news-list.i18n";
+import i18n from "./news-list.i18n";
 import { Locale } from "@/i18n.config";
 import { NavLink } from "../../navlink/navlink";
 import Image from "next/image";
-import { format } from "date-fns";
-import { fr as frDateLocale, enUS as enDateLocale } from "date-fns/locale";
+import { format, parseISO } from "date-fns";
+import NewsArticleCategories from "./NewsArticleCategories";
+import { IconLabelAttribute } from "../../icon-label-attribute/IconLabelAttribute";
+import { CalendarIcon, ClockIcon } from "lucide-react";
+import { formatDuration, mapLocaleToDateFns } from "@/lib/time";
 
 interface ProjectListProps {
   locale: Locale;
@@ -22,16 +25,15 @@ const newsDataMap: Record<Locale, DatedNewsMetadata[]> = {
 };
 
 const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
+  const t = i18n[locale];
   const [search, setSearch] = useState("");
   const [news, setNews] = useState<DatedNewsMetadata[]>([]);
-  const [i18nStrings, setI18nStrings] = useState(en);
   const [initialized, setInitialized] = useState(false);
 
   useEffect(() => {
     console.log(newsDataMap);
     const newsData = newsDataMap[locale];
     setNews(newsData);
-    setI18nStrings(locale === "fr" ? fr : en);
     setInitialized(true);
   }, [locale]);
 
@@ -45,13 +47,13 @@ const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="mb-6">{i18nStrings.page_title}</h1>
+      <h1 className="mb-6">{t.page_title}</h1>
       <p className="text-muted-foreground mb-8 max-w-[460px]">
-        {i18nStrings.description}
+        {t.description}
       </p>
       <div className="flex flex-col sm:flex-row gap-4 mb-2">
         <Input
-          placeholder={i18nStrings.search_placeholder}
+          placeholder={t.search_placeholder}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="flex-1"
@@ -102,25 +104,32 @@ const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
                         {item.title}
                       </NavLink>
                     </CardTitle>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
-                      {item.author && <span>{item.author},</span>}
-                      <span>
-                        {format(new Date(item.date), "PPP", {
-                          locale: locale === "fr" ? frDateLocale : enDateLocale,
-                        })}
-                      </span>
-                    </div>
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col justify-between">
                     <p className="mb-4">{item.description}</p>
                     <div className="mt-auto pt-2"></div>
+                    <div className="flex flex-col gap-2 text-muted-foreground">
+                      <IconLabelAttribute
+                        Icon={CalendarIcon}
+                        label={t.date}
+                        value={format(parseISO(item.date), "PPP", {
+                          locale: mapLocaleToDateFns(locale),
+                        })}
+                      />
+                      <IconLabelAttribute
+                        Icon={ClockIcon}
+                        label={t.read_time}
+                        value={formatDuration(item.read_time_seconds, locale)}
+                      />
+                      <div className="flex gap-2 py-2"><NewsArticleCategories categories={item.tags.flat()} /></div>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
             ))
           ) : (
             <p className="text-muted-foreground text-lg">
-              {i18nStrings.not_found}
+              {t.not_found}
             </p>
           )}
         </div>

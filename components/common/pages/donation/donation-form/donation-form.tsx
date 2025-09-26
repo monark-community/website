@@ -44,11 +44,6 @@ function DonationForm({ locale, donations }: Props) {
     return networkList.sort((a, b) => a.name.localeCompare(b.name));
   }, [donations]);
 
-  // Get the symbol for the selected network
-  const getNetworkSymbol = (networkId: string): string => {
-    return getNetworkToken(networkId);
-  };
-
   // Set default network to first available option when networks are loaded
   React.useEffect(() => {
     if (networks.length > 0 && !selectedNetwork) {
@@ -58,23 +53,28 @@ function DonationForm({ locale, donations }: Props) {
 
   // Auto-switch currency to network token when network changes
   React.useEffect(() => {
+    // Get the symbol for the selected network
+    const getNetworkSymbol = (networkId: string): string => {
+      return getNetworkToken(networkId);
+    };
+
     if (selectedNetwork) {
       const networkSymbol = getNetworkSymbol(selectedNetwork);
       setSelectedCurrency(networkSymbol);
     }
-  }, [selectedNetwork, getNetworkSymbol]);
-  
+  }, [selectedNetwork]);
+
   // Trigger animation when network changes
   React.useEffect(() => {
     if (selectedNetwork) {
       // Start animation immediately
       setIsAddressAnimating(true);
-      
+
       // Stop animation after duration
       const timer = setTimeout(() => {
         setIsAddressAnimating(false);
       }, 300);
-      
+
       return () => clearTimeout(timer);
     }
   }, [selectedNetwork]);
@@ -122,11 +122,10 @@ function DonationForm({ locale, donations }: Props) {
               <div className="text-sm text-muted-foreground flex items-center gap-2">
                 <span>{t.view_on_explorer}</span>
                 <div
-                  className={`inline-block transition-all duration-300 ease-out ${
-                    isAddressAnimating 
-                      ? "scale-105 font-bold text-primary" 
-                      : "scale-100"
-                  }`}
+                  className={`inline-block transition-all duration-300 ease-out ${isAddressAnimating
+                    ? "scale-105 font-bold text-primary"
+                    : "scale-100"
+                    }`}
                   key={selectedNetwork}
                 >
                   <WalletAddress

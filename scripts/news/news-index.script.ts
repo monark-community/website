@@ -27,11 +27,17 @@ function generateNewsIndex(locale: string): DatedNewsMetadata[] {
           return {
             id: metadata.id,
             title: metadata.title,
-            date: metadata.date,
-            image: metadata.image,
-            description: metadata.description,
             author: metadata.author,
-            source: metadata.source,
+            date: metadata.date,
+            city: metadata.city,
+            description: metadata.description,
+            original_src: metadata.original_src,
+            img: metadata.img,
+            img_alt: metadata.img_alt,
+            img_author: metadata.img_author,
+            img_author_src: metadata.img_author_src,
+            read_time_seconds: metadata.read_time_seconds,
+            tags: metadata.tags
           };
         }
       }
