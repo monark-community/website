@@ -136,15 +136,6 @@ export const fr: I18n = {
         icon: "university",
       },
       {
-        id: "student",
-        title: "Étudiant",
-        content:
-          "Contribuez à des projets concrets, améliorez vos compétences et construisez vos idées.",
-        href: "/participate/student",
-        icon: "graduation-cap",
-      },
-
-      {
         id: "industry",
         title: "Représentant d'industrie",
         content:
