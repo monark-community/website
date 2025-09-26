@@ -59,7 +59,7 @@ export default function GithubOrgMembers() {
                                     rel="noopener noreferrer"
                                     className="block"
                                 >
-                                    <Image
+                                    <img
                                         src={member.avatar_url}
                                         alt={member.login}
                                         width={64}
