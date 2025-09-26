@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
 import { NavLink } from "@/components/common/navlink/navlink";
 import NavbarIcon from "@/components/common/layout/navbar/navbar-icon";
+import GithubOrgMembers from "./github-org-members/GithubOrgMembers";
 
 type Props = {
   locale: Locale;
@@ -32,6 +33,7 @@ function WhySection({ locale }: Props) {
           ))}
         </div>
       </div> */}
+      <GithubOrgMembers />
       <div className="flex flex-col items-center justify-center mt-12">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {t.audiences.map((audience, index) => (

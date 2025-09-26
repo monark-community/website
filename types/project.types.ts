@@ -2,14 +2,15 @@ export enum ProjectStatus {
   Idea = "idea",
   PrototypeAvailable = "prototype_available",
   InProgress = "in_progress",
+  OnHold = "on_hold",
   MarketValidation = "market_validation",
-  Live = "live",
+  Production = "production",
 }
 
 export interface ProjectMetadata {
   id: string;
   title: string;
-  status: string;
+  status: ProjectStatus;
   description: string;
   accronym: string;
   img: string;

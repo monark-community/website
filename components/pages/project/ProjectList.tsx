@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import enProjects from "@/content/en/project/index";
 import frProjects from "@/content/fr/project/index";
 import ProjectStatusBadge from "@/components/pages/project/ProjectStatusBadge";
-import { DatedProjectMetadata } from "@/types/project.types";
+import { DatedProjectMetadata, ProjectStatus } from "@/types/project.types";
 import {
   Select,
   SelectContent,
@@ -36,6 +36,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
   const [projects, setProjects] = useState<DatedProjectMetadata[]>([]);
   const [selectedIndustry, setSelectedIndustry] = useState<string>("all");
   const [selectedKeyword, setSelectedKeyword] = useState<string>("all");
+  const [selectedStatus, setSelectedStatus] = useState<string>("all");
   const [industryTags, setIndustryTags] = useState<Set<string>>(new Set());
   const [keywordTags, setKeywordTags] = useState<Set<string>>(new Set());
   const [topKeywordSuggestions, setTopKeywordSuggestions] = useState<string[]>(
@@ -97,7 +98,9 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     const matchesKeyword =
       selectedKeyword === "all" ||
       project.keyword_tags.includes(selectedKeyword);
-    return matchesSearch && matchesIndustry && matchesKeyword;
+    const matchesStatus =
+      selectedStatus === "all" || project.status === selectedStatus;
+    return matchesSearch && matchesIndustry && matchesKeyword && matchesStatus;
   })
     .sort((a, b) => {
       if (sortMode === "score") {
@@ -121,52 +124,83 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
       <p className="text-muted-foreground mb-8 max-w-[460px]">
         {t.description}
       </p>
-      <div className="flex flex-col sm:flex-row gap-4 mb-2">
-        <Input
-          placeholder={t.search_placeholder}
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="flex-1"
-        />
-        <Select value={selectedIndustry} onValueChange={setSelectedIndustry}>
-          <SelectTrigger className="w-full sm:w-[200px]">
-            <SelectValue placeholder={t.filter_by_industry} />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">{t.all_industries}</SelectItem>
-            {sortedIndustryTags.map((tag) => (
-              <SelectItem key={tag} value={tag}>
-                {tag}
-              </SelectItem>
+      <div className="mb-8">
+        <div className="flex flex-col lg:flex-row gap-4">
+          <Input
+            placeholder={t.search_placeholder}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="flex-1 min-h-[36px]"
+          />
+          <div className="flex lg:hidden items-center gap-2">
+            <div className="flex overflow-x-scroll gap-2">
+              {topKeywordSuggestions.map((suggestion) => (
+                <Badge
+                  key={suggestion}
+                  variant="outline"
+                  className="cursor-pointer text-left whitespace-nowrap hover:bg-primary/10 transition-colors"
+                  onClick={() => setSearch(suggestion)}
+                >
+                  {suggestion}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          <div className="flex gap-4 flex-col md:flex-row">
+            <Select value={selectedIndustry} onValueChange={setSelectedIndustry}>
+              <SelectTrigger className="w-full md:w-[200px]">
+                <SelectValue placeholder={t.filter_by_industry} />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">{t.all_industries}</SelectItem>
+                {sortedIndustryTags.map((tag) => (
+                  <SelectItem key={tag} value={tag}>
+                    {tag}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select value={selectedKeyword} onValueChange={setSelectedKeyword}>
+              <SelectTrigger className="w-full md:w-[200px]">
+                <SelectValue placeholder={t.filter_by_keyword} />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">{t.all_keywords}</SelectItem>
+                {sortedKeywordTags.map((tag) => (
+                  <SelectItem key={tag} value={tag}>
+                    {tag}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select value={selectedStatus} onValueChange={setSelectedStatus}>
+              <SelectTrigger className="w-full md:w-[200px]">
+                <SelectValue placeholder={t.filter_by_status} />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">{t.all_statuses}</SelectItem>
+                {Object.values(ProjectStatus).map((status) => (
+                  <SelectItem key={status} value={status}>
+                    {t.statuses[status as keyof typeof t.statuses]}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+        <div className="hidden lg:flex items-center gap-2 mt-2">
+          <div className="flex flex-wrap gap-2">
+            {topKeywordSuggestions.map((suggestion) => (
+              <Badge
+                key={suggestion}
+                variant="outline"
+                className="cursor-pointer hover:bg-primary/10 transition-colors"
+                onClick={() => setSearch(suggestion)}
+              >
+                {suggestion}
+              </Badge>
             ))}
-          </SelectContent>
-        </Select>
-        <Select value={selectedKeyword} onValueChange={setSelectedKeyword}>
-          <SelectTrigger className="w-full sm:w-[200px]">
-            <SelectValue placeholder={t.filter_by_keyword} />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">{t.all_keywords}</SelectItem>
-            {sortedKeywordTags.map((tag) => (
-              <SelectItem key={tag} value={tag}>
-                {tag}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
-      <div className="hidden sm:flex items-center gap-2 mb-8">
-        <div className="flex flex-wrap gap-2">
-          {topKeywordSuggestions.map((suggestion) => (
-            <Badge
-              key={suggestion}
-              variant="outline"
-              className="cursor-pointer hover:bg-primary/10 transition-colors"
-              onClick={() => setSearch(suggestion)}
-            >
-              {suggestion}
-            </Badge>
-          ))}
+          </div>
         </div>
       </div>
       {adminMode && (

@@ -12,6 +12,16 @@ interface I18n {
     filter_by_keyword: string;
     keywords: string;
     all_keywords: string;
+    filter_by_status: string,
+    all_statuses: string,
+    statuses: {
+        idea: string;
+        prototype_available: string;
+        in_progress: string;
+        on_hold: string;
+        market_validation: string;
+        production: string;
+    };
     learn_more: string;
     status: string;
     website: string;
@@ -31,6 +41,16 @@ const en: I18n = {
     filter_by_keyword: "Filter by Keyword",
     keywords: "Keywords",
     all_keywords: "All Keywords",
+    filter_by_status: "Filter by status",
+    all_statuses: "All status",
+    statuses: {
+        idea: "Idea",
+        prototype_available: "Prototype available",
+        in_progress: "In progress",
+        on_hold: "On hold",
+        market_validation: "Market validation",
+        production: "Production",
+    },
     learn_more: "Learn more",
     status: "Status",
     website: "Website"
@@ -50,6 +70,16 @@ const fr: I18n = {
     filter_by_keyword: "Filtrer par mot-clé",
     keywords: "Mots-clé",
     all_keywords: "Tous les mots-clés",
+    filter_by_status: "Filtrer par statut",
+    all_statuses: "Tous les statuts",
+    statuses: {
+        idea: "Idée",
+        prototype_available: "Prototype disponible",
+        in_progress: "En cours",
+        on_hold: "En pause",
+        market_validation: "Validation de marché",
+        production: "Production",
+    },
     learn_more: "En savoir plus",
     status: "État",
     website: "Site web"
