@@ -8,6 +8,8 @@ const data: DatedProjectMetadata[] = [
     "description": "Smart contracts that grant time-based or one-time access to digital or physical content. Users can pay in tokens to unlock a livestream, document, video, or even a smart lock for a room or vault. The contract tracks duration, access rights, and expiration. You can expand this to marketing tools like paid alerts for communities or digital ad banners.",
     "accronym": "GatePay",
     "status": "idea",
+    "img": "access-tokens-pay-per-access-contracts.jpg",
+    "img_alt": "Access Tokens (Pay-Per-Access Contracts) mockup",
     "complexity_score": 6,
     "effort_score": -1,
     "adoption_score": 3,
@@ -25,7 +27,7 @@ const data: DatedProjectMetadata[] = [
       "Pay-Per-Access",
       "Smart Contracts"
     ],
-    "hash": "1c4b519af213b46202b2e4706c54f21dfb450fb479c5fb073bc2120860ce6aab",
+    "hash": "41c9538f0bd6473311440a3cd80d605df3edda0d127dc02522c052721c145c62",
     "last_updated": "2025-09-26"
   },
   {
@@ -34,6 +36,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A tool that extracts, cleans, and formats blockchain transaction data into accounting-ready formats. Users can input a wallet address and receive categorized income/expenses, gas fees, and timestamps. Useful for DAOs, freelancers, and businesses needing audit trails or tax reports. You can use [The Graph](https://thegraph.com/), APIs, or indexers to feed the data.",
     "accronym": "LedgerLift",
     "status": "idea",
+    "img": "accounting-blockchain-data-extraction.jpg",
+    "img_alt": "Accounting blockchain data extraction mockup",
     "complexity_score": 7,
     "effort_score": -1,
     "adoption_score": 8,
@@ -50,7 +54,7 @@ const data: DatedProjectMetadata[] = [
       "Data Extraction",
       "Compliance"
     ],
-    "hash": "7124163f4d89e7f4e91f344c0181d8e7483fcdd58165286460f2f5f2c5946a1c",
+    "hash": "6c09cd78d3c061a9ff9bfa0e5ed2aa731b82f7999c6f920ade054941d92fdd10",
     "last_updated": "2025-09-26"
   },
   {
@@ -59,6 +63,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A decentralized review system where users can submit reviews tied to their wallet addresses. Each review (rating, comment, timestamp) is stored immutably on-chain, ensuring transparency and preventing deletion or manipulation. Useful for evaluating sellers, contributors, or service providers in Web3 ecosystems. Add features like filtering by address, sentiment analysis, or integration with NFT platforms and DAOs.",
     "accronym": "TrustRate",
     "status": "idea",
+    "img": "address-review-system.jpg",
+    "img_alt": "Address Review System mockup",
     "complexity_score": 5,
     "effort_score": -1,
     "adoption_score": 3,
@@ -75,7 +81,7 @@ const data: DatedProjectMetadata[] = [
       "Reputation",
       "DAO"
     ],
-    "hash": "d31a698460bc7b14ab8c49f6bd0dd08b2ed16523af1a5c73cc34bac67a2d8447",
+    "hash": "89f5d1258bac36a88477968af609d801c38945a05102e0831779d08e33e51a32",
     "last_updated": "2025-09-26"
   },
   {
@@ -84,6 +90,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A decentralized platform for task bounties. Users post tasks with deadlines and rewards, contributors submit work, and admins or voters validate the result before payout. Useful for open-source projects, student challenges, or DAO task distribution. Includes smart contract logic and a dashboard for browsing, submitting, and tracking.",
     "accronym": "TaskFlow",
     "status": "prototype_available",
+    "img": "bounty-system.jpg",
+    "img_alt": "Bounty System mockup",
     "complexity_score": 5,
     "effort_score": -1,
     "adoption_score": 3,
@@ -100,7 +108,7 @@ const data: DatedProjectMetadata[] = [
       "Incentives",
       "DAO"
     ],
-    "hash": "807b005a4455b0d4d9fe01b105e4182c7807ae2ccbe8a8426e9a5932e6a6baf1",
+    "hash": "993c38f216eb779aaeecd770260fb2f01696309e1bbbb5a66ef4d791a3fdf531",
     "last_updated": "2025-09-26"
   },
   {
@@ -109,6 +117,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A decentralized contact manager that allows users to save and tag wallet addresses with notes, reputation scores, and categories. Contacts are stored locally or on-chain/IPFS, and could include verification status. Useful for DAOs, communities, or marketplaces where trusted contributor tracking is essential. This tool should be easily integratable into other apps so that many apps can share the same contact list. We should be able to have a contact log of all our own addresses and purposes and all of our friends, and businesses contacts addresses.",
     "accronym": "TrustList",
     "status": "idea",
+    "img": "contact-list.jpg",
+    "img_alt": "Contact List mockup",
     "complexity_score": 5,
     "effort_score": -1,
     "adoption_score": 8,
@@ -125,7 +135,7 @@ const data: DatedProjectMetadata[] = [
       "Reputation",
       "Contacts"
     ],
-    "hash": "caf3f2ea6aeab93eb1768655b81ed92129dfe872572f66a9929312d48aa7e840",
+    "hash": "451292c70483cb741163b42b71851cdd786a7fb68b2aa405f45eaf4488e290db",
     "last_updated": "2025-09-26"
   },
   {
@@ -134,6 +144,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A decentralized governance platform that enables token- or wallet-based voting on proposals. Users can submit ideas, cast votes, and track results. Features include quorum logic, delegation, live results, and optional execution hooks. Ideal for DAOs, student orgs, or cooperatives. This is a foundational block for on-chain decision-making.",
     "accronym": "GovChain",
     "status": "idea",
+    "img": "dao-voting-platform.jpg",
+    "img_alt": "DAO Voting Platform Early Mockup",
     "complexity_score": 5,
     "effort_score": -1,
     "adoption_score": 5,
@@ -150,7 +162,7 @@ const data: DatedProjectMetadata[] = [
       "Proposals",
       "Transparency"
     ],
-    "hash": "03d1a315f5e697adecaf22400de6fc0612df3f8f31359483738565564211fa70",
+    "hash": "0d74f5f1ca4749578b943b197664865a9953de064fcbb48cd41e92d0d1198e12",
     "last_updated": "2025-09-26"
   },
   {
@@ -159,6 +171,8 @@ const data: DatedProjectMetadata[] = [
     "description": "Focus on the borrowing experience in a DeFi protocol. Users request loans, submit collateral, and monitor repayment status. Collateral is locked in smart contracts, and loan terms (APR, expiration) are automatically enforced. Partner with existing testnet lending pools or simulate locally.",
     "accronym": "BorrowX",
     "status": "idea",
+    "img": "defi-borrow.jpg",
+    "img_alt": "DeFi Borrow mockup",
     "complexity_score": 7,
     "effort_score": -1,
     "adoption_score": -1,
@@ -175,7 +189,7 @@ const data: DatedProjectMetadata[] = [
       "Protocol",
       "Liquidity"
     ],
-    "hash": "092b02d9f94515d1cd35d79bd1c4821e1462baa23996127152d770b805315df3",
+    "hash": "ebf035ac15bc160eb4a62c57376a0e096e556b207b58c76ebb81efb77c011888",
     "last_updated": "2025-09-26"
   },
   {
@@ -184,6 +198,8 @@ const data: DatedProjectMetadata[] = [
     "description": "Aprotocol where users supply tokens to liquidity pools in exchange for interest. Manage pool size, utilization rate, and reward logic. Visualize returns over time and integrate with borrow contracts if desired. An excellent way to teach lending mechanics, risk pooling, and token incentives.",
     "accronym": "YieldMine",
     "status": "idea",
+    "img": "defi-lending.jpg",
+    "img_alt": "DeFi Lending Early Mockup",
     "complexity_score": 8,
     "effort_score": -1,
     "adoption_score": -1,
@@ -200,7 +216,7 @@ const data: DatedProjectMetadata[] = [
       "Treasury",
       "Liquidity"
     ],
-    "hash": "9242ea416363a6ba6585ee760f0a8c433bae4818d4e8a5e16b83f90bd9417364",
+    "hash": "ef0f08f8d6bada050d5767bcb61cba901b138256c3125b621d2f8bd4ef295248",
     "last_updated": "2025-09-26"
   },
   {
@@ -209,6 +225,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A lending platform where users deposit collateral and borrow tokens. Smart contracts manage interest, health ratios, and liquidations. Useful to simulate MakerDAO-style loans on testnet. Can include dashboards, alerts, and repayment logic. Emphasizes DeFi risk management and user experience.",
     "accronym": "VaultLend",
     "status": "idea",
+    "img": "defi-loans.jpg",
+    "img_alt": "DeFi Loans Early Mockup",
     "complexity_score": 7,
     "effort_score": -1,
     "adoption_score": -1,
@@ -225,7 +243,7 @@ const data: DatedProjectMetadata[] = [
       "DeFi",
       "Automation"
     ],
-    "hash": "32cf8cd7a8f82bda6b8f91e53937932614a75277ecaf3c70b7270b97bee1de2e",
+    "hash": "c72c7c00050192b30ba6773545ede411fd3f75c3e616d1979f9e3a1bc89ffc1d",
     "last_updated": "2025-09-26"
   },
   {
@@ -234,6 +252,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A decentralized token swap platform using Automated Market Maker (AMM) principles. Users can swap testnet tokens via liquidity pools and view simulated price impact and slippage. Includes swap UI, liquidity pool logic, and optional fee mechanics. Inspired by platforms like Uniswap.",
     "accronym": "FluidSwap",
     "status": "idea",
+    "img": "defi-swaps.jpg",
+    "img_alt": "DeFi Swaps Early Mockup",
     "complexity_score": 8,
     "effort_score": -1,
     "adoption_score": -1,
@@ -250,7 +270,7 @@ const data: DatedProjectMetadata[] = [
       "Trading",
       "Liquidity"
     ],
-    "hash": "d2637541862d38bf265d9b5b95b10f98bd9ec91777130038c5b846c8e12053f3",
+    "hash": "9efa533bbed085043543f4a3903e84d973bcd2fef22d3864098826407fd9f75b",
     "last_updated": "2025-09-26"
   },
   {
@@ -259,6 +279,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A secure blockchain-based inheritance system. Users set up a digital will where funds are released to beneficiaries based on an on-chain permission system consisting of various user keys or conditions like time delays, inactivity, or third-party validation. Include wallet-based identity, account creation tool, optional social recovery, and contract customization. This ensures irreversible execution and removes the need for centralized estate services.",
     "accronym": "WillChain",
     "status": "idea",
+    "img": "digital-will.jpg",
+    "img_alt": "Digital Will Early Mockup",
     "complexity_score": 7,
     "effort_score": -1,
     "adoption_score": 5,
@@ -275,7 +297,7 @@ const data: DatedProjectMetadata[] = [
       "Escrow",
       "Compliance"
     ],
-    "hash": "752a767ac1368835605191ad026c517d2ad689bed8a3fb2873495faea259cb59",
+    "hash": "1361e02a3222c15347ffad16b5dccb53ecc1f970600b51548c8dce99a1df4654",
     "last_updated": "2025-09-26"
   },
   {
@@ -284,6 +306,8 @@ const data: DatedProjectMetadata[] = [
     "description": "Guardian is a mobile Web3 alert app that notifies nearby users in emergencies. Alerts are tied to wallet IDs, and responders receive funds from a pre-funded smart contract pool. This incentivizes real help while discouraging misuse through built-in accountability and rewards.",
     "accronym": "Guardian",
     "status": "idea",
+    "img": "emergency-alerts-network.jpg",
+    "img_alt": "Guardian mockup",
     "complexity_score": 7,
     "effort_score": -1,
     "adoption_score": 2,
@@ -301,7 +325,7 @@ const data: DatedProjectMetadata[] = [
       "Smart Contracts",
       "Reputation"
     ],
-    "hash": "117cb952dca48cd5e9dfbb9e9e74b91a4fe316764658a51e78bb492232835f22",
+    "hash": "200ec44ef85cf52d884a5a8c90c94b4539dfeec63688f60290f5011ea339c6a0",
     "last_updated": "2025-09-26"
   },
   {
@@ -310,6 +334,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A smart contract system that splits incoming payments automatically among stakeholders. Users can define fixed percentages or dynamic formulas. The platform handles income like DAO revenue, royalties, or affiliate payouts and distributes it to multiple wallets upon receipt. Add a UI for configuring, simulating, and tracking earnings transparently.",
     "accronym": "SplitFlow",
     "status": "idea",
+    "img": "fee-distribution-system.jpg",
+    "img_alt": "Fee Distribution System mockup",
     "complexity_score": 5,
     "effort_score": -1,
     "adoption_score": 8,
@@ -326,7 +352,7 @@ const data: DatedProjectMetadata[] = [
       "Treasury",
       "Automation"
     ],
-    "hash": "c5e662257ef70b61a35bfe73c779173a6ab5ebc8cfaef301f9d853f75b60739a",
+    "hash": "e9875e99cc99c9fd20e76528e850664ad7fa0858fd47948004025210739b642f",
     "last_updated": "2025-09-26"
   },
   {
@@ -335,6 +361,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A decentralized system that allows farmers to manage their inventory and sell fruits and vegetables without being physically present. Buyers scan a code at the self-serve stand, interact with a smart contract to purchase produce, and the system updates available stock. Could include mobile UI, local pricing, availability tracking, and optional reward tokens for buyers. Perfect for rural zones and trustless microtransactions.",
     "accronym": "Bazarius",
     "status": "idea",
+    "img": "inventory-and-sales-for-farm-goods.jpg",
+    "img_alt": "Inventory and Sales for Farm Goods mockup",
     "complexity_score": 6,
     "effort_score": -1,
     "adoption_score": 1,
@@ -352,7 +380,7 @@ const data: DatedProjectMetadata[] = [
       "QR Code",
       "Access"
     ],
-    "hash": "4e17518e03f96f8204c1b2fc9368c64c53aed98ff2e2fc9c33cce3ee2952e52a",
+    "hash": "6ecc590dd948a56b8f24134f540c3daffbc52f7629c99c13e2146674a11eb571",
     "last_updated": "2025-09-26"
   },
   {
@@ -361,6 +389,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A voting system where landowners and/or property tenants can vote on proposals related to their region. Tie voting rights to land ownership (real or simulated), verify votes via wallet signatures, and display results on a map or dashboard. Explore ways to sync on-chain votes with off-chain registries for potential civic integration.",
     "accronym": "LandVote",
     "status": "idea",
+    "img": "land-registry-voting.jpg",
+    "img_alt": "Land Registry Voting mockup",
     "complexity_score": 7,
     "effort_score": -1,
     "adoption_score": 2,
@@ -378,7 +408,7 @@ const data: DatedProjectMetadata[] = [
       "Transparency",
       "Mapping"
     ],
-    "hash": "8aa5567845de694a3234d84d3fd84807fbd1d63306e3be0bba20380947086404",
+    "hash": "590c819646c3d79edf5fd16381e15d1930c6d5bf25a40eaa0727be32237952f3",
     "last_updated": "2025-09-26"
   },
   {
@@ -387,6 +417,8 @@ const data: DatedProjectMetadata[] = [
     "description": "Smart contracts that hold funds and release them gradually based on progress. Each milestone is defined upfront with conditions for approval. Think construction contracts, grants, or dev work. Funds unlock when a milestone is validated by the client and/or third-party oracle. Add review flows and progress visualization.",
     "accronym": "MilestoneMint",
     "status": "idea",
+    "img": "milestone-based-smart-contracts-and-escrow.jpg",
+    "img_alt": "Milestone-Based Smart Contracts and Escrow mockup",
     "complexity_score": 6,
     "effort_score": -1,
     "adoption_score": 4,
@@ -403,7 +435,7 @@ const data: DatedProjectMetadata[] = [
       "Funding",
       "Automation"
     ],
-    "hash": "a949fc1dfaa9e12fe0553e76e9b6e81ef272b6942aaed84eb62eb3e860aa0c98",
+    "hash": "74e8727adcc32318f91a634319fbf7352b7a9eaa70800779964cdc599f8d2ef3",
     "last_updated": "2025-09-26"
   },
   {
@@ -412,6 +444,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A dashboard that aggregates a user's holdings across multiple blockchains. Show token balances, NFTs, and historical activity using APIs or RPCs the supported blockchains. Add filtering, wallet tagging, asset valuation, and graphs. This helps users view their Web3 footprint in one place.",
     "accronym": "MultiTrack",
     "status": "idea",
+    "img": "multichain-portfolio-tracker.jpg",
+    "img_alt": "Multichain Portfolio Tracker mockup",
     "complexity_score": 7,
     "effort_score": 9,
     "adoption_score": 3,
@@ -428,7 +462,7 @@ const data: DatedProjectMetadata[] = [
       "Wallet",
       "Dashboard"
     ],
-    "hash": "2f644e673f8958ed5bc24655834a078d4a3be7a67c5f69e36f97b206b7635462",
+    "hash": "72f074f5f36e7879cee85130dc958d580534952c7eb124b8cf9503d16b498926",
     "last_updated": "2025-09-26"
   },
   {
@@ -437,6 +471,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A full-stack NFT ticketing platform where organizers mint unique event tickets as NFTs. Tickets include metadata (seat, time, access rules, special rewards, etc.), and can be scanned for entry via blockchain wallet signature or QR code. Resale restrictions and secondary royalties are enforced via smart contracts. You can add bonus features like POAP collectibles, attendance badges, or discount perks.",
     "accronym": "NFTokenPass",
     "status": "prototype_available",
+    "img": "nft-ticketing-platform.jpg",
+    "img_alt": "NFT Ticketing Platform mockup",
     "complexity_score": 7,
     "effort_score": -1,
     "adoption_score": 5,
@@ -454,7 +490,7 @@ const data: DatedProjectMetadata[] = [
       "Wallet Integration",
       "Access Control"
     ],
-    "hash": "7382e7438d69992a4e7fce2c76afdf3cebd398c44cfdda9a875f437e1691ac38",
+    "hash": "0961ebe037eecebb401ce91ed6692a1fd26b0bb16247e516d6eac1ccb5795a1d",
     "last_updated": "2025-09-26"
   },
   {
@@ -463,6 +499,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A decentralized land and building registry where users can submit and update the physical location, construction year, and modifications of buildings on land parcels. This enables transparent, time-stamped tracking of structures and helps identify regulatory compliance or violations over time.",
     "accronym": "Cadastrum",
     "status": "idea",
+    "img": "onchain-property-registry.jpg",
+    "img_alt": "Cadastrum mockup",
     "complexity_score": 7,
     "effort_score": -1,
     "adoption_score": 2,
@@ -481,7 +519,7 @@ const data: DatedProjectMetadata[] = [
       "Compliance",
       "Buildings"
     ],
-    "hash": "aa6c92a07af4d506342dea9e694c28d606256437d7a22369f5bc93d7ba9574ae",
+    "hash": "ac59ce308aa10de2e4127e7df89e6a833c0e6f1e084b0aed8fa669fdf223ea96",
     "last_updated": "2025-09-26"
   },
   {
@@ -490,6 +528,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A system that automatically distributes revenue (e.g., from music streams, NFT sales, or services) in real time among multiple recipients. Use smart contracts to define splits (%), track flows, and release funds regularly or continuously. Combine with streaming protocols (like Superfluid) or build your own flow mechanism.",
     "accronym": "StreamRoyalties",
     "status": "idea",
+    "img": "real-time-royalty-distribution.jpg",
+    "img_alt": "Real-Time Royalty Distribution mockup",
     "complexity_score": 6,
     "effort_score": -1,
     "adoption_score": 3,
@@ -507,7 +547,7 @@ const data: DatedProjectMetadata[] = [
       "Revenue",
       "Content"
     ],
-    "hash": "37b5196320da769bd3e0fbd3bb9738adfa681c5fcf72027365e9c37851dfa3de",
+    "hash": "3fdff599d85178f97145298634ca5b0198edd967f9d1ae67843a337a098de5c9",
     "last_updated": "2025-09-26"
   },
   {
@@ -516,6 +556,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A referral engine that tracks wallet-to-wallet invitations and rewards activity-based outcomes (e.g., app sign-ups, task completions). Smart contracts store who referred whom, trigger rewards when milestones are hit, and prevent abuse. Perfect for ambassador programs or affiliate networks. Includes dashboards for tracking performance.",
     "accronym": "Reffinity",
     "status": "idea",
+    "img": "referral-system.jpg",
+    "img_alt": "Referral System mockup",
     "complexity_score": 5,
     "effort_score": -1,
     "adoption_score": 8,
@@ -533,7 +575,7 @@ const data: DatedProjectMetadata[] = [
       "Tracking",
       "Engagement"
     ],
-    "hash": "55b83d492a26e09ebe1a073f92e2bf4449655512ceaeff34216fc1e65b5d8501",
+    "hash": "5cdcd8d2948248a3428f2625cc44cfc66e92e861504f334f9cf53f9822a33165",
     "last_updated": "2025-09-26"
   },
   {
@@ -542,6 +584,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A blockchain based application that records each step of a product's journey on-chain. Every iot sensor and actor (producer, shipper, vendor) logs actions on-chain to create a tamper-proof, traceable history. Smart contracts verify transactions and time-stamp checkpoints. This system ensures authenticity, combats fraud, and enhances transparency in many industries such as food, construction, pharma, etc.",
     "accronym": "ChainProof",
     "status": "idea",
+    "img": "supply-chain-tracking.jpg",
+    "img_alt": "Supply Chain Tracking mockup",
     "complexity_score": 5,
     "effort_score": -1,
     "adoption_score": 8,
@@ -560,7 +604,7 @@ const data: DatedProjectMetadata[] = [
       "Automation",
       "Mapping"
     ],
-    "hash": "32dc7d1116c859272eab7db5eae713909ae3f0cd47d791833fb2f80e6cb0e136",
+    "hash": "393d17d6ae74bc299cbb998fd0134e4292d2b852d796817f2e1e461049b5effd",
     "last_updated": "2025-09-26"
   },
   {
@@ -569,6 +613,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A modular system for digital cooperatives with a big focus on accessibility and ease of use. Members join via wallet, vote on proposals, and manage shared resources and finances. Include a treasury dashboard, proposal history, and access roles. Designed for groups that want to operate transparently and democratically without centralized software. Could simulate DAO-like operations with real-world use cases.",
     "accronym": "CoopDAO",
     "status": "idea",
+    "img": "systems-for-co-ops.jpg",
+    "img_alt": "Systems for Co-ops mockup",
     "complexity_score": 8,
     "effort_score": -1,
     "adoption_score": 1,
@@ -585,7 +631,7 @@ const data: DatedProjectMetadata[] = [
       "Treasury",
       "Governance"
     ],
-    "hash": "ed6ea895e25ef68a93d40df35965a04c28f49b8563dd724ed4034f87247bb524",
+    "hash": "db012ebdef2020944906938974d3509d410665147acdf47633921da071ce0a0a",
     "last_updated": "2025-09-26"
   },
   {
@@ -594,6 +640,8 @@ const data: DatedProjectMetadata[] = [
     "description": "Smart contracts that release funds or privileges only after a set time. Use cases include vesting periods, delayed payments, subscriptions, or digital wills. Include a dashboard where users define recipients, amounts, and time delays. This teaches foundational concepts like block time, escrow, and release conditions.",
     "accronym": "TimeVault",
     "status": "idea",
+    "img": "time-locked-contracts.jpg",
+    "img_alt": "Time Locked Contracts mockup",
     "complexity_score": 4,
     "effort_score": -1,
     "adoption_score": 5,
@@ -610,7 +658,7 @@ const data: DatedProjectMetadata[] = [
       "Automation",
       "Vesting"
     ],
-    "hash": "df37b2be5c0c672b6137f4e575f5567d68562a74ff94a1ccb8831f9b50e91961",
+    "hash": "23e56f81ca2984ba41ea2b39aa07184a0b0b851cb382bb3ad3cd5a5e156e035f",
     "last_updated": "2025-09-26"
   },
   {
@@ -619,6 +667,8 @@ const data: DatedProjectMetadata[] = [
     "description": "Gasless Web3 module that enables transactions without native tokens by sponsoring fees or accepting stablecoins, with auto conversion, safeguards, multi chain support, and fallback to gas for a frictionless UX in wallets, dApps, and brands.",
     "accronym": "FlexGas",
     "status": "idea",
+    "img": "transaction-gas.jpg",
+    "img_alt": "Transaction Gas mockup",
     "complexity_score": 5,
     "effort_score": 4,
     "adoption_score": 9,
@@ -634,7 +684,7 @@ const data: DatedProjectMetadata[] = [
       "UX",
       "Automation"
     ],
-    "hash": "dfa71394da97f3c47531635c9182a157e1eb6d3a8e3373ef9c45c21322b6735a",
+    "hash": "114f679e668ccc9ace891011845f1f6f8e54d57cc41549c1138221e361b68e56",
     "last_updated": "2025-09-26"
   },
   {
@@ -643,6 +693,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A system where users sign documents or transactions using their wallet signature. Store document hashes on-chain, and optionally save files on IPFS. Others can verify the timestamp, signer identity, and content integrity. Mimics tools like DocuSign but using blockchain authentication that are decentralized and censorship-resistant.",
     "accronym": "SignChain",
     "status": "idea",
+    "img": "web3-signatures.jpg",
+    "img_alt": "Web3 Signatures mockup",
     "complexity_score": 4,
     "effort_score": -1,
     "adoption_score": 3,
@@ -659,7 +711,7 @@ const data: DatedProjectMetadata[] = [
       "Compliance",
       "Documents"
     ],
-    "hash": "5aec22e4c8c0c7e2883210630a664b4b0034737fc4c88b21a8f83e6a22fe8063",
+    "hash": "061630401a8e8f016b5065c13d4849421efe37a156e080b6b6f7409f293f613e",
     "last_updated": "2025-09-26"
   },
   {
@@ -668,6 +720,8 @@ const data: DatedProjectMetadata[] = [
     "description": "A decentralized protocol to enable secure, consent-driven sharing of anonymized medical data using zero-knowledge proofs.",
     "accronym": "Cura",
     "status": "idea",
+    "img": "zk-medical-data-exchange.jpg",
+    "img_alt": "Zero-Knowledge Medical Data Exchange",
     "complexity_score": 7,
     "effort_score": 8,
     "adoption_score": 3,
@@ -685,7 +739,7 @@ const data: DatedProjectMetadata[] = [
       "Smart Contracts",
       "ZK"
     ],
-    "hash": "54308232d6104181755e2c0de94c3062430254d9a86eb7fb55165069731e30e4",
+    "hash": "727d0a3f229dae7f7b0cda2505682d3d337a25e747271627a9354a58ed3da87a",
     "last_updated": "2025-09-26"
   }
 ];

@@ -1,17 +1,13 @@
 import path from "path";
-import * as i18n from "./page.i18n";
-import type { I18n as PageI18n } from "./page.i18n";
 import type { Metadata } from "next";
-import MdxContentPage from "@/components/common/mdx-content-page";
 import { generateMdxMetadata } from "@/lib/generate-mdx-metadata";
-import matter from "gray-matter";
-import fs from "fs";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { components } from "@/mdx-components";
+import ProjectMdxContent from "@/components/pages/project/project-mdx-content";
+import { Locale } from "@/i18n.config";
+import i18n from "./page.i18n";
 
 interface ProjectsPageProps {
   params: Promise<{
-    locale: string;
+    locale: Locale;
     id: string;
   }>;
 }
@@ -38,6 +34,7 @@ export async function generateMetadata({
 
 export default async function ProjectsPage({ params }: ProjectsPageProps) {
   const { locale, id } = await params;
+  const t = i18n[locale];
   const contentPath = path.join(
     process.cwd(),
     "content",
@@ -46,28 +43,15 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
     id,
     "page.mdx"
   );
-  const basePath = path.join(process.cwd(), "content", locale, "project");
-  const monarkSupportContentPath = path.join(basePath, "monark-support.mdx");
-  const devEnvContentPath = path.join(basePath, "dev-env.mdx");
-  const monarkSupportContentRaw = fs.readFileSync(
-    monarkSupportContentPath,
-    "utf-8"
-  );
-  const devEnvContentRaw = fs.readFileSync(devEnvContentPath, "utf-8");
-  const { content: monarkSupportContent } = matter(monarkSupportContentRaw);
-  const { content: devEnvContent } = matter(devEnvContentRaw);
-  const i18nStrings: PageI18n =
-    (i18n as Record<string, PageI18n>)[locale] || i18n.en;
 
   return (
     <>
-      <MdxContentPage
+      <ProjectMdxContent
         contentPath={contentPath}
         backHref={`/${locale}/project`}
-        backLabel={i18nStrings.back_to_list}
+        backLabel={t.back_to_list}
+        locale={locale}
       />
-      <MDXRemote source={devEnvContent} components={components} />
-      <MDXRemote source={monarkSupportContent} components={components} />
     </>
   );
 }

@@ -1,12 +1,11 @@
 "use client";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import enProjects from "@/content/en/project/index";
 import frProjects from "@/content/fr/project/index";
-import { en, fr } from "./projects-list.i18n";
-import Image from "next/image";
 import ProjectStatusBadge from "@/components/pages/project/ProjectStatusBadge";
 import { DatedProjectMetadata } from "@/types/project.types";
 import {
@@ -20,6 +19,7 @@ import { Globe } from "lucide-react";
 import { NavLink } from "@/components/common/navlink/navlink";
 import { Locale } from "@/i18n.config";
 import { calculateProjectScore } from "@/lib/utils";
+import i18n from "./projects-list.i18n";
 
 interface ProjectListProps {
   locale: Locale;
@@ -31,9 +31,9 @@ const projectDataMap: Record<Locale, DatedProjectMetadata[]> = {
 };
 
 const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
+  const t = i18n[locale];
   const [search, setSearch] = useState("");
   const [projects, setProjects] = useState<DatedProjectMetadata[]>([]);
-  const [i18nStrings, setI18nStrings] = useState(en);
   const [selectedIndustry, setSelectedIndustry] = useState<string>("all");
   const [selectedKeyword, setSelectedKeyword] = useState<string>("all");
   const [industryTags, setIndustryTags] = useState<Set<string>>(new Set());
@@ -48,7 +48,6 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
   useEffect(() => {
     const projectData = projectDataMap[locale];
     setProjects(projectData);
-    setI18nStrings(locale === "fr" ? fr : en);
 
     // Build unique sets of tags
     const industries = new Set<string>();
@@ -100,13 +99,13 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
       project.keyword_tags.includes(selectedKeyword);
     return matchesSearch && matchesIndustry && matchesKeyword;
   })
-  .sort((a, b) => {
-    if (sortMode === "score") {
-      const scoreDiff = calculateProjectScore(b) - calculateProjectScore(a);
-      if (scoreDiff !== 0) return scoreDiff;
-    }
-    return a.accronym.localeCompare(b.accronym);
-  });
+    .sort((a, b) => {
+      if (sortMode === "score") {
+        const scoreDiff = calculateProjectScore(b) - calculateProjectScore(a);
+        if (scoreDiff !== 0) return scoreDiff;
+      }
+      return a.accronym.localeCompare(b.accronym);
+    });
 
   // Sort tags alphabetically
   const sortedIndustryTags = Array.from(industryTags).sort((a, b) =>
@@ -118,23 +117,23 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
-      <h1 className="mb-6">{i18nStrings.page_title}</h1>
+      <h1 className="mb-6">{t.page_title}</h1>
       <p className="text-muted-foreground mb-8 max-w-[460px]">
-        {i18nStrings.description}
+        {t.description}
       </p>
       <div className="flex flex-col sm:flex-row gap-4 mb-2">
         <Input
-          placeholder={i18nStrings.search_placeholder}
+          placeholder={t.search_placeholder}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="flex-1"
         />
         <Select value={selectedIndustry} onValueChange={setSelectedIndustry}>
           <SelectTrigger className="w-full sm:w-[200px]">
-            <SelectValue placeholder={i18nStrings.filter_by_industry} />
+            <SelectValue placeholder={t.filter_by_industry} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">{i18nStrings.all_industries}</SelectItem>
+            <SelectItem value="all">{t.all_industries}</SelectItem>
             {sortedIndustryTags.map((tag) => (
               <SelectItem key={tag} value={tag}>
                 {tag}
@@ -144,10 +143,10 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
         </Select>
         <Select value={selectedKeyword} onValueChange={setSelectedKeyword}>
           <SelectTrigger className="w-full sm:w-[200px]">
-            <SelectValue placeholder={i18nStrings.filter_by_keyword} />
+            <SelectValue placeholder={t.filter_by_keyword} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="all">{i18nStrings.all_keywords}</SelectItem>
+            <SelectItem value="all">{t.all_keywords}</SelectItem>
             {sortedKeywordTags.map((tag) => (
               <SelectItem key={tag} value={tag}>
                 {tag}
@@ -242,6 +241,10 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
                       )}
                     </CardTitle>
                     <div className="flex items-center gap-2 mt-2">
+                      <ProjectStatusBadge
+                        status={project.status}
+                        locale={locale}
+                      />
                       <a
                         href={`https://${project.accronym}.monark.io`}
                         target="_blank"
@@ -251,10 +254,6 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
                       >
                         <Globe className="mr-1" />
                       </a>
-                      <ProjectStatusBadge
-                        status={project.status}
-                        locale={locale}
-                      />
                     </div>
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col justify-between">
@@ -273,7 +272,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
             ))
           ) : (
             <p className="text-muted-foreground text-lg">
-              {i18nStrings.not_found}
+              {t.not_found}
             </p>
           )}
         </div>

@@ -1,11 +1,14 @@
-export interface I18n {
+interface I18n {
   back_to_list: string;
 }
 
-export const en: I18n = {
+const en: I18n = {
   back_to_list: "Back to Projects",
 };
 
-export const fr: I18n = {
+const fr: I18n = {
   back_to_list: "Retour aux projets",
 };
+
+const locales = { en, fr };
+export default locales;

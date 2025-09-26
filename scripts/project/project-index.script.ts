@@ -38,7 +38,7 @@ function generateProjectIndex(
             hash !== previousEntry.hash
               ? new Date().toISOString().split("T")[0]
               : previousEntry.last_updated ||
-                new Date().toISOString().split("T")[0];
+              new Date().toISOString().split("T")[0];
 
           return {
             id: metadata.id,
@@ -46,6 +46,8 @@ function generateProjectIndex(
             description: metadata.description,
             accronym: metadata.accronym,
             status: metadata.status,
+            img: metadata.img,
+            img_alt: metadata.img_alt,
             complexity_score: metadata.complexity_score,
             effort_score: metadata.effort_score,
             adoption_score: metadata.adoption_score,
