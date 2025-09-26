@@ -18,7 +18,9 @@ const translateText = async (text: string, locale: string) =>
     systemPrompt: systemPrompt(locale),
   });
 
-const baseDir = path.join(__dirname, "../content/en/news");
+// Corrected to use process.cwd() for robust pathing
+const projectRoot = process.cwd();
+const baseDir = path.join(projectRoot, "content/en/news");
 
 const processDirectory = async (
   sourceDir: string,
@@ -36,7 +38,8 @@ const processDirectory = async (
   for (const locale of locales) {
     if (locale === "en") continue;
     console.log(`Starting translation for locale: ${locale}`);
-    const targetDir = path.join(__dirname, `../content/${locale}/news`);
+    // Corrected to use a consistent path from the project root
+    const targetDir = path.join(projectRoot, `content/${locale}/news`);
     fs.mkdirSync(targetDir, { recursive: true });
     await processDirectory(baseDir, targetDir, locale);
   }

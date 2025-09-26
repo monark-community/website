@@ -23,7 +23,7 @@ export async function translateTextGeneric({
 }): Promise<string> {
   try {
     const completion = await openai.chat.completions.create({
-      model: "gpt-4",
+      model: "gpt-4o",
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: text },
@@ -52,6 +52,7 @@ export async function processDirectoryGeneric({
   for (const entry of entries) {
     const sourcePath = path.join(sourceDir, entry.name);
     const destinationPath = path.join(destinationDir, entry.name);
+
     if (entry.isDirectory()) {
       console.log(`Entering subdirectory: ${entry.name}`);
       fs.mkdirSync(destinationPath, { recursive: true });
@@ -62,6 +63,12 @@ export async function processDirectoryGeneric({
         translateFn,
       });
     } else if (entry.isFile() && entry.name.endsWith(".mdx")) {
+      // Check if the destination file already exists
+      if (fs.existsSync(destinationPath)) {
+        console.log(`Skipping existing file: ${entry.name}`);
+        continue; // Skip to the next file in the loop
+      }
+
       console.log(`Translating file: ${entry.name}`);
       const content = fs.readFileSync(sourcePath, "utf-8");
       const translatedContent = await translateFn(content, locale);
