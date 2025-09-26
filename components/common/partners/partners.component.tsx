@@ -7,13 +7,13 @@ type Props = { className?: string };
 
 function Partners({ className }: Props) {
   return (
-    <a href="https://pinax.network" target="_blank">
+    <a href="https://pinax.network" target="_blank" className="block w-fit">
       <Image
         src="/vectors/partners/pinax-network.svg"
         alt="Pinax Network"
         className={`mt-4 ${className}`}
         width={200}
-        height={64}
+        height={39}
       />
     </a>
     // <Slideshow
