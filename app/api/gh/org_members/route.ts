@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { Octokit } from "octokit";
 
 type MinimalUserType = {
@@ -8,7 +8,7 @@ type MinimalUserType = {
     user_view_type: string;
 };
 
-export async function GET(request: NextRequest) {
+export async function GET() {
 
     const octokit = new Octokit({
         auth: process.env.GITHUB_API_KEY
@@ -20,7 +20,7 @@ export async function GET(request: NextRequest) {
             'X-GitHub-Api-Version': '2022-11-28'
         }
     }).then((res) => {
-        let simplifiedData = res.data.map((user: MinimalUserType) => {
+        const simplifiedData = res.data.map((user: MinimalUserType) => {
             if (user.user_view_type === "public") {
                 return {
                     login: user.login,

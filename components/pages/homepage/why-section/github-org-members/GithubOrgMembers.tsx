@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 type OrgMember = {
     login: string;
@@ -20,9 +21,14 @@ export default function GithubOrgMembers() {
                 if (!res.ok) throw new Error("Failed to fetch members");
                 const data: OrgMember[] = await res.json();
                 setMembers(data);
-            } catch (err: any) {
-                console.error(err);
-                setError(err.message);
+            } catch (err) {
+                if (err instanceof Error) {
+                    console.error(err);
+                    setError(err.message);
+                } else {
+                    console.error("Unknown error", err);
+                    setError("An unknown error occurred");
+                }
             } finally {
                 setLoading(false);
             }
@@ -31,27 +37,40 @@ export default function GithubOrgMembers() {
         fetchMembers();
     }, []);
 
-    if (loading) return <p>Loading members...</p>;
-    if (error) return <p>Error: {error}</p>;
+    if (error) return null; // render nothing on error
 
     return (
-        <div className="flex flex-wrap justify-center gap-2 md:px-16 lg:px-48 py-16">
-            {members.map((member) => (
-                <a
-                    key={member.login}
-                    href={member.html_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={member.login}
-                    className="block"
-                >
-                    <img
-                        src={member.avatar_url}
-                        alt={member.login}
-                        className="w-16 h-16 rounded-full object-cover hover:scale-105 transition-transform"
-                    />
-                </a>
-            ))}
-        </div>
+        <TooltipProvider>
+            <div className="flex flex-wrap justify-center gap-2 md:px-16 lg:px-48 py-16">
+                {loading
+                    ? Array.from({ length: 8 }).map((_, idx) => (
+                        <div
+                            key={idx}
+                            className="w-16 h-16 rounded-full bg-gray-300 animate-pulse"
+                        />
+                    ))
+                    : members.map((member) => (
+                        <Tooltip key={member.login}>
+                            <TooltipTrigger asChild>
+                                <a
+                                    href={member.html_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block"
+                                >
+                                    <img
+                                        src={member.avatar_url}
+                                        alt={member.login}
+                                        className="w-16 h-16 rounded-full object-cover hover:scale-105 transition-transform"
+                                    />
+                                </a>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>{member.login}</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    ))}
+            </div>
+        </TooltipProvider>
     );
 }
