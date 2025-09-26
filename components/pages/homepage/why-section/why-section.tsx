@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
 import { NavLink } from "@/components/common/navlink/navlink";
 import NavbarIcon from "@/components/common/layout/navbar/navbar-icon";
-import GithubOrgMembers from "./github-org-members/GithubOrgMembers";
+// import GithubOrgMembers from "./github-org-members/GithubOrgMembers";
 
 type Props = {
   locale: Locale;
