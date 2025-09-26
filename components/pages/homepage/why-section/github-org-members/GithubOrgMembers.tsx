@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import Image from "next/image";
+// import Image from "next/image";
 
 type OrgMember = {
     login: string;
