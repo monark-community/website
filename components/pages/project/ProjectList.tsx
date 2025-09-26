@@ -276,7 +276,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
                     </CardTitle>
                     <div className="flex items-center gap-2 mt-2">
                       <ProjectStatusBadge
-                        status={project.status}
+                        status={project.status as ProjectStatus}
                         locale={locale}
                       />
                       <a

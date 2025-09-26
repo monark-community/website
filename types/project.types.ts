@@ -10,7 +10,7 @@ export enum ProjectStatus {
 export interface ProjectMetadata {
   id: string;
   title: string;
-  status: ProjectStatus;
+  status: string;
   description: string;
   accronym: string;
   img: string;

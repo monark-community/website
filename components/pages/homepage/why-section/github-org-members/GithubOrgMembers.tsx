@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import Image from "next/image";
 
 type OrgMember = {
     login: string;
@@ -58,9 +59,11 @@ export default function GithubOrgMembers() {
                                     rel="noopener noreferrer"
                                     className="block"
                                 >
-                                    <img
+                                    <Image
                                         src={member.avatar_url}
                                         alt={member.login}
+                                        width={64}
+                                        height={64}
                                         className="w-16 h-16 rounded-full object-cover hover:scale-105 transition-transform"
                                     />
                                 </a>
