@@ -11,10 +11,38 @@ const data: DatedNewsMetadata[] = [
     "source": "https://www.usherbrooke.ca/actualites/nouvelles/sciences-innovations-technologiques/details/42749"
   },
   {
+    "id": "real-world-web3-use-cases-that-aren-t-just-nfts",
+    "title": "Web3 en usage réel; des cas d'utilisation au-delà des NFT",
+    "date": "2025-09-11T00:00:00.000Z",
+    "description": "Le potentiel de Web3 s'étend au-delà des NFTs et du battage médiatique, en se concentrant sur des problèmes concrets. Les exemples incluent les monnaies communautaires, les chaînes d'approvisionnement transparentes, les documents notariés et le partage sécurisé des données médicales, démontrant comment la technologie décentralisée peut créer de la confiance et de la responsabilité.",
+    "author": "Équipe Monark"
+  },
+  {
+    "id": "smart-contracts-explained-like-you-re-5",
+    "title": "Les contrats intelligents expliqués comme si vous aviez 5 ans",
+    "date": "2025-08-21T00:00:00.000Z",
+    "description": "Les contrats intelligents sont des accords blockchain auto-exécutants. Ils automatisent les interactions sans confiance, mais font face à des limites comme des coûts élevés, une inflexibilité et des vulnérabilités. Leur avenir réside dans la complémentarité, pas le remplacement, des systèmes traditionnels.",
+    "author": "Équipe Monark"
+  },
+  {
+    "id": "trust-from-open-data-to-mathematical-proof",
+    "title": "Confiance; De la Donnée Ouverte à la Preuve Mathématique",
+    "date": "2025-08-28T00:00:00.000Z",
+    "description": "La transparence de la blockchain a instauré la confiance mais a sacrifié la confidentialité. Les preuves à connaissance zéro permettent désormais un nouveau modèle Web3 qui équilibre les deux - permettant la vérification sans révéler d'informations sensibles.",
+    "author": "Équipe Monark"
+  },
+  {
+    "id": "web3-developer-roadmap-and-resources",
+    "title": "Plan de Développement et Ressources Web3 pour les Développeurs",
+    "date": "2025-09-04T00:00:00.000Z",
+    "description": "Le développement Web3 nécessite de comprendre les concepts clés tels que la blockchain et la cryptographie. Les outils clés pour la construction incluent des langages tels que Solidity, des frameworks tels que Hardhat, et des partenaires d'infrastructure comme The Graph pour les données, Pinax pour l'hébergement, et Midnight Network pour la confidentialité.",
+    "author": "Équipe Monark"
+  },
+  {
     "id": "web3-revolution-reality",
-    "title": "La Révolution et la Réalité du Web3 - Une Évaluation Honnête",
-    "date": "2025-08-13T00:00:00.000Z",
-    "description": "Chez Monark, nous analysons le Web3 avec honnêteté, en reconnaissant à la fois son potentiel transformateur et ses défis réels. Cet article examine l'idéalisme et les réalités du Web3, et propose une approche pragmatique pour son adoption durable.",
+    "title": "La Révolution et la Réalité de Web3; Une Évaluation Honnête",
+    "date": "2025-08-14T00:00:00.000Z",
+    "description": "Chez Monark, nous analysons Web3 avec honnêteté, en reconnaissant à la fois son potentiel transformateur et ses défis réels. Cet article examine l'idéalisme et les réalités de Web3, offrant une approche pragmatique pour une adoption durable.",
     "author": "Équipe Monark"
   },
   {
@@ -25,10 +53,31 @@ const data: DatedNewsMetadata[] = [
     "author": "Équipe Monark"
   },
   {
+    "id": "what-monark-is-building-and-why",
+    "title": "Ce que Monark construit et pourquoi",
+    "date": "2025-09-25T00:00:00.000Z",
+    "description": "Monark fait le pont entre le monde académique et l'industrie Web3 en transformant la recherche étudiante en projets viables. Elle incube des initiatives en phase initiale et a conçu des solutions concrètes pour la transparence des chaînes d'approvisionnement et le partage sécurisé des données médicales.",
+    "author": "Monark Team"
+  },
+  {
+    "id": "what-needs-to-happen-before-web3-becomes-everyday-tech",
+    "title": "Ce qui doit arriver avant que Web3 devienne une technologie du quotidien",
+    "date": "2025-09-18T00:00:00.000Z",
+    "description": "Web3 fait face à des obstacles significatifs pour une adoption massive, notamment des expériences utilisateur complexes, un manque de réglementations claires et la nécessité de meilleures ressources éducatives. Comme l'internet des débuts, il nécessite des améliorations dans son infrastructure—en particulier les portefeuilles et les systèmes d'identité—pour devenir plus convivial.",
+    "author": "Équipe Monark"
+  },
+  {
     "id": "where-blockchain-shines",
     "title": "Où la Blockchain Brille… et Où Elle Ne Brille Pas",
     "date": "2025-08-09T00:00:00.000Z",
     "description": "La technologie blockchain a été à la fois surestimée et sous-estimée. Chez Monark, nous croyons qu'il est essentiel de couper à travers le bruit pour identifier la véritable valeur. Cet article examine où la blockchain excelle réellement et où les solutions traditionnelles restent supérieures.",
+    "author": "Équipe Monark"
+  },
+  {
+    "id": "who-is-web3-actually-for",
+    "title": "Pour qui le Web3 est-il réellement destiné ?",
+    "date": "2025-09-30T00:00:00.000Z",
+    "description": "La promesse du Web3 d'un internet appartenant aux utilisateurs est limitée aux passionnés de crypto. Pour une adoption plus large, il doit répondre aux besoins réels d'une population diversifiée, en offrant des solutions telles que des chaînes d'approvisionnement transparentes et des diplômes éducatifs vérifiables aux groupes tels que les agriculteurs et les étudiants.",
     "author": "Équipe Monark"
   },
   {

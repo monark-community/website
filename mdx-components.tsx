@@ -122,6 +122,7 @@ export const components = {
       />
     );
   },
+  aside: (props: ParagraphProps) => <aside className="p-4 bg-foreground" {...props} />,
   button: (props: ButtonProps) => {
     return <Button {...props} />;
   },

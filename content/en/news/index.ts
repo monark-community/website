@@ -11,6 +11,34 @@ const data: DatedNewsMetadata[] = [
     "source": "https://www.usherbrooke.ca/actualites/nouvelles/sciences-innovations-technologiques/details/42749"
   },
   {
+    "id": "real-world-web3-use-cases-that-aren-t-just-nfts",
+    "title": "Real World Web3; Use Cases That Aren't Just NFTs",
+    "date": "2025-09-11T00:00:00.000Z",
+    "description": "Web3's potential extends beyond NFTs and hype, focusing on real-world problems. Examples include community currencies, transparent supply chains, notarized documents, and secure medical data sharing, all demonstrating how decentralized technology can build trust and accountability.",
+    "author": "Monark Team"
+  },
+  {
+    "id": "smart-contracts-explained-like-you-re-5",
+    "title": "Smart Contracts Explained Like You're 5",
+    "date": "2025-08-21T00:00:00.000Z",
+    "description": "Smart contracts are self-executing blockchain agreements. They automate trustless interactions, but face limitations like high costs, inflexibility, and vulnerabilities. Their future lies in complementing, not replacing, traditional systems.",
+    "author": "Monark Team"
+  },
+  {
+    "id": "trust-from-open-data-to-mathematical-proof",
+    "title": "Trust; From Open Data to Mathematical Proof",
+    "date": "2025-08-28T00:00:00.000Z",
+    "description": "Blockchain transparency built trust but sacrificed privacy. Zero-knowledge proofs are now enabling a new Web3 model that balances both—allowing for verification without revealing sensitive information.",
+    "author": "Monark Team"
+  },
+  {
+    "id": "web3-developer-roadmap-and-resources",
+    "title": "Web3 Developer Roadmap & Resources",
+    "date": "2025-09-04T00:00:00.000Z",
+    "description": "Web3 development requires understanding core concepts like blockchain and cryptography. Key tools for building include languages like Solidity, frameworks such as Hardhat, and infrastructure partners like The Graph for data, Pinax for hosting, and Midnight Network for privacy.",
+    "author": "Monark Team"
+  },
+  {
     "id": "web3-revolution-reality",
     "title": "The Revolution and Reality of Web3 - An Honest Assessment",
     "date": "2025-08-14T00:00:00.000Z",
@@ -25,10 +53,31 @@ const data: DatedNewsMetadata[] = [
     "author": "Monark Team"
   },
   {
+    "id": "what-monark-is-building-and-why",
+    "title": "What Monark Is Building & Why",
+    "date": "2025-09-25T00:00:00.000Z",
+    "description": "Monark bridges academia and the Web3 industry by turning student research into viable projects. It incubates early-stage ventures and has built real-world solutions for supply chain transparency and secure medical data sharing.",
+    "author": "Monark Team"
+  },
+  {
+    "id": "what-needs-to-happen-before-web3-becomes-everyday-tech",
+    "title": "What Needs to Happen Before Web3 Becomes Everyday Tech",
+    "date": "2025-09-18T00:00:00.000Z",
+    "description": "Web3 faces significant barriers to mainstream adoption, including complex user experiences, a lack of clear regulation, and the need for better educational resources. Like the early internet, it requires improvements in its infrastructure—particularly wallets and identity systems—to become more user-friendly.",
+    "author": "Monark Team"
+  },
+  {
     "id": "where-blockchain-shines",
     "title": "Where Blockchain Shines, and Where It Doesn't",
     "date": "2025-08-09T00:00:00.000Z",
     "description": "Blockchain technology has been both overhyped and underappreciated. At Monark, we believe in cutting through the noise to identify genuine value. This article examines where blockchain truly excels and where traditional solutions remain superior.",
+    "author": "Monark Team"
+  },
+  {
+    "id": "who-is-web3-actually-for",
+    "title": "Who Is Web3 Actually For?",
+    "date": "2025-09-30T00:00:00.000Z",
+    "description": "Web3's promise of a user-owned internet is limited to crypto enthusiasts. For broader adoption, it must address real-world needs for a diverse population, offering solutions like transparent supply chains and verifiable educational credentials to groups like farmers and students.",
     "author": "Monark Team"
   },
   {
