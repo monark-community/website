@@ -44,6 +44,7 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+
   .dark {
     --background: 0 0% 8%;
     --foreground: 32 100% 98%;
@@ -84,6 +85,7 @@ h6 {
 
 h1 {
   @apply text-4xl;
+
   @media screen and (max-width: 768px) {
     @apply text-3xl;
   }
@@ -91,6 +93,7 @@ h1 {
 
 h2 {
   @apply text-3xl;
+
   @media screen and (max-width: 768px) {
     @apply text-2xl;
   }
@@ -98,6 +101,7 @@ h2 {
 
 h3 {
   @apply text-2xl;
+
   @media screen and (max-width: 768px) {
     @apply text-xl;
   }
@@ -105,6 +109,7 @@ h3 {
 
 h4 {
   @apply text-xl;
+
   @media screen and (max-width: 768px) {
     @apply text-lg;
   }
@@ -112,6 +117,7 @@ h4 {
 
 h5 {
   @apply text-lg;
+
   @media screen and (max-width: 768px) {
     @apply text-base;
   }
@@ -119,6 +125,7 @@ h5 {
 
 h6 {
   @apply text-lg;
+
   @media screen and (max-width: 768px) {
     @apply text-base;
   }
@@ -127,6 +134,7 @@ h6 {
 .text-tagline {
   @apply text-lg;
   color: hsl(var(--primary));
+
   @media screen and (max-width: 768px) {
     font-size: 1.25rem;
   }
@@ -135,6 +143,7 @@ h6 {
 .text-headline {
   font-size: 6rem;
   font-weight: bold;
+
   @media screen and (max-width: 768px) {
     font-size: 3.5rem;
   }
@@ -154,6 +163,7 @@ hr {
 }
 
 article {
+
   h1,
   h2,
   h3,
@@ -162,24 +172,29 @@ article {
   h6 {
     margin: 1.5rem 0 0.5rem 0;
   }
+
   p {
     @apply text-base;
     margin: 1rem 0;
     color: hsl(var(--muted-foreground));
   }
+
   ul {
     @apply text-base;
     list-style-type: disc;
     color: hsl(var(--muted-foreground));
     margin: 1rem;
     padding-left: 1.5rem;
+
     li {
       margin: 0.5rem 0;
     }
   }
+
   a {
     color: hsl(var(--primary));
     text-decoration: underline;
+
     &:hover {
       color: hsl(var(--primary-foreground));
     }
@@ -190,7 +205,13 @@ article {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+}
+
+ol {
+  list-style: decimal;
+  padding-left: 40px;
 }

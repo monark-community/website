@@ -32,12 +32,12 @@ export const components = {
   ),
   p: (props: ParagraphProps) => <p className="leading-snug" {...props} />,
   ol: (props: ListProps) => (
-    <ol className="list-decimal pl-5 space-y-2" {...props} />
+    <ol className="list-decimal text-muted-foreground pl-5 space-y-2" {...props} />
   ),
   ul: (props: ListProps) => (
     <ul className="list-disc pl-5 space-y-1" {...props} />
   ),
-  li: (props: ListItemProps) => <li className="pl-1" {...props} />,
+  li: (props: ListItemProps) => <li {...props} />,
   em: (props: ComponentPropsWithoutRef<"em">) => (
     <em className="font-medium" {...props} />
   ),
