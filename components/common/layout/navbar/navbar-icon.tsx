@@ -1,5 +1,5 @@
 import React from "react";
-import { LucideProps } from "lucide-react";
+import { FactoryIcon, LucideProps } from "lucide-react";
 import {
   BinaryIcon,
   BlocksIcon,
@@ -38,6 +38,7 @@ const iconMap: Record<
   medal: MedalIcon,
   binary: BinaryIcon,
   "calendar-plus": CalendarPlus,
+  "factory": FactoryIcon,
   info: InfoIcon,
   vote: VoteIcon,
   coins: CoinsIcon,
@@ -49,13 +50,16 @@ const iconMap: Record<
 
 type Props = {
   icon: string;
+  size?: number;
+  strokeWidth?: number;
+  className?: string;
 };
 
-function NavbarIcon({ icon }: Props) {
+function NavbarIcon({ icon, size = 16, strokeWidth = 1, className }: Props) {
   const Icon = iconMap[icon];
   return (
-    <div className="bg-card min-h-12 min-w-12 max-h-12 max-w-12 flex justify-center items-center rounded-md mr-4">
-      <Icon height={24} width={24} />
+    <div className={`flex justify-center items-center rounded-md mr-4 ${className}`}>
+      <Icon height={size} width={size} strokeWidth={strokeWidth}/>
     </div>
   );
 }

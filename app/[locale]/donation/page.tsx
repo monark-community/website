@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { Locale } from "@/i18n.config";
 import * as i18n from "./page.i18n";
-import DonationForm from "@/components/common/pages/donation/donation-form/donation-form";
-import DonationLeaderboard from "@/components/common/pages/donation/donation-leaderboard/donation-leaderboard";
+import DonationForm from "@/components/pages/donation/donation-form/donation-form";
+import DonationLeaderboard from "@/components/pages/donation/donation-leaderboard/donation-leaderboard";
 import { MONARK_WALLET_ADDRESSES } from "@/lib/donation-constants";
 
 interface Donation {
@@ -59,7 +59,7 @@ const DonationPage = () => {
 
   return (
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
-      <h1 className="text-3xl font-bold mb-4">{t.title}</h1>
+      <h1 className="font-bold mb-4">{t.title}</h1>
       <p className="mb-8 text-muted-foreground max-w-[475px]">
         {t.description}
       </p>

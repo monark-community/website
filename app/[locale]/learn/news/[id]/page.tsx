@@ -3,7 +3,7 @@ import * as i18n from "./page.i18n";
 import type { I18n as PageI18n } from "./page.i18n";
 import type { Metadata } from "next";
 import { generateMdxMetadata } from "@/lib/generate-mdx-metadata";
-import NewsArticleMdxContent from "@/components/common/pages/news/news-article-mdx-content";
+import NewsArticleMdxContent from "@/components/pages/news/news-article-mdx-content";
 import { Locale } from "@/i18n.config";
 
 interface NewsPageProps {

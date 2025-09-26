@@ -7,11 +7,11 @@ import frNews from "@/content/fr/news/index";
 import { DatedNewsMetadata } from "@/types/news.types";
 import i18n from "./news-list.i18n";
 import { Locale } from "@/i18n.config";
-import { NavLink } from "../../navlink/navlink";
+import { NavLink } from "../../common/navlink/navlink";
 import Image from "next/image";
 import { format, parseISO } from "date-fns";
 import NewsArticleCategories from "./NewsArticleCategories";
-import { IconLabelAttribute } from "../../icon-label-attribute/IconLabelAttribute";
+import { IconLabelAttribute } from "../../common/icon-label-attribute/IconLabelAttribute";
 import { CalendarIcon, ClockIcon } from "lucide-react";
 import { formatDuration, mapLocaleToDateFns } from "@/lib/time";
 

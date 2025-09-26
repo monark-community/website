@@ -3,13 +3,11 @@ import fs from "fs";
 import path from "path";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { components } from "@/mdx-components";
-import MembersSection from "@/components/pages/about/members-section/members-section.component";
-import { Locale } from "@/i18n.config";
 import matter from "gray-matter";
 import { Metadata } from "next";
 import { generateMdxMetadata } from "@/lib/generate-mdx-metadata";
 
-type AboutPageProps = {
+type IndustryPageProps = {
   params: Promise<{
     locale: string;
   }>;
@@ -17,30 +15,32 @@ type AboutPageProps = {
 
 export async function generateMetadata({
   params,
-}: AboutPageProps): Promise<Metadata> {
+}: IndustryPageProps): Promise<Metadata> {
   const { locale } = await params;
   const contentPath = path.join(
     process.cwd(),
     "content",
     locale,
-    "about",
+    "participate",
+    "industry",
     "page.mdx"
   );
   return generateMdxMetadata({
     contentPath,
-    id: "about",
+    id: "industry",
     ogImagePrefix: "/images/",
   });
 }
 
-export default async function AboutPage({ params }: AboutPageProps) {
+export default async function DeveloperPage({ params }: IndustryPageProps) {
   const { locale } = await params;
 
   const contentPath = path.join(
     process.cwd(),
     "content",
     locale,
-    "about",
+    "participate",
+    "industry",
     "page.mdx"
   );
 
@@ -56,7 +56,6 @@ export default async function AboutPage({ params }: AboutPageProps) {
   return (
     <div className="container mx-auto py-6">
       <MDXRemote source={content} components={components} />
-      <MembersSection locale={locale as Locale} />
     </div>
   );
 }

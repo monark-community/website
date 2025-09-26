@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectList from "@/components/common/pages/project/ProjectList";
+import ProjectList from "@/components/pages/project/ProjectList";
 import { Locale } from "@/i18n.config";
 import { Metadata } from "next";
 import * as i18n from "./metadata.i18n";

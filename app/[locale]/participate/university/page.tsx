@@ -54,7 +54,7 @@ export default async function StudentPage({ params }: StudentPageProps) {
   const { content } = matter(contentRaw);
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto py-6">
       <MDXRemote source={content} components={components} />
     </div>
   );

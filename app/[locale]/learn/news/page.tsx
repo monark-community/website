@@ -1,5 +1,5 @@
 import React from "react";
-import NewsList from "@/components/common/pages/news/NewsList";
+import NewsList from "@/components/pages/news/NewsList";
 import { Locale } from "@/i18n.config";
 import { Metadata } from "next";
 import * as i18n from "./metadata.i18n";

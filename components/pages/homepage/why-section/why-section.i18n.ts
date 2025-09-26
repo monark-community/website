@@ -58,20 +58,20 @@ export const en: I18n = {
       //   href: "/participate/entrepreneur",
       // },
       {
-        id: "student",
-        title: "Student",
-        content:
-          "Contribute to real-world projects, enhance your skills and build your ideas.",
-        href: "/participate/student",
-        icon: "graduation-cap",
-      },
-      {
         id: "university",
         title: "University",
         content:
           "Let's address the core web3 limitations and expand what is possible.",
         href: "/participate/university",
         icon: "university",
+      },
+      {
+        id: "industry",
+        title: "Industry Representative",
+        content:
+          "Work with us as an industry expert to bring your decentralized idea to life at minimal cost!",
+        href: "/participate/industry",
+        icon: "factory",
       },
       {
         id: "developer",
@@ -128,6 +128,14 @@ export const fr: I18n = {
       //   href: "/participate/entrepreneur",
       // },
       {
+        id: "university",
+        title: "Université",
+        content:
+          "Abordons les limitations fondamentales du web3 et élargissons les possibilités.",
+        href: "/participate/university",
+        icon: "university",
+      },
+      {
         id: "student",
         title: "Étudiant",
         content:
@@ -135,13 +143,14 @@ export const fr: I18n = {
         href: "/participate/student",
         icon: "graduation-cap",
       },
+
       {
-        id: "university",
-        title: "Université",
+        id: "industry",
+        title: "Représentant d'industrie",
         content:
-          "Abordons les limitations fondamentales du web3 et élargissons les possibilités.",
-        href: "/participate/university",
-        icon: "university",
+          "Travaillez avec nous en tant qu'expert industriel afin de matérialiser vos projets de décentralisation à un coût minimal!",
+        href: "/participate/industry",
+        icon: "factory",
       },
       {
         id: "developer",

@@ -84,8 +84,11 @@ function Audience({ audience }: AudienceProps) {
     <BrandedCard className="relative text-left">
       <div className="relative z-1 h-full flex flex-col justify-between">
         <CardHeader className="pt-16">
-          <NavbarIcon icon={audience.icon} />
-          <CardTitle>{audience.title}</CardTitle>
+          <div className="flex flex-start mb-4">
+            <NavbarIcon icon={audience.icon} className="absolute text-primary blur-sm" size={64} strokeWidth={1} />
+            <NavbarIcon icon={audience.icon} className=" text-primary" size={64} strokeWidth={1} />
+          </div>
+          <CardTitle><NavLink href={audience.href} className="hover:underline">{audience.title}</NavLink></CardTitle>
         </CardHeader>
         <div className="flex-1 flex flex-col justify-between">
           <CardContent>

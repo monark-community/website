@@ -26,17 +26,17 @@ export const en: I18n = {
         href: "/participate",
         isFolderRoute: true,
         items: [
-          // {
-          //   id: "student",
-          //   label: "Student",
-          //   icon: "graduation-cap",
-          //   href: "/student",
-          // },
           {
             id: "university",
             label: "University",
             icon: "university",
             href: "/university",
+          },
+          {
+            id: "industry",
+            label: "Industry Representative",
+            icon: "factory",
+            href: "/industry",
           },
           {
             id: "developer",
@@ -188,6 +188,12 @@ export const fr: I18n = {
             label: "Université",
             icon: "university",
             href: "/university",
+          },
+          {
+            id: "industry",
+            label: "Représentant industriel",
+            icon: "factory",
+            href: "/industry",
           },
           {
             id: "developpeur",

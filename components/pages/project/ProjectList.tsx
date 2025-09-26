@@ -7,7 +7,7 @@ import enProjects from "@/content/en/project/index";
 import frProjects from "@/content/fr/project/index";
 import { en, fr } from "./projects-list.i18n";
 import Image from "next/image";
-import ProjectStatusBadge from "@/components/common/pages/project/ProjectStatusBadge";
+import ProjectStatusBadge from "@/components/pages/project/ProjectStatusBadge";
 import { DatedProjectMetadata } from "@/types/project.types";
 import {
   Select,
