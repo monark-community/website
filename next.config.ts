@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   experimental: {
     mdxRs: true,
   },
+  images: {
+    domains: ['avatars.githubusercontent.com']
+  }
 };
 
 const withMDX = createMDX({});
