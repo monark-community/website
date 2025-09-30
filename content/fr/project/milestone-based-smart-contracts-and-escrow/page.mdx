@@ -34,18 +34,19 @@ Les étudiants qui construisent MilestoneMint gagneront de l'expérience dans la
 
 ## Livrables & fonctionnalités souhaitées
 
-- Interface web utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)  
-   - Fournir un gestionnaire de contrats pour projets avec paiements par jalons.
-- Authentification des utilisateurs  
-   - Permettre aux clients et prestataires de se connecter de manière sécurisée pour gérer les phases du contrat.
-- Contrat intelligent de verrouillage des fonds avec logique de jalons  
-   - Verrouiller et libérer les fonds à chaque jalon validé.
-- Interface web pour définir, modifier et valider les jalons  
-   - Visualiser l'avancement du projet, les échéances et le statut des validations.
-- Rôles de validateurs et logique d'approbation  
-   - Définir qui peut approuver chaque jalon ou livrable.
-- Suivi des validations et journal des paiements  
-- (Optionnel) Prise en charge des validations multi-signatures  
+- Interface web utilisant [Next.js](http://next.js/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)
+    - Fournir un gestionnaire de contrats pour les projets avec des paiements basés sur des jalons.
+- Authentification de l'utilisateur
+    - Permettre l'inscription et la connexion basées sur le portefeuille (wallet) à l'aide des [Embedded-wallets MetaMask](https://metamask.io/en-GB/developer/embedded-wallets).
+    - Permettre aux clients et aux prestataires de se connecter en toute sécurité pour gérer les phases du contrat.
+- Contrat intelligent (smart contract) de blocage de fonds avec logique de jalon
+    - Bloquer et débloquer les fonds par jalon validé.
+- Interface utilisateur web pour la configuration, l'édition et la validation des jalons
+    - Visualiser l'avancement du projet, les délais et le statut d'approbation.
+- Rôles de validateur et logique d'approbation
+    - Définir qui peut approuver chaque jalon ou livrable.
+- Suivi des déblocages et journaux de paiement
+- (Optionnel) Prise en charge des déblocages multi-signatures
 - (Optionnel) Notifications ou rappels basés sur le temps
 
 ## Ressources requises
