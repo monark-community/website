@@ -32,18 +32,21 @@ WillChain a des implications dans le monde réel: des millions de dollars en cry
 
 ## Livrables & fonctionnalités souhaitées
 
-- Interface web utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)  
-   - Développer une application web conviviale permettant aux utilisateurs de créer et gérer leurs testaments numériques, en utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/) et des bibliothèques UI modernes.
-- Authentification des utilisateurs  
-  - Activer l'inscription et la connexion via un portefeuille grâce aux [Embedded Wallets MetaMask](https://metamask.io/developer/embedded-wallets)
-- Contrats intelligents définissant les conditions d'exécution du testament  
-   - Créer des contrats intelligents permettant de transférer des actifs cryptographiques aux bénéficiaires sélectionnés, selon des conditions précises comme un délai ou une inactivité du compte.
-- Simulation d'inactivité ou déclencheurs basés sur le temps  
-   - Développer une logique blockchain détectant l'inactivité du portefeuille ou le dépassement d'une période donnée, afin d'exécuter automatiquement le testament numérique.
-- Interface web pour l'ajout de bénéficiaires et l'allocation d'actifs  
-   - Construire une interface visuelle permettant aux utilisateurs d'assigner des actifs à des bénéficiaires, de modifier les répartitions et de prévisualiser l'exécution du testament.
-- (Optionnel) mécanisme de sauvegarde ou de récupération chiffrée  
-   - Concevoir un système de sauvegarde optionnel (par exemple, récupération sociale ou sauvegarde chiffrée sur le cloud/IPFS) pour restaurer l'accès en cas de perte du portefeuille ou des clés.
+Translate this to french, keeping markdown, without ANY extra formatting and respecting things like (optionnal) being at the start of the line. Include links too. Use regular tabs for nested list items. Translate MetaMask embedded-wallets to Embedded Wallets MetaMask.
+
+- Interface web utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/) qui peut ;
+   - Créer et gérer leurs testaments numériques
+   - Gérer les actifs tokenisés
+   - Gérer les bénéficiaires et modifier leurs actifs alloués
+- Authentification de l'utilisateur
+   - Permettre l'inscription et la connexion basées sur un portefeuille en utilisant les [Embedded Wallets MetaMask](https://metamask.io/en-GB/developer/embedded-wallets)
+   - Permettre une connexion sécurisée par identité basée sur un portefeuille (par exemple, MetaMask), garantissant que seuls les utilisateurs autorisés peuvent accéder à et modifier leur testament numérique.
+- Contrats intelligents définissant les conditions d'exécution du testament
+   - Créer des contrats intelligents qui transfèrent des actifs crypto à des bénéficiaires sélectionnés en fonction de conditions spécifiques comme un délai ou l'inactivité du compte
+- Simulation d'inactivité ou déclencheurs basés sur le temps
+   - Développer une logique blockchain qui détecte l'inactivité du portefeuille ou le passage d'une période de temps définie pour exécuter automatiquement le testament numérique.
+- (Optionnel) Mécanisme de sauvegarde ou de récupération chiffré
+   - Concevoir un système de sauvegarde optionnel (par exemple, récupération sociale ou sauvegarde chiffrée dans le cloud/IPFS) pour restaurer l'accès si les utilisateurs perdent leur portefeuille ou leurs clés.
 
 
 ## Ressources requises

@@ -32,40 +32,30 @@ WillChain has real-world implications: millions of dollars in crypto are lost ea
 
 ## Deliverables & Desired Functionalities
 
-- Web interface using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)
-   - Develop a user-friendly web application where users can create and manage their digital wills, built using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/) and modern UI libraries.
-- User authentication 
-  - Enable wallet-based registration and login using [MetaMask embedded-wallets](https://metamask.io/developer/embedded-wallets)
+- Web interface using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/) that can;
+    - Create and manage their digital wills
+    - Manage tokenized assets
+    - Manage beneficiaries and edit their allocated assets
+- User authentication
+    - Enable wallet-based registration and login using [MetaMask embedded-wallets](https://metamask.io/en-GB/developer/embedded-wallets)
+    - Enable secure login through wallet-based identity (e.g., MetaMask), ensuring only authorized users can access and modify their digital will.
 - Smart contracts defining will execution conditions
-   - Create smart contracts that transfer crypto assets to selected beneficiaries based on specific conditions like time delay or account inactivity and that 
+    - Create smart contracts that transfer crypto assets to selected beneficiaries based on specific conditions like time delay or account inactivity and that
 - Inactivity simulation or time-based triggers
-   - Develop blockchain logic that detects wallet inactivity or passes a set time period to automatically execute the digital will.
-- Web UI for adding beneficiaries and asset allocation
-   - Build a visual interface where users can assign assets to beneficiaries, edit distributions, and preview how their will would be executed.
-- (Optional) encrypted backup or recovery mechanism
-   - Design an optional backup system (e.g., social recovery or encrypted cloud/IPFS backup) to restore access if users lose their wallet or keys.
+    - Develop blockchain logic that detects wallet inactivity or passes a set time period to automatically execute the digital will.
+- (Optional) Encrypted backup or recovery mechanism
+    - Design an optional backup system (e.g., social recovery or encrypted cloud/IPFS backup) to restore access if users lose their wallet or keys.
 
 ## Required Resources
 
 Tools/softwares that are not in the possession of the students will be provided by our team.
 
-Tools/softwares that are not in the possession of the students will be provided by our team.
-
-- **Web Hosting Platform**
-    - e.g., Vercel for deploying the frontend (Next.js).
-- **Blockchain Testnet Environment**
-    - To deploy and test smart contracts (e.g., Ethereum Sepolia).
-- **Smart Contract Framework**
-    - **Solidity** with **[OpenZeppelin](https://www.openzeppelin.com/)** libraries for secure contract development.
-- **ZK Network**
-    - For confidential smart contracts, private logic execution and ZK identity proofs.
-- **Backend Hosting Servers**
-    - Supabase For managing APIs, user authentication and ZK circuit interactions (e.g., [Express](https://expressjs.com/)/Rust backend).
-- **Zero-Knowledge Proof System**
-    - SNARKs, STARKs, Semaphore, or other ZK primitives to handle privacy-preserving proofs.
-- **Encrypted Off-Chain Storage Layer**
-    - e.g., **[IPFS](https://ipfs.tech/)** with **Filecoin** for encrypted data storage and controlled access.
-- **Optional (Recommended for Testing / Simulation)**
-    - Realistic sample **medical datasets** (synthetic or de-identified).
-        - **Test users** for UI/UX flows and proof generation.
-        - **IRB / Ethics consultants** if simulating real-world deployments or designing for clinical settings.
+- [GIT](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) version 22+
+- [Visual Studio Code IDE](https://code.visualstudio.com/) and [Remix](https://remix-project.org/) if needed
+- Web hosting platform ([Vercel](https://vercel.com/) or [Render](https://render.com/))
+- Access to RPC provider
+- [Tenderly](https://tenderly.co/) access to create virtual blockchain testnet
+- Database ([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) or [GraphQL](https://graphql.org/)) and Backend ([Express](https://expressjs.com/)) hosting ([Render](https://render.com/))
+- Smart Contract Framework ([Solidity](https://soliditylang.org/)) and libraries for secure contract development ([OpenZeppelin](https://www.openzeppelin.com/))
+- Sample cooperative data for simulation
