@@ -58,7 +58,7 @@ export default async function ProjectMdxContent({
             </NavLink>
           </div>
         )}
-        <h1>{data.title}</h1>
+        <h1>{data.accronym} | {data.title}</h1>
         <div className="lg:hidden flex flex-col gap-2 text-muted-foreground">
           <ProjectStatusBadge status={data.status} locale={locale} />
           <IconLabelAttribute
