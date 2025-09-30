@@ -24,7 +24,7 @@ interface I18n {
     };
     learn_more: string;
     status: string;
-    website: string;
+    mockup: string;
 }
 
 const en: I18n = {
@@ -53,7 +53,7 @@ const en: I18n = {
     },
     learn_more: "Learn more",
     status: "Status",
-    website: "Website"
+    mockup: "Mockup"
 };
 
 const fr: I18n = {
@@ -82,7 +82,7 @@ const fr: I18n = {
     },
     learn_more: "En savoir plus",
     status: "État",
-    website: "Site web"
+    mockup: "Maquette"
 };
 
 const locales = { en, fr };

@@ -63,8 +63,8 @@ export default async function ProjectMdxContent({
           <ProjectStatusBadge status={data.status} locale={locale} />
           <IconLabelAttribute
             Icon={GlobeIcon}
-            label={t.website}
-            value={t.website}
+            label={t.mockup}
+            value={t.mockup}
             href={`https://${data.acronym}.monark.io`}
           />
           <Label className="mb-0 mt-4 font-bold">{t.industries}</Label>
@@ -103,8 +103,8 @@ export default async function ProjectMdxContent({
             <ProjectStatusBadge status={data.status} locale={locale} />
             <IconLabelAttribute
               Icon={GlobeIcon}
-              label={t.website}
-              value={t.website}
+              label={t.mockup}
+              value={t.mockup}
               href={`https://${data.accronym}.monark.io`}
             />
             <Label className="mb-0 mt-4 font-bold">{t.industries}</Label>
