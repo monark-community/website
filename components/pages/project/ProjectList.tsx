@@ -86,27 +86,46 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
-  const filteredProjects = projects.filter((project) => {
-    const searchLower = search.toLowerCase();
-    const matchesSearch =
-      project.title.toLowerCase().includes(searchLower) ||
-      project.accronym.toLowerCase().includes(searchLower) ||
-      project.keyword_tags.some((tag) => tag.toLowerCase().includes(searchLower));
-    const matchesIndustry =
-      selectedIndustry === "all" ||
-      project.industry_tags.includes(selectedIndustry);
-    const matchesKeyword =
-      selectedKeyword === "all" ||
-      project.keyword_tags.includes(selectedKeyword);
-    const matchesStatus =
-      selectedStatus === "all" || project.status === selectedStatus;
-    return matchesSearch && matchesIndustry && matchesKeyword && matchesStatus;
-  })
+  const STATUS_PRIORITY: Record<ProjectStatus, number> = {
+    production: 0,
+    market_validation: 1,
+    in_progress: 2,
+    prototype_available: 3,
+    on_hold: 4,
+    idea: 5,
+  };
+
+  const filteredProjects = projects
+    .filter((project) => {
+      const searchLower = search.toLowerCase();
+      const matchesSearch =
+        project.title.toLowerCase().includes(searchLower) ||
+        project.accronym.toLowerCase().includes(searchLower) ||
+        project.keyword_tags.some((tag) => tag.toLowerCase().includes(searchLower));
+      const matchesIndustry =
+        selectedIndustry === "all" ||
+        project.industry_tags.includes(selectedIndustry);
+      const matchesKeyword =
+        selectedKeyword === "all" ||
+        project.keyword_tags.includes(selectedKeyword);
+      const matchesStatus =
+        selectedStatus === "all" || project.status === selectedStatus;
+      return matchesSearch && matchesIndustry && matchesKeyword && matchesStatus;
+    })
     .sort((a, b) => {
+      // First, sort by status priority
+      const statusDiff =
+        (STATUS_PRIORITY[a.status as ProjectStatus] ?? 999) -
+        (STATUS_PRIORITY[b.status as ProjectStatus] ?? 999);
+      if (statusDiff !== 0) return statusDiff;
+
+      // Then, optionally sort by project score if admin selected "score"
       if (sortMode === "score") {
         const scoreDiff = calculateProjectScore(b) - calculateProjectScore(a);
         if (scoreDiff !== 0) return scoreDiff;
       }
+
+      // Finally, sort by acronym alphabetically
       return a.accronym.localeCompare(b.accronym);
     });
 
@@ -261,24 +280,21 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
                     />
                   </NavLink>
                   <CardHeader>
-                    <CardTitle className="text-lg font-bold flex items-center justify-between">
+                    <CardTitle className="items-center justify-between">
                       <NavLink
                         href={`/project/${project.id}`}
                         className="hover:underline"
                       >
-                        {project.accronym}&nbsp;|&nbsp;{project.title}
+                        <div className="text-xl font-bold flex">{project.accronym}</div>
                       </NavLink>
+                      <div><small className="text-sm font-normal text-muted-foreground">{project.title}</small></div>
                       {adminMode && (
                         <Badge variant="outline" className="ml-2 text-xs bg-primary/10 border-primary/30 text-primary">
                           Score: {calculateProjectScore(project)}
                         </Badge>
                       )}
                     </CardTitle>
-                    <div className="flex items-center gap-2 mt-2">
-                      <ProjectStatusBadge
-                        status={project.status as ProjectStatus}
-                        locale={locale}
-                      />
+                    <div className="flex items-center gap-2 pt-2">
                       <a
                         href={`https://${project.accronym}.monark.io`}
                         target="_blank"
@@ -288,10 +304,14 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
                       >
                         <Globe className="mr-1" />
                       </a>
+                      <ProjectStatusBadge
+                        status={project.status as ProjectStatus}
+                        locale={locale}
+                      />
                     </div>
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col justify-between">
-                    <p className="mb-4">{project.description}</p>
+                    <p className="mb-4 text-sm">{project.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.keyword_tags.map((tag) => (
                         <Badge key={tag} variant="secondary">

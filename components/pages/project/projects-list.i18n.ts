@@ -12,6 +12,7 @@ interface I18n {
     filter_by_keyword: string;
     keywords: string;
     all_keywords: string;
+    contributors: string;
     filter_by_status: string,
     all_statuses: string,
     statuses: {
@@ -41,6 +42,7 @@ const en: I18n = {
     filter_by_keyword: "Filter by Keyword",
     keywords: "Keywords",
     all_keywords: "All Keywords",
+    contributors: "Contributors",
     filter_by_status: "Filter by status",
     all_statuses: "All status",
     statuses: {
@@ -67,6 +69,7 @@ const fr: I18n = {
     filter_by_industry: "Filtrer par industrie",
     industries: "Industries",
     all_industries: "Toutes les industries",
+    contributors: "Contributeurs",
     filter_by_keyword: "Filtrer par mot-clé",
     keywords: "Mots-clé",
     all_keywords: "Tous les mots-clés",

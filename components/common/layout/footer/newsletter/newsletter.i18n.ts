@@ -27,6 +27,16 @@ export interface I18n {
     invalidEmail: string;
     successTitle: string;
     successMessage: string;
+    identity_label: string;
+    identity_placeholder: string;
+    self_identify: {
+      student: string;
+      university_staff: string;
+      ambassador: string;
+      web3_enthusiast: string;
+      web3_business: string;
+      prefer_not_to_say: string;
+    }
   };
 }
 
@@ -59,6 +69,16 @@ export const en: I18n = {
     invalidEmail: "Invalid email.",
     successTitle: "Welcome to the flutter!",
     successMessage: "Thanks for subscribing! We'll get in touch soon!",
+    identity_label: "I am a...",
+    identity_placeholder: "Please choose what best describes you",
+    self_identify: {
+      student: "Student",
+      university_staff: "University Staff",
+      ambassador: "Ambassador",
+      web3_enthusiast: "Web3 Enthusiast",
+      web3_business: "Web3 Business",
+      prefer_not_to_say: "Prefer not to say",
+    }
   },
 };
 
@@ -91,5 +111,15 @@ export const fr: I18n = {
     invalidEmail: "Le courriel est invalide.",
     successTitle: "Bienvenue dans la volée!",
     successMessage: "Merci pour l'abonnement! Nous vous contacterons bientôt!",
+    identity_label: "Je suis...",
+    identity_placeholder: "Veuillez sélectionner votre groupe d'appartenance",
+    self_identify: {
+      student: "Étudiant",
+      university_staff: "Personnel universitaire",
+      ambassador: "Ambassadeur",
+      web3_enthusiast: "Passionné de Web3",
+      web3_business: "Entreprise Web3",
+      prefer_not_to_say: "Je préfère ne pas le dire",
+    }
   },
 };

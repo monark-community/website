@@ -28,14 +28,14 @@ const data: DatedProjectMetadata[] = [
       "Contrats intelligents"
     ],
     "hash": "f8f82cf1fed418b4ae407c17c16c176a86b81bcff217c0e92da0b3750d81815a",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "accounting-blockchain-data-extraction",
     "title": "Extraction de données comptables de blockchain",
     "description": "Créez un outil qui extrait, nettoie et formate les données de transaction blockchain en formats prêts pour la comptabilité. Les utilisateurs peuvent entrer une adresse de portefeuille et recevoir des revenus/dépenses catégorisés, des frais de gaz et des horodatages. Utile pour les DAO, les indépendants et les entreprises nécessitant des audits ou des rapports fiscaux. Vous pouvez utiliser [The Graph](https://thegraph.com/), APIs, ou des indexeurs pour nourrir les données.",
     "accronym": "LedgerLift",
-    "status": "idea",
+    "status": "in_progress",
     "img": "accounting-blockchain-data-extraction.jpg",
     "img_alt": "Maquette de Extraction de données comptables de blockchain",
     "complexity_score": 7,
@@ -54,8 +54,8 @@ const data: DatedProjectMetadata[] = [
       "Extraction de données",
       "Conformité"
     ],
-    "hash": "b33b27ded4d57387f0348700d92fbc6ed0648a3c01cca9d27f7c6c2d600930ca",
-    "last_updated": "2025-09-26"
+    "hash": "1a20e765415fa273acb27b9b5ed81751645b275ac9af39692a78b6913ed2bc5d",
+    "last_updated": "2025-10-29"
   },
   {
     "id": "address-review-system",
@@ -82,7 +82,7 @@ const data: DatedProjectMetadata[] = [
       "DAO"
     ],
     "hash": "1ef9cdf35190f921a916292c3804c1cb5eb96ebcb811e55936fec2b02a4f40fd",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "bounty-system",
@@ -109,7 +109,7 @@ const data: DatedProjectMetadata[] = [
       "DAO"
     ],
     "hash": "46cfce0a821f1e1f50ba827b66067e0857a5a4d5873dc0cfa582f34a133e40ca",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "contact-list",
@@ -136,7 +136,7 @@ const data: DatedProjectMetadata[] = [
       "Contacts"
     ],
     "hash": "81db2d3c42c06c588ad355de893741976cb927df49284960726d39374cdc6997",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "dao-voting-platform",
@@ -163,7 +163,7 @@ const data: DatedProjectMetadata[] = [
       "Transparence"
     ],
     "hash": "3eeb041d852e2728ae390e65ad365c89b4286649fda649decb2b6d616de45df8",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "defi-borrow",
@@ -190,7 +190,7 @@ const data: DatedProjectMetadata[] = [
       "Liquidité"
     ],
     "hash": "a46ba209ecb1ccc6bf93211438047038bb18e306f71fbbd6b69339e10fc45f22",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "defi-lending",
@@ -217,7 +217,7 @@ const data: DatedProjectMetadata[] = [
       "Liquidité"
     ],
     "hash": "eb77a2574448426c935a52b977c96935666752721c892dc23b2a1c12048792c1",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "defi-loans",
@@ -244,7 +244,7 @@ const data: DatedProjectMetadata[] = [
       "Automatisation"
     ],
     "hash": "21ac2f0985c63ccc6f526f5f430234c3371af1c63b7e2fdadfdd8c8d242e9313",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "defi-swaps",
@@ -271,7 +271,7 @@ const data: DatedProjectMetadata[] = [
       "Liquidité"
     ],
     "hash": "d73d543463a70d57050cdebe1e2815039da518e6010cda3fefcc4b53bde6eb9c",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "digital-will",
@@ -298,7 +298,7 @@ const data: DatedProjectMetadata[] = [
       "Conformité"
     ],
     "hash": "777cac8722b761ebd7f78586daf34ac45ca985b40bcacf9833d8d5c849a5a1ed",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "emergency-alerts-network",
@@ -326,7 +326,7 @@ const data: DatedProjectMetadata[] = [
       "Réputation"
     ],
     "hash": "023e7f51d00926bd507c9b8acd7a71c750b3b0c8154c5137943cdc48ccb0cbf7",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "fee-distribution-system",
@@ -353,7 +353,7 @@ const data: DatedProjectMetadata[] = [
       "Automatisation"
     ],
     "hash": "3d9246cc377e885ce3b3cdbd001a6f9b5279f9405a23488edb2055f51dcbc33e",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "inventory-and-sales-for-farm-goods",
@@ -381,7 +381,7 @@ const data: DatedProjectMetadata[] = [
       "Accès"
     ],
     "hash": "c03683a9ebf7e4d159e6e55d8586edec64949d9f81dcd6a0cdbaf36facf0a6b1",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "land-registry-voting",
@@ -409,7 +409,7 @@ const data: DatedProjectMetadata[] = [
       "Cartographie"
     ],
     "hash": "1b53e955e0a1892a02d66607faff7ca655c6f53a3eaaec40401c1c388af0cb79",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "milestone-based-smart-contracts-and-escrow",
@@ -436,7 +436,7 @@ const data: DatedProjectMetadata[] = [
       "Automatisation"
     ],
     "hash": "0f4fc1dde835c06cb43482529c217da158a1e9b2611ce2f3141ee2bfc1366bf0",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "multichain-portfolio-tracker",
@@ -463,7 +463,7 @@ const data: DatedProjectMetadata[] = [
       "Tableau de bord"
     ],
     "hash": "d5cf3a8f0e4b569ed66d102c1585d200328b16821445cbbf8203a729dacd88d2",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "nft-ticketing-platform",
@@ -491,7 +491,7 @@ const data: DatedProjectMetadata[] = [
       "Contrôle d'accès"
     ],
     "hash": "21460bd998d2e7a3ffedcfe638d242e428c9419628db3c5d1f322cc045c50b32",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "onchain-property-registry",
@@ -520,7 +520,7 @@ const data: DatedProjectMetadata[] = [
       "Bâtiments"
     ],
     "hash": "85a28efc9e4a0fc6b93dc14ec48dc85854650277e6e64760b8b54a4331ea5428",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "real-time-royalty-distribution",
@@ -548,7 +548,7 @@ const data: DatedProjectMetadata[] = [
       "Contenu"
     ],
     "hash": "07610cf82b841ca7aa17865b97b3156895b5eaa2e0373b08436dfbc0bd194c77",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "referral-system",
@@ -576,14 +576,14 @@ const data: DatedProjectMetadata[] = [
       "Engagement"
     ],
     "hash": "1a2b6f17eec7f4ca445f7078cb80705e9c93a154bfddb11f2bd635f441816fae",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "supply-chain-tracking",
     "title": "Suivi de la chaîne d'approvisionnement",
     "description": "Développez une application basée sur la blockchain qui enregistre chaque étape du voyage d'un produit sur la chaîne. Chaque capteur et acteur IoT (producteur, expéditeur, vendeur) enregistre des actions sur la chaîne pour créer un historique inviolable et traçable. Les smart contracts vérifient les transactions et tamponnent les points de contrôle. Ce système assure l'authenticité, combat la fraude et améliore la transparence dans de nombreuses industries telles que l'alimentation, la construction, la pharma, etc.",
     "accronym": "ChainProof",
-    "status": "idea",
+    "status": "in_progress",
     "img": "supply-chain-tracking.jpg",
     "img_alt": "Maquette de Suivi de la chaîne d'approvisionnement",
     "complexity_score": 5,
@@ -604,8 +604,8 @@ const data: DatedProjectMetadata[] = [
       "Automatisation",
       "Cartographie"
     ],
-    "hash": "b957ae557c82f6ad3cb702f69d94a4310f4d0c8691c547fd650ce803dbbae2b0",
-    "last_updated": "2025-09-26"
+    "hash": "557ed1704e6c0fd8944af1ba113419fdd724e1327d1ee0c2d76d6540dc971a58",
+    "last_updated": "2025-10-29"
   },
   {
     "id": "systems-for-co-ops",
@@ -632,7 +632,7 @@ const data: DatedProjectMetadata[] = [
       "Gouvernance"
     ],
     "hash": "2dcdfe4923b6c683f145888c1e6b43bfc2d0b14069a01f72388696e2f4a3e7f3",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "time-locked-contracts",
@@ -659,7 +659,7 @@ const data: DatedProjectMetadata[] = [
       "Vesting"
     ],
     "hash": "f4abc89b70a824c225f8f77f8fe2c13c0b280d229dc598bb8a991a2e713887e8",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "transaction-gas",
@@ -685,7 +685,7 @@ const data: DatedProjectMetadata[] = [
       "Automatisation"
     ],
     "hash": "15e34754ab3e806c44ab0521c6aeb652cb7da2294828308f0fa74224fe4e6609",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "web3-signatures",
@@ -712,14 +712,14 @@ const data: DatedProjectMetadata[] = [
       "Documents"
     ],
     "hash": "c8fb9550922b9f0841cc6d6fb74cb6c422a53abdf9aab59eeace48794286e1fe",
-    "last_updated": "2025-09-26"
+    "last_updated": "2025-10-29"
   },
   {
     "id": "zk-medical-data-exchange",
     "title": "Échange de Données Médicales à Preuve Zéro-Connaissance",
     "description": "Un protocole décentralisé permettant le partage sécurisé et basé sur le consentement de données médicales anonymisées à l'aide de preuves à divulgation nulle de connaissance.",
     "accronym": "Cura",
-    "status": "idea",
+    "status": "in_progress",
     "img": "zk-medical-data-exchange.jpg",
     "img_alt": "Maquette d'échange de Données Médicales à Preuve Zéro-Connaissance",
     "complexity_score": 7,
@@ -739,8 +739,8 @@ const data: DatedProjectMetadata[] = [
       "Contrats intelligents",
       "ZK"
     ],
-    "hash": "3f8e87586dbe54ed8c05833ed794fba86831c6d02cac99cf82c6d32c13ce0f9a",
-    "last_updated": "2025-09-26"
+    "hash": "3d6f0a380b7de8d24d84b0cdab4705758f955e536ce7d2d2caa95a231cbea81b",
+    "last_updated": "2025-10-29"
   }
 ];
 

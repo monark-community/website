@@ -14,6 +14,7 @@ import path from "path";
 import ProjectStatusBadge from "./ProjectStatusBadge";
 import { Label } from "@/components/ui/label";
 import ProjectIndustryTags from "./ProjectIndustryTags";
+import GithubOrgMembers from "../homepage/why-section/github-org-members/GithubOrgMembers";
 
 interface ProjectMdxContentProps {
   contentPath: string;
@@ -58,7 +59,8 @@ export default async function ProjectMdxContent({
             </NavLink>
           </div>
         )}
-        <h1>{data.accronym} | {data.title}</h1>
+        <h1 className="mb-0">{data.accronym}</h1>
+        <p className="-mt-3">{data.title}</p>
         <div className="lg:hidden flex flex-col gap-2 text-muted-foreground">
           <ProjectStatusBadge status={data.status} locale={locale} />
           <IconLabelAttribute
@@ -71,6 +73,10 @@ export default async function ProjectMdxContent({
           <div className="flex gap-2 py-2 flex-wrap"><ProjectIndustryTags industryTags={data.industry_tags} /></div>
           <Label className="mb-0 mt-4 font-bold">{t.keywords}</Label>
           <div className="flex gap-2 py-2 flex-wrap"><ProjectKeywordTags keywordTags={data.keyword_tags} /></div>
+          <div className="mt-4">
+            <Label className="mb-2 font-bold">{t.contributors}</Label>
+            <GithubOrgMembers repo={data.code_repositories} />
+          </div>
         </div>
         <aside className="font-lg italic border-l-[4px] border-primary pl-6 mt-6 mr-0 mb-6 ml-6 text-muted-foreground">💡&nbsp;{data.description}</aside>
         <WrappedImage
@@ -111,6 +117,10 @@ export default async function ProjectMdxContent({
             <div className="flex gap-2 py-2 flex-wrap"><ProjectIndustryTags industryTags={data.industry_tags} /></div>
             <Label className="mb-0 mt-4 font-bold">{t.keywords}</Label>
             <div className="flex gap-2 py-2 flex-wrap"><ProjectKeywordTags keywordTags={data.keyword_tags} /></div>
+            <div className="mt-4">
+              <Label className="mb-2 font-bold">{t.contributors}</Label>
+              <GithubOrgMembers repo={data.code_repositories} />
+            </div>
           </div>
         </div>
       </div>

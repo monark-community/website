@@ -36,7 +36,7 @@ function ProjectStatusBadge({ status, locale }: Props) {
   const localizedStatus = statusI18n[status as keyof typeof statusI18n] || status;
   return (
     <Badge
-      className={`${statusStyles[status as keyof typeof statusStyles]} w-fit cursor-default px-4`}
+      className={`${statusStyles[status as keyof typeof statusStyles]} w-fit cursor-default px-2`}
       title={localizedLabel}
     >
       <Icon className={`mr-2 ${status === "in_progress" ? "animate-spin" : ""}`} size={20} />{localizedStatus}

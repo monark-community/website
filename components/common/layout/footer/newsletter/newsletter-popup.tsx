@@ -12,6 +12,7 @@ import { Mail, CheckCircle, AlertCircle } from 'lucide-react'
 import { getCookie, setCookie } from 'cookies-next'
 import * as i18n from './newsletter.i18n'
 import { Locale } from '@/i18n.config'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 interface NewsletterPopupProps {
   /** Locale for translations (en or fr) */
@@ -45,7 +46,6 @@ export default function NewsletterPopup({
   delay = 15000,
   cookieExpiryDays = 30,
   utm = { source: 'website', medium: 'popup', campaign: 'newsletter_signup' },
-  tags = [],
   onSubscribe,
   onDismiss,
 }: NewsletterPopupProps) {
@@ -53,10 +53,20 @@ export default function NewsletterPopup({
   const [email, setEmail] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
+  const [identity, setIdentity] = useState('prefer_not_to_say')
   const [isLoading, setIsLoading] = useState(false)
   const [hasShown, setHasShown] = useState(false)
   const [subscriptionStatus, setSubscriptionStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+
+  const IDENTITY_OPTIONS = [
+    "student",
+    "university_staff",
+    "ambassador",
+    "web3_enthusiast",
+    "web3_business",
+    "prefer_not_to_say",
+  ];
 
   const t = i18n[locale].newsletterPopup;
 
@@ -102,7 +112,7 @@ export default function NewsletterPopup({
             email: email.trim(),
             first_name: firstName.trim(),
             last_name: lastName.trim(),
-            tags: tags,
+            identity,
           },
           utm: {
             source: utm.source || 'website',
@@ -180,46 +190,46 @@ export default function NewsletterPopup({
 
           {/* Header with status-based styling */}
           <div className={`relative w-full overflow-hidden pointer-events-none !py-4 ${subscriptionStatus === 'success'
-              ? 'bg-green-50 dark:bg-green-950/20'
-              : subscriptionStatus === 'error'
-                ? 'bg-red-50 dark:bg-red-950/20'
-                : 'bg-primary/10'
+            ? 'bg-green-50 dark:bg-green-950/20'
+            : subscriptionStatus === 'error'
+              ? 'bg-red-50 dark:bg-red-950/20'
+              : 'bg-primary/10'
             }`}>
             {/* Decorative mail icons */}
             <div className="absolute -right-6 -top-6">
               <Mail className={`h-28 w-28 transform rotate-45 ${subscriptionStatus === 'success'
-                  ? 'text-green-500'
-                  : subscriptionStatus === 'error'
-                    ? 'text-red-500'
-                    : 'text-primary'
+                ? 'text-green-500'
+                : subscriptionStatus === 'error'
+                  ? 'text-red-500'
+                  : 'text-primary'
                 }`} />
             </div>
 
             <div className="absolute bottom-6 -left-2 pointer-events-none">
               <Mail className={`h-16 w-16 transform -rotate-12 ${subscriptionStatus === 'success'
-                  ? 'text-green-500'
-                  : subscriptionStatus === 'error'
-                    ? 'text-red-500'
-                    : 'text-primary'
+                ? 'text-green-500'
+                : subscriptionStatus === 'error'
+                  ? 'text-red-500'
+                  : 'text-primary'
                 }`} />
             </div>
 
             <div className="absolute top-8 left-8 pointer-events-none">
               <Mail className={`h-8 w-8 transform rotate-12 ${subscriptionStatus === 'success'
-                  ? 'text-green-500'
-                  : subscriptionStatus === 'error'
-                    ? 'text-red-500'
-                    : 'text-primary'
+                ? 'text-green-500'
+                : subscriptionStatus === 'error'
+                  ? 'text-red-500'
+                  : 'text-primary'
                 }`} />
             </div>
 
             {/* Content container */}
             <div className="relative z-10 flex h-full flex-col justify-center items-center px-8 text-center">
               <div className={`rounded-full p-3 mb-4 shadow-sm ${subscriptionStatus === 'success'
-                  ? 'bg-green-100 dark:bg-green-900/30'
-                  : subscriptionStatus === 'error'
-                    ? 'bg-red-100 dark:bg-red-900/30'
-                    : 'bg-primary/30'
+                ? 'bg-green-100 dark:bg-green-900/30'
+                : subscriptionStatus === 'error'
+                  ? 'bg-red-100 dark:bg-red-900/30'
+                  : 'bg-primary/30'
                 }`}>
                 {subscriptionStatus === 'success' ? (
                   <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-400" />
@@ -301,6 +311,17 @@ export default function NewsletterPopup({
                       disabled={isLoading}
                     />
                   </div>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="identity" className="text-sm font-medium">{t.identity_label}</Label>
+                  <Select value={identity} onValueChange={setIdentity}>
+                    <SelectTrigger id="identity" className="w-full">
+                      <SelectValue placeholder={t.identity_placeholder} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {IDENTITY_OPTIONS.map(opt => <SelectItem key={opt} value={opt}>{t.self_identify[opt as keyof typeof t.self_identify]}</SelectItem>)}
+                    </SelectContent>
+                  </Select>
                 </div>
 
                 <div className="flex gap-2">
