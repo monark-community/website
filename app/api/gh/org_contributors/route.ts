@@ -5,37 +5,39 @@ type MinimalUserType = {
     login: string;
     avatar_url: string;
     html_url: string;
-    user_view_type: string;
+    user_view_type?: string;
 };
 
 export async function GET() {
 
-    const octokit = new Octokit({
-        auth: process.env.GITHUB_API_KEY
-    });
-
-    return await octokit.request(`GET /orgs/${process.env.GITHUB_ORG}/members`, {
-        org: 'ORG',
-        headers: {
-            'X-GitHub-Api-Version': '2022-11-28'
-        }
-    }).then((res) => {
-        const simplifiedData = res.data.map((user: MinimalUserType) => {
-            if (user.user_view_type === "public") {
-                return {
-                    login: user.login,
-                    avatar_url: user.avatar_url,
-                    html_url: user.html_url
-                }
-            }
+    try {
+        const octokit = new Octokit({
+            auth: process.env.GITHUB_API_KEY,
         });
+
+        const members = await octokit.paginate(
+            "GET /orgs/{org}/members",
+            {
+                org: process.env.GITHUB_ORG!,
+                per_page: 100,
+            }
+        );
+
+        const simplifiedData = members
+            .filter((user: MinimalUserType) => user.user_view_type === "public")
+            .map((user: MinimalUserType) => ({
+                login: user.login,
+                avatar_url: user.avatar_url,
+                html_url: user.html_url,
+            }));
+
         return NextResponse.json(simplifiedData, { status: 200 });
-    }).catch((err) => {
-        console.error(`Error retrieving Github Organization members:`, err);
+    } catch (err) {
+        console.error("Error retrieving Github Organization members:", err);
         return NextResponse.json(
             { error: "Failed to load project data" },
             { status: 500 }
         );
-    });
+    }
 
 }
