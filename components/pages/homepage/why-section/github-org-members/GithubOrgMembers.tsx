@@ -14,7 +14,7 @@ interface GithubOrgMembersProps {
     repo?: string | string[]; // support string or array of repo names
 }
 
-const BLACKLISTED_LOGINS = ["lovable-dev[bot]", "dependabot[bot]", "claude"];
+const BLACKLISTED_LOGINS = ["lovable-dev[bot]", "dependabot[bot]", "claude", "TimLethbridge"];
 
 export default function GithubOrgMembers({ repo }: GithubOrgMembersProps) {
     const [members, setMembers] = useState<OrgMember[]>([]);
