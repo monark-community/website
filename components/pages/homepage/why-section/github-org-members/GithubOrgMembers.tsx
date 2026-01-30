@@ -102,7 +102,7 @@ export default function GithubOrgMembers({ repo }: GithubOrgMembersProps) {
     // Adjust styling depending on whether repo is provided
     const containerClass = repo
         ? "mt-2 flex flex-wrap gap-1"
-        : "flex flex-wrap justify-center gap-2 md:px-16 lg:px-48 py-16";
+        : "flex flex-wrap justify-center gap-2 py-16";
 
     const avatarSize = repo ? 32 : 64;
 
