@@ -110,7 +110,7 @@ export default function GithubOrgMembers({ repo }: GithubOrgMembersProps) {
         <TooltipProvider>
             <div className={containerClass}>
                 {loading
-                    ? Array.from({ length: 8 }).map((_, idx) => (
+                    ? Array.from({ length: 32 }).map((_, idx) => (
                         <div
                             key={idx}
                             className={`rounded-full bg-card animate-pulse`}
