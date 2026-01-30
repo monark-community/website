@@ -40,7 +40,7 @@ export async function GET(req: Request) {
 
     return NextResponse.json(simplifiedData, { status: 200 });
   } catch (err) {
-    console.error(`Error retrieving contributors for ${org}/${repo}:`, err);
+    console.error("Error retrieving contributors for %s/%s:", org, repo, err);
     return NextResponse.json(
       { error: "Failed to load contributor data" },
       { status: 500 }
