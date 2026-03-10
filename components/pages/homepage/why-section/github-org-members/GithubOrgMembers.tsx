@@ -16,6 +16,25 @@ interface GithubOrgMembersProps {
 
 const BLACKLISTED_LOGINS = ["lovable-dev[bot]", "dependabot[bot]", "claude", "TimLethbridge"];
 
+// Module-level cache: deduplicates identical fetches across component instances and re-renders
+const fetchCache = new Map<string, Promise<OrgMember[]>>();
+
+function cachedFetch(url: string): Promise<OrgMember[]> {
+    const existing = fetchCache.get(url);
+    if (existing) return existing;
+    const promise = fetch(url)
+        .then((res) => {
+            if (!res.ok) throw new Error(`Failed to fetch ${url}`);
+            return res.json() as Promise<OrgMember[]>;
+        })
+        .catch((err) => {
+            fetchCache.delete(url);
+            throw err;
+        });
+    fetchCache.set(url, promise);
+    return promise;
+}
+
 export default function GithubOrgMembers({ repo }: GithubOrgMembersProps) {
     const [members, setMembers] = useState<OrgMember[]>([]);
     const [loading, setLoading] = useState(true);
@@ -48,18 +67,13 @@ export default function GithubOrgMembers({ repo }: GithubOrgMembersProps) {
                 const fetchedMembers: OrgMember[] = [];
 
                 if (repos.length === 0) {
-                    const res = await fetch("/api/gh/org_contributors");
-                    if (!res.ok) throw new Error("Failed to fetch org contributors");
-                    const data: OrgMember[] = await res.json();
+                    const data = await cachedFetch("/api/gh/org_contributors");
                     fetchedMembers.push(...data);
                 } else {
                     const results = await Promise.allSettled(
-                        repos.map(async (r) => {
+                        repos.map((r) => {
                             const repoName = normalizeRepoName(r);
-                            const res = await fetch(`/api/gh/repo_contributors/?repo=${repoName}`);
-                            if (!res.ok) throw new Error(`Failed to fetch contributors for repo ${repoName}`);
-                            const data: OrgMember[] = await res.json();
-                            return data;
+                            return cachedFetch(`/api/gh/repo_contributors/?repo=${repoName}`);
                         })
                     );
 
