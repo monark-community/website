@@ -2,7 +2,7 @@
 id: web3-signatures
 title: Web3 Signatures
 description: A system where users sign documents or transactions using their wallet signature. Store document hashes on-chain, and optionally save files on IPFS. Others can verify the timestamp, signer identity, and content integrity. Mimics tools like DocuSign but using blockchain authentication that are decentralized and censorship-resistant.
-status: idea
+status: planned
 accronym: SignChain
 img: web3-signatures.jpg
 img_alt: Web3 Signatures mockup
@@ -34,7 +34,7 @@ The system emphasizes privacy and auditability without centralized document cust
 
 ## Deliverables & Desired Functionalities
 
-- Web interface using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)
+- Web interface using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://[tailwindcss](https://tailwindcss.com/).com/)
    - Create a platform where users sign and verify documents on-chain.
 - User authentication 
    - Sign in with wallet to access signature tools and history.
@@ -42,22 +42,8 @@ The system emphasizes privacy and auditability without centralized document cust
    - Convert files into hashes for verification and signing.
 - Wallet signature flow with on-chain hash commitment
    - Sign file hashes and save proof on blockchain for auditability.
-- IPFS integration for optional decentralized storage
+- [IPFS](https://ipfs.tech/) integration for optional decentralized storage
    - Optionally upload full files to decentralized storage.
 - Web UI for signature validation and document history
 - Multi-signer support with timestamps
    - Add multiple wallet signers with accurate timestamps and logs.
-
-## Required Resources
-
-Tools/softwares that are not in the possession of the students will be provided by our team.
-
-- [GIT](https://git-scm.com/)
-- [Node.js](https://nodejs.org/) version 22+
-- [Visual Studio Code IDE](https://code.visualstudio.com/) and [Remix](https://remix-project.org/) if needed
-- Web hosting platform ([Vercel](https://vercel.com/) or [Render](https://render.com/))
-- Access to RPC provider
-- [Tenderly](https://tenderly.co/) access to create virtual blockchain testnet
-- Database ([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) or [GraphQL](https://graphql.org/)) and Backend ([Express](https://expressjs.com/)) hosting ([Render](https://render.com/))
-- Smart Contract Framework ([Solidity](https://soliditylang.org/)) and libraries for secure contract development ([OpenZeppelin](https://www.openzeppelin.com/))
-- Sample cooperative data for simulation

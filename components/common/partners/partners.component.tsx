@@ -1,32 +1,25 @@
 import React from "react";
-// import PARTNERS from "@/data/partners";
-// import Slideshow from "@/components/common/slideshow/slideshow.component";
 import Image from "next/image";
+import PARTNERS from "@/data/partners";
 
 type Props = { className?: string };
 
 function Partners({ className }: Props) {
   return (
-    <a href="https://pinax.network" target="_blank" className="block w-fit">
-      <Image
-        src="/vectors/partners/pinax-network.svg"
-        alt="Pinax Network"
-        className={`mt-4 ${className}`}
-        width={200}
-        height={39}
-      />
-    </a>
-    // <Slideshow
-    //   className={className}
-    //   items={PARTNERS.map((partner) => {
-    //     return {
-    //       name: partner.name,
-    //       img: `/vectors/partners/${partner.id}.svg`,
-    //       href: `/partners/${partner.id}`,
-    //     };
-    //   })}
-    //   itemsSize={{ width: 200, height: 64 }}
-    // />
+    <div className="flex gap-8 flex-wrap">
+      {PARTNERS.sort((a, b) => a.name.localeCompare(b.name)).map((partner) => {
+        return (<a href={partner.url} target="_blank" className="block w-fit" key={`partner_${partner.id}`}>
+          <Image
+            src={`/vectors/partners/${partner.id}.svg`}
+            alt={partner.name}
+            className={`mt-4 ${className}`}
+            width={200}
+            height={42}
+          />
+        </a>
+        )
+      })}
+    </div>
   );
 }
 

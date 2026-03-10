@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Octokit } from "octokit";
+import { mockContributors } from "../mock-contributors";
 
 type MinimalUserType = {
     login: string;
@@ -9,6 +10,10 @@ type MinimalUserType = {
 };
 
 export async function GET() {
+
+    if (process.env.NODE_ENV === "development") {
+        return NextResponse.json(mockContributors, { status: 200 });
+    }
 
     try {
         const octokit = new Octokit({

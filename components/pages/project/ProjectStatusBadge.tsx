@@ -3,14 +3,17 @@ import { Badge } from "@/components/ui/badge";
 import { projectStatusBadgeI18n } from "./ProjectStatusBadge.i18n";
 import { Locale } from "@/i18n.config";
 import { CircleArrowOutUpRightIcon, CircleDollarSignIcon, CirclePauseIcon, CirclePlayIcon, LightbulbIcon, LoaderCircleIcon } from "lucide-react";
+import { ProjectStatus } from "@/types/project.types";
+
+type Status = `${ProjectStatus}`;
 
 interface Props {
-  status: 'idea' | 'prototype_available' | 'in_progress' | 'on_hold' | 'market_validation' | 'production';
+  status: Status | ProjectStatus;
   locale: Locale;
 }
 
 const statusStyles = {
-  idea: "bg-[hsl(var(--chart-1))] text-white hover:bg-[hsl(var(--chart-1))]",
+  planned: "bg-[hsl(var(--chart-1))] text-white hover:bg-[hsl(var(--chart-1))]",
   prototype_available:
     "bg-[hsl(var(--chart-2))] text-white hover:bg-[hsl(var(--chart-2))]",
   in_progress: "bg-[hsl(var(--chart-3))] text-white hover:bg-[hsl(var(--chart-3))]",
@@ -21,7 +24,7 @@ const statusStyles = {
 };
 
 const iconMap = {
-  idea: LightbulbIcon,
+  planned: LightbulbIcon,
   prototype_available: CircleArrowOutUpRightIcon,
   in_progress: LoaderCircleIcon,
   on_hold: CirclePauseIcon,

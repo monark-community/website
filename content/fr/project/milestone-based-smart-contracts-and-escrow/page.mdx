@@ -1,16 +1,16 @@
 ---
 id: milestone-based-smart-contracts-and-escrow
-title: Contrats intelligents basés sur des jalons et Escrow
-description: Concevez des contrats qui retiennent les fonds et les libèrent progressivement en fonction des progrès. Chaque jalon est défini à l'avance avec des conditions d'approbation. Pensez aux contrats de construction, aux subventions ou au travail de développement. Les fonds se libèrent lorsque un jalon est validé par le client et/ou un oracle tiers. Ajoutez des flux de révision et une visualisation des progrès.
-status: idea
+title: Contrats intelligents basés sur des phases et Escrow
+description: Concevez des contrats qui retiennent les fonds et les libèrent progressivement en fonction des progrès. Chaque phase est défini à l'avance avec des conditions d'approbation. Pensez aux contrats de construction, aux subventions ou au travail de développement. Les fonds se libèrent lorsque un phase est validé par le client et/ou un oracle tiers. Ajoutez des flux de révision et une visualisation des progrès.
+status: planned
 accronym: MilestoneMint
 img: milestone-based-smart-contracts-and-escrow.jpg
-img_alt: Maquette des Contrats intelligents basés sur des jalons et Escrow
+img_alt: Maquette des Contrats intelligents basés sur des phases et Escrow
 industry_tags:
   - Construction
   - Services
 keyword_tags:
-  - Jalons
+  - Phases
   - Contrats intelligents
   - Escrow
   - Financement
@@ -24,41 +24,27 @@ revenue_score: -1
 
 ## Description générale
 
-[MilestoneMint](https://milestonemint.monark.io) fournit un cadre pour la distribution de fonds basée sur des jalons, remplaçant les systèmes manuels d'escrow et de facturation par des versements programmables et basés sur des règles. Le projet permet à un client de bloquer des fonds dans un contrat, de définir les phases du projet ou les livrables, et de ne libérer les fonds que lorsque les jalons pré-définis sont atteints.
+[MilestoneMint](https://milestonemint.monark.io) fournit un cadre pour la distribution de fonds basée sur des phases, remplaçant les systèmes manuels d'escrow et de facturation par des versements programmables et basés sur des règles. Le projet permet à un client de bloquer des fonds dans un contrat, de définir les phases du projet ou les livrables, et de ne libérer les fonds que lorsque les phases pré-définis sont atteints.
 
-Chaque jalon peut inclure une description, une date limite, un pourcentage du paiement total et un validateur (par exemple, chef de projet ou client). Une fois validés - manuellement ou par la logique du contrat intelligent - les fonds sont débloqués et transférés au bénéficiaire.
+Chaque phase peut inclure une description, une date limite, un pourcentage du paiement total et un validateur (par exemple, chef de projet ou client). Une fois validés - manuellement ou par la logique du contrat intelligent - les fonds sont débloqués et transférés au bénéficiaire.
 
 Ce système est particulièrement précieux dans des secteurs comme le financement de subventions, le travail d'entrepreneur indépendant ou les infrastructures publiques. Il augmente la confiance, la transparence et la responsabilité sans contrôle centralisé ou escrow tiers.
 
-Les étudiants qui construisent MilestoneMint gagneront de l'expérience dans la planification des paiements, les permissions basées sur le rôle, les approbations multi-signatures, et les libérations de fonds conditionnelles. Ils apprendront également à créer des interfaces utilisateur pour le suivi des contrats, le suivi des jalons et la visualisation de l'historique. Ce projet est idéal pour combiner les flux de travail de gestion de projet du monde réel avec la coordination financière décentralisée.
+Les étudiants qui construisent MilestoneMint gagneront de l'expérience dans la planification des paiements, les permissions basées sur le rôle, les approbations multi-signatures, et les libérations de fonds conditionnelles. Ils apprendront également à créer des interfaces utilisateur pour le suivi des contrats, le suivi des phases et la visualisation de l'historique. Ce projet est idéal pour combiner les flux de travail de gestion de projet du monde réel avec la coordination financière décentralisée.
 
 ## Livrables & fonctionnalités souhaitées
 
 - Interface web utilisant [Next.js](https://nextjs.org), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)
-    - Fournir un gestionnaire de contrats pour les projets avec des paiements basés sur des jalons.
+    - Fournir un gestionnaire de contrats pour les projets avec des paiements basés sur des phases.
 - Authentification de l'utilisateur
     - Permettre l'inscription et la connexion basées sur le portefeuille (wallet) à l'aide des [Embedded-wallets MetaMask](https://metamask.io/en-GB/developer/embedded-wallets).
     - Permettre aux clients et aux prestataires de se connecter en toute sécurité pour gérer les phases du contrat.
-- Contrat intelligent (smart contract) de blocage de fonds avec logique de jalon
-    - Bloquer et débloquer les fonds par jalon validé.
-- Interface utilisateur web pour la configuration, l'édition et la validation des jalons
+- Contrat intelligent (smart contract) de blocage de fonds avec logique de phase
+    - Bloquer et débloquer les fonds par phase validé.
+- Interface utilisateur web pour la configuration, l'édition et la validation des phases
     - Visualiser l'avancement du projet, les délais et le statut d'approbation.
 - Rôles de validateur et logique d'approbation
-    - Définir qui peut approuver chaque jalon ou livrable.
+    - Définir qui peut approuver chaque phase ou livrable.
 - Suivi des déblocages et journaux de paiement
 - (Optionnel) Prise en charge des déblocages multi-signatures
 - (Optionnel) Notifications ou rappels basés sur le temps
-
-## Ressources requises
-
-Les outils/logiciels qui ne sont pas en possession des étudiants seront fournis par notre équipe.
-
-- [GIT](https://git-scm.com/)
-- [Node.js](https://nodejs.org/) version 22+
-- [IDE Visual Studio Code](https://code.visualstudio.com/) et [Remix](https://remix-project.org/) si nécessaire
-- Plateforme d'hébergement web ([Vercel](https://vercel.com/) ou [Render](https://render.com/))
-- Accès à un fournisseur RPC
-- Accès [Tenderly](https://tenderly.co/) pour créer un testnet blockchain virtuel
-- Base de données ([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) ou [GraphQL](https://graphql.org/)) et hébergement Backend ([Express](https://expressjs.com/)) ([Render](https://render.com/))
-- Framework de Contrats Intelligents ([Solidity](https://soliditylang.org/)) et bibliothèques pour le développement sécurisé de contrats ([OpenZeppelin](https://www.openzeppelin.com/))
-- Données coopératives d'exemple pour la simulation

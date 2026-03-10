@@ -1,9 +1,9 @@
 export enum ProjectStatus {
-  Idea = "idea",
-  PrototypeAvailable = "prototype_available",
+  MarketValidation = "market_validation",
+  Idea = "planned",
   InProgress = "in_progress",
   OnHold = "on_hold",
-  MarketValidation = "market_validation",
+  PrototypeAvailable = "prototype_available",
   Production = "production",
 }
 
