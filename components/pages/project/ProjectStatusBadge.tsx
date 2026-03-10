@@ -3,9 +3,12 @@ import { Badge } from "@/components/ui/badge";
 import { projectStatusBadgeI18n } from "./ProjectStatusBadge.i18n";
 import { Locale } from "@/i18n.config";
 import { CircleArrowOutUpRightIcon, CircleDollarSignIcon, CirclePauseIcon, CirclePlayIcon, LightbulbIcon, LoaderCircleIcon } from "lucide-react";
+import { ProjectStatus } from "@/types/project.types";
+
+type Status = `${ProjectStatus}`;
 
 interface Props {
-  status: 'planned' | 'prototype_available' | 'in_progress' | 'on_hold' | 'market_validation' | 'production';
+  status: Status | ProjectStatus;
   locale: Locale;
 }
 

@@ -92,7 +92,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     in_progress: 2,
     prototype_available: 3,
     on_hold: 4,
-    idea: 5,
+    planned: 5,
   };
 
   const filteredProjects = projects

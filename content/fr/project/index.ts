@@ -435,7 +435,7 @@ const data: DatedProjectMetadata[] = [
       "Financement",
       "Automatisation"
     ],
-    "hash": "14e9aa918da30c2425105443328d12de0f9e8a0e567fd5f4b5d40f8c6aa6cdcb",
+    "hash": "d8aaee77c5ce12d6543f67c3ac0247224f5f63280392003395a0c0b5e0cb202c",
     "last_updated": "2026-03-10"
   },
   {
