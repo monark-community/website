@@ -16,7 +16,7 @@ interface I18n {
     filter_by_status: string,
     all_statuses: string,
     statuses: {
-        idea: string;
+        planned: string;
         prototype_available: string;
         in_progress: string;
         on_hold: string;
@@ -26,6 +26,9 @@ interface I18n {
     learn_more: string;
     status: string;
     mockup: string;
+    milestones: string;
+    on_this_page: string;
+    introduction: string;
 }
 
 const en: I18n = {
@@ -46,7 +49,7 @@ const en: I18n = {
     filter_by_status: "Filter by status",
     all_statuses: "All status",
     statuses: {
-        idea: "Idea",
+        planned: "Planned",
         prototype_available: "Prototype available",
         in_progress: "In progress",
         on_hold: "On hold",
@@ -55,7 +58,10 @@ const en: I18n = {
     },
     learn_more: "Learn more",
     status: "Status",
-    mockup: "Mockup"
+    mockup: "Mockup",
+    milestones: "Milestones",
+    on_this_page: "On this page",
+    introduction: "Introduction",
 };
 
 const fr: I18n = {
@@ -76,7 +82,7 @@ const fr: I18n = {
     filter_by_status: "Filtrer par statut",
     all_statuses: "Tous les statuts",
     statuses: {
-        idea: "Idée",
+        planned: "Planifié",
         prototype_available: "Prototype disponible",
         in_progress: "En cours",
         on_hold: "En pause",
@@ -85,7 +91,10 @@ const fr: I18n = {
     },
     learn_more: "En savoir plus",
     status: "État",
-    mockup: "Maquette"
+    mockup: "Maquette",
+    milestones: "Phases",
+    on_this_page: "Sur cette page",
+    introduction: "Introduction",
 };
 
 const locales = { en, fr };

@@ -2,7 +2,7 @@
 id: time-locked-contracts
 title: Contrats à échéance
 description: Mettez en œuvre des contrats intelligents qui libèrent des fonds ou des privilèges uniquement après un délai défini. Les cas d'utilisation incluent les périodes de vesting, les paiements différés, les abonnements ou les testaments numériques. Inclure un tableau de bord où les utilisateurs définissent les destinataires, les montants et les délais. Cela enseigne des concepts fondamentaux comme le temps de blocage, l'escrow, et les conditions de libération.
-status: idea
+status: planned
 accronym: TimeVault
 img: time-locked-contracts.jpg
 img_alt: Maquette Contrats à échéance
@@ -26,7 +26,7 @@ revenue_score: -1
 
 [TimeVault](https://timevault.monark.io) introduit un modèle de contrat intelligent pratique utilisé à travers la finance décentralisée et les opérations DAO : le déblocage de fonds ou de privilèges conditionnel, basé sur le temps. Le cœur de ce système est un contrat intelligent sécurisé qui détient un actif numérique, généralement un token, et ne le libère qu'après un délai spécifié ou à un horodatage de bloc pré-défini.
 
-Les cas d'utilisation courants comprennent le vesting de tokens pour les contributeurs, les paiements d'abonnement, les récompenses différées pour les primes, ou les testaments et les héritages en crypto. Par exemple, un contributeur à une DAO peut se voir attribuer un calendrier de vesting de trois mois, après quoi les tokens se débloquent progressivement. De la même manière, un donateur peut envoyer des tokens à un contrat qui les retient jusqu'à ce qu'un jalon caritatif ou une date future soit atteinte.
+Les cas d'utilisation courants comprennent le vesting de tokens pour les contributeurs, les paiements d'abonnement, les récompenses différées pour les primes, ou les testaments et les héritages en crypto. Par exemple, un contributeur à une DAO peut se voir attribuer un calendrier de vesting de trois mois, après quoi les tokens se débloquent progressivement. De la même manière, un donateur peut envoyer des tokens à un contrat qui les retient jusqu'à ce qu'un phase caritatif ou une date future soit atteinte.
 
 TimeVault peut être étendu pour inclure des fonctionnalités telles que les déverrouillages récurrents (par exemple, la paie mensuelle), les déverrouillages multi-approbation (par exemple, les systèmes d'escrow) ou l'intégration avec des déclencheurs off-chain comme les oracles pour les conditions réelles (par exemple, l'achèvement d'un projet).
 
@@ -48,17 +48,3 @@ Les étudiants qui construiront ce projet travailleront avec des concepts de con
     - Conservez un historique transparent de tous les transferts verrouillés et complétées.
 - (Optionnel) Logique de libération récurrente ou de vesting en plusieurs phases
     - Supportez la libération par phases pour les calendriers de paie ou de primes.
-
-## Ressources requises
-
-Les outils/logiciels qui ne sont pas en possession des étudiants seront fournis par notre équipe.
-
-- [GIT](https://git-scm.com/)
-- [Node.js](https://nodejs.org/) version 22+
-- [IDE Visual Studio Code](https://code.visualstudio.com/) et [Remix](https://remix-project.org/) si nécessaire
-- Plateforme d'hébergement web ([Vercel](https://vercel.com/) ou [Render](https://render.com/))
-- Accès à un fournisseur RPC
-- Accès [Tenderly](https://tenderly.co/) pour créer un testnet blockchain virtuel
-- Base de données ([ClickHouse](https://clickhouse.com/), [PostgreSQL](https://www.postgresql.org/) ou [GraphQL](https://graphql.org/)) et hébergement Backend ([Express](https://expressjs.com/)) ([Render](https://render.com/))
-- Framework de Contrats Intelligents ([Solidity](https://soliditylang.org/)) et bibliothèques pour le développement sécurisé de contrats ([OpenZeppelin](https://www.openzeppelin.com/))
-- Données coopératives d'exemple pour la simulation

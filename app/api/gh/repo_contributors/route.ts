@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Octokit } from "octokit";
+import { mockContributors } from "../mock-contributors";
 
 type ContributorType = {
   login: string;
@@ -18,6 +19,10 @@ export async function GET(req: Request) {
       { error: "Missing repo query parameter" },
       { status: 400 }
     );
+  }
+
+  if (process.env.NODE_ENV === "development") {
+    return NextResponse.json(mockContributors, { status: 200 });
   }
 
   const octokit = new Octokit({

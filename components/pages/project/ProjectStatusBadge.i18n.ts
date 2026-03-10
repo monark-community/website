@@ -4,7 +4,7 @@
 export const projectStatusBadgeI18n = {
   en: {
     status: "Status",
-    idea: "Idea",
+    planned: "Planned",
     prototype_available: "Prototype Available",
     in_progress: "In Progress",
     market_validation: "Market Validation",
@@ -12,7 +12,7 @@ export const projectStatusBadgeI18n = {
   },
   fr: {
     status: "Statut",
-    idea: "Idée",
+    planned: "Planifié",
     prototype_available: "Prototype disponible",
     in_progress: "En cours",
     market_validation: "Validation du marché",
