@@ -37,29 +37,3 @@ This project is particularly impactful in industries such as agriculture, food, 
 The system also supports QR-code integration, enabling customers to scan and view a product's journey on the front end. Smart contracts validate the flow of goods in real time, and optional integrations with sensors (e.g., GPS or temperature) could simulate IoT functionality.
 
 Beyond its technical scope, this project educates students on digital trust, transparency, and decentralized recordkeeping, aligning perfectly with supply chain innovation trends.
-
-## Deliverables & Desired Functionalities
-
-- Web interface using [Next.js](https://nextjs.org), [TypeScript](https://www.typescriptlang.org), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com)
-    - Enable login via wallet
-    - Manage products, suppliers and supply chain
-        - **Product Description**: ID, Name, Description
-            - **Product**: Product ID, Quantity, Trace History
-        - **Trace**: ID, Location, Date, Weight, Detection of critical events, Temperature (optional)
-        - **Actor Description:** ID, Name, Description
-            - **Producers**: Certifications, Custom attributes
-            - **Transporters**: Fleet / Fuel type
-            - **Processors**: Product conversion
-            - **Retailers**: Inventory
-    - QR code / RFID scanning
-    - Display product journey
-- User authentication & roles management for producers, transporters, and retailers
-    - Enable wallet-based registration and login using [Embedded Wallets by MetaMask](https://metamask.io/developer/embedded-wallets)
-    - Enable login via wallet and assign roles like manager, producer, transporter, processor or retailer, each with specific permissions.
-    - (Planned) Allow organizations to self-identify their role (e.g., producer, transporter, retailer, etc.), build a searchable organization directory, and implement a two-way, relationship-based system.
-        - Include certifications (sustainable, etc.) and other relevant characteristics.
-- Tamper-proof audit trail and time-stamped transactions
-    - Maintain a transparent, immutable transaction log for product actions, visible and verifiable by all stakeholders.
-    - Leverage existing research and algorithms from previous student thesis and project
-- (Planned) End-user QR-code scanning system
-    - Allow consumers to scan a QR code and view the full history of a product's origin, shipping, and handling.

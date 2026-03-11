@@ -32,19 +32,3 @@ revenue_score: -1
 Smart contracts define beneficiaries and asset allocations. In the prototype, users configure a wallet-linked interface to create inheritance rules. The system can include inactivity monitoring, multi-sig authorization (e.g., two executors must approve transfer), and optional document storage via IPFS.
 
 WillChain has real-world implications: millions of dollars in crypto are lost each year due to lack of estate planning. By simplifying legacy transfer processes, this platform not only secures asset ownership but democratizes estate planning for Web3 users.
-
-## Deliverables & Desired Functionalities
-
-- Web interface using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/) that can;
-    - Create and manage their digital wills
-    - Manage tokenized assets
-    - Manage beneficiaries and edit their allocated assets
-- User authentication
-    - Enable wallet-based registration and login using [MetaMask embedded-wallets](https://metamask.io/en-GB/developer/embedded-wallets)
-    - Enable secure login through wallet-based identity (e.g., [MetaMask](https://metamask.io/)), ensuring only authorized users can access and modify their digital will.
-- Smart contracts defining will execution conditions
-    - Create smart contracts that transfer crypto assets to selected beneficiaries based on specific conditions like time delay or account inactivity and that
-- Inactivity simulation or time-based triggers
-    - Develop blockchain logic that detects wallet inactivity or passes a set time period to automatically execute the digital will.
-- (Optional) Encrypted backup or recovery mechanism
-    - Design an optional backup system (e.g., social recovery or encrypted cloud/[IPFS](https://ipfs.tech/) backup) to restore access if users lose their wallet or keys.

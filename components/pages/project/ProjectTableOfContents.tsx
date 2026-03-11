@@ -55,7 +55,7 @@ export default function ProjectTableOfContents({ items, label }: Props) {
   return (
     <div className="mt-8">
       <Label className="mb-0 mt-4 font-bold text-muted-foreground">{label}</Label>
-      <nav className="flex flex-col gap-1 mt-2">
+      <nav className="flex flex-col gap-1 mt-2 overflow-visible">
         {items.map(({ text, id }) => {
           const isActive = activeId === id;
           return (
@@ -63,14 +63,14 @@ export default function ProjectTableOfContents({ items, label }: Props) {
               key={id}
               href={`#${id}`}
               onClick={(e) => handleClick(e, id)}
-              className={`flex items-center gap-2 no-underline hover:underline text-sm transition-colors truncate ${
+              className={`relative pl-4 whitespace-nowrap no-underline hover:underline text-sm transition-colors ${
                 isActive
                   ? "text-foreground font-bold"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
               <span
-                className={`shrink-0 size-2 rounded-full transition-opacity ${
+                className={`absolute left-0 top-[6px] size-2 rounded-full transition-opacity ${
                   isActive ? "bg-primary opacity-100" : "opacity-0"
                 }`}
               />

@@ -34,33 +34,3 @@ La plateforme se connecte aux portefeuilles fournis par les utilisateurs, récup
 Ce projet offre une forte exposition à la normalisation des données, à l'analyse des métadonnées et aux heuristiques de classification. Des fonctionnalités supplémentaires peuvent inclure la récupération du prix des tokens au moment de la transaction, l'agrégation des coûts en gaz ou l'estimation du lot fiscal. En travaillant sur LedgerLift, les étudiants apprennent à combler le fossé technique entre les données de blockchain et les processus financiers hors chaîne.
 
 Le système aide à résoudre l'un des besoins les plus urgents des équipes Web3 et des indépendants : rendre la finance native de la blockchain lisible et légalement utilisable dans un monde de réglementation traditionnelle.
-
-## Livrables & fonctionnalités souhaitées
-
-- Interface web utilisant [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)
-	- Construire un outil de reporting financier pour les transactions crypto.
-- Authentification de l'utilisateur
-	- Les utilisateurs connectent des portefeuilles pour visualiser et extraire les enregistrements de transactions en utilisant les [Embedded Wallets MetaMask](https://metamask.io/en-GB/developer/embedded-wallets)
-- Récupérateur de transactions pour l'activité de portefeuille standard avec l'API Pinax Token
-- Recherche du prix des jetons pour ;
-	- (MVP) Chaînes basées sur EVM
-	- (MVP) Chaînes basées sur Solana
-	- Chaînes basées sur Polkadot
-	- Chaînes basées sur Cosmos
-	- Chaînes basées sur Avalanche
-	- Chaînes basées sur Near
-	- Chaînes basées sur Antelope
-- Classification manuelle des transactions ;
-	- Types de transactions ;
-		- Revenus, Dépenses, Transferts, Échanges (*Swaps*), Utilisation de gaz (*Gas usage*), Frais, Spam, Récompenses
-	- Identifier et classer les transactions similaires
-	- Transactions internes (comptes au sein de l'entreprise) vs Externes
-	- (Plus tard) Moteur basé sur l'IA pour automatiser ;
-- Statistiques récapitulatives ;
-	- Revenu total
-	- Dépenses
-	- Frais
-	- Gains ou pertes en capital
-- Système d'exportation de données (CSV, JSON) avec des champs étiquetés
-	- Permettre l'exportation facile de données étiquetées pour les comptables et les outils.
-- (Optionnel) Générateur de rapport fiscal

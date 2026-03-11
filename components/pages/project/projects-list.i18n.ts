@@ -59,7 +59,7 @@ const en: I18n = {
     learn_more: "Learn more",
     status: "Status",
     mockup: "Mockup",
-    milestones: "Milestones",
+    milestones: "Deliverables & Desired Functionalities",
     on_this_page: "On this page",
     introduction: "Introduction",
 };

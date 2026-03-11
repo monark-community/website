@@ -30,22 +30,3 @@ This project solves that problem by introducing flexible ways to pay transaction
 In the Web3 context, this matters because usability is key to mass adoption. Complexities like “you need ETH to move your USDC” discourage new users, create friction for businesses, and limit the growth of decentralized applications. By removing this barrier, the project makes blockchain interactions as smooth as mobile payments, creating a more inclusive and accessible ecosystem.
 
 The potential applications are wide-ranging: wallets could integrate it to provide a seamless onboarding experience, dApps could sponsor their users' fees to drive engagement, and enterprises could ensure customers interact with their platforms without ever worrying about holding the right token. Ultimately, this project makes Web3 more intuitive, user-friendly, and ready for mainstream adoption.
-
-## Deliverables & Desired Functionalities
-
-- **Web interface using [Next.js](https://nextjs.org/), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)**
-    - Build a simple dApp interface that demonstrates sponsored transactions and multi-token gas payments.
-- User authentication
-    - Enable wallet-based registration and login using [Embedded Wallets by MetaMask](https://metamask.io/developer/embedded-wallets)
-- **Smart contract for sponsored gas payments**
-    - A contract that allows one account (friend, app, or service) to cover gas fees on behalf of another wallet.
-- **Multi-token fee payment system**
-    - A mechanism that lets users pay gas fees with tokens they already hold (e.g., USDC), automatically converting a portion into the native token required for settlement.
-- **Transaction flow simulation**
-    - Build a test flow where a user tries to send a token without native gas, triggering either sponsorship or token-based gas payment.
-- **Conversion & settlement logic**
-    - Implement or mock a token swap (via Uniswap SDK, 1inch API, or a placeholder) to show how non-native tokens can be used to cover gas.
-- **Basic security checks**
-    - Add safeguards such as max fee limits, whitelisted sponsors, and caps on token amounts to prevent abuse.
-- **Testnet deployment & demo**
-    - Deploy the contracts on a public testnet (e.g., Ethereum Sepolia, Polygon Mumbai) and provide a demo where transactions succeed without native gas.
