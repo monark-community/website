@@ -39,30 +39,3 @@ En combinant les preuves à divulgation nulle de connaissance avec une infrastru
 
 Le système est modulaire et interopérable, permettant l'intégration par les hôpitaux et les instituts de recherche sans dépendance à un fournisseur. Les contrats intelligents gèrent le consentement dynamique, tandis que des mécanismes de révocation et de mise à jour des permissions assurent la confiance et la conformité à long terme (ex : HIPAA, RGPD).
 
-## Livrables & Fonctionnalités Souhaitées
-
-- Interface web utilisant [Next.js](https://nextjs.org), [Typescript](https://www.typescriptlang.org/), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com/)
-- Authentification des utilisateurs
-    - Inscription et connexion via portefeuille en utilisant [Embedded Wallets par MetaMask](https://metamask.io/developer/embedded-wallets)
-- **Indexation des métadonnées**
-    - Identifier les standards de santé les plus utiles comme EMR, EHR, FHIR, HL7, GDC
-    - Créer et héberger divers ensembles de données représentant les standards actuels de l'industrie et leurs limites
-    - Index publics et interrogeables pour :
-        - Données de santé agrégées par catégorie
-        - Projets de recherche en cours
-        - Décisions de DAO et flux de financement
-- **Implémentation de preuves ZK pour la propriété & l'éligibilité des données**
-    - Utilise des solutions ZK existantes telles que (Midnight Network)
-    - Les utilisateurs soumettent des preuves cryptographiques démontrant qu'ils répondent aux critères de recherche (ex. tranche d'âge, condition médicale, localisation) sans révéler leurs données brutes
-- **Coffre-fort de données + stockage chiffré hors-chaîne**
-    - Coffres contrôlés par l'utilisateur pour stocker des données médicales chiffrées (ex. via [IPFS](https://ipfs.tech/))
-    - Seuls les engagements ZK sont enregistrés on-chain, préservant la confidentialité
-- **Portail chercheurs & moteur de mise en relation**
-    - Les chercheurs créent des requêtes chiffrées avec filtres d'éligibilité
-    - La plateforme effectue un appariement basé sur ZK et agrège des statistiques anonymisées
-- **Couche de gouvernance & d'audit**
-    - DAO transparente pour les mises à jour du protocole, les revues éthiques et la résolution de litiges
-    - Journaux indexés pour la gouvernance, la participation des utilisateurs et la transparence d'utilisation
-- **Système de consentement & de récompense**
-    - Système basé sur DAO permettant aux utilisateurs d'accorder/révoquer leur consentement selon les cas d'usage
-    - Les smart contracts gèrent automatiquement les micropaiements ou dons

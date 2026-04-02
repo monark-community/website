@@ -38,31 +38,3 @@ Cura proposes a privacy-first, decentralized exchange where users:
 By combining zero-knowledge proofs with open blockchain infrastructure, Cura builds a trustless, ethical medical data marketplace governed by users. This promotes data sovereignty, discourages monopolies, and supports regulatory compliance.
 
 The system is modular and interoperable, allowing integration by hospitals and research institutions without vendor lock-in. Smart contracts manage dynamic consent, while mechanisms for revocation and permission updates ensure long-term trust and compliance (e.g. HIPAA, GDPR).
-
-## Deliverables & Desired Functionnalities
-
-- Web interface using [Next.js](https://nextjs.org), [TypeScript](https://www.typescriptlang.org), [shadcn-ui](https://ui.shadcn.com/), [tailwindcss](https://tailwindcss.com)
-- User authentication
-    - Enable wallet-based registration and login using [Embedded Wallets by MetaMask](https://metamask.io/developer/embedded-wallets)
-- **Metadata Indexing**
-    - Identify the most useful healthcare standards like EMR, EHR, FIRH, HL7, GDC
-    - Create and host various datasets representing the current industry standards and limitations
-    - Public, queryable indexes for:
-        - Aggregated health data by category
-        - Active research projects
-        - DAO decisions and funding flows
-- **ZK-Proof Implementation for Data Ownership & Eligibility**
-    - Leverages existing ZK solutions such as (Midnight Network)
-    - Users submit cryptographic proofs showing they meet research criteria (e.g. age group, condition, location) without revealing raw data.
-- **Data Vault + Encrypted Off-Chain Storage**
-    - User-controlled vaults store encrypted medical data (e.g., via [IPFS](https://ipfs.tech/)).
-    - Only ZK commitments live on-chain, preserving privacy.
-- **Researcher Portal & Matching Engine**
-    - Researchers create encrypted data requests with eligibility filters.
-    - Platform performs ZK-based matching and aggregates anonymized stats.
-- **Governance & Audit Layer**
-    - Transparent DAO for protocol updates, ethics reviews and dispute resolution.
-    - Indexed logs for governance, user participation and usage transparency.
-- **Consent & Reward System**
-    - DAO-based system for users to grant/revoke consent for use cases.
-    - Smart contracts automatically handle micro-payments or donations.

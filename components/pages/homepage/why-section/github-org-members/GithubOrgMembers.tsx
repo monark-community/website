@@ -11,7 +11,8 @@ type OrgMember = {
 };
 
 interface GithubOrgMembersProps {
-    repo?: string | string[]; // support string or array of repo names
+    repo?: string | string[]; // support string or array of repo names (optional)
+    all?: boolean; // ignores repo and displays all collaborators (optional)
 }
 
 const BLACKLISTED_LOGINS = ["lovable-dev[bot]", "dependabot[bot]", "claude", "TimLethbridge"];
@@ -35,10 +36,11 @@ function cachedFetch(url: string): Promise<OrgMember[]> {
     return promise;
 }
 
-export default function GithubOrgMembers({ repo }: GithubOrgMembersProps) {
+export default function GithubOrgMembers({ repo, all }: GithubOrgMembersProps) {
     const [members, setMembers] = useState<OrgMember[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const [hasNoRepo, setHasNoRepo] = useState(false);
 
     const normalizeRepoName = (r: string) => {
         try {
@@ -50,46 +52,48 @@ export default function GithubOrgMembers({ repo }: GithubOrgMembersProps) {
     };
 
     useEffect(() => {
+        // If `all` is set, fetch all org members regardless of repo
+        if (all) {
+            setLoading(true);
+            cachedFetch("/api/gh/org_contributors")
+                .then((data) => {
+                    const filtered = data.filter((m) => !BLACKLISTED_LOGINS.includes(m.login));
+                    setMembers(Array.from(new Map(filtered.map((m) => [m.login, m])).values()));
+                })
+                .catch(() => setError("Failed to fetch org contributors"))
+                .finally(() => setLoading(false));
+            return;
+        }
+
+        // No repo provided and not `all` — nothing to show
+        const repos: string[] = !repo ? [] : Array.isArray(repo) ? repo : [repo];
+        if (repos.length === 0) {
+            setHasNoRepo(true);
+            setLoading(false);
+            return;
+        }
+
         const fetchMembers = async () => {
             setLoading(true);
             setError(null);
 
             try {
-                let repos: string[] = [];
-                if (!repo) {
-                    repos = [];
-                } else if (Array.isArray(repo)) {
-                    repos = repo;
-                } else {
-                    repos = [repo];
-                }
+                const results = await Promise.allSettled(
+                    repos.map((r) => {
+                        const repoName = normalizeRepoName(r);
+                        return cachedFetch(`/api/gh/repo_contributors/?repo=${repoName}`);
+                    })
+                );
 
-                const fetchedMembers: OrgMember[] = [];
+                const fetchedMembers = results
+                    .filter((r): r is PromiseFulfilledResult<OrgMember[]> => r.status === "fulfilled")
+                    .map((r) => r.value)
+                    .flat();
 
-                if (repos.length === 0) {
-                    const data = await cachedFetch("/api/gh/org_contributors");
-                    fetchedMembers.push(...data);
-                } else {
-                    const results = await Promise.allSettled(
-                        repos.map((r) => {
-                            const repoName = normalizeRepoName(r);
-                            return cachedFetch(`/api/gh/repo_contributors/?repo=${repoName}`);
-                        })
-                    );
-
-                    const successfulResults = results
-                        .filter((r): r is PromiseFulfilledResult<OrgMember[]> => r.status === "fulfilled")
-                        .map((r) => r.value)
-                        .flat();
-                    fetchedMembers.push(...successfulResults);
-                }
-
-                // Filter out blacklisted logins
                 const filteredMembers = fetchedMembers.filter(
                     (m) => !BLACKLISTED_LOGINS.includes(m.login)
                 );
 
-                // Remove duplicates by login
                 const uniqueMembers = Array.from(
                     new Map(filteredMembers.map((m) => [m.login, m])).values()
                 );
@@ -109,16 +113,17 @@ export default function GithubOrgMembers({ repo }: GithubOrgMembersProps) {
         };
 
         fetchMembers();
-    }, [repo, BLACKLISTED_LOGINS]);
+    }, [repo, all]);
 
     if (error) return null;
+    if (hasNoRepo) return <p className="text-sm text-muted-foreground mt-2">No collaborator</p>;
 
-    // Adjust styling depending on whether repo is provided
-    const containerClass = repo
+    const isCompact = !all;
+    const containerClass = isCompact
         ? "mt-2 flex flex-wrap gap-1"
         : "flex flex-wrap justify-center gap-2 py-16";
 
-    const avatarSize = repo ? 32 : 64;
+    const avatarSize = isCompact ? 32 : 64;
 
     return (
         <TooltipProvider>
