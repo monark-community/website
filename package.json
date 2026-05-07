@@ -64,7 +64,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/js-cookie": "^3.0.6",
-    "@types/mailchimp__mailchimp_marketing": "^3.0.21",
+    "@types/mailchimp__mailchimp_marketing": "^3.0.22",
     "@types/md5": "^2.3.5",
     "@types/mdx": "^2.0.13",
     "@types/node": "^20",
