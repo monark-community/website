@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "./footer/footer";
 import { Locale } from "@/i18n.config";
 import NavbarWrapper from "./navbar/navbar-wrapper";
@@ -16,6 +16,12 @@ const skipLabel: Record<Locale, string> = {
 };
 
 function SkipLink({ locale }: { locale: Locale }) {
+  // The root layout sets <html lang> on the server; keep it right after
+  // client-side navigation across locales too.
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
+
   return (
     <a
       href="#main"
