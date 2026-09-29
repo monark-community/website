@@ -39,29 +39,30 @@ type AudienceProps = {
 };
 
 /**
- * Whole card is one link (the title's ::after covers the card). The photo
- * is the same one the role's participate page opens with; its alt is empty
- * because the title right below names the audience.
+ * Whole card is one link (the title's ::after covers the card); hover and
+ * focus come from the shared `card-hover` primitive (app/globals.scss). The
+ * photo is the same one the role's participate page opens with; its alt is
+ * empty because the title right below names the audience.
  */
 function Audience({ audience, locale }: AudienceProps) {
   const photo = rolePhoto(audience.id as ParticipateSlug);
   return (
-    <BrandedCard className="group relative flex h-full flex-col p-2 transition-colors duration-150 hover:border-primary focus-within:border-primary">
+    <BrandedCard className="card-hover flex h-full flex-col p-2">
       {photo && (
         <Photo
           photo={photo.photo}
           locale={locale}
           decorative
           sizes="(min-width: 1024px) 18rem, (min-width: 640px) 50vw, 100vw"
-          className="aspect-[16/10] rounded-xl border-0"
-          imgClassName={`${photo.focus} transition-transform duration-200 ease-out motion-safe:group-hover:scale-[1.03]`}
+          className="card-hover-media aspect-[16/10] rounded-xl border-0"
+          imgClassName={photo.focus}
         />
       )}
       <div className="flex flex-1 flex-col px-4 pb-4">
         <h3 className="mt-5 text-xl">
           <NavLink
             href={audience.href}
-            className="after:absolute after:inset-0 after:rounded-2xl focus-visible:outline-none"
+            className="card-hover-link text-foreground"
           >
             {audience.title}
           </NavLink>
@@ -69,7 +70,7 @@ function Audience({ audience, locale }: AudienceProps) {
         <p className="mt-2 flex-1 text-muted-foreground">{audience.content}</p>
         <ArrowRightIcon
           aria-hidden="true"
-          className="mt-6 size-5 text-primary-ink transition-transform duration-150 motion-safe:group-hover:translate-x-1"
+          className="mt-6 size-5 text-primary-ink"
         />
       </div>
     </BrandedCard>

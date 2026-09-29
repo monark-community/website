@@ -118,6 +118,81 @@ body {
     line-height: 1.55;
     color: var(--muted-foreground);
   }
+
+  /*
+   * Shared card hover, used by every linked card (projects, news, home).
+   * - `.card-hover` on the card.
+   * - `.card-hover-link` on the title link: stretched over the card with
+   *   ::after, so the whole card is one link (put other links or buttons in
+   *   the card above it with `relative z-10`).
+   * - `.card-hover-media` on the image frame (the frame clips, the image
+   *   inside zooms).
+   * On hover or keyboard focus the title gets an orange underline; when
+   * motion is allowed the card also lifts 4px and the image zooms by 4%.
+   * `--card-hover-inset` grows the link area and focus ring past the card
+   * (negative, for borderless cards); `--card-hover-radius` rounds the ring.
+   */
+  .card-hover {
+    position: relative;
+  }
+
+  .card-hover-link {
+    text-decoration-line: none;
+    text-decoration-color: var(--primary-ink);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: var(--card-hover-inset, 0);
+      border-radius: var(--card-hover-radius, 1rem);
+    }
+
+    &:focus-visible {
+      outline: none;
+      text-decoration-line: underline;
+
+      &::after {
+        outline: 2px solid var(--focus-ring);
+        outline-offset: 2px;
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    .card-hover:hover .card-hover-link {
+      text-decoration-line: underline;
+    }
+  }
+
+  .card-hover-media {
+    overflow: hidden;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .card-hover {
+      transition: transform 200ms ease-out;
+    }
+
+    .card-hover-media img {
+      transition: transform 400ms ease-out;
+    }
+
+    .card-hover:has(.card-hover-link:focus-visible) .card-hover-media img {
+      transform: scale(1.04);
+    }
+
+    @media (hover: hover) {
+      .card-hover:hover {
+        transform: translateY(-4px);
+      }
+
+      .card-hover:hover .card-hover-media img {
+        transform: scale(1.04);
+      }
+    }
+  }
 }
 
 @layer utilities {

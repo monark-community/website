@@ -1,7 +1,11 @@
 import { locales } from "@/i18n.config";
 import fs from "fs";
 import path from "path";
-import { DatedProjectMetadata, ProjectOwnership } from "@/types/project.types";
+import {
+  DatedProjectMetadata,
+  ProjectCategory,
+  ProjectOwnership,
+} from "@/types/project.types";
 import {
   getMetadataFromFile,
   generateHash,
@@ -11,6 +15,7 @@ import {
 type PreviousIndex = Record<string, Partial<DatedProjectMetadata>>;
 
 const OWNERSHIP_VALUES: string[] = Object.values(ProjectOwnership);
+const CATEGORY_VALUES: string[] = Object.values(ProjectCategory);
 
 // Keep only a known ownership value; warn and drop anything else so the UI
 // never receives an unexpected string.
@@ -24,6 +29,21 @@ function parseOwnership(
   }
   console.warn(
     `Invalid ownership "${String(value)}" in ${pagePath} (expected one of: ${OWNERSHIP_VALUES.join(", ")}). Ignoring it.`
+  );
+  return undefined;
+}
+
+// Same for the list category.
+function parseCategory(
+  value: unknown,
+  pagePath: string
+): DatedProjectMetadata["category"] {
+  if (value === undefined || value === null) return undefined;
+  if (typeof value === "string" && CATEGORY_VALUES.includes(value)) {
+    return value as DatedProjectMetadata["category"];
+  }
+  console.warn(
+    `Invalid category "${String(value)}" in ${pagePath} (expected one of: ${CATEGORY_VALUES.join(", ")}). Ignoring it.`
   );
   return undefined;
 }
@@ -69,6 +89,7 @@ function generateProjectIndex(
             accronym: metadata.accronym,
             status: metadata.status,
             ownership: parseOwnership(metadata.ownership, pagePath),
+            category: parseCategory(metadata.category, pagePath),
             img: metadata.img,
             img_alt: metadata.img_alt,
             complexity_score: metadata.complexity_score,
