@@ -16,7 +16,7 @@ export const en: I18n = {
     context:
       "We incubate the next generation of Web3 innovators, launching startups by students, recent graduates, and independent developers, aligned from day one with the ecosystems of our funding partners.",
     soon: "Coming Soon",
-    primary_action: "Our Web3 projects",
+    primary_action: "Explore our Web3 projects",
     secondary_action: "What is Monark?",
   },
 };
@@ -29,7 +29,7 @@ export const fr: I18n = {
     context:
       "Nous incubons la prochaine génération d'innovateurs Web3, lançant des startups par des étudiants, de jeunes diplômés et des développeurs indépendants, alignés dès le premier jour avec les écosystèmes de nos partenaires financiers.",
     soon: "Bientôt disponible",
-    primary_action: "Nos projets Web3",
+    primary_action: "Explorer nos projets Web3",
     secondary_action: "Qu'est-ce que Monark?",
   },
 };

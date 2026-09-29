@@ -16,9 +16,11 @@ function PartnersSection({ locale }: Props) {
   const t = contentMap[locale];
 
   return (
-    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-      <strong>{t.trust}</strong>
-      <Partners />
+    <div className="site-container pb-12 md:pb-16">
+      <div className="flex flex-col gap-3 border-t pt-8 sm:flex-row sm:items-center sm:gap-8">
+        <p className="text-sm font-semibold text-muted-foreground">{t.trust}</p>
+        <Partners />
+      </div>
     </div>
   );
 }
