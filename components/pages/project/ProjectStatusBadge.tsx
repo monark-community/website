@@ -12,15 +12,14 @@ interface Props {
   locale: Locale;
 }
 
+// Muted status tones, always paired with an icon and a text label (brand §3).
 const statusStyles = {
-  planned: "bg-[hsl(var(--chart-1))] text-white hover:bg-[hsl(var(--chart-1))]",
-  prototype_available:
-    "bg-[hsl(var(--chart-2))] text-white hover:bg-[hsl(var(--chart-2))]",
-  in_progress: "bg-[hsl(var(--chart-3))] text-white hover:bg-[hsl(var(--chart-3))]",
-  on_hold: "bg-[hsl(var(--muted))] text-muted-foreground hover:bg-[hsl(var(--muted-3))]",
-  market_validation:
-    "bg-[hsl(var(--chart-4))] text-white hover:bg-[hsl(var(--chart-4))]",
-  production: "bg-[hsl(var(--chart-5))] text-white hover:bg-[hsl(var(--chart-5))]",
+  planned: "border-border bg-card text-foreground",
+  prototype_available: "border-transparent bg-chart-3/15 text-chart-3",
+  in_progress: "border-transparent bg-warning/15 text-warning",
+  on_hold: "border-transparent bg-muted text-muted-foreground",
+  market_validation: "border-transparent bg-primary/15 text-primary-ink",
+  production: "border-transparent bg-success/15 text-success",
 };
 
 const iconMap = {
@@ -39,10 +38,10 @@ function ProjectStatusBadge({ status, locale }: Props) {
   const localizedStatus = statusI18n[status as keyof typeof statusI18n] || status;
   return (
     <Badge
-      className={`${statusStyles[status as keyof typeof statusStyles]} w-fit cursor-default px-2`}
+      className={`${statusStyles[status as keyof typeof statusStyles]} w-fit shrink-0 cursor-default gap-1.5 px-2.5 py-1`}
       title={localizedLabel}
     >
-      <Icon className={`mr-2 ${status === "in_progress" ? "animate-spin" : ""}`} size={20} />{localizedStatus}
+      <Icon aria-hidden="true" className="size-3.5" strokeWidth={2} />{localizedStatus}
     </Badge>
   );
 }

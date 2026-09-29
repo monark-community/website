@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Label } from "@/components/ui/label";
 
 interface TocItem {
   text: string;
@@ -48,14 +47,15 @@ export default function ProjectTableOfContents({ items, label }: Props) {
 
   function handleClick(e: React.MouseEvent<HTMLAnchorElement>, id: string) {
     e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.getElementById(id)?.scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
     window.history.replaceState(null, "", `#${id}`);
   }
 
   return (
     <div className="mt-8">
-      <Label className="mb-0 mt-4 font-bold text-muted-foreground">{label}</Label>
-      <nav className="flex flex-col gap-1 mt-2 overflow-visible">
+      <p className="eyebrow !mb-2 !text-muted-foreground">{label}</p>
+      <nav aria-label={label} className="flex flex-col gap-0.5 border-l overflow-visible">
         {items.map(({ text, id }) => {
           const isActive = activeId === id;
           return (
@@ -63,17 +63,13 @@ export default function ProjectTableOfContents({ items, label }: Props) {
               key={id}
               href={`#${id}`}
               onClick={(e) => handleClick(e, id)}
-              className={`relative pl-4 whitespace-nowrap no-underline hover:underline text-sm transition-colors ${
+              aria-current={isActive ? "location" : undefined}
+              className={`relative -ml-px border-l-2 py-1 pl-4 text-sm leading-snug no-underline transition-colors duration-150 ${
                 isActive
-                  ? "text-foreground font-bold"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "border-primary text-foreground font-semibold"
+                  : "border-transparent text-muted-foreground hover:text-foreground"
               }`}
             >
-              <span
-                className={`absolute left-0 top-[6px] size-2 rounded-full transition-opacity ${
-                  isActive ? "bg-primary opacity-100" : "opacity-0"
-                }`}
-              />
               {text}
             </a>
           );

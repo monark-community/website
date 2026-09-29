@@ -44,8 +44,8 @@ function getTextContent(children: unknown): string {
 const h2WithId = ({ children, ...props }: React.ComponentPropsWithoutRef<"h2">) => {
   const id = slugify(getTextContent(children));
   return (
-    <h2 {...props} id={id} className="group relative text-2xl md:text-3xl font-bold mb-2 scroll-mt-24">
-      <a href={`#${id}`} className="absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity no-underline text-muted-foreground hover:text-foreground" aria-label="Link to section">
+    <h2 {...props} id={id} className="group relative mt-12 mb-4 scroll-mt-24">
+      <a href={`#${id}`} className="absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity no-underline text-muted-foreground hover:text-foreground" aria-label="Link to section">
         <LinkIcon className="size-4" />
       </a>
       {children}
@@ -113,18 +113,18 @@ export default async function ProjectMdxContent({
   ];
 
   return (
-    <div className="grid grid-cols-3 lg:grid-cols-4 lg:py-6 gap-8">
-      <div className="col-span-3 flex flex-col gap-4">
+    <div className="grid grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12 pt-6 lg:pt-10">
+      <div className="col-span-3 flex min-w-0 flex-col gap-4">
         {backHref && backLabel && (
-          <div className="block lg:hidden mt-8">
-            <NavLink href={backHref} className="inline-flex items-center text-primary font-medium group no-underline rendered-content">
-              <ChevronLeftIcon />&nbsp;{backLabel}
+          <div className="block lg:hidden">
+            <NavLink href={backHref} className="-ml-3 inline-flex h-9 items-center rounded-full px-3 text-sm font-semibold text-primary-ink no-underline transition-colors hover:bg-secondary [&_svg]:size-4">
+              <ChevronLeftIcon aria-hidden="true" />{backLabel}
             </NavLink>
           </div>
         )}
-        <h1 id="introduction" className="mb-0 scroll-mt-24">{data.accronym}</h1>
-        <p className="-mt-3">{data.title}</p>
-        <div className="flex items-center gap-3">
+        <h1 id="introduction" className="m-0 scroll-mt-24">{data.accronym}</h1>
+        <p className="lead m-0">{data.title}</p>
+        <div className="flex flex-wrap items-center gap-3 text-sm font-semibold">
           <ProjectStatusBadge status={data.status} locale={locale} />
           <IconLabelAttribute
             Icon={GlobeIcon}
@@ -143,7 +143,7 @@ export default async function ProjectMdxContent({
             <GithubOrgMembers repo={data.code_repositories} />
           </div>
         </div>
-        <aside className="font-lg italic border-l-[4px] border-primary pl-6 mt-6 mr-0 mb-6 ml-6 text-muted-foreground">💡&nbsp;{data.description}</aside>
+        <aside className="my-4 rounded-lg border bg-card p-5 text-lg leading-relaxed text-foreground">{data.description}</aside>
         <WrappedImage
           src={`/images/project/${data.img}`}
           alt={data.img_alt}
@@ -152,29 +152,29 @@ export default async function ProjectMdxContent({
           authorSrc={data.img_author_src}
           width={500}
           height={500}
-          className="w-full rounded-3xl"
+          className="w-full rounded-2xl border"
         />
-        <div className="prose prose-lg dark:prose-invert max-w-none pt-4 pb-16">
+        <div className="max-w-none pt-4 pb-16">
           <MDXRemote source={content} components={componentsWithIds} />
           {milestones.length > 0 && (
             <div className="pb-16">
-              <h2 id={slugify(t.milestones)} className="group relative text-2xl md:text-3xl font-bold mb-2 scroll-mt-24">
-                <a href={`#${slugify(t.milestones)}`} className="absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity no-underline text-muted-foreground hover:text-foreground" aria-label="Link to section">
+              <h2 id={slugify(t.milestones)} className="group relative mt-12 mb-4 scroll-mt-24">
+                <a href={`#${slugify(t.milestones)}`} className="absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity no-underline text-muted-foreground hover:text-foreground" aria-label="Link to section">
                   <LinkIcon className="size-4" />
                 </a>
                 {t.milestones}
               </h2>
-              <Accordion type="multiple" className="border rounded-lg overflow-hidden">
+              <Accordion type="multiple" className="overflow-hidden rounded-2xl border bg-card [&>div:last-child]:border-b-0">
                 {milestones.map(({ content: milestoneContent, data: milestoneData, file }) => (
                   <AccordionItem key={file} value={file}>
                     <AccordionTrigger>
-                      <div className="flex items-center gap-3">
+                      <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3">
                         <ProjectStatusBadge status={milestoneData.status} locale={locale} />
                         <span>{milestoneData.title}</span>
                       </div>
                     </AccordionTrigger>
                     <AccordionContent>
-                      <div className="prose prose-sm dark:prose-invert max-w-none">
+                      <div className="max-w-none text-sm">
                         <MDXRemote source={milestoneContent} components={components} />
                       </div>
                     </AccordionContent>
@@ -192,11 +192,11 @@ export default async function ProjectMdxContent({
         {children}
       </div>
       <div className="hidden lg:block lg:col-span-1 pb-16">
-        <div className="sticky top-24 pt-2">
+        <div className="sticky top-24">
           {backHref && backLabel && (
-            <div className="mt-8">
-              <NavLink href={backHref} className="inline-flex items-center text-primary font-medium group no-underline">
-                <ChevronLeftIcon />&nbsp;{backLabel}
+            <div>
+              <NavLink href={backHref} className="-ml-3 inline-flex h-9 items-center rounded-full px-3 text-sm font-semibold text-primary-ink no-underline transition-colors hover:bg-secondary [&_svg]:size-4">
+                <ChevronLeftIcon aria-hidden="true" />{backLabel}
               </NavLink>
             </div>
           )}

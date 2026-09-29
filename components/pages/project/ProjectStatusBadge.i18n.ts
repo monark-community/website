@@ -5,9 +5,11 @@ export const projectStatusBadgeI18n = {
   en: {
     status: "Status",
     planned: "Planned",
-    prototype_available: "Prototype Available",
-    in_progress: "In Progress",
-    market_validation: "Market Validation",
+    prototype_available: "Prototype available",
+    in_progress: "In progress",
+    market_validation: "Market validation",
+    on_hold: "On hold",
+    production: "Production",
     live: "Live",
   },
   fr: {
@@ -16,6 +18,8 @@ export const projectStatusBadgeI18n = {
     prototype_available: "Prototype disponible",
     in_progress: "En cours",
     market_validation: "Validation du marché",
+    on_hold: "En pause",
+    production: "Production",
     live: "En ligne",
   },
 };

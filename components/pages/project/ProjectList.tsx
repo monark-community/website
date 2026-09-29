@@ -30,6 +30,13 @@ const projectDataMap: Record<Locale, DatedProjectMetadata[]> = {
   fr: frProjects,
 };
 
+const suggestionClass = (active: boolean) =>
+  `inline-flex h-8 shrink-0 items-center whitespace-nowrap rounded-full border px-3 text-xs font-semibold transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+    active
+      ? "border-foreground bg-foreground text-background"
+      : "border-border bg-card text-foreground hover:bg-secondary"
+  }`;
+
 const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
   const t = i18n[locale];
   const [search, setSearch] = useState("");
@@ -138,36 +145,38 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
   );
 
   return (
-    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
-      <h1 className="mb-6">{t.page_title}</h1>
-      <p className="text-muted-foreground mb-8 max-w-[460px]">
+    <div className="site-container relative pt-12 pb-16 md:pt-16 md:pb-24">
+      <h1>{t.page_title}</h1>
+      <p className="lead mt-4 mb-10 max-w-[36rem]">
         {t.description}
       </p>
-      <div className="mb-8">
+      <div className="mb-10">
         <div className="flex flex-col lg:flex-row gap-4">
           <Input
             placeholder={t.search_placeholder}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="flex-1 min-h-[36px]"
+            className="flex-1"
+            aria-label={t.search_placeholder}
           />
           <div className="flex lg:hidden items-center gap-2">
-            <div className="flex overflow-x-scroll gap-2">
+            <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1">
               {topKeywordSuggestions.map((suggestion) => (
-                <Badge
+                <button
+                  type="button"
                   key={suggestion}
-                  variant="outline"
-                  className="cursor-pointer text-left whitespace-nowrap hover:bg-primary/10 transition-colors"
-                  onClick={() => setSearch(suggestion)}
+                  aria-pressed={search === suggestion}
+                  className={suggestionClass(search === suggestion)}
+                  onClick={() => setSearch(search === suggestion ? "" : suggestion)}
                 >
                   {suggestion}
-                </Badge>
+                </button>
               ))}
             </div>
           </div>
           <div className="flex gap-4 flex-col md:flex-row">
             <Select value={selectedIndustry} onValueChange={setSelectedIndustry}>
-              <SelectTrigger className="w-full md:w-[200px]">
+              <SelectTrigger className="w-full md:w-[200px]" aria-label={t.filter_by_industry}>
                 <SelectValue placeholder={t.filter_by_industry} />
               </SelectTrigger>
               <SelectContent>
@@ -180,7 +189,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
               </SelectContent>
             </Select>
             <Select value={selectedKeyword} onValueChange={setSelectedKeyword}>
-              <SelectTrigger className="w-full md:w-[200px]">
+              <SelectTrigger className="w-full md:w-[200px]" aria-label={t.filter_by_keyword}>
                 <SelectValue placeholder={t.filter_by_keyword} />
               </SelectTrigger>
               <SelectContent>
@@ -193,7 +202,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
               </SelectContent>
             </Select>
             <Select value={selectedStatus} onValueChange={setSelectedStatus}>
-              <SelectTrigger className="w-full md:w-[200px]">
+              <SelectTrigger className="w-full md:w-[200px]" aria-label={t.filter_by_status}>
                 <SelectValue placeholder={t.filter_by_status} />
               </SelectTrigger>
               <SelectContent>
@@ -207,17 +216,18 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
             </Select>
           </div>
         </div>
-        <div className="hidden lg:flex items-center gap-2 mt-2">
+        <div className="hidden lg:flex items-center gap-2 mt-3">
           <div className="flex flex-wrap gap-2">
             {topKeywordSuggestions.map((suggestion) => (
-              <Badge
+              <button
+                type="button"
                 key={suggestion}
-                variant="outline"
-                className="cursor-pointer hover:bg-primary/10 transition-colors"
-                onClick={() => setSearch(suggestion)}
+                aria-pressed={search === suggestion}
+                className={suggestionClass(search === suggestion)}
+                onClick={() => setSearch(search === suggestion ? "" : suggestion)}
               >
                 {suggestion}
-              </Badge>
+              </button>
             ))}
           </div>
         </div>
@@ -236,11 +246,11 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
         </div>
       )}
       {!initialized ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {[...Array(6)].map((_, i) => (
             <div key={i} className="h-full">
-              <Card className="overflow-hidden h-full flex flex-col transition-colors animate-pulse">
-                <div className="w-full h-64 bg-muted mb-4" />
+              <Card className="overflow-hidden h-full flex flex-col motion-safe:animate-pulse">
+                <div className="w-full aspect-[16/9] bg-muted" />
                 <CardHeader>
                   <div className="h-6 w-1/2 bg-muted rounded mb-2" />
                   <div className="h-4 w-1/4 bg-muted rounded" />
@@ -265,44 +275,53 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredProjects.length > 0 ? (
             filteredProjects.map((project) => (
               <div key={project.id} className="h-full">
-                <Card className="overflow-hidden h-full flex flex-col transition-colors">
-                  <NavLink href={`/project/${project.id}`} className="block">
+                <Card className="group overflow-hidden h-full flex flex-col transition-colors duration-150 hover:border-primary/60">
+                  <NavLink
+                    href={`/project/${project.id}`}
+                    className="block overflow-hidden border-b"
+                    tabIndex={-1}
+                    aria-hidden="true"
+                  >
                     <Image
                       src={`/images/project/${project.id}.jpg`}
-                      alt={project.title}
-                      width={500}
-                      height={200}
-                      className="w-full h-64 object-cover mb-4 hover:opacity-90 transition-opacity"
+                      alt=""
+                      width={640}
+                      height={360}
+                      sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
+                      className="w-full aspect-[16/9] object-cover transition-transform duration-200 motion-safe:group-hover:scale-[1.02]"
                     />
                   </NavLink>
-                  <CardHeader>
+                  <CardHeader className="space-y-0 pb-3">
                     <CardTitle className="items-center justify-between">
-                      <NavLink
-                        href={`/project/${project.id}`}
-                        className="hover:underline"
-                      >
-                        <div className="text-xl font-bold flex">{project.accronym}</div>
-                      </NavLink>
-                      <div><small className="text-sm font-normal text-muted-foreground">{project.title}</small></div>
+                      <h2 className="text-xl">
+                        <NavLink
+                          href={`/project/${project.id}`}
+                          className="underline-offset-4 hover:underline"
+                        >
+                          {project.accronym}
+                        </NavLink>
+                      </h2>
+                      <p className="mt-1 text-sm font-normal text-muted-foreground">{project.title}</p>
                       {adminMode && (
-                        <Badge variant="outline" className="ml-2 text-xs bg-primary/10 border-primary/30 text-primary">
+                        <Badge variant="outline" className="ml-2 text-xs bg-primary/10 border-primary/30 text-primary-ink">
                           Score: {calculateProjectScore(project)}
                         </Badge>
                       )}
                     </CardTitle>
-                    <div className="flex items-center gap-2 pt-2">
+                    <div className="flex items-center gap-2 pt-3">
                       <a
                         href={`https://${project.accronym}.monark.io`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        title="Visit project website"
-                        className="inline-flex items-center text-primary hover:underline"
+                        title={`${project.accronym}.monark.io`}
+                        aria-label={`${project.accronym}.monark.io`}
+                        className="-ml-1.5 inline-flex size-8 items-center justify-center rounded-full text-primary-ink transition-colors hover:bg-secondary"
                       >
-                        <Globe className="mr-1" />
+                        <Globe className="size-4" aria-hidden="true" />
                       </a>
                       <ProjectStatusBadge
                         status={project.status as ProjectStatus}
@@ -311,7 +330,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
                     </div>
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col justify-between">
-                    <p className="mb-4 text-sm">{project.description}</p>
+                    <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.keyword_tags.map((tag) => (
                         <Badge key={tag} variant="secondary">
