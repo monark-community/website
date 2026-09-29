@@ -92,19 +92,6 @@ body {
     @apply py-16 md:py-24;
   }
 
-  /*
-   * Hero photo beside text (from md): a horizontal alpha mask fades its
-   * left edge in from the text column; top, right and bottom stay hard
-   * edges. A mask, not a coloured overlay, so it reveals the real surface
-   * in both themes. Phones show the photo whole, edge to edge, no fade.
-   */
-  @media (min-width: 768px) {
-    .photo-fade {
-      -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 30%);
-      mask-image: linear-gradient(to right, transparent 0%, #000 30%);
-    }
-  }
-
   /* Small uppercase label above a heading (.text-tagline is the legacy name). */
   .eyebrow,
   .text-tagline {

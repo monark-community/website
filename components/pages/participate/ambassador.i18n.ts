@@ -24,7 +24,7 @@ export const en: ParticipateContent = {
   hero: {
     eyebrow: "Participate as an ambassador",
     title: "Grow the Monark community where you live",
-    lead: "Ambassadors carry Monark's values and mission to their city, campus or community. They bring new people in, and help create local hubs for Web3 education, collaboration and project development.",
+    lead: "Carry Monark's mission to your city, campus or community, and help build local hubs for Web3 learning and projects.",
     audiences_label: "For",
     audiences: ["Community members", "Students", "Web3 enthusiasts"],
     status:
@@ -150,7 +150,7 @@ export const fr: ParticipateContent = {
   hero: {
     eyebrow: "Participer en tant qu'ambassadeur",
     title: "Faites grandir la communauté Monark là où vous vivez",
-    lead: "Les ambassadeurs portent les valeurs et la mission de Monark dans leur ville, sur leur campus ou dans leur communauté. Ils y accueillent de nouvelles personnes et aident à créer des pôles locaux d'éducation, de collaboration et de développement de projets Web3.",
+    lead: "Portez la mission de Monark dans votre ville, sur votre campus ou dans votre communauté, et aidez à bâtir des pôles Web3 locaux.",
     audiences_label: "Pour",
     audiences: ["Membres de la communauté", "Étudiants", "Passionnés de Web3"],
     status:

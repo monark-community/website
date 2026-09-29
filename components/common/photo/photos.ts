@@ -28,17 +28,10 @@ export type PhotoKey =
 export type PhotoEntry = {
   src: StaticImageData;
   alt: Record<Locale, string>;
-  /**
-   * Focal point as a CSS object-position ("x% y%"), used when the photo
-   * fills a large faded area (FadedPhoto): it keeps faces clear of the
-   * fade on the text side. Defaults to the centre.
-   */
-  focus?: string;
 };
 
 export const photos: Record<PhotoKey, PhotoEntry> = {
   "students-lecture-hall": {
-    focus: "100% 45%",
     src: studentsLectureHall,
     alt: {
       en: "Students talking and laughing at their desks in a university lecture hall",
@@ -46,7 +39,6 @@ export const photos: Record<PhotoKey, PhotoEntry> = {
     },
   },
   "developers-pairing-workshop": {
-    focus: "85% 40%",
     src: developersPairingWorkshop,
     alt: {
       en: "Two developers work through a problem on one laptop during a coding workshop",
@@ -54,7 +46,6 @@ export const photos: Record<PhotoKey, PhotoEntry> = {
     },
   },
   "community-meetup-discussion": {
-    focus: "80% 50%",
     src: communityMeetupDiscussion,
     alt: {
       en: "A participant asks a question during an evening community meetup",
@@ -62,7 +53,6 @@ export const photos: Record<PhotoKey, PhotoEntry> = {
     },
   },
   "team-planning-studio": {
-    focus: "90% 40%",
     src: teamPlanningStudio,
     alt: {
       en: "A small business team plans a project around a table in their studio",

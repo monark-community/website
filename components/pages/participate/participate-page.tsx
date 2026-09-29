@@ -52,8 +52,7 @@ type Props = { slug: ParticipateSlug; locale: Locale };
  * One layout for the four participate pages, so they read as a family:
  * hero, what you get, how it works, who fits, proof, FAQ, call to action,
  * then links to the three other ways to participate. Each page brings its
- * own copy, icon, accent and photo. The hero runs full width so its photo
- * can reach the viewport edge; every other section sits in .site-container.
+ * own copy, icon, accent and photo.
  */
 function ParticipatePage({ slug, locale }: Props) {
   const t = getContent(slug, locale);
@@ -61,17 +60,17 @@ function ParticipatePage({ slug, locale }: Props) {
   const { icon, accent } = shared.roleAppearance(slug);
 
   return (
-    <div className="pb-8">
+    <div className="site-container pb-8 pt-10 md:pt-14">
       <ParticipateHero
         t={t.hero}
         primary={t.cta.primary}
         howLabel={s.how_link}
         newTab={s.new_tab}
         accent={accent}
-        photo={shared.rolePhoto(slug).photo}
+        photo={shared.rolePhoto(slug)}
         locale={locale}
       />
-      <div className="site-container mt-16 space-y-16 md:mt-24 md:space-y-24">
+      <div className="mt-16 space-y-16 md:mt-24 md:space-y-24">
         <ParticipateOffer t={t.offer} accent={accent} newTab={s.new_tab} />
         <ParticipateSteps t={t.steps} accent={accent} />
         <ParticipateFit t={t.fit} accent={accent} />

@@ -17,7 +17,7 @@ export const en: ParticipateContent = {
   hero: {
     eyebrow: "Participate as an industry partner",
     title: "Test what Web3 can do for your sector, at a fraction of the cost",
-    lead: "Monark connects industry expertise with the next generation of Web3 builders. Bring a real-world challenge, and a student-led team explores it with you through proofs of concept, not slide decks.",
+    lead: "Bring a real-world challenge: a student-led team explores it with you through proofs of concept, not slide decks.",
     audiences_label: "For",
     audiences: [
       "Finance",
@@ -192,7 +192,7 @@ export const fr: ParticipateContent = {
   hero: {
     eyebrow: "Participer en tant que partenaire industriel",
     title: "Découvrez ce que le Web3 peut faire pour votre secteur, à moindre coût",
-    lead: "Monark relie l'expertise industrielle à la nouvelle génération de bâtisseurs Web3. Apportez un défi concret : une équipe étudiante l'explore avec vous par des preuves de concept, pas par des présentations.",
+    lead: "Apportez un défi concret : une équipe étudiante l'explore avec vous par des preuves de concept, pas par des présentations.",
     audiences_label: "Pour",
     audiences: ["Finance", "Santé", "Logistique", "Énergie", "Et bien d'autres"],
     highlights: [

@@ -17,7 +17,7 @@ export const en: ParticipateContent = {
   hero: {
     eyebrow: "Participate as a university",
     title: "Real Web3 projects for students, from the classroom to launch",
-    lead: "Monark works with universities, professors and student clubs: end-of-degree projects with real-world mandates, support for campus blockchain associations, and incubation for the projects worth taking further.",
+    lead: "End-of-degree projects with real mandates, support for campus blockchain clubs, and incubation for the projects worth taking further.",
     audiences_label: "For",
     audiences: [
       "Software engineering students",
@@ -194,7 +194,7 @@ export const fr: ParticipateContent = {
   hero: {
     eyebrow: "Participer en tant qu'université",
     title: "De vrais projets Web3 pour les étudiants, de la salle de classe au lancement",
-    lead: "Monark collabore avec les universités, les professeurs et les clubs étudiants : des projets de fin d'études avec de vrais mandats, du soutien aux associations blockchain sur les campus, et l'incubation des projets qui méritent d'aller plus loin.",
+    lead: "Des projets de fin d'études avec de vrais mandats, du soutien aux clubs blockchain et l'incubation des projets qui méritent d'aller plus loin.",
     audiences_label: "Pour",
     audiences: [
       "Étudiants en génie logiciel",
