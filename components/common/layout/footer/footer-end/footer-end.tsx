@@ -3,6 +3,7 @@ import SocialLinks from "@/components/common/socials/social-links";
 import Copyrights from "../copyrights/copyrights";
 import { Locale } from "@/i18n.config";
 import * as i18n from "../footer-links/footer-links.i18n";
+import * as copyrights from "../copyrights/copyrights.i18n";
 
 type Props = {
   locale: Locale;
@@ -10,6 +11,7 @@ type Props = {
 
 function FooterEnd({ locale }: Props) {
   const t = i18n[locale].footer_links;
+  const c = copyrights[locale].copyrights;
   return (
     <div className="site-container flex flex-col gap-4 py-6 md:flex-row md:items-center md:justify-between">
       <div className="flex flex-col gap-2 text-xs text-muted-foreground md:flex-row md:flex-wrap md:items-center md:gap-x-4">
@@ -20,6 +22,14 @@ function FooterEnd({ locale }: Props) {
             {link.label}
           </span>
         ))}
+        {/* The photographs are free Unsplash License images (docs/assets.md). */}
+        <a
+          href="https://unsplash.com/"
+          rel="noopener noreferrer"
+          className="underline-offset-4 hover:text-foreground hover:underline"
+        >
+          {c.photos_credit}
+        </a>
       </div>
       <SocialLinks className="-ml-3 md:ml-0 md:-mr-3" />
     </div>
