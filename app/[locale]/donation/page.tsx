@@ -58,9 +58,9 @@ const DonationPage = () => {
   }, []);
 
   return (
-    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 relative">
-      <h1 className="font-bold mb-4">{t.title}</h1>
-      <p className="mb-8 text-muted-foreground max-w-[475px]">
+    <div className="site-container relative pt-12 pb-16 md:pt-16 md:pb-24">
+      <h1>{t.title}</h1>
+      <p className="lead mt-4 mb-10 max-w-[36rem]">
         {t.description}
       </p>
       <DonationForm locale={locale} donations={donations} />

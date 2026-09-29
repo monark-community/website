@@ -7,7 +7,7 @@ export interface I18n {
 
 export const en: I18n = {
   donation_page: {
-    title: "Support Our Projects",
+    title: "Support our projects",
     description: "Help us build the future of decentralized technology. All donations are transparent and verifiable on-chain.",
   },
 };

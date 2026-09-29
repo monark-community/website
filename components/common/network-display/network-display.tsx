@@ -104,12 +104,12 @@ export const NetworkDisplay: React.FC<NetworkDisplayProps> = ({
   return (
     <div className={`flex items-center gap-2 ${className}`}>
       <Icon
-        className={`${iconSizes[iconSize]} rounded-full`}
+        className={`${iconSizes[iconSize]} shrink-0 rounded-full`}
         variant="background"
       />
       <span className="font-medium">{name}</span>
       {showSymbol && symbol !== name && (
-        <span className="text-muted-foreground">({symbol})</span>
+        <span className="hidden text-muted-foreground sm:inline">({symbol})</span>
       )}
     </div>
   );

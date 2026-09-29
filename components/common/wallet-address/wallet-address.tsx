@@ -58,7 +58,7 @@ export const WalletAddress: React.FC<WalletAddressProps> = ({
           href={explorerUrl} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="text-primary hover:underline inline-flex items-center gap-1"
+          className="text-primary-ink underline-offset-4 hover:underline inline-flex items-center gap-1"
         >
           <span>{formatAddress()}</span>
           <ExternalLink className="w-3 h-3" />
@@ -72,7 +72,7 @@ export const WalletAddress: React.FC<WalletAddressProps> = ({
   if (showCopyButton) {
     return (
       <div className={cn("flex items-center gap-2", className)}>
-        <code className="flex-1 text-xs break-all">
+        <code className="flex-1 whitespace-nowrap text-xs">
           {addressContent()}
         </code>
         <Button

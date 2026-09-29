@@ -127,16 +127,17 @@ export const DonationModal: React.FC<DonationModalProps> = ({
         </DialogHeader>
         
         <div className="space-y-4">
-          {/* QR Code - show when address is provided */}
+          {/* QR Code - show when address is provided. Dark on white in both
+              themes so every wallet can scan it. */}
           {address && (
-            <div className="flex justify-center px-4 bg-muted/10 rounded-lg">
-              <QRCodeSVG 
-                value={qrData} 
+            <div className="mx-auto w-fit rounded-lg border bg-white p-2">
+              <QRCodeSVG
+                value={qrData}
                 size={200}
                 level="H"
-                includeMargin={true}
-                fgColor="hsl(var(--primary))"
-                bgColor="transparent"
+                includeMargin={false}
+                fgColor="#15110e"
+                bgColor="#ffffff"
               />
             </div>
           )}

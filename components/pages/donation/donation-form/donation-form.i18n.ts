@@ -15,12 +15,12 @@ export interface I18n {
 
 export const en: I18n = {
   donation_form: {
-    title: "Make a Donation",
-    select_network: "Select Network",
+    title: "Make a donation",
+    select_network: "Select a network",
     amount_label: "Amount",
     currency_label: "Currency",
     view_on_explorer: "View on Explorer",
-    donate_button: "Donate Now",
+    donate_button: "Donate now",
     copy_success: "address copied to clipboard!",
     donation_instruction: "Please send {amount} {currency} to the copied address",
     amount_placeholder_usd: "100.00",

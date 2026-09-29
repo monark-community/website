@@ -18,7 +18,7 @@ export interface I18n {
 
 export const en: I18n = {
   donation_leaderboard: {
-    title: "Available Donation Networks",
+    title: "Available donation networks",
     rank_header: "#",
     network_header: "Network",
     address_header: "Address",
@@ -27,9 +27,9 @@ export const en: I18n = {
     loading: "Loading...",
     copy_success: "address copied to clipboard!",
     stats: {
-      top_network: "Top Network",
-      networks_supported: "Networks Supported",
-      total_raised: "Total Raised",
+      top_network: "Top network",
+      networks_supported: "Networks supported",
+      total_raised: "Total raised",
     },
   },
 };

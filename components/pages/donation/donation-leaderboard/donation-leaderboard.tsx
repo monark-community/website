@@ -64,8 +64,8 @@ function DonationLeaderboard({ locale, donations }: Props) {
 
       {/* Leaderboard Table */}
       <Card>
-        <div className="p-6">
-          <h2 className="text-xl font-semibold mb-4">{t.title}</h2>
+        <div className="p-5 sm:p-8">
+          <h2 className="text-xl mb-4">{t.title}</h2>
           
           <Table>
             <TableHeader>
