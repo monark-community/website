@@ -1,12 +1,13 @@
 import React from "react";
 import { ArrowDownIcon, SparklesIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ParticipateArt from "../participate-art";
+import { Locale } from "@/i18n.config";
+import Photo from "@/components/common/photo/photo";
+import { PhotoKey } from "@/components/common/photo/photos";
 import { accentClasses } from "../participate-icon";
 import {
   ParticipateAccent,
   ParticipateContent,
-  ParticipateIconName,
   ParticipateLink,
 } from "../participate.types";
 import ParticipateButton from "./participate-link";
@@ -16,22 +17,27 @@ type Props = {
   primary: ParticipateLink;
   howLabel: string;
   newTab: string;
-  icon: ParticipateIconName;
   accent: ParticipateAccent;
+  photo: { photo: PhotoKey; focus: string };
+  locale: Locale;
 };
 
 /**
  * Hero: who the page is for, a one-line promise (H1), the lead, the
- * audiences and a few key facts, with the page's line art on the side.
+ * audiences and a few key facts, with a photo of the people the page is
+ * for on the side (below the actions on small screens).
  */
-function ParticipateHero({ t, primary, howLabel, newTab, icon, accent }: Props) {
+function ParticipateHero({ t, primary, howLabel, newTab, accent, photo, locale }: Props) {
   return (
     <section aria-labelledby="participate-title">
-      <div className="grid items-center gap-6 md:grid-cols-[minmax(0,1fr)_15rem] md:gap-10 lg:grid-cols-[minmax(0,1fr)_19rem]">
-        <ParticipateArt
-          icon={icon}
-          accent={accent}
-          className="w-32 sm:w-40 md:order-last md:w-full"
+      <div className="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_18rem] md:gap-10 lg:grid-cols-[minmax(0,1fr)_24rem]">
+        <Photo
+          photo={photo.photo}
+          locale={locale}
+          priority
+          sizes="(min-width: 1024px) 24rem, (min-width: 768px) 18rem, 100vw"
+          className="order-last aspect-[16/10] md:aspect-[4/3]"
+          imgClassName={photo.focus}
         />
         <div className="min-w-0">
           <p className="eyebrow">{t.eyebrow}</p>

@@ -66,8 +66,9 @@ function ParticipatePage({ slug, locale }: Props) {
         primary={t.cta.primary}
         howLabel={s.how_link}
         newTab={s.new_tab}
-        icon={icon}
         accent={accent}
+        photo={shared.rolePhoto(slug)}
+        locale={locale}
       />
       <ParticipateOffer t={t.offer} accent={accent} newTab={s.new_tab} />
       <ParticipateSteps t={t.steps} accent={accent} />

@@ -1,15 +1,18 @@
 import React from "react";
+import { Locale } from "@/i18n.config";
+import Photo from "@/components/common/photo/photo";
 import { I18n } from "../about.i18n";
 import { IconChip } from "../about-icon";
 import SectionHeading from "./section-heading";
 
-type Props = { t: I18n["about_page"]["how"] };
+type Props = { t: I18n["about_page"]["how"]; locale: Locale };
 
 /**
  * "How Monark works": development and adoption plus the community approach,
- * as four numbered cards (platform, modules, education, governance).
+ * as four numbered cards (platform, modules, education, governance), under
+ * a wide photo of people learning together.
  */
-function AboutHow({ t }: Props) {
+function AboutHow({ t, locale }: Props) {
   return (
     <section aria-labelledby="about-how">
       <SectionHeading
@@ -18,7 +21,14 @@ function AboutHow({ t }: Props) {
         title={t.title}
         intro={t.intro}
       />
-      <ol className="mt-10 grid list-none pl-0 grid-cols-1 gap-4 sm:grid-cols-2">
+      <Photo
+        photo="friends-talking-cafe"
+        locale={locale}
+        sizes="(min-width: 1280px) 52rem, (min-width: 1024px) calc(100vw - 22rem), 100vw"
+        className="mt-10 aspect-[16/10] sm:aspect-[21/9]"
+        imgClassName="object-[50%_40%]"
+      />
+      <ol className="mt-4 grid list-none pl-0 grid-cols-1 gap-4 sm:grid-cols-2">
         {t.steps.map((step, index) => (
           <li
             key={step.title}
