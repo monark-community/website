@@ -67,7 +67,7 @@ function ParticipateHero({ t, primary, howLabel, newTab, icon, accent }: Props) 
       </div>
 
       <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-        <p id="participate-audiences" className="shrink-0 text-sm font-semibold text-foreground">
+        <p id="participate-audiences" className="sr-only">
           {t.audiences_label}
         </p>
         <ul aria-labelledby="participate-audiences" className="flex flex-wrap gap-2">
