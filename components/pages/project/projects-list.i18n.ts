@@ -29,6 +29,9 @@ interface I18n {
     milestones: string;
     on_this_page: string;
     introduction: string;
+    clear_filters: string;
+    show_projects_in_industry: string;
+    show_projects_with_keyword: string;
 }
 
 const en: I18n = {
@@ -62,6 +65,9 @@ const en: I18n = {
     milestones: "Deliverables & desired functionalities",
     on_this_page: "On this page",
     introduction: "Introduction",
+    clear_filters: "Clear filters",
+    show_projects_in_industry: "Show projects in {tag}",
+    show_projects_with_keyword: "Show projects tagged {tag}",
 };
 
 const fr: I18n = {
@@ -95,6 +101,9 @@ const fr: I18n = {
     milestones: "Phases",
     on_this_page: "Sur cette page",
     introduction: "Introduction",
+    clear_filters: "Effacer les filtres",
+    show_projects_in_industry: "Voir les projets : {tag}",
+    show_projects_with_keyword: "Voir les projets avec le mot-clé {tag}",
 };
 
 const locales = { en, fr };
