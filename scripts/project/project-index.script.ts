@@ -62,6 +62,10 @@ function generateProjectIndex(
             id: metadata.id,
             title: metadata.title,
             description: metadata.description,
+            tagline:
+              typeof metadata.tagline === "string" && metadata.tagline.trim()
+                ? metadata.tagline.trim()
+                : undefined,
             accronym: metadata.accronym,
             status: metadata.status,
             ownership: parseOwnership(metadata.ownership, pagePath),

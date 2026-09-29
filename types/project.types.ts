@@ -24,6 +24,11 @@ export interface ProjectMetadata {
   /** Optional: projects without a value are shown without a badge and only under "all". */
   ownership?: `${ProjectOwnership}`;
   description: string;
+  /**
+   * One sentence (at most 12 words) stating the project's core value for its
+   * users. Shown on the projects list cards; the project page keeps `description`.
+   */
+  tagline?: string;
   accronym: string;
   img: string;
   img_alt: string;
