@@ -1,0 +1,102 @@
+/*
+ * Monark 2026 colour tokens (monark-brand-guidelines.md §3), same block as the
+ * Splitflow site. Every surface, border and text token is derived from the
+ * orange --primary with CSS relative colour syntax, scaled by --surface-tint
+ * (keep it at 1: it is the Monark standard cream).
+ *
+ * Two layers:
+ *  1. Literal hex values, precomputed from the formulas for #F88D10. Browsers
+ *     without relative colour support (Chrome < 119, Safari < 16.4,
+ *     Firefox < 128) use these.
+ *  2. The live formulas, inside @supports, for every current browser.
+ *
+ * Tokens are complete colours (not HSL triplets). tailwind.config.ts wraps
+ * each one in color-mix() so opacity modifiers like bg-primary/10 still work.
+ * Kept in plain CSS rather than globals.scss so Sass never parses the
+ * relative colour syntax.
+ */
+
+:root {
+  --radius: 1rem;
+  --surface-tint: 1;
+  --primary: #f88d10;
+
+  --background: #fff9f3; /* cream */
+  --foreground: #15110e; /* 18:1 on background */
+  --card: #fffefc; /* near-white */
+  --card-foreground: var(--foreground);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+  --primary-foreground: var(--foreground); /* dark on orange, 7.9:1 */
+  --secondary: #f7ece4;
+  --secondary-foreground: var(--foreground);
+  --muted: var(--secondary);
+  --muted-foreground: #625952; /* 6.5:1 on background */
+  --accent: var(--secondary);
+  --accent-foreground: var(--foreground);
+  --destructive: #c81e0b;
+  --destructive-foreground: #ffffff; /* 5.8:1 */
+  --border: #e9dfd7; /* decorative dividers */
+  --input: #857f7a; /* form borders, 3.9:1 */
+  --ring: var(--primary);
+  --primary-ink: #b65000; /* orange-family text and links, 4.9:1 */
+  --chart-1: var(--primary);
+  --chart-2: #ef3620;
+  --chart-3: #7a5c3e;
+  --chart-4: #c8a27a;
+  --chart-5: #424242;
+  /* Status colours: muted green and amber, always paired with a label. */
+  --success: #2f7a4a;
+  --warning: #8a5a00;
+}
+
+.dark {
+  --background: #1a0b02; /* espresso */
+  --foreground: #fff0e4; /* cream text, 17:1 */
+  --card: #26170a;
+  --card-foreground: var(--foreground);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+  --primary-foreground: var(--background); /* 8.1:1 */
+  --secondary: #36281d;
+  --secondary-foreground: var(--foreground);
+  --muted: var(--secondary);
+  --muted-foreground: #b8a79a; /* 7.5:1 on card */
+  --accent: var(--secondary);
+  --accent-foreground: var(--foreground);
+  --destructive: #fc452f;
+  --destructive-foreground: var(--background);
+  --border: #433529;
+  --input: #756659;
+  --primary-ink: var(--primary); /* orange text is fine on espresso, 8.1:1 */
+  --chart-2: #fc452f;
+  --chart-3: #c8a27a;
+  --chart-4: #8a7a66;
+  --chart-5: var(--foreground);
+  --success: #7cc79a;
+  --warning: #e9b949;
+}
+
+@supports (color: oklch(from red l c h)) {
+  :root {
+    --background: oklch(from var(--primary) 0.985 calc(c * 0.06 * var(--surface-tint)) h);
+    --foreground: oklch(from var(--primary) 0.18 calc(c * 0.05 * var(--surface-tint)) h);
+    --card: oklch(from var(--primary) 0.998 calc(c * 0.02 * var(--surface-tint)) h);
+    --secondary: oklch(from var(--primary) 0.95 calc(c * 0.09 * var(--surface-tint)) h);
+    --muted-foreground: oklch(from var(--primary) 0.47 calc(c * 0.09 * var(--surface-tint)) h);
+    --border: oklch(from var(--primary) 0.91 calc(c * 0.09 * var(--surface-tint)) h);
+    --input: oklch(from var(--primary) 0.6 calc(c * 0.06 * var(--surface-tint)) h);
+    --primary-ink: oklch(from var(--primary) min(l, 0.55) c h);
+  }
+
+  .dark {
+    --background: oklch(from var(--primary) 0.17 calc(c * 0.2 * var(--surface-tint)) h);
+    --foreground: oklch(from var(--primary) 0.965 calc(c * 0.14 * var(--surface-tint)) h);
+    --card: oklch(from var(--primary) 0.22 calc(c * 0.19 * var(--surface-tint)) h);
+    --secondary: oklch(from var(--primary) 0.29 calc(c * 0.17 * var(--surface-tint)) h);
+    --muted-foreground: oklch(from var(--primary) 0.74 calc(c * 0.16 * var(--surface-tint)) h);
+    --border: oklch(from var(--primary) 0.34 calc(c * 0.17 * var(--surface-tint)) h);
+    --input: oklch(from var(--primary) 0.52 calc(c * 0.16 * var(--surface-tint)) h);
+    --primary-ink: var(--primary);
+  }
+}

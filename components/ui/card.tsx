@@ -1,19 +1,16 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import "./card.scss";
 
+/**
+ * Feature card. It used to wrap the card in a primary-to-transparent gradient
+ * frame; the 2026 brand drops gradients, so it is now a warm bordered card
+ * with a slightly larger radius (1.5rem) for feature tiles.
+ */
 const BrandedCard = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div
-    className={cn(
-      "branded-card rounded-xl p-[1px]",
-      className
-    )}
-  >
-    <Card ref={ref} {...props} />
-  </div>
+  <Card ref={ref} className={cn("rounded-2xl", className)} {...props} />
 ));
 BrandedCard.displayName = "BrandedCard";
 
@@ -24,7 +21,7 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "card rounded-xl border bg-card text-card-foreground",
+      "card rounded-lg border bg-card text-card-foreground",
       className
     )}
     {...props}
@@ -51,7 +48,7 @@ const CardTitle = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "card-title font-semibold leading-none tracking-tight",
+      "card-title font-bold leading-tight",
       className
     )}
     {...props}

@@ -1,77 +1,99 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * Colour tokens are complete CSS colours defined in app/theme.css (Monark 2026,
+ * derived from --primary). color-mix() keeps Tailwind's opacity modifiers
+ * working (bg-primary/10, border-foreground/20, ...).
+ */
+const token = (name: string) =>
+  `color-mix(in oklab, var(--${name}) calc(<alpha-value> * 100%), transparent)`;
+
 export default {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./mdx-components.tsx",
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: [
+          "var(--nunito-sans)",
+          "Nunito Sans",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "sans-serif",
+        ],
+      },
       colors: {
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: token("background"),
+        foreground: token("foreground"),
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: token("card"),
+          foreground: token("card-foreground"),
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: token("popover"),
+          foreground: token("popover-foreground"),
         },
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: token("primary"),
+          foreground: token("primary-foreground"),
+          ink: token("primary-ink"),
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: token("secondary"),
+          foreground: token("secondary-foreground"),
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: token("muted"),
+          foreground: token("muted-foreground"),
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: token("accent"),
+          foreground: token("accent-foreground"),
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: token("destructive"),
+          foreground: token("destructive-foreground"),
         },
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
+        success: token("success"),
+        warning: token("warning"),
+        border: token("border"),
+        input: token("input"),
+        ring: token("ring"),
         chart: {
-          "1": "hsl(var(--chart-1))",
-          "2": "hsl(var(--chart-2))",
-          "3": "hsl(var(--chart-3))",
-          "4": "hsl(var(--chart-4))",
-          "5": "hsl(var(--chart-5))",
+          "1": token("chart-1"),
+          "2": token("chart-2"),
+          "3": token("chart-3"),
+          "4": token("chart-4"),
+          "5": token("chart-5"),
         },
       },
       borderRadius: {
+        sm: "calc(var(--radius) * 0.5)",
+        md: "calc(var(--radius) * 0.75)",
         lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        xl: "var(--radius)",
+        "2xl": "calc(var(--radius) * 1.5)",
+      },
+      transitionTimingFunction: {
+        DEFAULT: "cubic-bezier(0, 0, 0.2, 1)",
+      },
+      transitionDuration: {
+        DEFAULT: "200ms",
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {

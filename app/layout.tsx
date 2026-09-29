@@ -4,11 +4,14 @@ import { WebClientProviders } from "@/components/common/layout/web.client.provid
 import { ViewTransitions } from "next-view-transitions";
 import { Analytics } from "@vercel/analytics/next"
 import "@xyflow/react/dist/style.css";
+import "./theme.css";
 import "./globals.scss";
 
 const nunitoSans = Nunito_Sans({
   variable: "--nunito-sans",
   subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
