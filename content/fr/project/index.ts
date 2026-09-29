@@ -8,6 +8,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Créez des contrats intelligents qui accordent un accès basé sur le temps ou à usage unique à du contenu numérique ou physique. Les utilisateurs peuvent payer en jetons pour déverrouiller une diffusion en direct, un document, une vidéo, ou même une serrure intelligente pour une salle ou un coffre-fort. Le contrat suit la durée, les droits d'accès, et l'expiration. Vous pouvez étendre ceci à des outils de marketing comme des alertes payantes pour les communautés ou des bannières publicitaires numériques.",
     "accronym": "GatePay",
     "status": "planned",
+    "ownership": "incubated",
     "img": "access-tokens-pay-per-access-contracts.jpg",
     "img_alt": "Maquette de Jetons d'Accès (Contrats Pay-Per-Access)",
     "complexity_score": 6,
@@ -27,8 +28,8 @@ const data: DatedProjectMetadata[] = [
       "Pay-Per-Access",
       "Contrats intelligents"
     ],
-    "hash": "04b62854ac4ea5ac87319445ef5d588ede4ff545bb12e58c33c0b65f2d6816fa",
-    "last_updated": "2026-04-02"
+    "hash": "36ed03e5ea324416a86e1a3dfad6c5db80081685701ae10f28414d37ee3ccf5c",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "accounting-blockchain-data-extraction",
@@ -36,6 +37,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Créez un outil qui extrait, nettoie et formate les données de transaction blockchain en formats prêts pour la comptabilité. Les utilisateurs peuvent entrer une adresse de portefeuille et recevoir des revenus/dépenses catégorisés, des frais de gaz et des horodatages. Utile pour les DAO, les indépendants et les entreprises nécessitant des audits ou des rapports fiscaux. Vous pouvez utiliser [The Graph](https://thegraph.com/), APIs, ou des indexeurs pour nourrir les données.",
     "accronym": "LedgerLift",
     "status": "prototype_available",
+    "ownership": "monark",
     "img": "accounting-blockchain-data-extraction.jpg",
     "img_alt": "Maquette de Extraction de données comptables de blockchain",
     "complexity_score": 7,
@@ -54,8 +56,8 @@ const data: DatedProjectMetadata[] = [
       "Extraction de données",
       "Conformité"
     ],
-    "hash": "580a0e44aa48c1eb71a62e097238a2b4fb5c60a3d27b967ca3208feb5433e0d6",
-    "last_updated": "2026-04-02"
+    "hash": "4d9318bf2373c20dd58465f92755a0b90d9436c1393a0ec05bb06645b7c94fee",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "address-review-system",
@@ -63,6 +65,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Construisez un système d'avis décentralisé où les utilisateurs peuvent soumettre des avis liés à leur adresse de portefeuille. Chaque avis (note, commentaire, horodatage) est stocké de manière immuable sur la blockchain, assurant la transparence et empêchant toute suppression ou manipulation. Utile pour évaluer les vendeurs, contributeurs ou prestataires de services dans les écosystèmes Web3. Ajoutez des fonctionnalités comme le filtrage par adresse, l'analyse de sentiment ou l'intégration avec les plateformes NFT et les DAO.",
     "accronym": "TrustRate",
     "status": "planned",
+    "ownership": "monark",
     "img": "address-review-system.jpg",
     "img_alt": "Maquette du Système d'avis Décentralisé",
     "complexity_score": 5,
@@ -81,8 +84,8 @@ const data: DatedProjectMetadata[] = [
       "Réputation",
       "DAO"
     ],
-    "hash": "cf894a6294d1d4d21606c206de2a3517b9f6ea82a1a61970a2f4f5bb89c3ae84",
-    "last_updated": "2026-04-02"
+    "hash": "5a62daf448eb8bfca7a28d69d22d72790b8e50bedf4f2b378d66b89dec61690a",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "bounty-system",
@@ -90,6 +93,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Une plateforme décentralisée pour les primes de tâches. Les utilisateurs publient des tâches avec des échéances et des récompenses, les contributeurs soumettent des travaux, et les administrateurs ou les votants valident le résultat avant le paiement. Utile pour les projets open source, les défis étudiants, ou la distribution de tâches DAO. Comprend une logique de contrat intelligent et un tableau de bord pour parcourir, soumettre et suivre.",
     "accronym": "TaskFlow",
     "status": "prototype_available",
+    "ownership": "monark",
     "img": "bounty-system.jpg",
     "img_alt": "Maquette du système de primes",
     "complexity_score": 5,
@@ -108,8 +112,8 @@ const data: DatedProjectMetadata[] = [
       "Incitations",
       "DAO"
     ],
-    "hash": "46cfce0a821f1e1f50ba827b66067e0857a5a4d5873dc0cfa582f34a133e40ca",
-    "last_updated": "2026-04-02"
+    "hash": "820b3b85d0ed869a679b4194dfe3439e1f8d369f4e8b8f8fccff096ab1b6d790",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "contact-list",
@@ -117,6 +121,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Construisez un gestionnaire de contacts décentralisé qui permet aux utilisateurs de sauvegarder et de taguer les adresses de portefeuilles avec des notes, des scores de réputation et des catégories. Les contacts sont stockés localement ou sur la chaîne/IPFS, et pourraient inclure le statut de vérification. Utile pour les DAO, les communautés ou les marchés où le suivi des contributeurs de confiance est essentiel. Cet outil doit être facilement intégrable dans d'autres applications afin que de nombreuses applications puissent partager la même liste de contacts. Nous devrions être en mesure d'avoir un registre de contact de toutes nos propres adresses et objectifs et de tous nos amis, et des adresses de contacts d'entreprises.",
     "accronym": "TrustList",
     "status": "planned",
+    "ownership": "monark",
     "img": "contact-list.jpg",
     "img_alt": "Maquette de la Liste de Contacts",
     "complexity_score": 5,
@@ -135,8 +140,8 @@ const data: DatedProjectMetadata[] = [
       "Réputation",
       "Contacts"
     ],
-    "hash": "e8787ee5b1c056d1de4ea2091dc6f3c97ee0a72f5102c55589c2bf119aa29c70",
-    "last_updated": "2026-04-02"
+    "hash": "3fc73bd903c9a021d20621e93b8f3a3c105c9155597c88a136724c466675876a",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "dao-voting-platform",
@@ -144,6 +149,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Développez une plateforme de gouvernance décentralisée qui permet le vote basé sur les jetons ou les portefeuilles pour des propositions. Les utilisateurs peuvent soumettre des idées, voter, et suivre les résultats. Les fonctionnalités comprennent la logique du quorum, la délégation, les résultats en direct, et des crochets d'exécution optionnels. Idéal pour les DAOs, les organisations étudiantes, ou les coopératives. Il s'agit d'un bloc d'élément fondamental pour la prise de décision on-chain.",
     "accronym": "GovChain",
     "status": "planned",
+    "ownership": "monark",
     "img": "dao-voting-platform.jpg",
     "img_alt": "Maquette préliminaire de la Plateforme de Vote DAO",
     "complexity_score": 5,
@@ -162,8 +168,8 @@ const data: DatedProjectMetadata[] = [
       "Propositions",
       "Transparence"
     ],
-    "hash": "8781d2c4a30c342a5b7d9f7ce299c409524f3245c029055ca0d45ad756a6e02d",
-    "last_updated": "2026-04-02"
+    "hash": "de271b8f4b677ba693a33d0df63615d1115a03dc25107f933f17437aa13b4a36",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "defi-borrow",
@@ -171,6 +177,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Concentrez-vous sur l'expérience d'emprunt dans un protocole DeFi. Les utilisateurs demandent des prêts, soumettent des garanties et surveillent l'état du remboursement. Les garanties sont verrouillées dans des contrats intelligents, et les conditions de prêt (APR, expiration) sont appliquées automatiquement. Associez-vous à des pools de prêts testnet existants ou simulez localement.",
     "accronym": "BorrowX",
     "status": "planned",
+    "ownership": "monark",
     "img": "defi-borrow.jpg",
     "img_alt": "Maquette préliminaire de DeFi Emprunt",
     "complexity_score": 7,
@@ -189,8 +196,8 @@ const data: DatedProjectMetadata[] = [
       "Protocole",
       "Liquidité"
     ],
-    "hash": "cff1fe435ce25f55c6a295f0e5325fb74cf92c6895be24c6c958f934e9a38604",
-    "last_updated": "2026-04-02"
+    "hash": "7bb5ec9864d9d39ad2e320992c5f39ee8a07ad97802b902bec97ef90b3bdb69c",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "defi-lending",
@@ -198,6 +205,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Créez un protocole où les utilisateurs fournissent des jetons à des pools de liquidités en échange d'intérêts. Gérez la taille du pool, le taux d'utilisation, et la logique de récompense. Visualisez les rendements dans le temps et intégrez avec des contrats de prêt si vous le souhaitez. Un excellent moyen d'enseigner les mécanismes de prêt, la mutualisation des risques, et les incitations token.",
     "accronym": "YieldMine",
     "status": "planned",
+    "ownership": "monark",
     "img": "defi-lending.jpg",
     "img_alt": "Première maquette de Prêt DeFi",
     "complexity_score": 8,
@@ -216,8 +224,8 @@ const data: DatedProjectMetadata[] = [
       "Trésorerie",
       "Liquidité"
     ],
-    "hash": "62afe2eb832b3da8157d6bbef54aa0cf98009099e8695364e9f9571f3820613d",
-    "last_updated": "2026-04-02"
+    "hash": "0384739754e53a31d197d6824ee733054971638ec12050c83fba4b6f54c96ce0",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "defi-loans",
@@ -225,6 +233,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Développez une plateforme de prêt où les utilisateurs déposent des garanties et empruntent des tokens. Les contrats intelligents gèrent les intérêts, les ratios de santé et les liquidations. Utile pour simuler des prêts de style MakerDAO sur testnet. Peut inclure des tableaux de bord, des alertes et une logique de remboursement. Met l'accent sur la gestion des risques DeFi et l'expérience utilisateur.",
     "accronym": "VaultLend",
     "status": "planned",
+    "ownership": "monark",
     "img": "defi-loans.jpg",
     "img_alt": "Maquette initiale des Prêts DeFi",
     "complexity_score": 7,
@@ -243,8 +252,8 @@ const data: DatedProjectMetadata[] = [
       "DeFi",
       "Automatisation"
     ],
-    "hash": "e63cef54d507059d0d4f21c818f62d7d761af3d6b25b6506c4e6957853c7b7dc",
-    "last_updated": "2026-04-02"
+    "hash": "99df9e4d37533b0d3f83479891ea34e8da875fda4e7602b6ab3364a8c4efcd4a",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "defi-swaps",
@@ -252,6 +261,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Créez une plateforme d'échange de tokens décentralisée en utilisant les principes de l'Automated Market Maker (AMM). Les utilisateurs peuvent échanger des tokens de testnet via des pools de liquidité et visualiser l'impact du prix simulé et le glissement. Inclut l'UI de swap, la logique de pool de liquidité, et des mécanismes de frais optionnels. Inspiré par des plateformes comme Uniswap.",
     "accronym": "FluidSwap",
     "status": "planned",
+    "ownership": "monark",
     "img": "defi-swaps.jpg",
     "img_alt": "Maquette préliminaire des Swaps DeFi",
     "complexity_score": 8,
@@ -270,8 +280,8 @@ const data: DatedProjectMetadata[] = [
       "Trading",
       "Liquidité"
     ],
-    "hash": "d4e4660d991eb1c4b7c717804ca616d61848f27cb6c1d7428fc9d16df425a1aa",
-    "last_updated": "2026-04-02"
+    "hash": "153d688f4339d9d75eec9b1a5111b460823fbbd55187500772f4284c37834285",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "digital-will",
@@ -279,6 +289,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Créez un système d'héritage basé sur la blockchain sécurisé. Les utilisateurs établissent un testament numérique où les fonds sont libérés aux bénéficiaires en fonction d'un système d'autorisation en chaîne qui consiste en diverses clés d'utilisateur ou conditions telles que des délais, l'inactivité ou la validation de tiers. Inclut l'identité basée sur le portefeuille, l'outil de création de compte, la récupération sociale optionnelle et la personnalisation du contrat. Cela garantit l'exécution irréversible et élimine le besoin de services successorales centralisées.",
     "accronym": "WillChain",
     "status": "in_progress",
+    "ownership": "incubated",
     "img": "digital-will.jpg",
     "img_alt": "Maquette préliminaire du Testament Numérique",
     "complexity_score": 7,
@@ -297,8 +308,8 @@ const data: DatedProjectMetadata[] = [
       "Escrow",
       "Conformité"
     ],
-    "hash": "30d69242c4a6571830c948fc70f5a7b3baaa4b9d547c77e4023552135d4e65a3",
-    "last_updated": "2026-04-02"
+    "hash": "94657522641b09a7cd431427290beffb886de6803e7905d94aea8f05d9273bf5",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "emergency-alerts-network",
@@ -306,6 +317,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Guardian est une application d'alerte Web3 mobile qui notifie les utilisateurs à proximité en cas d'urgence. Les alertes sont liées aux ID de portefeuille, et les intervenants reçoivent des fonds d'une pool de contrats intelligents préfinancée. Ceci incite à une véritable aide tout en décourageant l'abus grâce à la responsabilité intégrée et aux récompenses.",
     "accronym": "Guardian",
     "status": "planned",
+    "ownership": "incubated",
     "img": "emergency-alerts-network.jpg",
     "img_alt": "Maquette de Guardian",
     "complexity_score": 7,
@@ -325,8 +337,8 @@ const data: DatedProjectMetadata[] = [
       "Contrats intelligents",
       "Réputation"
     ],
-    "hash": "772665af88e20f6dfb1b9ff2b824cf850a4c7c279b983f32b4eeeb4e78a1c99e",
-    "last_updated": "2026-04-02"
+    "hash": "190c3bd215a54496c1a69b0eda681c7be963e962e50cfb16782d89c56c4ab2d7",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "fee-distribution-system",
@@ -334,6 +346,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Concevez un système de contrat intelligent qui divise automatiquement les paiements entrants entre les parties prenantes. Les utilisateurs peuvent définir des pourcentages fixes ou des formules dynamiques. La plateforme gère des revenus tels que les revenus de DAO, les royalties ou les paiements d'affiliation et les distribue à plusieurs portefeuilles à réception. Ajoutez une interface utilisateur pour configurer, simuler et suivre les revenus de manière transparente.",
     "accronym": "SplitFlow",
     "status": "planned",
+    "ownership": "monark",
     "img": "fee-distribution-system.jpg",
     "img_alt": "Mockup du Système de Distribution des Frais",
     "complexity_score": 5,
@@ -352,8 +365,8 @@ const data: DatedProjectMetadata[] = [
       "Trésorerie",
       "Automatisation"
     ],
-    "hash": "e213840f511840aa184ef56c5a82aaf91813e9d0b9edf4d12cfde55a636141f6",
-    "last_updated": "2026-04-02"
+    "hash": "37ba8047890f174e2a1a81566135e681443498f4abf7310823130b1e5e537b65",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "inventory-and-sales-for-farm-goods",
@@ -361,6 +374,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Concevez un système décentralisé qui permet aux agriculteurs de gérer leur inventaire et de vendre des fruits et légumes sans être physiquement présents. Les acheteurs scannent un code sur le stand en libre-service, interagissent avec un contrat intelligent pour acheter des produits, et le système met à jour le stock disponible. Cela pourrait inclure une interface mobile, un prix local, le suivi de la disponibilité et des jetons de récompense optionnels pour les acheteurs. Parfait pour les zones rurales et les microtransactions sans confiance.",
     "accronym": "Bazarius",
     "status": "planned",
+    "ownership": "incubated",
     "img": "inventory-and-sales-for-farm-goods.jpg",
     "img_alt": "Maquette de l'Inventaire et ventes pour les produits agricoles",
     "complexity_score": 6,
@@ -380,8 +394,8 @@ const data: DatedProjectMetadata[] = [
       "Code QR",
       "Accès"
     ],
-    "hash": "c5a35b5b46ffbf3e11ff8e3fdf0d3fd19ab2b33186b594cdf4c14b8341c3e453",
-    "last_updated": "2026-04-02"
+    "hash": "78a56b5a18dccbb05a837bed09d46f887af263f7311f000ac59d151d9b62254f",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "land-registry-voting",
@@ -389,6 +403,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Construisez un système de vote où les propriétaires fonciers et/ou les locataires de biens immobiliers peuvent voter sur des propositions relatives à leur région. Liez les droits de vote à la propriété foncière (réelle ou simulée), vérifiez les votes par les signatures de portefeuille, et affichez les résultats sur une carte ou un tableau de bord. Explorez les moyens de synchroniser les votes en chaîne avec les registres hors chaîne pour une intégration civique potentielle.",
     "accronym": "LandVote",
     "status": "planned",
+    "ownership": "incubated",
     "img": "land-registry-voting.jpg",
     "img_alt": "Maquette du Vote du Registre foncier",
     "complexity_score": 7,
@@ -408,8 +423,8 @@ const data: DatedProjectMetadata[] = [
       "Transparence",
       "Cartographie"
     ],
-    "hash": "ba57fd17e8d1efdedcb4e91fcc2842fff72145783628eea42bbafc9786d1168f",
-    "last_updated": "2026-04-02"
+    "hash": "8881a411b616830f8dbb68ca5f1e3f196d1a734296d4404bb79b01d8cd395924",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "milestone-based-smart-contracts-and-escrow",
@@ -417,6 +432,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Concevez des contrats qui retiennent les fonds et les libèrent progressivement en fonction des progrès. Chaque phase est défini à l'avance avec des conditions d'approbation. Pensez aux contrats de construction, aux subventions ou au travail de développement. Les fonds se libèrent lorsque un phase est validé par le client et/ou un oracle tiers. Ajoutez des flux de révision et une visualisation des progrès.",
     "accronym": "MilestoneMint",
     "status": "planned",
+    "ownership": "monark",
     "img": "milestone-based-smart-contracts-and-escrow.jpg",
     "img_alt": "Maquette des Contrats intelligents basés sur des phases et Escrow",
     "complexity_score": 6,
@@ -435,8 +451,8 @@ const data: DatedProjectMetadata[] = [
       "Financement",
       "Automatisation"
     ],
-    "hash": "d8aaee77c5ce12d6543f67c3ac0247224f5f63280392003395a0c0b5e0cb202c",
-    "last_updated": "2026-04-02"
+    "hash": "7d7c65188740eaccc1cfdedb29dfe0acac73b675c093106dcaf6e261ff2c409a",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "multichain-portfolio-tracker",
@@ -444,6 +460,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Créez un tableau de bord qui agrège les avoirs d'un utilisateur sur plusieurs blockchains. Affichez les soldes de jetons, NFTs, et l'activité historique en utilisant les API ou RPC des blockchains supportées. Ajoutez des filtres, un étiquetage de portefeuille, l'évaluation des actifs et des graphiques. Cela aide les utilisateurs à visualiser leur empreinte Web3 en un seul endroit.",
     "accronym": "MultiTrack",
     "status": "planned",
+    "ownership": "incubated",
     "img": "multichain-portfolio-tracker.jpg",
     "img_alt": "Maquette du Suivi de Portfolio Multichain",
     "complexity_score": 7,
@@ -462,8 +479,8 @@ const data: DatedProjectMetadata[] = [
       "Portefeuille",
       "Tableau de bord"
     ],
-    "hash": "80df74d1e5fd3d0d0de1b90788bd66762eca5e1ccdbfae5bcbbcd49f58d5286c",
-    "last_updated": "2026-04-02"
+    "hash": "331cdcba7a5270509c551bd97f4b2324044821bcd8a3b69457fa4d7d050242a4",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "nft-ticketing-platform",
@@ -471,6 +488,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Développez une plateforme de billetterie NFT complète où les organisateurs créent des billets d'événement uniques sous forme de NFT. Les billets incluent des métadonnées (siège, heure, règles d'accès, récompenses spéciales, etc.) et peuvent être scannés pour l'entrée via une signature de portefeuille blockchain ou un code QR. Les restrictions de revente et les redevances secondaires sont appliquées via des contrats intelligents. Vous pouvez ajouter des fonctionnalités bonus comme des POAP à collectionner, des badges de présence ou des avantages de réduction.",
     "accronym": "NFTokenPass",
     "status": "in_progress",
+    "ownership": "incubated",
     "img": "nft-ticketing-platform.jpg",
     "img_alt": "Maquette de la Plateforme de billetterie NFT",
     "complexity_score": 7,
@@ -490,8 +508,8 @@ const data: DatedProjectMetadata[] = [
       "Portefeuille",
       "Contrôle d'accès"
     ],
-    "hash": "c46531aa6eb4ea603201b7b9e6c92e3e1d3314c8c4b51527e9c1c624a76590ba",
-    "last_updated": "2026-04-02"
+    "hash": "e92896a01a71071fbebb887163f57fbd36385f7a607d78677c54e0152978a5b4",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "onchain-property-registry",
@@ -499,6 +517,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Un registre décentralisé des terrains et des bâtiments où les utilisateurs peuvent soumettre et mettre à jour l'emplacement physique, l'année de construction et les modifications des bâtiments sur des parcelles de terrain. Cela permet un suivi transparent et horodaté des structures et aide à identifier la conformité réglementaire ou les violations au fil du temps.",
     "accronym": "Cadastrum",
     "status": "in_progress",
+    "ownership": "incubated",
     "img": "onchain-property-registry.jpg",
     "img_alt": "Maquette de Cadastrum",
     "complexity_score": 7,
@@ -519,8 +538,8 @@ const data: DatedProjectMetadata[] = [
       "Conformité",
       "Bâtiments"
     ],
-    "hash": "e88f7c05b69c3a97120b11656aa52c0d001821c765e7e84c3289150f772b93fa",
-    "last_updated": "2026-04-02"
+    "hash": "25d7a3280082cafee5b3d22fb6f4da83012a70d39a92867df1d8064a3f565317",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "real-time-royalty-distribution",
@@ -528,6 +547,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Développez un système qui distribue automatiquement les revenus (par exemple, de flux musicaux, ventes de NFT ou services) en temps réel parmi plusieurs destinataires. Utilisez des contrats intelligents pour définir les divisions (%), suivre les flux et libérer régulièrement ou continuellement des fonds. Combinez avec des protocoles de streaming (comme Superfluid) ou construisez votre propre mécanisme de flux.",
     "accronym": "StreamRoyalties",
     "status": "planned",
+    "ownership": "incubated",
     "img": "real-time-royalty-distribution.jpg",
     "img_alt": "Maquette de la Distribution de Royautés en Temps Réel",
     "complexity_score": 6,
@@ -547,8 +567,8 @@ const data: DatedProjectMetadata[] = [
       "Revenus",
       "Contenu"
     ],
-    "hash": "a079f88bb62e98d69fee7e79acfbab76a35ab4c2fb4bed87850f1ff6dde633f5",
-    "last_updated": "2026-04-02"
+    "hash": "c75dd5597afced6349b59edd8bc5fe34ca7565f785977fd0ade87638f18a62c3",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "referral-system",
@@ -556,6 +576,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Construisez un moteur de parrainage qui suit les invitations de portefeuille à portefeuille et récompense les résultats basés sur l'activité (par exemple, les inscriptions à l'application, les réalisations de tâches). Les contrats intelligents stockent qui a parrainé qui, déclenchent des récompenses lorsque des étapes sont atteintes et préviennent les abus. Parfait pour les programmes d'ambassadeurs ou les réseaux d'affiliés. Comprend des tableaux de bord pour suivre les performances.",
     "accronym": "Reffinity",
     "status": "in_progress",
+    "ownership": "monark",
     "img": "referral-system.jpg",
     "img_alt": "Maquette du Système de Parrainage",
     "complexity_score": 5,
@@ -575,8 +596,8 @@ const data: DatedProjectMetadata[] = [
       "Suivi",
       "Engagement"
     ],
-    "hash": "b86ec7a39eccd7cec960b818668f03357b765e8efb0bc1ff9e30e70d9b602601",
-    "last_updated": "2026-04-02"
+    "hash": "ab367c9d01c686eaa35d5c4c7a64c4429e6688de53e4556895d6de6f0cf42795",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "supply-chain-tracking",
@@ -584,6 +605,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Développez une application basée sur la blockchain qui enregistre chaque étape du voyage d'un produit sur la chaîne. Chaque capteur et acteur IoT (producteur, expéditeur, vendeur) enregistre des actions sur la chaîne pour créer un historique inviolable et traçable. Les smart contracts vérifient les transactions et tamponnent les points de contrôle. Ce système assure l'authenticité, combat la fraude et améliore la transparence dans de nombreuses industries telles que l'alimentation, la construction, la pharma, etc.",
     "accronym": "ChainProof",
     "status": "in_progress",
+    "ownership": "incubated",
     "img": "supply-chain-tracking.jpg",
     "img_alt": "Maquette de Suivi de la chaîne d'approvisionnement",
     "complexity_score": 5,
@@ -604,8 +626,8 @@ const data: DatedProjectMetadata[] = [
       "Automatisation",
       "Cartographie"
     ],
-    "hash": "1b0659c1491a7ccc0025d679a3a1cc1aa7463cd81add1341c924cc97aacc1c88",
-    "last_updated": "2026-04-02"
+    "hash": "706b613624faaa593d852267da94870877b27aa19b7c233d318390084e0a565b",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "systems-for-co-ops",
@@ -613,6 +635,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Créer un système modulaire pour les coopératives numériques avec un grand accent sur l'accessibilité et la facilité d'utilisation. Les membres rejoignent via un portefeuille, votent sur les propositions et gèrent les ressources et les finances partagées. Inclure un tableau de bord du trésor, l'historique des propositions et les rôles d'accès. Conçu pour les groupes qui veulent opérer de manière transparente et démocratique sans logiciel centralisé. Pourrait simuler des opérations comme DAO avec des cas d'utilisation réels.",
     "accronym": "CoopDAO",
     "status": "planned",
+    "ownership": "monark",
     "img": "systems-for-co-ops.jpg",
     "img_alt": "Maquette Systèmes pour Coopératives",
     "complexity_score": 8,
@@ -631,8 +654,8 @@ const data: DatedProjectMetadata[] = [
       "Trésorerie",
       "Gouvernance"
     ],
-    "hash": "7d969fff569f06b8e42385674d7848249263dde04233b3deb2343f43270637fa",
-    "last_updated": "2026-04-02"
+    "hash": "636d5e17047980c38d1e914e84695397adba55600a4c4e6bb4af34c354ebf771",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "time-locked-contracts",
@@ -640,6 +663,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Mettez en œuvre des contrats intelligents qui libèrent des fonds ou des privilèges uniquement après un délai défini. Les cas d'utilisation incluent les périodes de vesting, les paiements différés, les abonnements ou les testaments numériques. Inclure un tableau de bord où les utilisateurs définissent les destinataires, les montants et les délais. Cela enseigne des concepts fondamentaux comme le temps de blocage, l'escrow, et les conditions de libération.",
     "accronym": "TimeVault",
     "status": "planned",
+    "ownership": "monark",
     "img": "time-locked-contracts.jpg",
     "img_alt": "Maquette Contrats à échéance",
     "complexity_score": 4,
@@ -658,8 +682,8 @@ const data: DatedProjectMetadata[] = [
       "Automatisation",
       "Vesting"
     ],
-    "hash": "fe4ecb3400a5cecba413b20d97f057e28660868e5d0dc3fe0bb7b08a59da4b69",
-    "last_updated": "2026-04-02"
+    "hash": "311add2fc4e0b3dc9a42130eb0e3b6f4a56559af28b5f6c12debc686b89de80e",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "transaction-gas",
@@ -667,6 +691,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Module Web3 sans gas qui permet les transactions sans jetons natifs en parrainant les frais ou en acceptant les stablecoins, avec conversion automatique, garde-fous, support multi-chaînes, et repli sur le gas pour une UX fluide dans les portefeuilles, dApps et marques.",
     "accronym": "FlexGas",
     "status": "planned",
+    "ownership": "monark",
     "img": "transaction-gas.jpg",
     "img_alt": "Maquette Gas de Transaction",
     "complexity_score": 5,
@@ -684,8 +709,8 @@ const data: DatedProjectMetadata[] = [
       "UX",
       "Automatisation"
     ],
-    "hash": "131953e628846e905acb0958081bc99fd024d1a47bfc6d3fb8a845111c63770c",
-    "last_updated": "2026-04-02"
+    "hash": "a3f1cc6f52818355df8a61beb947c78d0bf9e1086236257ca8767008d99e19f3",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "web3-signatures",
@@ -693,6 +718,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Créez un système où les utilisateurs signent des documents ou des transactions avec leur signature de portefeuille. Stockez les hachages de documents sur la chaîne, et éventuellement sauvegardez les fichiers sur IPFS. D'autres peuvent vérifier l'horodatage, l'identité du signataire et l'intégrité du contenu. Imiter des outils comme DocuSign mais en utilisant une authentification de blockchain qui est décentralisée et résistante à la censure.",
     "accronym": "SignChain",
     "status": "planned",
+    "ownership": "incubated",
     "img": "web3-signatures.jpg",
     "img_alt": "Maquette signatures Web3",
     "complexity_score": 4,
@@ -711,8 +737,8 @@ const data: DatedProjectMetadata[] = [
       "Conformité",
       "Documents"
     ],
-    "hash": "b120849e473b8e78806c91a837c83fbe712dc181a3d548766ee32b3071189fa9",
-    "last_updated": "2026-04-02"
+    "hash": "9b7044367922f2f7524b700acd247dac3b2b1c9fe5ac7702288237c88eac3f06",
+    "last_updated": "2026-09-29"
   },
   {
     "id": "zk-medical-data-exchange",
@@ -720,6 +746,7 @@ const data: DatedProjectMetadata[] = [
     "description": "Un protocole décentralisé permettant le partage sécurisé et basé sur le consentement de données médicales anonymisées à l'aide de preuves à divulgation nulle de connaissance.",
     "accronym": "Cura",
     "status": "prototype_available",
+    "ownership": "incubated",
     "img": "zk-medical-data-exchange.jpg",
     "img_alt": "Maquette d'échange de Données Médicales à Preuve Zéro-Connaissance",
     "complexity_score": 7,
@@ -739,8 +766,8 @@ const data: DatedProjectMetadata[] = [
       "Contrats intelligents",
       "ZK"
     ],
-    "hash": "01b4817ec0ad093a4a515f346ffefcd48feda303317cd9be901e9358bb994b72",
-    "last_updated": "2026-04-02"
+    "hash": "122a2ec352aab2847087e13c9a6be67d8b45d1c78c529e53ecc702a4db259a71",
+    "last_updated": "2026-09-29"
   }
 ];
 

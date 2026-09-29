@@ -1,7 +1,7 @@
 import { locales } from "@/i18n.config";
 import fs from "fs";
 import path from "path";
-import { DatedProjectMetadata } from "@/types/project.types";
+import { DatedProjectMetadata, ProjectOwnership } from "@/types/project.types";
 import {
   getMetadataFromFile,
   generateHash,
@@ -9,6 +9,24 @@ import {
 } from "../utils/index.utils";
 
 type PreviousIndex = Record<string, Partial<DatedProjectMetadata>>;
+
+const OWNERSHIP_VALUES: string[] = Object.values(ProjectOwnership);
+
+// Keep only a known ownership value; warn and drop anything else so the UI
+// never receives an unexpected string.
+function parseOwnership(
+  value: unknown,
+  pagePath: string
+): DatedProjectMetadata["ownership"] {
+  if (value === undefined || value === null) return undefined;
+  if (typeof value === "string" && OWNERSHIP_VALUES.includes(value)) {
+    return value as DatedProjectMetadata["ownership"];
+  }
+  console.warn(
+    `Invalid ownership "${String(value)}" in ${pagePath} (expected one of: ${OWNERSHIP_VALUES.join(", ")}). Ignoring it.`
+  );
+  return undefined;
+}
 
 function generateProjectIndex(
   locale: string,
@@ -26,7 +44,7 @@ function generateProjectIndex(
   const subdirectories = getContentSubdirectories(projectDir);
 
   return subdirectories
-    .map((subdir) => {
+    .map((subdir): DatedProjectMetadata | null => {
       const pagePath = path.join(projectDir, subdir, "page.mdx");
       console.log(`Processing page: ${pagePath}`);
       if (fs.existsSync(pagePath)) {
@@ -46,6 +64,7 @@ function generateProjectIndex(
             description: metadata.description,
             accronym: metadata.accronym,
             status: metadata.status,
+            ownership: parseOwnership(metadata.ownership, pagePath),
             img: metadata.img,
             img_alt: metadata.img_alt,
             complexity_score: metadata.complexity_score,

@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import enProjects from "@/content/en/project/index";
 import frProjects from "@/content/fr/project/index";
 import ProjectStatusBadge from "@/components/pages/project/ProjectStatusBadge";
-import { DatedProjectMetadata, ProjectStatus } from "@/types/project.types";
+import { DatedProjectMetadata, ProjectOwnership, ProjectStatus } from "@/types/project.types";
 import {
   Select,
   SelectContent,
@@ -37,6 +37,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
   const [selectedIndustry, setSelectedIndustry] = useState<string>("all");
   const [selectedKeyword, setSelectedKeyword] = useState<string>("all");
   const [selectedStatus, setSelectedStatus] = useState<string>("all");
+  const [selectedOwnership, setSelectedOwnership] = useState<string>("all");
   const [industryTags, setIndustryTags] = useState<Set<string>>(new Set());
   const [keywordTags, setKeywordTags] = useState<Set<string>>(new Set());
   const [topKeywordSuggestions, setTopKeywordSuggestions] = useState<string[]>(
@@ -110,7 +111,9 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
         project.keyword_tags.includes(selectedKeyword);
       const matchesStatus =
         selectedStatus === "all" || project.status === selectedStatus;
-      return matchesSearch && matchesIndustry && matchesKeyword && matchesStatus;
+      const matchesOwnership =
+        selectedOwnership === "all" || project.ownership === selectedOwnership;
+      return matchesSearch && matchesIndustry && matchesKeyword && matchesStatus && matchesOwnership;
     })
     .sort((a, b) => {
       // First, sort by status priority
@@ -201,6 +204,19 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
                 {Object.values(ProjectStatus).map((status) => (
                   <SelectItem key={status} value={status}>
                     {t.statuses[status as keyof typeof t.statuses]}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select value={selectedOwnership} onValueChange={setSelectedOwnership}>
+              <SelectTrigger className="w-full md:w-[200px]">
+                <SelectValue placeholder={t.filter_by_ownership} />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">{t.all_ownerships}</SelectItem>
+                {Object.values(ProjectOwnership).map((ownership) => (
+                  <SelectItem key={ownership} value={ownership}>
+                    {t.ownerships[ownership]}
                   </SelectItem>
                 ))}
               </SelectContent>
