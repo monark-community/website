@@ -13,7 +13,7 @@ import {
   primaryTag,
 } from "./news-data";
 
-type Variant = "default" | "lead" | "feature" | "compact";
+type Variant = "default" | "lead" | "feature" | "tall" | "compact";
 
 type Props = {
   item: DatedNewsMetadata;
@@ -21,6 +21,8 @@ type Props = {
   /**
    * "lead": the latest story, image and text side by side on wide screens.
    * "feature": a section's main story (large 16:9 image, big title, excerpt).
+   * "tall": a side story that fills its share of the feature's height on
+   *   wide screens (image beside the text), 16:10 image on top on phones.
    * "compact": a thumbnail beside the tag, date and title (no excerpt).
    * "default": a grid card (image, tag, date, title, short excerpt).
    */
@@ -34,6 +36,7 @@ type Props = {
 const sizes: Record<Variant, string> = {
   lead: "(min-width: 1200px) 660px, (min-width: 1024px) 56vw, 100vw",
   feature: "(min-width: 1200px) 700px, (min-width: 1024px) 60vw, 100vw",
+  tall: "(min-width: 1200px) 250px, (min-width: 1024px) 22vw, 100vw",
   compact: "(min-width: 1024px) 180px, 40vw",
   default:
     "(min-width: 1200px) 370px, (min-width: 1024px) 31vw, (min-width: 640px) 50vw, 100vw",
@@ -59,6 +62,7 @@ function NewsCard({
   const lead = variant === "lead";
   const feature = variant === "feature";
   const compact = variant === "compact";
+  const tall = variant === "tall";
   const big = lead || feature;
 
   return (
@@ -68,6 +72,8 @@ function NewsCard({
         compact
           ? "grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] items-start gap-4"
           : "flex-col",
+        tall &&
+          "lg:grid lg:h-full lg:grid-cols-[minmax(0,9fr)_minmax(0,11fr)] lg:items-center lg:gap-6",
         lead &&
           "lg:grid lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-center lg:gap-10",
         className
@@ -75,7 +81,8 @@ function NewsCard({
     >
       <div
         className={cn(
-          "relative aspect-video w-full overflow-hidden border bg-muted",
+          "relative w-full overflow-hidden border bg-muted",
+          tall ? "aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[11rem]" : "aspect-video",
           big ? "rounded-3xl" : compact ? "rounded-xl" : "rounded-2xl"
         )}
       >
@@ -92,7 +99,7 @@ function NewsCard({
       <div
         className={cn(
           "flex min-w-0 flex-1 flex-col",
-          lead ? "pt-5 lg:pt-0" : feature ? "pt-5 md:pt-6" : compact ? "" : "pt-4"
+          lead ? "pt-5 lg:pt-0" : tall ? "pt-4 lg:pt-0" : feature ? "pt-5 md:pt-6" : compact ? "" : "pt-4"
         )}
       >
         <p className="m-0 flex flex-wrap items-center gap-x-2 text-xs font-bold uppercase tracking-[0.08em]">
@@ -118,7 +125,9 @@ function NewsCard({
                 ? "text-[1.625rem] sm:text-3xl"
                 : compact
                   ? "text-base sm:text-lg"
-                  : "text-xl"
+                  : tall
+                    ? "text-xl lg:text-lg xl:text-xl"
+                    : "text-xl"
           )}
         >
           <NavLink
@@ -137,7 +146,7 @@ function NewsCard({
                 : "text-[0.9375rem] leading-relaxed"
             )}
           >
-            {excerpt(item.description, 20)}
+            {excerpt(item.description, tall ? 14 : 20)}
           </p>
         )}
       </div>
