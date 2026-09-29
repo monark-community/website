@@ -190,57 +190,57 @@ export default function NewsletterPopup({
 
           {/* Header with status-based styling */}
           <div className={`relative w-full overflow-hidden pointer-events-none !py-4 ${subscriptionStatus === 'success'
-            ? 'bg-green-50 dark:bg-green-950/20'
+            ? 'bg-success/10'
             : subscriptionStatus === 'error'
-              ? 'bg-red-50 dark:bg-red-950/20'
+              ? 'bg-destructive/10'
               : 'bg-primary/10'
             }`}>
             {/* Decorative mail icons */}
             <div className="absolute -right-6 -top-6">
               <Mail className={`h-28 w-28 transform rotate-45 ${subscriptionStatus === 'success'
-                ? 'text-green-500'
+                ? 'text-success'
                 : subscriptionStatus === 'error'
-                  ? 'text-red-500'
+                  ? 'text-destructive'
                   : 'text-primary'
                 }`} />
             </div>
 
             <div className="absolute bottom-6 -left-2 pointer-events-none">
               <Mail className={`h-16 w-16 transform -rotate-12 ${subscriptionStatus === 'success'
-                ? 'text-green-500'
+                ? 'text-success'
                 : subscriptionStatus === 'error'
-                  ? 'text-red-500'
+                  ? 'text-destructive'
                   : 'text-primary'
                 }`} />
             </div>
 
             <div className="absolute top-8 left-8 pointer-events-none">
               <Mail className={`h-8 w-8 transform rotate-12 ${subscriptionStatus === 'success'
-                ? 'text-green-500'
+                ? 'text-success'
                 : subscriptionStatus === 'error'
-                  ? 'text-red-500'
+                  ? 'text-destructive'
                   : 'text-primary'
                 }`} />
             </div>
 
             {/* Content container */}
             <div className="relative z-10 flex h-full flex-col justify-center items-center px-8 text-center">
-              <div className={`rounded-full p-3 mb-4 shadow-sm ${subscriptionStatus === 'success'
-                ? 'bg-green-100 dark:bg-green-900/30'
+              <div className={`rounded-full p-3 mb-4 ${subscriptionStatus === 'success'
+                ? 'bg-success/15'
                 : subscriptionStatus === 'error'
-                  ? 'bg-red-100 dark:bg-red-900/30'
+                  ? 'bg-destructive/15'
                   : 'bg-primary/30'
                 }`}>
                 {subscriptionStatus === 'success' ? (
-                  <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-400" />
+                  <CheckCircle className="h-8 w-8 text-success" />
                 ) : subscriptionStatus === 'error' ? (
-                  <AlertCircle className="h-8 w-8 text-red-600 dark:text-red-400" />
+                  <AlertCircle className="h-8 w-8 text-destructive" />
                 ) : (
                   <Mail className="h-8 w-8 text-primary" />
                 )}
               </div>
 
-              <h2 className="text-3xl font-bold text-foreground mb-3 tracking-tight">
+              <h2 className="text-2xl font-extrabold text-foreground mb-3 tracking-display">
                 {subscriptionStatus === 'success'
                   ? (t.successTitle)
                   : subscriptionStatus === 'error'

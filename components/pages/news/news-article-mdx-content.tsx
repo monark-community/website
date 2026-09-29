@@ -36,12 +36,12 @@ export default async function NewsArticleMdxContent({
   const { content, data } = matter(contentRaw);
 
   return (
-    <div className="grid grid-cols-3 lg:grid-cols-4 lg:py-6 gap-8">
-      <div className="col-span-3 flex flex-col gap-4">
+    <div className="grid grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12 pt-6 lg:pt-10">
+      <div className="col-span-3 flex min-w-0 flex-col gap-4">
         {backHref && backLabel && (
-          <div className="block lg:hidden mt-8">
-            <NavLink href={backHref} className="inline-flex items-center text-primary font-medium group no-underline rendered-content">
-              <ChevronLeftIcon />&nbsp;{backLabel}
+          <div className="block lg:hidden">
+            <NavLink href={backHref} className="-ml-3 inline-flex h-9 items-center rounded-full px-3 text-sm font-semibold text-primary-ink no-underline transition-colors hover:bg-secondary [&_svg]:size-4">
+              <ChevronLeftIcon aria-hidden="true" />{backLabel}
             </NavLink>
           </div>
         )}
@@ -71,9 +71,9 @@ export default async function NewsArticleMdxContent({
               value={data.original_src}
             /> : null
           }
-          <div className="flex gap-2 py-2"><NewsArticleCategories categories={data.tags.flat()} /></div>
+          <div className="flex flex-wrap gap-2 py-2"><NewsArticleCategories categories={data.tags.flat()} /></div>
         </div>
-        <aside className="font-lg italic border-l-[4px] border-primary pl-6 mt-6 mr-0 mb-6 ml-6 text-muted-foreground">💡&nbsp;{data.description}</aside>
+        <aside className="my-4 rounded-lg border bg-card p-5 text-lg leading-relaxed text-foreground">{data.description}</aside>
         <WrappedImage
           src={`/images/news/${data.img}`}
           alt={data.img_alt}
@@ -82,19 +82,19 @@ export default async function NewsArticleMdxContent({
           authorSrc={data.img_author_src}
           width={500}
           height={500}
-          className="w-full rounded-3xl"
+          className="w-full rounded-2xl border"
         />
-        <div className="prose prose-lg dark:prose-invert max-w-none pt-4 pb-16">
+        <div className="max-w-none pt-4 pb-16">
           <MDXRemote source={content} components={components} />
         </div>
         {children}
       </div>
       <div className="hidden lg:block lg:col-span-1 pb-16">
-        <div className="sticky top-24 pt-2">
+        <div className="sticky top-24">
           {backHref && backLabel && (
-            <div className="mt-8">
-              <NavLink href={backHref} className="inline-flex items-center text-primary font-medium group no-underline">
-                <ChevronLeftIcon />&nbsp;{backLabel}
+            <div>
+              <NavLink href={backHref} className="-ml-3 inline-flex h-9 items-center rounded-full px-3 text-sm font-semibold text-primary-ink no-underline transition-colors hover:bg-secondary [&_svg]:size-4">
+                <ChevronLeftIcon aria-hidden="true" />{backLabel}
               </NavLink>
             </div>
           )}

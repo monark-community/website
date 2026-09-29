@@ -46,12 +46,12 @@ const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
-    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="mb-6">{t.page_title}</h1>
-      <p className="text-muted-foreground mb-8 max-w-[460px]">
+    <div className="site-container pt-12 pb-16 md:pt-16 md:pb-24">
+      <h1>{t.page_title}</h1>
+      <p className="lead mt-4 mb-10 max-w-[36rem]">
         {t.description}
       </p>
-      <div className="flex flex-col sm:flex-row gap-4 mb-2">
+      <div className="flex flex-col sm:flex-row gap-4 mb-8">
         <Input
           placeholder={t.search_placeholder}
           value={search}
@@ -60,11 +60,11 @@ const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
         />
       </div>
       {!initialized ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {[...Array(6)].map((_, i) => (
             <div key={i} className="h-full">
-              <Card className="overflow-hidden h-full flex flex-col transition-colors animate-pulse">
-                <div className="w-full h-64 bg-muted mb-4" />
+              <Card className="overflow-hidden h-full flex flex-col motion-safe:animate-pulse">
+                <div className="w-full aspect-[16/10] bg-muted" />
                 <CardHeader>
                   <div className="h-6 w-1/2 bg-muted rounded mb-2" />
                   <div className="h-4 w-1/4 bg-muted rounded" />
@@ -81,34 +81,34 @@ const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredNews.length > 0 ? (
             filteredNews.map((item) => (
               <div key={item.id} className="h-full">
-                <Card className="overflow-hidden h-full flex flex-col transition-colors">
-                  <NavLink href={`/learn/news/${item.id}`} className="block">
+                <Card className="group overflow-hidden h-full flex flex-col transition-colors duration-150 hover:border-primary/60">
+                  <NavLink href={`/learn/news/${item.id}`} className="block overflow-hidden border-b" tabIndex={-1} aria-hidden="true">
                     <Image
                       src={`/images/news/${item.id}.webp`}
                       alt={item.title}
                       width={500}
                       height={200}
-                      className="w-full h-64 object-cover mb-4 hover:opacity-90 transition-opacity"
+                      className="w-full aspect-[16/10] object-cover transition-transform duration-200 motion-safe:group-hover:scale-[1.02]"
                     />
                   </NavLink>
                   <CardHeader>
-                    <CardTitle className="text-lg font-bold">
+                    <CardTitle className="text-lg font-bold leading-snug">
                       <NavLink
                         href={`/learn/news/${item.id}`}
-                        className="hover:underline"
+                        className="underline-offset-4 hover:underline"
                       >
                         {item.title}
                       </NavLink>
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow flex flex-col justify-between">
-                    <p className="mb-4">{item.description}</p>
+                    <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
                     <div className="mt-auto pt-2"></div>
-                    <div className="flex flex-col gap-2 text-muted-foreground">
+                    <div className="flex flex-col gap-2 text-sm text-muted-foreground">
                       <IconLabelAttribute
                         Icon={CalendarIcon}
                         label={t.date}
@@ -121,7 +121,7 @@ const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
                         label={t.read_time}
                         value={formatDuration(item.read_time_seconds, locale)}
                       />
-                      <div className="flex gap-2 py-2"><NewsArticleCategories categories={item.tags.flat()} /></div>
+                      <div className="flex flex-wrap gap-2 py-2"><NewsArticleCategories categories={item.tags.flat()} /></div>
                     </div>
                   </CardContent>
                 </Card>

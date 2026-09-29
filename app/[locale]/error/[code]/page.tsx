@@ -26,7 +26,7 @@ export default async function ErrorPage({ params }: { params: Params }) {
   return (
     <div className="flex flex-col md:flex-row gap-16 items-center max-w-[1200px] mx-auto my-12 px-4 py-8 md:px-12 md:py-16">
       <div>
-        <h1 className="text-headline text-primary">{sanitizedCode}</h1>
+        <h1 className="text-headline text-primary-ink">{sanitizedCode}</h1>
         <h2 className="mt-4 max-w-[700px]">
           {t.error_definitions[sanitizedCode].title}
         </h2>
@@ -38,7 +38,7 @@ export default async function ErrorPage({ params }: { params: Params }) {
             <h3>{t.error_definitions[sanitizedCode].content_1.description}</h3>
             <Button asChild className="mt-4 w-fit">
               <NavLink href="/">
-                <HomeIcon />
+                <HomeIcon aria-hidden="true" />
                 &nbsp;
                 {t.error_definitions[sanitizedCode].content_1.actions.home}
               </NavLink>

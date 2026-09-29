@@ -28,9 +28,9 @@ function LocaleToggle({ locale }: Props) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost">
+        <Button variant="ghost" className="px-3" aria-label={`${t.toggle}: ${t[locale as keyof typeof t]}`}>
           {locale.toLocaleUpperCase()}
-          <ChevronDown />
+          <ChevronDown aria-hidden="true" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

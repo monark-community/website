@@ -17,7 +17,7 @@ const en: I18n = {
     page_title: "News",
     search_placeholder: "Search news...",
     not_found: "No news found.",
-    back_home: "Back Home",
+    back_home: "Back home",
     description: "Discover our latest news and updates that highlight our innovative projects, partnerships, and contributions to the community.",
     learn_more: "Learn more",
     date: "Date",
