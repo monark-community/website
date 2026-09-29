@@ -52,7 +52,7 @@ type Props = { slug: ParticipateSlug; locale: Locale };
  * One layout for the four participate pages, so they read as a family:
  * hero, what you get, how it works, who fits, proof, FAQ, call to action,
  * then links to the three other ways to participate. Each page brings its
- * own copy, icon and accent.
+ * own copy, icon, accent and photo.
  */
 function ParticipatePage({ slug, locale }: Props) {
   const t = getContent(slug, locale);
@@ -60,22 +60,25 @@ function ParticipatePage({ slug, locale }: Props) {
   const { icon, accent } = shared.roleAppearance(slug);
 
   return (
-    <div className="space-y-16 pb-8 pt-6 md:space-y-24 md:pt-10">
+    <div className="site-container pb-8 pt-10 md:pt-14">
       <ParticipateHero
         t={t.hero}
         primary={t.cta.primary}
         howLabel={s.how_link}
         newTab={s.new_tab}
-        icon={icon}
         accent={accent}
+        photo={shared.rolePhoto(slug)}
+        locale={locale}
       />
-      <ParticipateOffer t={t.offer} accent={accent} newTab={s.new_tab} />
-      <ParticipateSteps t={t.steps} accent={accent} />
-      <ParticipateFit t={t.fit} accent={accent} />
-      <ParticipateProof t={t.proof} newTab={s.new_tab} />
-      {t.faq && <ParticipateFaq t={t.faq} />}
-      <ParticipateCta t={t.cta} newTab={s.new_tab} icon={icon} accent={accent} />
-      <ParticipateOthers t={s.others} current={slug} />
+      <div className="mt-16 space-y-16 md:mt-24 md:space-y-24">
+        <ParticipateOffer t={t.offer} accent={accent} newTab={s.new_tab} />
+        <ParticipateSteps t={t.steps} accent={accent} />
+        <ParticipateFit t={t.fit} accent={accent} />
+        <ParticipateProof t={t.proof} newTab={s.new_tab} />
+        {t.faq && <ParticipateFaq t={t.faq} />}
+        <ParticipateCta t={t.cta} newTab={s.new_tab} icon={icon} accent={accent} />
+        <ParticipateOthers t={s.others} current={slug} />
+      </div>
     </div>
   );
 }

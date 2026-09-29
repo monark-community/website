@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRightIcon, ArrowUpRightIcon } from "lucide-react";
-import { Button, ButtonProps } from "@/components/ui/button";
+import { ButtonProps, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { NavLink } from "@/components/common/navlink/navlink";
 import { ParticipateLink } from "../participate.types";
 
@@ -25,21 +26,20 @@ function ParticipateButton({
   size = "lg",
   className = "",
 }: Props) {
-  return (
-    <Button asChild variant={variant} size={size} className={className}>
-      {link.external ? (
-        <a href={link.href} target="_blank" rel="noopener noreferrer">
-          {link.label}
-          <span className="sr-only"> {newTab}</span>
-          <ArrowUpRightIcon aria-hidden="true" />
-        </a>
-      ) : (
-        <NavLink href={link.href}>
-          {link.label}
-          <ArrowRightIcon aria-hidden="true" />
-        </NavLink>
-      )}
-    </Button>
+  // Styled anchors, not <Button asChild>: Radix Slot renders nothing when
+  // the server streams its child as a lazy reference (seen on the hero).
+  const classes = cn(buttonVariants({ variant, size }), className);
+  return link.external ? (
+    <a href={link.href} target="_blank" rel="noopener noreferrer" className={classes}>
+      {link.label}
+      <span className="sr-only"> {newTab}</span>
+      <ArrowUpRightIcon aria-hidden="true" />
+    </a>
+  ) : (
+    <NavLink href={link.href} className={classes}>
+      {link.label}
+      <ArrowRightIcon aria-hidden="true" />
+    </NavLink>
   );
 }
 

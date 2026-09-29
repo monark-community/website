@@ -3,6 +3,7 @@
  * participate" strip and small UI labels. Keep en and fr equivalent.
  */
 import { ParticipateAccent, ParticipateIconName, ParticipateSlug } from "./participate.types";
+import type { PhotoKey } from "@/components/common/photo/photos";
 
 /** Monark's community Discord: the main way in for every participate page. */
 export const DISCORD_URL = "https://discord.gg/TvhrbFCp8T";
@@ -39,6 +40,22 @@ const roleStyle: Record<ParticipateSlug, { icon: ParticipateIconName; accent: Pa
 
 export function roleAppearance(slug: ParticipateSlug) {
   return roleStyle[slug];
+}
+
+/**
+ * One photo per role, shown in the page's hero and on the home page's
+ * audience cards, so a role always has the same face. `focus` keeps the
+ * people in frame when the photo is cropped square or wide.
+ */
+const rolePhotos: Record<ParticipateSlug, { photo: PhotoKey; focus: string }> = {
+  developer: { photo: "developers-pairing-workshop", focus: "object-[60%_50%]" },
+  university: { photo: "students-lecture-hall", focus: "object-[25%_50%]" },
+  industry: { photo: "team-planning-studio", focus: "object-[60%_45%]" },
+  ambassador: { photo: "community-meetup-discussion", focus: "object-[52%_50%]" },
+};
+
+export function rolePhoto(slug: ParticipateSlug) {
+  return rolePhotos[slug];
 }
 
 export const en: SharedI18n = {

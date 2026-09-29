@@ -17,7 +17,7 @@ export const en: ParticipateContent = {
   hero: {
     eyebrow: "Participate as a developer",
     title: "Turn your Web3 idea into a product you can fund",
-    lead: "Monark's incubation program is for developers and early-stage teams with a promising idea who aren't yet ready to apply to a major foundation like the Web3 Foundation. We help you get there.",
+    lead: "Incubation for developers and early-stage teams with a promising idea, until you're ready to apply to a major Web3 foundation.",
     audiences_label: "For",
     audiences: ["Developers", "Early-stage teams", "Students and recent grads"],
     highlights: [
@@ -194,7 +194,7 @@ export const fr: ParticipateContent = {
   hero: {
     eyebrow: "Participer en tant que développeur",
     title: "Faites de votre idée Web3 un produit finançable",
-    lead: "Le programme d'incubation de Monark s'adresse aux développeurs et aux équipes en démarrage qui ont une idée prometteuse, mais qui ne sont pas encore prêts à solliciter une grande fondation comme la Web3 Foundation. Nous vous aidons à y arriver.",
+    lead: "Un programme d'incubation pour développeurs et jeunes équipes porteurs d'une idée prometteuse, jusqu'à être prêts pour une grande fondation Web3.",
     audiences_label: "Pour",
     audiences: [
       "Développeurs",
