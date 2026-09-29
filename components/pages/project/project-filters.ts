@@ -6,6 +6,7 @@ import { Locale } from "@/i18n.config";
  * - `industry`: one industry tag, as written in that locale's content
  * - `keyword`: one keyword tag, as written in that locale's content
  * - `status`: one `ProjectStatus` value (e.g. `planned`)
+ * - `ownership`: one `ProjectOwnership` value (`monark` or `incubated`)
  * - `q`: free-text search
  *
  * Values are matched case-insensitively against the known tags of the current
@@ -15,6 +16,7 @@ export const PROJECT_FILTER_PARAMS = {
   industry: "industry",
   keyword: "keyword",
   status: "status",
+  ownership: "ownership",
   search: "q",
 } as const;
 
@@ -22,6 +24,7 @@ export type ProjectListFilters = {
   industry?: string;
   keyword?: string;
   status?: string;
+  ownership?: string;
   search?: string;
 };
 
@@ -32,6 +35,7 @@ export function projectFiltersToSearchParams(
   if (filters.industry) params.set(PROJECT_FILTER_PARAMS.industry, filters.industry);
   if (filters.keyword) params.set(PROJECT_FILTER_PARAMS.keyword, filters.keyword);
   if (filters.status) params.set(PROJECT_FILTER_PARAMS.status, filters.status);
+  if (filters.ownership) params.set(PROJECT_FILTER_PARAMS.ownership, filters.ownership);
   if (filters.search) params.set(PROJECT_FILTER_PARAMS.search, filters.search);
   return params;
 }

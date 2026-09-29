@@ -23,6 +23,12 @@ interface I18n {
         market_validation: string;
         production: string;
     };
+    filter_by_ownership: string;
+    all_ownerships: string;
+    ownerships: {
+        monark: string;
+        incubated: string;
+    };
     learn_more: string;
     status: string;
     mockup: string;
@@ -59,6 +65,12 @@ const en: I18n = {
         market_validation: "Market validation",
         production: "Production",
     },
+    filter_by_ownership: "Filter by ownership",
+    all_ownerships: "All projects",
+    ownerships: {
+        monark: "Monark products",
+        incubated: "Incubated ventures",
+    },
     learn_more: "Learn more",
     status: "Status",
     mockup: "Mockup",
@@ -94,6 +106,12 @@ const fr: I18n = {
         on_hold: "En pause",
         market_validation: "Validation de marché",
         production: "Production",
+    },
+    filter_by_ownership: "Filtrer par propriété",
+    all_ownerships: "Tous les projets",
+    ownerships: {
+        monark: "Produits Monark",
+        incubated: "Projets incubés",
     },
     learn_more: "En savoir plus",
     status: "État",

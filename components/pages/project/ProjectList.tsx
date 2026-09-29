@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import enProjects from "@/content/en/project/index";
 import frProjects from "@/content/fr/project/index";
 import ProjectStatusBadge from "@/components/pages/project/ProjectStatusBadge";
-import { DatedProjectMetadata, ProjectStatus } from "@/types/project.types";
+import { DatedProjectMetadata, ProjectOwnership, ProjectStatus } from "@/types/project.types";
 import {
   Select,
   SelectContent,
@@ -62,8 +62,11 @@ const FILTER_KEYS: (keyof ProjectListFilters)[] = [
   "industry",
   "keyword",
   "status",
+  "ownership",
   "search",
 ];
+
+const OWNERSHIP_VALUES: string[] = Object.values(ProjectOwnership);
 
 /**
  * Builds the list URL for `filters`, keeping any unrelated query params
@@ -190,6 +193,10 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     searchParams.get(PROJECT_FILTER_PARAMS.status),
     STATUS_VALUES
   );
+  const selectedOwnership = matchKnownValue(
+    searchParams.get(PROJECT_FILTER_PARAMS.ownership),
+    OWNERSHIP_VALUES
+  );
 
   // The search box keeps local state so typing is never interrupted; the URL
   // follows it, and external URL changes (links, back/forward) flow back in.
@@ -207,6 +214,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     industry: selectedIndustry,
     keyword: selectedKeyword,
     status: selectedStatus,
+    ownership: selectedOwnership,
     search: search || undefined,
   };
 
@@ -238,7 +246,11 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
   };
 
   const hasActiveFilters = Boolean(
-    selectedIndustry || selectedKeyword || selectedStatus || search
+    selectedIndustry ||
+      selectedKeyword ||
+      selectedStatus ||
+      selectedOwnership ||
+      search
   );
 
   const clearFilters = () => {
@@ -269,7 +281,15 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
       const matchesKeyword =
         !selectedKeyword || project.keyword_tags.includes(selectedKeyword);
       const matchesStatus = !selectedStatus || project.status === selectedStatus;
-      return matchesSearch && matchesIndustry && matchesKeyword && matchesStatus;
+      const matchesOwnership =
+        !selectedOwnership || project.ownership === selectedOwnership;
+      return (
+        matchesSearch &&
+        matchesIndustry &&
+        matchesKeyword &&
+        matchesStatus &&
+        matchesOwnership
+      );
     })
     .sort((a, b) => {
       // First, sort by status priority
@@ -360,6 +380,22 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
                 {STATUS_VALUES.map((status) => (
                   <SelectItem key={status} value={status}>
                     {t.statuses[status as keyof typeof t.statuses]}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select
+              value={selectedOwnership ?? "all"}
+              onValueChange={(value) => setFilter("ownership", value)}
+            >
+              <SelectTrigger className="w-full md:w-[200px]" aria-label={t.filter_by_ownership}>
+                <SelectValue placeholder={t.filter_by_ownership} />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">{t.all_ownerships}</SelectItem>
+                {Object.values(ProjectOwnership).map((ownership) => (
+                  <SelectItem key={ownership} value={ownership}>
+                    {t.ownerships[ownership]}
                   </SelectItem>
                 ))}
               </SelectContent>

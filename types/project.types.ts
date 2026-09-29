@@ -7,10 +7,22 @@ export enum ProjectStatus {
   Production = "production",
 }
 
+/**
+ * Who a project belongs to.
+ * - monark: Monark's own tooling for its community (Monark-branded).
+ * - incubated: incubated to become an independent venture with its own brand.
+ */
+export enum ProjectOwnership {
+  Monark = "monark",
+  Incubated = "incubated",
+}
+
 export interface ProjectMetadata {
   id: string;
   title: string;
   status: string;
+  /** Optional: projects without a value are shown without a badge and only under "all". */
+  ownership?: `${ProjectOwnership}`;
   description: string;
   accronym: string;
   img: string;

@@ -12,6 +12,7 @@ import { Locale } from "@/i18n.config";
 import i18n from "./projects-list.i18n";
 import path from "path";
 import ProjectStatusBadge from "./ProjectStatusBadge";
+import ProjectOwnershipBadge from "./ProjectOwnershipBadge";
 import { Label } from "@/components/ui/label";
 import ProjectIndustryTags from "./ProjectIndustryTags";
 import GithubOrgMembers from "../homepage/why-section/github-org-members/GithubOrgMembers";
@@ -126,6 +127,7 @@ export default async function ProjectMdxContent({
         <p className="lead m-0">{data.title}</p>
         <div className="flex flex-wrap items-center gap-3 text-sm font-semibold">
           <ProjectStatusBadge status={data.status} locale={locale} />
+          <ProjectOwnershipBadge ownership={data.ownership} locale={locale} />
           <IconLabelAttribute
             Icon={GlobeIcon}
             label={t.mockup}
