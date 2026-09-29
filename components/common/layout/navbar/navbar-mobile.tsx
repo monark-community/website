@@ -52,33 +52,40 @@ const NavbarMobile = ({ locale }: Props) => {
   };
 
   return (
-    <nav
-      className={`block lg:hidden z-50 fixed bg-background border border-t-0 border-l-0 border-r-0 border-b-primary w-full`}
+    <header
+      className={`block lg:hidden z-50 fixed top-0 inset-x-0 h-16 border-b ${
+        isOpen ? "bg-background" : "bg-background/90 backdrop-blur-md"
+      }`}
     >
-      <div className="max-w-[1200px] mx-auto flex justify-between items-center p-4 py-2">
-        <NavLink href="/">
+      <div className="site-container flex h-full items-center justify-between">
+        <NavLink href="/" aria-label="Monark" onClick={handleLinkClick}>
           <Logo
             formFactor="horizontal"
             colorScheme="branded"
-            width={163}
-            height={54}
+            width={123}
+            height={38}
           />
         </NavLink>
         <Button
           variant="ghost"
-          className="lg:hidden"
+          size="icon"
+          className="lg:hidden -mr-2 h-11 w-11"
           onClick={toggleMenu}
-          aria-label="Toggle menu"
+          aria-label={isOpen ? t.menu_close : t.menu_open}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X className="!size-6" /> : <Menu className="!size-6" />}
         </Button>
       </div>
-      <div
-        className={`fixed top-[72px] right-0 bg-background overflow-scroll transition-all duration-500 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        } w-full h-[calc(100%-72px)] z-40 lg:hidden`}
+      <nav
+        id="mobile-menu"
+        aria-label={t.label}
+        className={`fixed top-16 bottom-0 right-0 w-full bg-background overflow-y-auto overscroll-contain transition-[transform,visibility] duration-200 ease-out ${
+          isOpen ? "translate-x-0 visible" : "translate-x-full invisible"
+        } z-40 lg:hidden`}
       >
-        <div className="p-4 flex flex-col justify-between h-full pb-12">
+        <div className="site-container flex flex-col justify-between min-h-full py-4 pb-10">
           <div>
             {/* <NavLink
               href="/error/501"
@@ -103,10 +110,9 @@ const NavbarMobile = ({ locale }: Props) => {
                   <AccordionItem
                     key={nestedLink.label}
                     value={nestedLink.label}
-                    className="data-[state=open]:border-l-2 data-[state=open]:border-l-primary"
                   >
-                    <AccordionTrigger>{nestedLink.label}</AccordionTrigger>
-                    <AccordionContent className="pr-0">
+                    <AccordionTrigger className="px-2 text-lg">{nestedLink.label}</AccordionTrigger>
+                    <AccordionContent className="px-0 pt-0">
                       <ul>
                         {nestedLink.items.map((item) => (
                           <li key={item.label}>
@@ -128,22 +134,21 @@ const NavbarMobile = ({ locale }: Props) => {
                                     <ul>
                                       {item.items.map((subItem) => (
                                         <li key={subItem.label}>
-                                          <NavLink
-                                            href={subItem.href}
-                                            onClick={handleLinkClick}
+                                          <Button
+                                            asChild
+                                            variant="ghost"
+                                            className="w-full h-11 justify-start text-base font-semibold [&_svg]:text-primary"
                                           >
-                                            <Button
-                                              variant="link"
-                                              className="w-full text-left justify-start my-3"
+                                            <NavLink
+                                              href={subItem.href}
+                                              onClick={handleLinkClick}
                                             >
                                               {subItem.icon && (
-                                                <NavbarIcon
-                                                  icon={subItem.icon}
-                                                />
+                                                <NavbarIcon icon={subItem.icon} />
                                               )}
                                               {subItem.label}
-                                            </Button>
-                                          </NavLink>
+                                            </NavLink>
+                                          </Button>
                                         </li>
                                       ))}
                                     </ul>
@@ -151,18 +156,16 @@ const NavbarMobile = ({ locale }: Props) => {
                                 </AccordionItem>
                               </Accordion>
                             ) : (
-                              <NavLink
-                                href={item.href}
-                                onClick={handleLinkClick}
+                              <Button
+                                asChild
+                                variant="ghost"
+                                className="w-full h-11 justify-start text-base font-semibold [&_svg]:text-primary"
                               >
-                                <Button
-                                  variant="link"
-                                  className="w-full text-left justify-start my-3"
-                                >
+                                <NavLink href={item.href} onClick={handleLinkClick}>
                                   {item.icon && <NavbarIcon icon={item.icon} />}
                                   {item.label}
-                                </Button>
-                              </NavLink>
+                                </NavLink>
+                              </Button>
                             )}
                           </li>
                         ))}
@@ -174,19 +177,15 @@ const NavbarMobile = ({ locale }: Props) => {
                     key={nestedLink.label}
                     href={nestedLink.href}
                     onClick={handleLinkClick}
+                    className="flex h-14 items-center border-b px-2 text-lg font-semibold transition-colors hover:text-primary-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
                   >
-                    <Button
-                      variant="link"
-                      className="w-full text-left h-16 justify-start"
-                    >
-                      {nestedLink.label}
-                    </Button>
+                    {nestedLink.label}
                   </NavLink>
                 );
               })}
             </Accordion>
           </div>
-          <div className="flex justify-between items-center mt-4">
+          <div className="flex flex-wrap justify-between items-center gap-4 mt-8 pt-6 border-t">
             <SocialLinks />
             <div className="flex gap-4">
               <LocaleToggle locale={locale} />
@@ -194,8 +193,8 @@ const NavbarMobile = ({ locale }: Props) => {
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 };
 

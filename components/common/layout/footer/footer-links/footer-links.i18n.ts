@@ -8,6 +8,8 @@ type FooterLinks = FooterLink[];
 
 export interface I18n {
   footer_links: {
+    label: string;
+    tagline: string;
     primary: FooterLinks;
     secondary: {
       left: FooterLinks;
@@ -18,6 +20,8 @@ export interface I18n {
 
 export const en: I18n = {
   footer_links: {
+    label: "Footer",
+    tagline: "Fostering Collaboration within the Web3 Community",
     primary: [
       { label: "Home", href: "/" },
       { label: "News", href: "/learn/news" },
@@ -25,7 +29,7 @@ export const en: I18n = {
     secondary: {
       left: [
         { label: "About", href: "/about" },
-        { label: "Brand Assets", href: "https://www.notion.so/Branding-Templates-24f2a891d7518067b4aaf464f9897b1c" },
+        { label: "Brand assets", href: "https://www.notion.so/Branding-Templates-24f2a891d7518067b4aaf464f9897b1c" },
         { label: "Contact", href: "mailto:contact@monark.io" },
       ],
       right: [
@@ -40,7 +44,7 @@ export const en: I18n = {
           disabled: true,
         },
         {
-          label: "Terms of Service",
+          label: "Terms of service",
           href: "/legal/terms-of-service",
           disabled: true,
         },
@@ -51,6 +55,8 @@ export const en: I18n = {
 
 export const fr: I18n = {
   footer_links: {
+    label: "Pied de page",
+    tagline: "Favoriser la collaboration au sein de la communauté Web3",
     primary: [
       { label: "Accueil", href: "/" },
       { label: "Nouvelles", href: "/learn/news" },

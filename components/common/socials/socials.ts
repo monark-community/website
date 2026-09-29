@@ -24,7 +24,7 @@ const SOCIALS: Array<Social> = [
   },
   {
     id: "twitter",
-    name: "Twitter",
+    name: "X (Twitter)",
     url: "https://x.com/monark_io",
     shareUrl: "https://twitter.com/intent/tweet?url=",
   },

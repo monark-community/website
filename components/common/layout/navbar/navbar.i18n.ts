@@ -10,6 +10,9 @@ export type NavbarLink = {
 
 export interface I18n {
   navbar: {
+    label: string;
+    menu_open: string;
+    menu_close: string;
     soon: string;
     links: NavbarLink[];
     sign_in: string;
@@ -18,6 +21,9 @@ export interface I18n {
 
 export const en: I18n = {
   navbar: {
+    label: "Main navigation",
+    menu_open: "Open menu",
+    menu_close: "Close menu",
     soon: "Coming soon",
     links: [
       {
@@ -34,7 +40,7 @@ export const en: I18n = {
           },
           {
             id: "industry",
-            label: "Industry Representative",
+            label: "Industry representative",
             icon: "factory",
             href: "/industry",
           },
@@ -169,6 +175,9 @@ export const en: I18n = {
 
 export const fr: I18n = {
   navbar: {
+    label: "Navigation principale",
+    menu_open: "Ouvrir le menu",
+    menu_close: "Fermer le menu",
     soon: "Bientôt disponible",
     links: [
       {

@@ -19,6 +19,9 @@ import { ChevronRight } from "lucide-react";
 import Logo from "@/components/common/logo/logo";
 // import { Button } from "@/components/ui/button";
 import NavbarIcon from "./navbar-icon";
+import { usePathname } from "next/navigation";
+import LocaleToggle from "@/components/common/locale-toggle/locale-toggle";
+import { ThemeToggle } from "@/components/common/theme-toggle/theme-toggle.component";
 // import {
 //   Tooltip,
 //   TooltipContent,
@@ -52,21 +55,25 @@ const NavbarDesktop = ({ locale }: Props) => {
   const [hoveredSubItem, setHoveredSubItem] = React.useState<string | null>(
     null
   );
+  // Strip the locale prefix so "/project" matches "/en/project/...".
+  const pathname = (usePathname() ?? "").replace(/^\/(en|fr)(?=\/|$)/, "") || "/";
+  const isActive = (href: string) =>
+    href !== "/" && (pathname === href || pathname.startsWith(`${href}/`));
   return (
-    <nav
-      className={`hidden lg:block z-50 fixed bg-background border border-t-0 border-l-0 border-r-0 border-b-primary w-full`}
+    <header
+      className="hidden lg:block z-50 fixed top-0 inset-x-0 h-16 border-b bg-background/90 backdrop-blur-md"
     >
-      <div className="max-w-[1200px] mx-auto flex justify-between items-center p-4">
-        <div className="flex items-center space-x-6">
-          <NavLink href="/">
+      <div className="site-container flex h-full items-center justify-between gap-6">
+        <div className="flex items-center gap-6">
+          <NavLink href="/" aria-label="Monark" className="rounded-md">
             <Logo
               formFactor="horizontal"
               colorScheme="branded"
-              width={194}
-              height={64}
+              width={136}
+              height={42}
             />
           </NavLink>
-          <NavigationMenu>
+          <NavigationMenu aria-label={t.label}>
             <NavigationMenuList>
               {t.links.map((link, tllIndex) => {
                 const nestedLink = appendParentRoutes(link);
@@ -74,11 +81,13 @@ const NavbarDesktop = ({ locale }: Props) => {
                   <NavigationMenuItem key={`tll-${tllIndex}`}>
                     {nestedLink.items ? (
                       <>
-                        <NavigationMenuTrigger>
+                        <NavigationMenuTrigger
+                          className={cn(isActive(nestedLink.href) && "bg-secondary text-foreground")}
+                        >
                           {nestedLink.label}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent className="flex">
-                          <ul className="grid p-4 md:w-[250px] lg:w-[300px] grid-cols-1">
+                          <ul className="grid gap-0.5 p-2 md:w-[250px] lg:w-[280px] grid-cols-1">
                             {nestedLink.items.map((item, fllIndex) => (
                               <NavigationMenuLink
                                 key={`fll-${tllIndex}-${fllIndex}`}
@@ -109,7 +118,7 @@ const NavbarDesktop = ({ locale }: Props) => {
                                     hoveredSubItem === item.label
                                       ? "block"
                                       : "hidden"
-                                  } bg-card p-4 md:w-[250px] lg:w-[300px]`}
+                                  } border-l p-2 md:w-[250px] lg:w-[280px]`}
                                 >
                                   {item.items.map((item, lllIndex) => (
                                     <li
@@ -118,7 +127,7 @@ const NavbarDesktop = ({ locale }: Props) => {
                                     >
                                       <NavLink
                                         href={item.href}
-                                        className="w-full block p-4 hover:bg-primary/5 rounded-md"
+                                        className="w-full block px-3 py-2.5 hover:bg-secondary rounded-md"
                                       >
                                         {item.label}
                                       </NavLink>
@@ -131,19 +140,26 @@ const NavbarDesktop = ({ locale }: Props) => {
                         </NavigationMenuContent>
                       </>
                     ) : (
-                      <div
-                        className={navigationMenuTriggerStyle()}
+                      <NavLink
+                        href={nestedLink.href}
+                        aria-current={isActive(nestedLink.href) ? "page" : undefined}
+                        className={cn(
+                          navigationMenuTriggerStyle(),
+                          isActive(nestedLink.href) && "bg-secondary text-foreground"
+                        )}
                       >
-                        <NavLink href={nestedLink.href}>
-                          {nestedLink.label}
-                        </NavLink>
-                      </div>
+                        {nestedLink.label}
+                      </NavLink>
                     )}
                   </NavigationMenuItem>
                 );
               })}
             </NavigationMenuList>
           </NavigationMenu>
+        </div>
+        <div className="flex items-center gap-1">
+          <LocaleToggle locale={locale} />
+          <ThemeToggle locale={locale} />
         </div>
         {/* <NavLink href="/error/501"> */}
         {/* <Tooltip>
@@ -157,7 +173,7 @@ const NavbarDesktop = ({ locale }: Props) => {
         </Tooltip> */}
         {/* </NavLink> */}
       </div>
-    </nav>
+    </header>
   );
 };
 
@@ -191,12 +207,12 @@ const ListItem = React.forwardRef<
         {isFolderRoute ? (
           <div
             className={cn(
-              "flex items-center select-none space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-primary/5 hover:text-primary focus:bg-primary focus:text-primary-foreground",
+              "flex items-center gap-3 select-none rounded-md px-3 py-2.5 text-foreground no-underline outline-none transition-colors duration-150 hover:bg-secondary focus-visible:bg-secondary focus-visible:ring-2 focus-visible:ring-ring [&_svg]:text-primary",
               className
             )}
           >
             {icon && <NavbarIcon icon={icon} />}
-            <div className="text-sm font-medium">{title}</div>
+            <div className="text-sm font-semibold">{title}</div>
             {items && <ChevronRight className="ml-auto" />}
             <p className="line-clamp-2 text-sm text-muted-foreground">
               {children}
@@ -207,12 +223,12 @@ const ListItem = React.forwardRef<
             href={props.href as string}
             ref={ref}
             className={cn(
-              "flex items-center select-none space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-primary/5 hover:text-primary focus:bg-primary focus:text-primary-foreground",
+              "flex items-center gap-3 select-none rounded-md px-3 py-2.5 text-foreground no-underline outline-none transition-colors duration-150 hover:bg-secondary focus-visible:bg-secondary focus-visible:ring-2 focus-visible:ring-ring [&_svg]:text-primary",
               className
             )}
           >
             {icon && <NavbarIcon icon={icon} />}
-            <div className="text-sm font-medium">{title}</div>
+            <div className="text-sm font-semibold">{title}</div>
             {items && <ChevronRight className="ml-auto" />}
             <p className="line-clamp-2 text-sm text-muted-foreground">
               {children}
@@ -220,12 +236,12 @@ const ListItem = React.forwardRef<
           </NavLink>
         )}
         {hovered && items && (
-          <ul className="absolute left-full top-0 mt-2 ml-2 w-[200px] bg-white shadow-lg rounded-md">
+          <ul className="absolute left-full top-0 mt-2 ml-2 w-[200px] rounded-lg border bg-popover p-1 shadow-lg shadow-foreground/5">
             {items.map((item, index) => (
               <li key={`item-${index}-${item.label}`}>
                 <NavLink
                   href={item.href}
-                  className="block p-2 text-sm text-gray-700 hover:bg-gray-100"
+                  className="block rounded-md px-3 py-2 text-sm text-foreground hover:bg-secondary"
                 >
                   {item.label}
                 </NavLink>
