@@ -1,5 +1,7 @@
-import React from "react";
-import ProjectList from "@/components/pages/project/ProjectList";
+import React, { Suspense } from "react";
+import ProjectList, {
+  ProjectListFallback,
+} from "@/components/pages/project/ProjectList";
 import { Locale } from "@/i18n.config";
 import { Metadata } from "next";
 import * as i18n from "./metadata.i18n";
@@ -19,5 +21,11 @@ export async function generateMetadata({ params }: ProjectsPageProps): Promise<M
 
 export default async function ProjectsPage({ params }: ProjectsPageProps) {
   const { locale } = await params;
-  return <ProjectList locale={locale} />;
+  // The list reads its filters from the query string (useSearchParams), so it
+  // renders on the client; the fallback keeps the page statically renderable.
+  return (
+    <Suspense fallback={<ProjectListFallback locale={locale} />}>
+      <ProjectList locale={locale} />
+    </Suspense>
+  );
 }

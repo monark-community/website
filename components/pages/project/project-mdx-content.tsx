@@ -12,6 +12,7 @@ import { Locale } from "@/i18n.config";
 import i18n from "./projects-list.i18n";
 import path from "path";
 import ProjectStatusBadge from "./ProjectStatusBadge";
+import ProjectOwnershipBadge from "./ProjectOwnershipBadge";
 import { Label } from "@/components/ui/label";
 import ProjectIndustryTags from "./ProjectIndustryTags";
 import GithubOrgMembers from "../homepage/why-section/github-org-members/GithubOrgMembers";
@@ -126,6 +127,7 @@ export default async function ProjectMdxContent({
         <p className="lead m-0">{data.title}</p>
         <div className="flex flex-wrap items-center gap-3 text-sm font-semibold">
           <ProjectStatusBadge status={data.status} locale={locale} />
+          <ProjectOwnershipBadge ownership={data.ownership} locale={locale} />
           <IconLabelAttribute
             Icon={GlobeIcon}
             label={t.mockup}
@@ -135,9 +137,9 @@ export default async function ProjectMdxContent({
         </div>
         <div className="lg:hidden flex flex-col gap-2 text-muted-foreground">
           <Label className="mb-0 mt-4 font-bold">{t.industries}</Label>
-          <div className="flex gap-2 py-2 flex-wrap"><ProjectIndustryTags industryTags={data.industry_tags} /></div>
+          <div className="flex gap-2 py-2 flex-wrap"><ProjectIndustryTags industryTags={data.industry_tags} locale={locale} /></div>
           <Label className="mb-0 mt-4 font-bold">{t.keywords}</Label>
-          <div className="flex gap-2 py-2 flex-wrap"><ProjectKeywordTags keywordTags={data.keyword_tags} /></div>
+          <div className="flex gap-2 py-2 flex-wrap"><ProjectKeywordTags keywordTags={data.keyword_tags} locale={locale} /></div>
           <div className="mt-4">
             <Label className="mb-2 font-bold">{t.contributors}</Label>
             <GithubOrgMembers repo={data.code_repositories} />
@@ -203,9 +205,9 @@ export default async function ProjectMdxContent({
           <ProjectTableOfContents items={tocItems} label={t.on_this_page} />
           <div className="mt-8 flex flex-col gap-2 text-muted-foreground">
             <Label className="mb-0 font-bold">{t.industries}</Label>
-            <div className="flex gap-2 py-2 flex-wrap"><ProjectIndustryTags industryTags={data.industry_tags} /></div>
+            <div className="flex gap-2 py-2 flex-wrap"><ProjectIndustryTags industryTags={data.industry_tags} locale={locale} /></div>
             <Label className="mb-0 mt-4 font-bold">{t.keywords}</Label>
-            <div className="flex gap-2 py-2 flex-wrap"><ProjectKeywordTags keywordTags={data.keyword_tags} /></div>
+            <div className="flex gap-2 py-2 flex-wrap"><ProjectKeywordTags keywordTags={data.keyword_tags} locale={locale} /></div>
             <div className="mt-4">
               <Label className="mb-2 font-bold">{t.contributors}</Label>
               <GithubOrgMembers repo={data.code_repositories} />
