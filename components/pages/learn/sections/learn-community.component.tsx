@@ -16,7 +16,6 @@ function LearnCommunity({ t }: Props) {
     >
       <p className="eyebrow">{t.eyebrow}</p>
       <h2 id="learn-community">{t.title}</h2>
-      <p className="mt-3 text-muted-foreground">{t.intro}</p>
       <ul className="m-0 mt-6 flex flex-1 list-none flex-col gap-4 p-0">
         {t.channels.map((channel) => {
           const social = SOCIALS.find((s) => s.id === channel.id);

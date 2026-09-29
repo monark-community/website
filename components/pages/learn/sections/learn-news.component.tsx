@@ -23,7 +23,6 @@ function LearnNews({ t, items, locale }: Props) {
           id="learn-news"
           eyebrow={t.eyebrow}
           title={t.title}
-          intro={t.intro}
         />
         <NavLink
           href="/learn/news"
@@ -33,7 +32,7 @@ function LearnNews({ t, items, locale }: Props) {
           <ArrowRightIcon aria-hidden="true" className="size-4" />
         </NavLink>
       </div>
-      <ul className="m-0 mt-10 grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="m-0 mt-10 grid list-none grid-cols-1 gap-x-6 gap-y-10 p-0 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((item, index) => (
           <li
             key={item.id}

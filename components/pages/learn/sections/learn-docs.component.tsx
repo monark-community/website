@@ -27,18 +27,6 @@ function LearnDocs({ t }: Props) {
         {t.title}
       </h2>
       <p className="mt-3 max-w-[36rem] text-background/80">{t.content}</p>
-      <ul className="m-0 mt-6 list-none space-y-3 p-0">
-        {t.points.map((point) => (
-          <li key={point} className="m-0 flex gap-3">
-            <LearnIcon
-              name="check"
-              className="mt-1 size-4 shrink-0 text-primary"
-              strokeWidth={2.5}
-            />
-            <span>{point}</span>
-          </li>
-        ))}
-      </ul>
       <div className="mt-auto grid grid-cols-1 gap-3 pt-8 sm:grid-cols-2">
         <DocsLink link={t.primary} primary />
         <DocsLink link={t.secondary} icon="github" />
