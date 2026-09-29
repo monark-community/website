@@ -15,7 +15,7 @@ export interface I18n {
 
 export const en: I18n = {
   team: {
-    team_title: "The Team",
+    team_title: "The team",
     members: [
       {
         name: "Vincent Grenier",

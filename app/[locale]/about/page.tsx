@@ -54,8 +54,10 @@ export default async function AboutPage({ params }: AboutPageProps) {
   const { content } = matter(contentRaw);
 
   return (
-    <div className="container mx-auto py-6">
-      <MDXRemote source={content} components={components} />
+    <div className="pt-6 pb-8 md:pt-10">
+      <div className="max-w-[48rem]">
+        <MDXRemote source={content} components={components} />
+      </div>
       <MembersSection locale={locale as Locale} />
     </div>
   );
