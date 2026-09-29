@@ -9,7 +9,7 @@ export const en: I18n = {
   projects_page: {
     title: "Projects",
     description:
-      "Discover our innovative projects that combine cutting-edge technology with sustainable solutions to create a better future.",
+      "Web3 tools for real communities, from first idea to working prototype: Monark products and incubated ventures.",
   },
 };
 
@@ -17,6 +17,6 @@ export const fr: I18n = {
   projects_page: {
     title: "Projets",
     description:
-      "Découvrez nos projets innovants qui combinent technologie de pointe et solutions durables pour créer un avenir meilleur.",
+      "Des outils Web3 pour de vraies communautés, de l'idée au prototype : produits Monark et projets incubés.",
   },
 };

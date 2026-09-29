@@ -38,6 +38,18 @@ interface I18n {
     clear_filters: string;
     show_projects_in_industry: string;
     show_projects_with_keyword: string;
+    featured_title: string;
+    all_projects_title: string;
+    results_title: string;
+    results_count_one: string;
+    results_count_other: string;
+    filters: string;
+    try_demo: string;
+    try_demo_label: string;
+    empty_title: string;
+    empty_hint: string;
+    remove_filter: string;
+    search_chip: string;
 }
 
 const en: I18n = {
@@ -46,7 +58,7 @@ const en: I18n = {
     search_placeholder: "Search projects…",
     not_found: "No projects found.",
     back_home: "Back home",
-    description: "Discover our innovative projects that combine cutting-edge technology with sustainable solutions to create a better future.",
+    description: "Web3 tools for real communities, from first idea to working prototype.",
     try_search: "Try:",
     filter_by_industry: "Filter by industry",
     all_industries: "All industries",
@@ -80,6 +92,18 @@ const en: I18n = {
     clear_filters: "Clear filters",
     show_projects_in_industry: "Show projects in {tag}",
     show_projects_with_keyword: "Show projects tagged {tag}",
+    featured_title: "Ready to try",
+    all_projects_title: "More projects",
+    results_title: "Matching projects",
+    results_count_one: "{count} project",
+    results_count_other: "{count} projects",
+    filters: "Filters",
+    try_demo: "Try the demo",
+    try_demo_label: "Try the {name} demo (opens in a new tab)",
+    empty_title: "No project matches these filters.",
+    empty_hint: "Try another keyword, or clear the filters.",
+    remove_filter: "Remove filter: {label}",
+    search_chip: "“{q}”",
 };
 
 const fr: I18n = {
@@ -88,7 +112,7 @@ const fr: I18n = {
     search_placeholder: "Rechercher des projets…",
     not_found: "Aucun projet trouvé.",
     back_home: "Retour à l'accueil",
-    description: "Découvrez nos projets innovants qui combinent technologie de pointe et solutions durables pour créer un avenir meilleur.",
+    description: "Des outils Web3 pour de vraies communautés, de l'idée au prototype.",
     try_search: "Essayez :",
     filter_by_industry: "Filtrer par industrie",
     industries: "Industries",
@@ -122,6 +146,18 @@ const fr: I18n = {
     clear_filters: "Effacer les filtres",
     show_projects_in_industry: "Voir les projets : {tag}",
     show_projects_with_keyword: "Voir les projets avec le mot-clé {tag}",
+    featured_title: "Prêts à essayer",
+    all_projects_title: "Autres projets",
+    results_title: "Projets correspondants",
+    results_count_one: "{count} projet",
+    results_count_other: "{count} projets",
+    filters: "Filtres",
+    try_demo: "Essayer la démo",
+    try_demo_label: "Essayer la démo de {name} (nouvel onglet)",
+    empty_title: "Aucun projet ne correspond à ces filtres.",
+    empty_hint: "Essayez un autre mot-clé ou effacez les filtres.",
+    remove_filter: "Retirer le filtre : {label}",
+    search_chip: "« {q} »",
 };
 
 const locales = { en, fr };
