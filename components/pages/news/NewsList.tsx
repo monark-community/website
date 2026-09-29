@@ -127,7 +127,10 @@ const NewsList: React.FC<NewsListProps> = ({ locale }) => {
               <nav
                 aria-label={t.jump_label}
                 data-stuck={stuck.value ? "true" : "false"}
-                className="sticky top-16 z-20 -mx-4 border-b border-transparent px-4 transition-[background-color,border-color] duration-200 ease-out data-[stuck=true]:border-border data-[stuck=true]:bg-background/90 data-[stuck=true]:backdrop-blur-md sm:mx-0 sm:px-0"
+                // The content stays in the site container; a full-viewport
+                // layer behind it carries the background, blur and border
+                // once stuck (the page clips horizontal overflow).
+                className="sticky top-16 z-20 before:absolute before:inset-y-0 before:left-1/2 before:-z-10 before:w-screen before:-translate-x-1/2 before:border-b before:border-transparent before:transition-[background-color,border-color] before:duration-200 before:ease-out data-[stuck=true]:before:border-border data-[stuck=true]:before:bg-background/90 data-[stuck=true]:before:backdrop-blur-md"
               >
                 <ul
                   ref={jumpList}
