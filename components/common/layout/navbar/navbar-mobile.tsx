@@ -185,12 +185,12 @@ const NavbarMobile = ({ locale }: Props) => {
               })}
             </Accordion>
           </div>
-          <div className="flex flex-wrap justify-between items-center gap-4 mt-8 pt-6 border-t">
-            <SocialLinks />
-            <div className="flex gap-4">
+          <div className="flex flex-col gap-6 mt-8 pt-6 border-t">
+            <div className="flex items-center justify-between gap-3">
               <LocaleToggle locale={locale} />
               <ThemeToggle locale={locale} />
             </div>
+            <SocialLinks />
           </div>
         </div>
       </nav>

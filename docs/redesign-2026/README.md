@@ -49,6 +49,10 @@ Headings and UI strings are in sentence case in English; the French strings alre
 
 **Participate pages.** Developer, ambassador, industry and university are rebuilt the same way as About: typed en/fr content per page (`components/pages/participate/{developer,ambassador,industry,university}.i18n.ts`) rendered by one shared `ParticipatePage`, so the four read as a family. Every page has the same sections: a hero (who it's for, a one-line promise, key facts and line art drawn in code), what you get, how it works (numbered steps on a connecting line), who fits and what Monark expects, a proof block (projects, or the CryptoSys story for universities), a FAQ where the old copy had material for one, a call to action, and an "other ways to participate" strip that links the three sibling pages. Each page has its own accent for icons, line art and step rings: orange (developer), red (university), brown (industry) and the muted green (ambassador). The call to action stays flat orange everywhere. Discord is the primary action, and the form routes are secondary links. The old MDX (`content/*/participate`) and the per-page `<article>` layouts are removed; one plain `participate/layout.tsx` replaces them. The ambassador page only uses what the site already states: the home page card, the news article that announced the programme, and the roadmap. It says openly that rewards and requirements are still to come. Screenshots: `after/participate-*` and `after/fr-participate-*`.
 
+**Error pages.** `/[locale]/error/[code]` keeps every supported code (400 to 504, unknown codes fall back to 500) and the root not-found redirect to `/error/404?route=…`. It now shows a small "Error 404" label, the code as a large orange-ink numeral (decorative, hidden from screen readers), a sentence-case title with one or two plain sentences, the requested address on 404s, and two actions: "Go back home" and "Browse projects". The mesh butterfly sits on the right at 1440px and behind the text, faint and cropped, on phones. The butterfly jokes and random fun facts were dropped: the site keeps a single butterfly line ("Join the flight"). Error pages are `noindex`. Screenshots: `after/error-*`, `after/fr-error-*`.
+
+**Language and analytics.** `<html lang>` follows the locale: the middleware forwards the path locale in an `x-monark-locale` request header, the root layout reads it (falling back to `en` for routes outside `[locale]`), and `WebLayout` keeps it in sync after client navigation. The `[locale]` layout now takes the locale from the URL instead of the `NEXT_LOCALE` cookie, which is missing on a first visit. Google Analytics is optional: without `NEXT_PUBLIC_GA_MEASUREMENT_ID` it renders nothing (it used to throw and blank the whole site). Vercel Web Analytics only renders when running on Vercel, and `/_vercel` is excluded from the locale middleware.
+
 **Motion.** Transitions run at 150–250ms ease-out. `prefers-reduced-motion` turns off animations, transitions and view transitions, and the table of contents scrolls instantly under reduced motion.
 
 **Copy polish, kept in sync in both languages.**
@@ -69,9 +73,9 @@ Headings and UI strings are in sentence case in English; the French strings alre
 
 ## Pre-existing issues, not addressed
 
+- Outside development, the home page's `/api/gh/org_contributors` returns 500 without `GITHUB_API_KEY` and `GITHUB_ORG`.
 - `npm run build` fails without `BEEHIIV_API_KEY`, because `app/api/newsletter/route.ts` throws when the module loads.
 - The build scripts rewrite tracked files: `content/*/project/index.ts` and two French project MDX files.
-- `<html lang>` is always `en`, including on French pages.
 - The whole app renders a client-side loader until hydration (`WebClientProviders` waits for mount), so first paint is the loader.
 - Some visible strings are hardcoded in English, such as "No collaborator" and "Link to section".
 - The French FAQ has 8 questions and the English one has 9.
