@@ -63,8 +63,8 @@ const NavbarDesktop = ({ locale }: Props) => {
     <header
       className="hidden lg:block z-50 fixed top-0 inset-x-0 h-16 border-b bg-background/90 backdrop-blur-md"
     >
-      <div className="site-container flex h-full items-center justify-between gap-6">
-        <div className="flex items-center gap-6">
+      <div className="site-container flex h-full items-center gap-6">
+        <div className="flex items-center gap-7">
           <NavLink href="/" aria-label="Monark" className="rounded-md">
             <Logo
               formFactor="horizontal"
@@ -157,7 +157,7 @@ const NavbarDesktop = ({ locale }: Props) => {
             </NavigationMenuList>
           </NavigationMenu>
         </div>
-        <div className="flex items-center gap-1">
+        <div className="ml-auto flex items-center gap-2.5">
           <LocaleToggle locale={locale} />
           <ThemeToggle locale={locale} />
         </div>
