@@ -1,12 +1,12 @@
 "use client";
 import React, { useMemo, useState } from "react";
-import { NewspaperIcon, SearchIcon, SearchXIcon, XIcon } from "lucide-react";
-import { Input } from "@/components/ui/input";
+import { NewspaperIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/common/navlink/navlink";
 import { Locale } from "@/i18n.config";
+import { cn } from "@/lib/utils";
 import i18n from "./news.i18n";
-import { getNews, uniqueTags } from "./news-data";
+import { getNews, topicTags } from "./news-data";
 import NewsCard from "./news-card";
 
 interface NewsListProps {
@@ -14,146 +14,135 @@ interface NewsListProps {
 }
 
 /**
- * /learn/news: page header, a search over titles, summaries and tags, the
- * latest item as a wide featured card, then the rest as a card grid. While
- * searching, every match goes in the grid (no featured card).
+ * /learn/news as a magazine front page: the latest story as a large
+ * image-led feature with the next two beside it, then every other story in
+ * an image-first grid, filterable by topic. The top stories stay put (so
+ * the page doesn't jump); with a topic chosen, the grid shows every match,
+ * top stories included.
  */
 const NewsList: React.FC<NewsListProps> = ({ locale }) => {
   const t = (i18n[locale] ?? i18n.en).list;
-  const [search, setSearch] = useState("");
   const news = useMemo(() => getNews(locale), [locale]);
+  const topics = useMemo(() => topicTags(news), [news]);
+  const [topic, setTopic] = useState<string | null>(null);
 
-  const query = search.trim().toLowerCase();
-  const results = query
-    ? news.filter((item) =>
-        [item.title, item.description, ...uniqueTags(item.tags)]
-          .join(" ")
-          .toLowerCase()
-          .includes(query)
-      )
+  const filtered = topic
+    ? news.filter((item) => item.tags.includes(topic))
     : news;
-  const [featured, ...rest] = results;
-  const showFeatured = !query && featured;
-  const grid = showFeatured ? rest : results;
+  const [feature, ...others] = news;
+  const side = others.slice(0, 2);
+  const grid = topic ? filtered : others.slice(2);
 
   return (
     <div className="site-container pb-16 pt-10 md:pb-24 md:pt-14">
       <header className="max-w-[42rem]">
-        <NavLink href="/learn" className="eyebrow w-fit no-underline underline-offset-4 hover:underline">
+        <NavLink
+          href="/learn"
+          className="eyebrow w-fit no-underline underline-offset-4 hover:underline"
+        >
           {t.eyebrow}
         </NavLink>
         <h1>{t.title}</h1>
-        <p className="lead mt-4">{t.lead}</p>
+        <p className="lead mt-3">{t.lead}</p>
       </header>
 
       {news.length === 0 ? (
-        <EmptyState
-          icon={<NewspaperIcon className="size-6" />}
-          title={t.empty_title}
-          body={t.empty_body}
-          action={
-            <Button asChild variant="outline">
-              <NavLink href="/learn">{t.back_to_learn}</NavLink>
-            </Button>
-          }
-        />
+        <div className="mt-10 flex flex-col items-center rounded-3xl border border-dashed bg-card px-6 py-14 text-center">
+          <span
+            aria-hidden="true"
+            className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+          >
+            <NewspaperIcon className="size-6" />
+          </span>
+          <h2 className="mt-5 text-xl">{t.empty_title}</h2>
+          <p className="mt-2 text-muted-foreground">{t.empty_body}</p>
+          <Button asChild variant="outline" className="mt-6">
+            <NavLink href="/learn">{t.back_to_learn}</NavLink>
+          </Button>
+        </div>
       ) : (
         <>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between md:mt-10">
-            <div className="relative w-full sm:max-w-sm">
-              <label htmlFor="news-search" className="sr-only">
-                {t.search_label}
-              </label>
-              <SearchIcon
-                aria-hidden="true"
-                className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
-              />
-              <Input
-                id="news-search"
-                type="search"
-                placeholder={t.search_placeholder}
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="h-11 rounded-full pl-10"
-              />
-            </div>
-            <p
-              className="m-0 text-sm text-muted-foreground"
-              aria-live="polite"
-            >
-              {t.count(results.length)}
-            </p>
-          </div>
-
-          {results.length === 0 ? (
-            <EmptyState
-              icon={<SearchXIcon className="size-6" />}
-              title={t.empty_search_title(search.trim())}
-              body={t.empty_search_body}
-              action={
-                <Button variant="outline" onClick={() => setSearch("")}>
-                  <XIcon aria-hidden="true" />
-                  {t.clear_search}
-                </Button>
-              }
-            />
-          ) : (
-            <>
-              {showFeatured && (
+          {feature && (
+            <section aria-labelledby="top-stories" className="mt-10 md:mt-12">
+              <h2 id="top-stories" className="sr-only">
+                {t.top_stories}
+              </h2>
+              <div
+                className={cn(
+                  "grid grid-cols-1 gap-x-8 gap-y-10",
+                  side.length > 0 && "lg:grid-cols-12"
+                )}
+              >
                 <NewsCard
-                  item={featured}
+                  item={feature}
                   locale={locale}
-                  variant="featured"
-                  headingLevel="h2"
+                  variant="feature"
                   priority
-                  className="mt-8"
+                  className={side.length > 0 ? "lg:col-span-8" : undefined}
                 />
-              )}
-              {grid.length > 0 && (
-                <ul className="m-0 mt-5 grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3">
-                  {grid.map((item) => (
-                    <li key={item.id} className="m-0">
-                      <NewsCard
-                        item={item}
-                        locale={locale}
-                        headingLevel="h2"
-                      />
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </>
+                {side.length > 0 && (
+                  <ul className="m-0 grid list-none grid-cols-1 gap-x-5 gap-y-10 p-0 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-1 lg:gap-y-8">
+                    {side.map((item) => (
+                      <li key={item.id} className="m-0">
+                        <NewsCard item={item} locale={locale} variant="side" />
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </section>
+          )}
+
+          {(grid.length > 0 || topic) && (
+            <section
+              aria-labelledby="all-news"
+              className="mt-16 border-t pt-12 md:mt-20 md:pt-16"
+            >
+              <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <h2 id="all-news" className="text-2xl">
+                  {t.all_title}
+                </h2>
+                {topics.length > 0 && (
+                  <div
+                    role="group"
+                    aria-label={t.filter_label}
+                    className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0"
+                  >
+                    {[null, ...topics].map((value) => {
+                      const active = topic === value;
+                      return (
+                        <button
+                          key={value ?? "all"}
+                          type="button"
+                          aria-pressed={active}
+                          onClick={() => setTopic(value)}
+                          className={cn(
+                            "inline-flex h-10 shrink-0 items-center rounded-full border px-4 text-sm font-semibold transition-colors duration-150",
+                            active
+                              ? "border-foreground bg-foreground text-background"
+                              : "bg-card text-foreground hover:bg-secondary"
+                          )}
+                        >
+                          {value ?? t.all_topics}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+              <ul className="m-0 mt-8 grid list-none grid-cols-1 gap-x-6 gap-y-10 p-0 sm:grid-cols-2 lg:grid-cols-3">
+                {grid.map((item) => (
+                  <li key={item.id} className="m-0">
+                    <NewsCard item={item} locale={locale} />
+                  </li>
+                ))}
+              </ul>
+            </section>
           )}
         </>
       )}
     </div>
   );
 };
-
-function EmptyState({
-  icon,
-  title,
-  body,
-  action,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  body: string;
-  action: React.ReactNode;
-}) {
-  return (
-    <div className="mt-8 flex flex-col items-center rounded-3xl border border-dashed bg-card px-6 py-14 text-center">
-      <span
-        aria-hidden="true"
-        className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
-      >
-        {icon}
-      </span>
-      <h2 className="mt-5 text-xl">{title}</h2>
-      <p className="mt-2 max-w-[28rem] text-muted-foreground">{body}</p>
-      <div className="mt-6">{action}</div>
-    </div>
-  );
-}
 
 export default NewsList;

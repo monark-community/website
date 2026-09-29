@@ -125,14 +125,14 @@ export default async function NewsArticleMdxContent({
       </div>
 
       {data.img && (
-        <figure className="mx-auto mt-10 max-w-5xl">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border bg-muted">
+        <figure className="mx-auto mt-10 max-w-5xl md:mt-12">
+          <div className="relative aspect-video overflow-hidden rounded-3xl border bg-muted">
             <Image
               src={`/images/news/${data.img}`}
               alt={data.img_alt || ""}
               fill
               priority
-              sizes="(min-width: 1024px) 1024px, 100vw"
+              sizes="(min-width: 1088px) 1024px, 100vw"
               className="object-cover"
             />
           </div>
@@ -204,7 +204,7 @@ export default async function NewsArticleMdxContent({
               <ArrowRightIcon aria-hidden="true" className="size-4" />
             </NavLink>
           </div>
-          <ul className="m-0 mt-8 grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="m-0 mt-8 grid list-none grid-cols-1 gap-x-6 gap-y-10 p-0 sm:grid-cols-2 lg:grid-cols-3">
             {more.map((item) => (
               <li key={item.id} className="m-0">
                 <NewsCard item={item} locale={locale} />
