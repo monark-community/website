@@ -21,7 +21,8 @@ function Footer({ locale }: Props) {
       <div className="border-t">
         <FooterLinks locale={locale} />
       </div>
-      <div className="border-t">
+      {/* A darker band instead of a second rule, so the legal line reads as the end of the page. */}
+      <div className="bg-secondary dark:bg-[oklch(from_var(--background)_calc(l-0.05)_c_h)]">
         <FooterEnd locale={locale} />
       </div>
     </footer>
