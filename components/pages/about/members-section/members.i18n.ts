@@ -9,6 +9,8 @@ export interface Member {
 export interface I18n {
   team: {
     team_title: string;
+    /** Eyebrow on the About page's author card ("Written by"). */
+    author_label: string;
     members: Member[];
   };
 }
@@ -16,6 +18,7 @@ export interface I18n {
 export const en: I18n = {
   team: {
     team_title: "The team",
+    author_label: "Written by",
     members: [
       {
         name: "Vincent Grenier",
@@ -32,6 +35,7 @@ export const en: I18n = {
 export const fr: I18n = {
   team: {
     team_title: "L'équipe",
+    author_label: "Rédigé par",
     members: [
       {
         name: "Vincent Grenier",
