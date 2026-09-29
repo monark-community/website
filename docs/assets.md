@@ -6,7 +6,7 @@ All photos come from Unsplash under the free [Unsplash License](https://unsplash
 
 The files were downloaded through Unsplash's download endpoint, resized to at most 1600px wide and saved as JPEG at quality 80. Two small edits were made: a laptop maker's logo was blurred in `friends-talking-cafe.jpg` and `builders-at-work-table.jpg`, and `developers-pairing-workshop.jpg` was cropped to 4:3 around the two people in front, leaving out the event banner and a sponsor logo on a laptop.
 
-The code reads the photos from one registry, `components/common/photo/photos.ts`, which also holds the English and French alt text. They are rendered by `components/common/photo/photo.tsx`.
+The code reads the photos from one registry, `components/common/photo/photos.ts`, which also holds the English and French alt text. Framed photos are rendered by `components/common/photo/photo.tsx`. The participate heroes use `faded-photo.tsx`, which has no frame and fades into the page with a mask; it crops to each photo's `focus` point.
 
 | File | Photo | Photographer | Used on |
 | --- | --- | --- | --- |
@@ -23,4 +23,4 @@ The code reads the photos from one registry, `components/common/photo/photos.ts`
 1. Use only free Unsplash License photos. Check the photo page, because search results mix in Unsplash+ images.
 2. Pick real people in warm, natural light, not posed stock. Avoid crypto clichés and visible brand logos (brand guidelines §7).
 3. Export at most 1600px wide as a JPEG at quality 80 into `public/images/people/`, with a descriptive name.
-4. Add the photo to `photos.ts` with English and French alt text, and add a row to the table above.
+4. Add the photo to `photos.ts` with English and French alt text, plus a `focus` point if it will fill a faded hero. Then add a row to the table above.

@@ -92,6 +92,31 @@ body {
     @apply py-16 md:py-24;
   }
 
+  /*
+   * Hero photo that melts into the page: an alpha mask (not a coloured
+   * overlay), so the fade reveals the real surface behind it in both
+   * themes. Phones: fades out at the bottom, above the text. From md: fades
+   * out towards the text on the left, at the bottom and a little under the
+   * header.
+   */
+  .photo-fade {
+    -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 98%);
+    mask-image: linear-gradient(to bottom, #000 45%, transparent 98%);
+  }
+
+  @media (min-width: 768px) {
+    .photo-fade {
+      -webkit-mask-image:
+        linear-gradient(to right, transparent 0%, #000 34%),
+        linear-gradient(to bottom, transparent 0%, #000 12%, #000 66%, transparent 100%);
+      -webkit-mask-composite: source-in;
+      mask-image:
+        linear-gradient(to right, transparent 0%, #000 34%),
+        linear-gradient(to bottom, transparent 0%, #000 12%, #000 66%, transparent 100%);
+      mask-composite: intersect;
+    }
+  }
+
   /* Small uppercase label above a heading (.text-tagline is the legacy name). */
   .eyebrow,
   .text-tagline {
