@@ -1,141 +1,159 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useMemo, useState } from "react";
+import { NewspaperIcon, SearchIcon, SearchXIcon, XIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import enNews from "@/content/en/news/index";
-import frNews from "@/content/fr/news/index";
-import { DatedNewsMetadata } from "@/types/news.types";
-import i18n from "./news-list.i18n";
+import { Button } from "@/components/ui/button";
+import { NavLink } from "@/components/common/navlink/navlink";
 import { Locale } from "@/i18n.config";
-import { NavLink } from "../../common/navlink/navlink";
-import Image from "next/image";
-import { format, parseISO } from "date-fns";
-import NewsArticleCategories from "./NewsArticleCategories";
-import { IconLabelAttribute } from "../../common/icon-label-attribute/IconLabelAttribute";
-import { CalendarIcon, ClockIcon } from "lucide-react";
-import { formatDuration, mapLocaleToDateFns } from "@/lib/time";
+import i18n from "./news.i18n";
+import { getNews, uniqueTags } from "./news-data";
+import NewsCard from "./news-card";
 
-interface ProjectListProps {
+interface NewsListProps {
   locale: Locale;
 }
 
-const newsDataMap: Record<Locale, DatedNewsMetadata[]> = {
-  en: enNews,
-  fr: frNews,
-};
-
-const NewsList: React.FC<ProjectListProps> = ({ locale }) => {
-  const t = i18n[locale];
+/**
+ * /learn/news: page header, a search over titles, summaries and tags, the
+ * latest item as a wide featured card, then the rest as a card grid. While
+ * searching, every match goes in the grid (no featured card).
+ */
+const NewsList: React.FC<NewsListProps> = ({ locale }) => {
+  const t = (i18n[locale] ?? i18n.en).list;
   const [search, setSearch] = useState("");
-  const [news, setNews] = useState<DatedNewsMetadata[]>([]);
-  const [initialized, setInitialized] = useState(false);
+  const news = useMemo(() => getNews(locale), [locale]);
 
-  useEffect(() => {
-    console.log(newsDataMap);
-    const newsData = newsDataMap[locale];
-    setNews(newsData);
-    setInitialized(true);
-  }, [locale]);
-
-  const filteredNews = news
-    .filter((item) => {
-      const searchLower = search.toLowerCase();
-      return item.title.toLowerCase().includes(searchLower);
-    })
-    // Sort by date, most recent first
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const query = search.trim().toLowerCase();
+  const results = query
+    ? news.filter((item) =>
+        [item.title, item.description, ...uniqueTags(item.tags)]
+          .join(" ")
+          .toLowerCase()
+          .includes(query)
+      )
+    : news;
+  const [featured, ...rest] = results;
+  const showFeatured = !query && featured;
+  const grid = showFeatured ? rest : results;
 
   return (
-    <div className="site-container pt-12 pb-16 md:pt-16 md:pb-24">
-      <h1>{t.page_title}</h1>
-      <p className="lead mt-4 mb-10 max-w-[36rem]">
-        {t.description}
-      </p>
-      <div className="flex flex-col sm:flex-row gap-4 mb-8">
-        <Input
-          placeholder={t.search_placeholder}
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="flex-1"
+    <div className="site-container pb-16 pt-10 md:pb-24 md:pt-14">
+      <header className="max-w-[42rem]">
+        <NavLink href="/learn" className="eyebrow w-fit no-underline underline-offset-4 hover:underline">
+          {t.eyebrow}
+        </NavLink>
+        <h1>{t.title}</h1>
+        <p className="lead mt-4">{t.lead}</p>
+      </header>
+
+      {news.length === 0 ? (
+        <EmptyState
+          icon={<NewspaperIcon className="size-6" />}
+          title={t.empty_title}
+          body={t.empty_body}
+          action={
+            <Button asChild variant="outline">
+              <NavLink href="/learn">{t.back_to_learn}</NavLink>
+            </Button>
+          }
         />
-      </div>
-      {!initialized ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {[...Array(6)].map((_, i) => (
-            <div key={i} className="h-full">
-              <Card className="overflow-hidden h-full flex flex-col motion-safe:animate-pulse">
-                <div className="w-full aspect-[16/10] bg-muted" />
-                <CardHeader>
-                  <div className="h-6 w-1/2 bg-muted rounded mb-2" />
-                  <div className="h-4 w-1/4 bg-muted rounded" />
-                </CardHeader>
-                <CardContent className="flex-grow flex flex-col justify-between">
-                  <div className="h-4 w-full bg-muted rounded mb-2" />
-                  <div className="h-4 w-3/4 bg-muted rounded mb-4" />
-                  <div className="mt-auto pt-2">
-                    <div className="h-4 w-24 bg-muted rounded" />
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          ))}
-        </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filteredNews.length > 0 ? (
-            filteredNews.map((item) => (
-              <div key={item.id} className="h-full">
-                <Card className="group overflow-hidden h-full flex flex-col transition-colors duration-150 hover:border-primary/60">
-                  <NavLink href={`/learn/news/${item.id}`} className="block overflow-hidden border-b" tabIndex={-1} aria-hidden="true">
-                    <Image
-                      src={`/images/news/${item.id}.webp`}
-                      alt={item.title}
-                      width={500}
-                      height={200}
-                      className="w-full aspect-[16/10] object-cover transition-transform duration-200 motion-safe:group-hover:scale-[1.02]"
-                    />
-                  </NavLink>
-                  <CardHeader>
-                    <CardTitle className="text-lg font-bold leading-snug">
-                      <NavLink
-                        href={`/learn/news/${item.id}`}
-                        className="underline-offset-4 hover:underline"
-                      >
-                        {item.title}
-                      </NavLink>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-grow flex flex-col justify-between">
-                    <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
-                    <div className="mt-auto pt-2"></div>
-                    <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-                      <IconLabelAttribute
-                        Icon={CalendarIcon}
-                        label={t.date}
-                        value={format(parseISO(item.date), "PPP", {
-                          locale: mapLocaleToDateFns(locale),
-                        })}
-                      />
-                      <IconLabelAttribute
-                        Icon={ClockIcon}
-                        label={t.read_time}
-                        value={formatDuration(item.read_time_seconds, locale)}
-                      />
-                      <div className="flex flex-wrap gap-2 py-2"><NewsArticleCategories categories={item.tags.flat()} /></div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            ))
-          ) : (
-            <p className="text-muted-foreground text-lg">
-              {t.not_found}
+        <>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between md:mt-10">
+            <div className="relative w-full sm:max-w-sm">
+              <label htmlFor="news-search" className="sr-only">
+                {t.search_label}
+              </label>
+              <SearchIcon
+                aria-hidden="true"
+                className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
+              />
+              <Input
+                id="news-search"
+                type="search"
+                placeholder={t.search_placeholder}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="h-11 rounded-full pl-10"
+              />
+            </div>
+            <p
+              className="m-0 text-sm text-muted-foreground"
+              aria-live="polite"
+            >
+              {t.count(results.length)}
             </p>
+          </div>
+
+          {results.length === 0 ? (
+            <EmptyState
+              icon={<SearchXIcon className="size-6" />}
+              title={t.empty_search_title(search.trim())}
+              body={t.empty_search_body}
+              action={
+                <Button variant="outline" onClick={() => setSearch("")}>
+                  <XIcon aria-hidden="true" />
+                  {t.clear_search}
+                </Button>
+              }
+            />
+          ) : (
+            <>
+              {showFeatured && (
+                <NewsCard
+                  item={featured}
+                  locale={locale}
+                  variant="featured"
+                  headingLevel="h2"
+                  priority
+                  className="mt-8"
+                />
+              )}
+              {grid.length > 0 && (
+                <ul className="m-0 mt-5 grid list-none grid-cols-1 gap-5 p-0 sm:grid-cols-2 lg:grid-cols-3">
+                  {grid.map((item) => (
+                    <li key={item.id} className="m-0">
+                      <NewsCard
+                        item={item}
+                        locale={locale}
+                        headingLevel="h2"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </>
           )}
-        </div>
+        </>
       )}
     </div>
   );
 };
+
+function EmptyState({
+  icon,
+  title,
+  body,
+  action,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  body: string;
+  action: React.ReactNode;
+}) {
+  return (
+    <div className="mt-8 flex flex-col items-center rounded-3xl border border-dashed bg-card px-6 py-14 text-center">
+      <span
+        aria-hidden="true"
+        className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
+      >
+        {icon}
+      </span>
+      <h2 className="mt-5 text-xl">{title}</h2>
+      <p className="mt-2 max-w-[28rem] text-muted-foreground">{body}</p>
+      <div className="mt-6">{action}</div>
+    </div>
+  );
+}
 
 export default NewsList;
