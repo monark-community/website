@@ -35,10 +35,13 @@ type AudienceProps = {
   audience: i18n.WhyAudience;
 };
 
-/** Whole card is one link (the title's ::after covers the card). */
+/**
+ * Whole card is one link (the title's ::after covers the card); hover and
+ * focus come from the shared `card-hover` primitive (app/globals.scss).
+ */
 function Audience({ audience }: AudienceProps) {
   return (
-    <BrandedCard className="group relative flex h-full flex-col p-6 transition-colors duration-150 hover:border-primary focus-within:border-primary">
+    <BrandedCard className="card-hover flex h-full flex-col p-6">
       <NavbarIcon
         icon={audience.icon}
         className="self-start text-primary"
@@ -48,7 +51,7 @@ function Audience({ audience }: AudienceProps) {
       <h3 className="mt-5 text-xl">
         <NavLink
           href={audience.href}
-          className="after:absolute after:inset-0 after:rounded-2xl focus-visible:outline-none"
+          className="card-hover-link text-foreground"
         >
           {audience.title}
         </NavLink>
@@ -56,7 +59,7 @@ function Audience({ audience }: AudienceProps) {
       <p className="mt-2 flex-1 text-muted-foreground">{audience.content}</p>
       <ArrowRightIcon
         aria-hidden="true"
-        className="mt-6 size-5 text-primary-ink transition-transform duration-150 motion-safe:group-hover:translate-x-1"
+        className="mt-6 size-5 text-primary-ink"
       />
     </BrandedCard>
   );
