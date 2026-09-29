@@ -16,8 +16,9 @@ type Props = {
 
 /**
  * A photo that is part of a hero rather than a framed card: no border or
- * radius, and an alpha mask (`.photo-fade`) that fades it into whatever
- * surface is behind it. The crop follows the photo's focal point from the
+ * radius. From md an alpha mask (`.photo-fade`) fades its left edge in
+ * from whatever surface is behind it; the other edges stay hard. The crop
+ * follows the photo's focal point from the
  * registry. In dark mode it is dimmed a touch so it sits on espresso
  * without glare, but not so much that it turns muddy.
  */

@@ -51,8 +51,9 @@ Headings and UI strings are in sentence case in English; the French strings alre
 
 **Photography.** There are now seven photos of real people working together, all free Unsplash License images (sources in [`docs/assets.md`](../assets.md)). Each photo takes the place of decoration and adds no text.
 - Each participate page opens with a photo of the people it is for, in place of the hero line art: students in a lecture hall, two developers pairing at a workshop, a community meetup, and a small business team.
-  - The photo is part of the hero, not a framed card. From md it fills the right half (55% on large screens), for the hero's full height, up to the viewport edge. On phones it runs edge to edge at the top.
-  - It fades into the page through a CSS alpha mask (`.photo-fade` in `globals.scss`), not a coloured overlay, so it melts into cream or espresso alike. The fade runs on the text side and at the bottom, with a short fade under the header.
+  - The photo is part of the hero, not a framed card. From md it fills the right half (55% on large screens), for the hero's full height, up to the viewport edge. On phones it runs edge to edge at the top, uncropped by any fade.
+  - The only fade is on its left edge, where it meets the text column. It is a CSS alpha mask (`.photo-fade` in `globals.scss`) that goes from transparent to opaque over the first 30% of the photo, so it works on cream and espresso alike. Its top, right and bottom edges are hard.
+  - A full-width 1px bottom border closes the hero, and the photo sits flush on it. The audience chips and the key facts (now small figures with an accent rule) moved into the text column, so the hero is one block.
   - The text column stops before the fade, so text always sits on the plain background. A focal point per photo (`focus` in `photos.ts`) keeps faces clear of the fade.
   - For this, the hero renders outside `.site-container`: `participate/layout.tsx` is now a plain wrapper, and `ParticipatePage` puts the other sections in the container.
   - Participate buttons are now styled anchors instead of `<Button asChild>`. When the server streamed a child as a lazy reference, Radix Slot rendered nothing, and the hero lost its "See how it works" link on two pages.

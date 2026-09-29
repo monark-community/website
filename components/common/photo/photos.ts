@@ -38,7 +38,7 @@ export type PhotoEntry = {
 
 export const photos: Record<PhotoKey, PhotoEntry> = {
   "students-lecture-hall": {
-    focus: "88% 45%",
+    focus: "100% 45%",
     src: studentsLectureHall,
     alt: {
       en: "Students talking and laughing at their desks in a university lecture hall",
@@ -54,7 +54,7 @@ export const photos: Record<PhotoKey, PhotoEntry> = {
     },
   },
   "community-meetup-discussion": {
-    focus: "62% 50%",
+    focus: "80% 50%",
     src: communityMeetupDiscussion,
     alt: {
       en: "A participant asks a question during an evening community meetup",
