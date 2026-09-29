@@ -57,9 +57,9 @@ export default async function AboutPage({ params }: AboutPageProps) {
           </div>
         )}
         <div className="min-w-0 space-y-16 md:space-y-24">
-          <AboutHero t={t.hero} />
+          <AboutHero t={t.hero} locale={locale} />
           <AboutWhy t={t.why} />
-          <AboutHow t={t.how} />
+          <AboutHow t={t.how} locale={locale} />
           <AboutPurpose t={t.purpose} />
           <AboutValues t={t.values} />
           <AboutCta t={t.cta} />

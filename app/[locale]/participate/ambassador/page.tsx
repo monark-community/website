@@ -1,19 +1,17 @@
-import { Button } from "@/components/ui/button";
-import { NavLink } from "@/components/common/navlink/navlink";
-import React from "react";
+import { Metadata } from "next";
+import { Locale } from "@/i18n.config";
+import ParticipatePage, {
+  participateMetadata,
+} from "@/components/pages/participate/participate-page";
 
-function AmbassadorPage() {
-  return (
-    <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1>Ambassador Page</h1>
-      <p>Work in progress...</p>
-      <div className="mt-8">
-        <NavLink href="/">
-          <Button>Back Home</Button>
-        </NavLink>
-      </div>
-    </div>
-  );
+type Props = { params: Promise<{ locale: Locale }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  return participateMetadata("ambassador", locale);
 }
 
-export default AmbassadorPage;
+export default async function AmbassadorPage({ params }: Props) {
+  const { locale } = await params;
+  return <ParticipatePage slug="ambassador" locale={locale} />;
+}

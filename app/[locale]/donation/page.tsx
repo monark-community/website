@@ -6,6 +6,7 @@ import * as i18n from "./page.i18n";
 import DonationForm from "@/components/pages/donation/donation-form/donation-form";
 import DonationLeaderboard from "@/components/pages/donation/donation-leaderboard/donation-leaderboard";
 import { MONARK_WALLET_ADDRESSES } from "@/lib/donation-constants";
+import Photo from "@/components/common/photo/photo";
 
 interface Donation {
   network: string;
@@ -59,10 +60,22 @@ const DonationPage = () => {
 
   return (
     <div className="site-container relative pt-12 pb-16 md:pt-16 md:pb-24">
-      <h1>{t.title}</h1>
-      <p className="lead mt-4 mb-10 max-w-[36rem]">
-        {t.description}
-      </p>
+      {/* The photo shows who donations support; on phones it is left out so
+          the form stays close to the top. */}
+      <div className="mb-10 grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_20rem] lg:grid-cols-[minmax(0,1fr)_26rem]">
+        <div className="min-w-0">
+          <h1>{t.title}</h1>
+          <p className="lead mt-4 max-w-[36rem]">{t.description}</p>
+        </div>
+        <Photo
+          photo="builders-at-work-table"
+          locale={locale}
+          priority
+          sizes="(min-width: 1024px) 26rem, 20rem"
+          className="hidden aspect-[16/10] md:block"
+          imgClassName="object-[50%_45%]"
+        />
+      </div>
       <DonationForm locale={locale} donations={donations} />
       <DonationLeaderboard
         locale={locale}
