@@ -28,6 +28,57 @@ export function getNewsItem(
   return (newsDataMap[locale] ?? newsDataMap.en).find((item) => item.id === id);
 }
 
+/**
+ * News categories (the `category` frontmatter field), labelled in
+ * news.i18n.ts. Items without a known category go to "other".
+ */
+export const NEWS_CATEGORIES = [
+  "monark",
+  "beyond-the-hype",
+  "build",
+  "explained",
+] as const;
+export type NewsCategory = (typeof NEWS_CATEGORIES)[number] | "other";
+
+export type NewsSection = { category: NewsCategory; items: DatedNewsMetadata[] };
+
+/**
+ * Items grouped by category, newest first inside each group, groups ordered
+ * by their newest item. `excludeId` (the lead story) is left out, and empty
+ * groups are dropped.
+ */
+export function newsSections(
+  items: DatedNewsMetadata[],
+  excludeId?: string
+): NewsSection[] {
+  const groups = new Map<NewsCategory, DatedNewsMetadata[]>();
+  for (const item of items) {
+    if (item.id === excludeId) continue;
+    const category = (NEWS_CATEGORIES as readonly string[]).includes(
+      item.category ?? ""
+    )
+      ? (item.category as NewsCategory)
+      : "other";
+    groups.set(category, [...(groups.get(category) ?? []), item]);
+  }
+  const newest = (list: DatedNewsMetadata[]) =>
+    Math.max(...list.map((item) => new Date(item.date).getTime()));
+  return [...groups.entries()]
+    .map(([category, list]) => ({
+      category,
+      items: [...list].sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+      ),
+    }))
+    .sort((a, b) =>
+      a.category === "other"
+        ? 1
+        : b.category === "other"
+          ? -1
+          : newest(b.items) - newest(a.items)
+    );
+}
+
 /** The most recent items other than `excludeId`. */
 export function getOtherNews(
   locale: Locale,
@@ -76,20 +127,6 @@ export function commonTags(items: DatedNewsMetadata[]): Set<string> {
       rest.every((item) => item.tags.includes(tag))
     )
   );
-}
-
-/** Filterable topics for a list, most used first. */
-export function topicTags(items: DatedNewsMetadata[]): string[] {
-  const common = commonTags(items);
-  const counts = new Map<string, number>();
-  for (const item of items) {
-    for (const tag of uniqueTags(item.tags)) {
-      if (!common.has(tag)) counts.set(tag, (counts.get(tag) ?? 0) + 1);
-    }
-  }
-  return [...counts.entries()]
-    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-    .map(([tag]) => tag);
 }
 
 /** The one tag a card shows: the item's first tag that isn't common. */

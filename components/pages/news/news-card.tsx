@@ -13,14 +13,15 @@ import {
   primaryTag,
 } from "./news-data";
 
-type Variant = "default" | "feature" | "side";
+type Variant = "default" | "lead" | "feature" | "compact";
 
 type Props = {
   item: DatedNewsMetadata;
   locale: Locale;
   /**
-   * "feature": the lead story (large 16:9 image, big title, excerpt).
-   * "side": a secondary top story (image and title, no excerpt).
+   * "lead": the latest story, image and text side by side on wide screens.
+   * "feature": a section's main story (large 16:9 image, big title, excerpt).
+   * "compact": a thumbnail beside the tag, date and title (no excerpt).
    * "default": a grid card (image, tag, date, title, short excerpt).
    */
   variant?: Variant;
@@ -31,17 +32,20 @@ type Props = {
 };
 
 const sizes: Record<Variant, string> = {
-  feature: "(min-width: 1200px) 760px, (min-width: 1024px) 64vw, 100vw",
-  side: "(min-width: 1200px) 360px, (min-width: 1024px) 30vw, (min-width: 640px) 50vw, 100vw",
-  default: "(min-width: 1200px) 370px, (min-width: 1024px) 31vw, (min-width: 640px) 50vw, 100vw",
+  lead: "(min-width: 1200px) 660px, (min-width: 1024px) 56vw, 100vw",
+  feature: "(min-width: 1200px) 700px, (min-width: 1024px) 60vw, 100vw",
+  compact: "(min-width: 1024px) 180px, 40vw",
+  default:
+    "(min-width: 1200px) 370px, (min-width: 1024px) 31vw, (min-width: 640px) 50vw, 100vw",
 };
 
 /**
  * An image-first news card: cover (16:9), one topic tag and the date, the
- * title and a summary cut to 20 words. The title link is stretched over the
- * whole card, so the card is one link for the keyboard and screen readers.
- * Hover lifts the card slightly and zooms the image (motion-safe only).
- * No hooks: renders on the server and inside the client news list alike.
+ * title and, except for "compact", a summary cut to 20 words. The title
+ * link is stretched over the whole card, so the card is one link for the
+ * keyboard and screen readers. Hover lifts the card slightly and zooms the
+ * image (motion-safe only). No hooks: renders on the server and inside the
+ * client news list alike.
  */
 function NewsCard({
   item,
@@ -52,20 +56,27 @@ function NewsCard({
   className,
 }: Props) {
   const tag = primaryTag(item, commonTags(getNews(locale)));
+  const lead = variant === "lead";
   const feature = variant === "feature";
-  const side = variant === "side";
+  const compact = variant === "compact";
+  const big = lead || feature;
 
   return (
     <div
       className={cn(
-        "group relative flex h-full flex-col transition-transform duration-200 ease-out motion-safe:hover:-translate-y-1",
+        "group relative flex h-full transition-transform duration-200 ease-out motion-safe:hover:-translate-y-1",
+        compact
+          ? "grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] items-start gap-4"
+          : "flex-col",
+        lead &&
+          "lg:grid lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-center lg:gap-10",
         className
       )}
     >
       <div
         className={cn(
           "relative aspect-video w-full overflow-hidden border bg-muted",
-          feature ? "rounded-3xl" : "rounded-2xl"
+          big ? "rounded-3xl" : compact ? "rounded-xl" : "rounded-2xl"
         )}
       >
         <Image
@@ -78,7 +89,12 @@ function NewsCard({
         />
       </div>
 
-      <div className={cn("flex flex-1 flex-col", feature ? "pt-5 md:pt-6" : "pt-4")}>
+      <div
+        className={cn(
+          "flex min-w-0 flex-1 flex-col",
+          lead ? "pt-5 lg:pt-0" : feature ? "pt-5 md:pt-6" : compact ? "" : "pt-4"
+        )}
+      >
         <p className="m-0 flex flex-wrap items-center gap-x-2 text-xs font-bold uppercase tracking-[0.08em]">
           {tag && <span className="text-primary-ink">{tag}</span>}
           {tag && (
@@ -96,11 +112,13 @@ function NewsCard({
         <Heading
           className={cn(
             "mt-2 font-extrabold leading-tight tracking-[-0.015em] text-foreground",
-            feature
-              ? "text-[1.625rem] sm:text-3xl lg:text-[2.25rem]"
-              : side
-                ? "text-lg"
-                : "text-xl"
+            lead
+              ? "text-[1.75rem] sm:text-4xl lg:text-[2.75rem]"
+              : feature
+                ? "text-[1.625rem] sm:text-3xl"
+                : compact
+                  ? "text-base sm:text-lg"
+                  : "text-xl"
           )}
         >
           <NavLink
@@ -110,11 +128,13 @@ function NewsCard({
             {item.title}
           </NavLink>
         </Heading>
-        {!side && (
+        {!compact && (
           <p
             className={cn(
               "m-0 mt-2 text-muted-foreground",
-              feature ? "max-w-[40rem] text-lg leading-relaxed" : "text-[0.9375rem] leading-relaxed"
+              big
+                ? "max-w-[40rem] text-lg leading-relaxed"
+                : "text-[0.9375rem] leading-relaxed"
             )}
           >
             {excerpt(item.description, 20)}

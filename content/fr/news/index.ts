@@ -18,7 +18,8 @@ const data: DatedNewsMetadata[] = [
       "Article",
       "Projet",
       "Impact"
-    ]
+    ],
+    "category": "monark"
   },
   {
     "id": "real-world-web3-use-cases-that-aren-t-just-nfts",
@@ -36,7 +37,8 @@ const data: DatedNewsMetadata[] = [
       "Article",
       "Projet",
       "Impact"
-    ]
+    ],
+    "category": "build"
   },
   {
     "id": "smart-contracts-explained-like-you-re-5",
@@ -53,7 +55,8 @@ const data: DatedNewsMetadata[] = [
     "tags": [
       "Article",
       "Technologie"
-    ]
+    ],
+    "category": "explained"
   },
   {
     "id": "trust-from-open-data-to-mathematical-proof",
@@ -70,7 +73,8 @@ const data: DatedNewsMetadata[] = [
     "tags": [
       "Article",
       "Technologie"
-    ]
+    ],
+    "category": "explained"
   },
   {
     "id": "web3-developer-roadmap-and-resources",
@@ -87,7 +91,8 @@ const data: DatedNewsMetadata[] = [
     "tags": [
       "Article",
       "Technologie"
-    ]
+    ],
+    "category": "build"
   },
   {
     "id": "web3-revolution-reality",
@@ -104,7 +109,8 @@ const data: DatedNewsMetadata[] = [
       "Article",
       "Orientation",
       "État d'esprit"
-    ]
+    ],
+    "category": "beyond-the-hype"
   },
   {
     "id": "what-is-web3-really",
@@ -121,7 +127,8 @@ const data: DatedNewsMetadata[] = [
       "Article",
       "Orientation",
       "État d'esprit"
-    ]
+    ],
+    "category": "explained"
   },
   {
     "id": "what-monark-is-building-and-why",
@@ -139,7 +146,8 @@ const data: DatedNewsMetadata[] = [
       "Article",
       "Orientation",
       "Impact"
-    ]
+    ],
+    "category": "monark"
   },
   {
     "id": "what-needs-to-happen-before-web3-becomes-everyday-tech",
@@ -157,7 +165,8 @@ const data: DatedNewsMetadata[] = [
       "Article",
       "État d'esprit",
       "Impact"
-    ]
+    ],
+    "category": "beyond-the-hype"
   },
   {
     "id": "where-blockchain-shines",
@@ -174,7 +183,8 @@ const data: DatedNewsMetadata[] = [
       "Article",
       "Orientation",
       "État d'esprit"
-    ]
+    ],
+    "category": "beyond-the-hype"
   },
   {
     "id": "who-is-web3-actually-for",
@@ -192,7 +202,8 @@ const data: DatedNewsMetadata[] = [
       "Article",
       "Orientation",
       "État d'esprit"
-    ]
+    ],
+    "category": "beyond-the-hype"
   },
   {
     "id": "why-decentralization-matters",
@@ -209,7 +220,8 @@ const data: DatedNewsMetadata[] = [
       "Article",
       "Orientation",
       "État d'esprit"
-    ]
+    ],
+    "category": "explained"
   }
 ];
 

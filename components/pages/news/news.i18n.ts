@@ -9,10 +9,12 @@ export interface NewsI18n {
     eyebrow: string;
     title: string;
     lead: string;
-    top_stories: string;
-    all_title: string;
-    filter_label: string;
-    all_topics: string;
+    latest_label: string;
+    jump_label: string;
+    categories: Record<
+      "monark" | "beyond-the-hype" | "build" | "explained" | "other",
+      { title: string; line?: string }
+    >;
     empty_title: string;
     empty_body: string;
     back_to_learn: string;
@@ -44,10 +46,27 @@ export const en: NewsI18n = {
     eyebrow: "Learn",
     title: "News",
     lead: "Stories, explainers and updates from Monark.",
-    top_stories: "Top stories",
-    all_title: "All news",
-    filter_label: "Filter by topic",
-    all_topics: "All",
+    latest_label: "Latest story",
+    jump_label: "News by category",
+    categories: {
+      monark: {
+        title: "Monark news",
+        line: "What we build, with whom, and why.",
+      },
+      "beyond-the-hype": {
+        title: "Beyond the hype",
+        line: "Where Web3 works, where it doesn't, and what's missing.",
+      },
+      build: {
+        title: "Build on Web3",
+        line: "Tools, roadmaps and real use cases.",
+      },
+      explained: {
+        title: "Web3, explained",
+        line: "The core ideas, in plain words.",
+      },
+      other: { title: "More news" },
+    },
     empty_title: "No news yet",
     empty_body: "Articles will appear here once published.",
     back_to_learn: "Go to the Learn hub",
@@ -79,10 +98,27 @@ export const fr: NewsI18n = {
     eyebrow: "Apprendre",
     title: "Nouvelles",
     lead: "Récits, vulgarisation et nouvelles de Monark.",
-    top_stories: "À la une",
-    all_title: "Toutes les nouvelles",
-    filter_label: "Filtrer par sujet",
-    all_topics: "Tout",
+    latest_label: "À la une",
+    jump_label: "Nouvelles par catégorie",
+    categories: {
+      monark: {
+        title: "Nouvelles de Monark",
+        line: "Ce que nous bâtissons, avec qui et pourquoi.",
+      },
+      "beyond-the-hype": {
+        title: "Au-delà du battage",
+        line: "Là où le Web3 fonctionne, là où il échoue, et ce qui manque.",
+      },
+      build: {
+        title: "Bâtir sur le Web3",
+        line: "Outils, feuilles de route et cas d'usage concrets.",
+      },
+      explained: {
+        title: "Le Web3, expliqué",
+        line: "Les idées de base, en termes simples.",
+      },
+      other: { title: "Autres nouvelles" },
+    },
     empty_title: "Aucune nouvelle pour l'instant",
     empty_body: "Les articles paraîtront ici dès leur publication.",
     back_to_learn: "Aller à l'espace Apprendre",
