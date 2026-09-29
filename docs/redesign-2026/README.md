@@ -49,6 +49,14 @@ Headings and UI strings are in sentence case in English; the French strings alre
 
 **Participate pages.** Developer, ambassador, industry and university are rebuilt the same way as About: typed en/fr content per page (`components/pages/participate/{developer,ambassador,industry,university}.i18n.ts`) rendered by one shared `ParticipatePage`, so the four read as a family. Every page has the same sections: a hero (who it's for, a one-line promise, key facts and line art drawn in code), what you get, how it works (numbered steps on a connecting line), who fits and what Monark expects, a proof block (projects, or the CryptoSys story for universities), a FAQ where the old copy had material for one, a call to action, and an "other ways to participate" strip that links the three sibling pages. Each page has its own accent for icons, line art and step rings: orange (developer), red (university), brown (industry) and the muted green (ambassador). The call to action stays flat orange everywhere. Discord is the primary action, and the form routes are secondary links. The old MDX (`content/*/participate`) and the per-page `<article>` layouts are removed; one plain `participate/layout.tsx` replaces them. The ambassador page only uses what the site already states: the home page card, the news article that announced the programme, and the roadmap. It says openly that rewards and requirements are still to come. Screenshots: `after/participate-*` and `after/fr-participate-*`.
 
+**Photography.** There are now seven photos of real people working together, all free Unsplash License images (sources in [`docs/assets.md`](../assets.md)). Each photo takes the place of decoration and adds no text.
+- Each participate page opens with a photo of the people it is for, in place of the hero line art: students in a lecture hall, two developers pairing at a workshop, a community meetup, and a small business team.
+- The home page's "Join the flight" cards reuse those four photos in place of their icons, so each role has the same face everywhere.
+- About has one photo in the hero, in place of the network line art, and a wide one above "How Monark works".
+- Donation shows one photo next to the heading. It is hidden on phones so the form stays near the top.
+
+Photos use the site's radius and border, show a muted fill and a blurred placeholder while loading, and are slightly dimmed in dark mode. The line art stays in the participate calls to action. The footer's legal line credits "Photos: Unsplash". Screenshots: `after/imagery-*`.
+
 **Motion.** Transitions run at 150–250ms ease-out. `prefers-reduced-motion` turns off animations, transitions and view transitions, and the table of contents scrolls instantly under reduced motion.
 
 **Copy polish, kept in sync in both languages.**
