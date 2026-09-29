@@ -16,6 +16,13 @@ import i18n from "./projects-list.i18n";
 /** Longest fallback shown when a project has no `tagline` yet. */
 const FALLBACK_MAX_CHARS = 90;
 
+/** Statuses people can try today: their cards show a "Try the demo" button. */
+export const LIVE_STATUSES: string[] = [
+  ProjectStatus.Production,
+  ProjectStatus.MarketValidation,
+  ProjectStatus.PrototypeAvailable,
+];
+
 /**
  * The card's one line: the project's `tagline`, or its description stripped of
  * Markdown links and cut at a word boundary.
@@ -37,106 +44,170 @@ export function projectDemoUrl(project: DatedProjectMetadata): string {
   return `https://${project.accronym.toLowerCase()}.monark.io`;
 }
 
+export type ProjectCardVariant = "default" | "feature" | "tall" | "compact";
+
 type Props = {
   project: DatedProjectMetadata;
   locale: Locale;
-  /** Large card with a demo button, for the "Ready to try" row. */
-  featured?: boolean;
-  /** Keyword chips (already ordered); the card shows at most two. */
+  /**
+   * "feature": a section's lead project (large 16:9 cover, big name).
+   * "tall": a side project that fills its share of the feature's height on
+   *   wide screens (cover beside the text), cover on top on phones.
+   * "compact": a thumbnail beside the name, line and status.
+   * "default": a grid card (cover, name, line, badges, keyword chips).
+   */
+  variant?: ProjectCardVariant;
+  /** Keyword chips (already ordered); "default" cards show at most two. */
   tags: { tag: string; href: string; active: boolean }[];
   sizes: string;
   priority?: boolean;
   adminMode?: boolean;
+  className?: string;
 };
 
 /**
- * Gallery card. The whole card is one link (the name, stretched over the card
- * with `::after`); the keyword chips and the demo button sit above it
- * (`relative z-10`) so no interactive element is nested in another.
+ * Image-first project card, in the same family as the news cards. The name
+ * link is stretched over the whole card (`card-hover-link`); the keyword chips
+ * and the demo button sit above it (`relative z-10`) so no interactive element
+ * is nested in another. Hover and focus come from the shared `card-hover`
+ * primitive (app/globals.scss).
  */
 function ProjectCard({
   project,
   locale,
-  featured = false,
+  variant = "default",
   tags,
   sizes,
   priority = false,
   adminMode = false,
+  className,
 }: Props) {
   const t = i18n[locale];
   const href = `/project/${project.id}`;
-  // Featured cards are all "ready to try": they skip the status badge and
-  // chips, and show the demo button instead.
-  const visibleTags = featured ? [] : tags.slice(0, 2);
+  const feature = variant === "feature";
+  const tall = variant === "tall";
+  const compact = variant === "compact";
+  const live = LIVE_STATUSES.includes(project.status);
+  const visibleTags = variant === "default" ? tags.slice(0, 2) : [];
+
+  const demoLabel = formatTemplate(t.try_demo_label, { name: project.accronym });
 
   return (
     <div
       data-project-card=""
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden border bg-card transition-[transform,border-color] duration-200 ease-out",
-        "hover:border-primary/60 motion-safe:hover:-translate-y-1",
-        "has-[a[data-card-link]:focus-visible]:ring-2 has-[a[data-card-link]:focus-visible]:ring-ring has-[a[data-card-link]:focus-visible]:ring-offset-2 has-[a[data-card-link]:focus-visible]:ring-offset-background",
-        featured ? "rounded-3xl" : "rounded-2xl"
+        "card-hover flex h-full [--card-hover-inset:-0.5rem] [--card-hover-radius:1.5rem]",
+        compact
+          ? "grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] items-start gap-4"
+          : "flex-col",
+        tall &&
+          "lg:grid lg:grid-cols-[minmax(0,9fr)_minmax(0,11fr)] lg:items-center lg:gap-6",
+        className
       )}
     >
-      <div className="relative aspect-[16/9] overflow-hidden border-b bg-muted">
+      <div
+        className={cn(
+          "card-hover-media relative w-full border bg-muted",
+          tall
+            ? "aspect-[16/10] lg:aspect-auto lg:h-full lg:min-h-[11rem]"
+            : "aspect-video",
+          feature ? "rounded-3xl" : compact ? "rounded-xl" : "rounded-2xl"
+        )}
+      >
         <Image
           src={`/images/project/${project.id}.jpg`}
           alt=""
           fill
           sizes={sizes}
           priority={priority}
-          className="object-cover transition-transform duration-300 ease-out motion-safe:group-hover:scale-[1.04]"
+          className="object-cover"
         />
       </div>
 
-      <div className={cn("flex flex-1 flex-col", featured ? "p-6" : "p-5")}>
+      <div
+        className={cn(
+          "flex min-w-0 flex-1 flex-col",
+          feature ? "pt-5 md:pt-6" : tall ? "pt-4 lg:pt-0" : compact ? "" : "pt-4"
+        )}
+      >
         <h3
           className={cn(
-            "m-0 font-extrabold tracking-[-0.01em]",
-            featured ? "text-2xl" : "text-xl"
+            "m-0 font-extrabold leading-tight tracking-[-0.015em]",
+            feature
+              ? "text-[1.625rem] sm:text-3xl"
+              : compact
+                ? "text-base sm:text-lg"
+                : "text-xl"
           )}
         >
           <NavLink
             href={href}
             data-card-link=""
-            className="text-foreground no-underline after:absolute after:inset-0 after:content-[''] focus-visible:outline-none"
+            className="card-hover-link text-foreground"
           >
             {project.accronym}
             <span className="sr-only">, {project.title}</span>
           </NavLink>
         </h3>
-        <p className="mb-0 mt-0.5 text-xs font-semibold text-muted-foreground" aria-hidden="true">
+        <p
+          className="mb-0 mt-0.5 text-xs font-semibold text-muted-foreground"
+          aria-hidden="true"
+        >
           {project.title}
         </p>
         <p
           className={cn(
-            "mb-0 mt-3 text-foreground/85",
-            featured ? "text-lg leading-snug" : "text-[0.9375rem] leading-snug"
+            "mb-0 text-foreground/85",
+            feature
+              ? "mt-3 max-w-[36rem] text-lg leading-snug"
+              : compact
+                ? "mt-1.5 line-clamp-2 text-sm leading-snug"
+                : "mt-2.5 text-[0.9375rem] leading-snug"
           )}
         >
           {projectCardLine(project)}
         </p>
 
-        <div className="mt-auto flex flex-wrap items-center gap-1.5 pt-5">
-          {!featured && (
-            <ProjectStatusBadge status={project.status as ProjectStatus} locale={locale} />
+        <div
+          className={cn(
+            "flex flex-wrap items-center gap-1.5",
+            compact ? "pt-3" : "mt-auto pt-4"
           )}
-          <ProjectOwnershipBadge ownership={project.ownership} locale={locale} compact />
-          {featured && (
+        >
+          <ProjectStatusBadge status={project.status as ProjectStatus} locale={locale} />
+          {!compact && (
+            <ProjectOwnershipBadge ownership={project.ownership} locale={locale} compact />
+          )}
+          {live && !compact && (
             <a
               href={projectDemoUrl(project)}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={formatTemplate(t.try_demo_label, { name: project.accronym })}
-              className="relative z-10 ml-auto inline-flex h-9 items-center gap-1.5 rounded-full bg-primary px-4 text-sm font-bold text-primary-foreground no-underline transition-colors duration-150 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              aria-label={demoLabel}
+              className={cn(
+                "relative z-10 inline-flex h-9 items-center gap-1.5 rounded-full bg-primary px-4 text-sm font-bold text-primary-foreground no-underline transition-colors duration-150 hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                // Grid cards are narrow: the button wraps under the badges.
+                variant !== "default" && "ml-auto"
+              )}
             >
               {t.try_demo}
               <ArrowUpRight aria-hidden="true" className="size-4" />
             </a>
           )}
+          {live && compact && (
+            <a
+              href={projectDemoUrl(project)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={demoLabel}
+              className="relative z-10 inline-flex min-h-8 items-center gap-1 rounded-full px-1.5 text-sm font-bold text-primary-ink no-underline underline-offset-4 hover:underline"
+            >
+              {t.try_demo}
+              <ArrowUpRight aria-hidden="true" className="size-3.5" />
+            </a>
+          )}
           {adminMode && (
-            <Badge variant="outline" className="bg-primary/10 border-primary/30 text-primary-ink">
+            <Badge variant="outline" className="border-primary/30 bg-primary/10 text-primary-ink">
               Score: {calculateProjectScore(project)}
             </Badge>
           )}

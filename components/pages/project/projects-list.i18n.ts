@@ -1,3 +1,7 @@
+import { ProjectCategory } from "@/types/project.types";
+
+type CategoryCopy = { title: string; line: string };
+
 interface I18n {
     example: string;
     page_title: string;
@@ -38,8 +42,6 @@ interface I18n {
     clear_filters: string;
     show_projects_in_industry: string;
     show_projects_with_keyword: string;
-    featured_title: string;
-    all_projects_title: string;
     results_title: string;
     results_count_one: string;
     results_count_other: string;
@@ -50,6 +52,9 @@ interface I18n {
     empty_hint: string;
     remove_filter: string;
     search_chip: string;
+    jump_label: string;
+    /** Section titles and one-line intros, in list order (see ProjectList). */
+    categories: Record<`${ProjectCategory}` | "other", CategoryCopy>;
 }
 
 const en: I18n = {
@@ -92,8 +97,6 @@ const en: I18n = {
     clear_filters: "Clear filters",
     show_projects_in_industry: "Show projects in {tag}",
     show_projects_with_keyword: "Show projects tagged {tag}",
-    featured_title: "Ready to try",
-    all_projects_title: "More projects",
     results_title: "Matching projects",
     results_count_one: "{count} project",
     results_count_other: "{count} projects",
@@ -104,6 +107,37 @@ const en: I18n = {
     empty_hint: "Try another keyword, or clear the filters.",
     remove_filter: "Remove filter: {label}",
     search_chip: "“{q}”",
+    jump_label: "Project categories",
+    categories: {
+        payments: {
+            title: "Work & payments",
+            line: "Pay people fairly and on time: bounties, escrow, royalties and shared revenue.",
+        },
+        holdings: {
+            title: "Managing your crypto",
+            line: "See what you hold, keep the books, and decide when and to whom it goes.",
+        },
+        trust: {
+            title: "Trust & privacy",
+            line: "Know who's on the other side, prove what was signed, and share only what you choose.",
+        },
+        commerce: {
+            title: "Commerce & records",
+            line: "Tickets, goods and land, tracked from the first sale to the public record.",
+        },
+        defi: {
+            title: "DeFi",
+            line: "Lending, borrowing, swaps and fees, built so you can see how they work.",
+        },
+        governance: {
+            title: "Communities & governance",
+            line: "Tools for groups that decide together and look out for each other, from co-ops to neighbourhoods.",
+        },
+        other: {
+            title: "Other projects",
+            line: "",
+        },
+    },
 };
 
 const fr: I18n = {
@@ -146,8 +180,6 @@ const fr: I18n = {
     clear_filters: "Effacer les filtres",
     show_projects_in_industry: "Voir les projets : {tag}",
     show_projects_with_keyword: "Voir les projets avec le mot-clé {tag}",
-    featured_title: "Prêts à essayer",
-    all_projects_title: "Autres projets",
     results_title: "Projets correspondants",
     results_count_one: "{count} projet",
     results_count_other: "{count} projets",
@@ -158,6 +190,37 @@ const fr: I18n = {
     empty_hint: "Essayez un autre mot-clé ou effacez les filtres.",
     remove_filter: "Retirer le filtre : {label}",
     search_chip: "« {q} »",
+    jump_label: "Catégories de projets",
+    categories: {
+        payments: {
+            title: "Travail et paiements",
+            line: "Payer les gens équitablement et à temps : primes, séquestre, redevances et revenus partagés.",
+        },
+        holdings: {
+            title: "Gérer ses cryptos",
+            line: "Voir ce qu'on détient, tenir ses comptes, et décider quand et à qui ça revient.",
+        },
+        trust: {
+            title: "Confiance et vie privée",
+            line: "Savoir qui est en face, prouver ce qui a été signé, et ne partager que ce qu'on choisit.",
+        },
+        commerce: {
+            title: "Commerce et registres",
+            line: "Billets, marchandises et terrains, suivis de la première vente jusqu'au registre public.",
+        },
+        defi: {
+            title: "DeFi",
+            line: "Prêter, emprunter, échanger et payer des frais, en voyant comment tout fonctionne.",
+        },
+        governance: {
+            title: "Communautés et gouvernance",
+            line: "Des outils pour les groupes qui décident ensemble et veillent les uns sur les autres, des coops aux quartiers.",
+        },
+        other: {
+            title: "Autres projets",
+            line: "",
+        },
+    },
 };
 
 const locales = { en, fr };

@@ -29,6 +29,10 @@ type Props = {
   onSelect: (key: FilterSelect["key"], value: string) => void;
   onClear: () => void;
   resultCount: number;
+  /** Category jump links, shown beside the count while no filter is active. */
+  categoryNav?: React.ReactNode;
+  /** The sticky bar element, measured by the list for scroll offsets. */
+  barRef?: React.Ref<HTMLDivElement>;
 };
 
 const pillClass =
@@ -36,8 +40,8 @@ const pillClass =
 
 /**
  * Sticky, compact filter bar: search, the four filter selects (behind a
- * "Filters" toggle below `lg`), the result count and removable pills for the
- * active filters.
+ * "Filters" toggle below `lg`), the result count, and either removable pills
+ * for the active filters or, unfiltered, the category jump links.
  */
 function ProjectFilterBar({
   locale,
@@ -47,6 +51,8 @@ function ProjectFilterBar({
   onSelect,
   onClear,
   resultCount,
+  categoryNav,
+  barRef,
 }: Props) {
   const t = i18n[locale];
   const panelId = useId();
@@ -62,7 +68,10 @@ function ProjectFilterBar({
   );
 
   return (
-    <div className="sticky top-16 z-30 border-y bg-background/90 backdrop-blur-md supports-[backdrop-filter]:bg-background/80">
+    <div
+      ref={barRef}
+      className="sticky top-16 z-30 border-y bg-background/90 backdrop-blur-md supports-[backdrop-filter]:bg-background/80"
+    >
       <div className="site-container py-3">
         <div className="flex flex-wrap items-center gap-2 lg:flex-nowrap">
           <div className="relative min-w-0 flex-1">
@@ -129,11 +138,16 @@ function ProjectFilterBar({
           </div>
         </div>
 
-        <div className="mt-2 flex min-h-8 flex-wrap items-center gap-1.5">
+        <div
+          className={cn(
+            "mt-2 flex min-h-8 items-center gap-1.5",
+            hasActiveFilters || !categoryNav ? "flex-wrap" : "flex-nowrap"
+          )}
+        >
           <p
             role="status"
             aria-live="polite"
-            className="mr-1 text-sm font-semibold text-muted-foreground"
+            className="mr-1 shrink-0 whitespace-nowrap text-sm font-semibold text-muted-foreground"
           >
             {countLabel}
           </p>
@@ -165,6 +179,7 @@ function ProjectFilterBar({
               <X aria-hidden="true" className="size-3.5 shrink-0" />
             </button>
           )}
+          {!hasActiveFilters && categoryNav}
           {hasActiveFilters && (
             <button
               type="button"
