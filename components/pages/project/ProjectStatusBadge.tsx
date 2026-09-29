@@ -15,11 +15,11 @@ interface Props {
 // Muted status tones, always paired with an icon and a text label (brand §3).
 const statusStyles = {
   planned: "border-border bg-card text-foreground",
-  prototype_available: "border-transparent bg-chart-3/15 text-chart-3",
-  in_progress: "border-transparent bg-warning/15 text-warning",
+  prototype_available: "border-transparent bg-chart-3/10 text-chart-3",
+  in_progress: "border-transparent bg-warning/10 text-warning",
   on_hold: "border-transparent bg-muted text-muted-foreground",
-  market_validation: "border-transparent bg-primary/15 text-primary-ink",
-  production: "border-transparent bg-success/15 text-success",
+  market_validation: "border-transparent bg-primary/[0.08] text-primary-ink",
+  production: "border-transparent bg-success/[0.08] text-success",
 };
 
 const iconMap = {

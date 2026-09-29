@@ -64,7 +64,8 @@ export default {
         warning: token("warning"),
         border: token("border"),
         input: token("input"),
-        ring: token("ring"),
+        // Focus rings use --focus-ring (orange ink on light, orange on dark), see app/theme.css.
+        ring: token("focus-ring"),
         chart: {
           "1": token("chart-1"),
           "2": token("chart-2"),

@@ -40,6 +40,10 @@
   --input: #857f7a; /* form borders, 3.9:1 */
   --ring: var(--primary);
   --primary-ink: #b65000; /* orange-family text and links, 4.9:1 */
+  /* Focus indicators: flat orange is only 2.3:1 on cream, below the 3:1
+     non-text minimum, so light mode draws focus in the orange ink (4.9:1).
+     On espresso it resolves to the orange itself (8.1:1). */
+  --focus-ring: var(--primary-ink);
   --chart-1: var(--primary);
   --chart-2: #ef3620;
   --chart-3: #7a5c3e;
