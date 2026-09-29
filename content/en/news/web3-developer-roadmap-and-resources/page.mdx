@@ -1,74 +1,59 @@
 ---
 category: build
 id: web3-developer-roadmap-and-resources
-title: Web3 Developer Roadmap & Resources
+title: Web3 developer roadmap and resources
 author: Monark Team
 date: 2025-09-04
 city: Sherbrooke, QC, Canada
-description: Web3 development requires understanding core concepts like blockchain and cryptography. Key tools for building include languages like Solidity, frameworks such as Hardhat, and infrastructure partners like The Graph for data, Pinax for hosting, and Midnight Network for privacy.
+description: Where to start in Web3 development, from core concepts like blockchain and cryptography to tools like Solidity and Hardhat, plus infrastructure such as The Graph for data, Pinax for hosting and Midnight Network for privacy.
 img: web3-developer-roadmap-and-resources.webp
 img_alt: A roadmap is not always a straight line
 img_author: Mark König
 img_author_src: https://unsplash.com/photos/yellow-and-black-arrow-sign-ECGv8s2IPG0
-read_time_seconds: 180
+read_time_seconds: 160
 tags:
   - Article
   - Technology
 ---
 
-## Foundations of Web3
+## Start with the basics
 
-Before diving into coding, a solid grasp of Web3 fundamentals is critical:
+Before you write any code, get comfortable with the fundamentals:
 
-- **Blockchain Basics:** Understand distributed ledgers, consensus mechanisms (Proof of Work, Proof of Stake), and trade-offs between scalability, security, and decentralization.
-- **Cryptography:** Learn public-private key pairs, hashing, digital signatures, and zero-knowledge proofs—core tools underpinning Web3 security and privacy.
-- **Decentralization Concepts:** Comprehend decentralization beyond tech: governance, tokenomics, and community incentives.
-- **Ethereum & Alternatives:** Ethereum remains dominant for smart contracts, but familiarity with Solana, Polkadot, and Layer 2 solutions is valuable.
+- Blockchain basics: distributed ledgers, consensus mechanisms (Proof of Work, Proof of Stake) and the trade-offs between scalability, security and decentralization.
+- Cryptography: public and private key pairs, hashing, digital signatures and zero-knowledge proofs, which underpin security and privacy in Web3.
+- Decentralization beyond the technology: governance, tokenomics (how a token's supply and rewards are designed) and community incentives.
+- Ethereum and the alternatives: Ethereum is still the main platform for smart contracts, but it's worth knowing Solana, Polkadot and layer 2 solutions.
 
-Recommended Reading:
+Two good reads to start: [Mastering Bitcoin by Andreas M. Antonopoulos](https://github.com/bitcoinbook/bitcoinbook) and the [Ethereum Whitepaper](https://ethereum.org/whitepaper/).
 
-- [Mastering Bitcoin by Andreas M. Antonopoulos](https://github.com/bitcoinbook/bitcoinbook)
-- [Ethereum Whitepaper](https://ethereum.org/whitepaper/)
+## Smart contracts and tools
 
-## Smart Contracts & Development Tools
+Smart contracts are the programs behind decentralized applications. Solidity is the language for Ethereum; Rust (for Solana) and Vyper are other options. Tools and resources:
 
-Smart contracts are self-executing programs that enable decentralized applications. Mastery here is crucial:
+- [Updraft](https://updraft.cyfrin.io/), an interactive Solidity learning platform supported by Monark
+- [Hardhat](https://hardhat.org/) and [Truffle](https://www.trufflesuite.com/), frameworks for developing and testing on Ethereum
+- OpenZeppelin, a library of audited, reusable smart contracts
+- [CryptoZombies](https://cryptozombies.io/), Solidity tutorials in the form of a game
+- the [Solidity Docs](https://docs.soliditylang.org/en/v0.8.30/)
 
-- **Languages:** Solidity for Ethereum, plus Rust (Solana), Vyper, and others.
-- **Frameworks & Tools:**
-    - [Updraft](https://updraft.cyfrin.io/) — interactive Solidity learning platform supported by Monark
-    - [Hardhat](https://hardhat.org/) and [Truffle](https://www.trufflesuite.com/) — Ethereum development and testing frameworks
-    - OpenZeppelin — audited, reusable smart contracts
-- **Testing & Security:** Rigorous testing and security audits are non-negotiable given the immutable nature of smart contracts.
+A deployed smart contract can't be changed, so thorough testing and security audits are a must.
 
-Additional Resources:
+## The rest of the stack
 
-- [CryptoZombies](https://cryptozombies.io/) — gamified Solidity tutorials
-- [Solidity Docs](https://docs.soliditylang.org/en/v0.8.30/)
+A Web3 application needs more than smart contracts:
 
-## The Full Web3 Stack & Key Infrastructure Partners
+- Indexing and queries: [The Graph](https://thegraph.com/) provides decentralized data querying, so apps can read blockchain data quickly and reliably. Monark hopes to partner with The Graph to bring its indexing to our projects.
+- Infrastructure: [Pinax](https://pinax.network/) offers decentralized infrastructure services that help developers build resilient apps.
+- Zero-knowledge technology: [Midnight Network](https://midnightnetwork.io/) specializes in zero-knowledge proofs and privacy-preserving tools, which fits Monark's goal of secure, private Web3 systems.
+- Storage: [IPFS](https://docs.filecoin.io/basics/how-storage-works/filecoin-and-ipfs) and [Arweave](https://arweave.org/) are decentralized storage protocols that keep content available over time.
+- Wallets: [MetaMask](https://metamask.io/) and [WalletConnect](https://walletconnect.network/) handle sign-in and transaction signing.
+- Oracles: [Chainlink](https://chain.link/) and [Band Protocol](https://www.bandprotocol.com/) connect smart contracts to real-world data.
+- Scaling: [Optimism](https://www.optimism.io/), [zkSync](https://www.zksync.io/) and [Polygon](https://polygon.technology/) are layer 2 solutions that improve performance.
+- Front end: [Viem + Wagmi](https://viem.sh/), and tools such as The Graph's subgraphs.
 
-Beyond smart contracts, mastering the full Web3 stack is essential:
+## Keeping up
 
-- **Indexing & Querying:** [The Graph](https://thegraph.com/) powers decentralized data querying, enabling fast and reliable access to blockchain data. Monark is excited to potentially partner with The Graph to provide cutting-edge indexing solutions to our projects.
-- **Infrastructure:** Reliable, scalable infrastructure underpins all Web3 applications. [Pinax](https://pinax.network/) offers robust, decentralized infrastructure services that help developers build resilient apps with ease.
-- **Zero-Knowledge Technology:** Privacy and scalability often require advanced cryptography. [Midnight Network](https://midnightnetwork.io/) specializes in zero-knowledge proofs and privacy-preserving solutions, aligning closely with Monark's mission to advance secure, private Web3 systems.
-- **Storage:** Decentralized storage protocols like [IPFS](https://docs.filecoin.io/basics/how-storage-works/filecoin-and-ipfs) and [Arweave](https://arweave.org/) for content persistence.
-- **Wallet Integration:** [MetaMask](https://metamask.io/), [WalletConnect](https://walletconnect.network/) for user authentication and transaction signing.
-- **Oracles:** [Chainlink](https://chain.link/), [Band Protocol](https://www.bandprotocol.com/) for connecting smart contracts with real-world data.
-- **Scaling Solutions:** [Optimism](https://www.optimism.io/), [zkSync](https://www.zksync.io/), [Polygon](https://polygon.technology/) for Layer 2 performance improvements.
-- **Frontend Libraries:** [Viem + Wagmi](https://viem.sh/), and tools like The Graph's subgraphs.
+Web3 changes fast. Newsletters such as [Bankless](https://www.bankless.com/newsletters) and [Week in Ethereum](https://weekinethereumnews.com/) help, and so do developer communities on Discord and forums, and regular hackathons and workshops.
 
-## Staying Current in a Rapidly Evolving Ecosystem
-
-Web3 evolves quickly. Stay up to date by:
-
-- Subscribing to newsletters such as [Bankless](https://www.bankless.com/newsletters) and [Week in Ethereum](https://weekinethereumnews.com/)
-- Participating in developer communities on Discord and forums
-- Joining hackathons and workshops regularly
-
-## Conclusion: Building With Purpose, Supported by Strong Partnerships
-
-Web3 development is challenging and ever-changing, but with the right foundations, tools, and infrastructure partnerships, it is achievable and rewarding. Monark is proud to collaborate with innovative infrastructure leaders like The Graph, Pinax Network, and Midnight Network to empower developers building the decentralized future.
-
-Whether you're starting out or deepening your expertise, leverage these resources and partnerships to build scalable, secure, and impactful Web3 applications.
+Web3 development is demanding and keeps changing, but with solid foundations, the right tools and good infrastructure partners, it's within reach and rewarding. Monark collaborates with The Graph, Pinax Network and Midnight Network to support the developers building on it.

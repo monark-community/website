@@ -1,5 +1,5 @@
 import acceptLanguage from "accept-language";
-import { locales } from "@/i18n.config";
+import { LOCALE_HEADER, locales } from "@/i18n.config";
 import { NextRequest, NextResponse } from "next/server";
 import { getLocale, getPathnameLocale } from "./middlewares/getLocale";
 
@@ -26,8 +26,10 @@ export default function middleware(req: NextRequest) {
     response.cookies.set("NEXT_LOCALE", newLocale);
     return response;
   } else {
-    // Set locale in cookies
-    const response = NextResponse.next();
+    // Pass the path locale to the root layout (for <html lang>) and set it in cookies
+    const requestHeaders = new Headers(req.headers);
+    requestHeaders.set(LOCALE_HEADER, pathnameLocale);
+    const response = NextResponse.next({ request: { headers: requestHeaders } });
     response.cookies.set("NEXT_LOCALE", pathnameLocale);
     return response;
   }
@@ -35,6 +37,6 @@ export default function middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!api|_next/static|_next/image|fonts|images|sounds|vectors|assets|favicon.ico).*)",
+    "/((?!api|_vercel|_next/static|_next/image|fonts|images|sounds|vectors|assets|favicon.ico).*)",
   ],
 };
