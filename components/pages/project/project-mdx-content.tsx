@@ -135,9 +135,9 @@ export default async function ProjectMdxContent({
         </div>
         <div className="lg:hidden flex flex-col gap-2 text-muted-foreground">
           <Label className="mb-0 mt-4 font-bold">{t.industries}</Label>
-          <div className="flex gap-2 py-2 flex-wrap"><ProjectIndustryTags industryTags={data.industry_tags} /></div>
+          <div className="flex gap-2 py-2 flex-wrap"><ProjectIndustryTags industryTags={data.industry_tags} locale={locale} /></div>
           <Label className="mb-0 mt-4 font-bold">{t.keywords}</Label>
-          <div className="flex gap-2 py-2 flex-wrap"><ProjectKeywordTags keywordTags={data.keyword_tags} /></div>
+          <div className="flex gap-2 py-2 flex-wrap"><ProjectKeywordTags keywordTags={data.keyword_tags} locale={locale} /></div>
           <div className="mt-4">
             <Label className="mb-2 font-bold">{t.contributors}</Label>
             <GithubOrgMembers repo={data.code_repositories} />
@@ -203,9 +203,9 @@ export default async function ProjectMdxContent({
           <ProjectTableOfContents items={tocItems} label={t.on_this_page} />
           <div className="mt-8 flex flex-col gap-2 text-muted-foreground">
             <Label className="mb-0 font-bold">{t.industries}</Label>
-            <div className="flex gap-2 py-2 flex-wrap"><ProjectIndustryTags industryTags={data.industry_tags} /></div>
+            <div className="flex gap-2 py-2 flex-wrap"><ProjectIndustryTags industryTags={data.industry_tags} locale={locale} /></div>
             <Label className="mb-0 mt-4 font-bold">{t.keywords}</Label>
-            <div className="flex gap-2 py-2 flex-wrap"><ProjectKeywordTags keywordTags={data.keyword_tags} /></div>
+            <div className="flex gap-2 py-2 flex-wrap"><ProjectKeywordTags keywordTags={data.keyword_tags} locale={locale} /></div>
             <div className="mt-4">
               <Label className="mb-2 font-bold">{t.contributors}</Label>
               <GithubOrgMembers repo={data.code_repositories} />
