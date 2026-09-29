@@ -10,6 +10,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "GatePay",
     "status": "planned",
     "ownership": "incubated",
+    "category": "payments",
     "img": "access-tokens-pay-per-access-contracts.jpg",
     "img_alt": "Maquette de Jetons d'Accès (Contrats Pay-Per-Access)",
     "complexity_score": 6,
@@ -29,7 +30,7 @@ const data: DatedProjectMetadata[] = [
       "Pay-Per-Access",
       "Contrats intelligents"
     ],
-    "hash": "bd9ce027999ee8c8a113a56ff2111ea24bc78f3d02b915502b50b42d7aa1960a",
+    "hash": "db9a348c65084ec8a3ad2cb94d0b60061d1d2f790fae75d0c31a090f1f241b6a",
     "last_updated": "2026-09-29"
   },
   {
@@ -40,6 +41,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "LedgerLift",
     "status": "prototype_available",
     "ownership": "monark",
+    "category": "holdings",
     "img": "accounting-blockchain-data-extraction.jpg",
     "img_alt": "Maquette de Extraction de données comptables de blockchain",
     "complexity_score": 7,
@@ -58,7 +60,7 @@ const data: DatedProjectMetadata[] = [
       "Extraction de données",
       "Conformité"
     ],
-    "hash": "4885a7192ca08c0ff2141172c2bbd152946de90f2399dc0ec43e2a83a84715ee",
+    "hash": "34f3a5d78a61b5c8aaa0a9d055540001097e701c7b5121d324bad691d4a90343",
     "last_updated": "2026-09-29"
   },
   {
@@ -69,6 +71,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "TrustRate",
     "status": "planned",
     "ownership": "monark",
+    "category": "trust",
     "img": "address-review-system.jpg",
     "img_alt": "Maquette du Système d'avis Décentralisé",
     "complexity_score": 5,
@@ -87,7 +90,7 @@ const data: DatedProjectMetadata[] = [
       "Réputation",
       "DAO"
     ],
-    "hash": "f554851460961756053ac1551537ae478d8bef9d7d1bae8338a426bb2957e770",
+    "hash": "525a8042ef0a908cc087c01d9ec2091427bf0d673c104041bbf14c9a5ea2f285",
     "last_updated": "2026-09-29"
   },
   {
@@ -98,6 +101,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "TaskFlow",
     "status": "prototype_available",
     "ownership": "monark",
+    "category": "payments",
     "img": "bounty-system.jpg",
     "img_alt": "Maquette du système de primes",
     "complexity_score": 5,
@@ -116,7 +120,7 @@ const data: DatedProjectMetadata[] = [
       "Incitations",
       "DAO"
     ],
-    "hash": "05c2ab5d944e382171b0934a82a9ddede5612048d4a619371436eb32ed225734",
+    "hash": "821db38522d47e2922cc9843ba1a0960dcdb98b0c395d94c5d77226f77562bb8",
     "last_updated": "2026-09-29"
   },
   {
@@ -127,6 +131,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "TrustList",
     "status": "planned",
     "ownership": "monark",
+    "category": "trust",
     "img": "contact-list.jpg",
     "img_alt": "Maquette de la Liste de Contacts",
     "complexity_score": 5,
@@ -145,7 +150,7 @@ const data: DatedProjectMetadata[] = [
       "Réputation",
       "Contacts"
     ],
-    "hash": "015943375d8c07bc12d44b84656cf009d71efa2cf9441f2d412f552a73b063b7",
+    "hash": "d84085255dff31117f29fd739e51a82c6f8941267e7c9406198b8cfa84cc1750",
     "last_updated": "2026-09-29"
   },
   {
@@ -156,6 +161,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "GovChain",
     "status": "planned",
     "ownership": "monark",
+    "category": "governance",
     "img": "dao-voting-platform.jpg",
     "img_alt": "Maquette préliminaire de la Plateforme de Vote DAO",
     "complexity_score": 5,
@@ -174,7 +180,7 @@ const data: DatedProjectMetadata[] = [
       "Propositions",
       "Transparence"
     ],
-    "hash": "dd66717e90106a667e3690302c2138f56eee14952b1c891453cea11aeaa8f8a4",
+    "hash": "b7ae33481274037841a441628d0e7ddee818fa929f38798d4df2638ec6995edb",
     "last_updated": "2026-09-29"
   },
   {
@@ -185,6 +191,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "BorrowX",
     "status": "planned",
     "ownership": "monark",
+    "category": "defi",
     "img": "defi-borrow.jpg",
     "img_alt": "Maquette préliminaire de DeFi Emprunt",
     "complexity_score": 7,
@@ -203,7 +210,7 @@ const data: DatedProjectMetadata[] = [
       "Protocole",
       "Liquidité"
     ],
-    "hash": "98aceccf063f4260544a42227ae9a8eee02cd672ddb1667bbae8925e8073054f",
+    "hash": "2c1756de2861956c027c0446a64ad5e42362ec5690f2b09fa12b29fb0bb4c0c7",
     "last_updated": "2026-09-29"
   },
   {
@@ -214,6 +221,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "YieldMine",
     "status": "planned",
     "ownership": "monark",
+    "category": "defi",
     "img": "defi-lending.jpg",
     "img_alt": "Première maquette de Prêt DeFi",
     "complexity_score": 8,
@@ -232,7 +240,7 @@ const data: DatedProjectMetadata[] = [
       "Trésorerie",
       "Liquidité"
     ],
-    "hash": "a3c6aa9ef2a9c7b2947c383a3f7150dd41492d7191ad59b5bb638740624c3023",
+    "hash": "bdd94b09ab0ff07f7565237eac414d6d9ae956edc066562813a9a2bba09413e3",
     "last_updated": "2026-09-29"
   },
   {
@@ -243,6 +251,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "VaultLend",
     "status": "planned",
     "ownership": "monark",
+    "category": "defi",
     "img": "defi-loans.jpg",
     "img_alt": "Maquette initiale des Prêts DeFi",
     "complexity_score": 7,
@@ -261,7 +270,7 @@ const data: DatedProjectMetadata[] = [
       "DeFi",
       "Automatisation"
     ],
-    "hash": "671fcb57938775a5ece800efdee79b73ffef3a92ae7ff6cbbd5a6bde9b3a2c9f",
+    "hash": "91cdc91a3124ac70c39160dfac8392aaa7299bfbbe76b2fc0fdbe3c6d164891a",
     "last_updated": "2026-09-29"
   },
   {
@@ -272,6 +281,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "FluidSwap",
     "status": "planned",
     "ownership": "monark",
+    "category": "defi",
     "img": "defi-swaps.jpg",
     "img_alt": "Maquette préliminaire des Swaps DeFi",
     "complexity_score": 8,
@@ -290,7 +300,7 @@ const data: DatedProjectMetadata[] = [
       "Trading",
       "Liquidité"
     ],
-    "hash": "d4b9b502c10980de94eb13d19e5a7f49bfa7dbb5f2a1cdc430eaaec9225a4bef",
+    "hash": "dccf609427a5f48f2dcaffa61e4382662f3c358fa95c87eccbacb1691ccc6eba",
     "last_updated": "2026-09-29"
   },
   {
@@ -301,6 +311,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "WillChain",
     "status": "in_progress",
     "ownership": "incubated",
+    "category": "holdings",
     "img": "digital-will.jpg",
     "img_alt": "Maquette préliminaire du Testament Numérique",
     "complexity_score": 7,
@@ -319,7 +330,7 @@ const data: DatedProjectMetadata[] = [
       "Escrow",
       "Conformité"
     ],
-    "hash": "22665a6aebf84ae71ec9855b5f33eef17fb5a4bd76c3beab70745461888764a8",
+    "hash": "53238bd79bb3c931028ae16f8396e6fa7cc637784e5d87a1051328f0bd43776f",
     "last_updated": "2026-09-29"
   },
   {
@@ -330,6 +341,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "Guardian",
     "status": "planned",
     "ownership": "incubated",
+    "category": "governance",
     "img": "emergency-alerts-network.jpg",
     "img_alt": "Maquette de Guardian",
     "complexity_score": 7,
@@ -349,7 +361,7 @@ const data: DatedProjectMetadata[] = [
       "Contrats intelligents",
       "Réputation"
     ],
-    "hash": "0ba536a26ad04d616318be4a3afa2118cb1ff515a5adee7eb4800a37c2bd9c1d",
+    "hash": "f6a78fc5fc8b7949cb60e3be66382ec0315d47b851c4ebe72b22ba2624170774",
     "last_updated": "2026-09-29"
   },
   {
@@ -360,6 +372,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "SplitFlow",
     "status": "planned",
     "ownership": "monark",
+    "category": "payments",
     "img": "fee-distribution-system.jpg",
     "img_alt": "Mockup du Système de Distribution des Frais",
     "complexity_score": 5,
@@ -378,7 +391,7 @@ const data: DatedProjectMetadata[] = [
       "Trésorerie",
       "Automatisation"
     ],
-    "hash": "a8d003659d4a7836674c72c29abcadef06c63c24af97d883a25107e61fadb276",
+    "hash": "00d67e1e2207a44acd919d1e7b23ba60de43a1a985f3f227dabd5178548410c3",
     "last_updated": "2026-09-29"
   },
   {
@@ -389,6 +402,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "Bazarius",
     "status": "planned",
     "ownership": "incubated",
+    "category": "commerce",
     "img": "inventory-and-sales-for-farm-goods.jpg",
     "img_alt": "Maquette de l'Inventaire et ventes pour les produits agricoles",
     "complexity_score": 6,
@@ -408,7 +422,7 @@ const data: DatedProjectMetadata[] = [
       "Code QR",
       "Accès"
     ],
-    "hash": "1ea7094521bdb1e1716928a595fbd594b09ebffbdc922b0485718097296aaa84",
+    "hash": "6462f4bf20b97ca7f51c9583ff1865964186225a64325116d44645f75ec80dfd",
     "last_updated": "2026-09-29"
   },
   {
@@ -419,6 +433,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "LandVote",
     "status": "planned",
     "ownership": "incubated",
+    "category": "governance",
     "img": "land-registry-voting.jpg",
     "img_alt": "Maquette du Vote du Registre foncier",
     "complexity_score": 7,
@@ -438,7 +453,7 @@ const data: DatedProjectMetadata[] = [
       "Transparence",
       "Cartographie"
     ],
-    "hash": "6325b94123b2821e2544ae30487184e4751586a45f4abf19024605769eadf3e3",
+    "hash": "1fa48e39f1ab3c28262590d02e425ac06b2dff972aa159f3af5970e503c7243c",
     "last_updated": "2026-09-29"
   },
   {
@@ -449,6 +464,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "MilestoneMint",
     "status": "planned",
     "ownership": "monark",
+    "category": "payments",
     "img": "milestone-based-smart-contracts-and-escrow.jpg",
     "img_alt": "Maquette des Contrats intelligents basés sur des phases et Escrow",
     "complexity_score": 6,
@@ -467,7 +483,7 @@ const data: DatedProjectMetadata[] = [
       "Financement",
       "Automatisation"
     ],
-    "hash": "7102a93d4943bc8436fe7e5a1c702f9e3f59d78e602d561c9e15c56d63d35d18",
+    "hash": "0b84347bd6f501c2f10bbcc781a85757e56dc8c85e65828157a88fb6d9dc4fe5",
     "last_updated": "2026-09-29"
   },
   {
@@ -478,6 +494,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "MultiTrack",
     "status": "planned",
     "ownership": "incubated",
+    "category": "holdings",
     "img": "multichain-portfolio-tracker.jpg",
     "img_alt": "Maquette du Suivi de Portfolio Multichain",
     "complexity_score": 7,
@@ -496,7 +513,7 @@ const data: DatedProjectMetadata[] = [
       "Portefeuille",
       "Tableau de bord"
     ],
-    "hash": "61043eecbc0acd18d16ae780eedccb1b05ae6ee40e1d440a1a98ab2ab3631887",
+    "hash": "7d775c13014a5832957d1b4e82662b93ef33a0396aecac4139958979385b2879",
     "last_updated": "2026-09-29"
   },
   {
@@ -507,6 +524,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "NFTokenPass",
     "status": "in_progress",
     "ownership": "incubated",
+    "category": "commerce",
     "img": "nft-ticketing-platform.jpg",
     "img_alt": "Maquette de la Plateforme de billetterie NFT",
     "complexity_score": 7,
@@ -526,7 +544,7 @@ const data: DatedProjectMetadata[] = [
       "Portefeuille",
       "Contrôle d'accès"
     ],
-    "hash": "59d17b9d2d726393df2f3d7a2229232ce8dda269273e4cb7c42818d8af1f5141",
+    "hash": "3c7e53d88e8da5c65c75da3d3a5bbc0cdd239183ecf650d874a74dd0483876a5",
     "last_updated": "2026-09-29"
   },
   {
@@ -537,6 +555,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "Cadastrum",
     "status": "in_progress",
     "ownership": "incubated",
+    "category": "commerce",
     "img": "onchain-property-registry.jpg",
     "img_alt": "Maquette de Cadastrum",
     "complexity_score": 7,
@@ -557,7 +576,7 @@ const data: DatedProjectMetadata[] = [
       "Conformité",
       "Bâtiments"
     ],
-    "hash": "38b215b1aa103ad2c9e0eab4804ab149afff95c668e2a5a42a647890d8784761",
+    "hash": "f88b5765734ecfb927b2542e8e81c67c1754b12167940767d1c3dc75b673a0ec",
     "last_updated": "2026-09-29"
   },
   {
@@ -568,6 +587,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "StreamRoyalties",
     "status": "planned",
     "ownership": "incubated",
+    "category": "payments",
     "img": "real-time-royalty-distribution.jpg",
     "img_alt": "Maquette de la Distribution de Royautés en Temps Réel",
     "complexity_score": 6,
@@ -587,7 +607,7 @@ const data: DatedProjectMetadata[] = [
       "Revenus",
       "Contenu"
     ],
-    "hash": "5ca9bb64fc95e48d8182f85059632c6ad4add08dac9eabfab2720fc2c3ce0dbe",
+    "hash": "55d672c999f28bee9e056588560586ae065a4ca2d95b3e8093013649cb54e45e",
     "last_updated": "2026-09-29"
   },
   {
@@ -598,6 +618,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "Reffinity",
     "status": "in_progress",
     "ownership": "monark",
+    "category": "payments",
     "img": "referral-system.jpg",
     "img_alt": "Maquette du Système de Parrainage",
     "complexity_score": 5,
@@ -617,7 +638,7 @@ const data: DatedProjectMetadata[] = [
       "Suivi",
       "Engagement"
     ],
-    "hash": "6ae5c7ac66153320b17f382629a5da2c89a63c337ffbd9a34019dff18365a966",
+    "hash": "e9a156c57c6dce7f8f1a61889956ffb6607488f43c66c118e9d1633802102195",
     "last_updated": "2026-09-29"
   },
   {
@@ -628,6 +649,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "ChainProof",
     "status": "in_progress",
     "ownership": "incubated",
+    "category": "commerce",
     "img": "supply-chain-tracking.jpg",
     "img_alt": "Maquette de Suivi de la chaîne d'approvisionnement",
     "complexity_score": 5,
@@ -648,7 +670,7 @@ const data: DatedProjectMetadata[] = [
       "Automatisation",
       "Cartographie"
     ],
-    "hash": "41fda421d6d10746628b2456b43cb8e14865aec0e7b0958d27382d7b1acce81f",
+    "hash": "f0909a7d0feab1532bcc031520d54870e7cd2ab398d4d76112f5b1440a80c652",
     "last_updated": "2026-09-29"
   },
   {
@@ -659,6 +681,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "CoopDAO",
     "status": "planned",
     "ownership": "monark",
+    "category": "governance",
     "img": "systems-for-co-ops.jpg",
     "img_alt": "Maquette Systèmes pour Coopératives",
     "complexity_score": 8,
@@ -677,7 +700,7 @@ const data: DatedProjectMetadata[] = [
       "Trésorerie",
       "Gouvernance"
     ],
-    "hash": "8458424ed9862b7f5d943c1eefd08db1076767bc46707757c16e17d223b4dc58",
+    "hash": "a6469f89575a9c4eb083c52adbf879a03f59acef73e078f215385472900f91d6",
     "last_updated": "2026-09-29"
   },
   {
@@ -688,6 +711,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "TimeVault",
     "status": "planned",
     "ownership": "monark",
+    "category": "holdings",
     "img": "time-locked-contracts.jpg",
     "img_alt": "Maquette Contrats à échéance",
     "complexity_score": 4,
@@ -706,7 +730,7 @@ const data: DatedProjectMetadata[] = [
       "Automatisation",
       "Vesting"
     ],
-    "hash": "10af52dc894d5ad3d791035caa129a8fc46538e7b832bf3ac14a56a6693bf160",
+    "hash": "64131a2551f0d1bf8c75cce9ef91256b860c9d139d7a6c490bd31a3718b0f3e0",
     "last_updated": "2026-09-29"
   },
   {
@@ -717,6 +741,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "FlexGas",
     "status": "planned",
     "ownership": "monark",
+    "category": "defi",
     "img": "transaction-gas.jpg",
     "img_alt": "Maquette Gas de Transaction",
     "complexity_score": 5,
@@ -734,7 +759,7 @@ const data: DatedProjectMetadata[] = [
       "UX",
       "Automatisation"
     ],
-    "hash": "db94e06dc6508c0fc849444274cd5715e3505d1a45d04402b29571d2697e2b3c",
+    "hash": "6bd8e83a4d4f9f265a1313e8de322709f47c136ab194f617684091138cdd249c",
     "last_updated": "2026-09-29"
   },
   {
@@ -745,6 +770,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "SignChain",
     "status": "planned",
     "ownership": "incubated",
+    "category": "trust",
     "img": "web3-signatures.jpg",
     "img_alt": "Maquette signatures Web3",
     "complexity_score": 4,
@@ -763,7 +789,7 @@ const data: DatedProjectMetadata[] = [
       "Conformité",
       "Documents"
     ],
-    "hash": "05aac9e75b1f2b52c8ba97817ed45b40ed9f45f540e4282644be923101edfb9e",
+    "hash": "606db5e2fff95542ac2dff91e3fcd6dd6a0b906505c5448c1b5f69fef16a2cf6",
     "last_updated": "2026-09-29"
   },
   {
@@ -774,6 +800,7 @@ const data: DatedProjectMetadata[] = [
     "accronym": "Cura",
     "status": "prototype_available",
     "ownership": "incubated",
+    "category": "trust",
     "img": "zk-medical-data-exchange.jpg",
     "img_alt": "Maquette d'échange de Données Médicales à Preuve Zéro-Connaissance",
     "complexity_score": 7,
@@ -793,7 +820,7 @@ const data: DatedProjectMetadata[] = [
       "Contrats intelligents",
       "ZK"
     ],
-    "hash": "2e16c8e126684509ce6dcaa422f2efa5564646b79a0292b95700f8d991a16d82",
+    "hash": "32ff3b1b5c6c73d486428bcd19d72b72fc604314b2c751481cda43518b1acad9",
     "last_updated": "2026-09-29"
   }
 ];
