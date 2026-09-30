@@ -27,3 +27,32 @@ The code reads the photos from one registry, `components/common/photo/photos.ts`
 2. Pick real people in warm, natural light, not posed stock. Avoid crypto clichés and visible brand logos (brand guidelines §7).
 3. Export at most 1600px wide (2400px if it fills a full-width hero) as a JPEG at quality 80 into `public/images/people/`, with a descriptive name.
 4. Add the photo to `photos.ts` with English and French alt text. Then add a row to the table above.
+
+## News covers (`public/images/news/`)
+
+Every news article cover is a free Unsplash License photo. Each photo page was checked for "Free to use under the Unsplash License" on 30 September 2026; none are Unsplash+.
+
+The covers used to carry a Monark watermark, and four of them were AI-generated "orange nebula" images. The watermarked ones were downloaded again from Unsplash without the watermark. The AI images, and the CryptoSys/University of Sherbrooke graphic on the pioneer article (which had no photo source), were replaced with real photos that match the article.
+
+Each cover is cropped to 16:9 (the ratio `ArticleCover` and the news cards display) and saved as a 2000 × 1125 WebP at quality 80, under the article's slug. The article frontmatter credits the photo in both languages: `img_author` holds the photographer and `img_author_src` the photo page, and the cover caption links to it.
+
+| File | Photo | Photographer | Article |
+| --- | --- | --- | --- |
+| `pioneer-in-university-projects-mentorship.webp` | [8gAbl776pc0](https://unsplash.com/photos/8gAbl776pc0) | [Vitaly Gariev](https://unsplash.com/@silverkblack) | A pioneer in supporting university projects in decentralized accounting |
+| `real-world-web3-use-cases-that-aren-t-just-nfts.webp` | [r1AIp7Vj3Mg](https://unsplash.com/photos/r1AIp7Vj3Mg) | [Bernd Dittrich](https://unsplash.com/@hdbernd) | Real-world Web3: use cases beyond NFTs |
+| `smart-contracts-explained-like-you-re-5.webp` | [MBfYGVsDEp8](https://unsplash.com/photos/MBfYGVsDEp8) | [Shubham Dhage](https://unsplash.com/@shubhudi) | Smart contracts explained like you're 5 |
+| `trust-from-open-data-to-mathematical-proof.webp` | [wW-lhteuK0o](https://unsplash.com/photos/wW-lhteuK0o) | [Brett Jordan](https://unsplash.com/@brett_jordan) | Trust: from open data to mathematical proof |
+| `web3-developer-roadmap-and-resources.webp` | [ECGv8s2IPG0](https://unsplash.com/photos/ECGv8s2IPG0) | [Mark König](https://unsplash.com/@markkoenig) | Web3 developer roadmap and resources |
+| `web3-revolution-reality.webp` | [cw-cj_nFa14](https://unsplash.com/photos/cw-cj_nFa14) | [Antenna](https://unsplash.com/@antenna) | The revolution and reality of Web3: an honest assessment |
+| `what-is-web3-really.webp` | [AvEYas-wFs0](https://unsplash.com/photos/AvEYas-wFs0) | [Jakub Żerdzicki](https://unsplash.com/@jakubzerdzicki) | What is Web3, really? |
+| `what-monark-is-building-and-why.webp` | [VmwH8vCgUkY](https://unsplash.com/photos/VmwH8vCgUkY) | [Matthias Leistikow](https://unsplash.com/@monochromatze) | What Monark is building, and why |
+| `what-needs-to-happen-before-web3-becomes-everyday-tech.webp` | [VYLwdMhhKS0](https://unsplash.com/photos/VYLwdMhhKS0) | [Jorge Zhagui](https://unsplash.com/@jluis_zz) | What needs to happen before Web3 becomes everyday tech |
+| `where-blockchain-shines.webp` | [ZlOlRnWk8zU](https://unsplash.com/photos/ZlOlRnWk8zU) | [Centre for Ageing Better](https://unsplash.com/@ageing_better) | Where blockchain shines, and where it doesn't |
+| `who-is-web3-actually-for.webp` | [zNzzulArQdc](https://unsplash.com/photos/zNzzulArQdc) | [note thanun](https://unsplash.com/@notethanun) | Who is Web3 actually for? |
+| `why-decentralization-matters.webp` | [1tAtO-9HYNM](https://unsplash.com/photos/1tAtO-9HYNM) | [Dorota Trzaska](https://unsplash.com/@dtrzaska1) | Why decentralization matters, beyond the hype |
+
+### Replacing a news cover
+
+1. Pick a free Unsplash License photo that matches the article (same rules as the photographs above: real people or real-world subjects, no crypto clichés, no visible logos).
+2. Crop to 16:9, export 2000 × 1125 WebP at quality 80 over `public/images/news/<slug>.webp`.
+3. Update `img_alt`, `img_author` and `img_author_src` in both the English and French `page.mdx`, run `bun scripts/news/news-index.script.ts`, and update the table above.
