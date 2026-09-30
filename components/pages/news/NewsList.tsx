@@ -204,10 +204,10 @@ function CategorySection({
     <section
       id={id}
       aria-labelledby={`${id}-title`}
-      // scroll-mt-10 plus the global scroll-padding-top (5rem) is the fixed
-      // header and the sticky bar (120px): the section lands with its top
-      // border tucked under the bar's own border.
-      className="mt-14 scroll-mt-10 border-t pt-10 md:mt-16 md:pt-14"
+      // 39px plus the global scroll-padding-top (5rem) lands the section's
+      // top border exactly on the sticky bar's bottom border (header 64px +
+      // bar 56px - 1px), so the two 1px lines overlap instead of stacking.
+      className="mt-14 scroll-mt-[39px] border-t pt-10 md:mt-16 md:pt-14"
     >
       <div className="max-w-[40rem]">
         <h2 id={`${id}-title`}>{title}</h2>
