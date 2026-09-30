@@ -51,6 +51,7 @@ export default async function ProjectsPage({ params }: ProjectsPageProps) {
         backHref={`/${locale}/project`}
         backLabel={t.back_to_list}
         locale={locale}
+        id={id}
       />
     </>
   );

@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { DatedProjectMetadata, ProjectCategory } from "@/types/project.types";
 import ProjectCard, { ProjectCardVariant } from "./ProjectCard";
 import i18n from "./projects-list.i18n";
+import { projectSectionId } from "./project-filters";
 
 /** Section order on the list; projects without a known category go last. */
 export const PROJECT_CATEGORIES = [
@@ -43,8 +44,6 @@ const SIZES: Record<ProjectCardVariant, string> = {
   default:
     "(min-width: 1200px) 370px, (min-width: 1024px) 31vw, (min-width: 640px) 50vw, 100vw",
 };
-
-export const projectSectionId = (category: string) => `projects-${category}`;
 
 const prefersReducedMotion = () =>
   typeof window !== "undefined" &&

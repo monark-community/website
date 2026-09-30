@@ -1,4 +1,5 @@
 import React from "react";
+import { articlePillClass } from "@/components/common/article-header/article-header";
 import { cn } from "@/lib/utils";
 import { uniqueTags } from "./news-data";
 
@@ -14,10 +15,7 @@ function NewsTags({ tags, className }: Props) {
   return (
     <ul className={cn("m-0 flex list-none flex-wrap gap-1.5 p-0", className)}>
       {items.map((tag) => (
-        <li
-          key={tag}
-          className="m-0 rounded-full border bg-background px-2.5 py-0.5 text-xs font-semibold text-muted-foreground"
-        >
+        <li key={tag} className={articlePillClass}>
           {tag}
         </li>
       ))}

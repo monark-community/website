@@ -49,6 +49,9 @@ export function projectListHref(
   return `/${locale}/project${query ? `?${query}` : ""}`;
 }
 
+/** Anchor id of a category section on the projects list. */
+export const projectSectionId = (category: string) => `projects-${category}`;
+
 /**
  * Returns the canonical spelling of `value` among `known` (case-insensitive),
  * or `undefined` when the value is missing or unknown.

@@ -23,6 +23,7 @@ import {
   PROJECT_FILTER_PARAMS,
   ProjectListFilters,
   matchKnownValue,
+  projectSectionId,
 } from "./project-filters";
 import ProjectCard from "./ProjectCard";
 import ProjectFilterBar, { FilterSelect } from "./ProjectFilterBar";
@@ -30,7 +31,6 @@ import {
   ProjectCategoryNav,
   ProjectSections,
   groupProjectSections,
-  projectSectionId,
   useActiveSection,
   useCategoryJump,
   useElementHeight,
