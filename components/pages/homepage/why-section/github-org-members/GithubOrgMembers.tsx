@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import Image from "next/image";
+import ContributorMarquee from "./ContributorMarquee";
 
 type OrgMember = {
     login: string;
@@ -121,12 +122,14 @@ export default function GithubOrgMembers({ repo, all }: GithubOrgMembersProps) {
     const isCompact = !all;
     const containerClass = isCompact
         ? "mt-2 flex flex-wrap gap-1"
-        : "flex flex-wrap justify-center gap-2 pt-10 pb-12";
+        : "hidden flex-wrap justify-center gap-2 pt-10 pb-12 md:flex";
 
     const avatarSize = isCompact ? 32 : 64;
 
     return (
         <TooltipProvider>
+            {/* Below md the full wall becomes three looping rows. */}
+            {all && <ContributorMarquee members={members} loading={loading} className="md:hidden" />}
             <div className={containerClass}>
                 {loading
                     ? Array.from({ length: 32 }).map((_, idx) => (
