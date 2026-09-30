@@ -11,7 +11,8 @@
     "generate:project-tech-links": "bun scripts/link-tech-names.ts",
     "generate:project-translations": "bun scripts/project/project-translate.script.ts",
     "generate:news-index": "bun scripts/news/news-index.script.ts",
-    "generate:news-translations": "bun scripts/news/news-translate.script.ts"
+    "generate:news-translations": "bun scripts/news/news-translate.script.ts",
+    "generate:brand-kit": "bun scripts/brand/brand-kit.script.ts"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^3.5.0",

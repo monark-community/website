@@ -1,61 +1,17 @@
-import { notFound } from "next/navigation";
-import fs from "fs";
-import path from "path";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { components } from "@/mdx-components";
-import matter from "gray-matter";
 import { Metadata } from "next";
-import { generateMdxMetadata } from "@/lib/generate-mdx-metadata";
+import { Locale } from "@/i18n.config";
+import ParticipatePage, {
+  participateMetadata,
+} from "@/components/pages/participate/participate-page";
 
-type StudentPageProps = {
-  params: Promise<{
-    locale: string;
-  }>;
-};
+type Props = { params: Promise<{ locale: Locale }> };
 
-export async function generateMetadata({
-  params,
-}: StudentPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const contentPath = path.join(
-    process.cwd(),
-    "content",
-    locale,
-    "participate",
-    "university",
-    "page.mdx"
-  );
-  return generateMdxMetadata({
-    contentPath,
-    id: "university",
-    ogImagePrefix: "/images/",
-  });
+  return participateMetadata("university", locale);
 }
 
-export default async function StudentPage({ params }: StudentPageProps) {
+export default async function UniversityPage({ params }: Props) {
   const { locale } = await params;
-
-  const contentPath = path.join(
-    process.cwd(),
-    "content",
-    locale,
-    "participate",
-    "university",
-    "page.mdx"
-  );
-
-  // Check if the file exists
-  if (!fs.existsSync(contentPath)) {
-    notFound();
-  }
-
-  // Read the MDX content
-  const contentRaw = fs.readFileSync(contentPath, "utf-8");
-  const { content } = matter(contentRaw);
-
-  return (
-    <div className="container mx-auto py-6">
-      <MDXRemote source={content} components={components} />
-    </div>
-  );
+  return <ParticipatePage slug="university" locale={locale} />;
 }

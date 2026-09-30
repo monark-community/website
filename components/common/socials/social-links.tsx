@@ -1,31 +1,46 @@
 import React from "react";
-import Image from "next/image";
-import { NavLink } from "@/components/common/navlink/navlink";
 import SOCIALS from "./socials";
+import { cn } from "@/lib/utils";
 
 type Props = {
   className?: string;
 };
 
-function SocialLinks({className}: Props) {
+/**
+ * Monark's social SVGs, recoloured to the text colour through a CSS mask so
+ * they meet contrast on cream and espresso (the source files are orange).
+ */
+function SocialLinks({ className }: Props) {
   return (
-    <div className={`flex gap-2 ${className}`}>
+    <ul className={cn("flex items-center gap-1", className)}>
       {SOCIALS.map((social) => (
-        <NavLink
-          key={social.id}
-          href={social.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            src={`/vectors/socials/${social.id}.svg`}
-            alt={social.name}
-            width={48}
-            height={48}
-          />
-        </NavLink>
+        <li key={social.id}>
+          <a
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={social.name}
+            title={social.name}
+            className="inline-flex size-11 items-center justify-center rounded-full text-foreground transition-colors duration-150 hover:bg-secondary"
+          >
+            <span
+              aria-hidden="true"
+              className="size-6 bg-current"
+              style={{
+                maskImage: `url(/vectors/socials/${social.id}.svg)`,
+                WebkitMaskImage: `url(/vectors/socials/${social.id}.svg)`,
+                maskSize: "contain",
+                WebkitMaskSize: "contain",
+                maskRepeat: "no-repeat",
+                WebkitMaskRepeat: "no-repeat",
+                maskPosition: "center",
+                WebkitMaskPosition: "center",
+              }}
+            />
+          </a>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 

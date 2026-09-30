@@ -1,20 +1,13 @@
 import React from "react";
 import { Locale } from "@/i18n.config";
 import * as i18n from "./why-section.i18n";
-// import Image from "next/image";
-import {
-  BrandedCard,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardFooter,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { BrandedCard } from "@/components/ui/card";
 import { ArrowRightIcon } from "lucide-react";
 import { NavLink } from "@/components/common/navlink/navlink";
-import NavbarIcon from "@/components/common/layout/navbar/navbar-icon";
 import GithubOrgMembers from "./github-org-members/GithubOrgMembers";
+import Photo from "@/components/common/photo/photo";
+import { rolePhoto } from "@/components/pages/participate/participate-shared.i18n";
+import { ParticipateSlug } from "@/components/pages/participate/participate.types";
 
 type Props = {
   locale: Locale;
@@ -23,89 +16,62 @@ type Props = {
 function WhySection({ locale }: Props) {
   const t = i18n[locale].why;
   return (
-    <section className="why-section mx-auto lg:max-w-[1200px] px-4 py-8 md:px-12 md:py-16 text-center">
-      <span className="text-tagline">{t.flavor}</span>
-      <h2 className="max-w-[680px] mx-auto">{t.title}</h2>
-      {/* <div className="flex flex-col items-center justify-center mt-12">
-        <div className="grid grid-cols-1 gap-24 lg:grid-cols-3">
-          {t.perks.map((perk, index) => (
-            <Perk key={index} perk={perk} />
+    <section className="why-section border-y bg-secondary/50">
+      <div className="site-container section text-center">
+        <span className="eyebrow">{t.flavor}</span>
+        <h2 className="mx-auto max-w-[40rem]">{t.title}</h2>
+        <GithubOrgMembers all />
+        <ul className="grid grid-cols-1 gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
+          {t.audiences.map((audience) => (
+            <li key={audience.id}>
+              <Audience audience={audience} locale={locale} />
+            </li>
           ))}
-        </div>
-      </div> */}
-      <GithubOrgMembers all />
-      <div className="flex flex-col items-center justify-center mt-12">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {t.audiences.map((audience, index) => (
-            <Audience key={index} audience={audience} />
-          ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
 }
 
-// type PerkProps = {
-//   perk: i18n.WhyPerk;
-// };
-
-// function Perk({ perk }: PerkProps) {
-//   return (
-//     <div className="flex flex-col items-center">
-//       <div className="mx-auto relative w-[128px] h-[128px]">
-//         <Image
-//           src={`/vectors/decorative/${perk.icon}.svg`}
-//           alt={`${perk.title} icon`}
-//           width={96}
-//           height={96}
-//           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-//         />
-//         <Image
-//           src={`/vectors/decorative/${perk.tile}.svg`}
-//           alt=""
-//           width={128}
-//           height={128}
-//         />
-//       </div>
-//       <h3 className="mt-8 min-h-[64px] flex justify-center items-center">
-//         {perk.title}
-//       </h3>
-//       <p className="text-lg mt-4 text-muted-foreground max-w-[400px]">
-//         {perk.content}
-//       </p>
-//     </div>
-//   );
-// }
-
 type AudienceProps = {
   audience: i18n.WhyAudience;
+  locale: Locale;
 };
 
-function Audience({ audience }: AudienceProps) {
+/**
+ * Whole card is one link (the title's ::after covers the card); hover and
+ * focus come from the shared `card-hover` primitive (app/globals.scss). The
+ * photo is the same one the role's participate page opens with; its alt is
+ * empty because the title right below names the audience.
+ */
+function Audience({ audience, locale }: AudienceProps) {
+  const photo = rolePhoto(audience.id as ParticipateSlug);
   return (
-    <BrandedCard className="relative text-left">
-      <div className="relative z-1 h-full flex flex-col justify-between">
-        <CardHeader className="pt-16">
-          <div className="flex flex-start mb-4">
-            <NavbarIcon icon={audience.icon} className="absolute text-primary blur-sm" size={64} strokeWidth={1} />
-            <NavbarIcon icon={audience.icon} className=" text-primary" size={64} strokeWidth={1} />
-          </div>
-          <CardTitle><NavLink href={audience.href} className="hover:underline">{audience.title}</NavLink></CardTitle>
-        </CardHeader>
-        <div className="flex-1 flex flex-col justify-between">
-          <CardContent>
-            <CardDescription className="text-lg">
-              {audience.content}
-            </CardDescription>
-          </CardContent>
-          <CardFooter>
-            <NavLink href={audience.href}>
-              <Button size="icon" variant="ghost" className="text-primary">
-                <ArrowRightIcon />
-              </Button>
-            </NavLink>
-          </CardFooter>
-        </div>
+    <BrandedCard className="card-hover flex h-full flex-col p-2">
+      {photo && (
+        <Photo
+          photo={photo.photo}
+          locale={locale}
+          decorative
+          sizes="(min-width: 1024px) 18rem, (min-width: 640px) 50vw, 100vw"
+          className="card-hover-media aspect-[16/10] rounded-xl border-0"
+          imgClassName={photo.focus}
+        />
+      )}
+      <div className="flex flex-1 flex-col px-4 pb-4">
+        <h3 className="mt-5 text-xl">
+          <NavLink
+            href={audience.href}
+            className="card-hover-link text-foreground"
+          >
+            {audience.title}
+          </NavLink>
+        </h3>
+        <p className="mt-2 flex-1 text-muted-foreground">{audience.content}</p>
+        <ArrowRightIcon
+          aria-hidden="true"
+          className="mt-6 size-5 text-primary-ink"
+        />
       </div>
     </BrandedCard>
   );

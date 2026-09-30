@@ -22,13 +22,13 @@ export const en: I18n = {
     description_no_amount: "Scan the QR code or use your wallet app to send your donation.",
     network: "Network",
     amount: "Amount",
-    wallet_address: "Wallet Address",
-    copy_address: "Copy Address",
+    wallet_address: "Wallet address",
+    copy_address: "Copy address",
     address_copied: "Address copied to clipboard!",
     open_in_wallet: "Open in wallet",
     open_wallet_app: "Open in Wallet App",
-    scan_qr_code: "Scan QR Code",
-    generate_qr_code: "Generate QR Code",
+    scan_qr_code: "Scan the QR code",
+    generate_qr_code: "Generate a QR code",
   },
 };
 

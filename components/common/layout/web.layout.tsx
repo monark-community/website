@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Footer from "./footer/footer";
 import { Locale } from "@/i18n.config";
 import NavbarWrapper from "./navbar/navbar-wrapper";
@@ -10,14 +10,37 @@ type Props = {
   children: React.ReactNode;
 };
 
+const skipLabel: Record<Locale, string> = {
+  en: "Skip to content",
+  fr: "Aller au contenu",
+};
+
+function SkipLink({ locale }: { locale: Locale }) {
+  // The root layout sets <html lang> on the server; keep it right after
+  // client-side navigation across locales too.
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
+
+  return (
+    <a
+      href="#main"
+      className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-3 focus:z-[60] focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground"
+    >
+      {skipLabel[locale] ?? skipLabel.en}
+    </a>
+  );
+}
+
 function WebLayout({ locale, children }: Props) {
   return (
     <>
-      <div className="fixed top-0 bottom-0 left-1/2 transform -translate-x-[632px] border-r border-primary z-50"></div>
-      <div className="fixed top-0 bottom-0 left-1/2 transform translate-x-[632px] border-r border-primary z-50"></div>
+      <SkipLink locale={locale} />
       <LoaderPage />
       <NavbarWrapper locale={locale} />
-      <main className="pt-[94px]">{children}</main>
+      <main id="main" className="pt-16">
+        {children}
+      </main>
       <Footer locale={locale} />
     </>
   );
@@ -26,11 +49,12 @@ function WebLayout({ locale, children }: Props) {
 export function WebLayoutCentered({ locale, children }: Props) {
   return (
     <>
-      <div className="fixed top-0 bottom-0 left-1/2 transform -translate-x-[632px] border-r border-primary z-50"></div>
-      <div className="fixed top-0 bottom-0 left-1/2 transform translate-x-[632px] border-r border-primary z-50"></div>
+      <SkipLink locale={locale} />
       <LoaderPage />
       <NavbarWrapper locale={locale} />
-      <main className="pt-[94px] max-w-[1200px] mx-auto">{children}</main>
+      <main id="main" className="pt-16 max-w-[1200px] mx-auto">
+        {children}
+      </main>
       <Footer locale={locale} />
     </>
   );
@@ -39,9 +63,12 @@ export function WebLayoutCentered({ locale, children }: Props) {
 export function RoadmapLayout({ locale, children }: Props) {
   return (
     <>
+      <SkipLink locale={locale} />
       <LoaderPage />
       <NavbarWrapper locale={locale} />
-      <main className="pt-[94px] min-h-[100vh]">{children}</main>
+      <main id="main" className="pt-16 min-h-[100vh]">
+        {children}
+      </main>
     </>
   );
 }

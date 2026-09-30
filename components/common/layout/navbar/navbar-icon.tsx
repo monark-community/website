@@ -55,12 +55,14 @@ type Props = {
   className?: string;
 };
 
-function NavbarIcon({ icon, size = 16, strokeWidth = 1, className }: Props) {
+/** Decorative Lucide icon (always paired with a visible label). */
+function NavbarIcon({ icon, size = 16, strokeWidth = 1.75, className }: Props) {
   const Icon = iconMap[icon];
+  if (!Icon) return null;
   return (
-    <div className={`flex justify-center items-center rounded-md mr-4 ${className}`}>
-      <Icon height={size} width={size} strokeWidth={strokeWidth}/>
-    </div>
+    <span className={`inline-flex shrink-0 items-center justify-center ${className ?? ""}`} aria-hidden="true">
+      <Icon height={size} width={size} strokeWidth={strokeWidth} />
+    </span>
   );
 }
 

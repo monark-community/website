@@ -3,7 +3,7 @@ interface I18n {
 }
 
 const en: I18n = {
-  back_to_list: "Back to Projects",
+  back_to_list: "Back to projects",
 };
 
 const fr: I18n = {

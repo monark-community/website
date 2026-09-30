@@ -72,6 +72,7 @@ function Newsletter({ locale }: Props) {
           type="submit"
           variant="ghost"
           className="absolute right-0 text-primary"
+          aria-label={t.subscribe}
           disabled={loading}
         >
           <ChevronRight />

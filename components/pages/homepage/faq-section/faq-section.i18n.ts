@@ -19,7 +19,7 @@ export const en: I18n = {
   faq: {
     soon: "Coming Soon",
     flavor: "FAQ",
-    title: "Nectar for the Curious Mind",
+    title: "Questions, answered",
     items: [
       {
         question: "What is Monark?",
@@ -172,7 +172,7 @@ export const fr: I18n = {
   faq: {
     soon: "Bientôt disponible",
     flavor: "Questions fréquentes",
-    title: "Nectar pour l'esprit curieux",
+    title: "Vos questions, nos réponses",
     items: [
       {
         question: "Qu'est-ce que Monark?",

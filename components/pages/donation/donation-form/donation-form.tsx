@@ -91,9 +91,9 @@ function DonationForm({ locale, donations }: Props) {
 
   return (
     <>
-      <Card className="mb-8">
-        <div className="p-6">
-          <h2 className="text-xl font-semibold mb-4">{t.title}</h2>
+      <Card className="mb-6">
+        <div className="p-5 sm:p-8">
+          <h2 className="text-xl mb-5">{t.title}</h2>
 
           <div className="grid gap-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -118,12 +118,12 @@ function DonationForm({ locale, donations }: Props) {
               </div>
             </div>
 
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-              <div className="text-sm text-muted-foreground flex items-center gap-2">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-2">
+              <div className="text-sm text-muted-foreground flex flex-wrap items-center gap-2">
                 <span>{t.view_on_explorer}</span>
                 <div
                   className={`inline-block transition-all duration-300 ease-out ${isAddressAnimating
-                    ? "scale-105 font-bold text-primary"
+                    ? "motion-safe:scale-105 font-bold text-primary-ink"
                     : "scale-100"
                     }`}
                   key={selectedNetwork}
@@ -138,7 +138,7 @@ function DonationForm({ locale, donations }: Props) {
                   />
                 </div>
               </div>
-              <Button onClick={handleDonate} disabled={!donationAmount}>
+              <Button onClick={handleDonate} disabled={!donationAmount} size="lg" className="w-full md:w-auto">
                 {t.donate_button}
               </Button>
             </div>

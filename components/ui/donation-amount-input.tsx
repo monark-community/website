@@ -51,7 +51,7 @@ export function DonationAmountInput({
   return (
     <div className={cn("space-y-2", className)}>
       {/* Combined Input and Token Display */}
-      <div className="flex relative border border-input rounded-md focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
+      <div className="flex relative overflow-hidden border border-input rounded-md bg-card focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-1 focus-within:ring-offset-background">
         {/* Amount Input */}
         <Input
           type="number"
@@ -65,7 +65,7 @@ export function DonationAmountInput({
         />
         
         {/* Token Symbol Display */}
-        <div className="border-l border-input px-3 py-2 bg-muted/30 rounded-r-md min-w-[80px] flex items-center justify-center">
+        <div className="border-l border-input px-3 py-2 bg-secondary min-w-[80px] flex items-center justify-center">
           <span className="font-medium text-sm">{tokenSymbol}</span>
         </div>
       </div>

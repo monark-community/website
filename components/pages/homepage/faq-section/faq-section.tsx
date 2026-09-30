@@ -28,19 +28,23 @@ function FAQSection({ locale }: Props) {
   const t = i18n[locale].faq;
 
   return (
-    <section className="faq-section mx-auto lg:max-w-[1200px] px-4 py-8 md:px-12 md:py-16 text-left">
-      <span className="text-tagline">{t.flavor}</span>
-      <h2 className="max-w-[500px]">{t.title}</h2>
-      <div className="grid grid-cols-1 gap-16 lg:grid-cols-3 mt-8">
+    <section className="faq-section site-container section">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-16">
+        <div>
+          <span className="eyebrow">{t.flavor}</span>
+          <h2 className="max-w-[24rem]">{t.title}</h2>
+        </div>
         <Accordion
           type="single"
           collapsible
-          className="rounded-md rounded-b-none overflow-hidden lg:col-span-3"
+          className="border-t lg:col-span-2"
         >
           {t.items.map((item, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger>{item.question}</AccordionTrigger>
-              <AccordionContent className="font-thin">
+              <AccordionTrigger className="px-0 hover:bg-transparent hover:text-primary-ink">
+                {item.question}
+              </AccordionTrigger>
+              <AccordionContent className="px-0 pt-0 leading-relaxed">
                 <div dangerouslySetInnerHTML={{ __html: item.answer }} />
               </AccordionContent>
             </AccordionItem>

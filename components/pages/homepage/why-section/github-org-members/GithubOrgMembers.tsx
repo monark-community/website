@@ -121,7 +121,7 @@ export default function GithubOrgMembers({ repo, all }: GithubOrgMembersProps) {
     const isCompact = !all;
     const containerClass = isCompact
         ? "mt-2 flex flex-wrap gap-1"
-        : "flex flex-wrap justify-center gap-2 py-16";
+        : "flex flex-wrap justify-center gap-2 pt-10 pb-12";
 
     const avatarSize = isCompact ? 32 : 64;
 
@@ -132,7 +132,7 @@ export default function GithubOrgMembers({ repo, all }: GithubOrgMembersProps) {
                     ? Array.from({ length: 32 }).map((_, idx) => (
                         <div
                             key={idx}
-                            className={`rounded-full bg-card animate-pulse`}
+                            className={`rounded-full bg-secondary motion-safe:animate-pulse`}
                             style={{ width: avatarSize, height: avatarSize }}
                         />
                     ))
@@ -143,14 +143,14 @@ export default function GithubOrgMembers({ repo, all }: GithubOrgMembersProps) {
                                     href={member.html_url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="block"
+                                    className="block rounded-full"
                                 >
                                     <Image
                                         src={member.avatar_url}
                                         alt={member.login}
                                         width={avatarSize}
                                         height={avatarSize}
-                                        className="rounded-full object-cover hover:scale-105 transition-transform"
+                                        className="rounded-full border border-border object-cover transition-transform duration-150 motion-safe:hover:-translate-y-0.5"
                                     />
                                 </a>
                             </TooltipTrigger>

@@ -1,84 +1,74 @@
 ---
+category: explained
 id: smart-contracts-explained-like-you-re-5
-title: Smart Contracts Explained Like You're 5
+title: Smart contracts explained like you're 5
 author: Monark Team
 date: 2025-08-21
 city: Sherbrooke, QC, Canada
-description: Smart contracts are self-executing blockchain agreements. They automate trustless interactions, but face limitations like high costs, inflexibility, and vulnerabilities. Their future lies in complementing, not replacing, traditional systems.
+description: A smart contract is a program on a blockchain that carries out an agreement by itself. It removes the middleman, but it's costly, rigid and hard to fix, so it works best alongside traditional systems.
 img_src: https://unsplash.com/photos/a-group-of-cubes-hanging-from-a-ceiling-MBfYGVsDEp8
 img: smart-contracts-explained-like-you-re-5.webp
 img_alt: Blockchain representation
 img_author: Shubham Dhage
 img_author_src: https://unsplash.com/photos/a-group-of-cubes-hanging-from-a-ceiling-MBfYGVsDEp8
-read_time_seconds: 320
+read_time_seconds: 300
 tags:
   - Article
   - Technology
 ---
 
-## What are Smart Contracts?
+## What is a smart contract?
 
-At their core, smart contracts are simply automated agreements that execute predefined actions when specific conditions are met. Think of them as digital vending machines: you insert a coin, make a selection, and automatically receive your item without needing a human operator.
+A smart contract is an agreement that carries itself out: when certain conditions are met, it performs the actions written into it. Think of a vending machine. You put in a coin, pick a snack and get it, with nobody behind the counter.
 
-More technically, smart contracts are self-executing code deployed on blockchain networks like Ethereum. Once deployed, they operate independently according to their programming, removing the need for intermediaries and creating trustless interactions between parties.
+More technically, a smart contract is code deployed on a blockchain such as Ethereum. Once deployed, it runs exactly as programmed, so the parties need neither an intermediary nor trust in each other.
 
 > Smart contracts are neither particularly "smart" nor legal "contracts" in the traditional sense. They're deterministic programs that automatically execute when triggered by specific blockchain transactions.
 
+## Three examples
 
-## Examples in the Wild
+### Uniswap
 
-### Uniswap: Algorithmic Market Making
+Uniswap is a decentralized exchange that runs entirely on smart contracts. The contracts hold pools of tokens (liquidity pools) and let people swap one token for another with no order book and no central operator. The exchange rate is calculated from the ratio of tokens in each pool.
 
-Uniswap exemplifies smart contracts at scale. This decentralized exchange operates entirely through smart contracts that maintain liquidity pools and facilitate token swaps without order books or centralized parties. Users interact directly with these contracts, which mathematically determine exchange rates based on pool ratios.
+It has real limits. Liquidity providers face impermanent loss (value they can lose when token prices move), gas fees (the cost of a transaction) climb when the network is congested, and the contracts remain exposed to certain exploits despite several security audits.
 
-The brutal truth: While revolutionary, Uniswap's smart contracts have limitations including impermanent loss for liquidity providers, high gas fees during network congestion, and vulnerability to certain exploits despite multiple security audits.
+### NFTs
 
-### NFTs: Digital Ownership Enforcement
+NFTs (non-fungible tokens) use smart contracts to prove who owns a digital asset and how scarce it is, which gives artists and creators new ways to earn money from digital work.
 
-Non-fungible tokens represent another prominent application of smart contracts. These contracts establish verifiable scarcity and ownership of digital assets on the blockchain, enabling artists and creators to monetize digital work in unprecedented ways.
+The NFT market has also been hit by wash trading (people trading with themselves to inflate prices), copyright infringement and environmental concerns. Many NFT contracts ([see Smilesssvrs, Boss Beauties, MekaApes](https://pinata.cloud/blog/hundreds-of-millions-of-dollars-of-nfts-are-still-unprotected/)) don't even store the artwork on-chain. They point to centralized servers that could disappear.
 
-Reality check: The NFT market has been plagued by wash trading, copyright infringement, and environmental concerns. Many NFT smart contracts ([See Smilesssvrs, Boss Beauties, MekaApes](https://pinata.cloud/blog/hundreds-of-millions-of-dollars-of-nfts-are-still-unprotected/)) also fail to properly store the actual digital assets on-chain, instead pointing to centralized servers that could potentially disappear.
+### DAOs
 
-### DAOs: Decentralized Governance
+A DAO (decentralized autonomous organization) uses smart contracts to make group decisions and allocate resources. Members usually vote with governance tokens, and a proposal executes automatically once it reaches a set threshold.
 
-Decentralized Autonomous Organizations use smart contracts to coordinate collective decision-making and resource allocation. Voting rights are typically distributed through governance tokens, with execution happening automatically when proposals meet predetermined thresholds.
+In practice, many DAOs have low turnout, are controlled by their largest token holders and sit in a legal grey zone. The "[The DAO](https://www.coindesk.com/learn/understanding-the-dao-attack)" hack in 2016 led to Ethereum's contested hard fork and showed what happens when code that can't be changed has a flaw.
 
-Hard truth: Many DAOs struggle with low participation rates, plutocratic control by large token holders, and legal ambiguity. The infamous "[The DAO](https://www.coindesk.com/learn/understanding-the-dao-attack)" hack of 2016 led to Ethereum's contentious hard fork, highlighting the risks of immutable yet flawed code.
+## What smart contracts can replace
 
-## Replacing Traditional Logic
+Smart contracts can take over work usually done by trusted institutions: escrow, insurance claims, supply chain checks and even parts of lending. That can lower costs and remove gatekeepers.
 
-### Institutional Disintermediation
+The catch is that a contract only knows yes or no, while real situations often call for judgment. When something unusual happens, a person has to step in, which undercuts the whole idea of an autonomous contract.
 
-Smart contracts can replace functions traditionally performed by trusted institutions. Escrow services, insurance claim processing, supply chain verification, and even aspects of lending can be automated through blockchain-based agreements, potentially reducing costs and eliminating gatekeepers.
+In software, smart contracts move applications from servers controlled by one company to decentralized apps (dApps), where processing and governance are spread across a blockchain network. That makes scaling, user experience and upgrades harder. A deployed contract is notoriously difficult to update, which becomes a security risk as soon as someone finds a vulnerability.
 
-However, this disintermediation comes with tradeoffs. Smart contracts operate with binary logic in environments where nuance is often required. They can't easily adapt to exceptional circumstances without human intervention, which undermines their autonomous nature.
+## The uncomfortable parts
 
-### Software Revolution
+On the technical side:
 
-In software development, smart contracts represent a shift from centralized to decentralized application architecture. Traditional software runs on servers controlled by specific entities, whereas dApps distribute both processing and governance across blockchain networks.
+- Deploying and using smart contracts is still expensive on most layer 1 blockchains (the base networks, such as Ethereum).
+- Contracts inherit the limits of their blockchain, such as throughput and latency.
+- Feeding real-world data into a contract reliably is hard. This is called the "oracle problem".
+- Code vulnerabilities have cost DeFi protocols billions in lost funds.
 
-The inconvenient reality: This distribution creates significant challenges in scalability, user experience, and upgradeability. Smart contracts are notoriously difficult to update once deployed, creating potential security risks when vulnerabilities are discovered.
+In practice:
 
-## The Uncomfortable Truths
+- Most users can't verify a contract's code, so they end up trusting a "trustless" system.
+- Whether a smart contract is legally enforceable varies widely from one jurisdiction to another.
+- Immutability is a feature until you need an upgrade.
+- Building smart contracts is still harder than traditional software development.
 
-### Technical Limitations
+## Where we stand
 
-- Smart contracts remain expensive to deploy and interact with on most Layer 1 blockchains
-- They're constrained by the limitations of their underlying blockchains (throughput, latency)
-- The "oracle problem" creates challenges in reliably connecting smart contracts to real-world data
-- Code vulnerabilities have led to billions in lost funds across DeFi protocols
-
-### Practical Challenges
-
-- Most users struggle to verify smart contract code, creating a paradoxical reliance on trust in a "trustless" system
-- Legal enforceability varies dramatically across jurisdictions
-- Smart contract immutability, while a feature, becomes problematic when upgrades are necessary
-- Developer experience remains challenging compared to traditional software development
-
-## Conclusion: The Path Forward
-
-Smart contracts represent a profound innovation with the potential to reshape digital interactions, but they're not a panacea. At Monark, we recognize both their transformative potential and their current limitations. Our approach focuses on identifying specific use cases where smart contracts provide clear advantages over traditional systems, rather than applying blockchain technology indiscriminately.
-
-The most successful smart contract implementations will likely be those that complement existing systems rather than attempting to replace them wholesale. By combining the automation and trustlessness of smart contracts with the flexibility and adaptability of traditional software and legal frameworks, we can harness their benefits while mitigating their drawbacks.
-
-As we continue developing our web3 incubator programs and university collaborations, we maintain a commitment to both innovation and pragmatism. The future of smart contracts isn't just about technological possibility; it's about creating practical value in a complex world that rarely fits neatly into deterministic code.
+Smart contracts could change how people deal with each other online, but they are no cure-all. At Monark, we look for specific cases where they have a clear advantage over traditional systems instead of putting blockchain everywhere. We expect the best uses to complement existing software and legal frameworks rather than replace them, pairing automation with the flexibility people and institutions bring. That's the approach we take in our Web3 incubator programs and university collaborations, because the real world rarely fits neatly into deterministic code.

@@ -2,7 +2,6 @@ import React from "react";
 import { Locale } from "@/i18n.config";
 import { en, fr } from "./history.i18n";
 import BrandedSeparator from "@/components/common/branded-separator/branded-separator";
-import { Card, CardContent } from "@/components/ui/card";
 
 type Props = {
   locale: Locale;
@@ -13,29 +12,19 @@ const contentMap = {
   fr: fr.history.content,
 };
 
+/** Mission statement between two branded separators (flat orange line). */
 function HistorySection({ locale }: Props) {
   const content = contentMap[locale];
 
   return (
-    <div className="flex items-center justify-center space-x-6 my-24 max-w-[100vw] overflow-hidden">
-      <BrandedSeparator
-        className="hidden md:flex"
-        orientation="horizontal"
-        circlePosition="before"
-        width="200px"
+    <section className="site-container py-12 md:py-16">
+      <BrandedSeparator circlePosition="both" width="100%" />
+      <div
+        className="mx-auto max-w-[46rem] py-12 text-center text-xl font-semibold leading-relaxed text-foreground md:py-16 md:text-2xl [&_p]:m-0"
+        dangerouslySetInnerHTML={{ __html: content }}
       />
-      <Card className="min-w-[500px] border border-dashed max-w-2xl text-center !ml-0">
-        <CardContent className="p-8 px-16">
-          <div dangerouslySetInnerHTML={{ __html: content }} />
-        </CardContent>
-      </Card>
-      <BrandedSeparator
-        className="hidden md:flex"
-        orientation="horizontal"
-        circlePosition="after"
-        width="200px"
-      />
-    </div>
+      <BrandedSeparator circlePosition="both" width="100%" />
+    </section>
   );
 }
 

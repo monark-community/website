@@ -16,7 +16,7 @@ export interface I18n {
 export const en: I18n = {
   about: {
     flavor: "What is Monark",
-    title: "Empowering Communities Through Collaboration",
+    title: "Empowering communities through collaboration",
     activities: [
       {
         icon: "modular",
@@ -64,7 +64,7 @@ export const fr: I18n = {
       },
       {
         icon: "governance",
-        title: "Gouvernance Collaborative",
+        title: "Gouvernance collaborative",
         content:
           "Monark favorise une gouvernance ouverte où chaque membre peut participer à l'évolution des projets, plaçant le pouvoir entre les mains des innovateurs.",
         action: "En savoir plus sur la gouvernance",

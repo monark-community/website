@@ -13,16 +13,16 @@ type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
 
 export const components = {
   h1: (props: HeadingProps) => (
-    <h1 className="text-3xl md:text-4xl font-bold mb-2" {...props} />
+    <h1 className="mb-4" {...props} />
   ),
   h2: (props: HeadingProps) => (
-    <h2 className="text-2xl md:text-3xl font-bold mb-2" {...props} />
+    <h2 className="mt-12 mb-4" {...props} />
   ),
   h3: (props: HeadingProps) => (
-    <h3 className="text-xl md:text-2xl font-bold mb-2" {...props} />
+    <h3 className="mt-8 mb-3" {...props} />
   ),
   h4: (props: HeadingProps) => (
-    <h4 className="text-lg md:text-xl font-bold mb-2" {...props} />
+    <h4 className="mt-6 mb-2" {...props} />
   ),
   h5: (props: HeadingProps) => (
     <h5 className="text-md md:text-lg font-bold mb-2" {...props} />
@@ -30,7 +30,7 @@ export const components = {
   h6: (props: HeadingProps) => (
     <h6 className="text-sm md:text-md font-bold mb-2" {...props} />
   ),
-  p: (props: ParagraphProps) => <p className="leading-snug" {...props} />,
+  p: (props: ParagraphProps) => <p className="leading-relaxed" {...props} />,
   ol: (props: ListProps) => (
     <ol className="list-decimal text-muted-foreground pl-5 space-y-2" {...props} />
   ),
@@ -42,11 +42,11 @@ export const components = {
     <em className="font-medium" {...props} />
   ),
   strong: (props: ComponentPropsWithoutRef<"strong">) => (
-    <strong className="font-medium" {...props} />
+    <strong className="font-semibold text-foreground" {...props} />
   ),
   a: ({ href, children, ...props }: AnchorProps) => {
     const className =
-      "text-primary hover:brightness-125 underline underline-offset-2 transition-colors duration-200";
+      "text-primary-ink underline underline-offset-[3px] decoration-primary/60 transition-colors duration-150 hover:text-foreground hover:decoration-foreground";
     if (href?.startsWith("/")) {
       return (
         <Link href={href} className={className} {...props}>
@@ -99,7 +99,7 @@ export const components = {
   ),
   blockquote: (props: BlockquoteProps) => (
     <blockquote
-      className="font-lg italic border-l-[4px] border-primary pl-6 mt-6 mr-0 mb-6 ml-6"
+      className="my-6 border-l-[3px] border-primary pl-5 text-lg italic text-muted-foreground"
       {...props}
     />
   ),
@@ -122,7 +122,7 @@ export const components = {
       />
     );
   },
-  aside: (props: ParagraphProps) => <aside className="p-4 bg-foreground" {...props} />,
+  aside: (props: ParagraphProps) => <aside className="my-6 rounded-lg border bg-card p-5" {...props} />,
   button: (props: ButtonProps) => {
     return <Button {...props} />;
   },

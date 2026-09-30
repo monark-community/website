@@ -1,0 +1,1310 @@
+{
+  "primitives": {
+    "orange": {
+      "400": {
+        "value": "#fa983a",
+        "type": "color",
+        "description": "Primary hover on espresso: color-mix(in oklch, primary, foreground 10%) in dark."
+      },
+      "500": {
+        "value": "#f88d10",
+        "type": "color",
+        "description": "Monark orange (--primary). Fills, icons, borders, underlines, dark-theme orange text."
+      },
+      "600": {
+        "value": "#de7f18",
+        "type": "color",
+        "description": "Primary hover on cream: color-mix(in oklch, primary, foreground 10%) in light."
+      },
+      "700": {
+        "value": "#b65000",
+        "type": "color",
+        "description": "Orange ink: oklch(from primary min(l, 0.55) c h). Orange text, links and focus on light grounds."
+      }
+    },
+    "cream": {
+      "0": {
+        "value": "#ffffff",
+        "type": "color",
+        "description": "Pure white. Only as text on destructive in light."
+      },
+      "50": {
+        "value": "#fffefc",
+        "type": "color",
+        "description": "Near-white card, oklch 0.998."
+      },
+      "100": {
+        "value": "#fff9f3",
+        "type": "color",
+        "description": "Cream page background, oklch 0.985."
+      },
+      "150": {
+        "value": "#fdf5ef",
+        "type": "color",
+        "description": "Sidebar tint, oklch 0.975 (used at 85% alpha)."
+      },
+      "200": {
+        "value": "#f7ece4",
+        "type": "color",
+        "description": "Secondary / muted surface, oklch 0.95."
+      },
+      "300": {
+        "value": "#e9dfd7",
+        "type": "color",
+        "description": "Decorative dividers, oklch 0.91."
+      },
+      "600": {
+        "value": "#857f7a",
+        "type": "color",
+        "description": "Form borders, oklch 0.6 (3.8:1 on cream)."
+      },
+      "700": {
+        "value": "#625952",
+        "type": "color",
+        "description": "Muted text on cream, oklch 0.47."
+      },
+      "950": {
+        "value": "#15110e",
+        "type": "color",
+        "description": "Ink: text on cream and on orange, oklch 0.18."
+      }
+    },
+    "espresso": {
+      "50": {
+        "value": "#fff0e4",
+        "type": "color",
+        "description": "Cream text on espresso, oklch 0.965."
+      },
+      "300": {
+        "value": "#b8a79a",
+        "type": "color",
+        "description": "Muted text on espresso, oklch 0.74."
+      },
+      "500": {
+        "value": "#756659",
+        "type": "color",
+        "description": "Form borders on espresso, oklch 0.52."
+      },
+      "700": {
+        "value": "#433529",
+        "type": "color",
+        "description": "Dividers on espresso, oklch 0.34."
+      },
+      "800": {
+        "value": "#36281d",
+        "type": "color",
+        "description": "Secondary / muted surface on espresso, oklch 0.29."
+      },
+      "850": {
+        "value": "#26170a",
+        "type": "color",
+        "description": "Espresso card, oklch 0.22."
+      },
+      "900": {
+        "value": "#1a0b02",
+        "type": "color",
+        "description": "Espresso page background, oklch 0.17."
+      },
+      "950": {
+        "value": "#0e0300",
+        "type": "color",
+        "description": "Footer legal band on espresso: oklch(from background calc(l - 0.05) c h)."
+      }
+    },
+    "red": {
+      "400": {
+        "value": "#fc452f",
+        "type": "color",
+        "description": "Destructive and chart-2 on espresso."
+      },
+      "500": {
+        "value": "#ef3620",
+        "type": "color",
+        "description": "Monark red (2025 Accent 500): chart-2 and small highlights on cream. Never a CTA, never destructive."
+      },
+      "600": {
+        "value": "#c81e0b",
+        "type": "color",
+        "description": "Destructive on cream (white text 5.8:1)."
+      }
+    },
+    "brown": {
+      "300": {
+        "value": "#c8a27a",
+        "type": "color",
+        "description": "Chart-4 on cream, chart-3 on espresso."
+      },
+      "700": {
+        "value": "#7a5c3e",
+        "type": "color",
+        "description": "Chart-3 on cream; \"prototype\" status tone."
+      }
+    },
+    "taupe": {
+      "500": {
+        "value": "#8a7a66",
+        "type": "color",
+        "description": "Chart-4 on espresso."
+      }
+    },
+    "grey": {
+      "800": {
+        "value": "#424242",
+        "type": "color",
+        "description": "Chart-5 on cream."
+      }
+    },
+    "green": {
+      "300": {
+        "value": "#7cc79a",
+        "type": "color",
+        "description": "Success on espresso."
+      },
+      "700": {
+        "value": "#2f7a4a",
+        "type": "color",
+        "description": "Success on cream."
+      }
+    },
+    "amber": {
+      "300": {
+        "value": "#e9b949",
+        "type": "color",
+        "description": "Warning on espresso."
+      },
+      "700": {
+        "value": "#8a5a00",
+        "type": "color",
+        "description": "Warning on cream."
+      }
+    },
+    "logo": {
+      "red": {
+        "value": "#ed2723",
+        "type": "color",
+        "description": "Butterfly gradient start. Logo files only; never in UI."
+      },
+      "amber": {
+        "value": "#fba60b",
+        "type": "color",
+        "description": "Butterfly gradient end. Logo files only; never in UI."
+      },
+      "ink": {
+        "value": "#141414",
+        "type": "color",
+        "description": "Wordmark lettering in the on-light logo files. Logo files only."
+      }
+    }
+  },
+  "semantic/light": {
+    "background": {
+      "value": "{cream.100}",
+      "type": "color",
+      "description": "Page background: cream / espresso."
+    },
+    "foreground": {
+      "value": "{cream.950}",
+      "type": "color",
+      "description": "Body text and headings on background, card and secondary (16:1 or more in both themes)."
+    },
+    "card": {
+      "value": "{cream.50}",
+      "type": "color",
+      "description": "Cards: near-white on cream with a border; warm brown on espresso with a border."
+    },
+    "card-foreground": {
+      "value": "{cream.950}",
+      "type": "color",
+      "description": "Text on card (= foreground)."
+    },
+    "popover": {
+      "value": "{cream.50}",
+      "type": "color",
+      "description": "Popovers, menus, dialogs (= card)."
+    },
+    "popover-foreground": {
+      "value": "{cream.950}",
+      "type": "color",
+      "description": "Text in popovers (= foreground)."
+    },
+    "primary": {
+      "value": "{orange.500}",
+      "type": "color",
+      "description": "Monark orange: primary button fill, icons, borders, underlines, chart-1. Never as text on cream (2.3:1)."
+    },
+    "primary-hover": {
+      "value": "{orange.600}",
+      "type": "color",
+      "description": "Primary button hover: the orange mixed 10% toward foreground."
+    },
+    "primary-foreground": {
+      "value": "{cream.950}",
+      "type": "color",
+      "description": "Text on orange: always dark (7.9:1 cream theme, 8.1:1 espresso). Never white (2.4:1)."
+    },
+    "primary-ink": {
+      "value": "{orange.700}",
+      "type": "color",
+      "description": "Orange-family TEXT and links: 4.9:1 on background, 5.0:1 on card in cream; 8.1:1 on espresso. Only 4.4:1 on secondary in cream: avoid there."
+    },
+    "secondary": {
+      "value": "{cream.200}",
+      "type": "color",
+      "description": "Quiet surfaces: hover fills, active nav pill, muted panels."
+    },
+    "secondary-foreground": {
+      "value": "{cream.950}",
+      "type": "color",
+      "description": "Text on secondary (= foreground)."
+    },
+    "muted": {
+      "value": "{cream.200}",
+      "type": "color",
+      "description": "Muted surfaces, image placeholders (= secondary)."
+    },
+    "muted-foreground": {
+      "value": "{cream.700}",
+      "type": "color",
+      "description": "Secondary text, metadata, inactive nav links: 6.5:1 on background, 5.9:1 on secondary (cream); 8.3:1 / 6.1:1 (espresso)."
+    },
+    "accent": {
+      "value": "{cream.200}",
+      "type": "color",
+      "description": "Accent surface (= secondary; the orange is never a background)."
+    },
+    "accent-foreground": {
+      "value": "{cream.950}",
+      "type": "color",
+      "description": "Text on accent (= foreground)."
+    },
+    "destructive": {
+      "value": "{red.600}",
+      "type": "color",
+      "description": "Destructive actions and errors; as text 5.5:1 on background in both themes."
+    },
+    "destructive-foreground": {
+      "value": "{cream.0}",
+      "type": "color",
+      "description": "Text on a destructive fill (5.8:1 / 5.5:1)."
+    },
+    "border": {
+      "value": "{cream.300}",
+      "type": "color",
+      "description": "Decorative 1px dividers and card outlines (not a control boundary)."
+    },
+    "input": {
+      "value": "{cream.600}",
+      "type": "color",
+      "description": "Form and secondary-button borders: 3.8:1 on cream, 3.5:1 on espresso (AA non-text)."
+    },
+    "ring": {
+      "value": "{orange.500}",
+      "type": "color",
+      "description": "Brand ring value kept for @monark/ui compatibility; draw focus with focus-ring."
+    },
+    "focus-ring": {
+      "value": "{orange.700}",
+      "type": "color",
+      "description": "Focus outlines (2px solid, 2px offset): 4.9:1 on cream, 8.1:1 on espresso."
+    },
+    "chart-1": {
+      "value": "{orange.500}",
+      "type": "color",
+      "description": "First data series (= primary)."
+    },
+    "chart-2": {
+      "value": "{red.500}",
+      "type": "color",
+      "description": "Second data series: Monark red."
+    },
+    "chart-3": {
+      "value": "{brown.700}",
+      "type": "color",
+      "description": "Third data series; \"prototype\" status tone."
+    },
+    "chart-4": {
+      "value": "{brown.300}",
+      "type": "color",
+      "description": "Fourth data series."
+    },
+    "chart-5": {
+      "value": "{grey.800}",
+      "type": "color",
+      "description": "Fifth data series."
+    },
+    "success": {
+      "value": "{green.700}",
+      "type": "color",
+      "description": "Success status, always with an icon and a label: 5.0:1 on cream, 9.6:1 on espresso."
+    },
+    "warning": {
+      "value": "{amber.700}",
+      "type": "color",
+      "description": "Warning / in-progress status, always with an icon and a label: 5.7:1 / 10.5:1."
+    },
+    "header-background": {
+      "value": "#fff9f3e6",
+      "type": "color",
+      "description": "Sticky header: background at 90% with a 12px backdrop blur."
+    },
+    "demo-chip-background": {
+      "value": "#f88d1014",
+      "type": "color",
+      "description": "Demo chip tint: primary at 8% on cream (15% would drop primary-ink to 4.3:1), 15% on espresso."
+    },
+    "demo-chip-foreground": {
+      "value": "{orange.700}",
+      "type": "color",
+      "description": "Demo chip text and dot (= primary-ink): 4.5:1 on its 8% tint, 6.4:1 on espresso."
+    },
+    "primary-subtle": {
+      "value": "#f88d1014",
+      "type": "color",
+      "description": "Orange 8% tint behind primary-ink text (status badge \"market validation\")."
+    },
+    "success-subtle": {
+      "value": "#2f7a4a14",
+      "type": "color",
+      "description": "Success 8% tint behind success text."
+    },
+    "warning-subtle": {
+      "value": "#8a5a001a",
+      "type": "color",
+      "description": "Warning 10% tint behind warning text."
+    },
+    "chart-3-subtle": {
+      "value": "#7a5c3e1a",
+      "type": "color",
+      "description": "Brown 10% tint behind chart-3 text (\"prototype\" status)."
+    },
+    "footer-band": {
+      "value": "{cream.200}",
+      "type": "color",
+      "description": "The darker legal band at the foot of the footer (secondary on cream, a deeper espresso on dark)."
+    },
+    "selection": {
+      "value": "#f88d1059",
+      "type": "color",
+      "description": "Text selection: primary at 35%."
+    },
+    "sidebar": {
+      "value": "#fdf5efd9",
+      "type": "color",
+      "description": "App sidebar (@monark/ui): tinted surface at 85%."
+    },
+    "sidebar-foreground": {
+      "value": "{cream.950}",
+      "type": "color",
+      "description": "Sidebar text (= foreground)."
+    },
+    "sidebar-primary": {
+      "value": "{orange.500}",
+      "type": "color",
+      "description": "Sidebar active item fill (= primary)."
+    },
+    "sidebar-primary-foreground": {
+      "value": "{cream.950}",
+      "type": "color",
+      "description": "Text on the sidebar active fill (= primary-foreground)."
+    },
+    "sidebar-accent": {
+      "value": "{cream.200}",
+      "type": "color",
+      "description": "Sidebar hover (= secondary)."
+    },
+    "sidebar-accent-foreground": {
+      "value": "{cream.950}",
+      "type": "color",
+      "description": "Text on sidebar hover (= foreground)."
+    },
+    "sidebar-border": {
+      "value": "{cream.300}",
+      "type": "color",
+      "description": "Sidebar divider (= border)."
+    },
+    "sidebar-ring": {
+      "value": "{orange.500}",
+      "type": "color",
+      "description": "Sidebar ring (= ring)."
+    }
+  },
+  "semantic/dark": {
+    "background": {
+      "value": "{espresso.900}",
+      "type": "color",
+      "description": "Page background: cream / espresso."
+    },
+    "foreground": {
+      "value": "{espresso.50}",
+      "type": "color",
+      "description": "Body text and headings on background, card and secondary (16:1 or more in both themes)."
+    },
+    "card": {
+      "value": "{espresso.850}",
+      "type": "color",
+      "description": "Cards: near-white on cream with a border; warm brown on espresso with a border."
+    },
+    "card-foreground": {
+      "value": "{espresso.50}",
+      "type": "color",
+      "description": "Text on card (= foreground)."
+    },
+    "popover": {
+      "value": "{espresso.850}",
+      "type": "color",
+      "description": "Popovers, menus, dialogs (= card)."
+    },
+    "popover-foreground": {
+      "value": "{espresso.50}",
+      "type": "color",
+      "description": "Text in popovers (= foreground)."
+    },
+    "primary": {
+      "value": "{orange.500}",
+      "type": "color",
+      "description": "Monark orange: primary button fill, icons, borders, underlines, chart-1. Never as text on cream (2.3:1)."
+    },
+    "primary-hover": {
+      "value": "{orange.400}",
+      "type": "color",
+      "description": "Primary button hover: the orange mixed 10% toward foreground."
+    },
+    "primary-foreground": {
+      "value": "{espresso.900}",
+      "type": "color",
+      "description": "Text on orange: always dark (7.9:1 cream theme, 8.1:1 espresso). Never white (2.4:1)."
+    },
+    "primary-ink": {
+      "value": "{orange.500}",
+      "type": "color",
+      "description": "Orange-family TEXT and links: 4.9:1 on background, 5.0:1 on card in cream; 8.1:1 on espresso. Only 4.4:1 on secondary in cream: avoid there."
+    },
+    "secondary": {
+      "value": "{espresso.800}",
+      "type": "color",
+      "description": "Quiet surfaces: hover fills, active nav pill, muted panels."
+    },
+    "secondary-foreground": {
+      "value": "{espresso.50}",
+      "type": "color",
+      "description": "Text on secondary (= foreground)."
+    },
+    "muted": {
+      "value": "{espresso.800}",
+      "type": "color",
+      "description": "Muted surfaces, image placeholders (= secondary)."
+    },
+    "muted-foreground": {
+      "value": "{espresso.300}",
+      "type": "color",
+      "description": "Secondary text, metadata, inactive nav links: 6.5:1 on background, 5.9:1 on secondary (cream); 8.3:1 / 6.1:1 (espresso)."
+    },
+    "accent": {
+      "value": "{espresso.800}",
+      "type": "color",
+      "description": "Accent surface (= secondary; the orange is never a background)."
+    },
+    "accent-foreground": {
+      "value": "{espresso.50}",
+      "type": "color",
+      "description": "Text on accent (= foreground)."
+    },
+    "destructive": {
+      "value": "{red.400}",
+      "type": "color",
+      "description": "Destructive actions and errors; as text 5.5:1 on background in both themes."
+    },
+    "destructive-foreground": {
+      "value": "{espresso.900}",
+      "type": "color",
+      "description": "Text on a destructive fill (5.8:1 / 5.5:1)."
+    },
+    "border": {
+      "value": "{espresso.700}",
+      "type": "color",
+      "description": "Decorative 1px dividers and card outlines (not a control boundary)."
+    },
+    "input": {
+      "value": "{espresso.500}",
+      "type": "color",
+      "description": "Form and secondary-button borders: 3.8:1 on cream, 3.5:1 on espresso (AA non-text)."
+    },
+    "ring": {
+      "value": "{orange.500}",
+      "type": "color",
+      "description": "Brand ring value kept for @monark/ui compatibility; draw focus with focus-ring."
+    },
+    "focus-ring": {
+      "value": "{orange.500}",
+      "type": "color",
+      "description": "Focus outlines (2px solid, 2px offset): 4.9:1 on cream, 8.1:1 on espresso."
+    },
+    "chart-1": {
+      "value": "{orange.500}",
+      "type": "color",
+      "description": "First data series (= primary)."
+    },
+    "chart-2": {
+      "value": "{red.400}",
+      "type": "color",
+      "description": "Second data series: Monark red."
+    },
+    "chart-3": {
+      "value": "{brown.300}",
+      "type": "color",
+      "description": "Third data series; \"prototype\" status tone."
+    },
+    "chart-4": {
+      "value": "{taupe.500}",
+      "type": "color",
+      "description": "Fourth data series."
+    },
+    "chart-5": {
+      "value": "{espresso.50}",
+      "type": "color",
+      "description": "Fifth data series."
+    },
+    "success": {
+      "value": "{green.300}",
+      "type": "color",
+      "description": "Success status, always with an icon and a label: 5.0:1 on cream, 9.6:1 on espresso."
+    },
+    "warning": {
+      "value": "{amber.300}",
+      "type": "color",
+      "description": "Warning / in-progress status, always with an icon and a label: 5.7:1 / 10.5:1."
+    },
+    "header-background": {
+      "value": "#1a0b02e6",
+      "type": "color",
+      "description": "Sticky header: background at 90% with a 12px backdrop blur."
+    },
+    "demo-chip-background": {
+      "value": "#f88d1026",
+      "type": "color",
+      "description": "Demo chip tint: primary at 8% on cream (15% would drop primary-ink to 4.3:1), 15% on espresso."
+    },
+    "demo-chip-foreground": {
+      "value": "{orange.500}",
+      "type": "color",
+      "description": "Demo chip text and dot (= primary-ink): 4.5:1 on its 8% tint, 6.4:1 on espresso."
+    },
+    "primary-subtle": {
+      "value": "#f88d1014",
+      "type": "color",
+      "description": "Orange 8% tint behind primary-ink text (status badge \"market validation\")."
+    },
+    "success-subtle": {
+      "value": "#7cc79a14",
+      "type": "color",
+      "description": "Success 8% tint behind success text."
+    },
+    "warning-subtle": {
+      "value": "#e9b9491a",
+      "type": "color",
+      "description": "Warning 10% tint behind warning text."
+    },
+    "chart-3-subtle": {
+      "value": "#c8a27a1a",
+      "type": "color",
+      "description": "Brown 10% tint behind chart-3 text (\"prototype\" status)."
+    },
+    "footer-band": {
+      "value": "{espresso.950}",
+      "type": "color",
+      "description": "The darker legal band at the foot of the footer (secondary on cream, a deeper espresso on dark)."
+    },
+    "selection": {
+      "value": "#f88d1059",
+      "type": "color",
+      "description": "Text selection: primary at 35%."
+    },
+    "sidebar": {
+      "value": "#26170ad9",
+      "type": "color",
+      "description": "App sidebar (@monark/ui): tinted surface at 85%."
+    },
+    "sidebar-foreground": {
+      "value": "{espresso.50}",
+      "type": "color",
+      "description": "Sidebar text (= foreground)."
+    },
+    "sidebar-primary": {
+      "value": "{orange.500}",
+      "type": "color",
+      "description": "Sidebar active item fill (= primary)."
+    },
+    "sidebar-primary-foreground": {
+      "value": "{espresso.900}",
+      "type": "color",
+      "description": "Text on the sidebar active fill (= primary-foreground)."
+    },
+    "sidebar-accent": {
+      "value": "{espresso.800}",
+      "type": "color",
+      "description": "Sidebar hover (= secondary)."
+    },
+    "sidebar-accent-foreground": {
+      "value": "{espresso.50}",
+      "type": "color",
+      "description": "Text on sidebar hover (= foreground)."
+    },
+    "sidebar-border": {
+      "value": "{espresso.700}",
+      "type": "color",
+      "description": "Sidebar divider (= border)."
+    },
+    "sidebar-ring": {
+      "value": "{orange.500}",
+      "type": "color",
+      "description": "Sidebar ring (= ring)."
+    }
+  },
+  "dimensions": {
+    "space": {
+      "1": {
+        "value": "4",
+        "type": "spacing",
+        "description": "Tight gaps: header right cluster on the website, social icons."
+      },
+      "2": {
+        "value": "8",
+        "type": "spacing",
+        "description": "Icon-to-label gap in buttons; eyebrow-to-title."
+      },
+      "3": {
+        "value": "12",
+        "type": "spacing",
+        "description": "Eyebrow bottom margin; small stacks."
+      },
+      "4": {
+        "value": "16",
+        "type": "spacing",
+        "description": "Page gutter on phones; card text top padding; button x-padding."
+      },
+      "5": {
+        "value": "20",
+        "type": "spacing",
+        "description": "Feature card text top padding; brand-to-links margin (20 + link 8 = 28)."
+      },
+      "6": {
+        "value": "24",
+        "type": "spacing",
+        "description": "Page gutter from 640px; header left/right gaps; side-story gaps."
+      },
+      "7": {
+        "value": "28",
+        "type": "spacing",
+        "description": "Brand to first nav link (optical 28px)."
+      },
+      "8": {
+        "value": "32",
+        "type": "spacing",
+        "description": "Page gutter from 1024px; footer band columns; feature/side grid gap."
+      },
+      "10": {
+        "value": "40",
+        "type": "spacing",
+        "description": "Footer band vertical padding; magazine grid column gap."
+      },
+      "12": {
+        "value": "48",
+        "type": "spacing",
+        "description": "Space above the first magazine section; pair-card row gap."
+      },
+      "14": {
+        "value": "56",
+        "type": "spacing",
+        "description": "Space between magazine sections on wide screens."
+      },
+      "16": {
+        "value": "64",
+        "type": "spacing",
+        "description": "Section padding on phones (py-16)."
+      },
+      "24": {
+        "value": "96",
+        "type": "spacing",
+        "description": "Section padding from 768px (py-24)."
+      },
+      "0-5": {
+        "value": "2",
+        "type": "spacing",
+        "description": "Locale switch inner padding (Tailwind p-0.5)."
+      },
+      "1-5": {
+        "value": "6",
+        "type": "spacing",
+        "description": "Chip dot-to-label gap; nav link gap."
+      },
+      "2-5": {
+        "value": "10",
+        "type": "spacing",
+        "description": "Product brand mark-to-name gap; header action gaps; chip x-padding."
+      },
+      "3-5": {
+        "value": "14",
+        "type": "spacing",
+        "description": "Small button x-padding (px-3.5); info-tip popover padding."
+      }
+    },
+    "radius": {
+      "sm": {
+        "value": "8",
+        "type": "borderRadius",
+        "description": "Small inner elements: menu items, focus targets (calc(radius * .5))."
+      },
+      "md": {
+        "value": "12",
+        "type": "borderRadius",
+        "description": "Inputs, icon tiles (calc(radius * .75))."
+      },
+      "lg": {
+        "value": "16",
+        "type": "borderRadius",
+        "description": "THE card radius (--radius: 1rem): cards, compact news thumbnails, popovers."
+      },
+      "2xl": {
+        "value": "24",
+        "type": "borderRadius",
+        "description": "Feature cards, magazine images, hero photos (1.5rem)."
+      },
+      "full": {
+        "value": "9999",
+        "type": "borderRadius",
+        "description": "Pills: every button, nav tab, chip, badge, locale switch."
+      }
+    },
+    "size": {
+      "header-height": {
+        "value": "64",
+        "type": "sizing",
+        "description": "Sticky site header height."
+      },
+      "container-max": {
+        "value": "1200",
+        "type": "sizing",
+        "description": "Website content width (.site-container); product sites use 1152 (max-w-6xl)."
+      },
+      "control-sm": {
+        "value": "36",
+        "type": "sizing",
+        "description": "Small button height; theme toggle (36px ghost icon button)."
+      },
+      "control-md": {
+        "value": "40",
+        "type": "sizing",
+        "description": "Default button height; category jump pills."
+      },
+      "control-lg": {
+        "value": "48",
+        "type": "sizing",
+        "description": "Large button height; mobile sheet action."
+      },
+      "locale-segment": {
+        "value": "32",
+        "type": "sizing",
+        "description": "Locale switch segment height (min width 36)."
+      },
+      "touch-target": {
+        "value": "44",
+        "type": "sizing",
+        "description": "Minimum touch target on phones (footer links, socials)."
+      },
+      "mark-header": {
+        "value": "28",
+        "type": "sizing",
+        "description": "Butterfly mark in the product brand."
+      },
+      "mark-min": {
+        "value": "20",
+        "type": "sizing",
+        "description": "Smallest on-screen mark (16px only as a favicon)."
+      },
+      "logo-horizontal-min": {
+        "value": "120",
+        "type": "sizing",
+        "description": "Smallest horizontal logo width."
+      },
+      "logo-footer-height": {
+        "value": "42",
+        "type": "sizing",
+        "description": "Horizontal logo height in the website footer and header (136 wide)."
+      }
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "sans": {
+        "value": "Nunito Sans",
+        "type": "fontFamilies"
+      },
+      "mono": {
+        "value": "ui-monospace",
+        "type": "fontFamilies"
+      }
+    },
+    "fontWeights": {
+      "regular": {
+        "value": "Regular",
+        "type": "fontWeights",
+        "description": "400"
+      },
+      "semibold": {
+        "value": "SemiBold",
+        "type": "fontWeights",
+        "description": "600"
+      },
+      "bold": {
+        "value": "Bold",
+        "type": "fontWeights",
+        "description": "700"
+      },
+      "extrabold": {
+        "value": "ExtraBold",
+        "type": "fontWeights",
+        "description": "800"
+      }
+    },
+    "fontSizes": {
+      "12": {
+        "value": "12",
+        "type": "fontSizes"
+      },
+      "13": {
+        "value": "13",
+        "type": "fontSizes"
+      },
+      "14": {
+        "value": "14",
+        "type": "fontSizes"
+      },
+      "15": {
+        "value": "15",
+        "type": "fontSizes"
+      },
+      "16": {
+        "value": "16",
+        "type": "fontSizes"
+      },
+      "18": {
+        "value": "18",
+        "type": "fontSizes"
+      },
+      "20": {
+        "value": "20",
+        "type": "fontSizes"
+      },
+      "24": {
+        "value": "24",
+        "type": "fontSizes"
+      },
+      "30": {
+        "value": "30",
+        "type": "fontSizes"
+      },
+      "32": {
+        "value": "32",
+        "type": "fontSizes"
+      },
+      "44": {
+        "value": "44",
+        "type": "fontSizes"
+      },
+      "48": {
+        "value": "48",
+        "type": "fontSizes"
+      },
+      "68": {
+        "value": "68",
+        "type": "fontSizes"
+      }
+    },
+    "type": {
+      "headline": {
+        "type": "typography",
+        "description": "Home hero headline only, once per site: clamp(2.25rem, 1.2rem + 4vw, 4.25rem), 36px on phones.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.extrabold}",
+          "fontSize": "{fontSizes.68}",
+          "lineHeight": "105%",
+          "letterSpacing": "-2%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "h1": {
+        "type": "typography",
+        "description": "Page titles: clamp(2rem, 1.45rem + 2.2vw, 3rem). Sentence case.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.extrabold}",
+          "fontSize": "{fontSizes.48}",
+          "lineHeight": "115%",
+          "letterSpacing": "-2%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "h2": {
+        "type": "typography",
+        "description": "Section headings: clamp(1.625rem, 1.4rem + .9vw, 2rem).",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.bold}",
+          "fontSize": "{fontSizes.32}",
+          "lineHeight": "115%",
+          "letterSpacing": "-2%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "h3": {
+        "type": "typography",
+        "description": "Sub-sections: clamp(1.25rem, 1.15rem + .4vw, 1.5rem).",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.bold}",
+          "fontSize": "{fontSizes.24}",
+          "lineHeight": "115%",
+          "letterSpacing": "0%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "h4": {
+        "type": "typography",
+        "description": "Small headings.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.bold}",
+          "fontSize": "{fontSizes.20}",
+          "lineHeight": "115%",
+          "letterSpacing": "0%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "h5": {
+        "type": "typography",
+        "description": "h5 and h6.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.bold}",
+          "fontSize": "{fontSizes.18}",
+          "lineHeight": "115%",
+          "letterSpacing": "0%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "lead": {
+        "type": "typography",
+        "description": "The one line under a page title or hero: clamp(1.125rem, 1.05rem + .3vw, 1.25rem), muted-foreground.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.regular}",
+          "fontSize": "{fontSizes.20}",
+          "lineHeight": "155%",
+          "letterSpacing": "0%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "body": {
+        "type": "typography",
+        "description": "All running text, max about 68 characters a line.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.regular}",
+          "fontSize": "{fontSizes.16}",
+          "lineHeight": "160%",
+          "letterSpacing": "0%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "small": {
+        "type": "typography",
+        "description": "Hints, footnotes, footer copy, in muted-foreground.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.regular}",
+          "fontSize": "{fontSizes.14}",
+          "lineHeight": "143%",
+          "letterSpacing": "0%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "eyebrow": {
+        "type": "typography",
+        "description": "UPPERCASE label above a heading, in primary-ink. Only when it adds information.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.bold}",
+          "fontSize": "{fontSizes.13}",
+          "lineHeight": "130%",
+          "letterSpacing": "8%",
+          "paragraphSpacing": "0",
+          "textCase": "uppercase",
+          "textDecoration": "none"
+        }
+      },
+      "card-excerpt": {
+        "type": "typography",
+        "description": "Card excerpts (≤ 20 words), in muted-foreground; feature cards use 18px.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.regular}",
+          "fontSize": "{fontSizes.15}",
+          "lineHeight": "162.5%",
+          "letterSpacing": "0%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "card-meta": {
+        "type": "typography",
+        "description": "UPPERCASE topic tag (primary-ink) above a card title; the date beside it is 600, sentence case, muted-foreground.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.bold}",
+          "fontSize": "{fontSizes.12}",
+          "lineHeight": "133%",
+          "letterSpacing": "8%",
+          "paragraphSpacing": "0",
+          "textCase": "uppercase",
+          "textDecoration": "none"
+        }
+      },
+      "label": {
+        "type": "typography",
+        "description": "Chips, badges, locale segments.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.bold}",
+          "fontSize": "{fontSizes.12}",
+          "lineHeight": "133%",
+          "letterSpacing": "0%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "product-name": {
+        "type": "typography",
+        "description": "The product name in the header brand, next to the butterfly.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.extrabold}",
+          "fontSize": "{fontSizes.18}",
+          "lineHeight": "100%",
+          "letterSpacing": "-2%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "nav-link": {
+        "type": "typography",
+        "description": "Header links (muted-foreground; active in foreground) and footer links (foreground).",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.semibold}",
+          "fontSize": "{fontSizes.14}",
+          "lineHeight": "143%",
+          "letterSpacing": "0%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "button": {
+        "type": "typography",
+        "description": "Default (40px) buttons.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.bold}",
+          "fontSize": "{fontSizes.14}",
+          "lineHeight": "143%",
+          "letterSpacing": "0%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "button-sm": {
+        "type": "typography",
+        "description": "Small buttons (36px).",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.bold}",
+          "fontSize": "{fontSizes.13}",
+          "lineHeight": "154%",
+          "letterSpacing": "0%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "button-lg": {
+        "type": "typography",
+        "description": "Large buttons (hero actions).",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.bold}",
+          "fontSize": "{fontSizes.16}",
+          "lineHeight": "150%",
+          "letterSpacing": "0%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "card-title": {
+        "type": "typography",
+        "description": "Grid card and side-story titles.",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.extrabold}",
+          "fontSize": "{fontSizes.20}",
+          "lineHeight": "125%",
+          "letterSpacing": "-1.5%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "feature-title": {
+        "type": "typography",
+        "description": "Magazine feature card title (26px on phones).",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.extrabold}",
+          "fontSize": "{fontSizes.30}",
+          "lineHeight": "125%",
+          "letterSpacing": "-1.5%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "lead-title": {
+        "type": "typography",
+        "description": "The news lead story title (28px on phones).",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.extrabold}",
+          "fontSize": "{fontSizes.44}",
+          "lineHeight": "125%",
+          "letterSpacing": "-1.5%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "stat": {
+        "type": "typography",
+        "description": "Key figures under a hero (24px on phones).",
+        "value": {
+          "fontFamily": "{fontFamilies.sans}",
+          "fontWeight": "{fontWeights.extrabold}",
+          "fontSize": "{fontSizes.30}",
+          "lineHeight": "125%",
+          "letterSpacing": "-2%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      },
+      "code": {
+        "type": "typography",
+        "description": "Wallet addresses (shortened), hashes and code only.",
+        "value": {
+          "fontFamily": "{fontFamilies.mono}",
+          "fontWeight": "{fontWeights.regular}",
+          "fontSize": "{fontSizes.14}",
+          "lineHeight": "150%",
+          "letterSpacing": "0%",
+          "paragraphSpacing": "0",
+          "textCase": "none",
+          "textDecoration": "none"
+        }
+      }
+    }
+  },
+  "effects/light": {
+    "shadow": {
+      "popover": {
+        "type": "boxShadow",
+        "description": "The ONE shadow level: popovers, menus, dialogs. Everything else uses borders and surface changes.",
+        "value": [
+          {
+            "x": "0",
+            "y": "4",
+            "blur": "6",
+            "spread": "-1",
+            "color": "#0000001a",
+            "type": "dropShadow"
+          },
+          {
+            "x": "0",
+            "y": "2",
+            "blur": "4",
+            "spread": "-2",
+            "color": "#0000001a",
+            "type": "dropShadow"
+          }
+        ]
+      }
+    }
+  },
+  "$themes": [
+    {
+      "id": "monark-light",
+      "name": "Light",
+      "group": "Theme",
+      "selectedTokenSets": {
+        "primitives": "source",
+        "semantic/light": "enabled",
+        "dimensions": "enabled",
+        "typography": "enabled",
+        "effects/light": "enabled"
+      }
+    },
+    {
+      "id": "monark-dark",
+      "name": "Dark",
+      "group": "Theme",
+      "selectedTokenSets": {
+        "primitives": "source",
+        "semantic/dark": "enabled",
+        "dimensions": "enabled",
+        "typography": "enabled",
+        "effects/light": "enabled"
+      }
+    }
+  ],
+  "$metadata": {
+    "tokenSetOrder": [
+      "primitives",
+      "semantic/light",
+      "semantic/dark",
+      "dimensions",
+      "typography",
+      "effects/light"
+    ]
+  }
+}

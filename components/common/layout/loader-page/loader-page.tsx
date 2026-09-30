@@ -33,7 +33,7 @@ export default function LoaderPage() {
   return (
     <div
       className={cn(
-        "fixed top-0 left-0 w-full h-1 bg-primary transition-opacity",
+        "fixed top-0 left-0 z-[60] w-full h-0.5 bg-primary transition-opacity",
         loading ? "opacity-100" : "opacity-0",
         "animate-[fadeIn_0.2s_ease-out]"
       )}

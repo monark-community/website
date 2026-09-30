@@ -4,30 +4,31 @@ import { DatedNewsMetadata } from "@/types/news.types";
 const data: DatedNewsMetadata[] = [
   {
     "id": "pioneer-in-university-projects-mentorship",
-    "title": "Pioneer in Supporting University Projects in Decentralized Accounting",
+    "title": "A pioneer in supporting university projects in decentralized accounting",
     "author": "Marty-Kanatakhatsus Meunier",
     "date": "2020-04-24T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
-    "description": "Monark, founded by Vincent Grenier, positions itself as the leader in supporting university projects in decentralized technologies, building on successful collaborations like CryptoSys with the University of Sherbrooke. The company offers tailored mentorship to transform academic knowledge into market-ready solutions, fostering innovation and professional skills among students.",
+    "description": "Monark, founded by Vincent Grenier, positions itself as the leader in supporting university projects in decentralized technologies. It builds on collaborations such as CryptoSys with the University of Sherbrooke and mentors students so their academic work becomes market-ready and they gain professional skills along the way.",
     "original_src": "https://www.usherbrooke.ca/actualites/nouvelles/sciences-innovations-technologiques/details/42749",
     "img": "pioneer-in-university-projects-mentorship.webp",
     "img_alt": "University of Sherbrooke x Monark",
     "img_author": "Sherbrooke University",
     "img_author_src": "https://maps.app.goo.gl/NcxRguhaq35a5vXM9",
-    "read_time_seconds": 180,
+    "read_time_seconds": 150,
     "tags": [
       "Article",
       "Project",
       "Impact"
-    ]
+    ],
+    "category": "monark"
   },
   {
     "id": "real-world-web3-use-cases-that-aren-t-just-nfts",
-    "title": "Real World Web3; Use Cases That Aren't Just NFTs",
+    "title": "Real-world Web3: use cases beyond NFTs",
     "author": "Monark Team",
     "date": "2025-09-11T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
-    "description": "Web3's potential extends beyond NFTs and hype, focusing on real-world problems. Examples include community currencies, transparent supply chains, notarized documents, and secure medical data sharing, all demonstrating how decentralized technology can build trust and accountability.",
+    "description": "Web3 can do much more than NFTs. Community currencies, traceable supply chains, notarized documents and secure medical data sharing all use decentralized technology to build trust and accountability.",
     "img": "real-world-web3-use-cases-that-aren-t-just-nfts.webp",
     "img_alt": "Supply Chain Tracking is one of the Important use cases of Blockchain",
     "img_author": "Bernd Dittrich",
@@ -37,153 +38,162 @@ const data: DatedNewsMetadata[] = [
       "Article",
       "Project",
       "Impact"
-    ]
+    ],
+    "category": "build"
   },
   {
     "id": "smart-contracts-explained-like-you-re-5",
-    "title": "Smart Contracts Explained Like You're 5",
+    "title": "Smart contracts explained like you're 5",
     "author": "Monark Team",
     "date": "2025-08-21T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
-    "description": "Smart contracts are self-executing blockchain agreements. They automate trustless interactions, but face limitations like high costs, inflexibility, and vulnerabilities. Their future lies in complementing, not replacing, traditional systems.",
+    "description": "A smart contract is a program on a blockchain that carries out an agreement by itself. It removes the middleman, but it's costly, rigid and hard to fix, so it works best alongside traditional systems.",
     "img": "smart-contracts-explained-like-you-re-5.webp",
     "img_alt": "Blockchain representation",
     "img_author": "Shubham Dhage",
     "img_author_src": "https://unsplash.com/photos/a-group-of-cubes-hanging-from-a-ceiling-MBfYGVsDEp8",
-    "read_time_seconds": 320,
+    "read_time_seconds": 300,
     "tags": [
       "Article",
       "Technology"
-    ]
+    ],
+    "category": "explained"
   },
   {
     "id": "trust-from-open-data-to-mathematical-proof",
-    "title": "Trust; From Open Data to Mathematical Proof",
+    "title": "Trust: from open data to mathematical proof",
     "author": "Monark Team",
     "date": "2025-08-28T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
-    "description": "Blockchain transparency built trust but sacrificed privacy. Zero-knowledge proofs are now enabling a new Web3 model that balances both—allowing for verification without revealing sensitive information.",
+    "description": "Blockchains earned trust by making everything public, at the expense of privacy. Zero-knowledge proofs let Web3 verify information without revealing it, so a system can be both accountable and private.",
     "img": "trust-from-open-data-to-mathematical-proof.webp",
     "img_alt": "Mathematics solved the trust problem",
     "img_author": "Brett Jordan",
     "img_author_src": "https://unsplash.com/photos/brown-wooden-blocks-on-white-surface-wW-lhteuK0o",
-    "read_time_seconds": 190,
+    "read_time_seconds": 150,
     "tags": [
       "Article",
       "Technology"
-    ]
+    ],
+    "category": "explained"
   },
   {
     "id": "web3-developer-roadmap-and-resources",
-    "title": "Web3 Developer Roadmap & Resources",
+    "title": "Web3 developer roadmap and resources",
     "author": "Monark Team",
     "date": "2025-09-04T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
-    "description": "Web3 development requires understanding core concepts like blockchain and cryptography. Key tools for building include languages like Solidity, frameworks such as Hardhat, and infrastructure partners like The Graph for data, Pinax for hosting, and Midnight Network for privacy.",
+    "description": "Where to start in Web3 development, from core concepts like blockchain and cryptography to tools like Solidity and Hardhat, plus infrastructure such as The Graph for data, Pinax for hosting and Midnight Network for privacy.",
     "img": "web3-developer-roadmap-and-resources.webp",
     "img_alt": "A roadmap is not always a straight line",
     "img_author": "Mark König",
     "img_author_src": "https://unsplash.com/photos/yellow-and-black-arrow-sign-ECGv8s2IPG0",
-    "read_time_seconds": 180,
-    "tags": [
-      "Article",
-      "Technology"
-    ]
-  },
-  {
-    "id": "web3-revolution-reality",
-    "title": "The Revolution and Reality of Web3 - An Honest Assessment",
-    "author": "Monark Team",
-    "date": "2025-08-14T00:00:00.000Z",
-    "city": "Sherbrooke, QC, Canada",
-    "description": "At Monark, we analyze Web3 with honesty, recognizing both its transformative potential and real-world challenges. This article examines the idealism and realities of Web3, offering a pragmatic approach for sustainable adoption.",
-    "img": "web3-revolution-reality.webp",
-    "img_alt": "Web3 Revolution",
-    "img_author": "Generated by Gemini AI",
     "read_time_seconds": 160,
     "tags": [
       "Article",
-      "Orientation",
-      "Mindset"
-    ]
+      "Technology"
+    ],
+    "category": "build"
   },
   {
-    "id": "what-is-web3-really",
-    "title": "What is Web3, Really?",
+    "id": "web3-revolution-reality",
+    "title": "The revolution and reality of Web3: an honest assessment",
     "author": "Monark Team",
-    "date": "2025-07-25T00:00:00.000Z",
+    "date": "2025-08-14T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
-    "description": "A critical examination of Web3, exploring its promises, challenges, and the reality of decentralized technologies. This article aims to clarify misconceptions and provide a balanced view of what Web3 can truly offer.",
-    "img": "what-is-web3-really.webp",
-    "img_alt": "What is Web3",
+    "description": "An honest look at Web3 from Monark, covering what it promised, where it falls short and the practical approach we take so it can be adopted for the long term.",
+    "img": "web3-revolution-reality.webp",
+    "img_alt": "Web3 Revolution",
     "img_author": "Generated by Gemini AI",
-    "read_time_seconds": 240,
+    "read_time_seconds": 150,
     "tags": [
       "Article",
       "Orientation",
       "Mindset"
-    ]
+    ],
+    "category": "beyond-the-hype"
+  },
+  {
+    "id": "what-is-web3-really",
+    "title": "What is Web3, really?",
+    "author": "Monark Team",
+    "date": "2025-07-25T00:00:00.000Z",
+    "city": "Sherbrooke, QC, Canada",
+    "description": "A critical look at Web3, its promises and its problems, to clear up some misconceptions and give a balanced view of what decentralized technology can actually offer.",
+    "img": "what-is-web3-really.webp",
+    "img_alt": "What is Web3",
+    "img_author": "Generated by Gemini AI",
+    "read_time_seconds": 230,
+    "tags": [
+      "Article",
+      "Orientation",
+      "Mindset"
+    ],
+    "category": "explained"
   },
   {
     "id": "what-monark-is-building-and-why",
-    "title": "What Monark Is Building & Why",
+    "title": "What Monark is building, and why",
     "author": "Monark Team",
     "date": "2025-09-25T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
-    "description": "Monark bridges academia and the Web3 industry by turning student research into viable projects. It incubates early-stage ventures and has built real-world solutions for supply chain transparency and secure medical data sharing.",
+    "description": "Monark connects universities and the Web3 industry by turning student research into viable projects. We incubate early-stage ventures and have built tools for supply chain transparency and secure medical data sharing.",
     "img": "what-monark-is-building-and-why.webp",
     "img_alt": "Monarch resting on a hand",
     "img_author": "Matthias Leistikow",
     "img_author_src": "https://unsplash.com/photos/black-and-yellow-butterfly-on-persons-hand-VmwH8vCgUkY",
-    "read_time_seconds": 170,
+    "read_time_seconds": 130,
     "tags": [
       "Article",
       "Orientation",
       "Impact"
-    ]
+    ],
+    "category": "monark"
   },
   {
     "id": "what-needs-to-happen-before-web3-becomes-everyday-tech",
-    "title": "What Needs to Happen Before Web3 Becomes Everyday Tech",
+    "title": "What needs to happen before Web3 becomes everyday tech",
     "author": "Monark Team",
     "date": "2025-09-18T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
-    "description": "Web3 faces significant barriers to mainstream adoption, including complex user experiences, a lack of clear regulation, and the need for better educational resources. Like the early internet, it requires improvements in its infrastructure—particularly wallets and identity systems—to become more user-friendly.",
+    "description": "Web3 is still hard to use, lacks clear regulation and needs better education. Like the early internet, it needs better infrastructure, especially wallets and identity, before most people can use it comfortably.",
     "img": "what-needs-to-happen-before-web3-becomes-everyday-tech.webp",
     "img_alt": "A bustling city, that would greatly benefit from Blockchain",
     "img_author": "Jorge Zhagui",
     "img_author_src": "https://unsplash.com/photos/cars-on-road-between-high-rise-buildings-during-daytime-VYLwdMhhKS0",
-    "read_time_seconds": 120,
+    "read_time_seconds": 110,
     "tags": [
       "Article",
       "Mindset",
       "Impact"
-    ]
+    ],
+    "category": "beyond-the-hype"
   },
   {
     "id": "where-blockchain-shines",
-    "title": "Where Blockchain Shines, and Where It Doesn't",
+    "title": "Where blockchain shines, and where it doesn't",
     "author": "Monark Team",
     "date": "2025-08-09T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
-    "description": "Blockchain technology has been both overhyped and underappreciated. At Monark, we believe in cutting through the noise to identify genuine value. This article examines where blockchain truly excels and where traditional solutions remain superior.",
+    "description": "Blockchain has been both overhyped and underrated. We look at where it really helps and where a traditional solution still does the job better.",
     "img": "where-blockchain-shines.webp",
     "img_alt": "Where Blockchain Shines",
     "img_author": "Generated by Gemini AI",
-    "read_time_seconds": 200,
+    "read_time_seconds": 190,
     "tags": [
       "Article",
       "Orientation",
       "Mindset"
-    ]
+    ],
+    "category": "beyond-the-hype"
   },
   {
     "id": "who-is-web3-actually-for",
-    "title": "Who Is Web3 Actually For?",
+    "title": "Who is Web3 actually for?",
     "author": "Monark Team",
     "date": "2025-09-30T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
-    "description": "Web3's promise of a user-owned internet is limited to crypto enthusiasts. For broader adoption, it must address real-world needs for a diverse population, offering solutions like transparent supply chains and verifiable educational credentials to groups like farmers and students.",
+    "description": "Web3 promises an internet owned by its users, but for now that promise mostly reaches crypto enthusiasts. To go further, it has to meet real needs, such as traceable supply chains for farmers and verifiable credentials for students.",
     "img": "who-is-web3-actually-for.webp",
     "img_alt": "People in an interactive display of art",
     "img_author": "Note Thanun",
@@ -193,24 +203,26 @@ const data: DatedNewsMetadata[] = [
       "Article",
       "Orientation",
       "Mindset"
-    ]
+    ],
+    "category": "beyond-the-hype"
   },
   {
     "id": "why-decentralization-matters",
-    "title": "Why Decentralization Matters - Beyond the Hype",
+    "title": "Why decentralization matters, beyond the hype",
     "author": "Monark Team",
     "date": "2025-08-02T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
-    "description": "In a world dominated by tech giants and institutional gatekeepers, decentralization isn't just another Silicon Valley buzzword—it represents a fundamental shift in how we design and govern digital systems. At Monark, we're actively exploring how this transition can unlock a new wave of real-world applications, driven by close collaboration between academic institutions and the most advanced decentralized ecosystems.",
+    "description": "Tech giants and institutional gatekeepers control much of our digital lives. Decentralization changes how digital systems are designed and governed, and at Monark we're exploring the real-world applications it can open up, working closely with universities and the most advanced decentralized ecosystems.",
     "img": "why-decentralization-matters.webp",
     "img_alt": "Why Decentralization Matters",
     "img_author": "Generated by Gemini AI",
-    "read_time_seconds": 220,
+    "read_time_seconds": 210,
     "tags": [
       "Article",
       "Orientation",
       "Mindset"
-    ]
+    ],
+    "category": "explained"
   }
 ];
 

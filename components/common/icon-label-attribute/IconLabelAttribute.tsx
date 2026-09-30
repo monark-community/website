@@ -12,13 +12,13 @@ export interface IIconLabelAttributeProps {
 export function IconLabelAttribute(props: IIconLabelAttributeProps) {
     const { Icon, label, value, href } = props;
     return (
-        <span>
+        <span className="inline-flex items-center gap-1.5">
             <Tooltip>
                 <TooltipTrigger>
                     <Icon className="inline" size={16} />
                 </TooltipTrigger>
                 <TooltipContent side="left">{label}</TooltipContent>
-            </Tooltip>&nbsp;{href ? <a href={href} target="_blank" rel="noopener noreferrer">{value}</a> : value}
+            </Tooltip>{href ? <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary-ink underline underline-offset-4 hover:text-foreground">{value}</a> : value}
         </span>
     );
 }

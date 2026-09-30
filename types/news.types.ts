@@ -8,6 +8,8 @@ export interface DatedNewsMetadata {
   img_alt: string;
   read_time_seconds: number;
   tags: string[];
+  /** Section on the news list (see NEWS_CATEGORIES in news-data.ts). */
+  category?: string;
   author?: string;
   source?: string;
   img_author?: string;

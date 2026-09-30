@@ -16,8 +16,9 @@ function BrandedSeparator({
 }: Props) {
   return (
     <div
+      aria-hidden="true"
       className={cn(
-        "flex items-center gap-2",
+        "flex items-center",
         {
           "flex-col": orientation === "vertical",
           "flex-row": orientation === "horizontal",
@@ -26,11 +27,11 @@ function BrandedSeparator({
       )}
     >
       {(circlePosition === "before" || circlePosition === "both") && (
-        <div className="w-4 h-4 border-2 border-primary rounded-full flex-shrink-0"></div>
+        <div className="size-2.5 border-2 border-primary rounded-full flex-shrink-0"></div>
       )}
       <div
-        className={cn("bg-primary flex-shrink-0", {
-          "w-full my-2": orientation === "horizontal",
+        className={cn("bg-primary min-w-0 flex-shrink", {
+          "w-full": orientation === "horizontal",
           "h-full mx-2": orientation === "vertical",
         })}
         style={{
@@ -39,7 +40,7 @@ function BrandedSeparator({
         }}
       ></div>
       {(circlePosition === "after" || circlePosition === "both") && (
-        <div className="w-4 h-4 border-2 border-primary rounded-full flex-shrink-0"></div>
+        <div className="size-2.5 border-2 border-primary rounded-full flex-shrink-0"></div>
       )}
     </div>
   );

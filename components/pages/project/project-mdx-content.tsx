@@ -3,20 +3,36 @@ import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { components } from "@/mdx-components";
-import { ChevronLeftIcon, GlobeIcon, LinkIcon } from "lucide-react";
-import { IconLabelAttribute } from "@/components/common/icon-label-attribute/IconLabelAttribute";
+import {
+  ChevronLeftIcon,
+  ExternalLinkIcon,
+  FactoryIcon,
+  LinkIcon,
+} from "lucide-react";
+import {
+  ArticleCover,
+  articleBackLinkClass,
+  articleMetaItemClass,
+  articleMetaListClass,
+  articlePillClass,
+} from "@/components/common/article-header/article-header";
 import ProjectKeywordTags from "./ProjectKeywordTags";
-import WrappedImage from "../../common/wrapped-image.component";
 import { NavLink } from "../../common/navlink/navlink";
 import { Locale } from "@/i18n.config";
+import { DatedProjectMetadata } from "@/types/project.types";
 import i18n from "./projects-list.i18n";
 import path from "path";
 import ProjectStatusBadge from "./ProjectStatusBadge";
+import ProjectOwnershipBadge from "./ProjectOwnershipBadge";
 import { Label } from "@/components/ui/label";
 import ProjectIndustryTags from "./ProjectIndustryTags";
 import GithubOrgMembers from "../homepage/why-section/github-org-members/GithubOrgMembers";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ProjectTableOfContents from "./ProjectTableOfContents";
+import { projectCardLine, projectDemoUrl } from "./ProjectCard";
+import { projectListHref, projectSectionId } from "./project-filters";
+import NewsShare from "../news/news-share";
+import { shareLabels } from "../news/news.i18n";
 
 function slugify(text: string): string {
   return text.toLowerCase().replace(/[^\w\s]/g, "").replace(/\s+/g, "-").trim();
@@ -44,8 +60,8 @@ function getTextContent(children: unknown): string {
 const h2WithId = ({ children, ...props }: React.ComponentPropsWithoutRef<"h2">) => {
   const id = slugify(getTextContent(children));
   return (
-    <h2 {...props} id={id} className="group relative text-2xl md:text-3xl font-bold mb-2 scroll-mt-24">
-      <a href={`#${id}`} className="absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity no-underline text-muted-foreground hover:text-foreground" aria-label="Link to section">
+    <h2 {...props} id={id} className="group relative mt-12 mb-4 scroll-mt-24">
+      <a href={`#${id}`} className="absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity no-underline text-muted-foreground hover:text-foreground" aria-label="Link to section">
         <LinkIcon className="size-4" />
       </a>
       {children}
@@ -60,7 +76,9 @@ interface ProjectMdxContentProps {
   backHref?: string;
   backLabel?: string;
   children?: React.ReactNode;
-  locale: Locale
+  locale: Locale;
+  /** Project id (folder name), for the share links. */
+  id: string;
 }
 
 export default async function ProjectMdxContent({
@@ -69,6 +87,7 @@ export default async function ProjectMdxContent({
   backLabel,
   children,
   locale,
+  id,
 }: ProjectMdxContentProps) {
   if (!fs.existsSync(contentPath)) {
     notFound();
@@ -112,107 +131,147 @@ export default async function ProjectMdxContent({
     ...extractH2Headings(monarkSupportContent),
   ];
 
+  const project = data as DatedProjectMetadata;
+  const category = project.category ?? "other";
+  const lead = projectCardLine(project);
+  const demoUrl = projectDemoUrl(project);
+  const industries = [...new Set(project.industry_tags ?? [])];
+
+  const sidebarTags = (
+    <>
+      <Label className="mb-0 font-bold">{t.industries}</Label>
+      <div className="flex gap-2 py-2 flex-wrap"><ProjectIndustryTags industryTags={data.industry_tags} locale={locale} /></div>
+      <Label className="mb-0 mt-4 font-bold">{t.keywords}</Label>
+      <div className="flex gap-2 py-2 flex-wrap"><ProjectKeywordTags keywordTags={data.keyword_tags} locale={locale} /></div>
+      <div className="mt-4">
+        <Label className="mb-2 font-bold">{t.contributors}</Label>
+        <GithubOrgMembers repo={data.code_repositories} />
+      </div>
+    </>
+  );
+
   return (
-    <div className="grid grid-cols-3 lg:grid-cols-4 lg:py-6 gap-8">
-      <div className="col-span-3 flex flex-col gap-4">
+    <div className="pt-6 md:pt-10">
+      {/* Same header as a news article (news-article-mdx-content.tsx). */}
+      <div className="mx-auto max-w-3xl">
         {backHref && backLabel && (
-          <div className="block lg:hidden mt-8">
-            <NavLink href={backHref} className="inline-flex items-center text-primary font-medium group no-underline rendered-content">
-              <ChevronLeftIcon />&nbsp;{backLabel}
+          <NavLink href={backHref} className={articleBackLinkClass}>
+            <ChevronLeftIcon aria-hidden="true" />
+            {backLabel}
+          </NavLink>
+        )}
+
+        <header className="mt-6">
+          <div className="mb-4 flex flex-wrap items-center gap-1.5">
+            <ProjectStatusBadge status={data.status} locale={locale} />
+            <ProjectOwnershipBadge ownership={data.ownership} locale={locale} compact />
+            <NavLink
+              href={`${projectListHref(locale)}#${projectSectionId(category)}`}
+              className={`${articlePillClass} py-1 transition-colors duration-150 hover:border-primary/60 hover:text-foreground`}
+            >
+              {t.categories[category].title}
             </NavLink>
           </div>
-        )}
-        <h1 id="introduction" className="mb-0 scroll-mt-24">{data.accronym}</h1>
-        <p className="-mt-3">{data.title}</p>
-        <div className="flex items-center gap-3">
-          <ProjectStatusBadge status={data.status} locale={locale} />
-          <IconLabelAttribute
-            Icon={GlobeIcon}
-            label={t.mockup}
-            value={t.mockup}
-            href={`https://${data.accronym}.monark.io`}
+          <h1 id="introduction" className="m-0 scroll-mt-24 text-balance">
+            {data.accronym}
+          </h1>
+          <p className="m-0 mt-2 text-xl font-semibold text-muted-foreground">
+            {data.title}
+          </p>
+          {lead && <p className="lead m-0 mt-5">{lead}</p>}
+          <ul className={articleMetaListClass}>
+            <li className={articleMetaItemClass}>
+              <ExternalLinkIcon aria-hidden="true" className="size-4" />
+              <span className="sr-only">{t.mockup}: </span>
+              <a
+                href={demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-foreground no-underline underline-offset-4 hover:underline"
+              >
+                {demoUrl.replace(/^https:\/\//, "")}
+              </a>
+            </li>
+            {industries.length > 0 && (
+              <li className={articleMetaItemClass}>
+                <FactoryIcon aria-hidden="true" className="size-4" />
+                <span className="sr-only">{t.industries}: </span>
+                {industries.join(", ")}
+              </li>
+            )}
+          </ul>
+          <NewsShare
+            path={`/${locale}/project/${id}`}
+            title={data.accronym ? `${data.accronym}: ${data.title}` : data.title}
+            labels={shareLabels(locale)}
+            className="mt-6 border-t pt-6"
           />
-        </div>
-        <div className="lg:hidden flex flex-col gap-2 text-muted-foreground">
-          <Label className="mb-0 mt-4 font-bold">{t.industries}</Label>
-          <div className="flex gap-2 py-2 flex-wrap"><ProjectIndustryTags industryTags={data.industry_tags} /></div>
-          <Label className="mb-0 mt-4 font-bold">{t.keywords}</Label>
-          <div className="flex gap-2 py-2 flex-wrap"><ProjectKeywordTags keywordTags={data.keyword_tags} /></div>
-          <div className="mt-4">
-            <Label className="mb-2 font-bold">{t.contributors}</Label>
-            <GithubOrgMembers repo={data.code_repositories} />
-          </div>
-        </div>
-        <aside className="font-lg italic border-l-[4px] border-primary pl-6 mt-6 mr-0 mb-6 ml-6 text-muted-foreground">💡&nbsp;{data.description}</aside>
-        <WrappedImage
+        </header>
+      </div>
+
+      {data.img && (
+        <ArticleCover
           src={`/images/project/${data.img}`}
           alt={data.img_alt}
           caption={data.img_alt}
           author={data.img_author}
           authorSrc={data.img_author_src}
-          width={500}
-          height={500}
-          className="w-full rounded-3xl"
         />
-        <div className="prose prose-lg dark:prose-invert max-w-none pt-4 pb-16">
-          <MDXRemote source={content} components={componentsWithIds} />
-          {milestones.length > 0 && (
-            <div className="pb-16">
-              <h2 id={slugify(t.milestones)} className="group relative text-2xl md:text-3xl font-bold mb-2 scroll-mt-24">
-                <a href={`#${slugify(t.milestones)}`} className="absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity no-underline text-muted-foreground hover:text-foreground" aria-label="Link to section">
-                  <LinkIcon className="size-4" />
-                </a>
-                {t.milestones}
-              </h2>
-              <Accordion type="multiple" className="border rounded-lg overflow-hidden">
-                {milestones.map(({ content: milestoneContent, data: milestoneData, file }) => (
-                  <AccordionItem key={file} value={file}>
-                    <AccordionTrigger>
-                      <div className="flex items-center gap-3">
-                        <ProjectStatusBadge status={milestoneData.status} locale={locale} />
-                        <span>{milestoneData.title}</span>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <div className="prose prose-sm dark:prose-invert max-w-none">
-                        <MDXRemote source={milestoneContent} components={components} />
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
-          )}
-          {requiredResourcesContent && (
-            <MDXRemote source={requiredResourcesContent} components={componentsWithIds} />
-          )}
-          <MDXRemote source={devEnvContent} components={componentsWithIds} />
-          <MDXRemote source={monarkSupportContent} components={componentsWithIds} />
+      )}
+
+      {/* The global `article` prose styles apply to the body only. */}
+      <article className="mx-auto mt-10 grid max-w-5xl grid-cols-1 gap-8 md:mt-14 lg:grid-cols-4 lg:gap-12">
+        <div className="flex min-w-0 flex-col gap-4 lg:col-span-3">
+          <div className="lg:hidden flex flex-col gap-2 text-muted-foreground">
+            {sidebarTags}
+          </div>
+          <aside className="my-4 rounded-lg border bg-card p-5 text-lg leading-relaxed text-foreground">{data.description}</aside>
+          <div className="max-w-none pt-4 pb-16">
+            <MDXRemote source={content} components={componentsWithIds} />
+            {milestones.length > 0 && (
+              <div className="pb-16">
+                <h2 id={slugify(t.milestones)} className="group relative mt-12 mb-4 scroll-mt-24">
+                  <a href={`#${slugify(t.milestones)}`} className="absolute -left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity no-underline text-muted-foreground hover:text-foreground" aria-label="Link to section">
+                    <LinkIcon className="size-4" />
+                  </a>
+                  {t.milestones}
+                </h2>
+                <Accordion type="multiple" className="overflow-hidden rounded-2xl border bg-card [&>div:last-child]:border-b-0">
+                  {milestones.map(({ content: milestoneContent, data: milestoneData, file }) => (
+                    <AccordionItem key={file} value={file}>
+                      <AccordionTrigger>
+                        <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3">
+                          <ProjectStatusBadge status={milestoneData.status} locale={locale} />
+                          <span>{milestoneData.title}</span>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <div className="max-w-none text-sm">
+                          <MDXRemote source={milestoneContent} components={components} />
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+            )}
+            {requiredResourcesContent && (
+              <MDXRemote source={requiredResourcesContent} components={componentsWithIds} />
+            )}
+            <MDXRemote source={devEnvContent} components={componentsWithIds} />
+            <MDXRemote source={monarkSupportContent} components={componentsWithIds} />
+          </div>
+          {children}
         </div>
-        {children}
-      </div>
-      <div className="hidden lg:block lg:col-span-1 pb-16">
-        <div className="sticky top-24 pt-2">
-          {backHref && backLabel && (
-            <div className="mt-8">
-              <NavLink href={backHref} className="inline-flex items-center text-primary font-medium group no-underline">
-                <ChevronLeftIcon />&nbsp;{backLabel}
-              </NavLink>
-            </div>
-          )}
-          <ProjectTableOfContents items={tocItems} label={t.on_this_page} />
-          <div className="mt-8 flex flex-col gap-2 text-muted-foreground">
-            <Label className="mb-0 font-bold">{t.industries}</Label>
-            <div className="flex gap-2 py-2 flex-wrap"><ProjectIndustryTags industryTags={data.industry_tags} /></div>
-            <Label className="mb-0 mt-4 font-bold">{t.keywords}</Label>
-            <div className="flex gap-2 py-2 flex-wrap"><ProjectKeywordTags keywordTags={data.keyword_tags} /></div>
-            <div className="mt-4">
-              <Label className="mb-2 font-bold">{t.contributors}</Label>
-              <GithubOrgMembers repo={data.code_repositories} />
+        <div className="hidden lg:block lg:col-span-1">
+          <div className="sticky top-24">
+            <ProjectTableOfContents items={tocItems} label={t.on_this_page} />
+            <div className="mt-8 flex flex-col gap-2 text-muted-foreground">
+              {sidebarTags}
             </div>
           </div>
         </div>
-      </div>
+      </article>
     </div>
   );
 }
