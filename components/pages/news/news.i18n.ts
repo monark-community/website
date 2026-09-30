@@ -18,6 +18,18 @@ export interface NewsI18n {
     empty_title: string;
     empty_body: string;
     back_to_learn: string;
+    /** Filter view of the browse bar. */
+    search_label: string;
+    search_short: string;
+    topic: string;
+    all_topics: string;
+    year: string;
+    all_years: string;
+    results_title: string;
+    results_count: (count: number) => string;
+    no_match_title: string;
+    no_match_hint: string;
+    clear_filters: string;
   };
   card: {
     min_read: (minutes: number) => string;
@@ -50,11 +62,11 @@ export const en: NewsI18n = {
     jump_label: "News by category",
     categories: {
       monark: {
-        title: "Monark news",
+        title: "Monark News",
         line: "What we build, with whom, and why.",
       },
       "beyond-the-hype": {
-        title: "Beyond the hype",
+        title: "Beyond the Hype",
         line: "Where Web3 works, where it doesn't, and what's missing.",
       },
       build: {
@@ -62,14 +74,25 @@ export const en: NewsI18n = {
         line: "Tools, roadmaps and real use cases.",
       },
       explained: {
-        title: "Web3, explained",
+        title: "Web3, Explained",
         line: "The core ideas, in plain words.",
       },
-      other: { title: "More news" },
+      other: { title: "More News" },
     },
-    empty_title: "No news yet",
+    empty_title: "No News Yet",
     empty_body: "Articles will appear here once published.",
     back_to_learn: "Go to the Learn hub",
+    search_label: "Search news",
+    search_short: "Search",
+    topic: "Topic",
+    all_topics: "All topics",
+    year: "Year",
+    all_years: "All years",
+    results_title: "Matching Stories",
+    results_count: (count) => (count === 1 ? "1 story" : `${count} stories`),
+    no_match_title: "No story matches these filters.",
+    no_match_hint: "Try other words, or clear the filters.",
+    clear_filters: "Clear filters",
   },
   card: {
     min_read: (minutes) => `${minutes} min read`,
@@ -83,7 +106,7 @@ export const en: NewsI18n = {
     share_on: (network) => `Share on ${network}`,
     copy_link: "Copy link",
     copied: "Link copied",
-    more_title: "More news",
+    more_title: "More News",
     see_all: "See all news",
   },
 };
@@ -122,6 +145,17 @@ export const fr: NewsI18n = {
     empty_title: "Aucune nouvelle pour l'instant",
     empty_body: "Les articles paraîtront ici dès leur publication.",
     back_to_learn: "Aller à l'espace Apprendre",
+    search_label: "Rechercher dans les nouvelles",
+    search_short: "Rechercher",
+    topic: "Sujet",
+    all_topics: "Tous les sujets",
+    year: "Année",
+    all_years: "Toutes les années",
+    results_title: "Articles correspondants",
+    results_count: (count) => (count === 1 ? "1 article" : `${count} articles`),
+    no_match_title: "Aucun article ne correspond à ces filtres.",
+    no_match_hint: "Essayez d'autres mots ou effacez les filtres.",
+    clear_filters: "Effacer les filtres",
   },
   card: {
     min_read: (minutes) => `${minutes} min de lecture`,

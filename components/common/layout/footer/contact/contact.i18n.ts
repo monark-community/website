@@ -9,7 +9,7 @@ export interface I18n {
 export const en: I18n = {
   contact: {
     tagline: "Are your questions left unanswered?",
-    title: "Let's talk!",
+    title: "Let's Talk!",
     action: "Contact us",
   },
 };

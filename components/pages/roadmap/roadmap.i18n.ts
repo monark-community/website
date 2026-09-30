@@ -41,7 +41,7 @@ export const en: I18n = {
     },
     shortTerm: {
       phase1: {
-        title: "Phase 0: Community building",
+        title: "Phase 0: Community Building",
         description: "Initial phase focused on community building",
       },
       documentation: {
@@ -50,33 +50,33 @@ export const en: I18n = {
           "Ensure uniformity in documentation and templates for university initiatives",
       },
       usecases: {
-        title: "Use cases and projects",
+        title: "Use Cases and Projects",
         description:
           "Define, document and present potential use cases and projects",
       },
       ecosystem: {
-        title: "Local ecosystem development",
+        title: "Local Ecosystem Development",
         description:
           "Establish partnerships with universities, schools, and cities",
       },
       socialmedia: {
-        title: "Social media program",
+        title: "Social Media Program",
         description:
           "Increase awareness and visibility of Monark through strategic social media efforts",
       },
     },
     midTerm: {
       phase1: {
-        title: "Phase 1: Community building (continued)",
+        title: "Phase 1: Community Building (Continued)",
         description: "Continuing community building efforts",
       },
       ambassador: {
-        title: "Ambassador program",
+        title: "Ambassador Program",
         description:
           "Empower community members to represent and contribute to Monark's mission",
       },
       initiatives: {
-        title: "Local initiatives",
+        title: "Local Initiatives",
         description:
           "Expand adoption by fostering engagement through local events and collaborations",
       },
@@ -124,7 +124,7 @@ export const fr: I18n = {
     },
     shortTerm: {
       phase1: {
-        title: "Phase 0 : Construction de la communauté",
+        title: "Phase 0 : construction de la communauté",
         description: "Phase initiale axée sur la construction de la communauté",
       },
       documentation: {
@@ -150,7 +150,7 @@ export const fr: I18n = {
     },
     midTerm: {
       phase1: {
-        title: "Phase 1 : Construction de la communauté (suite)",
+        title: "Phase 1 : construction de la communauté (suite)",
         description: "Poursuite des efforts de construction de la communauté",
       },
       ambassador: {
@@ -176,7 +176,7 @@ export const fr: I18n = {
     },
     longTerm: {
       phase2: {
-        title: "Phase 2 : Expansion du Web3",
+        title: "Phase 2 : expansion du Web3",
         description: "Expansion à long terme des capacités Web3",
       },
       platform: {

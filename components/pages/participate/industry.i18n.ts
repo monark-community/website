@@ -10,13 +10,13 @@ import { DISCORD_URL } from "./participate-shared.i18n";
 
 export const en: ParticipateContent = {
   meta: {
-    title: "Industry partners",
+    title: "Industry Partners",
     description:
       "Partner with Monark to test Web3 ideas from your sector at a fraction of traditional R&D costs: bring a real challenge, and a student-led team co-develops and tests a decentralized proof of concept with you.",
   },
   hero: {
     eyebrow: "Participate as an industry partner",
-    title: "Test what Web3 can do for your sector, at a fraction of the cost",
+    title: "Test What Web3 Can Do for Your Sector, at a Fraction of the Cost",
     lead: "Bring a real-world challenge: a student-led team explores it with you through proofs of concept, not slide decks.",
     audiences_label: "For",
     audiences: [
@@ -34,25 +34,25 @@ export const en: ParticipateContent = {
   },
   offer: {
     eyebrow: "What you get",
-    title: "An early, hands-on look at Web3 in your industry",
+    title: "An Early, Hands-On Look at Web3 in Your Industry",
     intro:
       "See how blockchain, smart contracts (programs that run on a blockchain) and decentralized identity could reshape your industry, before committing to a full project.",
     items: [
       {
         icon: "flask-conical",
-        title: "Proofs of concept, fast",
+        title: "Proofs of Concept, Fast",
         content:
           "Ideas tested quickly and cost-effectively, at a fraction of traditional R&D costs.",
       },
       {
         icon: "user-plus",
-        title: "Access to talent",
+        title: "Access to Talent",
         content:
           "Work with motivated students and young developers who use the latest tools and frameworks.",
       },
       {
         icon: "heart-handshake",
-        title: "Hands-on collaboration",
+        title: "Hands-On Collaboration",
         content:
           "Bring your domain expertise directly into the design and testing of decentralized applications.",
       },
@@ -64,13 +64,13 @@ export const en: ParticipateContent = {
       },
       {
         icon: "route",
-        title: "A path to scale",
+        title: "A Path to Scale",
         content:
           "Promising directions can grow into full-fledged projects.",
       },
       {
         icon: "lightbulb",
-        title: "Early exposure",
+        title: "Early Exposure",
         content:
           "Find out early how Web3 opportunities apply to your own field.",
       },
@@ -78,23 +78,23 @@ export const en: ParticipateContent = {
   },
   steps: {
     eyebrow: "How it works",
-    title: "Four steps from a challenge to results",
+    title: "Four Steps from a Challenge to Results",
     items: [
       {
-        title: "Share your challenge or idea",
+        title: "Share Your Challenge or Idea",
         content: "Tell us about a real problem in your field that decentralized technology might solve.",
       },
       {
-        title: "Monark assembles a team",
+        title: "Monark Assembles a Team",
         content: "We put together a student-led project team around your challenge.",
       },
       {
-        title: "Co-develop and test",
+        title: "Co-Develop and Test",
         content:
           "Together, we design and test decentralized solutions, with your expertise guiding the direction.",
       },
       {
-        title: "Get results and insights",
+        title: "Get Results and Insights",
         content:
           "You receive the results and what was learned, with the option to take promising directions further.",
       },
@@ -102,16 +102,16 @@ export const en: ParticipateContent = {
   },
   fit: {
     eyebrow: "Who fits",
-    title: "What we're looking for in a partner",
+    title: "What We're Looking For in a Partner",
     intro:
       "Partners across industries, curious about Web3 and ready to take part as active collaborators, not from the sidelines.",
-    who_title: "Good partners bring",
+    who_title: "Good Partners Bring",
     who: [
       "Real-world challenges or datasets",
       "Domain expertise to guide the project's direction",
       "Feedback on prototypes and early experiments",
     ],
-    expect_title: "Sectors we can explore together",
+    expect_title: "Sectors We Can Explore Together",
     expect: [
       "Finance and insurance",
       "Healthcare",
@@ -121,7 +121,7 @@ export const en: ParticipateContent = {
   },
   proof: {
     eyebrow: "Already under way",
-    title: "Web3 solutions for real sectors",
+    title: "Web3 Solutions for Real Sectors",
     content:
       "Monark builds tools that answer concrete problems, beyond speculative trends. A few projects from our catalogue:",
     items: [
@@ -150,7 +150,7 @@ export const en: ParticipateContent = {
   },
   faq: {
     eyebrow: "FAQ",
-    title: "Questions from industry partners",
+    title: "Questions from Industry Partners",
     items: [
       {
         question: "Who does the development work?",
@@ -175,7 +175,7 @@ export const en: ParticipateContent = {
     ],
   },
   cta: {
-    title: "Let's start the conversation",
+    title: "Let's Start the Conversation",
     content:
       "Tell us about your challenge on Discord. Your expertise and our experimentation can open up entirely new possibilities.",
     primary: { label: "Join us on Discord", href: DISCORD_URL, external: true },

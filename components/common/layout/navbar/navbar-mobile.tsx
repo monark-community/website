@@ -111,8 +111,8 @@ const NavbarMobile = ({ locale }: Props) => {
                     key={nestedLink.label}
                     value={nestedLink.label}
                   >
-                    <AccordionTrigger className="px-2 text-lg">{nestedLink.label}</AccordionTrigger>
-                    <AccordionContent className="px-0 pt-0">
+                    <AccordionTrigger className="px-2 text-lg font-semibold">{nestedLink.label}</AccordionTrigger>
+                    <AccordionContent className="px-0 pt-0 pb-2">
                       <ul>
                         {nestedLink.items.map((item) => (
                           <li key={item.label}>
@@ -122,7 +122,7 @@ const NavbarMobile = ({ locale }: Props) => {
                                   value={item.label}
                                   className="border-b-0 py-0"
                                 >
-                                  <AccordionTrigger className="py-2">
+                                  <AccordionTrigger className="min-h-11 py-2 text-base font-semibold">
                                     <div className="flex gap-3 items-center">
                                       {item.icon && (
                                         <NavbarIcon icon={item.icon} />
@@ -130,7 +130,7 @@ const NavbarMobile = ({ locale }: Props) => {
                                       {item.label}
                                     </div>
                                   </AccordionTrigger>
-                                  <AccordionContent className="pr-0">
+                                  <AccordionContent className="pr-0 pb-2">
                                     <ul>
                                       {item.items.map((subItem) => (
                                         <li key={subItem.label}>

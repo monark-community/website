@@ -150,7 +150,7 @@ export const en: I18n = {
     },
     new_tab: "(opens in a new tab)",
     hero: {
-      title: "Monark brand",
+      title: "Monark Brand",
       lead: "Logos, colours, type and voice for anyone who writes about Monark or builds with it. Take what you need.",
       kit: "Download the brand kit",
       kit_contents: "SVG and PNG logos, credit badges and colour tokens",
@@ -166,7 +166,7 @@ export const en: I18n = {
     },
     logos: {
       eyebrow: "Logos",
-      title: "The logo in every shape",
+      title: "The Logo in Every Shape",
       intro:
         "The colour logo goes on plain cream, white or espresso. On photos or orange, use a mono version.",
       cards: {
@@ -179,15 +179,15 @@ export const en: I18n = {
           use: "Centred layouts, such as error pages and empty states.",
         },
         mark: {
-          title: "Mark only",
+          title: "Mark Only",
           use: "Favicons, avatars, loading states and product brands.",
         },
         "mono-dark": {
-          title: "Mono, dark",
+          title: "Mono, Dark",
           use: "Orange fills, light photos and busy light backgrounds.",
         },
         "mono-light": {
-          title: "Mono, white",
+          title: "Mono, White",
           use: "Photos and busy dark backgrounds.",
         },
       },
@@ -200,17 +200,17 @@ export const en: I18n = {
     },
     rules: {
       eyebrow: "Logo rules",
-      title: "Give it room, keep it whole",
+      title: "Give It Room, Keep It Whole",
       intro:
         "Use the files as they are. Never retype, redraw, recolour, stretch, rotate or animate the logo.",
       clear_space: {
-        title: "Clear space",
+        title: "Clear Space",
         text: "Keep at least half the mark's height empty on every side.",
         x: "x",
         half: "½x",
       },
       min_size: {
-        title: "Minimum size",
+        title: "Minimum Size",
         text: "Measured on the drawing, not on the file's padding.",
         mark: "Mark: 20px tall (16px as a favicon)",
         horizontal: "Horizontal: 120px wide",
@@ -225,16 +225,16 @@ export const en: I18n = {
     },
     colour: {
       eyebrow: "Colour",
-      title: "Cream, espresso and one flat orange",
+      title: "Cream, Espresso and One Flat Orange",
       intro:
         "Orange is the accent, about a tenth of any screen. No gradients: the logo's is the only one.",
       orange: {
-        name: "Monark orange",
+        name: "Monark Orange",
         role: "Fills, icons, focus rings and the one main button on a screen.",
       },
       gradient: { name: "Logo gradient", role: "Inside the logo only." },
-      light_title: "Cream, the light theme",
-      dark_title: "Espresso, the dark theme",
+      light_title: "Cream, the Light Theme",
+      dark_title: "Espresso, the Dark Theme",
       swatches: {
         background: { name: "Background", role: "Page background" },
         card: { name: "Card", role: "Cards and panels" },
@@ -265,17 +265,17 @@ export const en: I18n = {
         },
         { ok: true, label: "Orange text on espresso", ratio: "8.1:1" },
       ],
-      tokens_title: "Design tokens",
+      tokens_title: "Design Tokens",
       tokens_text: "The same colours and type for code and Figma: CSS variables, W3C design tokens and Tokens Studio.",
     },
     type: {
       eyebrow: "Typography",
-      title: "Nunito Sans, for everything",
-      intro: "One family, four weights, sentence case headings.",
+      title: "Nunito Sans, for Everything",
+      intro: "One family, four weights. Headings in Title Case (sentence case in French).",
       family_note: "Free and open source (SIL Open Font License).",
       weights_title: "Weights",
       sample: "Build it together",
-      scale_title: "Web scale",
+      scale_title: "Web Scale",
       scale: [
         { role: "Hero headline", spec: "3.5–4.5rem · 800 · home page only", className: scaleClasses.hero },
         { role: "Heading 1", spec: "2.5–3rem · 800", className: scaleClasses.h1 },
@@ -285,17 +285,17 @@ export const en: I18n = {
         { role: "Small text for hints", spec: "0.875rem · 400", className: scaleClasses.small },
         { role: "Eyebrow label", spec: "12–13px · 700 · uppercase, 0.08em", className: scaleClasses.eyebrow },
       ],
-      trajan_title: "Trajan, only in the wordmark",
+      trajan_title: "Trajan, Only in the Wordmark",
       trajan:
         "The MONARK lettering is set in Trajan Pro, a commercial font we don't provide. Never set other text in Trajan or its lookalike Cinzel.",
       google_fonts: "Get Nunito Sans on Google Fonts",
     },
     products: {
       eyebrow: "Product brands",
-      title: "The butterfly, then the name",
+      title: "The Butterfly, Then the Name",
       intro:
         "Monark products don't get their own logo. The mark and the product name on one line keep the family recognisable.",
-      family_title: "Monark products",
+      family_title: "Monark Products",
       example_product: "Splitflow",
       specs: [
         "Colour mark, 28px",
@@ -303,16 +303,16 @@ export const en: I18n = {
         "Nunito Sans 800, 18px",
         "No “by Monark” in the header",
       ],
-      credit_title: "Independent products",
+      credit_title: "Independent Products",
       credit_text:
         "Products with their own identity keep one small credit in the footer, linked to monark.io.",
       credit_label: "Built with Monark",
-      badges_title: "Credit badges",
+      badges_title: "Credit Badges",
       badges: { en: "English", fr: "French", light: "light", dark: "dark" },
     },
     voice: {
       eyebrow: "Voice and imagery",
-      title: "Clear words, real people",
+      title: "Clear Words, Real People",
       voice_title: "Voice",
       voice_intro:
         "Write for a curious student and an experienced developer at the same time.",
@@ -320,22 +320,22 @@ export const en: I18n = {
       dont_label: "Don't",
       pairs: [
         {
-          principle: "Lead with the outcome",
+          principle: "Lead with the Outcome",
           do: "Split every payment automatically among your contributors.",
           dont: "Programmable revenue-sharing primitives.",
         },
         {
-          principle: "Explain terms once",
+          principle: "Explain Terms Once",
           do: "Add collateral (the tokens you lock to secure a loan).",
           dont: "Add collateral.",
         },
         {
-          principle: "Optimistic, never hype",
+          principle: "Optimistic, Never Hype",
           do: "Your community decides where the funds go.",
           dont: "Revolutionary returns. To the moon!",
         },
         {
-          principle: "Buttons start with a verb",
+          principle: "Buttons Start with a Verb",
           do: "Create a split",
           dont: "SUBMIT",
         },
@@ -353,7 +353,7 @@ export const en: I18n = {
       ],
     },
     contact: {
-      title: "Press or partnership request?",
+      title: "Press or Partnership Request?",
       text: "Write to us, or find the team on Discord.",
       email: "contact@monark.io",
       discord: "Discord",
@@ -491,7 +491,7 @@ export const fr: I18n = {
     type: {
       eyebrow: "Typographie",
       title: "Nunito Sans, pour tout",
-      intro: "Une famille, quatre graisses, et une majuscule en début de titre seulement.",
+      intro: "Une famille, quatre graisses. En français, une majuscule en début de titre seulement (Title Case en anglais).",
       family_note: "Libre et gratuite (SIL Open Font License).",
       weights_title: "Graisses",
       sample: "Construire ensemble",

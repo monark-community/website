@@ -18,7 +18,7 @@ export interface I18n {
 
 export const en: I18n = {
   donation_leaderboard: {
-    title: "Available donation networks",
+    title: "Available Donation Networks",
     rank_header: "#",
     network_header: "Network",
     address_header: "Address",

@@ -16,7 +16,7 @@ export const en: ParticipateContent = {
   },
   hero: {
     eyebrow: "Participate as a developer",
-    title: "Turn your Web3 idea into a product you can fund",
+    title: "Turn Your Web3 Idea into a Product You Can Fund",
     lead: "Incubation for developers and early-stage teams with a promising idea, until you're ready to apply to a major Web3 foundation.",
     audiences_label: "For",
     audiences: ["Developers", "Early-stage teams", "Students and recent grads"],
@@ -28,73 +28,73 @@ export const en: ParticipateContent = {
   },
   offer: {
     eyebrow: "What you get",
-    title: "What a young Web3 project needs to get off the ground",
+    title: "What a Young Web3 Project Needs to Get off the Ground",
     intro:
       "Mentorship, tools and strategy, so your project reaches the level where it can apply for grants from leading Web3 foundations.",
     items: [
       {
         icon: "calendar-range",
-        title: "4 to 12 month support cycles",
+        title: "4 to 12 Month Support Cycles",
         content: "Cycles designed to take you from an idea to a working product.",
       },
       {
         icon: "repeat",
-        title: "Sprint-based mentorship",
+        title: "Sprint-Based Mentorship",
         content:
           "Regular follow-ups, goal setting and strategic reviews, like a real product team.",
       },
       {
         icon: "file-text",
-        title: "Administrative and legal templates",
+        title: "Administrative and Legal Templates",
         content:
           "Incorporation, NDAs, contributor agreements and more, ready to adapt.",
       },
       {
         icon: "wrench",
-        title: "Technical guidance and tools",
+        title: "Technical Guidance and Tools",
         content:
           "Advice from Web3 developers and access to Monark's internal developer tools.",
       },
       {
         icon: "presentation",
-        title: "Web3 workshops",
+        title: "Web3 Workshops",
         content:
           "Tokenomics (how a project's token is designed and shared), governance and product design.",
       },
       {
         icon: "landmark",
-        title: "Funding preparation",
+        title: "Funding Preparation",
         content:
           "Get ready to apply for funding from major Web3 ecosystems and foundations.",
       },
     ],
     note: {
-      title: "You keep full ownership",
+      title: "You Keep Full Ownership",
       content:
         "Your project stays yours. We're here to support you, not to control you.",
     },
   },
   steps: {
     eyebrow: "How it works",
-    title: "From a first conversation to a grant application",
+    title: "From a First Conversation to a Grant Application",
     items: [
       {
-        title: "Tell us about your idea",
+        title: "Tell Us about Your Idea",
         content:
           "Say hello on Discord: what you're building, and where you're stuck.",
       },
       {
-        title: "Join the next cohort",
+        title: "Join the Next Cohort",
         content:
           "Teams join the incubation program in cohorts, for a support cycle of 4 to 12 months.",
       },
       {
-        title: "Build in sprints",
+        title: "Build in Sprints",
         content:
           "Set goals, build, review. Your mentors follow up at every sprint and help you adjust your strategy.",
       },
       {
-        title: "Apply for grants",
+        title: "Apply for Grants",
         content:
           "Once your product is ready, we help you prepare your applications to leading Web3 foundations.",
       },
@@ -102,15 +102,15 @@ export const en: ParticipateContent = {
   },
   fit: {
     eyebrow: "Who fits",
-    title: "Made for builders at the very start",
-    who_title: "The program is for you if",
+    title: "Made for Builders at the Very Start",
+    who_title: "The Program Is for You If",
     who: [
       "You have an idea worth building, or an early prototype",
       "You need funding but aren't ready for a major foundation yet",
       "You're a developer or a small early-stage team",
       "You've finished an end-of-degree project with Monark and want to keep going",
     ],
-    expect_title: "What Monark expects",
+    expect_title: "What Monark Expects",
     expect: [
       "Take part in the sprints: follow-ups, goals and reviews are how the program works",
       "Aim for a fundable product: every cycle works towards a project ready to apply for grants",
@@ -119,7 +119,7 @@ export const en: ParticipateContent = {
   },
   proof: {
     eyebrow: "Already under way",
-    title: "Projects moving through Monark",
+    title: "Projects Moving through Monark",
     content:
       "Monark builds real tools, not just ideas. These projects from our catalogue already have a prototype or are in development, and many more ideas are waiting for a team.",
     items: [
@@ -148,7 +148,7 @@ export const en: ParticipateContent = {
   },
   faq: {
     eyebrow: "FAQ",
-    title: "Questions from developers",
+    title: "Questions from Developers",
     items: [
       {
         question: "Does it cost anything to join?",
@@ -177,7 +177,7 @@ export const en: ParticipateContent = {
     ],
   },
   cta: {
-    title: "Got an idea worth building?",
+    title: "Got an Idea Worth Building?",
     content:
       "Come say hello on Discord and tell us about your project. We'll tell you how to join the next incubation cohort.",
     primary: { label: "Join us on Discord", href: DISCORD_URL, external: true },

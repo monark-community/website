@@ -25,24 +25,24 @@ export interface I18n {
 export const en: I18n = {
   why: {
     flavor: "Build on Web3",
-    title: "Join the flight",
+    title: "Join the Flight",
     perks: [
       {
-        title: "Launching tomorrow's founders",
+        title: "Launching Tomorrow's Founders",
         content:
           "Monark helps students and recent grads build strong Web3 startups ready for serious funding.",
         tile: "tile-3",
         icon: "rocket",
       },
       {
-        title: "Bridging the early-stage gap",
+        title: "Bridging the Early-Stage Gap",
         content:
           "We support founders before traditional incubators, where Web3 structure and access are still missing.",
         tile: "tile-2",
         icon: "lightning",
       },
       {
-        title: "Aligned and fair by design",
+        title: "Aligned and Fair by Design",
         content:
           "We empower communities while ensuring projects support our partners' tools and chains.",
         tile: "tile-1",
@@ -67,7 +67,7 @@ export const en: I18n = {
       },
       {
         id: "industry",
-        title: "Industry representative",
+        title: "Industry Representative",
         content:
           "Work with us as an industry expert to bring your decentralized idea to life at minimal cost!",
         href: "/participate/industry",

@@ -30,7 +30,7 @@ The tokens are now complete colours, not HSL triplets. Tailwind 3 can't add alph
 - Letter spacing: -0.02em on large headings.
 - Eyebrows: small uppercase labels at 0.08em tracking.
 
-Headings and UI strings are in sentence case in English; the French strings already were. MDX article and project content was not rewritten.
+Headings and titles are in Title Case (Chicago) in English and in sentence case in French; buttons, links, labels and eyebrows stay in sentence case in both. Every changed string is listed in [title-case-audit.md](title-case-audit.md).
 
 **Shape and depth.** Buttons, nav tabs, filter chips and badges are pills. Cards use a 1rem radius (1.5rem for feature tiles) with a 1px border, near-white on cream or warm brown on espresso. Shadows are kept only for popovers and dialogs.
 
@@ -57,7 +57,7 @@ Headings and UI strings are in sentence case in English; the French strings alre
   - The audience chips are gone. The hero has no bottom border: the figures row ends it, and the next section's eyebrow marks the break.
   - Participate buttons are now styled anchors instead of `<Button asChild>`. When the server streamed a child as a lazy reference, Radix Slot rendered nothing, and the hero lost its "See how it works" link on two pages.
 - The home page's "Join the flight" cards reuse those four photos in place of their icons, so each role has the same face everywhere.
-- About has one photo in the hero, in place of the network line art, and a wide one above "How Monark works".
+- About has one wide photo above "How Monark works". Its hero is text only (the owner asked to remove the hero photo; the text column now takes the width).
 - Donation shows one photo next to the heading. It is hidden on phones so the form stays near the top.
 
 The other photos use the site's radius and border and show a muted fill and a blurred placeholder while loading. All photos are dimmed slightly in dark mode. The line art stays in the participate calls to action. The footer's legal line credits "Photos: Unsplash". Screenshots: `after/imagery-*`.
@@ -84,6 +84,10 @@ The other photos use the site's radius and border and show a muted fill and a bl
 - The French mission statement on the home page was cut off mid-sentence; it is now complete.
 - "Nectar for the Curious Mind" became "Questions, answered" / « Vos questions, nos réponses », so the site keeps a single butterfly metaphor ("Join the flight").
 - Added the missing "On hold" and "Production" status labels.
+
+**Expansion panels.** Every accordion on the site (home FAQ, participate FAQs, project milestones, the mobile menu) uses the one component in `components/ui/accordion.tsx`, after the Splitflow demo: rows divided by hairlines, a bold question and an orange "+" that turns 45° into an "×" when open. The panel height animates over 200ms, and opens instantly with reduced motion. Radix supplies the button, `aria-expanded`/`aria-controls`, the labelled region and arrow-key navigation. The participate FAQs and the milestones lost their card frame to match. Screenshots: `after/accordion-*`.
+
+**Newsletter card.** The popup that appears 8 seconds after the home page loads is now a card in the bottom-right corner (a bottom sheet on phones) instead of a centred modal: a photo header (the Learn page's students photo), a Title Case title, one line, the email field and button on one row, and a privacy line with beehiiv's links. The name and "I am a…" fields are gone, so only the email is sent. The page stays usable behind it; Tab stays inside the card while focus is in it, and Escape or the close button (44px, on the photo) dismiss it and give focus back. The cookie rules are unchanged (30 days after a dismissal, permanent after subscribing). Errors show one line and the button becomes "Try again"; a success replaces the form with a confirmation, then the card closes. Screenshots: `after/newsletter-*`.
 
 **No new dependencies.** Screenshots were taken with an existing Playwright install outside the repo.
 
