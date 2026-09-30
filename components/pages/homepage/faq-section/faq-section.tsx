@@ -37,14 +37,14 @@ function FAQSection({ locale }: Props) {
         <Accordion
           type="single"
           collapsible
-          className="border-t lg:col-span-2"
+          className="border-y lg:col-span-2"
         >
           {t.items.map((item, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="px-0 hover:bg-transparent hover:text-primary-ink">
+              <AccordionTrigger>
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="px-0 pt-0 leading-relaxed">
+              <AccordionContent>
                 <div dangerouslySetInnerHTML={{ __html: item.answer }} />
               </AccordionContent>
             </AccordionItem>

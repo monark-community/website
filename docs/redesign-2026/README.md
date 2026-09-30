@@ -85,6 +85,10 @@ The other photos use the site's radius and border and show a muted fill and a bl
 - "Nectar for the Curious Mind" became "Questions, answered" / « Vos questions, nos réponses », so the site keeps a single butterfly metaphor ("Join the flight").
 - Added the missing "On hold" and "Production" status labels.
 
+**Expansion panels.** Every accordion on the site (home FAQ, participate FAQs, project milestones, the mobile menu) uses the one component in `components/ui/accordion.tsx`, after the Splitflow demo: rows divided by hairlines, a bold question and an orange "+" that turns 45° into an "×" when open. The panel height animates over 200ms, and opens instantly with reduced motion. Radix supplies the button, `aria-expanded`/`aria-controls`, the labelled region and arrow-key navigation. The participate FAQs and the milestones lost their card frame to match. Screenshots: `after/accordion-*`.
+
+**Newsletter card.** The popup that appears 8 seconds after the home page loads is now a card in the bottom-right corner (a bottom sheet on phones) instead of a centred modal: a photo header (the Learn page's students photo), a Title Case title, one line, the email field and button on one row, and a privacy line with beehiiv's links. The name and "I am a…" fields are gone, so only the email is sent. The page stays usable behind it; Tab stays inside the card while focus is in it, and Escape or the close button (44px, on the photo) dismiss it and give focus back. The cookie rules are unchanged (30 days after a dismissal, permanent after subscribing). Errors show one line and the button becomes "Try again"; a success replaces the form with a confirmation, then the card closes. Screenshots: `after/newsletter-*`.
+
 **No new dependencies.** Screenshots were taken with an existing Playwright install outside the repo.
 
 ## Checks

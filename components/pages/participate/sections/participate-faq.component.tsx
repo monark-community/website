@@ -21,16 +21,15 @@ function ParticipateFaq({ t }: Props) {
       <Accordion
         type="single"
         collapsible
-        className="overflow-hidden rounded-2xl border bg-card"
+        className="border-y"
       >
         {t.items.map((item, index) => (
           <AccordionItem
             key={item.question}
             value={`faq-${index}`}
-            className="last:border-b-0"
           >
-            <AccordionTrigger className="px-5 text-left leading-snug [text-wrap:pretty]">{item.question}</AccordionTrigger>
-            <AccordionContent className="px-5 pb-5">{item.answer}</AccordionContent>
+            <AccordionTrigger>{item.question}</AccordionTrigger>
+            <AccordionContent>{item.answer}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>

@@ -236,7 +236,7 @@ export default async function ProjectMdxContent({
                   </a>
                   {t.milestones}
                 </h2>
-                <Accordion type="multiple" className="overflow-hidden rounded-2xl border bg-card [&>div:last-child]:border-b-0">
+                <Accordion type="multiple" className="border-y">
                   {milestones.map(({ content: milestoneContent, data: milestoneData, file }) => (
                     <AccordionItem key={file} value={file}>
                       <AccordionTrigger>

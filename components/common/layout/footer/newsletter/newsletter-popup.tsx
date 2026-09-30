@@ -1,387 +1,259 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import {
-  Dialog,
-  DialogContent,
-} from '@/components/ui/dialog'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Mail, CheckCircle, AlertCircle } from 'lucide-react'
-import { getCookie, setCookie } from 'cookies-next'
-import * as i18n from './newsletter.i18n'
-import { Locale } from '@/i18n.config'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { Check, X } from "lucide-react";
+import { getCookie, setCookie } from "cookies-next";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Locale } from "@/i18n.config";
+import headerPhoto from "@/public/images/people/learn-students-laughing-laptops.webp";
+import * as i18n from "./newsletter.i18n";
+import { validateEmail } from "./newsletter.utils";
 
 interface NewsletterPopupProps {
   /** Locale for translations (en or fr) */
-  locale: Locale
-  /** Delay in milliseconds before showing the popup (default: 15000) */
-  delay?: number
-  /** Number of days to remember dismissal (default: 30) */
-  cookieExpiryDays?: number
+  locale: Locale;
+  /** Delay in milliseconds before showing the card (default: 15000) */
+  delay?: number;
+  /** Number of days to remember a dismissal (default: 30) */
+  cookieExpiryDays?: number;
   /** UTM parameters for tracking */
   utm?: {
-    source?: string
-    medium?: string
-    campaign?: string
-  }
-  /** Additional tags to add to the subscriber */
-  tags?: string[]
-  /** Callback function when user subscribes successfully */
-  onSubscribe?: (data: { email: string; firstName?: string; lastName?: string }) => void
-  /** Callback function when popup is dismissed */
-  onDismiss?: () => void
+    source?: string;
+    medium?: string;
+    campaign?: string;
+  };
+  /** Callback when the visitor subscribes successfully */
+  onSubscribe?: (data: { email: string }) => void;
+  /** Callback when the card is dismissed */
+  onDismiss?: () => void;
 }
 
-interface SubscriptionError {
-  error: string
-}
+type Status = "idle" | "loading" | "success" | "error";
 
-const COOKIE_NAME = 'newsletter-popup-dismissed'
+const COOKIE_NAME = "newsletter-popup-dismissed";
+const FOCUSABLE =
+  'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
+/**
+ * Newsletter card: slides in a few seconds after the page loads, bottom-right
+ * on desktop and as a bottom sheet on phones. It doesn't block the page, but
+ * while focus is inside it Tab cycles within the card; Escape and the close
+ * button dismiss it and give focus back. A dismissal is remembered in a
+ * cookie for `cookieExpiryDays`; a subscription for good.
+ */
 export default function NewsletterPopup({
   locale,
   delay = 15000,
   cookieExpiryDays = 30,
-  utm = { source: 'website', medium: 'popup', campaign: 'newsletter_signup' },
+  utm = { source: "website", medium: "popup", campaign: "newsletter_signup" },
   onSubscribe,
   onDismiss,
 }: NewsletterPopupProps) {
-  const [isOpen, setIsOpen] = useState(false)
-  const [email, setEmail] = useState('')
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [identity, setIdentity] = useState('prefer_not_to_say')
-  const [isLoading, setIsLoading] = useState(false)
-  const [hasShown, setHasShown] = useState(false)
-  const [subscriptionStatus, setSubscriptionStatus] = useState<'idle' | 'success' | 'error'>('idle')
-  const [errorMessage, setErrorMessage] = useState('')
-
-  const IDENTITY_OPTIONS = [
-    "student",
-    "university_staff",
-    "ambassador",
-    "web3_enthusiast",
-    "web3_business",
-    "prefer_not_to_say",
-  ];
-
-  const t = i18n[locale].newsletterPopup;
+  const t = (i18n[locale] ?? i18n.en).newsletterPopup;
+  const [isOpen, setIsOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+  const cardRef = useRef<HTMLDivElement>(null);
+  const returnFocusRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    // Check if popup was already dismissed (stored in cookie)
-    const wasDismissed = getCookie(COOKIE_NAME)
-    if (wasDismissed === 'true') {
-      return
+    if (getCookie(COOKIE_NAME) === "true") return;
+    const timer = setTimeout(() => setIsOpen(true), delay);
+    return () => clearTimeout(timer);
+  }, [delay]);
+
+  // Move focus into the card when it opens (the card itself, so screen
+  // readers announce its title), and remember where it came from.
+  useEffect(() => {
+    if (!isOpen) return;
+    returnFocusRef.current = document.activeElement as HTMLElement | null;
+    cardRef.current?.focus({ preventScroll: true });
+  }, [isOpen]);
+
+  const dismiss = useCallback(
+    (subscribed = false) => {
+      setIsOpen(false);
+      setCookie(COOKIE_NAME, "true", {
+        // A subscription is remembered for good; a dismissal for a while.
+        ...(subscribed ? {} : { maxAge: cookieExpiryDays * 24 * 60 * 60 }),
+        sameSite: "lax",
+        secure: process.env.NODE_ENV === "production",
+      });
+      const target = returnFocusRef.current;
+      if (target && document.contains(target)) target.focus({ preventScroll: true });
+      onDismiss?.();
+    },
+    [cookieExpiryDays, onDismiss]
+  );
+
+  const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Escape") {
+      e.stopPropagation();
+      dismiss(status === "success");
+      return;
     }
-
-    // Show popup after delay
-    const timer = setTimeout(() => {
-      if (!hasShown) {
-        setIsOpen(true)
-        setHasShown(true)
-      }
-    }, delay)
-
-    return () => clearTimeout(timer)
-  }, [delay, hasShown])
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault()
-
-    if (!email || !email.includes('@')) {
-      setErrorMessage(t.invalidEmail)
-      setSubscriptionStatus('error')
-      return
+    if (e.key !== "Tab" || !cardRef.current) return;
+    const items = Array.from(cardRef.current.querySelectorAll<HTMLElement>(FOCUSABLE));
+    if (items.length === 0) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    const active = document.activeElement;
+    if (e.shiftKey && (active === first || active === cardRef.current)) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && active === last) {
+      e.preventDefault();
+      first.focus();
     }
+  };
 
-    setIsLoading(true)
-    setSubscriptionStatus('idle')
-    setErrorMessage('')
-
+  const subscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const value = email.trim();
+    if (!validateEmail(value)) {
+      setErrorMessage(t.invalidEmail);
+      setStatus("error");
+      return;
+    }
+    setStatus("loading");
+    setErrorMessage("");
     try {
-      const response = await fetch('/api/newsletter', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          contact: {
-            email: email.trim(),
-            first_name: firstName.trim(),
-            last_name: lastName.trim(),
-            identity,
-          },
+          contact: { email: value },
           utm: {
-            source: utm.source || 'website',
-            medium: utm.medium || 'popup',
-            campaign: utm.campaign || 'newsletter_signup',
+            source: utm.source || "website",
+            medium: utm.medium || "popup",
+            campaign: utm.campaign || "newsletter_signup",
           },
         }),
-      })
-
-      if (!response.ok) {
-        const errorData: SubscriptionError = await response.json()
-        throw new Error(errorData.error || 'Subscription failed')
-      }
-
-      setSubscriptionStatus('success')
-
-      // Call the onSubscribe callback if provided
-      if (onSubscribe) {
-        onSubscribe({
-          email: email.trim(),
-          firstName: firstName.trim() || undefined,
-          lastName: lastName.trim() || undefined,
-        })
-      }
-
-      // Auto-close after success message is shown
-      setTimeout(() => {
-        handleDismiss(true)
-      }, 2000)
-
+      });
+      if (!response.ok) throw new Error(`Subscription failed (${response.status})`);
+      setStatus("success");
+      onSubscribe?.({ email: value });
+      setTimeout(() => dismiss(true), 4000);
     } catch (error) {
-      console.error('Subscription failed:', error)
-      setSubscriptionStatus('error')
-      setErrorMessage(error instanceof Error ? error.message : 'An unexpected error occurred')
-    } finally {
-      setIsLoading(false)
+      console.error("Subscription failed:", error);
+      setErrorMessage(t.errorMessage);
+      setStatus("error");
     }
-  }
+  };
 
-  const handleDismiss = (subscribed: boolean = false) => {
-    setIsOpen(false)
-    setHasShown(true)
+  if (!isOpen) return null;
 
-    if (subscribed) {
-      // If user subscribed, set permanent cookie (no expiry)
-      setCookie(COOKIE_NAME, 'true', {
-        sameSite: 'lax',
-        secure: process.env.NODE_ENV === 'production',
-        // No maxAge - cookie persists until manually deleted
-      })
-    } else {
-      // If user just dismissed, set temporary cookie with expiry
-      setCookie(COOKIE_NAME, 'true', {
-        maxAge: cookieExpiryDays * 24 * 60 * 60, // Convert days to seconds
-        sameSite: 'lax',
-        secure: process.env.NODE_ENV === 'production',
-      })
-    }
-
-    if (onDismiss) {
-      onDismiss()
-    }
-  }
-
-  const handleOpenChange = (open: boolean) => {
-    if (!open && subscriptionStatus !== 'success') {
-      handleDismiss()
-    }
-  }
+  const loading = status === "loading";
+  const failed = status === "error" && errorMessage === t.errorMessage;
 
   return (
-    <>
-      <Dialog open={isOpen} onOpenChange={handleOpenChange}>
-        <DialogContent className="sm:max-w-md p-0 overflow-hidden">
+    <div
+      ref={cardRef}
+      role="dialog"
+      aria-modal="false"
+      aria-labelledby="newsletter-title"
+      aria-describedby="newsletter-description"
+      tabIndex={-1}
+      onKeyDown={onKeyDown}
+      className="fixed inset-x-0 bottom-0 z-50 overflow-hidden rounded-t-2xl border border-b-0 bg-card text-card-foreground shadow-lg outline-none sm:inset-x-auto sm:bottom-6 sm:right-6 sm:w-[23rem] sm:rounded-2xl sm:border-b motion-safe:animate-in motion-safe:fade-in-0 motion-safe:slide-in-from-bottom-4 motion-safe:duration-300"
+    >
+      <div className="relative aspect-[2/1] w-full sm:aspect-[16/9]">
+        <Image
+          src={headerPhoto}
+          alt=""
+          fill
+          placeholder="blur"
+          sizes="(min-width: 640px) 23rem, 100vw"
+          className="object-cover object-[50%_38%]"
+        />
+        <button
+          type="button"
+          onClick={() => dismiss(status === "success")}
+          aria-label={t.close}
+          className="absolute right-2 top-2 inline-flex size-11 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm transition-colors hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          <X className="size-5" aria-hidden="true" />
+        </button>
+      </div>
 
-          {/* Header with status-based styling */}
-          <div className={`relative w-full overflow-hidden pointer-events-none !py-4 ${subscriptionStatus === 'success'
-            ? 'bg-success/10'
-            : subscriptionStatus === 'error'
-              ? 'bg-destructive/10'
-              : 'bg-primary/10'
-            }`}>
-            {/* Decorative mail icons */}
-            <div className="absolute -right-6 -top-6">
-              <Mail className={`h-28 w-28 transform rotate-45 ${subscriptionStatus === 'success'
-                ? 'text-success'
-                : subscriptionStatus === 'error'
-                  ? 'text-destructive'
-                  : 'text-primary'
-                }`} />
-            </div>
-
-            <div className="absolute bottom-6 -left-2 pointer-events-none">
-              <Mail className={`h-16 w-16 transform -rotate-12 ${subscriptionStatus === 'success'
-                ? 'text-success'
-                : subscriptionStatus === 'error'
-                  ? 'text-destructive'
-                  : 'text-primary'
-                }`} />
-            </div>
-
-            <div className="absolute top-8 left-8 pointer-events-none">
-              <Mail className={`h-8 w-8 transform rotate-12 ${subscriptionStatus === 'success'
-                ? 'text-success'
-                : subscriptionStatus === 'error'
-                  ? 'text-destructive'
-                  : 'text-primary'
-                }`} />
-            </div>
-
-            {/* Content container */}
-            <div className="relative z-10 flex h-full flex-col justify-center items-center px-8 text-center">
-              <div className={`rounded-full p-3 mb-4 ${subscriptionStatus === 'success'
-                ? 'bg-success/15'
-                : subscriptionStatus === 'error'
-                  ? 'bg-destructive/15'
-                  : 'bg-primary/30'
-                }`}>
-                {subscriptionStatus === 'success' ? (
-                  <CheckCircle className="h-8 w-8 text-success" />
-                ) : subscriptionStatus === 'error' ? (
-                  <AlertCircle className="h-8 w-8 text-destructive" />
-                ) : (
-                  <Mail className="h-8 w-8 text-primary" />
-                )}
-              </div>
-
-              <h2 className="text-2xl font-extrabold text-foreground mb-3 tracking-display">
-                {subscriptionStatus === 'success'
-                  ? (t.successTitle)
-                  : subscriptionStatus === 'error'
-                    ? (t.errorTitle)
-                    : t.title
-                }
+      <div className="p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] sm:pb-5">
+        {status === "success" ? (
+          <div role="status" className="flex items-start gap-3">
+            <span className="mt-0.5 inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <Check className="size-4" aria-hidden="true" />
+            </span>
+            <div>
+              <h2 id="newsletter-title" className="text-xl">
+                {t.successTitle}
               </h2>
-
-              <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mx-auto">
-                {subscriptionStatus === 'success'
-                  ? (t.successMessage)
-                  : subscriptionStatus === 'error'
-                    ? errorMessage
-                    : t.description
-                }
+              <p id="newsletter-description" className="mt-1 text-sm text-muted-foreground">
+                {t.successMessage}
               </p>
             </div>
           </div>
-
-          {/* Form content - hide when subscription is successful */}
-          {subscriptionStatus !== 'success' && (
-            <div className="p-4">
-              <form onSubmit={handleSubscribe} className="space-y-4">
-                {/* Email field */}
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-sm font-medium">
-                    {t.emailLabel}
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder={t.emailPlaceholder}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="w-full"
-                    disabled={isLoading}
-                  />
-                </div>
-
-                {/* Name fields - optional */}
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstName" className="text-sm font-medium">
-                      {t.firstNameLabel}
-                    </Label>
-                    <Input
-                      id="firstName"
-                      type="text"
-                      placeholder={t.firstNamePlaceholder}
-                      value={firstName}
-                      onChange={(e) => setFirstName(e.target.value)}
-                      className="w-full"
-                      disabled={isLoading}
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastName" className="text-sm font-medium">
-                      {t.lastNameLabel}
-                    </Label>
-                    <Input
-                      id="lastName"
-                      type="text"
-                      placeholder={t.lastNamePlaceholder}
-                      value={lastName}
-                      onChange={(e) => setLastName(e.target.value)}
-                      className="w-full"
-                      disabled={isLoading}
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="identity" className="text-sm font-medium">{t.identity_label}</Label>
-                  <Select value={identity} onValueChange={setIdentity}>
-                    <SelectTrigger id="identity" className="w-full">
-                      <SelectValue placeholder={t.identity_placeholder} />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {IDENTITY_OPTIONS.map(opt => <SelectItem key={opt} value={opt}>{t.self_identify[opt as keyof typeof t.self_identify]}</SelectItem>)}
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="flex gap-2">
-                  <Button
-                    type="submit"
-                    className="flex-1"
-                    disabled={isLoading || !email}
-                  >
-                    {isLoading ? (
-                      <>
-                        <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-background border-t-transparent" />
-                        {t.subscribing}
-                      </>
-                    ) : (
-                      t.subscribeButton
-                    )}
-                  </Button>
-                  <Button
-                    type="button"
-                    variant="ghost"
-                    onClick={() => handleDismiss()}
-                    className="px-6"
-                    disabled={isLoading}
-                  >
-                    {t.maybeLater}
-                  </Button>
-                </div>
-              </form>
-
-              {/* Legal notice */}
-              <div className="mt-4 space-y-2">
-                <p className="text-xs text-muted-foreground">
-                  {t.privacyNote}
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  {t.legalNotice}{' '}
-                  <a
-                    href="https://www.beehiiv.com/tou"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline hover:text-foreground transition-colors"
-                  >
-                    {t.termsOfUse}
-                  </a>
-                  {' '}{t.and}{' '}
-                  <a
-                    href="https://www.beehiiv.com/privacy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline hover:text-foreground transition-colors"
-                  >
-                    {t.privacyPolicy}
-                  </a>
-                  &nbsp;beehiiv.
-                </p>
-              </div>
-            </div>
-          )}
-        </DialogContent>
-      </Dialog>
-    </>
-  )
+        ) : (
+          <>
+            <h2 id="newsletter-title" className="text-xl">
+              {t.title}
+            </h2>
+            <p id="newsletter-description" className="mt-1 text-sm text-muted-foreground">
+              {t.description}
+            </p>
+            <form onSubmit={subscribe} noValidate className="mt-4 flex flex-col gap-2 min-[400px]:flex-row">
+              <label htmlFor="newsletter-email" className="sr-only">
+                {t.emailLabel}
+              </label>
+              <Input
+                id="newsletter-email"
+                type="email"
+                inputMode="email"
+                autoComplete="email"
+                placeholder={t.emailPlaceholder}
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  if (status === "error") setStatus("idle");
+                }}
+                aria-invalid={status === "error" || undefined}
+                aria-describedby={status === "error" ? "newsletter-error" : undefined}
+                disabled={loading}
+                className="h-11 min-w-0 flex-1 rounded-full"
+              />
+              <Button type="submit" disabled={loading || !email} className="h-11 shrink-0 rounded-full px-5">
+                {loading ? t.subscribing : failed ? t.retryButton : t.subscribeButton}
+              </Button>
+            </form>
+            {status === "error" && (
+              <p id="newsletter-error" role="alert" className="mt-2 text-sm font-semibold text-destructive">
+                {errorMessage}
+              </p>
+            )}
+            <p className="mt-3 text-xs text-muted-foreground">
+              {t.privacyNote}{" "}
+              <a
+                href="https://www.beehiiv.com/tou"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-foreground"
+              >
+                {t.termsOfUse}
+              </a>
+              {" · "}
+              <a
+                href="https://www.beehiiv.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2 hover:text-foreground"
+              >
+                {t.privacyPolicy}
+              </a>
+            </p>
+          </>
+        )}
+      </div>
+    </div>
+  );
 }
