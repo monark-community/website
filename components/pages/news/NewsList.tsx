@@ -134,7 +134,7 @@ const NewsList: React.FC<NewsListProps> = ({ locale }) => {
               >
                 <ul
                   ref={jumpList}
-                  className="m-0 -mx-1 flex list-none gap-1 overflow-x-auto px-1 py-2 [scrollbar-width:none]"
+                  className="m-0 -mx-4 flex list-none gap-1 overflow-x-auto px-4 py-2 [scrollbar-width:none] sm:-mx-1 sm:px-1"
                 >
                   {sections.map(({ category }) => {
                     const current = active === category;
