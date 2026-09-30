@@ -53,6 +53,9 @@ interface I18n {
     remove_filter: string;
     search_chip: string;
     jump_label: string;
+    /** Short filter names for the browse bar's filter triggers. */
+    filter_labels: { industry: string; keyword: string; status: string; ownership: string };
+    search_short: string;
     /** Section titles and one-line intros, in list order (see ProjectList). */
     categories: Record<`${ProjectCategory}` | "other", CategoryCopy>;
 }
@@ -108,6 +111,8 @@ const en: I18n = {
     remove_filter: "Remove filter: {label}",
     search_chip: "“{q}”",
     jump_label: "Project categories",
+    filter_labels: { industry: "Industry", keyword: "Keyword", status: "Status", ownership: "Ownership" },
+    search_short: "Search",
     categories: {
         payments: {
             title: "Work & Payments",
@@ -191,6 +196,8 @@ const fr: I18n = {
     remove_filter: "Retirer le filtre : {label}",
     search_chip: "« {q} »",
     jump_label: "Catégories de projets",
+    filter_labels: { industry: "Industrie", keyword: "Mot-clé", status: "Statut", ownership: "Propriété" },
+    search_short: "Rechercher",
     categories: {
         payments: {
             title: "Travail et paiements",

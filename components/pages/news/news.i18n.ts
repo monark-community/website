@@ -18,6 +18,18 @@ export interface NewsI18n {
     empty_title: string;
     empty_body: string;
     back_to_learn: string;
+    /** Filter view of the browse bar. */
+    search_label: string;
+    search_short: string;
+    topic: string;
+    all_topics: string;
+    year: string;
+    all_years: string;
+    results_title: string;
+    results_count: (count: number) => string;
+    no_match_title: string;
+    no_match_hint: string;
+    clear_filters: string;
   };
   card: {
     min_read: (minutes: number) => string;
@@ -70,6 +82,17 @@ export const en: NewsI18n = {
     empty_title: "No News Yet",
     empty_body: "Articles will appear here once published.",
     back_to_learn: "Go to the Learn hub",
+    search_label: "Search news",
+    search_short: "Search",
+    topic: "Topic",
+    all_topics: "All topics",
+    year: "Year",
+    all_years: "All years",
+    results_title: "Matching stories",
+    results_count: (count) => (count === 1 ? "1 story" : `${count} stories`),
+    no_match_title: "No story matches these filters.",
+    no_match_hint: "Try other words, or clear the filters.",
+    clear_filters: "Clear filters",
   },
   card: {
     min_read: (minutes) => `${minutes} min read`,
@@ -122,6 +145,17 @@ export const fr: NewsI18n = {
     empty_title: "Aucune nouvelle pour l'instant",
     empty_body: "Les articles paraîtront ici dès leur publication.",
     back_to_learn: "Aller à l'espace Apprendre",
+    search_label: "Rechercher dans les nouvelles",
+    search_short: "Rechercher",
+    topic: "Sujet",
+    all_topics: "Tous les sujets",
+    year: "Année",
+    all_years: "Toutes les années",
+    results_title: "Articles correspondants",
+    results_count: (count) => (count === 1 ? "1 article" : `${count} articles`),
+    no_match_title: "Aucun article ne correspond à ces filtres.",
+    no_match_hint: "Essayez d'autres mots ou effacez les filtres.",
+    clear_filters: "Effacer les filtres",
   },
   card: {
     min_read: (minutes) => `${minutes} min de lecture`,
