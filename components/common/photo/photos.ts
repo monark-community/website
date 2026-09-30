@@ -12,7 +12,6 @@ import studentsLectureHall from "@/public/images/people/students-lecture-hall.jp
 import developersPairingWorkshop from "@/public/images/people/developers-pairing-workshop.jpg";
 import communityMeetupDiscussion from "@/public/images/people/community-meetup-discussion.jpg";
 import teamPlanningStudio from "@/public/images/people/team-planning-studio.jpg";
-import studentsAroundLaptop from "@/public/images/people/students-around-laptop.jpg";
 import friendsTalkingCafe from "@/public/images/people/friends-talking-cafe.jpg";
 import buildersAtWorkTable from "@/public/images/people/builders-at-work-table.jpg";
 
@@ -21,7 +20,6 @@ export type PhotoKey =
   | "developers-pairing-workshop"
   | "community-meetup-discussion"
   | "team-planning-studio"
-  | "students-around-laptop"
   | "friends-talking-cafe"
   | "builders-at-work-table";
 
@@ -57,13 +55,6 @@ export const photos: Record<PhotoKey, PhotoEntry> = {
     alt: {
       en: "A small business team plans a project around a table in their studio",
       fr: "Une petite équipe d'entreprise planifie un projet autour d'une table dans son atelier",
-    },
-  },
-  "students-around-laptop": {
-    src: studentsAroundLaptop,
-    alt: {
-      en: "A group of students gathered around one laptop in a lecture hall",
-      fr: "Un groupe d'étudiants réunis autour d'un même ordinateur dans un amphithéâtre",
     },
   },
   "friends-talking-cafe": {

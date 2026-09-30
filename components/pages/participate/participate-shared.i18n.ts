@@ -63,7 +63,7 @@ export const en: SharedI18n = {
     new_tab: "(opens in a new tab)",
     how_link: "See how it works",
     others: {
-      title: "Other ways to participate",
+      title: "Other Ways to Participate",
       roles: [
         {
           slug: "developer",
@@ -82,7 +82,7 @@ export const en: SharedI18n = {
         {
           slug: "industry",
           ...roleStyle.industry,
-          title: "Industry representative",
+          title: "Industry Representative",
           content: "Test a Web3 idea from your sector with a student-led team.",
           href: "/participate/industry",
         },

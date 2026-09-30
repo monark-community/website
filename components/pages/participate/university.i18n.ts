@@ -10,13 +10,13 @@ import { DISCORD_URL } from "./participate-shared.i18n";
 
 export const en: ParticipateContent = {
   meta: {
-    title: "Universities and students",
+    title: "Universities and Students",
     description:
       "End-of-degree Web3 projects with real mandates and mentors, support for campus blockchain associations, and incubation for the projects worth taking further. Monark works with universities, professors and students.",
   },
   hero: {
     eyebrow: "Participate as a university",
-    title: "Real Web3 projects for students, from the classroom to launch",
+    title: "Real Web3 Projects for Students, from the Classroom to Launch",
     lead: "End-of-degree projects with real mandates, support for campus blockchain clubs, and incubation for the projects worth taking further.",
     audiences_label: "For",
     audiences: [
@@ -33,13 +33,13 @@ export const en: ParticipateContent = {
   },
   offer: {
     eyebrow: "What you get",
-    title: "Three ways to work with Monark",
+    title: "Three Ways to Work with Monark",
     intro:
       "Monark has already partnered with several universities and student groups. Pick the track that fits where you are.",
     tracks: [
       {
         icon: "graduation-cap",
-        title: "End-of-degree projects",
+        title: "End-of-Degree Projects",
         intro:
           "Turn your final project into one you'll actually be proud of, with a real Web3 mandate.",
         items: [
@@ -53,7 +53,7 @@ export const en: ParticipateContent = {
       },
       {
         icon: "school",
-        title: "Blockchain associations",
+        title: "Blockchain Associations",
         intro:
           "Already in a campus blockchain club, or thinking of starting one? We help you structure it and grow.",
         items: [
@@ -83,25 +83,25 @@ export const en: ParticipateContent = {
   },
   steps: {
     eyebrow: "How it works",
-    title: "An end-of-degree project with Monark, step by step",
+    title: "An End-of-Degree Project with Monark, Step by Step",
     items: [
       {
-        title: "Pick or pitch a project",
+        title: "Pick or Pitch a Project",
         content:
           "Choose from our curated project ideas, or bring your own Web3 idea.",
       },
       {
-        title: "Align with your professors",
+        title: "Align with Your Professors",
         content:
           "The mandate is approved alongside your professors, so it fits your program's requirements.",
       },
       {
-        title: "Build in sprints, with mentors",
+        title: "Build in Sprints, with Mentors",
         content:
           "Web3 developers and product experts follow up with you at every sprint, like in a real tech team.",
       },
       {
-        title: "Go further",
+        title: "Go Further",
         content:
           "Your project could lead to grants, a place in our incubation program, or even launch as a Monark-integrated module.",
       },
@@ -109,15 +109,15 @@ export const en: ParticipateContent = {
   },
   fit: {
     eyebrow: "Who fits",
-    title: "For students, professors and clubs",
-    who_title: "Monark is a good match for",
+    title: "For Students, Professors and Clubs",
+    who_title: "Monark Is a Good Match For",
     who: [
       "Software engineering students nearing the end of their degree",
       "Students who want to explore blockchain or try a new challenge",
       "Campus blockchain clubs, or students who want to start one",
       "Professors looking for real-world Web3 mandates for their students",
     ],
-    expect_title: "What Monark expects",
+    expect_title: "What Monark Expects",
     expect: [
       "A project approved with your professors, so academic and project goals line up",
       "Regular sprint follow-ups with your mentors",
@@ -126,7 +126,7 @@ export const en: ParticipateContent = {
   },
   proof: {
     eyebrow: "Track record",
-    title: "It started at the Université de Sherbrooke",
+    title: "It Started at the Université de Sherbrooke",
     content:
       "Monark's approach grew out of CryptoSys, a decentralized accounting system designed by students at the Université de Sherbrooke with EOS Nation and Vincent Grenier, Monark's founder. It showed what students can build when industry professionals guide them.",
     items: [
@@ -139,7 +139,7 @@ export const en: ParticipateContent = {
       },
       {
         label: "Project ideas",
-        title: "The Monark project catalogue",
+        title: "The Monark Project Catalogue",
         content:
           "Web3 project ideas and projects under way, ready to become end-of-degree mandates.",
         href: "/project",
@@ -152,7 +152,7 @@ export const en: ParticipateContent = {
   },
   faq: {
     eyebrow: "FAQ",
-    title: "Questions from students and universities",
+    title: "Questions from Students and Universities",
     items: [
       {
         question: "Can I propose my own project idea?",
@@ -177,7 +177,7 @@ export const en: ParticipateContent = {
     ],
   },
   cta: {
-    title: "Bring Web3 to your campus",
+    title: "Bring Web3 to Your Campus",
     content:
       "Students, professors and clubs: say hello on Discord and tell us what you'd like to build.",
     primary: { label: "Join us on Discord", href: DISCORD_URL, external: true },

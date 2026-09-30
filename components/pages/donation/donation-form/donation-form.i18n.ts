@@ -15,7 +15,7 @@ export interface I18n {
 
 export const en: I18n = {
   donation_form: {
-    title: "Make a donation",
+    title: "Make a Donation",
     select_network: "Select a network",
     amount_label: "Amount",
     currency_label: "Currency",

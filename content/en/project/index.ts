@@ -4,7 +4,7 @@ import { DatedProjectMetadata } from "@/types/project.types";
 const data: DatedProjectMetadata[] = [
   {
     "id": "access-tokens-pay-per-access-contracts",
-    "title": "Access Tokens (Pay-Per-Access Contracts)",
+    "title": "Access Tokens (Pay-per-Access Contracts)",
     "description": "Smart contracts that grant time-based or one-time access to digital or physical content. Users can pay in tokens to unlock a livestream, document, video, or even a smart lock for a room or vault. The contract tracks duration, access rights, and expiration. You can expand this to marketing tools like paid alerts for communities or digital ad banners.",
     "tagline": "Sell access to anything by the hour, the use, or forever.",
     "accronym": "GatePay",
@@ -30,12 +30,12 @@ const data: DatedProjectMetadata[] = [
       "Pay-Per-Access",
       "Smart Contracts"
     ],
-    "hash": "2d417e9004aa9f0d3d4a00a47f746e1eb08605186df2722d369d048661ecff82",
-    "last_updated": "2026-09-29"
+    "hash": "0d563f5b08ba8ec06b7c34fabd15016e19baa7d921a3fbd8bc14f41bbe4a708c",
+    "last_updated": "2026-09-30"
   },
   {
     "id": "accounting-blockchain-data-extraction",
-    "title": "Accounting blockchain data extraction",
+    "title": "Accounting Blockchain Data Extraction",
     "description": "A tool that extracts, cleans, and formats blockchain transaction data into accounting-ready formats. Users can input a wallet address and receive categorized income/expenses, gas fees, and timestamps. Useful for DAOs, freelancers, and businesses needing audit trails or tax reports. You can use [The Graph](https://thegraph.com/), APIs, or indexers to feed the data.",
     "tagline": "Turn any wallet's history into books your accountant can use.",
     "accronym": "LedgerLift",
@@ -60,8 +60,8 @@ const data: DatedProjectMetadata[] = [
       "Data Extraction",
       "Compliance"
     ],
-    "hash": "8d8db95ce24b4a7d0b72739bafa9c0e7d825f5498007c208222a8f303bfd13eb",
-    "last_updated": "2026-09-29"
+    "hash": "2911a654a146fa240da1f715e547efc4b0bcbc8d52744f31a3a0645144530cb6",
+    "last_updated": "2026-09-30"
   },
   {
     "id": "address-review-system",
@@ -91,7 +91,7 @@ const data: DatedProjectMetadata[] = [
       "DAO"
     ],
     "hash": "4dccbc90a8bb0c4a66baf0fa344bce2b0cb8ff7d42424dede95b3b65f7a0a432",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "bounty-system",
@@ -121,7 +121,7 @@ const data: DatedProjectMetadata[] = [
       "DAO"
     ],
     "hash": "4f1c4d7e33ba6dc84870671ce9af0985ff107e44f0ef92984764704baed16074",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "contact-list",
@@ -151,7 +151,7 @@ const data: DatedProjectMetadata[] = [
       "Contacts"
     ],
     "hash": "ec6a8fbf7fd96b12fd129f1ccb5b53489857b337d98723ad776df91c1d9607c9",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "dao-voting-platform",
@@ -181,7 +181,7 @@ const data: DatedProjectMetadata[] = [
       "Transparency"
     ],
     "hash": "73cf5934a122059fe4472d92c2f29b4a3f5054e4c1552956e013acec82db1fdc",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "defi-borrow",
@@ -211,7 +211,7 @@ const data: DatedProjectMetadata[] = [
       "Liquidity"
     ],
     "hash": "159b0a1a9434f971e81c9c3b17974f2e8ddb1d266bd884c9924a37d395c41cab",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "defi-lending",
@@ -241,7 +241,7 @@ const data: DatedProjectMetadata[] = [
       "Liquidity"
     ],
     "hash": "c9a7ddce74cfd9c18cccf2b3c47955ab110e3616e0e684c56b0918ca6b12a950",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "defi-loans",
@@ -271,7 +271,7 @@ const data: DatedProjectMetadata[] = [
       "Automation"
     ],
     "hash": "4f7a6d5c503ca2d9a55657e5d58de2a76dda0772c7c208f55284075ff0322f3a",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "defi-swaps",
@@ -301,7 +301,7 @@ const data: DatedProjectMetadata[] = [
       "Liquidity"
     ],
     "hash": "dc66f2bebf33fe03f760367c72751a88425b09f3fbfaa1464d488e3d64207c04",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "digital-will",
@@ -331,7 +331,7 @@ const data: DatedProjectMetadata[] = [
       "Compliance"
     ],
     "hash": "6d008524c06def44929980b06b635a5fc05fb42bcc06edc0df2c428860f3b0c1",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "emergency-alerts-network",
@@ -362,7 +362,7 @@ const data: DatedProjectMetadata[] = [
       "Reputation"
     ],
     "hash": "c831fb2487bd70efddd261139073ccf5a869cb79be43480810f1573f0ee60f3b",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "fee-distribution-system",
@@ -392,7 +392,7 @@ const data: DatedProjectMetadata[] = [
       "Automation"
     ],
     "hash": "f2234255acfc184190e5676ccb678577d7843639a95b86297452655f364cd5f2",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "inventory-and-sales-for-farm-goods",
@@ -423,7 +423,7 @@ const data: DatedProjectMetadata[] = [
       "Access"
     ],
     "hash": "3112e13240bce0c4271ab011211729ff1b838f99afd7eb56c787d8b726f7bfdd",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "land-registry-voting",
@@ -454,7 +454,7 @@ const data: DatedProjectMetadata[] = [
       "Mapping"
     ],
     "hash": "b88ee02304849ddf75ae75e50960e707d35ffe9cc109a35728cbf81f6ea891f0",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "milestone-based-smart-contracts-and-escrow",
@@ -484,7 +484,7 @@ const data: DatedProjectMetadata[] = [
       "Automation"
     ],
     "hash": "4590091cd706fc74d7b21eec3983403dd9aea622fc9816acf703bc9f3812c83d",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "multichain-portfolio-tracker",
@@ -514,7 +514,7 @@ const data: DatedProjectMetadata[] = [
       "Dashboard"
     ],
     "hash": "45d2a015f80304e2cd260e350f46c07cbab9437fcf8b83450057b6e575af2bb4",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "nft-ticketing-platform",
@@ -545,7 +545,7 @@ const data: DatedProjectMetadata[] = [
       "Access Control"
     ],
     "hash": "15869db82b8a865771e3378649b5fc4f5a5d4f5362e66088ee70b8792601a245",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "onchain-property-registry",
@@ -577,7 +577,7 @@ const data: DatedProjectMetadata[] = [
       "Buildings"
     ],
     "hash": "9fd529a705bb33357372017dca6f4ee67cc63b6803325a09530c072ea7fa49eb",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "real-time-royalty-distribution",
@@ -608,7 +608,7 @@ const data: DatedProjectMetadata[] = [
       "Content"
     ],
     "hash": "4a2eb09478fb565fa024337937427e007ee288d5f7d348f26e3d0d4913c822bd",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "referral-system",
@@ -639,7 +639,7 @@ const data: DatedProjectMetadata[] = [
       "Engagement"
     ],
     "hash": "199d57f884fbeb53d7fc54eab4a266af4697ed826287ef3f9cfbca90ada77135",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "supply-chain-tracking",
@@ -671,7 +671,7 @@ const data: DatedProjectMetadata[] = [
       "Mapping"
     ],
     "hash": "4a54155d4e1f4872cea2ea072ba1d455d9de3a09611f2918268ec4dc5412aaba",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "systems-for-co-ops",
@@ -701,7 +701,7 @@ const data: DatedProjectMetadata[] = [
       "Governance"
     ],
     "hash": "fe753045813a81ae8fd72f4e1ed480396064a5d2889f60b805d74b19fadc092c",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "time-locked-contracts",
@@ -731,7 +731,7 @@ const data: DatedProjectMetadata[] = [
       "Vesting"
     ],
     "hash": "70209ffd6a6a26cc1ab69207b076f776e5ce9cae15b2b4243eab2900fd01bc86",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "transaction-gas",
@@ -760,7 +760,7 @@ const data: DatedProjectMetadata[] = [
       "Automation"
     ],
     "hash": "6fb3fbfe9d4167a537e5c47686f6b29ffcaa46f808e09bc9ae1b903c823c863b",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "web3-signatures",
@@ -790,7 +790,7 @@ const data: DatedProjectMetadata[] = [
       "Documents"
     ],
     "hash": "eb364ccab29b4b9a10b672e8f04145512e9cc14c6073365fc0484dc1a6708091",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   },
   {
     "id": "zk-medical-data-exchange",
@@ -821,7 +821,7 @@ const data: DatedProjectMetadata[] = [
       "ZK"
     ],
     "hash": "3f7d2516edd6e49422e6eefe6e6cd6fa9c1426731b2a291728bfb702d6096f4e",
-    "last_updated": "2026-09-29"
+    "last_updated": "2026-09-30"
   }
 ];
 

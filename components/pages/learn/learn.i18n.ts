@@ -123,19 +123,19 @@ export const en: I18n = {
         "Learn Web3 by building with Monark: paths for students, developers and industry, the latest news, the docs and the community.",
     },
     hero: {
-      title: "Learn Web3 by building real projects",
+      title: "Learn Web3 by Building Real Projects",
       lead: "Mentors, real projects and resources made with universities. Learn by doing, whatever your starting point.",
     },
     paths: {
       eyebrow: "Learning paths",
-      title: "Start from where you are",
+      title: "Start from Where You Are",
       starter_label: "Start reading",
       items: [
         {
           id: "students",
           icon: "graduation-cap",
           audience: "Students",
-          title: "Your degree project, in Web3",
+          title: "Your Degree Project, in Web3",
           content:
             "Build your end-of-degree project on a real blockchain use case, mentored by Web3 developers.",
           photo: {
@@ -152,7 +152,7 @@ export const en: I18n = {
           id: "developers",
           icon: "code",
           audience: "Developers",
-          title: "From prototype to fundable product",
+          title: "From Prototype to Fundable Product",
           content:
             "A 4 to 12 month incubation with sprint mentorship, at no upfront cost. Your project stays yours.",
           photo: {
@@ -169,7 +169,7 @@ export const en: I18n = {
           id: "industry",
           icon: "factory",
           audience: "Industry",
-          title: "Explore Web3 at low cost",
+          title: "Explore Web3 at Low Cost",
           content:
             "Share a real challenge. A student-led team builds and tests a proof of concept with your experts.",
           photo: {
@@ -188,7 +188,7 @@ export const en: I18n = {
     },
     docs: {
       eyebrow: "Docs",
-      title: "The Monark docs",
+      title: "The Monark Docs",
       content:
         "Guides, tutorials and references, kept up to date with our partners and the Web3 ecosystem.",
       primary: { label: "Open the docs", href: DOCS_URL, note: "On Notion" },
@@ -200,7 +200,7 @@ export const en: I18n = {
     },
     community: {
       eyebrow: "Community",
-      title: "Learn with others",
+      title: "Learn with Others",
       channels: [
         {
           id: "discord",
@@ -217,7 +217,7 @@ export const en: I18n = {
       ],
     },
     cta: {
-      title: "Ready to build?",
+      title: "Ready to Build?",
       content: "Pick a project to contribute to.",
       primary: { label: "Explore our Web3 projects", href: "/project" },
       secondary: { label: "About Monark", href: "/about" },

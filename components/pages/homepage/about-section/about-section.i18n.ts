@@ -16,7 +16,7 @@ export interface I18n {
 export const en: I18n = {
   about: {
     flavor: "What is Monark",
-    title: "Empowering communities through collaboration",
+    title: "Empowering Communities through Collaboration",
     activities: [
       {
         icon: "modular",

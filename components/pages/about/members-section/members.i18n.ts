@@ -17,7 +17,7 @@ export interface I18n {
 
 export const en: I18n = {
   team: {
-    team_title: "The team",
+    team_title: "The Team",
     author_label: "Written by",
     members: [
       {

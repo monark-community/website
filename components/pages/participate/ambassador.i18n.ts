@@ -23,7 +23,7 @@ export const en: ParticipateContent = {
   },
   hero: {
     eyebrow: "Participate as an ambassador",
-    title: "Grow the Monark community where you live",
+    title: "Grow the Monark Community Where You Live",
     lead: "Carry Monark's mission to your city, campus or community, and help build local hubs for Web3 learning and projects.",
     audiences_label: "For",
     audiences: ["Community members", "Students", "Web3 enthusiasts"],
@@ -32,52 +32,52 @@ export const en: ParticipateContent = {
   },
   offer: {
     eyebrow: "What you get",
-    title: "A role at the heart of the community",
+    title: "A Role at the Heart of the Community",
     items: [
       {
         icon: "sprout",
-        title: "Rewards for your impact",
+        title: "Rewards for Your Impact",
         content:
           "Ambassadors who grow the Monark ecosystem are rewarded for the impact they have.",
       },
       {
         icon: "users",
-        title: "A community behind you",
+        title: "A Community behind You",
         content:
           "Build alongside the developers, students and partners already working with Monark.",
       },
       {
         icon: "map-pin",
-        title: "A local hub to build",
+        title: "A Local Hub to Build",
         content:
           "Create a place for Web3 education, collaboration and projects in your own community.",
       },
       {
         icon: "heart-handshake",
-        title: "A mission worth sharing",
+        title: "A Mission Worth Sharing",
         content:
           "An open ecosystem that grows one module, one project and one city at a time.",
       },
     ],
     note: {
-      title: "Details are still to come",
+      title: "Details Are Still to Come",
       content:
         "How rewards work, and what the program asks of ambassadors, will be shared as the program launches. Questions? Ask us on Discord.",
     },
   },
   steps: {
     eyebrow: "How it works",
-    title: "How to get involved",
+    title: "How to Get Involved",
     intro:
       "The program is still being defined, so these steps may change as it launches.",
     items: [
       {
-        title: "Join the community",
+        title: "Join the Community",
         content:
           "Start on Discord: meet the team and the people already building with Monark.",
       },
       {
-        title: "Tell us where you are",
+        title: "Tell Us Where You Are",
         content:
           "Your city, campus or community, and what you would like to do there.",
       },
@@ -87,7 +87,7 @@ export const en: ParticipateContent = {
           "Share Monark's mission, bring new people in and help them find their place.",
       },
       {
-        title: "Grow a local hub",
+        title: "Grow a Local Hub",
         content:
           "Bring people together for Web3 education, collaboration and project development.",
       },
@@ -95,14 +95,14 @@ export const en: ParticipateContent = {
   },
   fit: {
     eyebrow: "Who fits",
-    title: "People who want Web3 to work for their community",
-    who_title: "You might be a good fit if",
+    title: "People Who Want Web3 to Work for Their Community",
+    who_title: "You Might Be a Good Fit If",
     who: [
       "You're passionate about Web3 and want more people to benefit from it",
       "You share Monark's values: accessibility, transparency, collaboration, sustainability and innovation",
       "You're connected to a city, a campus or a community you want to grow",
     ],
-    expect_title: "What an ambassador does",
+    expect_title: "What an Ambassador Does",
     expect: [
       "Represents Monark's values and mission",
       "Onboards new people into the Monark ecosystem",
@@ -111,13 +111,13 @@ export const en: ParticipateContent = {
   },
   proof: {
     eyebrow: "Where it's heading",
-    title: "Built in the open, like the rest of Monark",
+    title: "Built in the Open, like the Rest of Monark",
     content:
       "Monark announced its ambassador program alongside its work with universities and its incubator. Its project catalogue includes the kind of tools such programs need.",
     items: [
       {
         label: "News",
-        title: "What Monark is building and why",
+        title: "What Monark Is Building and Why",
         content:
           "The article that introduced the ambassador program, with Monark's university work, incubator and live projects.",
         href: "/learn/news/what-monark-is-building-and-why",
@@ -133,7 +133,7 @@ export const en: ParticipateContent = {
     link: { label: "Browse all projects", href: "/project" },
   },
   cta: {
-    title: "Want to represent Monark?",
+    title: "Want to Represent Monark?",
     content:
       "Join the Discord and tell us where you'd like to grow the community. We'll keep you posted as the program launches.",
     primary: { label: "Join us on Discord", href: DISCORD_URL, external: true },

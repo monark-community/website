@@ -4,7 +4,7 @@ import { DatedNewsMetadata } from "@/types/news.types";
 const data: DatedNewsMetadata[] = [
   {
     "id": "pioneer-in-university-projects-mentorship",
-    "title": "A pioneer in supporting university projects in decentralized accounting",
+    "title": "A Pioneer in Supporting University Projects in Decentralized Accounting",
     "author": "Marty-Kanatakhatsus Meunier",
     "date": "2020-04-24T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
@@ -24,7 +24,7 @@ const data: DatedNewsMetadata[] = [
   },
   {
     "id": "real-world-web3-use-cases-that-aren-t-just-nfts",
-    "title": "Real-world Web3: use cases beyond NFTs",
+    "title": "Real-World Web3: Use Cases beyond NFTs",
     "author": "Monark Team",
     "date": "2025-09-11T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
@@ -43,7 +43,7 @@ const data: DatedNewsMetadata[] = [
   },
   {
     "id": "smart-contracts-explained-like-you-re-5",
-    "title": "Smart contracts explained like you're 5",
+    "title": "Smart Contracts Explained Like You're 5",
     "author": "Monark Team",
     "date": "2025-08-21T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
@@ -61,7 +61,7 @@ const data: DatedNewsMetadata[] = [
   },
   {
     "id": "trust-from-open-data-to-mathematical-proof",
-    "title": "Trust: from open data to mathematical proof",
+    "title": "Trust: From Open Data to Mathematical Proof",
     "author": "Monark Team",
     "date": "2025-08-28T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
@@ -79,7 +79,7 @@ const data: DatedNewsMetadata[] = [
   },
   {
     "id": "web3-developer-roadmap-and-resources",
-    "title": "Web3 developer roadmap and resources",
+    "title": "Web3 Developer Roadmap and Resources",
     "author": "Monark Team",
     "date": "2025-09-04T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
@@ -97,7 +97,7 @@ const data: DatedNewsMetadata[] = [
   },
   {
     "id": "web3-revolution-reality",
-    "title": "The revolution and reality of Web3: an honest assessment",
+    "title": "The Revolution and Reality of Web3: An Honest Assessment",
     "author": "Monark Team",
     "date": "2025-08-14T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
@@ -115,7 +115,7 @@ const data: DatedNewsMetadata[] = [
   },
   {
     "id": "what-is-web3-really",
-    "title": "What is Web3, really?",
+    "title": "What Is Web3, Really?",
     "author": "Monark Team",
     "date": "2025-07-25T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
@@ -133,7 +133,7 @@ const data: DatedNewsMetadata[] = [
   },
   {
     "id": "what-monark-is-building-and-why",
-    "title": "What Monark is building, and why",
+    "title": "What Monark Is Building, and Why",
     "author": "Monark Team",
     "date": "2025-09-25T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
@@ -152,7 +152,7 @@ const data: DatedNewsMetadata[] = [
   },
   {
     "id": "what-needs-to-happen-before-web3-becomes-everyday-tech",
-    "title": "What needs to happen before Web3 becomes everyday tech",
+    "title": "What Needs to Happen Before Web3 Becomes Everyday Tech",
     "author": "Monark Team",
     "date": "2025-09-18T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
@@ -171,7 +171,7 @@ const data: DatedNewsMetadata[] = [
   },
   {
     "id": "where-blockchain-shines",
-    "title": "Where blockchain shines, and where it doesn't",
+    "title": "Where Blockchain Shines, and Where It Doesn't",
     "author": "Monark Team",
     "date": "2025-08-09T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
@@ -189,7 +189,7 @@ const data: DatedNewsMetadata[] = [
   },
   {
     "id": "who-is-web3-actually-for",
-    "title": "Who is Web3 actually for?",
+    "title": "Who Is Web3 Actually For?",
     "author": "Monark Team",
     "date": "2025-09-30T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",
@@ -208,7 +208,7 @@ const data: DatedNewsMetadata[] = [
   },
   {
     "id": "why-decentralization-matters",
-    "title": "Why decentralization matters, beyond the hype",
+    "title": "Why Decentralization Matters, beyond the Hype",
     "author": "Monark Team",
     "date": "2025-08-02T00:00:00.000Z",
     "city": "Sherbrooke, QC, Canada",

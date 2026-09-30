@@ -14,7 +14,6 @@ The code reads the photos from one registry, `components/common/photo/photos.ts`
 | `developers-pairing-workshop.jpg` | [I_LxDFIIRIA](https://unsplash.com/photos/I_LxDFIIRIA) | [fran innocenti](https://unsplash.com/@frani) | Participate: developer (hero); home, developer card |
 | `community-meetup-discussion.jpg` | [ohNCIiKVT1g](https://unsplash.com/photos/ohNCIiKVT1g) | [Antenna](https://unsplash.com/@antenna) | Participate: ambassador (hero); home, ambassador card |
 | `team-planning-studio.jpg` | [fm4B1xWEIsU](https://unsplash.com/photos/fm4B1xWEIsU) | [Vitaly Gariev](https://unsplash.com/@silverkblack) | Participate: industry (hero); home, industry card |
-| `students-around-laptop.jpg` | [-X4Qx4_4iMU](https://unsplash.com/photos/-X4Qx4_4iMU) | [Vitaly Gariev](https://unsplash.com/@silverkblack) | About, hero |
 | `friends-talking-cafe.jpg` | [-uHVRvDr7pg](https://unsplash.com/photos/-uHVRvDr7pg) | [Brooke Cagle](https://unsplash.com/@brookecagle) | About, "How Monark works" |
 | `builders-at-work-table.jpg` | [dWYU3i-mqEo](https://unsplash.com/photos/dWYU3i-mqEo) | [Annie Spratt](https://unsplash.com/@anniespratt) | Donation, header (hidden on phones) |
 | `learn-students-laughing-laptops.webp` | [unsplash.com/photos/g1Kr4Ozfoac](https://unsplash.com/photos/g1Kr4Ozfoac) | [Brooke Cagle](https://unsplash.com/@brookecagle) | `/learn`, learning path "Students" |

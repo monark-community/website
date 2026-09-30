@@ -50,11 +50,11 @@ export const en: NewsI18n = {
     jump_label: "News by category",
     categories: {
       monark: {
-        title: "Monark news",
+        title: "Monark News",
         line: "What we build, with whom, and why.",
       },
       "beyond-the-hype": {
-        title: "Beyond the hype",
+        title: "Beyond the Hype",
         line: "Where Web3 works, where it doesn't, and what's missing.",
       },
       build: {
@@ -62,12 +62,12 @@ export const en: NewsI18n = {
         line: "Tools, roadmaps and real use cases.",
       },
       explained: {
-        title: "Web3, explained",
+        title: "Web3, Explained",
         line: "The core ideas, in plain words.",
       },
-      other: { title: "More news" },
+      other: { title: "More News" },
     },
-    empty_title: "No news yet",
+    empty_title: "No News Yet",
     empty_body: "Articles will appear here once published.",
     back_to_learn: "Go to the Learn hub",
   },
@@ -83,7 +83,7 @@ export const en: NewsI18n = {
     share_on: (network) => `Share on ${network}`,
     copy_link: "Copy link",
     copied: "Link copied",
-    more_title: "More news",
+    more_title: "More News",
     see_all: "See all news",
   },
 };

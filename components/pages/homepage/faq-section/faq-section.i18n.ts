@@ -19,7 +19,7 @@ export const en: I18n = {
   faq: {
     soon: "Coming Soon",
     flavor: "FAQ",
-    title: "Questions, answered",
+    title: "Questions, Answered",
     items: [
       {
         question: "What is Monark?",

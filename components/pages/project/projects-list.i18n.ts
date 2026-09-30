@@ -91,13 +91,13 @@ const en: I18n = {
     learn_more: "Learn more",
     status: "Status",
     mockup: "Mockup",
-    milestones: "Deliverables & desired functionalities",
+    milestones: "Deliverables & Desired Functionalities",
     on_this_page: "On this page",
     introduction: "Introduction",
     clear_filters: "Clear filters",
     show_projects_in_industry: "Show projects in {tag}",
     show_projects_with_keyword: "Show projects tagged {tag}",
-    results_title: "Matching projects",
+    results_title: "Matching Projects",
     results_count_one: "{count} project",
     results_count_other: "{count} projects",
     filters: "Filters",
@@ -110,19 +110,19 @@ const en: I18n = {
     jump_label: "Project categories",
     categories: {
         payments: {
-            title: "Work & payments",
+            title: "Work & Payments",
             line: "Pay people fairly and on time: bounties, escrow, royalties and shared revenue.",
         },
         holdings: {
-            title: "Managing your crypto",
+            title: "Managing Your Crypto",
             line: "See what you hold, keep the books, and decide when and to whom it goes.",
         },
         trust: {
-            title: "Trust & privacy",
+            title: "Trust & Privacy",
             line: "Know who's on the other side, prove what was signed, and share only what you choose.",
         },
         commerce: {
-            title: "Commerce & records",
+            title: "Commerce & Records",
             line: "Tickets, goods and land, tracked from the first sale to the public record.",
         },
         defi: {
@@ -130,11 +130,11 @@ const en: I18n = {
             line: "Lending, borrowing, swaps and fees, built so you can see how they work.",
         },
         governance: {
-            title: "Communities & governance",
+            title: "Communities & Governance",
             line: "Tools for groups that decide together and look out for each other, from co-ops to neighbourhoods.",
         },
         other: {
-            title: "Other projects",
+            title: "Other Projects",
             line: "",
         },
     },

@@ -41,71 +41,71 @@ export const en: I18n = {
   },
   error_definitions: {
     "400": {
-      title: "Bad request",
+      title: "Bad Request",
       message:
         "We couldn't read that request. Check the link or the form, then try again.",
     },
     "401": {
-      title: "Sign-in needed",
+      title: "Sign-In Needed",
       message: "This page is for signed-in members. Sign in, then come back.",
     },
     "403": {
-      title: "Access restricted",
+      title: "Access Restricted",
       message:
         "Your account doesn't have access to this page. If you think it should, let us know.",
     },
     "404": {
-      title: "Page not found",
+      title: "Page Not Found",
       message:
         "This page doesn't exist or has moved. Start again from the home page, or have a look at the projects our community is building.",
     },
     "405": {
-      title: "Action not allowed",
+      title: "Action Not Allowed",
       message: "This page doesn't accept that kind of request.",
     },
     "408": {
-      title: "Request timed out",
+      title: "Request Timed Out",
       message:
         "The page took too long to answer. Check your connection and try again.",
     },
     "409": {
-      title: "Conflicting change",
+      title: "Conflicting Change",
       message:
         "Your change clashed with another one. Reload the page and try again.",
     },
     "410": {
-      title: "Page removed",
+      title: "Page Removed",
       message: "This page has been taken down for good.",
     },
     "418": {
-      title: "I'm a teapot",
+      title: "I'm a Teapot",
       message: "This server brews tea, not coffee. Try another request.",
     },
     "429": {
-      title: "Too many requests",
+      title: "Too Many Requests",
       message:
         "You've sent a lot of requests in a short time. Wait a minute, then try again.",
     },
     "500": {
-      title: "Something went wrong",
+      title: "Something Went Wrong",
       message:
         "An error happened on our side. Try again in a moment, and tell us if it keeps happening.",
     },
     "501": {
-      title: "Not available yet",
+      title: "Not Available Yet",
       message: "This part of the site isn't built yet. Check back later.",
     },
     "502": {
-      title: "Bad gateway",
+      title: "Bad Gateway",
       message:
         "A service we rely on sent back an invalid answer. Try again in a moment.",
     },
     "503": {
-      title: "Temporarily unavailable",
+      title: "Temporarily Unavailable",
       message: "The site is under maintenance or very busy. Check back soon.",
     },
     "504": {
-      title: "Gateway timeout",
+      title: "Gateway Timeout",
       message:
         "A service we rely on took too long to answer. Try again in a moment.",
     },

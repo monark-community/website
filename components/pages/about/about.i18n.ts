@@ -110,7 +110,7 @@ export const en: I18n = {
     },
     hero: {
       eyebrow: "What is Monark?",
-      title: "A Web3 ecosystem that is open to everyone, and built together",
+      title: "A Web3 Ecosystem That Is Open to Everyone, and Built Together",
       lead: "Monark is one platform to share project ideas, collaborate on open-source applications and find technical resources made for you.",
       audiences_label: "Monark is built for",
       audiences: [
@@ -123,7 +123,7 @@ export const en: I18n = {
     },
     why: {
       eyebrow: "Why Monark",
-      title: "Three barriers hold Web3 back. We remove them.",
+      title: "Three Barriers Hold Web3 Back. We Remove Them.",
       intro:
         "Web3 adoption is still limited, and the same obstacles stop students, developers and communities again and again. Monark's open-source platform lets anyone contribute, collaborate and build real-world solutions.",
       problem_label: "The barrier",
@@ -131,25 +131,25 @@ export const en: I18n = {
       barriers: [
         {
           icon: "graduation-cap",
-          problem: "A steep learning curve",
+          problem: "A Steep Learning Curve",
           problem_detail: "Web3 is hard to learn alone.",
           answer_icon: "book-open",
-          answer: "Mentorship and learning",
+          answer: "Mentorship and Learning",
           answer_detail:
             "Mentors and learning resources, made with universities, help you learn by building.",
         },
         {
           icon: "coins",
-          problem: "High development costs",
+          problem: "High Development Costs",
           problem_detail: "Building a project takes money most people don't have.",
           answer_icon: "code",
-          answer: "Open source and rewards",
+          answer: "Open Source and Rewards",
           answer_detail:
             "Shared open-source tools and contributor rewards remove the financial barrier.",
         },
         {
           icon: "route",
-          problem: "No structured path",
+          problem: "No Structured Path",
           problem_detail: "There is no clear way from an idea to a real project.",
           answer_icon: "sprout",
           answer: "Incubation",
@@ -157,44 +157,44 @@ export const en: I18n = {
             "Incubation takes students, developers and communities from an idea to a working solution.",
         },
       ],
-      ownership_title: "Value stays with the people who build",
+      ownership_title: "Value Stays with the People Who Build",
       ownership:
         "Unlike many Web3 initiatives, Monark gives value back through community ownership, local partnerships and contributor rewards.",
     },
     how: {
       eyebrow: "How Monark works",
-      title: "Open tools, shared learning and open governance",
+      title: "Open Tools, Shared Learning and Open Governance",
       intro:
         "Monark helps Web3 grow on two fronts: development and adoption. Every step is open to the community.",
       steps: [
         {
           icon: "layout-grid",
-          title: "One shared platform",
+          title: "One Shared Platform",
           content:
             "Share project ideas, collaborate on open-source applications and find the technical resources you need, in one place.",
         },
         {
           icon: "blocks",
-          title: "Essential modules",
+          title: "Essential Modules",
           content:
             "We help build the modules that make Web3 easier to develop and to adopt.",
         },
         {
           icon: "university",
-          title: "Education with universities",
+          title: "Education with Universities",
           content:
             "Learning resources made with universities help new developers and entrepreneurs make the move to Web3.",
         },
         {
           icon: "vote",
-          title: "Open, democratic governance",
+          title: "Open, Democratic Governance",
           content:
             "Every member can help create and improve Web3 tools and services, so the benefits stay with users and local communities.",
         },
       ],
     },
     purpose: {
-      title: "Our mission and vision",
+      title: "Our Mission and Vision",
       mission: {
         label: "Mission",
         quote:
@@ -213,7 +213,7 @@ export const en: I18n = {
     },
     values: {
       eyebrow: "Values",
-      title: "What guides our work",
+      title: "What Guides Our Work",
       items: [
         {
           icon: "accessibility",
@@ -243,7 +243,7 @@ export const en: I18n = {
       ],
     },
     cta: {
-      title: "Build the next step with us",
+      title: "Build the Next Step with Us",
       content:
         "Explore the projects under way, or find your place in the community.",
       primary: { label: "Explore our Web3 projects", href: "/project" },
