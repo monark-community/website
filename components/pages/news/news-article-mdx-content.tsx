@@ -1,6 +1,5 @@
 import fs from "fs";
 import matter from "gray-matter";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import {
@@ -12,9 +11,15 @@ import {
   MapPinIcon,
   UserIcon,
 } from "lucide-react";
+import {
+  ArticleCover,
+  articleBackLinkClass,
+  articleMetaItemClass,
+  articleMetaListClass,
+} from "@/components/common/article-header/article-header";
 import { NavLink } from "@/components/common/navlink/navlink";
 import { Locale } from "@/i18n.config";
-import i18n from "./news.i18n";
+import i18n, { shareLabels as getShareLabels } from "./news.i18n";
 import {
   formatNewsDate,
   getOtherNews,
@@ -32,9 +37,6 @@ interface NewsArticleMdxContentProps {
   id: string;
   locale: Locale;
 }
-
-const backLinkClass =
-  "-ml-3 inline-flex h-10 items-center gap-1 rounded-full px-3 text-sm font-semibold text-primary-ink no-underline transition-colors duration-150 hover:bg-secondary [&_svg]:size-4";
 
 /**
  * A news article: back link, header (tags, title, summary, byline, share),
@@ -57,20 +59,12 @@ export default async function NewsArticleMdxContent({
   const path = `/${locale}/learn/news/${id}`;
   const more = getOtherNews(locale, id, 3);
 
-  const shareLabels = {
-    share: t.share_label,
-    copy: t.copy_link,
-    copied: t.copied,
-    networks: {
-      linkedin: t.share_on("LinkedIn"),
-      twitter: t.share_on("X"),
-    },
-  };
+  const shareLabels = getShareLabels(locale);
 
   return (
     <div className="pb-16 pt-6 md:pb-24 md:pt-10">
       <div className="mx-auto max-w-3xl">
-        <NavLink href="/learn/news" className={backLinkClass}>
+        <NavLink href="/learn/news" className={articleBackLinkClass}>
           <ChevronLeftIcon aria-hidden="true" />
           {t.back}
         </NavLink>
@@ -81,9 +75,9 @@ export default async function NewsArticleMdxContent({
           {data.description && (
             <p className="lead mt-5">{data.description}</p>
           )}
-          <ul className="m-0 mt-6 flex list-none flex-wrap items-center gap-x-5 gap-y-2 p-0 text-sm text-muted-foreground">
+          <ul className={articleMetaListClass}>
             {data.author && (
-              <li className="m-0 inline-flex items-center gap-1.5">
+              <li className={articleMetaItemClass}>
                 <UserIcon aria-hidden="true" className="size-4" />
                 <span>
                   <span className="sr-only">{t.by} </span>
@@ -94,7 +88,7 @@ export default async function NewsArticleMdxContent({
               </li>
             )}
             {date && (
-              <li className="m-0 inline-flex items-center gap-1.5">
+              <li className={articleMetaItemClass}>
                 <CalendarIcon aria-hidden="true" className="size-4" />
                 <span className="sr-only">{t.published} </span>
                 <time dateTime={isoNewsDate(date)}>
@@ -103,13 +97,13 @@ export default async function NewsArticleMdxContent({
               </li>
             )}
             {data.read_time_seconds > 0 && (
-              <li className="m-0 inline-flex items-center gap-1.5">
+              <li className={articleMetaItemClass}>
                 <ClockIcon aria-hidden="true" className="size-4" />
                 {card.min_read(readMinutes(data.read_time_seconds))}
               </li>
             )}
             {data.city && (
-              <li className="m-0 inline-flex items-center gap-1.5">
+              <li className={articleMetaItemClass}>
                 <MapPinIcon aria-hidden="true" className="size-4" />
                 {data.city}
               </li>
@@ -125,40 +119,13 @@ export default async function NewsArticleMdxContent({
       </div>
 
       {data.img && (
-        <figure className="mx-auto mt-10 max-w-5xl md:mt-12">
-          <div className="relative aspect-video overflow-hidden rounded-3xl border bg-muted">
-            <Image
-              src={`/images/news/${data.img}`}
-              alt={data.img_alt || ""}
-              fill
-              priority
-              sizes="(min-width: 1088px) 1024px, 100vw"
-              className="object-cover"
-            />
-          </div>
-          {(data.img_alt || data.img_author) && (
-            <figcaption className="mx-auto mt-3 flex max-w-3xl flex-col gap-1 text-sm text-muted-foreground sm:flex-row sm:justify-between sm:gap-4">
-              {data.img_alt && <span>{data.img_alt}</span>}
-              {data.img_author && (
-                <span className="shrink-0">
-                  ©{" "}
-                  {data.img_author_src ? (
-                    <a
-                      href={data.img_author_src}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline underline-offset-4 hover:text-foreground"
-                    >
-                      {data.img_author}
-                    </a>
-                  ) : (
-                    data.img_author
-                  )}
-                </span>
-              )}
-            </figcaption>
-          )}
-        </figure>
+        <ArticleCover
+          src={`/images/news/${data.img}`}
+          alt={data.img_alt}
+          caption={data.img_alt}
+          author={data.img_author}
+          authorSrc={data.img_author_src}
+        />
       )}
 
       <div className="mx-auto mt-10 max-w-3xl md:mt-14">

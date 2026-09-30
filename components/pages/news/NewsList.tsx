@@ -127,11 +127,14 @@ const NewsList: React.FC<NewsListProps> = ({ locale }) => {
               <nav
                 aria-label={t.jump_label}
                 data-stuck={stuck.value ? "true" : "false"}
-                className="sticky top-16 z-20 -mx-4 border-b border-transparent px-4 transition-[background-color,border-color] duration-200 ease-out data-[stuck=true]:border-border data-[stuck=true]:bg-background/90 data-[stuck=true]:backdrop-blur-md sm:mx-0 sm:px-0"
+                // The content stays in the site container; a full-viewport
+                // layer behind it carries the background, blur and border
+                // once stuck (the page clips horizontal overflow).
+                className="sticky top-16 z-20 before:absolute before:inset-y-0 before:left-1/2 before:-z-10 before:w-screen before:-translate-x-1/2 before:border-b before:border-transparent before:transition-[background-color,border-color] before:duration-200 before:ease-out data-[stuck=true]:before:border-border data-[stuck=true]:before:bg-background/90 data-[stuck=true]:before:backdrop-blur-md"
               >
                 <ul
                   ref={jumpList}
-                  className="m-0 -mx-1 flex list-none gap-1 overflow-x-auto px-1 py-2 [scrollbar-width:none]"
+                  className="m-0 -mx-4 flex list-none gap-1 overflow-x-auto px-4 py-2 [scrollbar-width:none] sm:-mx-1 sm:px-1"
                 >
                   {sections.map(({ category }) => {
                     const current = active === category;
@@ -201,10 +204,10 @@ function CategorySection({
     <section
       id={id}
       aria-labelledby={`${id}-title`}
-      // scroll-mt-10 plus the global scroll-padding-top (5rem) is the fixed
-      // header and the sticky bar (120px): the section lands with its top
-      // border tucked under the bar's own border.
-      className="mt-14 scroll-mt-10 border-t pt-10 md:mt-16 md:pt-14"
+      // 39px plus the global scroll-padding-top (5rem) lands the section's
+      // top border exactly on the sticky bar's bottom border (header 64px +
+      // bar 56px - 1px), so the two 1px lines overlap instead of stacking.
+      className="mt-14 scroll-mt-[39px] border-t pt-10 md:mt-16 md:pt-14"
     >
       <div className="max-w-[40rem]">
         <h2 id={`${id}-title`}>{title}</h2>

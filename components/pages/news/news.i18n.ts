@@ -142,3 +142,17 @@ export const fr: NewsI18n = {
 
 const locales = { en, fr };
 export default locales;
+
+/** Labels for the share row (NewsShare), also used by the project page. */
+export function shareLabels(locale: keyof typeof locales) {
+  const t = (locales[locale] ?? en).article;
+  return {
+    share: t.share_label,
+    copy: t.copy_link,
+    copied: t.copied,
+    networks: {
+      linkedin: t.share_on("LinkedIn"),
+      twitter: t.share_on("X"),
+    },
+  };
+}
