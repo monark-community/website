@@ -1,11 +1,10 @@
-export default function ProjectLayout({
+// A plain container, not <article>: the global `article` prose styles (for
+// MDX pages) would restyle the article header, share row and news cards. The
+// MDX body gets its own scoped typography (news-prose.module.scss).
+export default function NewsArticleLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <article className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-      {children}
-    </article>
-  );
+  return <div className="site-container">{children}</div>;
 }

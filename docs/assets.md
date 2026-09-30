@@ -17,6 +17,9 @@ The code reads the photos from one registry, `components/common/photo/photos.ts`
 | `students-around-laptop.jpg` | [-X4Qx4_4iMU](https://unsplash.com/photos/-X4Qx4_4iMU) | [Vitaly Gariev](https://unsplash.com/@silverkblack) | About, hero |
 | `friends-talking-cafe.jpg` | [-uHVRvDr7pg](https://unsplash.com/photos/-uHVRvDr7pg) | [Brooke Cagle](https://unsplash.com/@brookecagle) | About, "How Monark works" |
 | `builders-at-work-table.jpg` | [dWYU3i-mqEo](https://unsplash.com/photos/dWYU3i-mqEo) | [Annie Spratt](https://unsplash.com/@anniespratt) | Donation, header (hidden on phones) |
+| `learn-students-laughing-laptops.webp` | [unsplash.com/photos/g1Kr4Ozfoac](https://unsplash.com/photos/g1Kr4Ozfoac) | [Brooke Cagle](https://unsplash.com/@brookecagle) | `/learn`, learning path "Students" |
+| `learn-developers-mentoring-laptop.webp` | [unsplash.com/photos/XkKCui44iM0](https://unsplash.com/photos/XkKCui44iM0) | [Priscilla Du Preez](https://unsplash.com/@priscilladupreez) | `/learn`, learning path "Developers" |
+| `learn-workshop-whiteboard.webp` | [unsplash.com/photos/EPdKKb-hflg](https://unsplash.com/photos/EPdKKb-hflg) | [Compagnons](https://unsplash.com/@sigmund) | `/learn`, learning path "Industry" |
 
 ### Adding a photo
 
