@@ -8,6 +8,9 @@ import { Locale } from "@/i18n.config";
  * - `status`: one `ProjectStatus` value (e.g. `planned`)
  * - `ownership`: one `ProjectOwnership` value (`monark` or `incubated`)
  * - `q`: free-text search
+ * - `view`: `filter` for the filtered grid, `browse` for the category
+ *   sections (see components/common/browse-bar/list-view.ts); any filter
+ *   param alone opens the filtered grid
  *
  * Values are matched case-insensitively against the known tags of the current
  * locale; unknown values are ignored (treated as "all").
@@ -52,22 +55,7 @@ export function projectListHref(
 /** Anchor id of a category section on the projects list. */
 export const projectSectionId = (category: string) => `projects-${category}`;
 
-/**
- * Returns the canonical spelling of `value` among `known` (case-insensitive),
- * or `undefined` when the value is missing or unknown.
- */
-export function matchKnownValue(
-  value: string | null | undefined,
-  known: Iterable<string>
-): string | undefined {
-  if (!value) return undefined;
-  const needle = value.trim().toLocaleLowerCase();
-  if (!needle) return undefined;
-  for (const candidate of known) {
-    if (candidate.toLocaleLowerCase() === needle) return candidate;
-  }
-  return undefined;
-}
+export { matchKnownValue } from "@/components/common/browse-bar/list-search";
 
 /** Fills `{name}` placeholders in an i18n template. */
 export function formatTemplate(

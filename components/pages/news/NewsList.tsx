@@ -1,12 +1,30 @@
 "use client";
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { NewspaperIcon } from "lucide-react";
+import React, { useMemo } from "react";
+import { NewspaperIcon, SearchX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "@/components/common/navlink/navlink";
+import BrowseBar, { BarFilter } from "@/components/common/browse-bar/BrowseBar";
+import {
+  sectionScrollMargin,
+  useActiveSection,
+  useListView,
+  useLocationSearch,
+  useSectionJump,
+} from "@/components/common/browse-bar/list-view";
+import {
+  matchKnownValue,
+  matchesQuery,
+} from "@/components/common/browse-bar/list-search";
 import { Locale } from "@/i18n.config";
 import { cn } from "@/lib/utils";
 import i18n from "./news.i18n";
-import { getNews, NewsSection, newsSections } from "./news-data";
+import {
+  commonTags,
+  getNews,
+  NewsSection,
+  newsSections,
+  uniqueTags,
+} from "./news-data";
 import NewsCard from "./news-card";
 
 interface NewsListProps {
@@ -15,70 +33,103 @@ interface NewsListProps {
 
 // Stories beside a section's feature; the rest go in a grid below.
 const SIDE_COUNT = 3;
-// The fixed site header (h-16).
-const HEADER_HEIGHT = 64;
+
+/**
+ * Query params of the news list: `q` (search in titles, summaries and
+ * tags), `tag` (one topic tag, as written in that locale), `year`, and
+ * `view` (see components/common/browse-bar/list-view.ts).
+ */
+const NEWS_PARAMS = { search: "q", tag: "tag", year: "year" } as const;
+const FILTER_PARAMS = Object.values(NEWS_PARAMS);
 
 const sectionId = (category: string) => `news-${category}`;
 
-const prefersReducedMotion = () =>
-  typeof window !== "undefined" &&
-  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/** Calendar year of a news date (stored as UTC midnight). */
+const newsYear = (date: string) => String(new Date(date).getUTCFullYear());
 
 /**
- * /learn/news as a magazine: the latest story as a wide lead, a sticky row
- * of jump links, then one section per category (news frontmatter
- * `category`). Sections with two stories show them side by side at the
- * same size; larger ones show a big 16:9 feature with the other stories
- * beside it, mirrored from one section to the next on wide screens
- * (feature left, then right, ...), extra stories continuing in a grid.
- * The lead story isn't repeated in its category.
+ * /learn/news as a magazine, with a sticky bar under the header to switch
+ * between two views.
+ *
+ * Browse: the latest story as a wide lead, then one section per category
+ * (news frontmatter `category`), reached from the bar's jump links.
+ * Sections with two stories show them side by side at the same size;
+ * larger ones show a big 16:9 feature with the other stories beside it,
+ * mirrored from one section to the next on wide screens (feature left,
+ * then right, ...), extra stories continuing in a grid. The lead story
+ * isn't repeated in its category.
+ *
+ * Filter: search, topic and year, and one grid of the matching stories.
  */
 const NewsList: React.FC<NewsListProps> = ({ locale }) => {
   const t = (i18n[locale] ?? i18n.en).list;
   const news = useMemo(() => getNews(locale), [locale]);
   const [lead] = news;
   const sections = useMemo(() => newsSections(news, lead?.id), [news, lead]);
-  const [active, setActive, lockActive] = useActiveSection(sections);
-  const stuck = useStuck();
-  const jumpList = useRef<HTMLUListElement>(null);
 
-  // Keep the current category visible in the scrollable row (phones).
-  useEffect(() => {
-    const list = jumpList.current;
-    const link = list?.querySelector<HTMLElement>("[aria-current]");
-    if (!list) return;
-    if (!link) {
-      list.scrollTo({ left: 0 });
-      return;
-    }
-    const left = link.offsetLeft - (list.clientWidth - link.offsetWidth) / 2;
-    list.scrollTo({ left: Math.max(0, left) });
-  }, [active]);
+  const search = useLocationSearch();
+  const { view, setView, setFilters } = useListView({
+    search,
+    filterParams: FILTER_PARAMS,
+    storageKey: "monark:news-view",
+    sectionPrefix: "news-",
+  });
+  const filtering = view === "filter";
 
-  // Smooth scroll to a section (instant under reduced motion). The offset
-  // under the fixed header and the sticky bar comes from the section's
-  // scroll-margin-top. The hash is updated without a jump, and the clicked
-  // category stays highlighted while the page scrolls past the others.
-  const jumpTo = useCallback(
-    (event: React.MouseEvent<HTMLAnchorElement>, category: string) => {
-      const target = document.getElementById(sectionId(category));
-      if (!target) return;
-      event.preventDefault();
-      const reduced = prefersReducedMotion();
-      lockActive(reduced ? 0 : 900);
-      setActive(category);
-      target.scrollIntoView({
-        behavior: reduced ? "auto" : "smooth",
-        block: "start",
-      });
-      window.history.replaceState(
-        window.history.state,
-        "",
-        `#${sectionId(category)}`
-      );
-    },
-    [lockActive, setActive]
+  // Topics: every tag but the ones all stories carry ("Article").
+  const { topics, years } = useMemo(() => {
+    const common = commonTags(news);
+    return {
+      topics: uniqueTags(news.map((item) => item.tags)).filter(
+        (tag) => !common.has(tag)
+      ),
+      years: [...new Set(news.map((item) => newsYear(item.date)))].sort(
+        (a, b) => b.localeCompare(a)
+      ),
+    };
+  }, [news]);
+
+  const params = new URLSearchParams(search);
+  const query = params.get(NEWS_PARAMS.search) ?? "";
+  const selectedTag = matchKnownValue(params.get(NEWS_PARAMS.tag), topics);
+  const selectedYear = matchKnownValue(params.get(NEWS_PARAMS.year), years);
+
+  const results = useMemo(
+    () =>
+      news.filter(
+        (item) =>
+          matchesQuery(query, [item.title, item.description, ...item.tags]) &&
+          (!selectedTag || item.tags.includes(selectedTag)) &&
+          (!selectedYear || newsYear(item.date) === selectedYear)
+      ),
+    [news, query, selectedTag, selectedYear]
   );
+
+  const sectionIds = useMemo(
+    () => (filtering ? [] : sections.map(({ category }) => sectionId(category))),
+    [filtering, sections]
+  );
+  const [active, setActive, lockActive] = useActiveSection(sectionIds);
+  const jumpTo = useSectionJump(setActive, lockActive);
+
+  const filters: BarFilter[] = [
+    {
+      key: NEWS_PARAMS.tag,
+      label: t.topic,
+      allLabel: t.all_topics,
+      value: selectedTag,
+      options: topics.map((tag) => ({ value: tag, label: tag })),
+    },
+    {
+      key: NEWS_PARAMS.year,
+      label: t.year,
+      allLabel: t.all_years,
+      value: selectedYear,
+      options: years.map((year) => ({ value: year, label: year })),
+    },
+  ];
+  const clearFilters = () =>
+    setFilters(Object.fromEntries(FILTER_PARAMS.map((param) => [param, undefined])));
 
   return (
     <div className="site-container pb-16 pt-10 md:pb-24 md:pt-14">
@@ -94,7 +145,7 @@ const NewsList: React.FC<NewsListProps> = ({ locale }) => {
       </header>
 
       {!lead ? (
-        <div className="mt-10 flex flex-col items-center rounded-3xl border border-dashed bg-card px-6 py-14 text-center">
+        <div className="mx-auto flex max-w-md flex-col items-center py-12 text-center md:py-16">
           <span
             aria-hidden="true"
             className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary"
@@ -109,68 +160,75 @@ const NewsList: React.FC<NewsListProps> = ({ locale }) => {
         </div>
       ) : (
         <>
-          <section aria-labelledby="news-latest" className="mt-10 md:mt-12">
-            <h2 id="news-latest" className="sr-only">
-              {t.latest_label}
-            </h2>
-            <NewsCard item={lead} locale={locale} variant="lead" priority />
-          </section>
+          <BrowseBar
+            className="mt-4 md:mt-6"
+            locale={locale}
+            view={view}
+            onViewChange={setView}
+            jumpLabel={t.jump_label}
+            sections={sections.map(({ category }) => ({
+              id: sectionId(category),
+              label: t.categories[category].title,
+            }))}
+            activeSection={active}
+            onJump={jumpTo}
+            search={query}
+            onSearch={(value) => setFilters({ [NEWS_PARAMS.search]: value || undefined })}
+            searchLabel={t.search_label}
+            searchPlaceholder={t.search_short}
+            filters={filters}
+            onFilter={(key, value) => setFilters({ [key]: value })}
+            resultLabel={t.results_count(results.length)}
+            onClear={clearFilters}
+          />
 
-          {sections.length > 1 && (
+          {!filtering ? (
             <>
-              {/* Scrolls under the header exactly when the bar sticks. */}
-              <div
-                ref={stuck.sentinel}
-                aria-hidden="true"
-                className="mt-12 h-px md:mt-14"
-              />
-              <nav
-                aria-label={t.jump_label}
-                data-stuck={stuck.value ? "true" : "false"}
-                // The content stays in the site container; a full-viewport
-                // layer behind it carries the background, blur and border
-                // once stuck (the page clips horizontal overflow).
-                className="sticky top-16 z-20 before:absolute before:inset-y-0 before:left-1/2 before:-z-10 before:w-screen before:-translate-x-1/2 before:border-b before:border-transparent before:transition-[background-color,border-color] before:duration-200 before:ease-out data-[stuck=true]:before:border-border data-[stuck=true]:before:bg-background/90 data-[stuck=true]:before:backdrop-blur-md"
-              >
-                <ul
-                  ref={jumpList}
-                  className="m-0 -mx-4 flex list-none gap-1 overflow-x-auto px-4 py-2 [scrollbar-width:none] sm:-mx-1 sm:px-1"
-                >
-                  {sections.map(({ category }) => {
-                    const current = active === category;
-                    return (
-                      <li key={category} className="m-0 shrink-0">
-                        <a
-                          href={`#${sectionId(category)}`}
-                          onClick={(event) => jumpTo(event, category)}
-                          aria-current={current ? "true" : undefined}
-                          className={cn(
-                            "inline-flex h-10 items-center whitespace-nowrap rounded-full px-4 text-sm font-semibold no-underline transition-colors duration-150",
-                            current
-                              ? "bg-foreground text-background"
-                              : "text-foreground hover:bg-secondary"
-                          )}
-                        >
-                          {t.categories[category].title}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </nav>
-            </>
-          )}
+              <section aria-labelledby="news-latest" className="mt-6 md:mt-8">
+                <h2 id="news-latest" className="sr-only">
+                  {t.latest_label}
+                </h2>
+                <NewsCard item={lead} locale={locale} variant="lead" priority />
+              </section>
 
-          {sections.map((section, index) => (
-            <CategorySection
-              key={section.category}
-              section={section}
-              mirrored={index % 2 === 1}
-              locale={locale}
-              title={t.categories[section.category].title}
-              line={t.categories[section.category].line}
-            />
-          ))}
+              {sections.map((section, index) => (
+                <CategorySection
+                  key={section.category}
+                  section={section}
+                  mirrored={index % 2 === 1}
+                  locale={locale}
+                  title={t.categories[section.category].title}
+                  line={t.categories[section.category].line}
+                />
+              ))}
+            </>
+          ) : results.length > 0 ? (
+            <section aria-labelledby="news-results" className="mt-6 md:mt-8">
+              <h2 id="news-results" className="sr-only">
+                {t.results_title}
+              </h2>
+              <ul className="m-0 grid list-none grid-cols-1 gap-x-6 gap-y-10 p-0 sm:grid-cols-2 lg:grid-cols-3">
+                {results.map((item, index) => (
+                  <li key={item.id} className="m-0">
+                    <NewsCard item={item} locale={locale} priority={index < 3} />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : (
+            <div className="mx-auto flex max-w-md flex-col items-center py-12 text-center md:py-16">
+              <SearchX aria-hidden="true" className="size-8 text-muted-foreground" />
+              <p className="mt-4 text-lg font-bold text-foreground">{t.no_match_title}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{t.no_match_hint}</p>
+              <button
+                type="button"
+                onClick={clearFilters}
+                className="mt-6 inline-flex h-10 items-center rounded-full border border-input bg-card px-5 text-sm font-semibold text-foreground transition-colors duration-150 hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                {t.clear_filters}
+              </button>
+            </div>
+          )}
         </>
       )}
     </div>
@@ -204,10 +262,10 @@ function CategorySection({
     <section
       id={id}
       aria-labelledby={`${id}-title`}
-      // 39px plus the global scroll-padding-top (5rem) lands the section's
-      // top border exactly on the sticky bar's bottom border (header 64px +
-      // bar 56px - 1px), so the two 1px lines overlap instead of stacking.
-      className="mt-14 scroll-mt-[39px] border-t pt-10 md:mt-16 md:pt-14"
+      // Lands with the section's top border exactly on the sticky bar's
+      // bottom border, so the two 1px lines overlap instead of stacking.
+      style={{ scrollMarginTop: sectionScrollMargin(-1) }}
+      className="mt-14 border-t pt-10 md:mt-16 md:pt-14"
     >
       <div className="max-w-[40rem]">
         <h2 id={`${id}-title`}>{title}</h2>
@@ -274,67 +332,6 @@ function CategorySection({
       )}
     </section>
   );
-}
-
-/**
- * Whether the category bar is stuck under the header: a 1px sentinel just
- * above it leaves the viewport (under the header) exactly when it sticks.
- */
-function useStuck() {
-  const [value, setValue] = useState(false);
-  const [node, setNode] = useState<HTMLDivElement | null>(null);
-  useEffect(() => {
-    if (!node || typeof IntersectionObserver === "undefined") return;
-    const observer = new IntersectionObserver(
-      ([entry]) =>
-        setValue(
-          !entry.isIntersecting &&
-            entry.boundingClientRect.top < HEADER_HEIGHT + 1
-        ),
-      { rootMargin: `-${HEADER_HEIGHT}px 0px 0px 0px`, threshold: 0 }
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, [node]);
-  return { value, sentinel: setNode };
-}
-
-/**
- * The category section currently under the sticky bar. `lock(ms)` freezes
- * it for a while (during a smooth scroll to a clicked category).
- */
-function useActiveSection(
-  sections: NewsSection[]
-): [string | null, (category: string | null) => void, (ms: number) => void] {
-  const [active, setActive] = useState<string | null>(null);
-  const lockedUntil = useRef(0);
-  const lock = useCallback((ms: number) => {
-    lockedUntil.current = Date.now() + ms;
-  }, []);
-
-  useEffect(() => {
-    if (typeof IntersectionObserver === "undefined") return;
-    const elements = sections
-      .map(({ category }) => document.getElementById(sectionId(category)))
-      .filter((el): el is HTMLElement => Boolean(el));
-    const visible = new Map<string, boolean>();
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          visible.set(entry.target.id, entry.isIntersecting);
-        }
-        if (Date.now() < lockedUntil.current) return;
-        const first = elements.find((el) => visible.get(el.id));
-        setActive(first ? first.id.replace(/^news-/, "") : null);
-      },
-      // A band just under the header and the sticky bar.
-      { rootMargin: "-150px 0px -55% 0px" }
-    );
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, [sections]);
-
-  return [active, setActive, lock];
 }
 
 export default NewsList;

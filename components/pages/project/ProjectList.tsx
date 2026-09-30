@@ -1,6 +1,6 @@
 "use client";
 import { usePathname, useSearchParams } from "next/navigation";
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { SearchX } from "lucide-react";
 import enProjects from "@/content/en/project/index";
 import frProjects from "@/content/fr/project/index";
@@ -19,22 +19,22 @@ import {
 import { Locale } from "@/i18n.config";
 import { calculateProjectScore } from "@/lib/utils";
 import i18n from "./projects-list.i18n";
+import BrowseBar, { BarFilter } from "@/components/common/browse-bar/BrowseBar";
+import {
+  useActiveSection,
+  useListView,
+  useSectionJump,
+} from "@/components/common/browse-bar/list-view";
+import { matchesQuery } from "@/components/common/browse-bar/list-search";
 import {
   PROJECT_FILTER_PARAMS,
   ProjectListFilters,
+  formatTemplate,
   matchKnownValue,
   projectSectionId,
 } from "./project-filters";
 import ProjectCard from "./ProjectCard";
-import ProjectFilterBar, { FilterSelect } from "./ProjectFilterBar";
-import {
-  ProjectCategoryNav,
-  ProjectSections,
-  groupProjectSections,
-  useActiveSection,
-  useCategoryJump,
-  useElementHeight,
-} from "./ProjectSections";
+import { ProjectSections, groupProjectSections } from "./ProjectSections";
 
 interface ProjectListProps {
   locale: Locale;
@@ -66,6 +66,7 @@ const FILTER_KEYS: (keyof ProjectListFilters)[] = [
   "ownership",
   "search",
 ];
+const FILTER_PARAMS = FILTER_KEYS.map((key) => PROJECT_FILTER_PARAMS[key]);
 
 const GRID_CLASS =
   "m-0 grid list-none grid-cols-1 gap-x-6 gap-y-10 p-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
@@ -73,7 +74,8 @@ const GRID_SIZES = "(min-width: 1280px) 285px, (min-width: 1024px) 380px, (min-w
 
 /**
  * Builds the list URL for `filters`, keeping any unrelated query params
- * (e.g. campaign tags) that were already present.
+ * (e.g. campaign tags) that were already present. The view param is dropped:
+ * a filter in the URL opens the filtered grid on its own.
  */
 function buildListUrl(
   pathname: string,
@@ -87,6 +89,7 @@ function buildListUrl(
     if (value) params.set(param, value);
     else params.delete(param);
   }
+  params.delete("view");
   const query = params.toString();
   return query ? `${pathname}?${query}` : pathname;
 }
@@ -94,7 +97,7 @@ function buildListUrl(
 function ProjectListHeader({ locale }: ProjectListProps) {
   const t = i18n[locale];
   return (
-    <div className="site-container pb-8 pt-12 md:pb-10 md:pt-16">
+    <div className="site-container pb-2 pt-12 md:pb-4 md:pt-16">
       <h1>{t.page_title}</h1>
       <p className="lead mt-4 max-w-[36rem]">{t.description}</p>
     </div>
@@ -105,10 +108,10 @@ function ProjectListHeader({ locale }: ProjectListProps) {
 function ProjectCardsSkeleton() {
   return (
     <>
-      <div className="border-y">
-        <div className="site-container py-3">
-          <div className="h-10 w-full rounded-full bg-muted motion-safe:animate-pulse" />
-          <div className="mt-2 h-8 w-24 rounded-full bg-muted motion-safe:animate-pulse" />
+      <div className="site-container">
+        <div className="flex h-14 items-center gap-3 pt-px">
+          <div className="h-10 w-40 rounded-full bg-muted motion-safe:animate-pulse" />
+          <div className="h-10 min-w-0 flex-1 rounded-full bg-muted motion-safe:animate-pulse" />
         </div>
       </div>
       <div className="site-container pb-16 pt-10 md:pb-24">
@@ -148,6 +151,13 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
   const searchParams = useSearchParams();
   const [adminMode, setAdminMode] = useState(false);
   const [sortMode, setSortMode] = useState<"acronym" | "score">("acronym");
+  const { view, setView, setFilters } = useListView({
+    search: searchParams.toString(),
+    filterParams: FILTER_PARAMS,
+    storageKey: "monark:projects-view",
+    sectionPrefix: "projects-",
+  });
+  const filtering = view === "filter";
 
   const projects = projectDataMap[locale];
 
@@ -165,8 +175,8 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     };
   }, [projects]);
 
-  // Select filters are derived from the URL, so back/forward and links restore
-  // them. Unknown values are ignored (treated as "all").
+  // Filters are read from the URL, so back/forward and links restore them.
+  // Unknown values are ignored (treated as "all").
   const selectedIndustry = matchKnownValue(
     searchParams.get(PROJECT_FILTER_PARAMS.industry),
     sortedIndustryTags
@@ -183,18 +193,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     searchParams.get(PROJECT_FILTER_PARAMS.ownership),
     OWNERSHIP_VALUES
   );
-
-  // The search box keeps local state so typing is never interrupted; the URL
-  // follows it, and external URL changes (links, back/forward) flow back in.
-  const searchParam = searchParams.get(PROJECT_FILTER_PARAMS.search) ?? "";
-  const [search, setSearchState] = useState(searchParam);
-  const lastWrittenSearch = useRef(searchParam);
-  useEffect(() => {
-    if (searchParam !== lastWrittenSearch.current) {
-      lastWrittenSearch.current = searchParam;
-      setSearchState(searchParam);
-    }
-  }, [searchParam]);
+  const search = searchParams.get(PROJECT_FILTER_PARAMS.search) ?? "";
 
   const currentFilters: ProjectListFilters = {
     industry: selectedIndustry,
@@ -204,45 +203,13 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     search: search || undefined,
   };
 
-  // Replace (not push) the URL on filter changes: no history spam, no scroll
-  // jump, no server round trip. Next syncs useSearchParams with the native
-  // History API.
-  const writeFilters = useCallback(
-    (next: ProjectListFilters) => {
-      lastWrittenSearch.current = next.search ?? "";
-      window.history.replaceState(
-        null,
-        "",
-        buildListUrl(pathname, new URLSearchParams(window.location.search), next)
-      );
-    },
-    [pathname]
-  );
-
-  const setFilter = (key: keyof ProjectListFilters, value: string) => {
-    writeFilters({
-      ...currentFilters,
-      [key]: value === "all" || value === "" ? undefined : value,
+  const setFilter = (key: string, value: string | undefined) =>
+    setFilters({
+      [PROJECT_FILTER_PARAMS[key as keyof ProjectListFilters]]: value || undefined,
     });
-  };
 
-  const setSearch = (value: string) => {
-    setSearchState(value);
-    setFilter("search", value);
-  };
-
-  const hasActiveFilters = Boolean(
-    selectedIndustry ||
-      selectedKeyword ||
-      selectedStatus ||
-      selectedOwnership ||
-      search
-  );
-
-  const clearFilters = () => {
-    setSearchState("");
-    writeFilters({});
-  };
+  const clearFilters = () =>
+    setFilters(Object.fromEntries(FILTER_PARAMS.map((param) => [param, undefined])));
 
   // Hidden shortcut: press Ctrl+Alt+A to toggle admin mode
   useEffect(() => {
@@ -255,70 +222,65 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
+  const sortedProjects = useMemo(
+    () =>
+      [...projects].sort((a, b) => {
+        // First, sort by status priority
+        const statusDiff =
+          (STATUS_PRIORITY[a.status as ProjectStatus] ?? 999) -
+          (STATUS_PRIORITY[b.status as ProjectStatus] ?? 999);
+        if (statusDiff !== 0) return statusDiff;
+
+        // Then, optionally sort by project score if admin selected "score"
+        if (sortMode === "score") {
+          const scoreDiff = calculateProjectScore(b) - calculateProjectScore(a);
+          if (scoreDiff !== 0) return scoreDiff;
+        }
+
+        // Finally, sort by acronym alphabetically
+        return a.accronym.localeCompare(b.accronym);
+      }),
+    [projects, sortMode]
+  );
+
   const filteredProjects = useMemo(
     () =>
-      projects
-        .filter((project) => {
-          const searchLower = search.toLowerCase();
-          const matchesSearch =
-            project.title.toLowerCase().includes(searchLower) ||
-            project.accronym.toLowerCase().includes(searchLower) ||
-            (project.tagline ?? "").toLowerCase().includes(searchLower) ||
-            project.keyword_tags.some((tag) => tag.toLowerCase().includes(searchLower));
-          const matchesIndustry =
-            !selectedIndustry || project.industry_tags.includes(selectedIndustry);
-          const matchesKeyword =
-            !selectedKeyword || project.keyword_tags.includes(selectedKeyword);
-          const matchesStatus = !selectedStatus || project.status === selectedStatus;
-          const matchesOwnership =
-            !selectedOwnership || project.ownership === selectedOwnership;
-          return (
-            matchesSearch &&
-            matchesIndustry &&
-            matchesKeyword &&
-            matchesStatus &&
-            matchesOwnership
-          );
-        })
-        .sort((a, b) => {
-          // First, sort by status priority
-          const statusDiff =
-            (STATUS_PRIORITY[a.status as ProjectStatus] ?? 999) -
-            (STATUS_PRIORITY[b.status as ProjectStatus] ?? 999);
-          if (statusDiff !== 0) return statusDiff;
-
-          // Then, optionally sort by project score if admin selected "score"
-          if (sortMode === "score") {
-            const scoreDiff = calculateProjectScore(b) - calculateProjectScore(a);
-            if (scoreDiff !== 0) return scoreDiff;
-          }
-
-          // Finally, sort by acronym alphabetically
-          return a.accronym.localeCompare(b.accronym);
-        }),
+      sortedProjects.filter(
+        (project) =>
+          matchesQuery(search, [
+            project.title,
+            project.accronym,
+            project.tagline ?? "",
+            ...project.keyword_tags,
+          ]) &&
+          (!selectedIndustry || project.industry_tags.includes(selectedIndustry)) &&
+          (!selectedKeyword || project.keyword_tags.includes(selectedKeyword)) &&
+          (!selectedStatus || project.status === selectedStatus) &&
+          (!selectedOwnership || project.ownership === selectedOwnership)
+      ),
     [
-      projects,
+      sortedProjects,
       search,
       selectedIndustry,
       selectedKeyword,
       selectedStatus,
       selectedOwnership,
-      sortMode,
     ]
   );
 
-  // Unfiltered, the list is grouped in category sections (like the news
-  // list); any filter or search falls back to one grid of results.
+  // Browse: every project in category sections (filters in the URL are
+  // kept but not applied). Filter: one grid of the matching projects.
   const sections = useMemo(
-    () => (hasActiveFilters ? [] : groupProjectSections(filteredProjects)),
-    [hasActiveFilters, filteredProjects]
+    () => (filtering ? [] : groupProjectSections(sortedProjects)),
+    [filtering, sortedProjects]
   );
-  const bar = useElementHeight();
-  const [activeSection, setActiveSection, lockActiveSection] = useActiveSection(
-    sections,
-    bar.height
+  const sectionIds = useMemo(
+    () => sections.map(({ category }) => projectSectionId(category)),
+    [sections]
   );
-  const jumpTo = useCategoryJump(setActiveSection, lockActiveSection);
+  const [activeSection, setActiveSection, lockActiveSection] =
+    useActiveSection(sectionIds);
+  const jumpTo = useSectionJump(setActiveSection, lockActiveSection);
 
   // Open a shared #projects-<category> link at its section once it exists.
   const openedHash = useRef(false);
@@ -326,38 +288,44 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     if (openedHash.current || sections.length === 0) return;
     openedHash.current = true;
     const hash = window.location.hash.slice(1);
-    if (!sections.some(({ category }) => projectSectionId(category) === hash)) return;
+    if (!sectionIds.includes(hash)) return;
     document.getElementById(hash)?.scrollIntoView({ block: "start" });
-  }, [sections]);
+  }, [sections, sectionIds]);
 
-  // Keyword chips for a card: the active keyword first, then the others.
-  const cardTags = (project: DatedProjectMetadata) =>
-    Array.from(new Set(project.keyword_tags))
-      .sort((a, b) => Number(b === selectedKeyword) - Number(a === selectedKeyword))
+  // Keyword chips for a card, linking to the filtered grid (adding to the
+  // current filters there). The active keyword comes first.
+  const cardTags = (project: DatedProjectMetadata) => {
+    const active = filtering ? selectedKeyword : undefined;
+    return Array.from(new Set(project.keyword_tags))
+      .sort((a, b) => Number(b === active) - Number(a === active))
       .map((tag) => ({
         tag,
-        active: tag === selectedKeyword,
-        href: buildListUrl(pathname, searchParams, { ...currentFilters, keyword: tag }),
+        active: tag === active,
+        href: buildListUrl(pathname, searchParams, {
+          ...(filtering ? currentFilters : {}),
+          keyword: tag,
+        }),
       }));
+  };
 
-  const selects: FilterSelect[] = [
+  const filters: BarFilter[] = [
     {
       key: "industry",
-      label: t.filter_by_industry,
+      label: t.filter_labels.industry,
       allLabel: t.all_industries,
       value: selectedIndustry,
       options: sortedIndustryTags.map((tag) => ({ value: tag, label: tag })),
     },
     {
       key: "keyword",
-      label: t.filter_by_keyword,
+      label: t.filter_labels.keyword,
       allLabel: t.all_keywords,
       value: selectedKeyword,
       options: sortedKeywordTags.map((tag) => ({ value: tag, label: tag })),
     },
     {
       key: "status",
-      label: t.filter_by_status,
+      label: t.filter_labels.status,
       allLabel: t.all_statuses,
       value: selectedStatus,
       options: STATUS_VALUES.map((status) => ({
@@ -367,7 +335,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     },
     {
       key: "ownership",
-      label: t.filter_by_ownership,
+      label: t.filter_labels.ownership,
       allLabel: t.all_ownerships,
       value: selectedOwnership,
       options: OWNERSHIP_VALUES.map((ownership) => ({
@@ -377,29 +345,14 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
     },
   ];
 
+  const resultLabel = formatTemplate(
+    filteredProjects.length === 1 ? t.results_count_one : t.results_count_other,
+    { count: String(filteredProjects.length) }
+  );
+
   return (
     <div className="relative">
       <ProjectListHeader locale={locale} />
-      <ProjectFilterBar
-        locale={locale}
-        search={search}
-        onSearch={setSearch}
-        selects={selects}
-        onSelect={setFilter}
-        onClear={clearFilters}
-        resultCount={filteredProjects.length}
-        barRef={bar.ref}
-        categoryNav={
-          sections.length > 1 ? (
-            <ProjectCategoryNav
-              sections={sections}
-              locale={locale}
-              active={activeSection}
-              onJump={jumpTo}
-            />
-          ) : undefined
-        }
-      />
       {adminMode && (
         <div className="absolute right-4 top-4 z-50">
           <Select value={sortMode} onValueChange={(v) => setSortMode(v as "acronym" | "score")}>
@@ -416,51 +369,71 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
         </div>
       )}
 
-      <div className="site-container pb-16 pt-10 md:pb-24">
-        {sections.length > 0 ? (
-          <ProjectSections
-            sections={sections}
-            locale={locale}
-            cardTags={cardTags}
-            adminMode={adminMode}
-            barHeight={bar.height}
-          />
-        ) : filteredProjects.length > 0 ? (
-          <section aria-labelledby="projects-grid">
-            <h2 id="projects-grid" className="sr-only">
-              {t.results_title}
-            </h2>
-            <ul role="list" className={GRID_CLASS}>
-              {filteredProjects.map((project, index) => (
-                <li key={project.id} className="m-0">
-                  <ProjectCard
-                    project={project}
-                    locale={locale}
-                    tags={cardTags(project)}
-                    sizes={GRID_SIZES}
-                    priority={index < 4}
-                    adminMode={adminMode}
-                  />
-                </li>
-              ))}
-            </ul>
-          </section>
-        ) : (
-            <div className="mx-auto flex max-w-md flex-col items-center rounded-3xl border border-dashed px-6 py-14 text-center">
+      <div className="site-container pb-16 md:pb-24">
+        <BrowseBar
+          locale={locale}
+          view={view}
+          onViewChange={setView}
+          jumpLabel={t.jump_label}
+          sections={sections.map(({ category }) => ({
+            id: projectSectionId(category),
+            label: t.categories[category].title,
+          }))}
+          activeSection={activeSection}
+          onJump={jumpTo}
+          search={search}
+          onSearch={(value) => setFilter("search", value)}
+          searchLabel={t.search_placeholder.replace(/…$/, "")}
+          searchPlaceholder={t.search_short}
+          filters={filters}
+          onFilter={setFilter}
+          resultLabel={resultLabel}
+          onClear={clearFilters}
+        />
+
+        <div className="pt-10">
+          {!filtering ? (
+            <ProjectSections
+              sections={sections}
+              locale={locale}
+              cardTags={cardTags}
+              adminMode={adminMode}
+            />
+          ) : filteredProjects.length > 0 ? (
+            <section aria-labelledby="projects-grid">
+              <h2 id="projects-grid" className="sr-only">
+                {t.results_title}
+              </h2>
+              <ul role="list" className={GRID_CLASS}>
+                {filteredProjects.map((project, index) => (
+                  <li key={project.id} className="m-0">
+                    <ProjectCard
+                      project={project}
+                      locale={locale}
+                      tags={cardTags(project)}
+                      sizes={GRID_SIZES}
+                      priority={index < 4}
+                      adminMode={adminMode}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : (
+            <div className="mx-auto flex max-w-md flex-col items-center py-12 text-center md:py-16">
               <SearchX aria-hidden="true" className="size-8 text-muted-foreground" />
               <p className="mt-4 text-lg font-bold text-foreground">{t.empty_title}</p>
               <p className="mt-1 text-sm text-muted-foreground">{t.empty_hint}</p>
-              {hasActiveFilters && (
-                <button
-                  type="button"
-                  onClick={clearFilters}
-                  className="mt-6 inline-flex h-10 items-center rounded-full border border-input bg-card px-5 text-sm font-semibold text-foreground transition-colors duration-150 hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  {t.clear_filters}
-                </button>
-              )}
+              <button
+                type="button"
+                onClick={clearFilters}
+                className="mt-6 inline-flex h-10 items-center rounded-full border border-input bg-card px-5 text-sm font-semibold text-foreground transition-colors duration-150 hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              >
+                {t.clear_filters}
+              </button>
             </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
