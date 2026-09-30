@@ -1,5 +1,6 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React from "react";
+import { sectionScrollMargin } from "@/components/common/browse-bar/list-view";
 import { Locale } from "@/i18n.config";
 import { cn } from "@/lib/utils";
 import { DatedProjectMetadata, ProjectCategory } from "@/types/project.types";
@@ -32,10 +33,6 @@ type CardTags = (project: DatedProjectMetadata) => {
 
 // Projects beside a section's feature; the rest go in a grid below.
 const SIDE_COUNT = 3;
-// The fixed site header (h-16).
-const HEADER_HEIGHT = 64;
-// Filter bar height before it is measured (search row + jump row).
-const DEFAULT_BAR_HEIGHT = 106;
 
 const SIZES: Record<ProjectCardVariant, string> = {
   feature: "(min-width: 1200px) 700px, (min-width: 1024px) 60vw, 100vw",
@@ -44,10 +41,6 @@ const SIZES: Record<ProjectCardVariant, string> = {
   default:
     "(min-width: 1200px) 370px, (min-width: 1024px) 31vw, (min-width: 640px) 50vw, 100vw",
 };
-
-const prefersReducedMotion = () =>
-  typeof window !== "undefined" &&
-  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /**
  * Projects grouped by category (frontmatter `category`), in PROJECT_CATEGORIES
@@ -76,8 +69,6 @@ type SectionsProps = {
   locale: Locale;
   cardTags: CardTags;
   adminMode: boolean;
-  /** Height of the sticky filter bar, for the sections' scroll margin. */
-  barHeight: number;
 };
 
 /**
@@ -94,7 +85,6 @@ export function ProjectSections({
   locale,
   cardTags,
   adminMode,
-  barHeight,
 }: SectionsProps) {
   const t = i18n[locale];
   return (
@@ -110,7 +100,6 @@ export function ProjectSections({
           line={t.categories[section.category].line}
           cardTags={cardTags}
           adminMode={adminMode}
-          barHeight={barHeight}
         />
       ))}
     </>
@@ -126,7 +115,6 @@ function CategorySection({
   line,
   cardTags,
   adminMode,
-  barHeight,
 }: {
   section: ProjectSection;
   mirrored: boolean;
@@ -136,7 +124,6 @@ function CategorySection({
   line?: string;
   cardTags: CardTags;
   adminMode: boolean;
-  barHeight: number;
 }) {
   const id = projectSectionId(section.category);
   const pair = section.items.length === 2;
@@ -168,12 +155,10 @@ function CategorySection({
     <section
       id={id}
       aria-labelledby={`${id}-title`}
-      // Lands with the section's top border tucked under the header and the
-      // sticky filter bar (the global scroll-padding-top is 5rem); the first
-      // section has no border, so it keeps the list's top spacing instead.
-      style={{
-        scrollMarginTop: `calc(${HEADER_HEIGHT + barHeight + (first ? 40 : -1)}px - 5rem)`,
-      }}
+      // Lands with the section's top border on the sticky bar's bottom
+      // border (one line, not two); the first section has no border, so it
+      // keeps the list's top spacing (40px) under the bar instead.
+      style={{ scrollMarginTop: sectionScrollMargin(first ? 40 : -1) }}
       className={cn(
         "border-t pt-10 md:pt-14",
         first ? "mt-0 border-t-0 pt-0 md:pt-0" : "mt-14 md:mt-16"
@@ -246,151 +231,4 @@ function CategorySection({
       )}
     </section>
   );
-}
-
-type JumpNavProps = {
-  sections: ProjectSection[];
-  locale: Locale;
-  active: string | null;
-  onJump: (event: React.MouseEvent<HTMLAnchorElement>, category: string) => void;
-};
-
-/**
- * Category jump links, shown in the sticky filter bar while no filter is
- * active. Same pills as the news list; the current category stays in view in
- * the scrollable row (phones).
- */
-export function ProjectCategoryNav({ sections, locale, active, onJump }: JumpNavProps) {
-  const t = i18n[locale];
-  const list = useRef<HTMLUListElement>(null);
-
-  useEffect(() => {
-    const row = list.current;
-    if (!row) return;
-    const link = row.querySelector<HTMLElement>("[aria-current]");
-    if (!link) {
-      row.scrollTo({ left: 0 });
-      return;
-    }
-    const left = link.offsetLeft - (row.clientWidth - link.offsetWidth) / 2;
-    row.scrollTo({ left: Math.max(0, left) });
-  }, [active]);
-
-  return (
-    <nav aria-label={t.jump_label} className="min-w-0 flex-1 border-l pl-1.5">
-      <ul
-        ref={list}
-        className="relative m-0 -my-1 flex list-none gap-1 overflow-x-auto p-0 py-1 [scrollbar-width:none]"
-      >
-        {sections.map(({ category }) => {
-          const current = active === category;
-          return (
-            <li key={category} className="m-0 shrink-0">
-              <a
-                href={`#${projectSectionId(category)}`}
-                onClick={(event) => onJump(event, category)}
-                aria-current={current ? "true" : undefined}
-                className={cn(
-                  "inline-flex h-8 items-center whitespace-nowrap rounded-full px-3.5 text-sm font-semibold no-underline transition-colors duration-150",
-                  current
-                    ? "bg-foreground text-background"
-                    : "text-foreground hover:bg-secondary"
-                )}
-              >
-                {t.categories[category as ProjectSectionKey].title}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-  );
-}
-
-/**
- * Smooth scroll to a category section (instant under reduced motion), with
- * the clicked category highlighted while the page scrolls past the others.
- * The hash is updated in place, keeping the filter query string.
- */
-export function useCategoryJump(
-  setActive: (category: string | null) => void,
-  lockActive: (ms: number) => void
-) {
-  return useCallback(
-    (event: React.MouseEvent<HTMLAnchorElement>, category: string) => {
-      const target = document.getElementById(projectSectionId(category));
-      if (!target) return;
-      event.preventDefault();
-      const reduced = prefersReducedMotion();
-      lockActive(reduced ? 0 : 900);
-      setActive(category);
-      target.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
-      window.history.replaceState(
-        window.history.state,
-        "",
-        `${window.location.pathname}${window.location.search}#${projectSectionId(category)}`
-      );
-    },
-    [lockActive, setActive]
-  );
-}
-
-/**
- * The category section currently under the header and the filter bar.
- * `lock(ms)` freezes it for a while (during a smooth scroll to a clicked
- * category). Inactive (always null) when `sections` is empty.
- */
-export function useActiveSection(
-  sections: ProjectSection[],
-  barHeight: number
-): [string | null, (category: string | null) => void, (ms: number) => void] {
-  const [active, setActive] = useState<string | null>(null);
-  const lockedUntil = useRef(0);
-  const lock = useCallback((ms: number) => {
-    lockedUntil.current = Date.now() + ms;
-  }, []);
-
-  useEffect(() => {
-    if (sections.length === 0) {
-      setActive(null);
-      return;
-    }
-    if (typeof IntersectionObserver === "undefined") return;
-    const elements = sections
-      .map(({ category }) => document.getElementById(projectSectionId(category)))
-      .filter((el): el is HTMLElement => Boolean(el));
-    const visible = new Map<string, boolean>();
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          visible.set(entry.target.id, entry.isIntersecting);
-        }
-        if (Date.now() < lockedUntil.current) return;
-        const first = elements.find((el) => visible.get(el.id));
-        setActive(first ? first.id.replace(/^projects-/, "") : null);
-      },
-      // A band just under the header and the sticky filter bar.
-      { rootMargin: `-${HEADER_HEIGHT + barHeight + 12}px 0px -55% 0px` }
-    );
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, [sections, barHeight]);
-
-  return [active, setActive, lock];
-}
-
-/** Live height of an element (the sticky filter bar). */
-export function useElementHeight() {
-  const [node, setNode] = useState<HTMLElement | null>(null);
-  const [height, setHeight] = useState(DEFAULT_BAR_HEIGHT);
-  useEffect(() => {
-    if (!node) return;
-    const update = () => setHeight(Math.round(node.getBoundingClientRect().height));
-    update();
-    if (typeof ResizeObserver === "undefined") return;
-    const observer = new ResizeObserver(update);
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, [node]);
-  return { height, ref: setNode };
 }
