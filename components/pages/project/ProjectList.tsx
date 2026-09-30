@@ -420,7 +420,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
               </ul>
             </section>
           ) : (
-            <div className="mx-auto flex max-w-md flex-col items-center rounded-3xl border border-dashed px-6 py-14 text-center">
+            <div className="mx-auto flex max-w-md flex-col items-center py-12 text-center md:py-16">
               <SearchX aria-hidden="true" className="size-8 text-muted-foreground" />
               <p className="mt-4 text-lg font-bold text-foreground">{t.empty_title}</p>
               <p className="mt-1 text-sm text-muted-foreground">{t.empty_hint}</p>

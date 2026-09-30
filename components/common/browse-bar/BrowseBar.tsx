@@ -114,7 +114,7 @@ function BrowseBar({
             onChange={onViewChange}
             labels={{ browse: t.browse, filter: t.filter }}
           />
-          <span aria-hidden="true" className="h-6 w-px shrink-0 bg-border" />
+          <span aria-hidden="true" className="hidden h-6 w-px shrink-0 bg-border sm:block" />
 
           {view === "browse" ? (
             <JumpLinks
@@ -388,10 +388,12 @@ function SearchField({
 function FilterSelect({
   filter,
   onFilter,
+  placeholder = filter.label,
   className,
 }: {
   filter: BarFilter;
   onFilter: (key: string, value: string | undefined) => void;
+  placeholder?: string;
   className?: string;
 }) {
   return (
@@ -409,7 +411,7 @@ function FilterSelect({
           className
         )}
       >
-        <SelectValue placeholder={filter.label} />
+        <SelectValue placeholder={placeholder} />
       </SelectTrigger>
       <SelectContent>
         <SelectItem value={ALL}>{filter.allLabel}</SelectItem>
@@ -449,7 +451,7 @@ function FiltersSheet({
       <DialogPrimitive.Trigger
         aria-label={activeCount > 0 ? t.filters_active(activeCount) : t.filters}
         className={cn(
-          "inline-flex h-10 shrink-0 items-center gap-2 rounded-full border border-input bg-card px-3 text-sm font-semibold text-foreground transition-colors duration-150 hover:bg-secondary sm:px-4 xl:hidden",
+          "relative inline-flex size-10 shrink-0 items-center justify-center gap-2 rounded-full border border-input bg-card text-sm font-semibold text-foreground transition-colors duration-150 hover:bg-secondary sm:w-auto sm:px-4 xl:hidden",
           activeCount > 0 && "border-foreground",
           focusRing
         )}
@@ -459,7 +461,7 @@ function FiltersSheet({
         {activeCount > 0 && (
           <span
             aria-hidden="true"
-            className="inline-flex size-5 items-center justify-center rounded-full bg-foreground text-[0.6875rem] font-bold text-background"
+            className="absolute -right-1 -top-1 inline-flex size-5 items-center justify-center rounded-full bg-foreground text-[0.6875rem] font-bold text-background sm:static"
           >
             {activeCount}
           </span>
@@ -491,7 +493,12 @@ function FiltersSheet({
                 <span aria-hidden="true" className="text-sm font-semibold text-foreground">
                   {filter.label}
                 </span>
-                <FilterSelect filter={filter} onFilter={onFilter} className="w-full max-w-none justify-between" />
+                <FilterSelect
+                  filter={filter}
+                  onFilter={onFilter}
+                  placeholder={filter.allLabel}
+                  className="w-full max-w-none justify-between"
+                />
               </div>
             ))}
           </div>
