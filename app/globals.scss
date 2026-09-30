@@ -193,6 +193,65 @@ body {
       }
     }
   }
+
+  /* Mobile contributor rows (ContributorMarquee). Each track holds its row
+     twice and slides by -50% for a seamless loop; `right` rows play it in
+     reverse. Horizontal edge fade only; `overflow: clip` (not hidden) so
+     focusing a link can't scroll the row and break the loop. */
+  .avatar-marquee {
+    overflow: clip;
+    padding-block: 0.25rem;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
+
+  .avatar-marquee-track {
+    display: flex;
+    width: max-content;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .avatar-marquee-track {
+      animation: avatar-marquee var(--marquee-duration, 40s) linear infinite;
+      will-change: transform;
+    }
+
+    .avatar-marquee-track[data-direction="right"] {
+      animation-direction: reverse;
+    }
+
+    .avatar-marquee-group:hover .avatar-marquee-track,
+    .avatar-marquee-group:focus-within .avatar-marquee-track,
+    .avatar-marquee-group[data-paused] .avatar-marquee-track {
+      animation-play-state: paused;
+    }
+  }
+
+  /* Reduced motion: static rows, real set only, scrollable sideways. */
+  @media (prefers-reduced-motion: reduce) {
+    .avatar-marquee {
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .avatar-marquee-track {
+      margin-inline: auto;
+      padding-inline: 2.5rem;
+    }
+
+    .avatar-marquee-clone {
+      display: none;
+    }
+  }
+
+  @keyframes avatar-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @layer utilities {
