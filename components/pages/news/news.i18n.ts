@@ -88,7 +88,7 @@ export const en: NewsI18n = {
     all_topics: "All topics",
     year: "Year",
     all_years: "All years",
-    results_title: "Matching stories",
+    results_title: "Matching Stories",
     results_count: (count) => (count === 1 ? "1 story" : `${count} stories`),
     no_match_title: "No story matches these filters.",
     no_match_hint: "Try other words, or clear the filters.",

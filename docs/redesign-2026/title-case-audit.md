@@ -1,6 +1,6 @@
 # Title case audit (September 2026)
 
-The owner asked for English titles in Title Case and French titles with a capital on the first word only. This page lists every string that changed so it can be reviewed. 446 strings changed: 320 in English and 126 in French. The tables give the file and line, before and after.
+The owner asked for English titles in Title Case and French titles with a capital on the first word only. This page lists every string that changed so it can be reviewed. 447 strings changed: 321 in English and 126 in French. The tables give the file and line, before and after.
 
 ## Rules applied
 
@@ -31,7 +31,7 @@ These follow Chicago strictly but may read oddly. Each is a one-word change if y
 
 ## Changed strings
 
-### English: site copy (i18n files) (173)
+### English: site copy (i18n files) (174)
 
 | File | Before | After |
 | --- | --- | --- |
@@ -112,12 +112,13 @@ These follow Chicago strictly but may read oddly. Each is a one-word change if y
 | `components/pages/learn/learn.i18n.ts:191` | The Monark docs | The Monark Docs |
 | `components/pages/learn/learn.i18n.ts:203` | Learn with others | Learn with Others |
 | `components/pages/learn/learn.i18n.ts:220` | Ready to build? | Ready to Build? |
-| `components/pages/news/news.i18n.ts:53` | Monark news | Monark News |
-| `components/pages/news/news.i18n.ts:57` | Beyond the hype | Beyond the Hype |
-| `components/pages/news/news.i18n.ts:65` | Web3, explained | Web3, Explained |
-| `components/pages/news/news.i18n.ts:68` | More news | More News |
-| `components/pages/news/news.i18n.ts:70` | No news yet | No News Yet |
-| `components/pages/news/news.i18n.ts:86` | More news | More News |
+| `components/pages/news/news.i18n.ts:91` | Matching stories | Matching Stories |
+| `components/pages/news/news.i18n.ts:65` | Monark news | Monark News |
+| `components/pages/news/news.i18n.ts:69` | Beyond the hype | Beyond the Hype |
+| `components/pages/news/news.i18n.ts:77` | Web3, explained | Web3, Explained |
+| `components/pages/news/news.i18n.ts:80` | More news | More News |
+| `components/pages/news/news.i18n.ts:82` | No news yet | No News Yet |
+| `components/pages/news/news.i18n.ts:80` | More news | More News |
 | `components/pages/participate/ambassador.i18n.ts:26` | Grow the Monark community where you live | Grow the Monark Community Where You Live |
 | `components/pages/participate/ambassador.i18n.ts:35` | A role at the heart of the community | A Role at the Heart of the Community |
 | `components/pages/participate/ambassador.i18n.ts:39` | Rewards for your impact | Rewards for Your Impact |
@@ -193,14 +194,14 @@ These follow Chicago strictly but may read oddly. Each is a one-word change if y
 | `components/pages/participate/university.i18n.ts:142` | The Monark project catalogue | The Monark Project Catalogue |
 | `components/pages/participate/university.i18n.ts:155` | Questions from students and universities | Questions from Students and Universities |
 | `components/pages/participate/university.i18n.ts:180` | Bring Web3 to your campus | Bring Web3 to Your Campus |
-| `components/pages/project/projects-list.i18n.ts:94` | Deliverables & desired functionalities | Deliverables & Desired Functionalities |
-| `components/pages/project/projects-list.i18n.ts:100` | Matching projects | Matching Projects |
-| `components/pages/project/projects-list.i18n.ts:113` | Work & payments | Work & Payments |
-| `components/pages/project/projects-list.i18n.ts:117` | Managing your crypto | Managing Your Crypto |
-| `components/pages/project/projects-list.i18n.ts:121` | Trust & privacy | Trust & Privacy |
-| `components/pages/project/projects-list.i18n.ts:125` | Commerce & records | Commerce & Records |
-| `components/pages/project/projects-list.i18n.ts:133` | Communities & governance | Communities & Governance |
-| `components/pages/project/projects-list.i18n.ts:137` | Other projects | Other Projects |
+| `components/pages/project/projects-list.i18n.ts:97` | Deliverables & desired functionalities | Deliverables & Desired Functionalities |
+| `components/pages/project/projects-list.i18n.ts:103` | Matching projects | Matching Projects |
+| `components/pages/project/projects-list.i18n.ts:118` | Work & payments | Work & Payments |
+| `components/pages/project/projects-list.i18n.ts:122` | Managing your crypto | Managing Your Crypto |
+| `components/pages/project/projects-list.i18n.ts:126` | Trust & privacy | Trust & Privacy |
+| `components/pages/project/projects-list.i18n.ts:130` | Commerce & records | Commerce & Records |
+| `components/pages/project/projects-list.i18n.ts:138` | Communities & governance | Communities & Governance |
+| `components/pages/project/projects-list.i18n.ts:142` | Other projects | Other Projects |
 | `components/pages/roadmap/roadmap.i18n.ts:44` | Phase 0: Community building | Phase 0: Community Building |
 | `components/pages/roadmap/roadmap.i18n.ts:53` | Use cases and projects | Use Cases and Projects |
 | `components/pages/roadmap/roadmap.i18n.ts:58` | Local ecosystem development | Local Ecosystem Development |
@@ -252,17 +253,17 @@ These follow Chicago strictly but may read oddly. Each is a one-word change if y
 | `content/en/news/web3-developer-roadmap-and-resources/page.mdx:42` | The rest of the stack | The Rest of the Stack |
 | `content/en/news/web3-developer-roadmap-and-resources/page.mdx:55` | Keeping up | Keeping Up |
 | `content/en/news/web3-revolution-reality/page.mdx:4` | The revolution and reality of Web3: an honest assessment | The Revolution and Reality of Web3: An Honest Assessment |
-| `content/en/news/web3-revolution-reality/page.mdx:19` | What Web3 promised | What Web3 Promised |
-| `content/en/news/web3-revolution-reality/page.mdx:23` | Where things stand | Where Things Stand |
-| `content/en/news/web3-revolution-reality/page.mdx:33` | Where Monark stands | Where Monark Stands |
-| `content/en/news/web3-revolution-reality/page.mdx:42` | What comes next | What Comes Next |
+| `content/en/news/web3-revolution-reality/page.mdx:20` | What Web3 promised | What Web3 Promised |
+| `content/en/news/web3-revolution-reality/page.mdx:24` | Where things stand | Where Things Stand |
+| `content/en/news/web3-revolution-reality/page.mdx:34` | Where Monark stands | Where Monark Stands |
+| `content/en/news/web3-revolution-reality/page.mdx:43` | What comes next | What Comes Next |
 | `content/en/news/what-is-web3-really/page.mdx:4` | What is Web3, really? | What Is Web3, Really? |
-| `content/en/news/what-is-web3-really/page.mdx:27` | Promise and reality | Promise and Reality |
-| `content/en/news/what-is-web3-really/page.mdx:29` | Ownership comes with responsibility | Ownership Comes with Responsibility |
-| `content/en/news/what-is-web3-really/page.mdx:33` | Users as stakeholders, in theory | Users as Stakeholders, in Theory |
-| `content/en/news/what-is-web3-really/page.mdx:37` | Community governance | Community Governance |
-| `content/en/news/what-is-web3-really/page.mdx:41` | Where Web3 delivers | Where Web3 Delivers |
-| `content/en/news/what-is-web3-really/page.mdx:51` | How Monark approaches it | How Monark Approaches It |
+| `content/en/news/what-is-web3-really/page.mdx:28` | Promise and reality | Promise and Reality |
+| `content/en/news/what-is-web3-really/page.mdx:30` | Ownership comes with responsibility | Ownership Comes with Responsibility |
+| `content/en/news/what-is-web3-really/page.mdx:34` | Users as stakeholders, in theory | Users as Stakeholders, in Theory |
+| `content/en/news/what-is-web3-really/page.mdx:38` | Community governance | Community Governance |
+| `content/en/news/what-is-web3-really/page.mdx:42` | Where Web3 delivers | Where Web3 Delivers |
+| `content/en/news/what-is-web3-really/page.mdx:52` | How Monark approaches it | How Monark Approaches It |
 | `content/en/news/what-monark-is-building-and-why/page.mdx:4` | What Monark is building, and why | What Monark Is Building, and Why |
 | `content/en/news/what-monark-is-building-and-why/page.mdx:20` | Working with universities | Working with Universities |
 | `content/en/news/what-monark-is-building-and-why/page.mdx:28` | Incubating early projects | Incubating Early Projects |
@@ -274,21 +275,21 @@ These follow Chicago strictly but may read oddly. Each is a one-word change if y
 | `content/en/news/what-needs-to-happen-before-web3-becomes-everyday-tech/page.mdx:33` | Web2 and Web3 together | Web2 and Web3 Together |
 | `content/en/news/what-needs-to-happen-before-web3-becomes-everyday-tech/page.mdx:37` | A long road | A Long Road |
 | `content/en/news/where-blockchain-shines/page.mdx:4` | Where blockchain shines, and where it doesn't | Where Blockchain Shines, and Where It Doesn't |
-| `content/en/news/where-blockchain-shines/page.mdx:19` | Smart contracts | Smart Contracts |
-| `content/en/news/where-blockchain-shines/page.mdx:25` | Transparency and immutability | Transparency and Immutability |
-| `content/en/news/where-blockchain-shines/page.mdx:31` | Digital ownership and provenance | Digital Ownership and Provenance |
-| `content/en/news/where-blockchain-shines/page.mdx:37` | When not to use a blockchain | When Not to Use a Blockchain |
-| `content/en/news/where-blockchain-shines/page.mdx:47` | Challenges that remain | Challenges That Remain |
-| `content/en/news/where-blockchain-shines/page.mdx:55` | How Monark decides | How Monark Decides |
+| `content/en/news/where-blockchain-shines/page.mdx:20` | Smart contracts | Smart Contracts |
+| `content/en/news/where-blockchain-shines/page.mdx:26` | Transparency and immutability | Transparency and Immutability |
+| `content/en/news/where-blockchain-shines/page.mdx:32` | Digital ownership and provenance | Digital Ownership and Provenance |
+| `content/en/news/where-blockchain-shines/page.mdx:38` | When not to use a blockchain | When Not to Use a Blockchain |
+| `content/en/news/where-blockchain-shines/page.mdx:48` | Challenges that remain | Challenges That Remain |
+| `content/en/news/where-blockchain-shines/page.mdx:56` | How Monark decides | How Monark Decides |
 | `content/en/news/who-is-web3-actually-for/page.mdx:4` | Who is Web3 actually for? | Who Is Web3 Actually For? |
 | `content/en/news/who-is-web3-actually-for/page.mdx:20` | Beyond the early adopters | Beyond the Early Adopters |
 | `content/en/news/who-is-web3-actually-for/page.mdx:24` | Who could benefit | Who Could Benefit |
 | `content/en/news/who-is-web3-actually-for/page.mdx:32` | What it will take | What It Will Take |
 | `content/en/news/who-is-web3-actually-for/page.mdx:40` | A Web3 for everyone | A Web3 for Everyone |
 | `content/en/news/why-decentralization-matters/page.mdx:4` | Why decentralization matters, beyond the hype | Why Decentralization Matters, beyond the Hype |
-| `content/en/news/why-decentralization-matters/page.mdx:19` | A reality check | A Reality Check |
-| `content/en/news/why-decentralization-matters/page.mdx:43` | Our approach | Our Approach |
-| `content/en/news/why-decentralization-matters/page.mdx:49` | What's at stake | What's at Stake |
+| `content/en/news/why-decentralization-matters/page.mdx:20` | A reality check | A Reality Check |
+| `content/en/news/why-decentralization-matters/page.mdx:44` | Our approach | Our Approach |
+| `content/en/news/why-decentralization-matters/page.mdx:50` | What's at stake | What's at Stake |
 
 ### French: news articles (0)
 
