@@ -28,6 +28,12 @@ This project provides several scripts to automate and accelerate development tas
   Runs: `bun scripts/news/news-translate.script.ts`  
   Generates or updates translations for news content. Run this after making changes to news articles in multiple languages.
 
+### Brand Scripts
+
+- **generate:brand-kit**  
+  Runs: `bun scripts/brand/brand-kit.script.ts`  
+  Rebuilds the downloads of the `/brand` page under `public/brand/`: SVG copies of the logos in `public/vectors/brand/` (renamed by the background they are for), transparent PNGs at 512, 1024 and 2048px (rendered with sharp), the "Built with Monark" credit badges, and `monark-brand-kit.zip` with a README.txt of usage rules and colours. Pass `--tokens <dir>` (for example `--tokens ../brand-2026/tokens`) to refresh the design token files from the Monark Brand 2026 kit; without it the committed copies in `public/brand/tokens/` are kept. File names, PNG sizes and colours live in `components/pages/brand/brand-assets.ts`, shared with the page. The zip never contains font files. Run it after changing a logo, a colour or the page's English copy, and commit the output.
+
 ## Usage
 
 Run scripts with:
