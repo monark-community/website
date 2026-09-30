@@ -37,6 +37,6 @@ export default function middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!api|_vercel|_next/static|_next/image|fonts|images|sounds|vectors|assets|favicon.ico).*)",
+    "/((?!api|_vercel|_next/static|_next/image|fonts|images|sounds|vectors|assets|brand/|favicon.ico).*)",
   ],
 };
