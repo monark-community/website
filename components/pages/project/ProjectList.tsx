@@ -414,6 +414,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ locale }) => {
                       sizes={GRID_SIZES}
                       priority={index < 4}
                       adminMode={adminMode}
+                      showDemo={false}
                     />
                   </li>
                 ))}
