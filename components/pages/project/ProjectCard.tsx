@@ -62,6 +62,8 @@ type Props = {
   sizes: string;
   priority?: boolean;
   adminMode?: boolean;
+  /** Show the "Try the demo" button on live projects. Off in the filtered grid. */
+  showDemo?: boolean;
   className?: string;
 };
 
@@ -80,6 +82,7 @@ function ProjectCard({
   sizes,
   priority = false,
   adminMode = false,
+  showDemo = true,
   className,
 }: Props) {
   const t = i18n[locale];
@@ -87,7 +90,7 @@ function ProjectCard({
   const feature = variant === "feature";
   const tall = variant === "tall";
   const compact = variant === "compact";
-  const live = LIVE_STATUSES.includes(project.status);
+  const demo = showDemo && LIVE_STATUSES.includes(project.status);
   const visibleTags = variant === "default" ? tags.slice(0, 2) : [];
 
   const demoLabel = formatTemplate(t.try_demo_label, { name: project.accronym });
@@ -178,7 +181,7 @@ function ProjectCard({
           {!compact && (
             <ProjectOwnershipBadge ownership={project.ownership} locale={locale} compact />
           )}
-          {live && !compact && (
+          {demo && !compact && (
             <a
               href={projectDemoUrl(project)}
               target="_blank"
@@ -194,7 +197,7 @@ function ProjectCard({
               <ArrowUpRight aria-hidden="true" className="size-4" />
             </a>
           )}
-          {live && compact && (
+          {demo && compact && (
             <a
               href={projectDemoUrl(project)}
               target="_blank"
