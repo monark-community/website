@@ -9,6 +9,93 @@ category: trust
 accronym: TrustList
 img: contact-list.jpg
 img_alt: Contact List mockup
+demo_url: https://demo-contact-list.vercel.app/en
+images:
+  - src: contact-list/overview.jpg
+    alt: TrustList home page with recent activity and a lookalike warning
+  - src: contact-list/contacts.jpg
+    alt: Contact list filtered by type, trust level and tag
+  - src: contact-list/address-check.jpg
+    alt: Address check flagging a lookalike of a known contact
+  - src: contact-list/contact-trust-signals.jpg
+    alt: Contact page with trust level, owner verification and vouches
+  - src: contact-list/connected-apps.jpg
+    alt: Permission request from a Monark app to read contact names
+value_proposition:
+  headline: Know who's behind every address.
+  body: A wallet address proves who controls the funds, not who they are. TrustList puts a name, your own trust level and a private note on the addresses you deal with, checks every address before you send, and lets the Monark apps you approve show names instead of raw hex. Contacts are private by default and shared only when you choose.
+features:
+  - icon: scan-search
+    title: Check before you send
+    description: Paste any address and TrustList answers from your list, your circles and a lookalike test. Nothing is sent anywhere.
+  - icon: shield-alert
+    title: Lookalike detection
+    description: Scammers plant addresses that start and end like one you pay. TrustList compares all 40 characters and shows which ones differ.
+  - icon: contact
+    title: Contacts with context
+    description: A contact holds one or more addresses with their purpose, your tags, a trust level and a note only you can read.
+  - icon: badge-check
+    title: Trust you can check
+    description: You pick one of four levels (Trusted, Known, Unverified, Flagged). Next to it, TrustList shows whether the owner verified the address and how many people in your circles vouch for it.
+  - icon: lock
+    title: Private, circle or public
+    description: Per contact, keep it encrypted on your device, encrypt it for a group like your club or DAO, or publish it to IPFS with an on-chain anchor.
+  - icon: plug
+    title: One list across Monark apps
+    description: Splitflow, TaskFlow and GovChain show your names, trust levels and warnings once you allow them. Notes are never shared, and you can revoke access at any time.
+use_cases:
+  - title: Student associations
+    description: The treasurer knows which address is the club's multisig and which is the sponsor's, and the whole club shares its scam warnings.
+  - title: DAO working groups
+    description: Reviewers see who submitted a bounty, whether the owner verified the address, and who in the group vouches for it.
+  - title: Freelancers and local shops
+    description: Clients met in person stay recognisable months later, with a note on the project next to every payment.
+# MOCK: placeholder documents for design review; replace with the real list.
+resources:
+  - id: business-plan
+    type: business_plan
+    title: Business plan
+    description: Market, revenue model and go-to-market plan.
+    format: PDF
+  - id: pitch-deck
+    type: slide_deck
+    title: Pitch deck
+    description: The TrustList pitch for partners and investors.
+    format: Slides
+  - id: financial-model
+    type: financials
+    title: Financial model
+    description: Three-year projections, costs and pricing scenarios.
+    format: Sheet
+  - id: market-research
+    type: other
+    group: business
+    title: Market research
+    description: Interviews with DAO treasurers and student associations.
+    format: PDF
+  - id: technical-documentation
+    type: technical_docs
+    title: Technical documentation
+    description: Architecture, encryption model, storage tiers and the app permission API.
+    format: Docs
+  - id: design-files
+    type: design
+    title: Design files
+    description: Figma screens and the TrustList component library.
+    format: Figma
+  - id: how-it-works
+    type: other
+    title: How TrustList works
+    description: Contact anatomy, where data lives and how the address check decides.
+    format: Web
+    href: https://demo-contact-list.vercel.app/en/how-it-works
+  - id: contribution-guide
+    type: legal
+    group: builders
+    title: Contribution agreement
+    description: IP, licensing and revenue-sharing terms for contributors.
+    format: PDF
+builders_intro: TrustList is Monark's Trust Contacts module, built in the open with the community. Building it covers wallet-derived encryption, IPFS storage with on-chain anchoring, signed vouches and scoped permissions for the apps that read a user's contacts.
 industry_tags:
   - Digital Communications
   - Services
@@ -18,6 +105,9 @@ keyword_tags:
   - Tagging
   - Reputation
   - Contacts
+code_repositories:
+  - https://github.com/monark-community/demo-contact-list
+monark_investment: 18500 # MOCK: replace with the real amount
 complexity_score: 5
 effort_score: -1
 adoption_score: 8
@@ -25,10 +115,8 @@ blockchain_score: 8
 revenue_score: -1
 ---
 
-## General Description
+## Why TrustList
 
-[TrustList](https://trustlist.monark.io) is a decentralized contact system for Web3 users, allowing wallets to organize and annotate their interactions with other users on the blockchain. In traditional applications, contact lists are centralized, opaque, and often context-specific (e.g., friends on social media, teammates in Slack). TrustList brings this functionality into the decentralized space, enabling individuals and DAOs to create wallet-linked directories enhanced with user-defined metadata.
+Scammers generate addresses that start and end like someone you pay, then send you a tiny "dust" transfer so the fake shows up in your history. Most people compare only the first and last few characters before they copy an address. A contact list that knows the full address catches the swap before any funds move.
 
-Each user can create and store contact labels such as "developer," "trusted partner," "frequent collaborator," or "flagged for spam." These tags can be stored off-chain in encrypted form or published publicly via decentralized storage. Optional features include contact scoring, endorsement systems, or timestamped interaction logs.
-
-This system is highly relevant in DAOs, bounty platforms, and decentralized marketplaces where recurring interactions and trust relationships develop over time but aren't formally recorded. It bridges the gap between the anonymity of blockchain and the reputational needs of professional coordination. Students working on this project will explore Web3 UX, encrypted metadata storage, decentralized identity standards, and human-friendly interfaces for wallet-based interactions. While simple at its core, TrustList teaches foundational skills around identity layering, privacy models, and interoperability across dApps.
+TrustList also keeps judgement and evidence apart. It never computes a score for a person. Your trust level is your own call, and it sits next to facts anyone can check: the owner's signed confirmation of the name you gave their address, and public vouches from people in your circles.

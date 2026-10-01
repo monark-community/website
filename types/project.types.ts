@@ -56,6 +56,76 @@ export interface ProjectMetadata {
   revenue_score: number;
 }
 
+/** One slide of the project page carousel; `src` is relative to /images/project/. */
+export interface ProjectImage {
+  src: string;
+  alt: string;
+}
+
+export interface ProjectFeature {
+  /** Lucide icon name in kebab case, e.g. "shield-check". */
+  icon?: string;
+  title: string;
+  description: string;
+}
+
+export interface ProjectUseCase {
+  title: string;
+  description: string;
+}
+
+export type ProjectResourceType =
+  | "business_plan"
+  | "technical_docs"
+  | "slide_deck"
+  | "financials"
+  | "legal"
+  | "design"
+  | "other";
+
+/**
+ * A project document. Locked unless `href` is set: locked resources are
+ * listed publicly but open only in the Monark app after sign-in.
+ */
+export interface ProjectResource {
+  id: string;
+  type: ProjectResourceType;
+  title: string;
+  description?: string;
+  /** Short format label, e.g. "PDF", "Slides", "Docs". */
+  format?: string;
+  /** Public link; when set the resource is not locked. */
+  href?: string;
+  /** Section it is listed under. Defaults from `type`. */
+  group?: ProjectResourceGroup;
+}
+
+export type ProjectResourceGroup = "business" | "product" | "builders";
+
+/**
+ * Optional product-page fields in a project's page.mdx frontmatter. Every
+ * field is optional: a project without them falls back to `title`, `img`
+ * and `description`.
+ */
+export interface ProjectProductFrontmatter {
+  tagline?: string;
+  /** Live demo link. Defaults to https://<accronym>.monark.io. */
+  demo_url?: string;
+  images?: ProjectImage[];
+  value_proposition?: {
+    headline: string;
+    body: string;
+  };
+  features?: ProjectFeature[];
+  use_cases?: ProjectUseCase[];
+  resources?: ProjectResource[];
+  /** Intro to the documentation section: what building the project involves. */
+  builders_intro?: string;
+  code_repositories?: string[];
+  /** Amount Monark has invested, in USD. Shown only when the project has code_repositories. */
+  monark_investment?: number;
+}
+
 export interface DatedProjectMetadata extends ProjectMetadata {
   hash: string;
   last_updated: string;
